@@ -1,0 +1,116 @@
+{
+  "absolute_tolerance": 1e-11,
+  "candidates": [
+    {
+      "D16": 0.557942440674643,
+      "D32": 5.325198521300183,
+      "D8": 0.044597486019294294,
+      "absolute_error": {
+        "D16": 2.220446049250313e-16,
+        "D32": 8.881784197001252e-16,
+        "D8": 5.551115123125783e-17
+      },
+      "angle": 0.08,
+      "max_absolute_error": 8.881784197001252e-16,
+      "pass": false
+    },
+    {
+      "D16": 1.2326873961380613,
+      "D32": 10.432761791498283,
+      "D8": 0.0969812729572742,
+      "absolute_error": {
+        "D16": 1.1102230246251565e-15,
+        "D32": 8.881784197001252e-15,
+        "D8": 4.163336342344337e-17
+      },
+      "angle": 0.12,
+      "max_absolute_error": 8.881784197001252e-15,
+      "pass": false
+    },
+    {
+      "D16": 2.1341768835747734,
+      "D32": 15.489852125974476,
+      "D8": 0.165654869059872,
+      "absolute_error": {
+        "D16": 8.881784197001252e-16,
+        "D32": 1.7763568394002505e-15,
+        "D8": 1.3877787807814457e-16
+      },
+      "angle": 0.16,
+      "max_absolute_error": 1.7763568394002505e-15,
+      "pass": false
+    },
+    {
+      "D16": 3.243491424920867,
+      "D32": 19.742137686383213,
+      "D8": 0.24803881475167244,
+      "absolute_error": {
+        "D16": 0.0,
+        "D32": 0.0,
+        "D8": 1.1102230246251565e-16
+      },
+      "angle": 0.2,
+      "max_absolute_error": 1.1102230246251565e-16,
+      "pass": false
+    }
+  ],
+  "checks": {
+    "candidate_0_angle": true,
+    "candidate_0_numeric": true,
+    "candidate_0_pass": true,
+    "candidate_1_angle": true,
+    "candidate_1_numeric": true,
+    "candidate_1_pass": true,
+    "candidate_2_angle": true,
+    "candidate_2_numeric": true,
+    "candidate_2_pass": true,
+    "candidate_3_angle": true,
+    "candidate_3_numeric": true,
+    "candidate_3_pass": true,
+    "candidate_count": true,
+    "committed_source_sha": true,
+    "fixed_parameters": true,
+    "intermediate_r_diagonal_positive": true,
+    "lock_sha": true,
+    "numpy_2_3_3": true,
+    "numpy_core_sha": true,
+    "numpy_record_sha": true,
+    "proper_q": true,
+    "protocol_reference": true,
+    "protocol_sha": true,
+    "python_executable_path": true,
+    "python_executable_sha": true,
+    "python_version": true,
+    "qr_inputs_finite_nonzero": true,
+    "receipt_id": true,
+    "report_receipt_sha": true,
+    "rotation_0_proper": true,
+    "rotation_1_proper": true,
+    "rotation_2_proper": true,
+    "rotation_3_proper": true,
+    "selection": true,
+    "selection_rule": true,
+    "source_commit": true,
+    "source_sha": true
+  },
+  "first_passing_angle": null,
+  "id": "EXP-0012_MATRIX_SCREEN_INDEPENDENT_VERIFY",
+  "method": "Independent NumPy 2.3.3 PCG64 fixed draw, QR with signed columns and final orientation correction; independent rotation construction; explicit matrix_power for each lag 0..31; D(t)=sum((t-l)*d_l^2 for l in range(t))/(2*sigma^2). Generator source read only for reverse comparison, never imported or called.",
+  "numpy_version": "2.3.3",
+  "python_version": "3.13.15 (main, Aug  5 2026, 12:25:43) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "scope": "zero-sample analytic matrix screen; no H/cue/u/y task samples or model calls",
+  "screen_status": "NO_MATRIX",
+  "sha256": {
+    "committed_generator_source": "b0e85b8c3dc92e14fad4d89e6f2a9e42634b6c074cedb0da95853088f7180dce",
+    "generator_source": "b0e85b8c3dc92e14fad4d89e6f2a9e42634b6c074cedb0da95853088f7180dce",
+    "lock": "a4228ebafd79e9e2cafbacff4cae0cfd8ea1c5a768a8a95c6d5a03dea61b509b",
+    "numpy_core_binary": "a30c5d4a5b9fffef4886967542169a9bb31c401802336af0dd6632d193960a30",
+    "numpy_record": "f365245db11fb3d48375348aa67eacfd4f9992028b7f2976229c5f60a525b28f",
+    "protocol": "fb777e378a8a16380f55fca036693c46cf23bb101b1ae79ae8b4b278242b9176",
+    "python_executable": "1988a0dd685f91bbaf20b5267046e13cb78859dbb3b5f030e89b448c1fbfe8d4",
+    "receipt": "3f009ec38079eb121c00ce56aaac74d32d98506cc3b56e77861c6da02b2f0b6a",
+    "report": "a7865caaa12e6525a675443767c0e183b38448b2bf264d7626fa898b15e3255f"
+  },
+  "source_commit": "9130a21b6df5b56c1a5596545592e1900931a015",
+  "status": "PASS"
+}

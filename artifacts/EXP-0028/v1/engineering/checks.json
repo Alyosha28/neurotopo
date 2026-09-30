@@ -1,0 +1,419 @@
+{
+  "checks": [
+    {
+      "check": "shapes_finite_call_counts",
+      "pass_": true,
+      "detail": {
+        "CAND": {
+          "pass_": true,
+          "logits_shape": [
+            8,
+            5
+          ],
+          "branch_shape": [
+            8,
+            5,
+            2
+          ],
+          "calls": 22,
+          "expected_calls": 22
+        },
+        "EXTRA_SUP": {
+          "pass_": true,
+          "logits_shape": [
+            8,
+            5
+          ],
+          "branch_shape": [
+            8,
+            5,
+            2
+          ],
+          "calls": 22,
+          "expected_calls": 22
+        },
+        "INV_COMP": {
+          "pass_": true,
+          "logits_shape": [
+            8,
+            5
+          ],
+          "branch_shape": [
+            8,
+            5,
+            2
+          ],
+          "calls": 14,
+          "expected_calls": 14
+        }
+      }
+    },
+    {
+      "check": "gradient_flow_two_steps",
+      "pass_": true,
+      "detail": {
+        "CAND": {
+          "all_params_nonzero_by_step2": true,
+          "first_step_zero": 2,
+          "detail": {}
+        },
+        "EXTRA_SUP": {
+          "all_params_nonzero_by_step2": true,
+          "first_step_zero": 0,
+          "detail": {}
+        },
+        "INV_COMP": {
+          "all_params_nonzero_by_step2": true,
+          "first_step_zero": 0,
+          "detail": {}
+        }
+      }
+    },
+    {
+      "check": "common_rotation_gauge",
+      "pass_": true,
+      "detail": {
+        "CAND_full_path_gauge": {
+          "max_abs_error": 2.60770320892334e-08,
+          "pass_": true
+        },
+        "EXTRA_SUP_full_path_gauge": {
+          "max_abs_error": 2.2351741790771484e-08,
+          "pass_": true
+        },
+        "INV_COMP_canonical_update": {
+          "max_abs_error": 1.1920928955078125e-07,
+          "pass_": true
+        }
+      }
+    },
+    {
+      "check": "prefix_consistency",
+      "pass_": true,
+      "detail": {
+        "CAND": {
+          "max_abs_error": 0.0,
+          "pass_": true
+        },
+        "EXTRA_SUP": {
+          "max_abs_error": 0.0,
+          "pass_": true
+        },
+        "INV_COMP": {
+          "max_abs_error": 0.0,
+          "pass_": true
+        }
+      }
+    },
+    {
+      "check": "determinism",
+      "pass_": true,
+      "detail": {
+        "CAND": {
+          "pass_": true,
+          "logits_sha256": "f9401feb8c2687a0e5a1ef61ae8769faff42eb75c3e680c8233f63647cd9fff4"
+        },
+        "EXTRA_SUP": {
+          "pass_": true,
+          "logits_sha256": "8a83d3f6fb1c989f51a741ee884f924f2d6fa7c89e6e9b0ee785e7d3e5b523e3"
+        },
+        "INV_COMP": {
+          "pass_": true,
+          "logits_sha256": "4cd6b932db62a0410a43256d361475bbee8feaf7da0bb5e81cfbdc7ed089296f"
+        }
+      }
+    },
+    {
+      "check": "single_recursive_state",
+      "pass_": true,
+      "detail": {
+        "CAND": {
+          "unknown_parameters": [],
+          "buffers": [],
+          "pass_": true
+        },
+        "EXTRA_SUP": {
+          "unknown_parameters": [],
+          "buffers": [],
+          "pass_": true
+        },
+        "INV_COMP": {
+          "unknown_parameters": [],
+          "buffers": [],
+          "pass_": true
+        }
+      }
+    },
+    {
+      "check": "tiny_fit",
+      "pass_": true,
+      "detail": {
+        "CAND": {
+          "first_loss": 0.7351295948028564,
+          "last5_mean": 0.4510051667690277,
+          "drop": 0.38649570095191704,
+          "pass_": true
+        },
+        "EXTRA_SUP": {
+          "first_loss": 0.7367889881134033,
+          "last5_mean": 0.4471290409564972,
+          "drop": 0.393138268663053,
+          "pass_": true
+        },
+        "INV_COMP": {
+          "first_loss": 0.7663518190383911,
+          "last5_mean": 0.4545427441596985,
+          "drop": 0.40687458048960706,
+          "pass_": true
+        }
+      }
+    },
+    {
+      "check": "exp0020_generator_parity_sigma0",
+      "pass_": true,
+      "detail": {
+        "keys": [
+          "b0",
+          "commands",
+          "common",
+          "leak",
+          "targets"
+        ],
+        "identical": true
+      }
+    }
+  ],
+  "pass_": true,
+  "config": {
+    "experiment_id": "EXP-0028",
+    "version": "v1",
+    "gate": "A1",
+    "protocol": "experiments/EXP-0028/v1.md",
+    "candidate_contract": "research/design/arch0001_successor_compatible_core_v3.md",
+    "output": "artifacts/EXP-0028/v1",
+    "candidate": "SC-REL-v3",
+    "control_menu": [
+      [
+        32,
+        1
+      ],
+      [
+        32,
+        2
+      ],
+      [
+        32,
+        3
+      ],
+      [
+        48,
+        1
+      ],
+      [
+        48,
+        2
+      ],
+      [
+        48,
+        3
+      ],
+      [
+        64,
+        1
+      ],
+      [
+        64,
+        2
+      ],
+      [
+        64,
+        3
+      ],
+      [
+        96,
+        1
+      ],
+      [
+        96,
+        2
+      ],
+      [
+        96,
+        3
+      ]
+    ],
+    "training": {
+      "updates": 1000,
+      "batch_size": 64,
+      "lr": 0.003,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "clip": 1.0,
+      "common_amplitude": 0.4,
+      "branch_weight": 0.1,
+      "curriculum": [
+        [
+          125,
+          1
+        ],
+        [
+          250,
+          2
+        ],
+        [
+          500,
+          4
+        ],
+        [
+          1000,
+          8
+        ]
+      ]
+    },
+    "seeds": {
+      "pretest": [
+        28101,
+        28102,
+        28103
+      ],
+      "scan": [
+        28101,
+        28102
+      ],
+      "learn": [
+        28111,
+        28112,
+        28113
+      ]
+    },
+    "streams": {
+      "train_namespace": 282001,
+      "eval_namespace": 283001,
+      "pretest_namespace": 285001,
+      "eval_examples": 1024,
+      "monitor_examples": 128
+    },
+    "menu": [
+      {
+        "id": "N1_T64_leak0_s0",
+        "length": 64,
+        "leak": 0.0,
+        "sigma": 0.0
+      },
+      {
+        "id": "N2_T256_leak4_s0",
+        "length": 256,
+        "leak": 0.4,
+        "sigma": 0.0
+      },
+      {
+        "id": "N3_T64_leak0_s05",
+        "length": 64,
+        "leak": 0.0,
+        "sigma": 0.05
+      },
+      {
+        "id": "N4_T64_leak0_s15",
+        "length": 64,
+        "leak": 0.0,
+        "sigma": 0.15
+      },
+      {
+        "id": "N5_T64_leak0_s40",
+        "length": 64,
+        "leak": 0.0,
+        "sigma": 0.4
+      },
+      {
+        "id": "N6_T256_leak4_s05",
+        "length": 256,
+        "leak": 0.4,
+        "sigma": 0.05
+      },
+      {
+        "id": "N7_T256_leak4_s15",
+        "length": 256,
+        "leak": 0.4,
+        "sigma": 0.15
+      },
+      {
+        "id": "N8_T256_leak4_s40",
+        "length": 256,
+        "leak": 0.4,
+        "sigma": 0.4
+      }
+    ],
+    "band": {
+      "flip_mean": [
+        0.6,
+        0.95
+      ],
+      "flip_seed": [
+        0.55,
+        0.97
+      ],
+      "hold_mean_min": 0.6,
+      "learn_flip_mean_min": 0.6,
+      "learn_flip_seed_min": 0.55,
+      "learn_hold_mean_min": 0.6
+    },
+    "pretest_cells": {
+      "IID_H": [
+        8,
+        "HOLD",
+        0.4,
+        0.0
+      ],
+      "IID_U": [
+        8,
+        "UPDATE",
+        0.4,
+        0.0
+      ],
+      "LONG_H": [
+        64,
+        "HOLD",
+        0.4,
+        0.0
+      ],
+      "LONG_U": [
+        64,
+        "UPDATE",
+        0.4,
+        0.0
+      ],
+      "ROT_H": [
+        64,
+        "HOLD",
+        3.141592653589793,
+        0.0
+      ],
+      "ROT_U": [
+        64,
+        "UPDATE",
+        3.141592653589793,
+        0.0
+      ],
+      "LEAK01_U": [
+        64,
+        "UPDATE",
+        3.141592653589793,
+        0.1
+      ],
+      "LEAK04_U": [
+        64,
+        "UPDATE",
+        3.141592653589793,
+        0.4
+      ]
+    },
+    "resource": {
+      "max_updates": 60000,
+      "wall_seconds_cap": 1800,
+      "replay_wall_seconds_cap": 600
+    }
+  }
+}

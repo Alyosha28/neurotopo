@@ -1,0 +1,87 @@
+{
+  "elapsed_seconds": 0.060673250001855195,
+  "git_commit": "85e9c8a3a9c91fddb883f734b15cda7ed25c6b87",
+  "id": "EVT-0001",
+  "label": "EARLY_EXIT_PROXY",
+  "max_step": 200,
+  "never_exited_by_200": 0,
+  "numpy_version": "2.3.3",
+  "parameters": {
+    "V0": 0.06,
+    "a": 3.0,
+    "d": 2.0,
+    "delta_t": 1.0,
+    "sigma_z": 0.05,
+    "z0": "Normal(0,1)"
+  },
+  "paths": 100000,
+  "protocol_sha256": "3bedb36cef86e67b00522785757ffb460902e75ecafd58147ee01f37cae6685f",
+  "rows": [
+    {
+      "first_exited_count": 4449,
+      "first_exited_fraction": 0.04449,
+      "not_yet_exited_count": 95551,
+      "not_yet_exited_fraction": 0.95551,
+      "step": 0
+    },
+    {
+      "first_exited_count": 79157,
+      "first_exited_fraction": 0.79157,
+      "not_yet_exited_count": 20843,
+      "not_yet_exited_fraction": 0.20843,
+      "step": 5
+    },
+    {
+      "first_exited_count": 97516,
+      "first_exited_fraction": 0.97516,
+      "not_yet_exited_count": 2484,
+      "not_yet_exited_fraction": 0.02484,
+      "step": 10
+    },
+    {
+      "first_exited_count": 99955,
+      "first_exited_fraction": 0.99955,
+      "not_yet_exited_count": 45,
+      "not_yet_exited_fraction": 0.00045,
+      "step": 20
+    },
+    {
+      "first_exited_count": 99999,
+      "first_exited_fraction": 0.99999,
+      "not_yet_exited_count": 1,
+      "not_yet_exited_fraction": 1e-05,
+      "step": 30
+    },
+    {
+      "first_exited_count": 100000,
+      "first_exited_fraction": 1.0,
+      "not_yet_exited_count": 0,
+      "not_yet_exited_fraction": 0.0,
+      "step": 80
+    },
+    {
+      "first_exited_count": 100000,
+      "first_exited_fraction": 1.0,
+      "not_yet_exited_count": 0,
+      "not_yet_exited_fraction": 0.0,
+      "step": 140
+    },
+    {
+      "first_exited_count": 100000,
+      "first_exited_fraction": 1.0,
+      "not_yet_exited_count": 0,
+      "not_yet_exited_fraction": 0.0,
+      "step": 170
+    },
+    {
+      "first_exited_count": 100000,
+      "first_exited_fraction": 1.0,
+      "not_yet_exited_count": 0,
+      "not_yet_exited_fraction": 0.0,
+      "step": 200
+    }
+  ],
+  "scope": "First latent exit from even-emission region, not posterior t_DD or paper replication",
+  "script_sha256": "1764e3555fa863956ef59c4027dcbc95a777d521d9d1220755bf0e80718552d9",
+  "seed": 20260924
+}

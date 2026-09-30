@@ -1,0 +1,42 @@
+{
+  "width": 64,
+  "blocks": 2,
+  "seed": 29302,
+  "d": 2,
+  "budget": 2000,
+  "primary": {
+    "meaningful_accuracy": 0.67900390625,
+    "accuracy_all": 0.7530799278846154,
+    "final_accuracy": 0.6318359375,
+    "tail_mean": 0.6517857142857143,
+    "per_position": [
+      0.7548828125,
+      0.7587890625,
+      0.7138671875,
+      0.6748046875,
+      0.6318359375,
+      0.6728515625,
+      0.6337890625,
+      0.67578125,
+      0.6416015625,
+      0.6318359375
+    ],
+    "branch_joint_accuracy": 0.5474759615384616,
+    "logits_sha256": "626725359819cf84d0ff6fae36ba7bfa2b84334c8a96d3b06159e4b7e0c3d744",
+    "branch_sha256": "f97fa3fbb8f207e29503886563d523da8772596f203c130494ce07ff74968f59",
+    "examples": 1024,
+    "steps": 12
+  },
+  "references": {
+    "constant_zero": 0.5072265625,
+    "constant_one": 0.4927734375,
+    "pass_through": 0.4951171875,
+    "position_majority": 0.4994140625
+  },
+  "oracle": 1.0,
+  "parameters": 1564,
+  "inference_ops": 1411,
+  "final_hash": "53b7ee23946e285dcded6f77e84ba1428a165c33d552328302e54e0fa6ba9968",
+  "training_data_sha256": "8cff24ed822c7854ebb1e7e447d461bbbfbaad89f20cfea9f4cf87793a76e9b8",
+  "seconds": 10.204610417000367
+}

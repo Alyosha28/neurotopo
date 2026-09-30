@@ -1,0 +1,11 @@
+{
+  "experiment_id": "EXP-0013",
+  "kind": "ENGINEERING_PREFLIGHT_SEAL",
+  "receipt_fsync_seconds": 1.010010333993705,
+  "receipt_sha256": "0adf8643832d0ee93aaade5c9366f91a9030fe5159c0977e51a7742c5285c5ae",
+  "receipt_write_seconds": 0.00022562500089406967,
+  "report_sha256": "7bcc10b6712db3f2a9ace1ed0a1284d4eb5278b3b4c0e24855b741eccb930f21",
+  "source_commit": "c42ed52a4f3f8b135fd0872119e598ad8eb6ffe0",
+  "status": "PASS",
+  "write_procedure": "exclusive_write_flush_fsync"
+}

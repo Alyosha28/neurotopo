@@ -1,0 +1,13 @@
+{
+  "scope": "CLONED_LEDGER_ENGINEERING_ONLY",
+  "old_policy": "gate1_candidate_first_v1",
+  "new_policy": "gate1_candidate_first_v2",
+  "old_prefix_sha256": "c3eba97aa095efbdc0b936319d17de567be60445f3284263d7bbddc297147193",
+  "old_prefix_preserved": true,
+  "old_current_unchanged": true,
+  "old_event_count": 87,
+  "migration_event_count": 88,
+  "new_question_on_clone": "ITER-0010",
+  "live_policy_still": "gate1_candidate_first_v1",
+  "temporary_root": "/private/tmp/neurotopo-policy-migration-akk50yv5/live"
+}

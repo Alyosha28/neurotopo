@@ -1,0 +1,44 @@
+{
+  "argv": [
+    "scripts/verify_exp0011_matrices.py"
+  ],
+  "cwd": "/private/tmp/neurotopo-exp0011-freeze-20260924",
+  "determinants": [
+    0.9999999999999997,
+    0.9999999999999999,
+    0.9999999999999998,
+    0.9999999999999991
+  ],
+  "elapsed_seconds_before_report_fsync": 0.22123608298716135,
+  "generator_sha256": "4b2e1203898f2946aef4c71935d19d0bf3725f1e3219f690d33062f950885916",
+  "id": "EXP-0011_MATRIX_VERIFY",
+  "independently_recomputed_sha256": "7282b80d022f546d2993b6cee86ca9570b70bde0aad49510b8eac8354996b1d7",
+  "matrix_json_sha256": "e2f118379f3dde5a9ca32ce05fcf9865eb1167c50abe3812a10437d4ae3e36ec",
+  "matrix_le_float64_sha256": "7282b80d022f546d2993b6cee86ca9570b70bde0aad49510b8eac8354996b1d7",
+  "matrix_shape": [
+    4,
+    8,
+    8
+  ],
+  "numpy_build_config": "Build Dependencies:\n  blas:\n    detection method: system\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: accelerate\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: unknown\n  lapack:\n    detection method: system\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: accelerate\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: unknown\nCompilers:\n  c:\n    commands: cc\n    linker: ld64\n    name: clang\n    version: 15.0.0\n  c++:\n    commands: c++\n    linker: ld64\n    name: clang\n    version: 15.0.0\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.1.3\nMachine Information:\n  build:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\n  host:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\nPython Information:\n  path: /private/var/folders/y6/nj790rtn62lfktb1sh__79hc0000gn/T/build-env-e43io0i0/bin/python\n  version: '3.13'\nSIMD Extensions:\n  baseline:\n  - NEON\n  - NEON_FP16\n  - NEON_VFPV4\n  - ASIMD\n  found:\n  - ASIMDHP\n  not found:\n  - ASIMDFHM\n\n",
+  "numpy_version": "2.3.3",
+  "orthogonality_max_abs_errors": [
+    4.440892098500626e-16,
+    4.440892098500626e-16,
+    3.3306690738754696e-16,
+    5.551115123125783e-16
+  ],
+  "python_executable": "/private/tmp/neurotopo-venv/bin/python",
+  "runtime_thread_env": {
+    "MKL_NUM_THREADS": null,
+    "NUMEXPR_NUM_THREADS": null,
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null,
+    "VECLIB_MAXIMUM_THREADS": null
+  },
+  "source_commit": "c729d52b5938cdc53e804cf55ff8a1ea45eb7c6e",
+  "source_path": "configs/exp0011_matrices.json",
+  "status": "PASS",
+  "verifier_sha256": "006c3776907f084af5c6b45a1deed6ff214f343f826b4534aa09ab2310c790f8",
+  "worktree_status_at_verify": "?? configs/exp0011_matrices.json\n"
+}

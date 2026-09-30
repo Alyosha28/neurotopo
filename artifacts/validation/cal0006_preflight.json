@@ -1,0 +1,55 @@
+{
+  "full_pytest": {
+    "command": "/private/tmp/neurotopo-venv/bin/python -m pytest -q",
+    "elapsed_seconds": 3.54,
+    "failed": 0,
+    "passed": 133
+  },
+  "kind": "CAL-0006_v3_ENGINEERING_PREFLIGHT",
+  "protocol": "research/design/CAL-0006_dynamic_counterfactual_qualification_v3.md",
+  "protocol_sha256": "9c29fdd3ddde4142ac5232b956ebdc2fe60f519d129b69bbd0660d23ccb36bca",
+  "scope": "engineering validation only; no formal CAL-0006 qualification data inspected",
+  "script_sha256": "ca45f0fc39f5ae7ff67d34c90934e73154d6252e01f8405c558a970c77b1b8e4",
+  "source_sha256": {
+    "src/neurotopo/__init__.py": "abc1d2ce7afb59200c2a2b246b590e1b24b0d0ea408ffe4ad5838d43101b648c",
+    "src/neurotopo/analyze.py": "bf0ae63c0bafae03f6d13c9f5ee046f582c59584683b2d6a99613fde735b80f1",
+    "src/neurotopo/belief_task.py": "2a3ccc142db0736a61808e53e8895b6c7ee3ae3205971243f657dd8af21f54ba",
+    "src/neurotopo/dynamic_filter_task.py": "1909a82454a354766810dcb12bbcd20d9e0c76ee399efb761bf3dcabb5a26cbc",
+    "src/neurotopo/final_probe.py": "3cb4dfa8fddf1c1bb9b764890da9eeb3aaacb527982e9ced5031facc06ebc4cc",
+    "src/neurotopo/final_probe_analysis.py": "2c809743f6bde79fb1d913024e351d2958cf91f7529f9b077e45fb9c5f650124",
+    "src/neurotopo/loop.py": "1aab5805f4f8ee8eb22e619ebd545a32b128d6b6951f828168c5461eb0a547c4",
+    "src/neurotopo/loop_worker.py": "fa6d106575490443a9157989b8cff03111541335c1b5af1baf4596bf75fdbbc0",
+    "src/neurotopo/models.py": "829a6088079c6fd9f0ad8ef3271646bf6e8da7ea193b4fa2918b51f2e4dc46f7",
+    "src/neurotopo/probe.py": "cb1e5b64cb627615cec8b0dcbda4d42de73de514c6df510cbd82bc042d2cc648",
+    "src/neurotopo/probe_analysis.py": "f02e21f3bc838259729294085c1daa43fe847a7a7f5dc70359f987fb999a68c5",
+    "src/neurotopo/reflection.py": "feb607c324a8f847b37261c824491940d7ebf93498517965c19f5337787ca272",
+    "src/neurotopo/replay.py": "63ca7c7d8dddb157d437ccdfe02939921d1f38b17d93715a559e900993422151",
+    "src/neurotopo/replay_analysis.py": "b451d6f796e9a2e696fefef54816b10f6d096656fa0adcede99407a115bc7e39",
+    "src/neurotopo/resources.py": "3bf42c84ba26c284c28a5c8af638b6646492dfe6ecc4cb33d0c233cb3b05e4ad",
+    "src/neurotopo/run.py": "fbd9bf20a2f4933b19862c905032299f8682cd5eb7002fb2ce9ef8f8550899ad",
+    "src/neurotopo/source_belief_analysis.py": "ab8e33ca96564d9e16956acf226cf31159af37bb7ac7917c890131befc8e059b",
+    "src/neurotopo/source_belief_study.py": "d19e3e0fcd12559fbdbf371256fcf88e27c358b39bbefaa135e0773ff8685c8c",
+    "src/neurotopo/source_belief_task.py": "a425d14e6fd670b0cc890a299305a9331dbd397287ea918b2e6e6ae4dcce1a73",
+    "src/neurotopo/study.py": "d74853f161c60bdef00cb8cf4b6c78dd7615ddd4db4ab2204a31fae0ae38dbf5",
+    "src/neurotopo/study_analysis.py": "5819d577392de63cbece65937f3adafd1ebe4794d4f8689f4a557ab99113ed55",
+    "src/neurotopo/task.py": "4b5b7f4a09139137286124276f9c57dfffbec86c2f29130c0f62be63b8da7d65",
+    "src/neurotopo/transfer_probe.py": "13611e2a42a6a3a630be24927fd319bf467360476cb158965d383eb53cbfab68",
+    "src/neurotopo/transfer_probe_analysis.py": "144e6d057d58f0a6858bbe0b5778c44a6646a2e6ab66b7b57a6724eabb9175bc"
+  },
+  "test_sha256": {
+    "tests/test_dynamic_filter_calibration.py": "6faebf91d009db561518e65ccc7de976e43d20ccc320b2b94121a409cc539ef2",
+    "tests/test_dynamic_filter_task.py": "71290c6b70a943bd14fb2dffc6cad6065d7f3e7aab1439f7dce320492092d72b"
+  },
+  "tiny_overfit": {
+    "dense_effective_parameters": 13700,
+    "examples": 32,
+    "final_joint_kl_to_oracle": 8.689258300572343e-05,
+    "pre_joint_kl_to_oracle": 3.374593876475339e-05,
+    "random_effective_parameters": 4484,
+    "steps": 600
+  },
+  "versions": {
+    "numpy": "2.3.3",
+    "torch": "2.8.0"
+  }
+}

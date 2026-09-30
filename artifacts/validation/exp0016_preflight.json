@@ -1,0 +1,36 @@
+{
+  "pass_": true,
+  "scope": "ENGINEERING_ONLY",
+  "root": 19016,
+  "updates": 300,
+  "records": [
+    {
+      "arm": "H",
+      "updates": 100,
+      "engineering_lr": 0.05,
+      "initial": 1.6782790422439575,
+      "final": 0.6068495512008667,
+      "passed": true
+    },
+    {
+      "arm": "U",
+      "updates": 100,
+      "engineering_lr": 0.05,
+      "initial": 2.762287139892578,
+      "final": 0.5856239795684814,
+      "passed": true
+    },
+    {
+      "arm": "D",
+      "updates": 100,
+      "engineering_lr": 0.05,
+      "initial": 2.7689733505249023,
+      "final": 0.5814470052719116,
+      "passed": true
+    }
+  ],
+  "seconds": 0.9387650829994527,
+  "model_code_sha256": "0a43a74bf94b0a3abbedb5b11f1bb55e06b592086a46976f6883398e165fbf7d",
+  "config_sha256": "c8d98eafebfd34c29eb55b414e3c2f8bfbcaf07092427303cf1a941299826fa6",
+  "research_roots_called": false
+}

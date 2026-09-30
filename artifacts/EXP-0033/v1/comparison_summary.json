@@ -1,0 +1,62 @@
+{
+  "carrier": {
+    "width": 96,
+    "blocks": 2,
+    "mean": 0.6978190104166666,
+    "inference_ops": 2115
+  },
+  "candidate_contract": "arch0001_successor_compatible_core_v4",
+  "seeds": [
+    29311,
+    29312,
+    29313,
+    29314,
+    29315
+  ],
+  "budget": 2000,
+  "task": "DELAY-2",
+  "accuracy": {
+    "CAND_V4": [
+      0.63955078125,
+      0.81904296875,
+      0.75537109375,
+      0.97763671875,
+      0.7326171875
+    ],
+    "SEL_INV": [
+      0.70302734375,
+      0.6828125,
+      0.67958984375,
+      0.63427734375,
+      0.66162109375
+    ],
+    "EXTRA_V4": [
+      0.49765625,
+      0.5087890625,
+      0.87001953125,
+      0.82294921875,
+      0.82861328125
+    ]
+  },
+  "means": {
+    "CAND_V4": 0.78484375,
+    "SEL_INV": 0.672265625,
+    "EXTRA_V4": 0.70560546875
+  },
+  "effect_pp": 11.257812500000002,
+  "bootstrap_ci95_pp": [
+    0.3513671875000006,
+    23.688085937500006
+  ],
+  "control_in_band": true,
+  "delta_pp": 3.0,
+  "resources": {
+    "candidate_parameters": 664,
+    "candidate_inference_ops": 1161,
+    "control_parameters": null,
+    "control_inference_ops": 2115,
+    "extra_inference_ops": 873
+  },
+  "decision": "SUPPORTED",
+  "substatus": "EXPLORATORY_ARCHITECTURE_ADVANTAGE"
+}

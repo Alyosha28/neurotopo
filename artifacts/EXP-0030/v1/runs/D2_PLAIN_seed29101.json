@@ -1,0 +1,116 @@
+{
+  "kind": "INV_COMP",
+  "tag": "INV_COMP-w32-b1",
+  "seed": 29101,
+  "d": 2,
+  "sup": "PLAIN",
+  "updates": 2000,
+  "training_data_sha256": "e1955d93cd9d312ea1edc48ad7846289f128e2a5ac1f656250ea4b56b2519dcb",
+  "final_hash": "972eca8c2ad44fe9a2e3065b10dc81b980bd4b782e17a78025ac4f96a3a3e118",
+  "losses_last": 0.4442862617969513,
+  "loss_checkpoints": {
+    "500": 0.03188685327768326,
+    "1000": 0.1699061232805252,
+    "1500": 0.3502609372138977,
+    "2000": 0.4442862617969513
+  },
+  "seconds": 6.968405125000572,
+  "parameters": 406,
+  "monitor": [
+    {
+      "step": 500,
+      "metrics": {
+        "accuracy_all": 0.6101262019230769,
+        "final_accuracy": 0.4873046875,
+        "initial_accuracy": 1.0,
+        "tail_accuracy": 0.49009486607142855,
+        "branch_joint_accuracy": 0.5706881009615384,
+        "logits_sha256": "ed5a88b3637b7fdce76d6c4ae9e7daede77a2b1d48f7c7eeae6033b600cd2f15",
+        "branch_sha256": "bddb7d35e4ca44a23ef58ba16eb07e2336e0341257cb3b5c45af27c5123b82e4",
+        "examples": 1024,
+        "steps": 12
+      },
+      "loss": 0.03188685327768326
+    },
+    {
+      "step": 1000,
+      "metrics": {
+        "accuracy_all": 0.6984675480769231,
+        "final_accuracy": 0.513671875,
+        "initial_accuracy": 1.0,
+        "tail_accuracy": 0.5274832589285714,
+        "branch_joint_accuracy": 0.6609825721153846,
+        "logits_sha256": "6fb066eecff8109fba0ed3a361d9b40b96bab68c98529f456d0e438ff4a38d7b",
+        "branch_sha256": "09f87c0869ff8208a607f45a80d78b60af5218ae1aa69e5d3e7efa49d88742f4",
+        "examples": 1024,
+        "steps": 12
+      },
+      "loss": 0.1699061232805252
+    },
+    {
+      "step": 1500,
+      "metrics": {
+        "accuracy_all": 0.6967397836538461,
+        "final_accuracy": 0.51171875,
+        "initial_accuracy": 1.0,
+        "tail_accuracy": 0.5241350446428571,
+        "branch_joint_accuracy": 0.6592548076923077,
+        "logits_sha256": "35c6ccf23a886a14a066ac88cd0c8752a9477c6eb6b9cd381de27b445e723648",
+        "branch_sha256": "705e1e8f31ffdaa68d3d40019750037a99a19ce590187147b942d3f75293a45c",
+        "examples": 1024,
+        "steps": 12
+      },
+      "loss": 0.3502609372138977
+    },
+    {
+      "step": 2000,
+      "metrics": {
+        "accuracy_all": 0.6967397836538461,
+        "final_accuracy": 0.51171875,
+        "initial_accuracy": 1.0,
+        "tail_accuracy": 0.5241350446428571,
+        "branch_joint_accuracy": 0.6592548076923077,
+        "logits_sha256": "dd61f2b2eb0a3d42a2cc84c5d39c143e196b811238cbdae981b869247fd4e4b2",
+        "branch_sha256": "334df7a3fcb59ab2d928f114719152bdb1b00f4a61fc74b0355acb1f41257ce0",
+        "examples": 1024,
+        "steps": 12
+      },
+      "loss": 0.4442862617969513
+    }
+  ],
+  "executed_flops": "NOT_MEASURED",
+  "peak_memory": "NOT_MEASURED",
+  "primary": {
+    "accuracy_all": 0.6967397836538461,
+    "final_accuracy": 0.51171875,
+    "initial_accuracy": 1.0,
+    "tail_accuracy": 0.5241350446428571,
+    "branch_joint_accuracy": 0.6592548076923077,
+    "logits_sha256": "dd61f2b2eb0a3d42a2cc84c5d39c143e196b811238cbdae981b869247fd4e4b2",
+    "branch_sha256": "334df7a3fcb59ab2d928f114719152bdb1b00f4a61fc74b0355acb1f41257ce0",
+    "examples": 1024,
+    "steps": 12
+  },
+  "secondary_64": {
+    "accuracy_all": 0.5381760817307693,
+    "final_accuracy": 0.513671875,
+    "initial_accuracy": 1.0,
+    "tail_accuracy": 0.4999704071969697,
+    "branch_joint_accuracy": 0.5306941105769231,
+    "logits_sha256": "cc760a3c819afc59f4d2b98aa8e321b1f62621c67364e2562895b1d2efefcb4d",
+    "branch_sha256": "71d29d47a700bfa9d24d8316d74239b2d665e9562ae5ffe69330e60750448c4d",
+    "examples": 1024,
+    "steps": 64
+  },
+  "secondary_256": {
+    "accuracy_all": 0.5091576483463035,
+    "final_accuracy": 0.4814453125,
+    "initial_accuracy": 1.0,
+    "tail_accuracy": 0.4981679990310077,
+    "branch_joint_accuracy": 0.5071399258268483,
+    "logits_sha256": "0b33afdea6d58d64cfb27bfe71c541b7e99061e94b45fe2251a6bf31d6c9add6",
+    "branch_sha256": "e4f4235efc1fd125c9d9456912e2f88d5e4ddbbbd59879b295f79f3898a9dc1c",
+    "examples": 1024,
+    "steps": 256
+  }
+}

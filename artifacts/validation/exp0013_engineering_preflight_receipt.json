@@ -1,0 +1,15 @@
+{
+  "config_sha256": "0b3f5c4a660e3b791be87bbd3c93402300cb73972fc2ea5d9aa2f9cfbf6f58b7",
+  "experiment_id": "EXP-0013",
+  "kind": "ENGINEERING_PREFLIGHT_RECEIPT",
+  "report_file": "artifacts/validation/exp0013_engineering_preflight.json",
+  "report_sha256": "7bcc10b6712db3f2a9ace1ed0a1284d4eb5278b3b4c0e24855b741eccb930f21",
+  "report_write_seconds": 0.0005589169886661693,
+  "seconds_after_report_fsync": 1.009784708992811,
+  "source_commit": "c42ed52a4f3f8b135fd0872119e598ad8eb6ffe0",
+  "status": "PASS",
+  "write_procedure": {
+    "receipt": "exclusive_write_flush_fsync",
+    "report": "exclusive_write_flush_fsync"
+  }
+}

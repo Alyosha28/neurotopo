@@ -1,0 +1,7 @@
+{
+  "budget_status": "PASS",
+  "id": "EXP-0011_PREFLIGHT_RECEIPT",
+  "preflight_report_sha256": "4afee53532ddc1e4b9f75c9446652cc3516b3430284ecdd29a391089c59551c7",
+  "publication_metadata_fsync_excluded": true,
+  "seconds_after_report_fsync": 6.804767749999883
+}

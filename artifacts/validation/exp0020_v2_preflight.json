@@ -1,0 +1,32 @@
+{
+  "pass": true,
+  "scope": "ENGINEERING_T1_ONLY",
+  "research_roots_called": false,
+  "engineering_updates": 150,
+  "records": [
+    {
+      "arm": "RAW",
+      "initial": 0.7198849320411682,
+      "final": 0.43133193254470825,
+      "updates": 50,
+      "pass_": true
+    },
+    {
+      "arm": "INV",
+      "initial": 0.7085105776786804,
+      "final": 0.4111654758453369,
+      "updates": 50,
+      "pass_": true
+    },
+    {
+      "arm": "REL",
+      "initial": 0.715618908405304,
+      "final": 0.43434885144233704,
+      "updates": 50,
+      "pass_": true
+    }
+  ],
+  "seconds": 2.1187095000000227,
+  "model_source_sha256": "384c557bb5a7202cd16dcf5401df43e5b30289cf7088bbebd64189c31559f4b6",
+  "config_sha256": "cb41c3f7e6850ac5d86b9cfdd186c21717087fb753aae167019896a3ee6ef15f"
+}

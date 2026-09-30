@@ -1,0 +1,23 @@
+{
+  "by_config": {},
+  "selected": {
+    "width": 48,
+    "blocks": 2,
+    "inference_ops": 1059,
+    "parameters": 1180,
+    "ops_ratio_vs_candidate": 0.9121447028423773,
+    "source": "EXP0033 carrier confirmation seeds 29301-29303; mean 0.6683, min 0.5898"
+  },
+  "band": {
+    "learn_mean_min": 0.65,
+    "learn_seed_min": 0.58,
+    "memoryless_margin_mean": 0.05,
+    "memoryless_margin_seed": 0.02,
+    "nonceiling_mean_max": 0.95,
+    "nonceiling_seed_max": 0.97,
+    "oracle_min": 0.99,
+    "memoryless_max": 0.55
+  },
+  "seeds": [],
+  "source": "frozen carrier override from the replication protocol"
+}

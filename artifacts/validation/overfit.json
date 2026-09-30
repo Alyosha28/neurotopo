@@ -1,0 +1,131 @@
+{
+  "purpose": "ENGINEERING_ONLY; fixed 8-pair overfit, independent seeds; not model selection or scientific evidence",
+  "rows": [
+    {
+      "model": "gru_small",
+      "steps": 100,
+      "initial_loss": 1.3735986948013306,
+      "final_loss": 0.0029384426306933165,
+      "metrics": {
+        "pairs": 8,
+        "joint_pair_accuracy": 1.0,
+        "pre_accuracy": 1.0,
+        "final_accuracy": 1.0,
+        "confirm_accuracy": 1.0,
+        "revise_accuracy": 1.0,
+        "revise_given_pre_correct": 1.0,
+        "revise_given_pre_correct_count": 8,
+        "prior_consistent_error_on_revise": 0.0,
+        "paired_final_accuracy": 1.0,
+        "evidence_sensitivity": 1.0,
+        "pre_nll": 0.0017576405080035329,
+        "confirm_nll": 0.00396371865645051,
+        "revise_nll": 0.004274771083146334,
+        "prediction_sha256": "4133d41937a6bfba1ed9687422685e9ec20ff78bfa4ba3f34a390e00ad7170f9"
+      },
+      "seconds": 0.11279712499890593,
+      "pass": true
+    },
+    {
+      "model": "gru_wide",
+      "steps": 50,
+      "initial_loss": 1.3916783332824707,
+      "final_loss": 0.002833949401974678,
+      "metrics": {
+        "pairs": 8,
+        "joint_pair_accuracy": 1.0,
+        "pre_accuracy": 1.0,
+        "final_accuracy": 1.0,
+        "confirm_accuracy": 1.0,
+        "revise_accuracy": 1.0,
+        "revise_given_pre_correct": 1.0,
+        "revise_given_pre_correct_count": 8,
+        "prior_consistent_error_on_revise": 0.0,
+        "paired_final_accuracy": 1.0,
+        "evidence_sensitivity": 1.0,
+        "pre_nll": 0.0012554264394566417,
+        "confirm_nll": 0.006067133042961359,
+        "revise_nll": 0.002757810289040208,
+        "prediction_sha256": "d7fc339bf6bff26dbd8a7e7dcbe89e584fe931ce8ade3c34ed12f8a499c33560"
+      },
+      "seconds": 0.054706791999706184,
+      "pass": true
+    },
+    {
+      "model": "sparse_rnn",
+      "steps": 50,
+      "initial_loss": 1.365463376045227,
+      "final_loss": 0.0019131717272102833,
+      "metrics": {
+        "pairs": 8,
+        "joint_pair_accuracy": 1.0,
+        "pre_accuracy": 1.0,
+        "final_accuracy": 1.0,
+        "confirm_accuracy": 1.0,
+        "revise_accuracy": 1.0,
+        "revise_given_pre_correct": 1.0,
+        "revise_given_pre_correct_count": 8,
+        "prior_consistent_error_on_revise": 0.0,
+        "paired_final_accuracy": 1.0,
+        "evidence_sensitivity": 1.0,
+        "pre_nll": 0.0006432888912968338,
+        "confirm_nll": 0.0034201827365905046,
+        "revise_nll": 0.0029459267389029264,
+        "prediction_sha256": "4892044b84b5708ef286abbf729f20b0da45f8b0ff50da06c27f3c5fc0aa0dad"
+      },
+      "seconds": 0.0282361250010581,
+      "pass": true
+    },
+    {
+      "model": "multi_gru",
+      "steps": 50,
+      "initial_loss": 1.389732837677002,
+      "final_loss": 0.009148798882961273,
+      "metrics": {
+        "pairs": 8,
+        "joint_pair_accuracy": 1.0,
+        "pre_accuracy": 1.0,
+        "final_accuracy": 1.0,
+        "confirm_accuracy": 1.0,
+        "revise_accuracy": 1.0,
+        "revise_given_pre_correct": 1.0,
+        "revise_given_pre_correct_count": 8,
+        "prior_consistent_error_on_revise": 0.0,
+        "paired_final_accuracy": 1.0,
+        "evidence_sensitivity": 1.0,
+        "pre_nll": 0.002772621111944318,
+        "confirm_nll": 0.017161814495921135,
+        "revise_nll": 0.013888135552406311,
+        "prediction_sha256": "cd68c6fb2aa6df020f4b62255d187f635d30b4d485837ab621baabe0f02bbf9b"
+      },
+      "seconds": 0.05325637500027369,
+      "pass": true
+    },
+    {
+      "model": "random_gru",
+      "steps": 50,
+      "initial_loss": 1.3908436298370361,
+      "final_loss": 0.0036901209969073534,
+      "metrics": {
+        "pairs": 8,
+        "joint_pair_accuracy": 1.0,
+        "pre_accuracy": 1.0,
+        "final_accuracy": 1.0,
+        "confirm_accuracy": 1.0,
+        "revise_accuracy": 1.0,
+        "revise_given_pre_correct": 1.0,
+        "revise_given_pre_correct_count": 8,
+        "prior_consistent_error_on_revise": 0.0,
+        "paired_final_accuracy": 1.0,
+        "evidence_sensitivity": 1.0,
+        "pre_nll": 0.0007734341779723763,
+        "confirm_nll": 0.00711037078872323,
+        "revise_nll": 0.0061032441444695,
+        "prediction_sha256": "d020a100d4dbe93eb99c0916b9afa40e73376ccbceec85133d30160d4d119acb"
+      },
+      "seconds": 0.05579883400059771,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

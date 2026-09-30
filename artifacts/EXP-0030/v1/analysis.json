@@ -1,0 +1,2007 @@
+{
+  "experiment_id": "EXP-0030",
+  "version": "v1",
+  "gate": "A2_TASK_QUALIFICATION",
+  "decision": "SUPPORTED",
+  "substatus": "A2_TASK_QUALIFIED",
+  "scan": {
+    "by_d": {
+      "1": {
+        "d": 1,
+        "best_sup": "PLAIN",
+        "variants": {
+          "PLAIN": {
+            "seeds": [
+              29101,
+              29102
+            ],
+            "accuracy": [
+              1.0,
+              1.0
+            ],
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0,
+            "rows": [
+              {
+                "kind": "INV_COMP",
+                "tag": "INV_COMP-w32-b1",
+                "seed": 29101,
+                "d": 1,
+                "sup": "PLAIN",
+                "updates": 2000,
+                "training_data_sha256": "5eb3c2f0b17c1cd33e93b5f6424bc411ff4332f4d4e4c63cc5254db9906575eb",
+                "final_hash": "09d3a6756d5b2dd22f62d5783d7292c90ed057f5c8a7a040473a829b84c854b6",
+                "losses_last": 0.037521435469388964,
+                "loss_checkpoints": {
+                  "500": 0.1540229696035385,
+                  "1000": 0.22804033994674683,
+                  "1500": 0.06881497085094451,
+                  "2000": 0.037521435469388964
+                },
+                "seconds": 6.841930707996653,
+                "parameters": 406,
+                "monitor": [
+                  {
+                    "step": 500,
+                    "metrics": {
+                      "accuracy_all": 0.5709134615384616,
+                      "final_accuracy": 0.490234375,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.48911830357142855,
+                      "branch_joint_accuracy": 0.5317007211538461,
+                      "logits_sha256": "d3c01f776c92d4d4746f9f3e2a29e940b2ee085c1842ace2b2d21846577595a2",
+                      "branch_sha256": "60c81b041cb8a068fab2ace36124e42f13400de98efc01243bba5fe5cd1328c8",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.1540229696035385
+                  },
+                  {
+                    "step": 1000,
+                    "metrics": {
+                      "accuracy_all": 0.8684645432692307,
+                      "final_accuracy": 0.83203125,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.8159877232142857,
+                      "branch_joint_accuracy": 0.7308443509615384,
+                      "logits_sha256": "df6f0e9b0436854090351a0ab831b07f5b3a308d13b6d0570e620a215e0af4a1",
+                      "branch_sha256": "2b72ab6e08d16c2f06befe3aac302be70aca682bc7f06e983cd85dc1e8da06e5",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.22804033994674683
+                  },
+                  {
+                    "step": 1500,
+                    "metrics": {
+                      "accuracy_all": 1.0,
+                      "final_accuracy": 1.0,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 1.0,
+                      "branch_joint_accuracy": 0.9592097355769231,
+                      "logits_sha256": "049974dc654da49b15b98b5037e8c9b7bed195a1da9497ee562c36a0c5c4fb66",
+                      "branch_sha256": "fba9d03cf2655db21dfc7910652c0f4ec1d8f53538973a73a6b25831a0d6c2eb",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.06881497085094451
+                  },
+                  {
+                    "step": 2000,
+                    "metrics": {
+                      "accuracy_all": 1.0,
+                      "final_accuracy": 1.0,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 1.0,
+                      "branch_joint_accuracy": 0.9592097355769231,
+                      "logits_sha256": "9060f83ef055f7e533b607a2b0b4f6e6c1b4672b1650d7a724186fc8e93d4a71",
+                      "branch_sha256": "7f41eb90b4d64b332533d363a582b9970b829a8fabc8430bc0bb1bffe29b22ab",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.037521435469388964
+                  }
+                ],
+                "executed_flops": "NOT_MEASURED",
+                "peak_memory": "NOT_MEASURED",
+                "primary": {
+                  "accuracy_all": 1.0,
+                  "final_accuracy": 1.0,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 1.0,
+                  "branch_joint_accuracy": 0.9592097355769231,
+                  "logits_sha256": "9060f83ef055f7e533b607a2b0b4f6e6c1b4672b1650d7a724186fc8e93d4a71",
+                  "branch_sha256": "7f41eb90b4d64b332533d363a582b9970b829a8fabc8430bc0bb1bffe29b22ab",
+                  "examples": 1024,
+                  "steps": 12
+                },
+                "secondary_64": {
+                  "accuracy_all": 1.0,
+                  "final_accuracy": 1.0,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 1.0,
+                  "branch_joint_accuracy": 0.9923828125,
+                  "logits_sha256": "de188ed1e9ab235b4f493434e9589f431ba994c5e045877779e03190ff1b3004",
+                  "branch_sha256": "b84d84ee11986c17184cd7e7e6991292d27a0de7459540c55f396cf6883b0700",
+                  "examples": 1024,
+                  "steps": 64
+                },
+                "secondary_256": {
+                  "accuracy_all": 1.0,
+                  "final_accuracy": 1.0,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 1.0,
+                  "branch_joint_accuracy": 0.9980544747081712,
+                  "logits_sha256": "dd78cde6d908c6eb6e04a9084efd20d0315c49aece39aee4740678ad8acc51fe",
+                  "branch_sha256": "74f46a71d1b9efe1d51f11a1af51db5faa9c76f812f6910dac32ad09ec1d3b06",
+                  "examples": 1024,
+                  "steps": 256
+                }
+              },
+              {
+                "kind": "INV_COMP",
+                "tag": "INV_COMP-w32-b1",
+                "seed": 29102,
+                "d": 1,
+                "sup": "PLAIN",
+                "updates": 2000,
+                "training_data_sha256": "fc0a4e27240aefb2dc84b8c83c5384fa486ef47396869f94797572c158507a95",
+                "final_hash": "d1a428769bfcf90b0cce9bbd65fe92e38c18972ae4e5b3ecb6ef3b5d6339e189",
+                "losses_last": 0.04902470797300339,
+                "loss_checkpoints": {
+                  "500": 0.1696123445034027,
+                  "1000": 0.16179959535598754,
+                  "1500": 0.113416408598423,
+                  "2000": 0.04902470797300339
+                },
+                "seconds": 7.020677625005192,
+                "parameters": 406,
+                "monitor": [
+                  {
+                    "step": 500,
+                    "metrics": {
+                      "accuracy_all": 0.5803034855769231,
+                      "final_accuracy": 0.4794921875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5033482142857143,
+                      "branch_joint_accuracy": 0.5402644230769231,
+                      "logits_sha256": "7efb22a856f777e99a863d75f64877987a78086a125c5d952a09ceb12f0bb83d",
+                      "branch_sha256": "15d396b06e01ec96fe2beb67947e74ff3a11b7e7a5aab410358cb7876188a7a8",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.1696123445034027
+                  },
+                  {
+                    "step": 1000,
+                    "metrics": {
+                      "accuracy_all": 0.9272085336538461,
+                      "final_accuracy": 0.87890625,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.8747209821428571,
+                      "branch_joint_accuracy": 0.8765775240384616,
+                      "logits_sha256": "0dd8db4efdab3bb74d5f685ac254164ca25051b83bf9a01f868548a15a9d5e59",
+                      "branch_sha256": "ba610067e8cd1c336c234495f4f7b2a43c3ffb4502a50665c980214a454bc2aa",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.16179959535598754
+                  },
+                  {
+                    "step": 1500,
+                    "metrics": {
+                      "accuracy_all": 0.9974459134615384,
+                      "final_accuracy": 0.990234375,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.9952566964285714,
+                      "branch_joint_accuracy": 0.9616887019230769,
+                      "logits_sha256": "6595e94c567094d1e60c34f5972c2e58e2eeeea0571258d66c483a592de56d2c",
+                      "branch_sha256": "fdec6a0c1d10ab37f127e29a96f961068b7b6f2de999d5c9981b928fd4376aa5",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.113416408598423
+                  },
+                  {
+                    "step": 2000,
+                    "metrics": {
+                      "accuracy_all": 1.0,
+                      "final_accuracy": 1.0,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 1.0,
+                      "branch_joint_accuracy": 0.9622896634615384,
+                      "logits_sha256": "e1a304707f083a6e2ae871e670147617f18e7d6fb8b506a42bc9622f4cadb3f4",
+                      "branch_sha256": "ed8d9f310074be13f63516235cb54f63fa693ce31f8773b53a01df8777f0adc4",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.04902470797300339
+                  }
+                ],
+                "executed_flops": "NOT_MEASURED",
+                "peak_memory": "NOT_MEASURED",
+                "primary": {
+                  "accuracy_all": 1.0,
+                  "final_accuracy": 1.0,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 1.0,
+                  "branch_joint_accuracy": 0.9622896634615384,
+                  "logits_sha256": "e1a304707f083a6e2ae871e670147617f18e7d6fb8b506a42bc9622f4cadb3f4",
+                  "branch_sha256": "ed8d9f310074be13f63516235cb54f63fa693ce31f8773b53a01df8777f0adc4",
+                  "examples": 1024,
+                  "steps": 12
+                },
+                "secondary_64": {
+                  "accuracy_all": 1.0,
+                  "final_accuracy": 1.0,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 1.0,
+                  "branch_joint_accuracy": 0.992352764423077,
+                  "logits_sha256": "cafc6fdafdfde99538700e5b083d97ba082ad467b38184932df405b86a01b0d7",
+                  "branch_sha256": "363f763c146d38dd7e837639aee38cc9e9e78a1ffe6ca0665421cb5643ac81c8",
+                  "examples": 1024,
+                  "steps": 64
+                },
+                "secondary_256": {
+                  "accuracy_all": 1.0,
+                  "final_accuracy": 1.0,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 1.0,
+                  "branch_joint_accuracy": 0.9980544747081712,
+                  "logits_sha256": "bddcfb16666a34d17508218d1c95e5d88a63cfe529de8921606f66a206bb81f3",
+                  "branch_sha256": "a94109f568f32d3ba21fb20fc31623095b69a5ff2f5af118929de22d46ec24b7",
+                  "examples": 1024,
+                  "steps": 256
+                }
+              }
+            ]
+          },
+          "BRANCH": {
+            "seeds": [
+              29101,
+              29102
+            ],
+            "accuracy": [
+              1.0,
+              1.0
+            ],
+            "mean": 1.0,
+            "min": 1.0,
+            "max": 1.0,
+            "rows": [
+              {
+                "kind": "INV_COMP",
+                "tag": "INV_COMP-w32-b1",
+                "seed": 29101,
+                "d": 1,
+                "sup": "BRANCH",
+                "updates": 2000,
+                "training_data_sha256": "5eb3c2f0b17c1cd33e93b5f6424bc411ff4332f4d4e4c63cc5254db9906575eb",
+                "final_hash": "ce1076cd8c56e390fedbb890e1eecc49c9b698634cf40beb1b0df9cb76ca5039",
+                "losses_last": 0.05236138299107552,
+                "loss_checkpoints": {
+                  "500": 0.18863493859767913,
+                  "1000": 0.14271313369274138,
+                  "1500": 0.08391852110624314,
+                  "2000": 0.05236138299107552
+                },
+                "seconds": 10.314258749996952,
+                "parameters": 406,
+                "monitor": [
+                  {
+                    "step": 500,
+                    "metrics": {
+                      "accuracy_all": 0.6508413461538461,
+                      "final_accuracy": 0.525390625,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5041852678571429,
+                      "branch_joint_accuracy": 0.6085486778846154,
+                      "logits_sha256": "59c01d09ba4c58a25f65328a7184012e935665f6093601c470691f7798d55743",
+                      "branch_sha256": "8c552e4fed8c9ffe94aa314fd9cf9dfbcbcc5fdb00ac05a23ab056dc7b8aca7a",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.18863493859767913
+                  },
+                  {
+                    "step": 1000,
+                    "metrics": {
+                      "accuracy_all": 1.0,
+                      "final_accuracy": 1.0,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 1.0,
+                      "branch_joint_accuracy": 0.9592097355769231,
+                      "logits_sha256": "d329c1263fe6b22a68d410f34ecd8b6b64c6bea8f83a6ac7c3bb5afc10715b21",
+                      "branch_sha256": "521d4abb645e80f5e16ea5bba13375cedbdd8f09e369151ef9dc17c269081dd8",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.14271313369274138
+                  },
+                  {
+                    "step": 1500,
+                    "metrics": {
+                      "accuracy_all": 1.0,
+                      "final_accuracy": 1.0,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 1.0,
+                      "branch_joint_accuracy": 0.9592097355769231,
+                      "logits_sha256": "a276becb04f0dfdce82499bf6cb8b971617eb608181a46e002ff8a46e6c6c929",
+                      "branch_sha256": "1ac3ea6bc962b7cd41afec486f2ff4a8ce1719fa52474c99d356359690ab85fb",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.08391852110624314
+                  },
+                  {
+                    "step": 2000,
+                    "metrics": {
+                      "accuracy_all": 1.0,
+                      "final_accuracy": 1.0,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 1.0,
+                      "branch_joint_accuracy": 0.9592097355769231,
+                      "logits_sha256": "590680b91fa5c55dc85e01b6d31a9a6ba178f7698600d6700868a6ba966fd160",
+                      "branch_sha256": "e104a2f13c84a144e807180c6554d9c62b4c901b07264332356092b34f8e9aed",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.05236138299107552
+                  }
+                ],
+                "executed_flops": "NOT_MEASURED",
+                "peak_memory": "NOT_MEASURED",
+                "primary": {
+                  "accuracy_all": 1.0,
+                  "final_accuracy": 1.0,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 1.0,
+                  "branch_joint_accuracy": 0.9592097355769231,
+                  "logits_sha256": "590680b91fa5c55dc85e01b6d31a9a6ba178f7698600d6700868a6ba966fd160",
+                  "branch_sha256": "e104a2f13c84a144e807180c6554d9c62b4c901b07264332356092b34f8e9aed",
+                  "examples": 1024,
+                  "steps": 12
+                },
+                "secondary_64": {
+                  "accuracy_all": 1.0,
+                  "final_accuracy": 1.0,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 1.0,
+                  "branch_joint_accuracy": 0.9923828125,
+                  "logits_sha256": "94836373a1e01d6c608a70580b29bde5521f40c461bd32a972b5923a47218e6f",
+                  "branch_sha256": "c4e29b1c275d354eb6a1cdf9f0e43c33aae0c91d502893eae49c157be99511c2",
+                  "examples": 1024,
+                  "steps": 64
+                },
+                "secondary_256": {
+                  "accuracy_all": 1.0,
+                  "final_accuracy": 1.0,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 1.0,
+                  "branch_joint_accuracy": 0.9980544747081712,
+                  "logits_sha256": "9acc757d4b848c9dedb01775aa8a74cb2bc13423933a0fd14527d9aa0e0ef952",
+                  "branch_sha256": "d11b31dc851fb2957acf4a68f711ef69e5f7377ae7f598624bf4545a5e800a4c",
+                  "examples": 1024,
+                  "steps": 256
+                }
+              },
+              {
+                "kind": "INV_COMP",
+                "tag": "INV_COMP-w32-b1",
+                "seed": 29102,
+                "d": 1,
+                "sup": "BRANCH",
+                "updates": 2000,
+                "training_data_sha256": "fc0a4e27240aefb2dc84b8c83c5384fa486ef47396869f94797572c158507a95",
+                "final_hash": "3d46803e76866e54bf493d3bfed436a74efa5b285c826ae08c8d424ec83da0ca",
+                "losses_last": 0.07820221960544586,
+                "loss_checkpoints": {
+                  "500": 0.2162826931476593,
+                  "1000": 0.25615923285484316,
+                  "1500": 0.17464583098888398,
+                  "2000": 0.07820221960544586
+                },
+                "seconds": 10.052061583002796,
+                "parameters": 406,
+                "monitor": [
+                  {
+                    "step": 500,
+                    "metrics": {
+                      "accuracy_all": 0.5803034855769231,
+                      "final_accuracy": 0.4794921875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5033482142857143,
+                      "branch_joint_accuracy": 0.5402644230769231,
+                      "logits_sha256": "a3a88e9e82508ffb1025cfe8ea4399c9da02c26fb69962dc5eca939612ded357",
+                      "branch_sha256": "0e31383ebb3c8f03a19f084c22362be552e4fab6ba36eef7f5de9fc751ea1414",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.2162826931476593
+                  },
+                  {
+                    "step": 1000,
+                    "metrics": {
+                      "accuracy_all": 0.8568209134615384,
+                      "final_accuracy": 0.720703125,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.7647879464285714,
+                      "branch_joint_accuracy": 0.8078425480769231,
+                      "logits_sha256": "00ae1c05c3b3028aa44ea454222135df58ccaa6ca809da95b6c8be19199eea96",
+                      "branch_sha256": "3248895de625283b09d9aa109b04deb3e1a979bf72affdbae32f021c150f92d0",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.25615923285484316
+                  },
+                  {
+                    "step": 1500,
+                    "metrics": {
+                      "accuracy_all": 0.9958683894230769,
+                      "final_accuracy": 0.9921875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.9923270089285714,
+                      "branch_joint_accuracy": 0.9591346153846154,
+                      "logits_sha256": "64dd8863258c223a7767a9bb34af7827f2e555795c91fca3cf70c5e7c18ebd75",
+                      "branch_sha256": "8b11f0b672c13f04b621cfa32291884eb38816b0ef2fd26229e65700d709b530",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.17464583098888398
+                  },
+                  {
+                    "step": 2000,
+                    "metrics": {
+                      "accuracy_all": 1.0,
+                      "final_accuracy": 1.0,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 1.0,
+                      "branch_joint_accuracy": 0.9622896634615384,
+                      "logits_sha256": "be444fbac37049ac278cfe5dc655572d7fc0d8c3f185a58c458cd5b8d75a2dca",
+                      "branch_sha256": "426d4306a6652b3c792304563079ce31af11cfa1d4331c60b27cb367726a5d9e",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.07820221960544586
+                  }
+                ],
+                "executed_flops": "NOT_MEASURED",
+                "peak_memory": "NOT_MEASURED",
+                "primary": {
+                  "accuracy_all": 1.0,
+                  "final_accuracy": 1.0,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 1.0,
+                  "branch_joint_accuracy": 0.9622896634615384,
+                  "logits_sha256": "be444fbac37049ac278cfe5dc655572d7fc0d8c3f185a58c458cd5b8d75a2dca",
+                  "branch_sha256": "426d4306a6652b3c792304563079ce31af11cfa1d4331c60b27cb367726a5d9e",
+                  "examples": 1024,
+                  "steps": 12
+                },
+                "secondary_64": {
+                  "accuracy_all": 1.0,
+                  "final_accuracy": 1.0,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 1.0,
+                  "branch_joint_accuracy": 0.992352764423077,
+                  "logits_sha256": "8c855d921fabf8da4a18bac60fe1ec4bdb023699b6124f41837e14b6bd0c6e85",
+                  "branch_sha256": "4e37035e3d9b199a105741ff0e2fbebfb260c8dc2f250807d43335ccda43aba0",
+                  "examples": 1024,
+                  "steps": 64
+                },
+                "secondary_256": {
+                  "accuracy_all": 1.0,
+                  "final_accuracy": 1.0,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 1.0,
+                  "branch_joint_accuracy": 0.9980544747081712,
+                  "logits_sha256": "81ccbb94c7201648b8f2d25522f46cd1fa82a5461b9c00968d93081244bc9192",
+                  "branch_sha256": "9fe4a62e37a51c131535fc7b7cd2da6ea4de278c42662ff523ffb037596de4d8",
+                  "examples": 1024,
+                  "steps": 256
+                }
+              }
+            ]
+          }
+        },
+        "learn": true,
+        "nonceiling": false,
+        "memoryless_max": 0.5373347355769231,
+        "oracle_min": 1.0,
+        "memoryless": [
+          {
+            "accuracy_all": 0.5361328125,
+            "tail_accuracy": 0.49009486607142855
+          },
+          {
+            "accuracy_all": 0.5373347355769231,
+            "tail_accuracy": 0.49581473214285715
+          }
+        ],
+        "oracle": [
+          {
+            "accuracy_all": 1.0,
+            "tail_accuracy": 1.0
+          },
+          {
+            "accuracy_all": 1.0,
+            "tail_accuracy": 1.0
+          }
+        ],
+        "qualified": false
+      },
+      "2": {
+        "d": 2,
+        "best_sup": "PLAIN",
+        "variants": {
+          "PLAIN": {
+            "seeds": [
+              29101,
+              29102
+            ],
+            "accuracy": [
+              0.6967397836538461,
+              0.6864483173076923
+            ],
+            "mean": 0.6915940504807692,
+            "min": 0.6864483173076923,
+            "max": 0.6967397836538461,
+            "rows": [
+              {
+                "kind": "INV_COMP",
+                "tag": "INV_COMP-w32-b1",
+                "seed": 29101,
+                "d": 2,
+                "sup": "PLAIN",
+                "updates": 2000,
+                "training_data_sha256": "e1955d93cd9d312ea1edc48ad7846289f128e2a5ac1f656250ea4b56b2519dcb",
+                "final_hash": "972eca8c2ad44fe9a2e3065b10dc81b980bd4b782e17a78025ac4f96a3a3e118",
+                "losses_last": 0.4442862617969513,
+                "loss_checkpoints": {
+                  "500": 0.03188685327768326,
+                  "1000": 0.1699061232805252,
+                  "1500": 0.3502609372138977,
+                  "2000": 0.4442862617969513
+                },
+                "seconds": 6.968405125000572,
+                "parameters": 406,
+                "monitor": [
+                  {
+                    "step": 500,
+                    "metrics": {
+                      "accuracy_all": 0.6101262019230769,
+                      "final_accuracy": 0.4873046875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.49009486607142855,
+                      "branch_joint_accuracy": 0.5706881009615384,
+                      "logits_sha256": "ed5a88b3637b7fdce76d6c4ae9e7daede77a2b1d48f7c7eeae6033b600cd2f15",
+                      "branch_sha256": "bddb7d35e4ca44a23ef58ba16eb07e2336e0341257cb3b5c45af27c5123b82e4",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.03188685327768326
+                  },
+                  {
+                    "step": 1000,
+                    "metrics": {
+                      "accuracy_all": 0.6984675480769231,
+                      "final_accuracy": 0.513671875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5274832589285714,
+                      "branch_joint_accuracy": 0.6609825721153846,
+                      "logits_sha256": "6fb066eecff8109fba0ed3a361d9b40b96bab68c98529f456d0e438ff4a38d7b",
+                      "branch_sha256": "09f87c0869ff8208a607f45a80d78b60af5218ae1aa69e5d3e7efa49d88742f4",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.1699061232805252
+                  },
+                  {
+                    "step": 1500,
+                    "metrics": {
+                      "accuracy_all": 0.6967397836538461,
+                      "final_accuracy": 0.51171875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5241350446428571,
+                      "branch_joint_accuracy": 0.6592548076923077,
+                      "logits_sha256": "35c6ccf23a886a14a066ac88cd0c8752a9477c6eb6b9cd381de27b445e723648",
+                      "branch_sha256": "705e1e8f31ffdaa68d3d40019750037a99a19ce590187147b942d3f75293a45c",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.3502609372138977
+                  },
+                  {
+                    "step": 2000,
+                    "metrics": {
+                      "accuracy_all": 0.6967397836538461,
+                      "final_accuracy": 0.51171875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5241350446428571,
+                      "branch_joint_accuracy": 0.6592548076923077,
+                      "logits_sha256": "dd61f2b2eb0a3d42a2cc84c5d39c143e196b811238cbdae981b869247fd4e4b2",
+                      "branch_sha256": "334df7a3fcb59ab2d928f114719152bdb1b00f4a61fc74b0355acb1f41257ce0",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.4442862617969513
+                  }
+                ],
+                "executed_flops": "NOT_MEASURED",
+                "peak_memory": "NOT_MEASURED",
+                "primary": {
+                  "accuracy_all": 0.6967397836538461,
+                  "final_accuracy": 0.51171875,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.5241350446428571,
+                  "branch_joint_accuracy": 0.6592548076923077,
+                  "logits_sha256": "dd61f2b2eb0a3d42a2cc84c5d39c143e196b811238cbdae981b869247fd4e4b2",
+                  "branch_sha256": "334df7a3fcb59ab2d928f114719152bdb1b00f4a61fc74b0355acb1f41257ce0",
+                  "examples": 1024,
+                  "steps": 12
+                },
+                "secondary_64": {
+                  "accuracy_all": 0.5381760817307693,
+                  "final_accuracy": 0.513671875,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.4999704071969697,
+                  "branch_joint_accuracy": 0.5306941105769231,
+                  "logits_sha256": "cc760a3c819afc59f4d2b98aa8e321b1f62621c67364e2562895b1d2efefcb4d",
+                  "branch_sha256": "71d29d47a700bfa9d24d8316d74239b2d665e9562ae5ffe69330e60750448c4d",
+                  "examples": 1024,
+                  "steps": 64
+                },
+                "secondary_256": {
+                  "accuracy_all": 0.5091576483463035,
+                  "final_accuracy": 0.4814453125,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.4981679990310077,
+                  "branch_joint_accuracy": 0.5071399258268483,
+                  "logits_sha256": "0b33afdea6d58d64cfb27bfe71c541b7e99061e94b45fe2251a6bf31d6c9add6",
+                  "branch_sha256": "e4f4235efc1fd125c9d9456912e2f88d5e4ddbbbd59879b295f79f3898a9dc1c",
+                  "examples": 1024,
+                  "steps": 256
+                }
+              },
+              {
+                "kind": "INV_COMP",
+                "tag": "INV_COMP-w32-b1",
+                "seed": 29102,
+                "d": 2,
+                "sup": "PLAIN",
+                "updates": 2000,
+                "training_data_sha256": "e431c2aa0012d60b382a107a741e2e9fe7ec3bc893b5ab5a5bbcd73d7dea0056",
+                "final_hash": "d11d6889522eec9d6e9b48801da447a4b2dd730de93dbcca1170bae6a7b3a9b8",
+                "losses_last": 0.44500348925590516,
+                "loss_checkpoints": {
+                  "500": 0.035085714608430865,
+                  "1000": 0.17221530258655549,
+                  "1500": 0.36071890354156494,
+                  "2000": 0.44500348925590516
+                },
+                "seconds": 7.158510417000798,
+                "parameters": 406,
+                "monitor": [
+                  {
+                    "step": 500,
+                    "metrics": {
+                      "accuracy_all": 0.6203425480769231,
+                      "final_accuracy": 0.541015625,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5101841517857143,
+                      "branch_joint_accuracy": 0.5850360576923077,
+                      "logits_sha256": "8a5599411333fcf3675247da7cea4903b9473e9ca53a0fe83f6593cb3f5780ba",
+                      "branch_sha256": "66e53e3ca5372e63cb20f4f6b9897aa1936795cf3843bd26e75d59f61ec7f3bb",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.035085714608430865
+                  },
+                  {
+                    "step": 1000,
+                    "metrics": {
+                      "accuracy_all": 0.6849459134615384,
+                      "final_accuracy": 0.4599609375,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.505859375,
+                      "branch_joint_accuracy": 0.6434044471153846,
+                      "logits_sha256": "46a1bf33620f488e00d41b4c744afd3be160f52068d1116584faf5acc4ebaa70",
+                      "branch_sha256": "7d5d8659d35d8866cfae15962f0814cb8f2aaf23e490b284220e867cc7cf1814",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.17221530258655549
+                  },
+                  {
+                    "step": 1500,
+                    "metrics": {
+                      "accuracy_all": 0.6770582932692307,
+                      "final_accuracy": 0.458984375,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5008370535714286,
+                      "branch_joint_accuracy": 0.6044170673076923,
+                      "logits_sha256": "7d4bece66ace3e3b2b01595052870c87af1ab5d96ae013b32453b5c81be8cf18",
+                      "branch_sha256": "4516461f1dba0dec40b83ba147e61888cd27395fb17849983fbf43ac50e8bf3b",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.36071890354156494
+                  },
+                  {
+                    "step": 2000,
+                    "metrics": {
+                      "accuracy_all": 0.6864483173076923,
+                      "final_accuracy": 0.46875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5080915178571429,
+                      "branch_joint_accuracy": 0.34314903846153844,
+                      "logits_sha256": "3648d67c9ae21a63b4ce232e6f9c985f9048cd98f3bb697b666bde6185332621",
+                      "branch_sha256": "528ca254e477cb82e851bbc402c8c253b07cd85a315c6266e329c8a63d81aa50",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.44500348925590516
+                  }
+                ],
+                "executed_flops": "NOT_MEASURED",
+                "peak_memory": "NOT_MEASURED",
+                "primary": {
+                  "accuracy_all": 0.6864483173076923,
+                  "final_accuracy": 0.46875,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.5080915178571429,
+                  "branch_joint_accuracy": 0.34314903846153844,
+                  "logits_sha256": "3648d67c9ae21a63b4ce232e6f9c985f9048cd98f3bb697b666bde6185332621",
+                  "branch_sha256": "528ca254e477cb82e851bbc402c8c253b07cd85a315c6266e329c8a63d81aa50",
+                  "examples": 1024,
+                  "steps": 12
+                },
+                "secondary_64": {
+                  "accuracy_all": 0.5367638221153846,
+                  "final_accuracy": 0.498046875,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.4974550189393939,
+                  "branch_joint_accuracy": 0.06804387019230769,
+                  "logits_sha256": "548203beb506688af0edee296c863d8a4ed28489356173a2369a37497f3a253b",
+                  "branch_sha256": "9a5f5eda18500fddef8a3bb4378cb61dc11e6402e42f55abb84afb5d5ad0bf46",
+                  "examples": 1024,
+                  "steps": 64
+                },
+                "secondary_256": {
+                  "accuracy_all": 0.5094920355058365,
+                  "final_accuracy": 0.484375,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.5012490915697675,
+                  "branch_joint_accuracy": 0.017654122081712062,
+                  "logits_sha256": "02da09421fa4bfa8c2f4c86b3f883b72750f971e6e160a444718f6b647e569c7",
+                  "branch_sha256": "b044017161fc3c01eec827dbd14a72b689c8dbaa446e39a0da26a6c1e1a60e97",
+                  "examples": 1024,
+                  "steps": 256
+                }
+              }
+            ]
+          },
+          "BRANCH": {
+            "seeds": [
+              29101,
+              29102
+            ],
+            "accuracy": [
+              0.6967397836538461,
+              0.6864483173076923
+            ],
+            "mean": 0.6915940504807692,
+            "min": 0.6864483173076923,
+            "max": 0.6967397836538461,
+            "rows": [
+              {
+                "kind": "INV_COMP",
+                "tag": "INV_COMP-w32-b1",
+                "seed": 29101,
+                "d": 2,
+                "sup": "BRANCH",
+                "updates": 2000,
+                "training_data_sha256": "e1955d93cd9d312ea1edc48ad7846289f128e2a5ac1f656250ea4b56b2519dcb",
+                "final_hash": "ec2d0f89a944ab2265cfe3c13256ec23713251eff801b21c3fd5f139e0ab592c",
+                "losses_last": 0.4945240294933319,
+                "loss_checkpoints": {
+                  "500": 0.03532083109021187,
+                  "1000": 0.20237092077732086,
+                  "1500": 0.3903517997264862,
+                  "2000": 0.4945240294933319
+                },
+                "seconds": 10.220500874995196,
+                "parameters": 406,
+                "monitor": [
+                  {
+                    "step": 500,
+                    "metrics": {
+                      "accuracy_all": 0.6101262019230769,
+                      "final_accuracy": 0.4873046875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.49009486607142855,
+                      "branch_joint_accuracy": 0.5706881009615384,
+                      "logits_sha256": "004a3e8785a48495f81fec5f5db0396618ad299681bd55b0d4531662cbb445d2",
+                      "branch_sha256": "34d422853349c33c8e709efb691a2ed6f1c0e1a695a87558e730fcfa30df293b",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.03532083109021187
+                  },
+                  {
+                    "step": 1000,
+                    "metrics": {
+                      "accuracy_all": 0.6984675480769231,
+                      "final_accuracy": 0.513671875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5274832589285714,
+                      "branch_joint_accuracy": 0.6609825721153846,
+                      "logits_sha256": "ab918272b5f4f6964167713d0a43f848766753acc880d17df322a33bed374000",
+                      "branch_sha256": "0652f879e5507ccb49d5068441e112cd5215d1fe5ccab32902714156dc0fd33e",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.20237092077732086
+                  },
+                  {
+                    "step": 1500,
+                    "metrics": {
+                      "accuracy_all": 0.6967397836538461,
+                      "final_accuracy": 0.51171875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5241350446428571,
+                      "branch_joint_accuracy": 0.6592548076923077,
+                      "logits_sha256": "9da565dcea0b4828eabdfdb813022d4279f51b52e641ddc7f150b158db2e6b00",
+                      "branch_sha256": "b66aded97e0ecd02bce19542d838b564c54ee9356fca4a38e58e9197b8787e4c",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.3903517997264862
+                  },
+                  {
+                    "step": 2000,
+                    "metrics": {
+                      "accuracy_all": 0.6967397836538461,
+                      "final_accuracy": 0.51171875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5241350446428571,
+                      "branch_joint_accuracy": 0.6592548076923077,
+                      "logits_sha256": "d3ade33ede76170b5649da77c71c47d30189847c82445177f5302479a66f9e01",
+                      "branch_sha256": "efc1496bf9260119e168269061e6c8bbacf332f48c0c3e869efdf4fc3ccc5c8c",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.4945240294933319
+                  }
+                ],
+                "executed_flops": "NOT_MEASURED",
+                "peak_memory": "NOT_MEASURED",
+                "primary": {
+                  "accuracy_all": 0.6967397836538461,
+                  "final_accuracy": 0.51171875,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.5241350446428571,
+                  "branch_joint_accuracy": 0.6592548076923077,
+                  "logits_sha256": "d3ade33ede76170b5649da77c71c47d30189847c82445177f5302479a66f9e01",
+                  "branch_sha256": "efc1496bf9260119e168269061e6c8bbacf332f48c0c3e869efdf4fc3ccc5c8c",
+                  "examples": 1024,
+                  "steps": 12
+                },
+                "secondary_64": {
+                  "accuracy_all": 0.5381760817307693,
+                  "final_accuracy": 0.513671875,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.4999704071969697,
+                  "branch_joint_accuracy": 0.5306941105769231,
+                  "logits_sha256": "c0ecb1b34caec3419018709719bd1bcdc044e87262d6a5e04abde19a1abfbe01",
+                  "branch_sha256": "83312d91824142ff959e2b4a348ec2342df8a17b225706f7b9c6c53d20e48366",
+                  "examples": 1024,
+                  "steps": 64
+                },
+                "secondary_256": {
+                  "accuracy_all": 0.5091576483463035,
+                  "final_accuracy": 0.4814453125,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.4981679990310077,
+                  "branch_joint_accuracy": 0.5071399258268483,
+                  "logits_sha256": "be17bef2114300d9d4da146c7ecb4d2e8dbf5b2086b23215a86179f6f7b7859f",
+                  "branch_sha256": "592f2dc7364fd0f8293ebbde7350220e97625a2138016146582330458dd144e9",
+                  "examples": 1024,
+                  "steps": 256
+                }
+              },
+              {
+                "kind": "INV_COMP",
+                "tag": "INV_COMP-w32-b1",
+                "seed": 29102,
+                "d": 2,
+                "sup": "BRANCH",
+                "updates": 2000,
+                "training_data_sha256": "e431c2aa0012d60b382a107a741e2e9fe7ec3bc893b5ab5a5bbcd73d7dea0056",
+                "final_hash": "fa622f9440ba33f0fa36c05adfe75a59108b215356d42780aa1345f6446c0e29",
+                "losses_last": 0.4952203810214996,
+                "loss_checkpoints": {
+                  "500": 0.038684880435466765,
+                  "1000": 0.2030113923549652,
+                  "1500": 0.3995174312591553,
+                  "2000": 0.4952203810214996
+                },
+                "seconds": 9.67419883399998,
+                "parameters": 406,
+                "monitor": [
+                  {
+                    "step": 500,
+                    "metrics": {
+                      "accuracy_all": 0.6203425480769231,
+                      "final_accuracy": 0.541015625,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5101841517857143,
+                      "branch_joint_accuracy": 0.5850360576923077,
+                      "logits_sha256": "9d0001bc77f986b5e21a99a0b6403e8513ce1df1441be976b391eeb4c0b56139",
+                      "branch_sha256": "6a9ee51b9651ca75176ed9ce329a016b01e1703fcfe20a43bb8467f9a08a116e",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.038684880435466765
+                  },
+                  {
+                    "step": 1000,
+                    "metrics": {
+                      "accuracy_all": 0.6849459134615384,
+                      "final_accuracy": 0.4599609375,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.505859375,
+                      "branch_joint_accuracy": 0.6434044471153846,
+                      "logits_sha256": "445bdd0ca49d098c4b454794be186ff2d7efea54fa3775891cbd7fce05fba3fe",
+                      "branch_sha256": "36385367cac0435f1f592202f997c0c977485590ce046caa6fe8d65e587bf1f3",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.2030113923549652
+                  },
+                  {
+                    "step": 1500,
+                    "metrics": {
+                      "accuracy_all": 0.6806640625,
+                      "final_accuracy": 0.458984375,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.49734933035714285,
+                      "branch_joint_accuracy": 0.6358924278846154,
+                      "logits_sha256": "cee741102946fdeb0817bdd0dbb82b0a7177fd982a392bdfb336306dbc4ce9a6",
+                      "branch_sha256": "7c89ece9c94253ecc9fd9c76fd915eb01055ddaffbfbf2edaa3724ba5b2c3647",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.3995174312591553
+                  },
+                  {
+                    "step": 2000,
+                    "metrics": {
+                      "accuracy_all": 0.6864483173076923,
+                      "final_accuracy": 0.46875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5080915178571429,
+                      "branch_joint_accuracy": 0.34314903846153844,
+                      "logits_sha256": "b80de28fb3a0661b2ba7408f1395860eb3848323f52948888f775eb147676513",
+                      "branch_sha256": "4a43b637da5142e080ff9e7cd58a7488445d034203756786255f7fa81676a2a1",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.4952203810214996
+                  }
+                ],
+                "executed_flops": "NOT_MEASURED",
+                "peak_memory": "NOT_MEASURED",
+                "primary": {
+                  "accuracy_all": 0.6864483173076923,
+                  "final_accuracy": 0.46875,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.5080915178571429,
+                  "branch_joint_accuracy": 0.34314903846153844,
+                  "logits_sha256": "b80de28fb3a0661b2ba7408f1395860eb3848323f52948888f775eb147676513",
+                  "branch_sha256": "4a43b637da5142e080ff9e7cd58a7488445d034203756786255f7fa81676a2a1",
+                  "examples": 1024,
+                  "steps": 12
+                },
+                "secondary_64": {
+                  "accuracy_all": 0.5367638221153846,
+                  "final_accuracy": 0.498046875,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.4974550189393939,
+                  "branch_joint_accuracy": 0.06804387019230769,
+                  "logits_sha256": "b00e24bc962e5d39f4ea5f42ef25c8d405e86ced6c635f2b2735b95d373bfe94",
+                  "branch_sha256": "4bba9d927f915c4ceed1e7b494aa4b174a280148880f333d35ef9fdf4f8cd598",
+                  "examples": 1024,
+                  "steps": 64
+                },
+                "secondary_256": {
+                  "accuracy_all": 0.5094920355058365,
+                  "final_accuracy": 0.484375,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.5012490915697675,
+                  "branch_joint_accuracy": 0.017654122081712062,
+                  "logits_sha256": "89f7ef0489f37273f212c036de177547e0b8c61644f67431185e4a57d14d24b5",
+                  "branch_sha256": "7724c702e324c95dd6f3628def67d8df27da1a06640f390d7608203c33d79530",
+                  "examples": 1024,
+                  "steps": 256
+                }
+              }
+            ]
+          }
+        },
+        "learn": true,
+        "nonceiling": true,
+        "memoryless_max": 0.5379356971153846,
+        "oracle_min": 1.0,
+        "memoryless": [
+          {
+            "accuracy_all": 0.5379356971153846,
+            "tail_accuracy": 0.498046875
+          },
+          {
+            "accuracy_all": 0.5327524038461539,
+            "tail_accuracy": 0.4931640625
+          }
+        ],
+        "oracle": [
+          {
+            "accuracy_all": 1.0,
+            "tail_accuracy": 1.0
+          },
+          {
+            "accuracy_all": 1.0,
+            "tail_accuracy": 1.0
+          }
+        ],
+        "qualified": true
+      },
+      "3": {
+        "d": 3,
+        "best_sup": "PLAIN",
+        "variants": {
+          "PLAIN": {
+            "seeds": [
+              29101,
+              29102
+            ],
+            "accuracy": [
+              0.7342998798076923,
+              0.7269381009615384
+            ],
+            "mean": 0.7306189903846154,
+            "min": 0.7269381009615384,
+            "max": 0.7342998798076923,
+            "rows": [
+              {
+                "kind": "INV_COMP",
+                "tag": "INV_COMP-w32-b1",
+                "seed": 29101,
+                "d": 3,
+                "sup": "PLAIN",
+                "updates": 2000,
+                "training_data_sha256": "ad243e4091c93e0b0abe6fe462858fa71af3e500cd181844dccc9dc2ccfd60e0",
+                "final_hash": "b5a52b91fbc0a4504aa364b7091f6f24e48088eff8cb71e003b801680d92b214",
+                "losses_last": 0.40301868557929993,
+                "loss_checkpoints": {
+                  "500": 0.03193110264837742,
+                  "1000": 0.13140091478824614,
+                  "1500": 0.3040958070755005,
+                  "2000": 0.40301868557929993
+                },
+                "seconds": 6.562761499997578,
+                "parameters": 406,
+                "monitor": [
+                  {
+                    "step": 500,
+                    "metrics": {
+                      "accuracy_all": 0.6495643028846154,
+                      "final_accuracy": 0.4755859375,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.49051339285714285,
+                      "branch_joint_accuracy": 0.6092247596153846,
+                      "logits_sha256": "ff4091a6e4261f7673f45d0c0d9c456e56e6efa79d0baddb2ea30158a35432f1",
+                      "branch_sha256": "3e9c8eeee7b711ee3f07daf8804d63181b84cf5c178dae22eb6ff364d3152039",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.03193110264837742
+                  },
+                  {
+                    "step": 1000,
+                    "metrics": {
+                      "accuracy_all": 0.6495643028846154,
+                      "final_accuracy": 0.4755859375,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.49051339285714285,
+                      "branch_joint_accuracy": 0.6092247596153846,
+                      "logits_sha256": "e770f5f4d9dd4fb7d7a02c02918bb47a565743aef8a9cb43603b6fa2b45357b5",
+                      "branch_sha256": "fa5ea0177ab713faeb22447cb860866bd3380ec4fbd36c68747c45a7f3bf1414",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.13140091478824614
+                  },
+                  {
+                    "step": 1500,
+                    "metrics": {
+                      "accuracy_all": 0.7370793269230769,
+                      "final_accuracy": 0.525390625,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5460379464285714,
+                      "branch_joint_accuracy": 0.6600811298076923,
+                      "logits_sha256": "d4889160ca61f731248adadca7eaf807f8481e090ad42d00aa6683314d7c3008",
+                      "branch_sha256": "ffceaf48b3fcf7f0cc3fe4763628c4fb6d48d3cc9e088fb3b7a4d415604475a0",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.3040958070755005
+                  },
+                  {
+                    "step": 2000,
+                    "metrics": {
+                      "accuracy_all": 0.7342998798076923,
+                      "final_accuracy": 0.525390625,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5425502232142857,
+                      "branch_joint_accuracy": 0.6976412259615384,
+                      "logits_sha256": "56207699eddba57d51e0addbfe8335f32979c1c39bc7f7fb2b1c5028cd54e1b6",
+                      "branch_sha256": "c187e56c4cac4ccb98a639ed1f59791e3d809c5ab2d04e2219060984ae2b0034",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.40301868557929993
+                  }
+                ],
+                "executed_flops": "NOT_MEASURED",
+                "peak_memory": "NOT_MEASURED",
+                "primary": {
+                  "accuracy_all": 0.7342998798076923,
+                  "final_accuracy": 0.525390625,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.5425502232142857,
+                  "branch_joint_accuracy": 0.6976412259615384,
+                  "logits_sha256": "56207699eddba57d51e0addbfe8335f32979c1c39bc7f7fb2b1c5028cd54e1b6",
+                  "branch_sha256": "c187e56c4cac4ccb98a639ed1f59791e3d809c5ab2d04e2219060984ae2b0034",
+                  "examples": 1024,
+                  "steps": 12
+                },
+                "secondary_64": {
+                  "accuracy_all": 0.5456580528846153,
+                  "final_accuracy": 0.525390625,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.4998224431818182,
+                  "branch_joint_accuracy": 0.5383563701923076,
+                  "logits_sha256": "9855b7cea39ebdd11d74fcddc16910187d67d785dd500ccce59b82081131e5b0",
+                  "branch_sha256": "e2044754992522808b325f052ab490980ab2b6044338ca62d78523844fe19a75",
+                  "examples": 1024,
+                  "steps": 64
+                },
+                "secondary_256": {
+                  "accuracy_all": 0.5111753708657587,
+                  "final_accuracy": 0.501953125,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.4984405281007752,
+                  "branch_joint_accuracy": 0.5092374452821011,
+                  "logits_sha256": "1d560959cd026070befe7122ebc78d335c9f2b2d23a1f39dc4bd230f9aa4242e",
+                  "branch_sha256": "ffe23cd183d9eac7dada43bb7e5383ac281addcc6e386d4e0f1371895c53edc1",
+                  "examples": 1024,
+                  "steps": 256
+                }
+              },
+              {
+                "kind": "INV_COMP",
+                "tag": "INV_COMP-w32-b1",
+                "seed": 29102,
+                "d": 3,
+                "sup": "PLAIN",
+                "updates": 2000,
+                "training_data_sha256": "7499d364ee4ce8b76f9c335f7ff15527a2feb486d0d33b21d53d94dbaf8237fb",
+                "final_hash": "ca84b49e0ed0a806263089217f856a4901885318cf4e24fc71b4cd597d66ac3d",
+                "losses_last": 0.39814078688621524,
+                "loss_checkpoints": {
+                  "500": 0.03508836418390274,
+                  "1000": 0.12530914932489395,
+                  "1500": 0.29475805401802063,
+                  "2000": 0.39814078688621524
+                },
+                "seconds": 6.550179791003757,
+                "parameters": 406,
+                "monitor": [
+                  {
+                    "step": 500,
+                    "metrics": {
+                      "accuracy_all": 0.6556490384615384,
+                      "final_accuracy": 0.490234375,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5066964285714286,
+                      "branch_joint_accuracy": 0.6164362980769231,
+                      "logits_sha256": "5d1554a0cb0ff76f8d40d130a3fddcc1d2e24364acf2cb28a59d01979410234e",
+                      "branch_sha256": "e55ccf9751209e18c82dd55f9830d8315f60a5bd7b630123fe135b2a5c0b7056",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.03508836418390274
+                  },
+                  {
+                    "step": 1000,
+                    "metrics": {
+                      "accuracy_all": 0.6556490384615384,
+                      "final_accuracy": 0.490234375,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5066964285714286,
+                      "branch_joint_accuracy": 0.6164362980769231,
+                      "logits_sha256": "d37b2730e100f31fa5c4177c5b5ee8d17a8c94e3dad9d864e56bac3e491fc1ce",
+                      "branch_sha256": "4e33f9ae36c2b59baf53b8d2b82ddc5d9f229bc85c8aeb5caffb626e08d8ce80",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.12530914932489395
+                  },
+                  {
+                    "step": 1500,
+                    "metrics": {
+                      "accuracy_all": 0.7285907451923077,
+                      "final_accuracy": 0.5009765625,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5336216517857143,
+                      "branch_joint_accuracy": 0.43614783653846156,
+                      "logits_sha256": "eb38569d467f98247f45640d0f4b3a3c523f2de1493c8e1404a4fe3fc1d65a59",
+                      "branch_sha256": "707825fbbfaa5776e4a9d1a339c63ec2270c4724d6f5219c72903275421f2d78",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.29475805401802063
+                  },
+                  {
+                    "step": 2000,
+                    "metrics": {
+                      "accuracy_all": 0.7269381009615384,
+                      "final_accuracy": 0.51171875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5305524553571429,
+                      "branch_joint_accuracy": 0.5709885817307693,
+                      "logits_sha256": "8213a31924792715e4a1138497a21e85832943580f55d61a88da6e1bae47735c",
+                      "branch_sha256": "c00f7d50df15c436c0c0c53e9220b42eaabbf3ce0198edcd4b583641d1528067",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.39814078688621524
+                  }
+                ],
+                "executed_flops": "NOT_MEASURED",
+                "peak_memory": "NOT_MEASURED",
+                "primary": {
+                  "accuracy_all": 0.7269381009615384,
+                  "final_accuracy": 0.51171875,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.5305524553571429,
+                  "branch_joint_accuracy": 0.5709885817307693,
+                  "logits_sha256": "8213a31924792715e4a1138497a21e85832943580f55d61a88da6e1bae47735c",
+                  "branch_sha256": "c00f7d50df15c436c0c0c53e9220b42eaabbf3ce0198edcd4b583641d1528067",
+                  "examples": 1024,
+                  "steps": 12
+                },
+                "secondary_64": {
+                  "accuracy_all": 0.5452524038461538,
+                  "final_accuracy": 0.482421875,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.4958866003787879,
+                  "branch_joint_accuracy": 0.3120943509615385,
+                  "logits_sha256": "5cd27fb8de5e32236392e4bbdaec1d00def62002caa1139d5ebb5d25cc12cc12",
+                  "branch_sha256": "551cc24ae60a7378de9801e34da6246808400b075c75c8516492bbda126a20c1",
+                  "examples": 1024,
+                  "steps": 64
+                },
+                "secondary_256": {
+                  "accuracy_all": 0.5123571254863813,
+                  "final_accuracy": 0.5029296875,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.5009008599806202,
+                  "branch_joint_accuracy": 0.26540460846303504,
+                  "logits_sha256": "d2dba57e55023c6bed9f8b9fd66c1bd2077394d3f0df1821b508b9c329c36703",
+                  "branch_sha256": "358d4e55ac5da8a6d2f301235cb673ef770c5f4bb31d991400f42324d383db91",
+                  "examples": 1024,
+                  "steps": 256
+                }
+              }
+            ]
+          },
+          "BRANCH": {
+            "seeds": [
+              29101,
+              29102
+            ],
+            "accuracy": [
+              0.7241586538461539,
+              0.7220552884615384
+            ],
+            "mean": 0.7231069711538461,
+            "min": 0.7220552884615384,
+            "max": 0.7241586538461539,
+            "rows": [
+              {
+                "kind": "INV_COMP",
+                "tag": "INV_COMP-w32-b1",
+                "seed": 29101,
+                "d": 3,
+                "sup": "BRANCH",
+                "updates": 2000,
+                "training_data_sha256": "ad243e4091c93e0b0abe6fe462858fa71af3e500cd181844dccc9dc2ccfd60e0",
+                "final_hash": "1480c1b9d1a46c9ac92d2fd89399ac2a6e595628c3b3991f660d4c31ca148408",
+                "losses_last": 0.4443514370918274,
+                "loss_checkpoints": {
+                  "500": 0.03536260336637497,
+                  "1000": 0.13782647132873535,
+                  "1500": 0.32703991293907164,
+                  "2000": 0.4443514370918274
+                },
+                "seconds": 9.677722458000062,
+                "parameters": 406,
+                "monitor": [
+                  {
+                    "step": 500,
+                    "metrics": {
+                      "accuracy_all": 0.6495643028846154,
+                      "final_accuracy": 0.4755859375,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.49051339285714285,
+                      "branch_joint_accuracy": 0.6092247596153846,
+                      "logits_sha256": "c03d0c6c3c25ea276bc22d3af5d6609c09e41b26ac77a2263c22450d54cac878",
+                      "branch_sha256": "5712460c5414bc2d8f9b8998ce89fe356aad7d03e0c4d8e094667070a9289fa7",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.03536260336637497
+                  },
+                  {
+                    "step": 1000,
+                    "metrics": {
+                      "accuracy_all": 0.7159705528846154,
+                      "final_accuracy": 0.4775390625,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5135323660714286,
+                      "branch_joint_accuracy": 0.6725510817307693,
+                      "logits_sha256": "bd6c865eef35abd394daa12da16d780adc996375dfbba0fe4eb6cd8b5fc67ee6",
+                      "branch_sha256": "e59ee6fc8af31e26b13ae20a242f6068bb146d15720e606bf6bce1820fb5a106",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.13782647132873535
+                  },
+                  {
+                    "step": 1500,
+                    "metrics": {
+                      "accuracy_all": 0.7287409855769231,
+                      "final_accuracy": 0.4912109375,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5305524553571429,
+                      "branch_joint_accuracy": 0.3854417067307692,
+                      "logits_sha256": "b08476eb57ea8c5c69afe3c11f00cb512262da64dbddc522dcb3db8df74a3221",
+                      "branch_sha256": "0027ffd2712778307c3557313c99c351edaf32d599454c95a02ca677451f24f6",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.32703991293907164
+                  },
+                  {
+                    "step": 2000,
+                    "metrics": {
+                      "accuracy_all": 0.7241586538461539,
+                      "final_accuracy": 0.4921875,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5237165178571429,
+                      "branch_joint_accuracy": 0.4610126201923077,
+                      "logits_sha256": "d0448cbf78b71fe3497dc76fb95c72b4e635ea21e11e026ec05308223139bdfc",
+                      "branch_sha256": "61fb900f4b993aab044761b4bb618838e0ffebed5b0f2de3145b4787d9a59700",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.4443514370918274
+                  }
+                ],
+                "executed_flops": "NOT_MEASURED",
+                "peak_memory": "NOT_MEASURED",
+                "primary": {
+                  "accuracy_all": 0.7241586538461539,
+                  "final_accuracy": 0.4921875,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.5237165178571429,
+                  "branch_joint_accuracy": 0.4610126201923077,
+                  "logits_sha256": "d0448cbf78b71fe3497dc76fb95c72b4e635ea21e11e026ec05308223139bdfc",
+                  "branch_sha256": "61fb900f4b993aab044761b4bb618838e0ffebed5b0f2de3145b4787d9a59700",
+                  "examples": 1024,
+                  "steps": 12
+                },
+                "secondary_64": {
+                  "accuracy_all": 0.5489332932692308,
+                  "final_accuracy": 0.5205078125,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.5070430871212122,
+                  "branch_joint_accuracy": 0.09215745192307692,
+                  "logits_sha256": "8cd721f80f83d82a24e3f4841648a5d477a8536c81f14344476ec60e6eebad08",
+                  "branch_sha256": "5d6ce6e09fe11a261a38d007668556c627fc1cfa20260d3a5827cb908f578a1c",
+                  "examples": 1024,
+                  "steps": 64
+                },
+                "secondary_256": {
+                  "accuracy_all": 0.5096744285019456,
+                  "final_accuracy": 0.4912109375,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.4982588420542636,
+                  "branch_joint_accuracy": 0.0230689141536965,
+                  "logits_sha256": "62b1010b34b2ccb69cf8e84465b9c571a7f752e391784d822aa68b28b6c88472",
+                  "branch_sha256": "d917c53837e42d747cf0bedb5f7bdbc3ca0cf38c79e1dd428c0faea903887365",
+                  "examples": 1024,
+                  "steps": 256
+                }
+              },
+              {
+                "kind": "INV_COMP",
+                "tag": "INV_COMP-w32-b1",
+                "seed": 29102,
+                "d": 3,
+                "sup": "BRANCH",
+                "updates": 2000,
+                "training_data_sha256": "7499d364ee4ce8b76f9c335f7ff15527a2feb486d0d33b21d53d94dbaf8237fb",
+                "final_hash": "a90d01735fb2ffdd76098328274f25c650a0f07ffd66683acaf3d8dbe4855a27",
+                "losses_last": 0.44397266626358034,
+                "loss_checkpoints": {
+                  "500": 0.03868791311979294,
+                  "1000": 0.13118667244911195,
+                  "1500": 0.3313279175758362,
+                  "2000": 0.44397266626358034
+                },
+                "seconds": 9.699998166994192,
+                "parameters": 406,
+                "monitor": [
+                  {
+                    "step": 500,
+                    "metrics": {
+                      "accuracy_all": 0.6556490384615384,
+                      "final_accuracy": 0.490234375,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5066964285714286,
+                      "branch_joint_accuracy": 0.6164362980769231,
+                      "logits_sha256": "3c8851d21a2f69adbadde21ce1bd577580c74424d7651d69de80bc74c84adebf",
+                      "branch_sha256": "ff124405cb3e3cd123f5779bf09e278511d1b5619e5d0bcdb74e9f46d458b9b9",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.03868791311979294
+                  },
+                  {
+                    "step": 1000,
+                    "metrics": {
+                      "accuracy_all": 0.732421875,
+                      "final_accuracy": 0.490234375,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5407366071428571,
+                      "branch_joint_accuracy": 0.6932091346153846,
+                      "logits_sha256": "8ff1b8052bcbc86c1d7e9f1992c69a623da5162f611dcfad033a8a4f702ccbdd",
+                      "branch_sha256": "a6fd71bfb5a0ed6fd5a9480a79f51f9b43cc5928a1be18e92b24abbf924a3435",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.13118667244911195
+                  },
+                  {
+                    "step": 1500,
+                    "metrics": {
+                      "accuracy_all": 0.7299429086538461,
+                      "final_accuracy": 0.509765625,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.5327845982142857,
+                      "branch_joint_accuracy": 0.513671875,
+                      "logits_sha256": "59ff7988a7a572969c8f11e47272351374e69f463fb64f36944d16a825c40f71",
+                      "branch_sha256": "fe668445b779b53d957993838842e34b5f0dd548870366a7579b9f9acb51592c",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.3313279175758362
+                  },
+                  {
+                    "step": 2000,
+                    "metrics": {
+                      "accuracy_all": 0.7220552884615384,
+                      "final_accuracy": 0.5087890625,
+                      "initial_accuracy": 1.0,
+                      "tail_accuracy": 0.521484375,
+                      "branch_joint_accuracy": 0.6817157451923077,
+                      "logits_sha256": "7e781e8962117e76fb3d1a8a02faad9b57ee4f385f95e878d40be67ac7106ec8",
+                      "branch_sha256": "e9110b927686fdde305fdce81a69b4944f75f5f7755faff1bd4437abe5b5bb13",
+                      "examples": 1024,
+                      "steps": 12
+                    },
+                    "loss": 0.44397266626358034
+                  }
+                ],
+                "executed_flops": "NOT_MEASURED",
+                "peak_memory": "NOT_MEASURED",
+                "primary": {
+                  "accuracy_all": 0.7220552884615384,
+                  "final_accuracy": 0.5087890625,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.521484375,
+                  "branch_joint_accuracy": 0.6817157451923077,
+                  "logits_sha256": "7e781e8962117e76fb3d1a8a02faad9b57ee4f385f95e878d40be67ac7106ec8",
+                  "branch_sha256": "e9110b927686fdde305fdce81a69b4944f75f5f7755faff1bd4437abe5b5bb13",
+                  "examples": 1024,
+                  "steps": 12
+                },
+                "secondary_64": {
+                  "accuracy_all": 0.5432992788461538,
+                  "final_accuracy": 0.498046875,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.4961529356060606,
+                  "branch_joint_accuracy": 0.5349459134615384,
+                  "logits_sha256": "90fa61dda9bef9393526158402c8cf7c238ace89242cd76fc25c4961b89b0970",
+                  "branch_sha256": "5b71ad59d4a16b2b32f835c96c82885bc37a442823d5542aa6c515ad03296849",
+                  "examples": 1024,
+                  "steps": 64
+                },
+                "secondary_256": {
+                  "accuracy_all": 0.5105673942120622,
+                  "final_accuracy": 0.509765625,
+                  "initial_accuracy": 1.0,
+                  "tail_accuracy": 0.4994776526162791,
+                  "branch_joint_accuracy": 0.5085078732976653,
+                  "logits_sha256": "502b6ec9f00aaf95ffff8cf4fa66db34ee70423182171794b43a633ccb6f1e91",
+                  "branch_sha256": "4e0ed0b4f5163f7eca8d4266bd2a0f52d1505842e48266c5d0c7aa78db0d4530",
+                  "examples": 1024,
+                  "steps": 256
+                }
+              }
+            ]
+          }
+        },
+        "learn": true,
+        "nonceiling": true,
+        "memoryless_max": 0.5408653846153846,
+        "oracle_min": 1.0,
+        "memoryless": [
+          {
+            "accuracy_all": 0.5408653846153846,
+            "tail_accuracy": 0.5054408482142857
+          },
+          {
+            "accuracy_all": 0.5360576923076923,
+            "tail_accuracy": 0.49888392857142855
+          }
+        ],
+        "oracle": [
+          {
+            "accuracy_all": 1.0,
+            "tail_accuracy": 1.0
+          },
+          {
+            "accuracy_all": 1.0,
+            "tail_accuracy": 1.0
+          }
+        ],
+        "qualified": true
+      }
+    },
+    "qualified": {
+      "d": 2,
+      "sup": "PLAIN"
+    },
+    "band": {
+      "learn_mean_min": 0.65,
+      "learn_seed_min": 0.58,
+      "nonceiling_mean_max": 0.95,
+      "nonceiling_seed_max": 0.97,
+      "memoryless_max": 0.55,
+      "oracle_min": 0.99
+    },
+    "menu": [
+      {
+        "id": "D1_PLAIN",
+        "d": 1,
+        "sup": "PLAIN"
+      },
+      {
+        "id": "D1_BRANCH",
+        "d": 1,
+        "sup": "BRANCH"
+      },
+      {
+        "id": "D2_PLAIN",
+        "d": 2,
+        "sup": "PLAIN"
+      },
+      {
+        "id": "D2_BRANCH",
+        "d": 2,
+        "sup": "BRANCH"
+      },
+      {
+        "id": "D3_PLAIN",
+        "d": 3,
+        "sup": "PLAIN"
+      },
+      {
+        "id": "D3_BRANCH",
+        "d": 3,
+        "sup": "BRANCH"
+      }
+    ]
+  },
+  "confirm": {
+    "item": {
+      "id": "D2_PLAIN",
+      "d": 2,
+      "sup": "PLAIN"
+    },
+    "seeds": [
+      29111,
+      29112,
+      29113
+    ],
+    "accuracy": [
+      0.6922325721153846,
+      0.6979417067307693,
+      0.7009465144230769
+    ],
+    "mean": 0.697040264423077,
+    "min": 0.6922325721153846,
+    "max": 0.7009465144230769,
+    "learn": true,
+    "nonceiling": true,
+    "memoryless_max": 0.5457481971153846,
+    "oracle_min": 1.0,
+    "rows": [
+      {
+        "kind": "INV_COMP",
+        "tag": "INV_COMP-w32-b1",
+        "seed": 29111,
+        "d": 2,
+        "sup": "PLAIN",
+        "updates": 2000,
+        "training_data_sha256": "7b49f83edf8e071d51c444b6fbe7d734230783f77d65ba383526a0bdb25f6cd7",
+        "final_hash": "fcd0011dcafb4731c40bad5ac3d157eee7f79d2299d7d4c15a9b950807464a06",
+        "losses_last": 0.44674370765686033,
+        "loss_checkpoints": {
+          "500": 0.03749161288142204,
+          "1000": 0.17941961467266082,
+          "1500": 0.34902831315994265,
+          "2000": 0.44674370765686033
+        },
+        "seconds": 6.646992292000505,
+        "parameters": 406,
+        "monitor": [
+          {
+            "step": 500,
+            "metrics": {
+              "accuracy_all": 0.6150090144230769,
+              "final_accuracy": 0.509765625,
+              "initial_accuracy": 1.0,
+              "tail_accuracy": 0.5013950892857143,
+              "branch_joint_accuracy": 0.5772986778846154,
+              "logits_sha256": "3a73e2417d83c6a37ff9d14c1502066337e4aaa5104443aff2fc206b5e143980",
+              "branch_sha256": "3005d614b40886e46df3ee79f57f28f7edabe4f8116abe2d1baf75cb0c9652d3",
+              "examples": 1024,
+              "steps": 12
+            },
+            "loss": 0.03749161288142204
+          },
+          {
+            "step": 1000,
+            "metrics": {
+              "accuracy_all": 0.6919320913461539,
+              "final_accuracy": 0.490234375,
+              "initial_accuracy": 1.0,
+              "tail_accuracy": 0.5167410714285714,
+              "branch_joint_accuracy": 0.6527193509615384,
+              "logits_sha256": "df9f32da443f62b53827c73b0d03fe2c11fccc3d42853e36640685fb4ee35e13",
+              "branch_sha256": "f34c7f26f7cb272541281e3742b285fb64ecb180ac502621db87a787509f9493",
+              "examples": 1024,
+              "steps": 12
+            },
+            "loss": 0.17941961467266082
+          },
+          {
+            "step": 1500,
+            "metrics": {
+              "accuracy_all": 0.6922325721153846,
+              "final_accuracy": 0.5341796875,
+              "initial_accuracy": 1.0,
+              "tail_accuracy": 0.5221819196428571,
+              "branch_joint_accuracy": 0.3429987980769231,
+              "logits_sha256": "e45976a69f759059e654ec70dcf3930e77693a39739a4826cc032b3b8e35229c",
+              "branch_sha256": "eb12786bfe43e51cda13f4c2544abba23097abd64738b33fb53183c5fb5994e2",
+              "examples": 1024,
+              "steps": 12
+            },
+            "loss": 0.34902831315994265
+          },
+          {
+            "step": 2000,
+            "metrics": {
+              "accuracy_all": 0.6922325721153846,
+              "final_accuracy": 0.5341796875,
+              "initial_accuracy": 1.0,
+              "tail_accuracy": 0.5221819196428571,
+              "branch_joint_accuracy": 0.3429987980769231,
+              "logits_sha256": "830d807742506d26da8e7d011864964f0e2a3c390c27171b562ecbb00a5fedd1",
+              "branch_sha256": "e0b943042e605492a6bda09858cadeaf9ca6176cc6352cd2f02bdc494bb57f4f",
+              "examples": 1024,
+              "steps": 12
+            },
+            "loss": 0.44674370765686033
+          }
+        ],
+        "executed_flops": "NOT_MEASURED",
+        "peak_memory": "NOT_MEASURED",
+        "primary": {
+          "accuracy_all": 0.6922325721153846,
+          "final_accuracy": 0.5341796875,
+          "initial_accuracy": 1.0,
+          "tail_accuracy": 0.5221819196428571,
+          "branch_joint_accuracy": 0.3429987980769231,
+          "logits_sha256": "830d807742506d26da8e7d011864964f0e2a3c390c27171b562ecbb00a5fedd1",
+          "branch_sha256": "e0b943042e605492a6bda09858cadeaf9ca6176cc6352cd2f02bdc494bb57f4f",
+          "examples": 1024,
+          "steps": 12
+        },
+        "secondary_64": {
+          "accuracy_all": 0.5395132211538461,
+          "final_accuracy": 0.509765625,
+          "initial_accuracy": 1.0,
+          "tail_accuracy": 0.49857954545454547,
+          "branch_joint_accuracy": 0.0690655048076923,
+          "logits_sha256": "941fbe5592ec27c3d1643b8a0bfc9822d75df7d0e12c17c8323637de2dfa4dda",
+          "branch_sha256": "bb053468ad43d2a912015ef5786d32267fbb390fc8e3682c4e2d817ae6a4f6f6",
+          "examples": 1024,
+          "steps": 64
+        },
+        "secondary_256": {
+          "accuracy_all": 0.5104609982976653,
+          "final_accuracy": 0.5126953125,
+          "initial_accuracy": 1.0,
+          "tail_accuracy": 0.5003709423449613,
+          "branch_joint_accuracy": 0.01789731274319066,
+          "logits_sha256": "c4ba8df3a85279d661c88ab667543048b5b96456f523865ec9958892ee22fec7",
+          "branch_sha256": "2bc90d4b784ba82e2f7cba7f8b51675bc49af694f4230dc77827ef22d82d7a42",
+          "examples": 1024,
+          "steps": 256
+        }
+      },
+      {
+        "kind": "INV_COMP",
+        "tag": "INV_COMP-w32-b1",
+        "seed": 29112,
+        "d": 2,
+        "sup": "PLAIN",
+        "updates": 2000,
+        "training_data_sha256": "a7c35bfdb608426cb9fb8e1d7288a662162e4039243d45c91f9cc15535067850",
+        "final_hash": "b025d30b1cb5e63d2ef4caa8be6782a78e2d1d76acfbdde4cd979a04ccf7db7f",
+        "losses_last": 0.44824091672897337,
+        "loss_checkpoints": {
+          "500": 0.03936985820531845,
+          "1000": 0.17318439185619355,
+          "1500": 0.35518168210983275,
+          "2000": 0.44824091672897337
+        },
+        "seconds": 6.533315582993964,
+        "parameters": 406,
+        "monitor": [
+          {
+            "step": 500,
+            "metrics": {
+              "accuracy_all": 0.6156850961538461,
+              "final_accuracy": 0.509765625,
+              "initial_accuracy": 1.0,
+              "tail_accuracy": 0.5002790178571429,
+              "branch_joint_accuracy": 0.5779747596153846,
+              "logits_sha256": "f057811c2f6b12555ce8d7f99dbd24be59c8fcb18729ec41369dc17a6c94a1e0",
+              "branch_sha256": "8875dbc219315c5c6bc041427d705b37eae940e53b0f37262932e5f8f0fd214e",
+              "examples": 1024,
+              "steps": 12
+            },
+            "loss": 0.03936985820531845
+          },
+          {
+            "step": 1000,
+            "metrics": {
+              "accuracy_all": 0.6930588942307693,
+              "final_accuracy": 0.490234375,
+              "initial_accuracy": 1.0,
+              "tail_accuracy": 0.5179966517857143,
+              "branch_joint_accuracy": 0.6538461538461539,
+              "logits_sha256": "ebcd59aa27ed604e88a617ea149256f4702d84aeb3e0f68f00732dafbf66fe5d",
+              "branch_sha256": "f53d494785d6c39a954b4a57213a98cb8b8669a5f236b1bb6e172713cb1dcaba",
+              "examples": 1024,
+              "steps": 12
+            },
+            "loss": 0.17318439185619355
+          },
+          {
+            "step": 1500,
+            "metrics": {
+              "accuracy_all": 0.6923076923076923,
+              "final_accuracy": 0.4912109375,
+              "initial_accuracy": 1.0,
+              "tail_accuracy": 0.5171595982142857,
+              "branch_joint_accuracy": 0.6530949519230769,
+              "logits_sha256": "861967a4c7ede8f8f00852f3c32f92cbf244c9e85b3e529184f4ffc42f455765",
+              "branch_sha256": "3bda7109ccd6594432314db15d89d0d3326390abbab6dbe057ebaf23929e5e62",
+              "examples": 1024,
+              "steps": 12
+            },
+            "loss": 0.35518168210983275
+          },
+          {
+            "step": 2000,
+            "metrics": {
+              "accuracy_all": 0.6979417067307693,
+              "final_accuracy": 0.5107421875,
+              "initial_accuracy": 1.0,
+              "tail_accuracy": 0.525390625,
+              "branch_joint_accuracy": 0.6371694711538461,
+              "logits_sha256": "3c38fad16fcc6b3f5320f3e33eda8972b57d541481ad5953ed61a764c8e7ed6b",
+              "branch_sha256": "5e164c2ed5cf15123ed90b9b56e61d604d9a924adc07607551ad11c391dfb157",
+              "examples": 1024,
+              "steps": 12
+            },
+            "loss": 0.44824091672897337
+          }
+        ],
+        "executed_flops": "NOT_MEASURED",
+        "peak_memory": "NOT_MEASURED",
+        "primary": {
+          "accuracy_all": 0.6979417067307693,
+          "final_accuracy": 0.5107421875,
+          "initial_accuracy": 1.0,
+          "tail_accuracy": 0.525390625,
+          "branch_joint_accuracy": 0.6371694711538461,
+          "logits_sha256": "3c38fad16fcc6b3f5320f3e33eda8972b57d541481ad5953ed61a764c8e7ed6b",
+          "branch_sha256": "5e164c2ed5cf15123ed90b9b56e61d604d9a924adc07607551ad11c391dfb157",
+          "examples": 1024,
+          "steps": 12
+        },
+        "secondary_64": {
+          "accuracy_all": 0.5392728365384616,
+          "final_accuracy": 0.49609375,
+          "initial_accuracy": 1.0,
+          "tail_accuracy": 0.5044685132575758,
+          "branch_joint_accuracy": 0.5280498798076924,
+          "logits_sha256": "cc328de692ddf959151374be42c18b941f8c2227833959980d745f90aea67227",
+          "branch_sha256": "70d29a02da51fee02819cb1406b5d13cb8e45aff63671c440899df22e2334700",
+          "examples": 1024,
+          "steps": 64
+        },
+        "secondary_256": {
+          "accuracy_all": 0.5101342108463035,
+          "final_accuracy": 0.4853515625,
+          "initial_accuracy": 1.0,
+          "tail_accuracy": 0.4997880329457364,
+          "branch_joint_accuracy": 0.507151325389105,
+          "logits_sha256": "7003a85e2c4b902d7150f3912c7b57ccf4ea1e27677b2173b36eb18c894836e8",
+          "branch_sha256": "a6140af49c2abadb1cbb86e96724e285d42921ae81435bf4f862b33571ac11ff",
+          "examples": 1024,
+          "steps": 256
+        }
+      },
+      {
+        "kind": "INV_COMP",
+        "tag": "INV_COMP-w32-b1",
+        "seed": 29113,
+        "d": 2,
+        "sup": "PLAIN",
+        "updates": 2000,
+        "training_data_sha256": "91be7ba30c3aaef4d99d50b0218910c21009b6f709f849d1a0bf4d93c31493b7",
+        "final_hash": "17cd09c2547d667b1bef077141b5f19269d4c5b4f5a4340f63781527c714d480",
+        "losses_last": 0.445032411813736,
+        "loss_checkpoints": {
+          "500": 0.039078654795885084,
+          "1000": 0.16860363245010376,
+          "1500": 0.35354053139686586,
+          "2000": 0.445032411813736
+        },
+        "seconds": 6.485304040994379,
+        "parameters": 406,
+        "monitor": [
+          {
+            "step": 500,
+            "metrics": {
+              "accuracy_all": 0.6145582932692307,
+              "final_accuracy": 0.4892578125,
+              "initial_accuracy": 1.0,
+              "tail_accuracy": 0.5004185267857143,
+              "branch_joint_accuracy": 0.5752704326923077,
+              "logits_sha256": "c527560132cd5bc1705320b32fa55bbbc714b09e995160fef21f4b90b7457c39",
+              "branch_sha256": "db427da066b9c5633f84a964f69017a037876a174fdbad58e7fc5c1461bef313",
+              "examples": 1024,
+              "steps": 12
+            },
+            "loss": 0.039078654795885084
+          },
+          {
+            "step": 1000,
+            "metrics": {
+              "accuracy_all": 0.6875,
+              "final_accuracy": 0.5087890625,
+              "initial_accuracy": 1.0,
+              "tail_accuracy": 0.5129743303571429,
+              "branch_joint_accuracy": 0.46138822115384615,
+              "logits_sha256": "903ae57f026b5d98b700564cd7f928602d18cf251910def058ffc1bd508ae7c9",
+              "branch_sha256": "b71c58cc91a43656789e90d9bad730aaa5e08a872dcf81bb69720d42f0662c0d",
+              "examples": 1024,
+              "steps": 12
+            },
+            "loss": 0.16860363245010376
+          },
+          {
+            "step": 1500,
+            "metrics": {
+              "accuracy_all": 0.6884765625,
+              "final_accuracy": 0.51171875,
+              "initial_accuracy": 1.0,
+              "tail_accuracy": 0.515625,
+              "branch_joint_accuracy": 0.6142578125,
+              "logits_sha256": "8ba87712525b2f709233f4930bff9dd6b18a22a3ed9e030587265b13f6199e3b",
+              "branch_sha256": "e737c121283b6820c6dbb4ec4a81f39f071b533ee355b1f33d20bd78a9ba1bf7",
+              "examples": 1024,
+              "steps": 12
+            },
+            "loss": 0.35354053139686586
+          },
+          {
+            "step": 2000,
+            "metrics": {
+              "accuracy_all": 0.7009465144230769,
+              "final_accuracy": 0.51171875,
+              "initial_accuracy": 1.0,
+              "tail_accuracy": 0.5186941964285714,
+              "branch_joint_accuracy": 0.6538461538461539,
+              "logits_sha256": "daebc340e9fec10a298b63c92d810d44cbd2ff4fa72fc56949663e7b30690005",
+              "branch_sha256": "d73957ae35fa6312da29a498e74cc1544e89535cd1a70053da7f1591d1d122cf",
+              "examples": 1024,
+              "steps": 12
+            },
+            "loss": 0.445032411813736
+          }
+        ],
+        "executed_flops": "NOT_MEASURED",
+        "peak_memory": "NOT_MEASURED",
+        "primary": {
+          "accuracy_all": 0.7009465144230769,
+          "final_accuracy": 0.51171875,
+          "initial_accuracy": 1.0,
+          "tail_accuracy": 0.5186941964285714,
+          "branch_joint_accuracy": 0.6538461538461539,
+          "logits_sha256": "daebc340e9fec10a298b63c92d810d44cbd2ff4fa72fc56949663e7b30690005",
+          "branch_sha256": "d73957ae35fa6312da29a498e74cc1544e89535cd1a70053da7f1591d1d122cf",
+          "examples": 1024,
+          "steps": 12
+        },
+        "secondary_64": {
+          "accuracy_all": 0.5402644230769231,
+          "final_accuracy": 0.51171875,
+          "initial_accuracy": 1.0,
+          "tail_accuracy": 0.5006510416666666,
+          "branch_joint_accuracy": 0.5308293269230769,
+          "logits_sha256": "32b4d377ebd91eed3569a106005add7c4a13345b0671657dd5a790abdf97ebd4",
+          "branch_sha256": "d9e680086c87b7f4cb85ba6ae77e198389bc3942f34451477a56c0a9b0158f68",
+          "examples": 1024,
+          "steps": 64
+        },
+        "secondary_256": {
+          "accuracy_all": 0.5082646826361867,
+          "final_accuracy": 0.4931640625,
+          "initial_accuracy": 1.0,
+          "tail_accuracy": 0.4972595687984496,
+          "branch_joint_accuracy": 0.5058137767509727,
+          "logits_sha256": "1cb097ec20c0902f3c508ddc360327bd24f3121126804f1b1658cb7a90a7dff0",
+          "branch_sha256": "ce7aa95f331fdf28be1d613d7076af33b1243a5f46a4a5cd3543b7dc0019ee5b",
+          "examples": 1024,
+          "steps": 256
+        }
+      }
+    ],
+    "reproduced": true
+  },
+  "seconds": 131.21938262500043,
+  "scope": "Control-side task qualification only; no candidate run, no A2 effect, no A1 or old Gate 1 credit."
+}

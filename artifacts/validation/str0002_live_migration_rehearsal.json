@@ -1,0 +1,21 @@
+{
+  "appended_event_kind": "entry_policy",
+  "appended_policy": "gate1_candidate_first_v1",
+  "copy_event_count_after_enable": 67,
+  "copy_initial_exact_bytes": true,
+  "copy_previous_log_prefix_unchanged": true,
+  "copy_root": "/private/tmp/str0002-live-ledger-migration-204062e",
+  "failed_begin_appended_event": false,
+  "iteration_after": 7,
+  "iteration_before": 7,
+  "kind": "STR-0002_LIVE_LEDGER_COPY_MIGRATION_REHEARSAL",
+  "live_policy_enabled": false,
+  "missing_contract_rejection": "ENTRY_CONTRACT_REQUIRED: this loop requires an entry contract before begin",
+  "phase_after": "DECIDED",
+  "phase_before": "DECIDED",
+  "reflection_unchanged": true,
+  "source_event_count": 66,
+  "source_live_log_unchanged": true,
+  "source_live_root": "/Users/albaincompleta/.mounty/ALYOSHA/Neurotopo/artifacts/auto_research/live",
+  "source_log_sha256": "35d57dffb3131d7ba45d788216f1c20d23fc054d71ae87ffe86f25321d03f425"
+}

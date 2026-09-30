@@ -1,0 +1,101 @@
+{
+  "config_sha256": "0b3f5c4a660e3b791be87bbd3c93402300cb73972fc2ea5d9aa2f9cfbf6f58b7",
+  "dependency_hashes": {
+    "pyproject.toml": "d6bf9bc5c03924e4c2a51b9e5b7e93765956f16922e623e12efda4b24ed0f426",
+    "uv.lock": "a4228ebafd79e9e2cafbacff4cae0cfd8ea1c5a768a8a95c6d5a03dea61b509b"
+  },
+  "engineering": {
+    "arms": {
+      "D64_full": {
+        "final_loss": 1.0290182828903198,
+        "initial_loss": 1.3649060726165771,
+        "pass": true,
+        "ratio": 0.7539114255075827,
+        "step_seconds_p95": 0.0030456583510385824,
+        "updates": 100
+      },
+      "SC64": {
+        "final_loss": 1.0294907093048096,
+        "initial_loss": 1.3532772064208984,
+        "pass": true,
+        "ratio": 0.7607389708628668,
+        "step_seconds_p95": 0.002676329788664589,
+        "updates": 100
+      }
+    },
+    "engineering_seed": 9900013,
+    "final_target_sha256": "1447e97fbc706c954e9ada7e03a1b8c4ceb624db2738fdf6d7415b369ad2bcdc",
+    "input_sha256": "2014195595bf22253342ef00f62b0fb2ad9276934a540ff57f5b96dec9e8c0ed",
+    "learning_rate": 0.003,
+    "pass": true,
+    "pre_target_sha256": "0e5ae5da3d33ef4e861d6dc4b8854fd31eeb3ff0bf62dbafe18e8036df9db29e",
+    "random_tensor_shape": [
+      8,
+      32,
+      16
+    ],
+    "seconds": 0.9872394999983953,
+    "updates": 200
+  },
+  "experiment_id": "EXP-0013",
+  "frozen_hashes": {
+    "configs/exp0013_matrices.json": "8b5ed7d51b6178fa5469e9d0b54e25f502eb267017f6ba41db404f37d59f1b6c",
+    "configs/exp0013_v3.json": "0b3f5c4a660e3b791be87bbd3c93402300cb73972fc2ea5d9aa2f9cfbf6f58b7",
+    "configs/exp0014_v3.json": "912065f0d38cea31cecef94bb933a56d35c4e56534276c520a39f6d1ad42041d",
+    "experiments/EXP-0013/v3.md": "7ad84f9b2ad509616e4b0d499d59d701eb6e177043175d168ac11c8f5af6fe7b",
+    "experiments/EXP-0014/v3.md": "d3d2af98bd4a18f850a0efb9f9d562b5c820f3d95c832b618d9bc47de1bce225",
+    "research/entries/EXP-0013.json": "1c3a2d9ea8045e8c4b0870c7850025a8b277eea7b7b992f5e47b526bbac44548",
+    "research/registrations/G1-RS-0001_config_lock.json": "c5ccad6ebeeeed8870998414326c0dfa476a59ebc427189f2f8bac6bdc24c10e",
+    "research/registrations/G1-RS-0001_protocol_pair_v2.json": "895f2e5ab2736d75d20faaa66d96e474513c87aedbc00f902f00cbc32e230a72"
+  },
+  "kind": "ENGINEERING_ONLY",
+  "lock_sha256": "c5ccad6ebeeeed8870998414326c0dfa476a59ebc427189f2f8bac6bdc24c10e",
+  "oracle_checks": [
+    {
+      "cue_reliability": 0.75,
+      "engineering_root": 42,
+      "examples": 2,
+      "length": 48,
+      "switch_step": 16,
+      "validation": {
+        "full": 2.220446049250313e-16,
+        "full_sha256": "a40904f94cd41b470ae1ce17e4ec649a7f0875621d2a7a8c71846c321d1f2e77",
+        "last_frame": 1.1102230246251565e-16,
+        "last_frame_sha256": "37fadc74f4ebe581ebd29b6ecba7762b9e459c6ead72adf99d35d5e276d2cf69",
+        "matrix_sha256": "8b5ed7d51b6178fa5469e9d0b54e25f502eb267017f6ba41db404f37d59f1b6c",
+        "source_sha256": "e4374fdd98c0825d3f483f0507c64997cb6e25136dc36e2c45f9514dc7f01813",
+        "truncated": 2.220446049250313e-16,
+        "truncated_sha256": "20f1fb7a4abbbeeae2cdffdb361cb4892f4363b076b8559ec1d3d5bcf5a9d4bd"
+      }
+    },
+    {
+      "cue_reliability": 0.6,
+      "engineering_root": 42,
+      "examples": 2,
+      "length": 48,
+      "switch_step": 20,
+      "validation": {
+        "full": 9.992007221626409e-16,
+        "full_sha256": "071cf15566dd4d407ccbb96d8b95a9d4af782cb258e2d98362c4baa48b5e6018",
+        "last_frame": 5.551115123125783e-17,
+        "last_frame_sha256": "88c7271d814cea15b35e9ede312114365a182a7b3c7fc09fcbf4343a3968067d",
+        "matrix_sha256": "8b5ed7d51b6178fa5469e9d0b54e25f502eb267017f6ba41db404f37d59f1b6c",
+        "source_sha256": "6d2fafc096b47e97a99650349832c5e1ac75b538b23dfa4d9a2e12e5040a6d38",
+        "truncated": 3.3306690738754696e-16,
+        "truncated_sha256": "fb516743b7cd4385dd2ad2f16eebd449d71a797531ec6de406087df5d8a152cb"
+      }
+    }
+  ],
+  "seconds": 1.0092257920041448,
+  "source_commit": "c42ed52a4f3f8b135fd0872119e598ad8eb6ffe0",
+  "source_hashes": {
+    "src/neurotopo/models.py": "829a6088079c6fd9f0ad8ef3271646bf6e8da7ea193b4fa2918b51f2e4dc46f7",
+    "src/neurotopo/phase_reveal_models.py": "14e77f402c44761a67fdc1d9ef3f580ddb7df0be238750c2419f16c8ae07f035",
+    "src/neurotopo/phase_reveal_qualification.py": "75be76ad04d9dcb0cb0ad9f101922f0ac75ac44ce604312e2a3c4a58956b307b",
+    "src/neurotopo/phase_reveal_qualification_analysis.py": "0d337f0bd7ba48c96212c598f3bc048f5c8ec5dce45aa8a4802ad0e81ad82544",
+    "src/neurotopo/phase_reveal_resources.py": "dd86756b63cc2b52d4d3906683deeb2e9dc993732ace934528ed3480c287bfc9",
+    "src/neurotopo/phase_reveal_task.py": "53fa06c6307b97702d81075b97525ee54f5cd27d85cc621703272ea76199f062"
+  },
+  "status": "PASS",
+  "version": "v3"
+}

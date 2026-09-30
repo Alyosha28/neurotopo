@@ -1,0 +1,139 @@
+{
+  "cases": [
+    {
+      "branches": {
+        "borderline": "Do not train or promote a selected endpoint.",
+        "failure": "Keep this synthetic proposal unqualified.",
+        "success": "Question-only structural entry; scientific qualification still missing."
+      },
+      "claim_track": "project_gate1",
+      "events_after": 68,
+      "events_before": 67,
+      "gate1_claim": true,
+      "manifest_sha256": "6156a3456dcda6d02992ef3a2e63a7ae318887c26e28fa76482abbd44398c1e1",
+      "name": "project_design_only",
+      "old_events_exact_prefix": true,
+      "resource_cap": {
+        "max_updates": 0,
+        "max_wall_seconds": 60
+      },
+      "result": {
+        "iteration": 8,
+        "phase": "QUESTION",
+        "snapshot_sha256": "6156a3456dcda6d02992ef3a2e63a7ae318887c26e28fa76482abbd44398c1e1",
+        "status": "accepted",
+        "track": "project_gate1"
+      },
+      "source_iteration": 7,
+      "source_phase": "DECIDED",
+      "task_search": {
+        "heldout_rule": "A final stream would be disjoint from task selection, if a real study were ever proposed.",
+        "max_configurations": 1,
+        "retain_all_attempts": true
+      }
+    },
+    {
+      "branches": {
+        "borderline": "Keep the new memory/retrieval claim inconclusive.",
+        "failure": "Record a bounded memory/retrieval negative result.",
+        "success": "Report only a new memory/retrieval effect under its own protocol."
+      },
+      "claim_track": "independent_benchmark",
+      "events_after": 68,
+      "events_before": 67,
+      "gate1_claim": false,
+      "manifest_sha256": "52c55500d26791f7f74cfa2acbeb61d75ea22aa77fb429a6c755409013da04d0",
+      "name": "independent_memory",
+      "old_events_exact_prefix": true,
+      "resource_cap": {
+        "max_updates": 1200,
+        "max_wall_seconds": 600
+      },
+      "result": {
+        "iteration": 8,
+        "phase": "QUESTION",
+        "snapshot_sha256": "52c55500d26791f7f74cfa2acbeb61d75ea22aa77fb429a6c755409013da04d0",
+        "status": "accepted",
+        "track": "independent_benchmark"
+      },
+      "source_iteration": 7,
+      "source_phase": "DECIDED",
+      "task_search": {
+        "heldout_rule": "Hold out an independent seed and retain failed calibrations.",
+        "max_configurations": 1,
+        "retain_all_attempts": true
+      }
+    },
+    {
+      "branches": {
+        "borderline": "Keep the field-level claim inconclusive.",
+        "failure": "Record the field-level null result.",
+        "success": "Report a field-level factor effect with the stated controls only."
+      },
+      "claim_track": "field_reference",
+      "events_after": 68,
+      "events_before": 67,
+      "gate1_claim": false,
+      "manifest_sha256": "6251316a32a775526989e5919f201ef2aa49b811634ab71952c55960723af22c",
+      "name": "field_reference",
+      "old_events_exact_prefix": true,
+      "resource_cap": {
+        "max_updates": 100,
+        "max_wall_seconds": 60
+      },
+      "result": {
+        "iteration": 8,
+        "phase": "QUESTION",
+        "snapshot_sha256": "6251316a32a775526989e5919f201ef2aa49b811634ab71952c55960723af22c",
+        "status": "accepted",
+        "track": "field_reference"
+      },
+      "source_iteration": 7,
+      "source_phase": "DECIDED",
+      "task_search": {
+        "heldout_rule": "Reserve untouched final tasks and seeds.",
+        "max_configurations": 1,
+        "retain_all_attempts": true
+      }
+    },
+    {
+      "branches": {
+        "borderline": "Do not advance the project gate.",
+        "failure": "Keep Gate 1 closed.",
+        "success": "Evaluate only a prospective project gate rule."
+      },
+      "claim_track": "project_gate1",
+      "events_after": 67,
+      "events_before": 67,
+      "gate1_claim": true,
+      "manifest_sha256": "3fb910459206e86e0211ff3a105682dafc549f4c0091eecaa97b9cbaaed02953",
+      "name": "project_reference_pending",
+      "old_events_exact_prefix": true,
+      "resource_cap": {
+        "max_updates": 100,
+        "max_wall_seconds": 60
+      },
+      "result": {
+        "code": "PROJECT_ELIGIBILITY_UNRESOLVED",
+        "iteration": 7,
+        "phase": "DECIDED",
+        "reason": "PROJECT_ELIGIBILITY_UNRESOLVED: Reference K factor may use field_reference; project scoring needs a prospective rule",
+        "status": "rejected"
+      },
+      "source_iteration": 7,
+      "source_phase": "DECIDED",
+      "task_search": {
+        "heldout_rule": "Use a disjoint final test stream.",
+        "max_configurations": 1,
+        "retain_all_attempts": true
+      }
+    }
+  ],
+  "kind": "GOV-0002_REFLECTION_ENTRY_STAGE_DRY_RUN_NOT_SCIENTIFIC_APPROVAL",
+  "live_log_unchanged": true,
+  "old_exp0004_decision_sha256": "5e46b3b9f8f91f436ee54d21d8153795d6479ae4a27b3cc96dd5cbfeb45e649b",
+  "scratch_root": "/private/tmp/gov0002-entry-stage-dryrun-20260924",
+  "source_live_events": 67,
+  "source_live_log_sha256": "9c53d4feed803a3ff44984c2d15986d5edf7dfdc8fc0254131ddfeb59cc48673",
+  "stage_interpretation": "QUESTION structural acceptance precedes independent critique and primary-control qualification; no formal EXP run authorized"
+}

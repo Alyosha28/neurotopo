@@ -1,0 +1,58 @@
+{
+  "cases": [
+    {
+      "accepted": false,
+      "case": "missing_project_factor",
+      "contract_sha256": "417537b9f91da28e752be64a8336509c16f63b0e06344f416039157c5b3c004f",
+      "events_after": 12,
+      "events_before": 12,
+      "iteration_after": 1,
+      "policy": "gate1_candidate_first_v1",
+      "reason": "MISSING_FACTOR: Gate 1 or field reference entry requires a named factor",
+      "rejection_code": "MISSING_FACTOR"
+    },
+    {
+      "accepted": true,
+      "case": "independent_benchmark",
+      "contract_sha256": "46139af7f2904dc5b22925538d2fbd328cd32fed42be419ff939641238a50af4",
+      "entry_track": "independent_benchmark",
+      "events_after": 13,
+      "events_before": 12,
+      "iteration_after": 2,
+      "phase": "QUESTION",
+      "policy": "gate1_candidate_first_v1",
+      "snapshot_sha256": "46139af7f2904dc5b22925538d2fbd328cd32fed42be419ff939641238a50af4"
+    },
+    {
+      "accepted": false,
+      "case": "reference_project_pending",
+      "contract_sha256": "7de3dd599d1bc4a87213151a7c93c716663e9dbcc994033afad91cf60b8ae05b",
+      "events_after": 12,
+      "events_before": 12,
+      "iteration_after": 1,
+      "policy": "gate1_candidate_first_v1",
+      "reason": "PROJECT_ELIGIBILITY_UNRESOLVED: Reference K factor may use field_reference; project scoring needs a prospective rule",
+      "rejection_code": "PROJECT_ELIGIBILITY_UNRESOLVED"
+    },
+    {
+      "accepted": true,
+      "case": "field_reference",
+      "contract_sha256": "71496a87932ae8cc2d12fd85d23a4de22946f2ba6e5cb4ff07af85d022963465",
+      "entry_track": "field_reference",
+      "events_after": 13,
+      "events_before": 12,
+      "iteration_after": 2,
+      "phase": "QUESTION",
+      "policy": "gate1_candidate_first_v1",
+      "snapshot_sha256": "71496a87932ae8cc2d12fd85d23a4de22946f2ba6e5cb4ff07af85d022963465"
+    }
+  ],
+  "kind": "STR-0002_OPERATIONAL_DRY_RUN_NOT_SCIENTIFIC_APPROVAL",
+  "live_policy_enabled": false,
+  "loop_sha256": "7e409df1b87eb2fcccc4efbbf086f2e91ed30cb3a0a69ebfba27dc2103e62d14",
+  "policy": "gate1_candidate_first_v1",
+  "scientific_semantics_validated": false,
+  "scratch_root": "/private/tmp/str0002-entry-dryrun-egvyoi77",
+  "tests_passed": 141,
+  "validator_sha256": "3690b05dcb623a95f61be3ca981ccb423a217084dddc7673b190658a2ee98653"
+}

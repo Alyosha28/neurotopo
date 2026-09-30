@@ -1,0 +1,20 @@
+{
+  "appended_event_id": "event-000067",
+  "appended_event_kind": "entry_policy",
+  "code_commit": "9b87dd1b28dd1fdced2500f2011d100570a51a1c",
+  "current_matches_rehearsal_copy": true,
+  "current_reflection_preserved": true,
+  "directions_match_rehearsal_copy": true,
+  "event_count": 67,
+  "event_log_unchanged_by_rejected_begin": true,
+  "iteration": 7,
+  "kind": "STR-0002_LIVE_ENTRY_POLICY_ACTIVATION",
+  "log_sha256_after": "9c53d4feed803a3ff44984c2d15986d5edf7dfdc8fc0254131ddfeb59cc48673",
+  "missing_contract_begin_exit_code": 2,
+  "missing_contract_rejection": "error: ENTRY_CONTRACT_REQUIRED: this loop requires an entry contract before begin",
+  "phase": "DECIDED",
+  "policy": "gate1_candidate_first_v1",
+  "previous_events_exact_prefix": true,
+  "prior_66_events_sha256": "35d57dffb3131d7ba45d788216f1c20d23fc054d71ae87ffe86f25321d03f425",
+  "scientific_approval_conferred": false
+}
