@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "6cc4ad8c111f493f03d7c0ad700aaa250d680bddca163d8cd6a9e6ea2b7075b3",
+  "review_sha256": "7db9b471ba19bbbbebcfc74a0d96fbf7c3160d324b80406a3ceee512a86e659c",
+  "responses": [
+    {
+      "id": "candidate-op-count-missing",
+      "disposition": "accept",
+      "reason": "属实：packet 只给控制算子量，选择规则无法独立复算。",
+      "action": "补 selection_table.json：候选 1161、六项 |ln| 与并列破平过程，复算得同一选择 w48b2；注册表与决定0107 同步。",
+      "evidence_paths": [
+        "research/evidence/EXP-0032/selection_table.json",
+        "research/decisions/0107_exp0032_control_sweep.md"
+      ]
+    },
+    {
+      "id": "single-config-task-qualification",
+      "disposition": "accept",
+      "reason": "属实：只确认了计算最接近的单一配置，其余带内点仍是单 seed；不算作证据。",
+      "action": "决定0107 改述为‘任务族本轮未被关闭也未被确认’，并注明多 seed 确认由 EXP0033/0034 接手；注册表同步。",
+      "evidence_paths": [
+        "research/decisions/0107_exp0032_control_sweep.md",
+        "experiments/EXP-0032/registry.json"
+      ]
+    },
+    {
+      "id": "independent-seed-claim",
+      "disposition": "accept",
+      "reason": "属实：三个确认 seed 自身均值 0.6517、最小 0.6112，单独看通过；未过线的是并入 29101/29102 的 5-seed 均值。",
+      "action": "决定0107 更正为‘贴近合格’并给出算术；注册表记录同一更正。",
+      "evidence_paths": [
+        "research/decisions/0107_exp0032_control_sweep.md",
+        "experiments/EXP-0032/registry.json"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "EXP0032 v2 判词不变（QUALIFICATION_NOT_REPRODUCED）；载体状态由 EXP0033/0034 收尾，已关闭 ARCH-0001 的后续投入。"
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "df9cc8feb8ebf3c4462831f859ceaa95b876a3779ba96724c9726165fda2c4c5",
+  "review_sha256": "ba8493f3fe56e43f1c2562a7e87073ffa85090a9f92df5a0a184c1d09876a80c",
+  "responses": [
+    {
+      "id": "merge-prior-seeds",
+      "disposition": "accept",
+      "reason": "属实且违反预注册：诊断第 5 条要求前 3 个已暴露 seed 与新 seed 分开报告、不与新 seed 合并做主终点；原决定却把 14/15 与 6.7%/32% 的上界写进判词依据。",
+      "action": "重写决定0104判词依据：主终点＝12 个新 seed（三臂 12/12，判词表第 4 行成立）；前 3 个 seed 单独报告（CAND 2/3，28103 HOLD_COLLAPSE，INV 3/3）；合并 14/15 降为明确标注的事后描述性读数，不用于置信区间或判词。报告同步更正。",
+      "evidence_paths": [
+        "research/decisions/0104_exp0029_learning_qualification.md",
+        "research/evidence/EXP-0029/report.md"
+      ]
+    },
+    {
+      "id": "frozen-hash-chain",
+      "disposition": "accept",
+      "reason": "属实：决定与报告引用的是第一次修正后的中间态哈希 3de25da0…，既不等于 manifest 记录的 ca338347…，也不等于当前/分析阶段使用的 7fb6bf81…。",
+      "action": "在 provenance_check.json 记录完整哈希链 ca338347…（首轮 run，manifest）→ 3de25da0…（空值保护＋续跑后，中间态）→ 7fb6bf81…（过滤 ._* 后，当前），说明三处修改都在汇总/编排路径、fit/evaluate/condition_metrics 与 arch0001_core.py 未变（core 哈希与 EXP0028 manifest 一致）；决定与报告改为完整链，并记录套件源码哈希断言的存在与已实际触发。",
+      "evidence_paths": [
+        "research/evidence/EXP-0029/provenance_check.json",
+        "research/decisions/0104_exp0029_learning_qualification.md"
+      ]
+    },
+    {
+      "id": "run-phase-deviation",
+      "disposition": "accept",
+      "reason": "部分属实：续跑读取确实改在 run 阶段，且原决定笼统写成“分析/汇总路径”；但异常发生在 summarize（36 个 run 记录全部写盘之后），不是训练异常。",
+      "action": "在 provenance_check.json 增加 engineering_classification：崩溃点、发生时机、36 个记录全部存在且可解析、受影响记录 0、续跑未用于恢复任何记录，据此协议 ENGINEERING 行不成立；决定与报告改写为“汇总与编排路径修正”，并明确该裁决。",
+      "evidence_paths": [
+        "research/evidence/EXP-0029/provenance_check.json",
+        "research/decisions/0104_exp0029_learning_qualification.md"
+      ]
+    },
+    {
+      "id": "replay-plan-deviation",
+      "disposition": "accept",
+      "reason": "属实：协议写 2 个重放目标（一个通过、一个失败若存在），实际重放 3 个通过 run，第三个“最难 seed 28209”为事后选择；本实验无失败 run。",
+      "action": "在 provenance_check.json 记录 replay_deviation（目标、数量、事后选择性质、无失败 run），并在决定中写明 28103 失败运行的重放已由 EXP0028 verification.json 以 0 误差覆盖。",
+      "evidence_paths": [
+        "research/evidence/EXP-0029/provenance_check.json",
+        "research/evidence/EXP-0028/verification.json"
+      ]
+    },
+    {
+      "id": "all-pass-row-gap",
+      "disposition": "accept",
+      "reason": "属实：协议预见了 12/12 全过情形，但判词表没有显式“零失败”行；当前判定依赖“全部失败均为 HOLD_COLLAPSE”的空真读法。",
+      "action": "在决定0104记录该读法与“第 5 行要求失败存在”的适用关系，并要求后续版本显式写出零失败一行。判定结果在两种读法下一致，故不改变判词。",
+      "evidence_paths": [
+        "research/decisions/0104_exp0029_learning_qualification.md"
+      ]
+    },
+    {
+      "id": "per-seed-diagnostics-gap",
+      "disposition": "accept",
+      "reason": "属实：packet 的 action 摘要只含每 seed 的 IID 系指标与 response_joint，缺少其余 6 个 cell 的逐 seed 明细与逐 seed current_ok_next_response_bad，而摘要自称 Loss-free 视图。",
+      "action": "在 provenance_check.json 记录 packet 摘要省略字段及其完整来源（artifacts/EXP-0029/v1/runs/*.json 每 seed 8 cell 全量、analysis.json 的 cells_mean），更正“Loss-free”表述，并在决定重开条件中要求后续 packet 摘要逐项列明省略字段。",
+      "evidence_paths": [
+        "research/evidence/EXP-0029/provenance_check.json",
+        "artifacts/EXP-0029/v1/runs/CAND_seed28209.json"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "反思校验通过后再开下一轮：下一轮按决定0103/0104 只能做两件事之一——（a）注册具备受界 oracle、控制可学非封顶且排除简单显式解的 A2 任务族；或（b）为学习资格修复登记 v4 候选并保留 v3／EXP0028／EXP0029 记录。不得用本轮已暴露的 cell/seed 反向挑选配置，也不得据本轮结果追认 A1 通过、A2 效应或旧 Gate 1。"
+}

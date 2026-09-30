@@ -1,0 +1,16 @@
+{
+  "experiment_id": "EXP-0019",
+  "version": "v2",
+  "review_type": "independent_static_prerun",
+  "scope": "Registered frozen CO paired-history diagnostic and implementation before any research sample or checkpoint execution; no empirical verdict or model run by reviewer.",
+  "checks": [
+    "v2 preserves the frozen three-seed D64-float32 primary gate, 384 triples per seed, zero training updates, and one registered stopping branch; v1 remains a retained, unrun version.",
+    "A, B, and C share the complete suffix and maintain the registered opposite-b and same-b physical relations. Their separate full-batch forwards align corresponding rows; a full A batch is repeated bitwise.",
+    "Only bitwise equality of complete finite hidden states counts as merger. Float64-distance curves, D16, original logits, and the previously fitted linear probe are descriptive controls and cannot substitute for the primary gate.",
+    "The implementation rejects nonfinite states, logits, distances, and readouts, checks post-merger absorption, freezes checkpoint and probe hashes, and saves raw trajectories and input arrays without overwrite.",
+    "The single-process reproduction path regenerates all three seeds, replays all 12 model conditions, compares bitwise flags, independently recomputes physical states, merger counts, seed statistics, and readout metrics from raw arrays."
+  ],
+  "blocking": [],
+  "verdict": "PASS_STATIC_PRERUN",
+  "limits": "This is a pre-run design and code review only. Engineering tests and formal execution are separate evidence; no Gate 1 or information-absence claim is established."
+}

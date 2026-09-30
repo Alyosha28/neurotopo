@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "2503a1f7b26ea33457068305fca2b60f5d6f362433a34b0dd315a3b5fe2bda0e",
+  "reviewer": {
+    "model": "agent-default (independent subagent; provider model id not exposed to orchestrator)",
+    "effort": "agent-default",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "repro-gate-evidence",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "重训的 `PLAIN` 运行必须与 `artifacts/EXP-0030/v1/runs/` 的 `final_hash` 与 `training_data_sha256` 逐位一致。",
+        "plain_runs_hash_equal",
+        "final_hash8",
+        "12 个重训运行与 EXP0030 归档"
+      ],
+      "problem": "The frozen reproduction rule is PLAIN-only and demands bitwise equality on two hashes per run (final_hash and training_data_sha256). What is recorded instead is a single aggregate count, plain_runs_hash_equal = 12 out of total_runs = 12, although only 6 of the 12 listed runs are PLAIN; the only per-run hash exposed is an 8-hex-digit prefix (final_hash8, e.g. 09d3a675), and no training_data_sha256 value (new or parent) appears anywhere in the packet. The decision escalates this to '12 个重训运行与 EXP0030 归档 final_hash/training_data_sha256 逐位一致（12/12）'.",
+      "why_it_matters": "The decision table's first row turns any inconsistent model hash into ENGINEERING_OR_REPRODUCTION_FAILURE, so the recorded substatus NO_QUALIFIED_MEMORY_CONDITION is licensed only if the reproduction gate really passed on the pre-registered quantity and scope. As reported, the 12-count cannot be reconciled with the 6 PLAIN runs the rule names, and bitwise equality on training_data_sha256 is asserted but not evidenced, so the branch that selects the recorded verdict is not auditable; the comparison is also made against an untracked parent archive in a dirty tree (git_dirty = true).",
+      "falsifiable_check": "Expose, for each of the 6 PLAIN runs, EXP-0030's and EXP-0031's full final_hash and training_data_sha256 with a per-run match flag, and report separate PLAIN (6) and BRANCH (6) counts; a single mismatch moves the verdict to row 1 (ENGINEERING_OR_REPRODUCTION_FAILURE), while a full 6/6 PLAIN match plus 6/6 BRANCH match validates the 12/12 claim."
+    },
+    {
+      "id": "branch-variant-can-win",
+      "source": "design",
+      "severity": "medium",
+      "evidence": [
+        "两个监督变体（`PLAIN`、`BRANCH`）中主端点两 seed 均值较高者为该 `d` 的读数",
+        "合格变体为 `PLAIN`（不使用分支损失），故本轮不改",
+        "该缺陷连同 BRANCH 臂的独立确认留给候选 `v4` 合同一并修正并重跑"
+      ],
+      "problem": "The frozen reading rule selects whichever supervision variant has the higher two-seed mean (ties go to PLAIN), so BRANCH can be the reading for a d. The same protocol, however, states that the qualified variant is PLAIN because it does not use the branch loss, defers the BRANCH arm's independent confirmation to v4, and requires reproduction only of PLAIN runs. The frozen rules never say what happens if BRANCH wins strictly.",
+      "why_it_matters": "A BRANCH-selected d could be read and qualified (or sent to the confirm seeds) on a variant whose branch supervision carries a recorded target-construction defect (terminal index copies y_T instead of being masked) and whose confirmation was explicitly left to v4 - the round could thus declare SUPPORTED / A2_TASK_QUALIFIED_CORRECTED on an arm the protocol simultaneously declares out of scope, with no pre-registered reproduction check on the selected variant. In this scan BRANCH never wins strictly (d=1 and d=2 tie, d=3 PLAIN higher), so the executed verdict is unaffected, but the rule remains undefined.",
+      "falsifiable_check": "Recompute per-d variant means from the frozen accuracies and test for any strictly higher BRANCH mean: d=1 1.0000 vs 1.0000, d=2 0.5991 vs 0.5991, d=3 PLAIN 0.6109 vs BRANCH 0.6000. Then pre-register explicitly whether a BRANCH-winning d may be read/qualified at all or must be marked ineligible."
+    },
+    {
+      "id": "memoryless-margin-undefined",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "memoryless_best_mean + 0.05",
+        "memoryless_best_max + 0.02",
+        "memoryless_max",
+        "低于可学门槛 0.65"
+      ],
+      "problem": "The learnable band is written against two statistics, memoryless_best_mean and memoryless_best_max, but the frozen reference-set definition produces only one value per d (memoryless_best = the maximum of the four deterministic reference accuracies measured on one shared eval stream; there is no seed-level or replicate spread). The record exposes only memoryless_max (0.5071/0.5068/0.5062), and the decision evaluates the band as a bare comparison against 0.65, so the +0.05/+0.02 margin clauses cannot be reconstructed from the packet.",
+      "why_it_matters": "The incomplete memoryless reference set was one of the two high defects that motivated this re-qualification, so the margin clauses are the load-bearing part of the fix; if the executed statistic is undefined in the protocol and unreported in the record, the same class of error (comparing against the wrong reference quantity) could recur unnoticed. Numerically the margins are non-binding here - d=2 gives max(0.65, 0.5068+0.05)=0.65 and max(0.58, 0.5068+0.02)=0.58 - so the learn flags are unchanged under either reading, but the protocol text remains untestable as written.",
+      "falsifiable_check": "Recompute both thresholds from the four reference values for every d (e.g. d=2: mean-of-four 0.50396 -> 0.55396, max-of-four 0.50684 -> 0.52684, so the binding thresholds stay 0.65/0.58) and require the implementation to log which statistic fills each slot; confirm learn flags (d=2, d=3 = false) are unchanged, and amend the protocol to name the single defined statistic."
+    },
+    {
+      "id": "replay-plan-not-executed",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "在干净源码副本重放扫描与确认各 1 个运行",
+        "独立确认 seed（29111–29113）",
+        "Fresh-process retrain replay; no retuning or reselection.",
+        "D2_PLAIN:seed29101"
+      ],
+      "problem": "The frozen verification clause requires the clean-copy replay to cover one scan run and one confirm run. The record replays only two scan-seed runs (labels D2_PLAIN:seed29101 and D3_PLAIN:seed29102, i.e. scan seeds 29101/29102) and confirm is recorded as null, so no confirm-seed (29111-29113) replay exists. The clause was frozen unconditionally, so it is unsatisfiable in precisely the branch that occurred, and no pre-registered rule authorises substituting a second scan replay; the verification scope string does not disclose the substitution.",
+      "why_it_matters": "The fresh-process replay is the only independent (clean-copy) evidence in the packet, and it is confined to the same two scan seeds already used for EXP0030. The confirm leg of the decision table - the leg that would license SUPPORTED / A2_TASK_QUALIFIED_CORRECTED - is therefore never exercised, and under a strict reading of the table's '缺记录' clause an absent required record would trigger ENGINEERING_OR_REPRODUCTION_FAILURE instead of the recorded NO_QUALIFIED_MEMORY_CONDITION.",
+      "falsifiable_check": "Diff the replay labels/seeds against the scan set {29101, 29102} and the confirm set {29111, 29112, 29113}: no confirm seed appears, so either amend the protocol so the replay requirement is conditional on a qualified d, or record the missing confirm replay explicitly under the row-1 missing-record rule."
+    },
+    {
+      "id": "replay-script-unpinned",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "独立复核用 `scripts/verify_exp0031_replay.py`",
+        "以及重放脚本哈希，均写入本轮 provenance 文件",
+        "frozen_hashes",
+        "scripts/verify_exp0030_replay.py"
+      ],
+      "problem": "The design requires that the replay script's hash be written into this round's provenance record. No such hash appears in the packet: the frozen_hashes set contains only configs/exp0031_v1.json, experiments/EXP-0031/v1.md, two src/neurotopo modules, tests/test_arch0001_memory_requalification.py, configs/exp0030_v1.json, uv.lock and artifacts/validation/suite.json; the manifest's source_sha256 covers 84 keys, all under src/neurotopo/; and the run-time git_status enumerates sibling replay scripts (scripts/verify_exp0028_replay.py, scripts/verify_exp0029_replay.py, scripts/verify_exp0030_replay.py) but never scripts/verify_exp0031_replay.py.",
+      "why_it_matters": "Without a pinned hash of scripts/verify_exp0031_replay.py, the 'fresh-process retrain replay' cannot be tied to a fixed piece of code, so the independence and reproducibility of the replay rests on an unfrozen script that could have been modified before or after producing the record; under the frozen table a missing required record is itself an ENGINEERING_OR_REPRODUCTION_FAILURE trigger.",
+      "falsifiable_check": "Inspect the EXP-0031 provenance record for a sha256 of scripts/verify_exp0031_replay.py (and for the scripts/verify.py pass entry the design also demands); if absent, hash the current script, re-run the replay from a clean checkout pinned to that hash, and check that max_metric_gap = 0.0 and all four hash flags remain true."
+    },
+    {
+      "id": "supersession-not-in-rules",
+      "source": "action",
+      "severity": "medium",
+      "evidence": [
+        "判词被本轮取代",
+        "旧 Gate 1 与全部旧判词不变",
+        "不再被视为已合格条件",
+        "12 个重训运行与 EXP0030 归档"
+      ],
+      "problem": "The decision rescinds EXP0030 v1's SUPPORTED / A2_TASK_QUALIFIED verdict and states that the DELAY-d family (w32/b1, 2000 updates) '不再被视为已合格条件', but the pre-registered decision table contains only four outcomes for this round's qualification result and no rule about rewriting an earlier verdict. The packet also never identifies which condition EXP0030 had qualified or that it lies inside this round's menu (d in {1,2,3}, INV_COMP w32/b1), so the scope of the rescission cannot be checked from the packet. The same decision simultaneously asserts that '旧 Gate 1 与全部旧判词不变', which cannot literally hold together with the rescission of one of those verdicts.",
+      "why_it_matters": "Superseding a recorded task qualification is a downstream state change (A2 eligibility, reopening conditions) that is presented as following from a re-qualification whose tested scope is three d values, one control arm and the same two already-exposed scan seeds; without the identity of the superseded condition, the record asks readers to accept a family-wide rescission and an 'all old verdicts unchanged' statement that contradict each other.",
+      "falsifiable_check": "Read decision 0105 (EXP0030) to identify its qualified d and arm: if it lies outside {d=1,2,3} x INV_COMP(w32,b1), or its corrected-endpoint numbers were not re-measured here, restrict the rescission to the re-run conditions; otherwise amend the '全部旧判词不变' sentence so the superseded verdict is explicitly excluded."
+    }
+  ],
+  "overall_assessment": "修正端点、参照集与判词表按原文执行，NO_QUALIFIED_MEMORY_CONDITION 与数据一致；可定位问题集中在记录层：复现计数把 PLAIN 与 BRANCH 混写、BRANCH 取胜分支未定义、无记忆余量统计量未定义、重放计划与脚本哈希未按协议暴露、以及取代范围表述。均不影响判词。"
+}

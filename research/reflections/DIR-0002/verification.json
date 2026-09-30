@@ -1,0 +1,371 @@
+{
+  "citation_literals": [
+    {
+      "figure": "CAL-0001 触顶下界",
+      "found": true,
+      "lines": [
+        10
+      ],
+      "literal": "0.0003",
+      "source": "research/evidence/auto_research_failure_synthesis.md"
+    },
+    {
+      "figure": "CAL-0001 触顶上界",
+      "found": true,
+      "lines": [
+        10
+      ],
+      "literal": "0.0005",
+      "source": "research/evidence/auto_research_failure_synthesis.md"
+    },
+    {
+      "figure": "CAL-0002 触顶下界",
+      "found": true,
+      "lines": [
+        10
+      ],
+      "literal": "0.0018",
+      "source": "research/evidence/auto_research_failure_synthesis.md"
+    },
+    {
+      "figure": "CAL-0002 触顶上界",
+      "found": true,
+      "lines": [
+        10
+      ],
+      "literal": "0.0023",
+      "source": "research/evidence/auto_research_failure_synthesis.md"
+    },
+    {
+      "figure": "CAL-0006 dense seed603",
+      "found": true,
+      "lines": [
+        11
+      ],
+      "literal": "0.06497",
+      "source": "research/evidence/CAL-0006_dynamic_filter_qualification.md"
+    },
+    {
+      "figure": "CAL-0006 失败线",
+      "found": true,
+      "lines": [
+        5,
+        9,
+        10,
+        11,
+        13
+      ],
+      "literal": "0.08",
+      "source": "research/evidence/CAL-0006_dynamic_filter_qualification.md"
+    },
+    {
+      "figure": "EXP-0009 C0 KL 值",
+      "found": true,
+      "lines": [
+        10
+      ],
+      "literal": "0.012463",
+      "source": "research/evidence/GOV-0002_gate1_portfolio_entry.md"
+    },
+    {
+      "figure": "EXP-0009 余量下限",
+      "found": true,
+      "lines": [
+        10
+      ],
+      "literal": "0.07",
+      "source": "research/evidence/GOV-0002_gate1_portfolio_entry.md"
+    },
+    {
+      "figure": "EXP-0004 控制余量下界",
+      "found": true,
+      "lines": [
+        7
+      ],
+      "literal": "32.96",
+      "source": "research/evidence/GOV-0002_gate1_portfolio_entry.md"
+    },
+    {
+      "figure": "EXP-0004 M3 低幅",
+      "found": true,
+      "lines": [
+        7
+      ],
+      "literal": "9.10pp",
+      "source": "research/evidence/GOV-0002_gate1_portfolio_entry.md"
+    },
+    {
+      "figure": "EXP-0011 比值下界",
+      "found": true,
+      "lines": [
+        3
+      ],
+      "literal": "1.4811",
+      "source": "research/negative_results/exp0011_v6_resource_mismatch.md"
+    },
+    {
+      "figure": "EXP-0011 比值上界",
+      "found": true,
+      "lines": [
+        3
+      ],
+      "literal": "1.7629",
+      "source": "research/negative_results/exp0011_v6_resource_mismatch.md"
+    },
+    {
+      "figure": "EXP-0011 失败线",
+      "found": true,
+      "lines": [
+        3
+      ],
+      "literal": "1.12",
+      "source": "research/negative_results/exp0011_v6_resource_mismatch.md"
+    },
+    {
+      "figure": "EXP-0012 D8 最小角实测",
+      "found": true,
+      "lines": [
+        7
+      ],
+      "literal": "0.044597",
+      "source": "research/negative_results/exp0012_matrix_no_candidate.md"
+    },
+    {
+      "figure": "EXP-0012 D8 下界",
+      "found": true,
+      "lines": [
+        3,
+        7
+      ],
+      "literal": "0.05",
+      "source": "research/negative_results/exp0012_matrix_no_candidate.md"
+    },
+    {
+      "figure": "EXP-0012 D32 下界实测",
+      "found": true,
+      "lines": [
+        7
+      ],
+      "literal": "5.325199",
+      "source": "research/negative_results/exp0012_matrix_no_candidate.md"
+    },
+    {
+      "figure": "EXP-0012 D32 上界实测",
+      "found": true,
+      "lines": [
+        10
+      ],
+      "literal": "19.742137",
+      "source": "research/negative_results/exp0012_matrix_no_candidate.md"
+    },
+    {
+      "figure": "EXP-0012 D32 天花板",
+      "found": true,
+      "lines": [
+        3,
+        7,
+        8,
+        9,
+        10
+      ],
+      "literal": "4.5",
+      "source": "research/negative_results/exp0012_matrix_no_candidate.md"
+    },
+    {
+      "figure": "TH-0001 4/8 权重精确滤波",
+      "found": true,
+      "lines": [
+        82
+      ],
+      "literal": "4/8-log-weight exact filters",
+      "source": "research/stage_gates.md"
+    },
+    {
+      "figure": "TH-0001 同维下界适用单流与分组",
+      "found": true,
+      "lines": [
+        82
+      ],
+      "literal": "same state-dimension lower bound applies to single and grouped H64 states",
+      "source": "research/stage_gates.md"
+    },
+    {
+      "figure": "open_questions 学习效率交互可另行注册",
+      "found": true,
+      "lines": [
+        7
+      ],
+      "literal": "K×model interaction on learning efficiency",
+      "source": "research/open_questions.md"
+    },
+    {
+      "figure": "open_questions 4/8 权重",
+      "found": true,
+      "lines": [
+        7
+      ],
+      "literal": "only4/8 log weights",
+      "source": "research/open_questions.md"
+    },
+    {
+      "figure": "MON-0001 不排除新注册样本效率问题",
+      "found": true,
+      "lines": [
+        24
+      ],
+      "literal": "不排除不同候选/任务上新注册的样本效率问题",
+      "source": "research/open_questions.md"
+    },
+    {
+      "figure": "GOV-0002 块即竞争假设不能推论",
+      "found": true,
+      "lines": [
+        7
+      ],
+      "literal": "块即竞争假设",
+      "source": "research/evidence/GOV-0002_gate1_portfolio_entry.md"
+    },
+    {
+      "figure": "0049 最后一次任务生成器尝试",
+      "found": true,
+      "lines": [
+        3
+      ],
+      "literal": "最后一次任务生成器尝试",
+      "source": "research/decisions/0049_g1rs_task_search_cap.md"
+    },
+    {
+      "figure": "EXP-0013 阶段显露预审最强拒绝",
+      "found": true,
+      "lines": [
+        7
+      ],
+      "literal": "四条独立流恰好迎合RS4",
+      "source": "docs/EXP-0013_phase_reveal_predecision_review.md"
+    },
+    {
+      "figure": "EXP-0013 v1 预审 worker 缺口",
+      "found": true,
+      "lines": [
+        5
+      ],
+      "literal": "一次从VALIDATED跑到ANALYZED",
+      "source": "docs/EXP-0013_v1_pre_run_review.md"
+    },
+    {
+      "figure": "0053 资格/效果拆轮理由",
+      "found": true,
+      "lines": [
+        3
+      ],
+      "literal": "不能在一个worker内完成SC/D资格",
+      "source": "research/decisions/0053_exp0013_split_qualification_and_formal.md"
+    },
+    {
+      "figure": "0043 强单流可内部模拟K槽",
+      "found": true,
+      "lines": [
+        26
+      ],
+      "literal": "强单流可内部模拟K槽",
+      "source": "research/loop/current_frontier.md"
+    },
+    {
+      "figure": "0043 强控制内部形成槽不失格",
+      "found": true,
+      "lines": [
+        3
+      ],
+      "literal": "internally form slots",
+      "source": "research/stage_gates.md"
+    },
+    {
+      "figure": "0053 每臂自选 LR 规则",
+      "found": true,
+      "lines": [
+        5
+      ],
+      "literal": "控制每臂用自己的预写性能优选LR",
+      "source": "research/decisions/0053_exp0013_split_qualification_and_formal.md"
+    }
+  ],
+  "citation_literals_all_found": true,
+  "forbidden_inferences": [
+    "H3 一般证伪",
+    "Gate 1 或任何阶段门状态变化",
+    "先例新颖性",
+    "某方向必然有效",
+    "追认任何冻结结果",
+    "注册实验或授权训练"
+  ],
+  "generator": "research/reflections/DIR-0002/verification_builder.py",
+  "outputs": [
+    {
+      "bytes": 4402,
+      "path": "research/design/dir0002_direction_options_predesign.md",
+      "sha256": "06adc243834e56b05f782ff148f3bf389282de6e868306be1387c464f5385bf0"
+    },
+    {
+      "bytes": 20376,
+      "path": "research/evidence/DIR-0002_direction_options_survey.md",
+      "sha256": "e9eefe12022afd6a8418a81f6cc3d5e09d3fc6c10e290fa154e09925c94aae7e"
+    },
+    {
+      "bytes": 4485,
+      "path": "research/prior_art/dir0002_direction_prior_art.md",
+      "sha256": "8f6768abf53362d0fde70da68e76b4f0435f7326dab66a7b3990b48025e0231f"
+    }
+  ],
+  "portfolio_stats": {
+    "commits": 134,
+    "decisions": 54,
+    "governance_review_text_bytes": 1330164,
+    "governance_review_text_files": 295,
+    "last_run_with_task_metrics": {
+      "bytes": 61045,
+      "local_mtime": "2026-09-24 01:51",
+      "path": "artifacts/EXP-0009/v1/analysis.json"
+    },
+    "latest_analysis_artifact": {
+      "bytes": 366,
+      "note": "资源闸门占位，零任务信息",
+      "path": "artifacts/EXP-0011/v6/analysis.json"
+    },
+    "ratio_governance_bytes_over_analysis_bytes": 4.39,
+    "ratio_governance_files_over_analysis_files": 32.8,
+    "reflection_packages": 37,
+    "repo_span_local": {
+      "first_commit": "2026-09-23 21:03",
+      "last_commit": "2026-09-24 15:52"
+    },
+    "research_record_text_files": 110,
+    "task_level_analysis_artifacts": 9,
+    "task_level_analysis_bytes": 302992
+  },
+  "prior_art_execution": {
+    "delegated_checker": "独立子代理报告同样的两类失败；其模型回忆未采纳，标识符未记录",
+    "sources_retrieved": 0,
+    "status": "NOT_EXECUTED",
+    "web_fetch": {
+      "error": "resolves to a non-public IP address",
+      "hosts_tried": [
+        "arxiv.org",
+        "export.arxiv.org",
+        "example.com",
+        "google.com",
+        "api.semanticscholar.org",
+        "openreview.net",
+        "r.jina.ai"
+      ]
+    },
+    "web_search": {
+      "attempts": 3,
+      "endpoint": "api.deepseek.com/anthropic/v1/messages",
+      "error": "HTTP 402 Insufficient Balance"
+    }
+  },
+  "read_only_actions": "未生成任务样本、未训练、未重算冻结指标、未改阈值/决定/阶段门/账本",
+  "schema": "dir0002_verification_v2",
+  "scope": "citation_literals 逐条只证明所列字面量出现在所列文件中；它不验证该字面量所在句子的解释、不验证区间以外的数值、也不构成对任何推断的支持。计数为生成本文件时的仓库状态。",
+  "task": "DIR-0002 方向组合调查（非实验轮次，只读）"
+}

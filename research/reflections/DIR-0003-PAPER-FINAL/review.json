@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "8da1de0fdb5e7735dd1acaeafbff0c7ff79243123b404531afaa6217df0e2d42",
+  "reviewer": {
+    "model": "deepseek-v4.1-flash",
+    "effort": "high",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "I1",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "differing only in the input-weight realisation",
+        "dir0003_null_contrast.json",
+        "maxima selected over a family of median 34–906"
+      ],
+      "problem": "新的“臂间实现零”仍未与观测统计量同口径：零的两臂组织完全相同（族规模=1，无任何选择），而观测值是 34–906 个匹配成员上的极值选择（max）。因此零刻画的是“固定组织下的实现噪声”，而不是观测统计量（选择后的极值）的零分布；§3.1 却直接拿它当阈值。",
+      "why_it_matters": "极值选择会系统抬高对比度；用未选择的零作基准，既可能把真信号判为重叠，也可能把选择伪影误认为“回到实现水平”（§3.4(iii)、§4.1）。v1 被指的“类别不可比”只被换了一个位置，并未消除。",
+      "falsifiable_check": "对同一匹配族随机重采样 k=34/906 个成员并取 max-of-k，构造选择匹配的零分布；若该零的 p90 仍低于 separated 观测的 p10，则“极值选择解释大值”成立，否则不成立。"
+    },
+    {
+      "id": "I2",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "84 seed pairs per geometry",
+        "realisation_null_max_on_grid",
+        "8 seeds × 3 ridges per cell"
+      ],
+      "problem": "样本量与配对结构不对等：零的 n=84 与观测的 24/36 格被当作同类样本直接比分位点。但 ledger 中零以外的统计量均为 n=8（seed），8 个 seed 在同一 γ 下的无序对最多 C(8,2)=28，因此 84 必定重复使用了 3 个 γ 值（或跨格池化），两端的有效独立数都被高估约 3 倍；且零在包内只有一个文件名，配对方式（两臂是否共享参考臂/同一 b，是配对差分还是独立抽取）未披露。若观测对比度在两臂共享同一 seed 的 b 下计算，部分实现噪声已被抵消，零反而高估了观测的噪声。",
+      "why_it_matters": "大 n 会系统抬高 p90/max（零 n=84 的 max=0.0155 对观测 n=24 的 p90=0.0143），使“重叠”判断偏向宽松；配对/非配对混用则使零不是观测统计量的正确零分布。Q1 所问的两点均未解决。",
+      "falsifiable_check": "从 research/design/dir0003_null_contrast.json 重建 84 对的配对结构（是否 28对×3γ；两臂是否共享参考 b），并按 seed 级独立单位重算 p90/max 与配对、非配对两种口径。"
+    },
+    {
+      "id": "I3",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "sits at the null's own p90",
+        "0.00574913053138644",
+        "0.009310137780678268"
+      ],
+      "problem": "§3.1 决定性的一句是不同分位点相比：用观测的中位数 0.0097 对零的 p90 0.0093，得出“落在零自身 p90”。同分位点比较（中位 0.0097 vs 0.0057；p90 0.0143 vs 0.0093）显示观测系统性高于零约 1.5–1.7 倍，且观测 p90 已高于零 max(0.0155) 的 92%。",
+      "why_it_matters": "该句是 INCONCLUSIVE_OVERLAP 的主要论据；分位点错位使结论方向可能相反（“高于零但 n 不足以定论”而非“落在零上”），且让读者无法复核判词。",
+      "falsifiable_check": "改为同分位点比较并报告秩次/置换检验与 bootstrap CI（以 8 个 seed 为独立单位）；若差异不显著，则应写成“无法区分”而非“落在 p90”。"
+    },
+    {
+      "id": "I4",
+      "source": "design",
+      "severity": "high",
+      "evidence": [
+        "moves the verdict from `FALSIFIED` to `OVERLAP`",
+        "below the artifact band",
+        "Both adjacent-band rows sit entirely below the band"
+      ],
+      "problem": "旧口径结论大量残留：§3.2 的 verdict 列仍为 `FALSIFIED`/`OVERLAP`，其 Result 段仍用旧的“同臂 γ 敏感度”口径推出“FALSIFIED→OVERLAP”；§4 R2 与§4.1 仍以“below the artifact band”作判定规则；Figure 1 caption 与§8 仍以“低于读出选择所能制造的水平”为主判据。全文并存 FALSIFIED / OVERLAP / INCONCLUSIVE_OVERLAP 三套标签。",
+      "why_it_matters": "本文的核心声称（几何决定可识别性）正是被自己撤回的那个口径的产物；若不统一，审稿人会同时读到“已撤回”与“仍在用”的判词。",
+      "falsifiable_check": "全文检索 `FALSIFIED`、`below the artifact band`、`band geometry`、`10–70 times` 等旧表述，并按§3.4 新零逐格重算 verdict 后统一标签。"
+    },
+    {
+      "id": "I5",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "no geometry or correlation time yields a separable effect",
+        "is set by the band geometry",
+        "0.03308720535028341",
+        "0.014265585959624395"
+      ],
+      "problem": "新零只对 φ=0.5 的两个几何计算，φ=0.7/0.3 的格子没有新零；而在 separated(φ=0.5) 上，观测长滞后 p10=0.0397 已高于该几何实现零的 max=0.0331，中位 0.194 约为零中位 0.0143 的 13.6 倍（adjacent 仅 1.7 倍）。按论文自定规则，这正是“可识别”的一格，但全文从未给出该比值；摘要却断言普适的“不可分离”，而标题/§8 又说“由 band geometry 决定”。两个主张与数据方向相反。",
+      "why_it_matters": "同一稿同时主张“几何决定”与“没有几何可分离”，且唯一按新零比较的格子是相邻几何；结论强度与证据方向不一致，属旧结论的镜像残留。",
+      "falsifiable_check": "对 separated/φ=0.7/φ=0.3 各算实现零，按§3.4 规则报告 signal/null 比值与其选择匹配版本；若 separated 仍超出，摘要与§8 必须改写。"
+    },
+    {
+      "id": "I6",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "we first used as a threshold",
+        "two to five times",
+        "0.061121819879751516",
+        "0.13078713866283553"
+      ],
+      "problem": "阈值归属错位：摘要与§3.4(i) 称旧阈值是“within-arm ridge sensitivity (median 0.131)”，但 §3.1 冻结规则用的 artifact band 定义为“ridge 在 0.01 与 0.03 之间的最大变化”，其中位为 0.0611；0.131 是 §3.4 才引入的“三对 γ 取最大”加宽带。对真实阈值而言，零只小 2.3–2.5 倍，而非“2–5 倍”；且 artifact band 的定义在 §3/§3.2 与 §3.4 之间静默更改。",
+      "why_it_matters": "“原阈值过保守”是撤回 FALSIFIED 的关键论据，倍数与口径变更会直接影响该论据的强度，且属于未记版本的协议变更。",
+      "falsifiable_check": "在 ledger 中对账 primary artifact_band.median=0.0611 与 ridge_band_all_pairs.median=0.1308，并按真实阈值重述倍数与口径定义。"
+    },
+    {
+      "id": "I7",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "0.0083 / 0.0160 / 0.0048",
+        "0.0008490744678856244",
+        "n_qualified",
+        "dir0003_review_followups.json"
+      ],
+      "problem": "tanh 内嵌对照在 ledger 中有两条互相矛盾的记录（tanh_nested_matched 与 tanh_same_rule）：同一组 seed 上选中成员的 counts 不同（[21,19,24] vs [20,28,16]），长滞后对比相差约 10 倍（0.00085/0.00080 vs 0.00826/0.01595）；design 只引用较大的一组且未说明两条记录的关系与择一理由。此外 0.0160 已超过相邻几何实现零的 max(0.0155)，“at or modestly above the realisation null”偏松。",
+      "why_it_matters": "同一对照存在互相矛盾的证据记录而选择性呈现，正是本文批评的 specification-curve 问题；若采用另一条记录，三个 seed 中两个会落在零一个数量级以下，控制结论反转。",
+      "falsifiable_check": "由 dir0003_tanh_matched.json 与 dir0003_review_followups.json 复算并公布两条记录的选择规则、counts 差异与逐 seed 秩次。"
+    },
+    {
+      "id": "I8",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "the best contrast available after a second moment is matched",
+        "best contrast in R1 pool (median)",
+        "every allocation within 2% is",
+        "0.04747135455828494"
+      ],
+      "problem": "“大值来自极值选择”是断言而非检验：全文未给任何 max-of-k 的零分布或重采样；§4.1 又把“best of 5 / best of 81.5”与单次抽取的零相比后称作“回到实现水平”，属阶统计量不对等（best-of-81 自然远大于单抽）。同时决定 k（34–906）的 2% 匹配容差从未被扰动或论证。",
+      "why_it_matters": "若 max-of-k 不能复现 0.26/0.144，则“选择解释大值”不成立，几何差异仍是未解释的组织效应；若成立，则“best-of-k 回到实现水平”的说法无效。两条结论互相消耗。",
+      "falsifiable_check": "对每个族做 max-of-k 重采样，报告 k=1,5,34,900 的零分布并与观测 max 比较；将容差改为 1%/5% 看 k 与 max 的响应。"
+    },
+    {
+      "id": "I9",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "only about 1.5–2 times the null",
+        "matching one scalar does not identify an",
+        "equivalence testing for null results",
+        "0.041815236106517495"
+      ],
+      "problem": "“typical vs 零”的比值不是可识别性检验：零在构造上固定了组织，其期望为 0；而“typical matched member”是不同分配，其总体对比度不必为 0。因此 1.5–2.3 倍的比值无法支持“匹配单一标量平均上不识别组织”。全文无任何 CI、检验统计量或多重性处理（§1.1 引了 equivalence testing 却未使用），n=8 seed。",
+      "why_it_matters": "主结论（“不识别”）需要的正是“落在等价界内”的证据，而非“小于某个噪声倍数”；当前写法把“无能力检出”当作了“可证明无效应”。",
+      "falsifiable_check": "预注册最小有意义效应量并做 TOST/bootstrap CI（以 seed 为独立单位），报告 typical 成员总体均值与零的可分辨区间。"
+    },
+    {
+      "id": "I10",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "before the out-of-sample cells",
+        "showed that this is the wrong",
+        "(decision 0077)",
+        "包内只有这三个文件。**"
+      ],
+      "problem": "关键程序性主张依赖包外记录：“规则在样本外格子之前冻结”（decision 0077）、review issue I4/I5、v1 的 14 项审查、复现清单与两张图均不在包内（action 明言包内只有三个文件），因此“先冻结后验证”的时序无法在包内核实。",
+      "why_it_matters": "这是加分项级缺陷而非数据错误，但它决定审稿人能否独立复核 pre-registration 主张；Figure 1 的灰带仍是旧口径的可视化，需与新判词同步。",
+      "falsifiable_check": "随稿提交 decision 0077 与 I4/I5 原文、两张图文件及 manifest；核对 Fig.1 caption 是否仍写“below the band”。"
+    }
+  ],
+  "overall_assessment": "判词：PAPER_NEEDS_MAJOR_REVISION。decision_impact: REASSESSMENT_REQUIRED（不改变宿主项目 Gate 1 的 NOT_PASSED，但本稿自己的判词体系、几何主张与 tanh 控制结论必须重算）。\n\nQ1 口径未修好（部分改善）。臂间实现零确实修正了 v1“同臂 γ 敏感度不是臂间对比”的类别错误，但仍有四处不可比：(i) 零无族选择（族规模=1）而观测是 34–906 上的 max（I1）；(ii) n=84 不是 84 个独立对（8 seed 同 γ 无序对最多 28，84 必定重复使用 γ 或跨格），观测是 24/36 个相关格（seed×γ），两端有效独立数均高估约 3 倍，且大 n 抬高零的 p90/max，使判断偏向“重叠”（I2）；(iii) 配对结构未披露：包内只有一个文件名，两臂是否共享参考臂/同一 b、是配对差分还是独立抽取均不可知，而观测若两臂共享同一 b，则零反而高估了观测的噪声（I2）；(iv) 新零只覆盖 φ=0.5。因此“零 vs 观测”仍不是同口径比较，且 §3.1 的决定性一句是中位数对 p90 的分位点错位（I3）。\n\nQ2 不自洽，残留旧结论至少五处：§3.2 的 verdict 列与 Result 段（`FALSIFIED`→`OVERLAP`）、§4 R2、§4.1（“below the artifact band”作判定规则）、Figure 1 图注、§8 与标题；摘要又同时写“no geometry … separable”与“set by the band geometry”，FALSIFIED/OVERLAP/INCONCLUSIVE_OVERLAP 三套标签并存（I4、I5）。未发现“10–70 times”残留（已改写为倍数描述），但“band geometry”作为主张仍在标题。\n\nQ3 抽查的 11 个数均可在 ledger 定位（0.024/0.062/0.131/0.0083/0.0160/2.5–4.7%/18–72%/0.26/0.024–0.047），但有三处口径滑移：0.131 被当作“旧阈值”（§3.1 实际用 0.0611）；§4 的“median 0.057”来自 C1（总容量匹配）而非所述的 R1(C2)；§2 的截断对照值 3.6991701 只出现在 ledger 的键名里。另 0.0083/0.0160 仅存于 tanh_same_rule，而另一条记录给出 0.00085/0.00080（I6、I7）。\n\nQ4 “typical vs selected”方向可能正确但论证不成立：典型成员≈1.5–2.3×零无法证明“不识别”（零的期望按构造为 0，缺等价检验）；“极值选择解释大值”无 max-of-k 零，且 R1 池的 best-of-5/81.5 与单抽零相比属阶统计量不对等；2% 容差（决定 k）未扰动。更重要：separated 观测的 p10 已高于该几何新零的 max，按论文自定规则这一格反而是“可分离”，与摘要的普适否定相冲（I8、I9、I5）。\n\nQ5 致命：标题/摘要/§8 与 §3.1/§3.4 判词冲突；新零的选择与样本量口径未闭合；tanh 双记录与选择性引用；全文无任何统计推断（无 CI/检验/多重性）；Figure 1 仍可视化旧口径。加分：2×2 平衡设计、精确无限视界容量闭式与自检（1e-12、3.7020119）、R1/R2 控制梯、把 artifact band 写进 recipe、错误自陈（Gram 广播、lag 索引、{±1/√N} 空维度）。按现状只能作为内部方法学稿；投 workshop 前至少完成“判词统一 + 选择匹配零 + 统计处理”三项，否则审稿人会发现本稿推翻自己的主张。\n\nFILES_READ: [\"research/reflections/DIR-0003-PAPER-FINAL/packet.json\"]"
+}

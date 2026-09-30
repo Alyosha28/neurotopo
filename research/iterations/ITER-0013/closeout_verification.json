@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "raw_files_verified": 19,
+  "parent_checkpoints_unchanged": 6,
+  "tests_passed": 274,
+  "source_suite_matches": true,
+  "phase": "DECIDED",
+  "iteration": "ITER-0013",
+  "decision": "INCONCLUSIVE",
+  "substatus": "NO_USEFUL_LINEAR_READOUT",
+  "reflection_issues": 0,
+  "source_execution_commit": "248bacb904f04ebe8f1d21593a28bbfeb72b6490",
+  "run_analysis_seconds": 5.352854583999942,
+  "single_audit_outer_seconds": 4.1711722090003605,
+  "gru_updates": 0,
+  "probe_newton_updates": 24
+}

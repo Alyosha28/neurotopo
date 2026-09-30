@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "30933eca1bc41619acb758e386da02abe1162b109b30741f8d06ecfef09dcf34",
+  "review_sha256": "543b9acce4073079fa9b708ba973f0fdc5d76a63e6be53a223e5066a0bebd60e",
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "v2 审查判 V2_NEEDS_NARROWING（7 项：2 high / 4 medium / 1 low），全部 accept，并确认 I1（作用域计数）、I2（§5 匹配口径）、I5（C8/C9 台账单元格）语义已闭合，而 v2 新增文本带入三处新缺陷（I2 机械判据以构造失败代替不存在性证明且默认支义务更轻；I4 U3 未绑定任何台账格且锚点错；I5 带限定语的 PASS 未被读表规则覆盖）。按 v2 事前规则（仅当审查指出新缺陷时才续循环）出**有界 v3**，只列 §0/§1/§3/§4/§5 的替换文本，并附**停止规则**：若 v3 审查仍判 NEEDS_NARROWING，主代理停止该审计线并记录残余问题，不再出 v4。Gate 1 仍 NOT_PASSED；无 EXP 注册、无训练授权；非回归清单 12 条无一重开。",
+  "responses": [
+    {
+      "id": "I1",
+      "disposition": "accept",
+      "reason": "成立且是三条新缺陷中最重的一条。限制型操纵在冻结预算下同时打开一个**同向**通道：优化难度／损失面条件数／有效容量——即 §1 自己命名的「已知正则化/归纳偏置效应」。v2 把它写成最强拒绝，却只把它降级为 K7 文献问题，§5 七条中没有任何一条要求对该项给界、实测或设对照（§5 内「优化/正则化/归纳偏置」命中 0）。于是「通道项不能解释它」被写成「归因反转」，把待检验的机制主张与通用正则化解释之间未做的区分，从实验控制义务转成了文献新颖性义务。",
+      "action": "v3 删除「归因反转」这一结论式表述，改为：可达集之差对候选不利 ⇒ **表征通道**不能解释正向差；但**优化/正则化通道同向**，必须被单独界定或对照。§5 新增一条硬条件：须给出把「声明的组织」与「通用正则化/条件数改善」分开的预注册探针或对照（同一正则化强度/同一条件数但无声明组织，或声明量的剂量–反应），否则不得归因。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v3.md",
+        "research/loop/current_frontier.md"
+      ]
+    },
+    {
+      "id": "I2",
+      "disposition": "accept",
+      "reason": "成立。v2 的「机械判据」把「未能构造出落在 R_m 减 R_c 中的函数」当作「R_m 包含于 R_c」的证明，即用构造失败代替不存在性证明；对神经函数类，R_m 减 R_c 非空通常要靠不可表示性论证。且默认支义务更轻：凡拿不出 witness 的候选自动进入轻义务的限制支，并自动获得 I1 的「归因反转」。",
+      "action": "v3 重写类型判据：两侧都须**证明**（扩张侧给可构造 witness；限制侧给不可表示性/包含性论证），二者都拿不出时类型记 `UNDETERMINED`，并**同时承担两支中更重的举证义务**（不得默认进入轻支）；类型为 UNDETERMINED 时禁止使用任何「通道方向已定」的推论。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v3.md"
+      ]
+    },
+    {
+      "id": "I3",
+      "disposition": "accept",
+      "reason": "成立。K 编号不闭合：§3 表头只定义 K1/K3/K4/K5/K6/K7/K9，K2 与 K8 缺定义却被 §4 使用（K2 命中 1 次无定义，K8 命中 0）；`Δ` 与 `δ_min` 亦被使用而无定义句。",
+      "action": "v3 在 §3 表头**补全 K1–K9 全部定义**，并就地定义 `Δ`（决定0073 的族内投影代价之差，**不得**充作两臂可达界）与 `δ_min`（预注册的有用效应下限，须附推导来源与脚本哈希）。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v3.md"
+      ]
+    },
+    {
+      "id": "I4",
+      "disposition": "accept",
+      "reason": "成立。U3 虽入清单，却未落到任何可核位置：§3/§5 内检索 U3 命中 0，九行台账的 K4 全标「受 U1 约束」、K6 全标「受 U2 约束」；且 U3 的锚点错挂在「决定0071 §5」，而 packet 内 0071 §5 只处理 0062 B7 与学习效率终点（U1 主题），真正支持该未决项的是 `stage_gates.md` 的 DIR-0002 段与决定0054/0062 请求 A。",
+      "action": "v3 更正 U3 的锚点为 `stage_gates.md` 的 DIR-0002 段 ＋ 决定0054 两问 ＋ 决定0062 请求 A 的 A1–A5 与决定0049 的关系；并把 U3 绑定到台账的 **K6 列**（标「受 U2/U3 约束」），使规则项在候选层可复核。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v3.md"
+      ]
+    },
+    {
+      "id": "I5",
+      "disposition": "accept",
+      "reason": "成立。§3 把 K1 定义为「余量实测（水平量）」、§5 第 3 条同此，但同一份 §3 给 C1/C2 的 K1 记 `PASS` 并在括号自承是解析量；读表规则只禁止把 UNKNOWN/NOT_EVALUATED 读作 PASS，未覆盖「带限定语的 PASS」。三处文本不可同真。",
+      "action": "v3 把 C1/C2 的 K1 由「PASS（解析量）」改为 **`NOT_MEASURED（仅解析量 gap(16)）`**，并在读表规则中写明：任何带限定语的 PASS 一律按其限定语读作未通过该项。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v3.md"
+      ]
+    },
+    {
+      "id": "I6",
+      "disposition": "accept",
+      "reason": "成立。§4 称「按原件自己的要求」，但摘要只覆盖六项，遗漏 `gate1_benchmark_baseline_audit.md` 同段的另外四项：把容量/计算匹配的单流对照与拓扑匹配的对照**配对**（无法精确匹配时披露取舍）、**保留全部难度切片**（含天花板与地板）、只在任务收益成立后才做候选专属干预、不得仅由向量分离或新探针推断专门化。",
+      "action": "v3 §4 补齐全部十项要求（六项 oracle/流程 ＋ 四项对照/切片/干预/推断纪律），并在 §5 第 3 条承接。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v3.md"
+      ]
+    },
+    {
+      "id": "I7",
+      "disposition": "accept",
+      "reason": "成立（low）。§0 把 C6、C7 列入「被既有决定/记录挡住」的六项，但括号理由分别是「头寸与新颖性双缺」（证据/理论侧）与「是规格而非候选」（类别差异），与「被决定挡住」不同类；计数本身已单值（C1–C7，6＋1），故仅属子分类引导句措辞问题。",
+      "action": "v3 把该组改标为「已评估且当前不可推进的六项」，并分列三小类：决定明确停止（C1/C2/C3/C5）、证据/理论双缺（C6）、非候选（C7）；不再统一称「被挡住」。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v3.md"
+      ]
+    }
+  ]
+}

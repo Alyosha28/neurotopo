@@ -1,0 +1,400 @@
+{
+  "area": "G_topology_dynamics_predictions",
+  "retrieved_at": "2026-09-25T02:50:00+08:00",
+  "audit_date": "2026-09-25",
+  "channels_used": [
+    "europepmc",
+    "arxiv",
+    "crossref",
+    "direct_fetch(nature.com, arxiv.org/pdf)"
+  ],
+  "channels_unavailable": [
+    "openalex (daily free budget exhausted: Rate limit exceeded)",
+    "duckduckgo/mojeek/searxng/dblp (anti-bot)",
+    "semantic scholar (429)"
+  ],
+  "local_reproduction": false,
+  "queries": [
+    {
+      "engine": "crossref",
+      "query": "small-world topology echo state property signal propagation reservoir",
+      "url": "https://api.crossref.org/works?query.bibliographic=small-world+topology+echo+state+property+signal+propagation+reservoir&rows=8",
+      "n_results": 8
+    },
+    {
+      "engine": "crossref",
+      "query": "edge of chaos echo state network information processing",
+      "url": "https://api.crossref.org/works?query.bibliographic=edge+of+chaos+echo+state+network+information+processing&rows=8",
+      "n_results": 8
+    },
+    {
+      "engine": "crossref",
+      "query": "memory capacity echo state network eigenvalue spectrum",
+      "url": "https://api.crossref.org/works?query.bibliographic=memory+capacity+echo+state+network+eigenvalue+spectrum&rows=8",
+      "n_results": 8
+    },
+    {
+      "engine": "crossref",
+      "query": "information processing capacity dynamical systems Dambre",
+      "url": "https://api.crossref.org/works?query.bibliographic=information+processing+capacity+dynamical+systems+Dambre&rows=8",
+      "n_results": 8
+    },
+    {
+      "engine": "crossref",
+      "query": "memory traces in dynamical systems Ganguli Sompolinsky",
+      "url": "https://api.crossref.org/works?query.bibliographic=memory+traces+in+dynamical+systems+Ganguli+Sompolinsky&rows=8",
+      "n_results": 8
+    },
+    {
+      "engine": "crossref",
+      "query": "edge of chaos prediction computational performance neural circuit models Legenstein",
+      "url": "https://api.crossref.org/works?query.bibliographic=edge+of+chaos+prediction+computational+performance+neural+circuit+models+Legenstein&rows=8",
+      "n_results": 8
+    },
+    {
+      "engine": "crossref",
+      "query": "real-time computation edge of chaos recurrent neural networks Bertschinger",
+      "url": "https://api.crossref.org/works?query.bibliographic=real-time+computation+edge+of+chaos+recurrent+neural+networks+Bertschinger&rows=8",
+      "n_results": 8
+    },
+    {
+      "engine": "crossref",
+      "query": "beyond edge of chaos amplification temporal integration recurrent networks Toyoizumi",
+      "url": "https://api.crossref.org/works?query.bibliographic=beyond+edge+of+chaos+amplification+temporal+integration+recurrent+networks+Toyoizumi&rows=8",
+      "n_results": 8
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"memory traces in dynamical systems\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all:%22memory+traces+in+dynamical+systems%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"short-term memory in orthogonal neural networks\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all:%22short-term+memory+in+orthogonal+neural+networks%22&max_results=12&sortBy=relevance",
+      "n_results": 1
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"edge of chaos and prediction of computational performance for neural circuit models\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all:%22edge+of+chaos+and+prediction+of+computational+performance+for+neural+circuit+models%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"real-time computation at the edge of chaos in recurrent neural networks\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all:%22real-time+computation+at+the+edge+of+chaos+in+recurrent+neural+networks%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"beyond the edge of chaos amplification and temporal integration by recurrent networks\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all:%22beyond+the+edge+of+chaos+amplification+and+temporal+integration+by+recurrent+networks%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"edge of chaos\" AND abs:reservoir",
+      "url": "https://export.arxiv.org/api/query?search_query=ti:%22edge+of+chaos%22+AND+abs:reservoir&max_results=12&sortBy=relevance",
+      "n_results": 5
+    },
+    {
+      "engine": "arxiv",
+      "query": "abs:\"memory capacity\" AND abs:\"echo state\"",
+      "url": "https://export.arxiv.org/api/query?search_query=abs:%22memory+capacity%22+AND+abs:%22echo+state%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "au:Sompolinsky AND abs:memory",
+      "url": "https://export.arxiv.org/api/query?search_query=au:Sompolinsky+AND+abs:memory&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "abs:\"information processing capacity\" AND abs:reservoir",
+      "url": "https://export.arxiv.org/api/query?search_query=abs:%22information+processing+capacity%22+AND+abs:reservoir&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"Beyond the Edge of Chaos\" AND abs:reservoir",
+      "url": "https://export.arxiv.org/api/query?search_query=ti:%22Beyond+the+Edge+of+Chaos%22+AND+abs:reservoir&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "abs:\"small-world\" AND abs:\"reservoir\"",
+      "url": "https://export.arxiv.org/api/query?search_query=abs:%22small-world%22+AND+abs:%22reservoir%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "abs:\"modular\" AND abs:\"reservoir\" AND abs:\"coupling\"",
+      "url": "https://export.arxiv.org/api/query?search_query=abs:%22modular%22+AND+abs:%22reservoir%22+AND+abs:%22coupling%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"memory traces in dynamical systems\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22memory+traces+in+dynamical+systems%22&format=json&resultType=core&pageSize=15",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "\"edge of chaos\" AND \"reservoir computing\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22edge+of+chaos%22+AND+%22reservoir+computing%22&format=json&resultType=core&pageSize=15",
+      "n_results": 15
+    },
+    {
+      "engine": "europepmc",
+      "query": "\"memory capacity\" AND \"reservoir computing\" AND topology",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22memory+capacity%22+AND+%22reservoir+computing%22+AND+topology&format=json&resultType=core&pageSize=15",
+      "n_results": 15
+    },
+    {
+      "engine": "europepmc",
+      "query": "AUTH:\"Legenstein\" AND TITLE:\"edge of chaos\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=AUTH:%22Legenstein%22+AND+TITLE:%22edge+of+chaos%22&format=json&resultType=core&pageSize=15",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "AUTH:\"Bertschinger\" AND \"edge of chaos\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=AUTH:%22Bertschinger%22+AND+%22edge+of+chaos%22&format=json&resultType=core&pageSize=15",
+      "n_results": 6
+    },
+    {
+      "engine": "europepmc",
+      "query": "AUTH:\"Toyoizumi\" AND \"edge of chaos\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=AUTH:%22Toyoizumi%22+AND+%22edge+of+chaos%22&format=json&resultType=core&pageSize=15",
+      "n_results": 6
+    },
+    {
+      "engine": "europepmc",
+      "query": "\"modular\" AND \"reservoir computing\" AND \"memory capacity\" AND \"timescale\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22modular%22+AND+%22reservoir+computing%22+AND+%22memory+capacity%22+AND+%22timescale%22&format=json&resultType=core&pageSize=15",
+      "n_results": 15
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"A small-world topology enhances the echo state property\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE:%22A+small-world+topology+enhances+the+echo+state+property%22&format=json&resultType=core&pageSize=15",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "\"modular networks\" AND \"memory capacity\" AND \"threshold neurons\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22modular+networks%22+AND+%22memory+capacity%22+AND+%22threshold+neurons%22&format=json&resultType=core&pageSize=15",
+      "n_results": 3
+    },
+    {
+      "engine": "europepmc",
+      "query": "\"hierarchical modularity\" AND \"reservoir\" AND \"timescale\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22hierarchical+modularity%22+AND+%22reservoir%22+AND+%22timescale%22&format=json&resultType=core&pageSize=15",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "DOI:\"10.1162/netn_a_00082\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1162/netn_a_00082%22&format=json&resultType=core&pageSize=15",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "\"information processing capacity\" AND topology AND reservoir",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22information+processing+capacity%22+AND+topology+AND+reservoir&format=json&resultType=core&pageSize=15",
+      "n_results": 15
+    },
+    {
+      "engine": "europepmc",
+      "query": "\"coupling strength\" AND \"memory capacity\" AND reservoir AND critical",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22coupling+strength%22+AND+%22memory+capacity%22+AND+reservoir+AND+critical&format=json&resultType=core&pageSize=15",
+      "n_results": 15
+    },
+    {
+      "engine": "europepmc",
+      "query": "DOI batch: 10.1016/j.neunet.2019.01.002; 10.1038/s41598-025-18004-y; 10.1007/s12551-025-01295-w; 10.1103/physreve.84.051908; 10.1073/pnas.0804451105; 10.1515/nanoph-2022-0415; 10.3390/biomimetics9120755; 10.1038/s41598-026-53098-y; 10.1016/j.neunet.2007.04.017; 10.1162/089976604323057443 (逐条 DOI 解析取作者/卷页)",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI+batch:+10.1016/j.neunet.2019.01.002;+10.1038/s41598-025-18004-y;+10.1007/s12551-025-01295-w;+10.1103/physreve.84.051908;+10.1073/pnas.0804451105;+10.1515/nanoph-2022-0415;+10.3390/biomimetics9120755;+10.1038/s41598-026-53098-y;+10.1016/j.neunet.2007.04.017;+10.1162/089976604323057443+(逐条+DOI+解析取作者/卷页)&format=json&resultType=core&pageSize=15",
+      "n_results": 10
+    },
+    {
+      "engine": "direct_fetch",
+      "query": "https://www.nature.com/articles/srep00514",
+      "url": "https://www.nature.com/articles/srep00514",
+      "n_results": 1
+    },
+    {
+      "engine": "direct_fetch",
+      "query": "https://www.nature.com/articles/s41467-026-74466-2",
+      "url": "https://www.nature.com/articles/s41467-026-74466-2",
+      "n_results": 1
+    },
+    {
+      "engine": "direct_fetch",
+      "query": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6497001/fullTextXML",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6497001/fullTextXML",
+      "n_results": 1
+    },
+    {
+      "engine": "direct_fetch",
+      "query": "arxiv.org/pdf/{2012.01409, cond-mat/0402452, 1906.03186, 2607.17909} 全文 PDF + pdftotext",
+      "url": "https://arxiv.org/pdf/2012.01409",
+      "n_results": 4
+    }
+  ],
+  "sources": [
+    {
+      "title": "Information Processing Capacity of Dynamical Systems",
+      "year": 2012,
+      "id": "10.1038/srep00514",
+      "url": "https://doi.org/10.1038/srep00514",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Short-Term Memory in Orthogonal Neural Networks",
+      "year": 2004,
+      "id": "arXiv:cond-mat/0402452",
+      "url": "https://arxiv.org/abs/cond-mat/0402452",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Optimal modularity and memory capacity of neural reservoirs",
+      "year": 2019,
+      "id": "10.1162/netn_a_00082",
+      "url": "https://doi.org/10.1162/netn_a_00082",
+      "verified_layer": "pmc_fulltext_section"
+    },
+    {
+      "title": "Neuromorphic hierarchical modular reservoirs",
+      "year": 2026,
+      "id": "10.1038/s41467-026-74466-2",
+      "url": "https://doi.org/10.1038/s41467-026-74466-2",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Mutual Information and the Edge of Chaos in Reservoir Computers",
+      "year": 2019,
+      "id": "arXiv:1906.03186",
+      "url": "https://arxiv.org/abs/1906.03186",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Do Reservoir Computers Work Best at the Edge of Chaos?",
+      "year": 2020,
+      "id": "arXiv:2012.01409",
+      "url": "https://arxiv.org/abs/2012.01409",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Beyond the Edge of Chaos: Stability-Expressivity Transfer in Reservoir Forecasting",
+      "year": 2026,
+      "id": "arXiv:2607.17909",
+      "url": "https://arxiv.org/abs/2607.17909",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Memory traces in dynamical systems",
+      "year": 2008,
+      "id": "10.1073/pnas.0804451105",
+      "url": "https://doi.org/10.1073/pnas.0804451105",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Edge of chaos and prediction of computational performance for neural circuit models",
+      "year": 2007,
+      "id": "10.1016/j.neunet.2007.04.017",
+      "url": "https://doi.org/10.1016/j.neunet.2007.04.017",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Real-Time Computation at the Edge of Chaos in Recurrent Neural Networks",
+      "year": 2004,
+      "id": "10.1162/089976604323057443",
+      "url": "https://doi.org/10.1162/089976604323057443",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Beyond the edge of chaos: amplification and temporal integration by recurrent networks in the chaotic regime",
+      "year": 2011,
+      "id": "10.1103/physreve.84.051908",
+      "url": "https://doi.org/10.1103/physreve.84.051908",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "A small-world topology enhances the echo state property and signal propagation in reservoir computing",
+      "year": 2019,
+      "id": "10.1016/j.neunet.2019.01.002",
+      "url": "https://doi.org/10.1016/j.neunet.2019.01.002",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "A mean-field approach to criticality in spiking neural networks for reservoir computing",
+      "year": 2025,
+      "id": "10.1038/s41598-025-18004-y",
+      "url": "https://doi.org/10.1038/s41598-025-18004-y",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Structural determinants of soft memory in recurrent biological networks",
+      "year": 2025,
+      "id": "10.1007/s12551-025-01295-w",
+      "url": "https://doi.org/10.1007/s12551-025-01295-w",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Deriving task specific performance from the information processing capacity of a reservoir computer",
+      "year": 2023,
+      "id": "10.1515/nanoph-2022-0415",
+      "url": "https://doi.org/10.1515/nanoph-2022-0415",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Memory-Non-Linearity Trade-Off in Distance-Based Delay Networks",
+      "year": 2024,
+      "id": "10.3390/biomimetics9120755",
+      "url": "https://doi.org/10.3390/biomimetics9120755",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Illuminating the black box of reservoir computing",
+      "year": 2026,
+      "id": "10.1038/s41598-026-53098-y",
+      "url": "https://doi.org/10.1038/s41598-026-53098-y",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "The Fundamental Tension in Topological Quantum Reservoir Computing: Why Unitarity Opposes the Echo State Property",
+      "year": 2025,
+      "id": "10.2139/ssrn.5914523",
+      "url": "https://doi.org/10.2139/ssrn.5914523",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Edge of Many-Body Quantum Chaos in Quantum Reservoir Computing",
+      "year": 2026,
+      "id": "10.1103/j2qj-vwcl",
+      "url": "https://doi.org/10.1103/j2qj-vwcl",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Higher-order interactions, adaptivity, and phase transitions in a novel reservoir computing model",
+      "year": 2025,
+      "id": "10.1063/5.0278312",
+      "url": "https://doi.org/10.1063/5.0278312",
+      "verified_layer": "abstract"
+    }
+  ],
+  "counts": {
+    "queries_total": 38,
+    "queries_europepmc": 14,
+    "queries_arxiv": 12,
+    "queries_crossref": 8,
+    "queries_direct_fetch": 4,
+    "arxiv_429_blocked": 6,
+    "distinct_sources": 20,
+    "verified_pdf_or_fulltext": 7,
+    "verified_abstract": 13
+  }
+}

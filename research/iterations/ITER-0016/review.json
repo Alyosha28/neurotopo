@@ -1,0 +1,28 @@
+{
+  "experiment_id": "EXP-0021",
+  "version": "v1",
+  "review_type": "independent_result_review",
+  "frozen_commit": "153c0764354f67c0879f6e7657f132b97705be6a",
+  "verdict": "ACCEPT_PROTOCOL_LIMITED_INCONCLUSIVE_RESULT",
+  "scientific_decision": "INCONCLUSIVE",
+  "substatus": "LEARNING_OR_ENGINEERING_UNRESOLVED",
+  "registered_branches": {"replication_R": false, "mechanism_M": false},
+  "checks": {
+    "provenance": "Clean frozen checkout; source fingerprint, six frozen-input hashes, nine imported pilot artifact hashes, all 50 data-file hashes and per-model artifact hashes passed. Completion is COMPLETED with 15 records and 12000 new research updates. Runner completion.seconds is 44.9168; worker job_end records 47.3669 seconds for run plus analysis, within the 600-second cap. Pilot seed 20001 was imported, not retrained or included in confirmation.",
+    "replay": "One invocation exited 0 in 10.14 outer wall seconds, below the 180-second cap. All 15 final models, 156 monitor checkpoints, 120 original evaluation cells and 75 intervention model-conditions replayed with maximum logit/Gram difference 0.0 and zero replay training updates. All saved intervention arrays and immediate/next/final/suffix accuracy and BCE values matched.",
+    "independent_reductions": "All 50 stored datasets satisfy b0 XOR cumulative commands at every time point; 22 four-seed descriptive mean, sample SD, min/max and registered t-interval entries independently recomputed exactly within 1e-12. Replay independently reduced losses, accuracies, Gram separation terms, contrasts and R/M branch from the loaded checkpoints.",
+    "seed_evidence": [
+      {"seed": 20002, "iid_learnability": {"RAW": true, "INV": true, "REL": true}, "rot_u_final_accuracy": {"RAW": 0.4990234375, "INV": 1.0, "REL": 1.0}, "none_immediate_accuracy": {"INV": 1.0, "REL": 1.0}, "c_norm": 0.0, "c_angle": 0.11328125, "R_seed_pass": true, "M_seed_pass": false},
+      {"seed": 20003, "iid_learnability": {"RAW": false, "INV": true, "REL": true}, "rot_u_final_accuracy": {"RAW": 0.513671875, "INV": 1.0, "REL": 1.0}, "none_immediate_accuracy": {"INV": 1.0, "REL": 1.0}, "c_norm": 0.0, "c_angle": 0.0625, "R_seed_pass": true, "M_seed_pass": false},
+      {"seed": 20004, "iid_learnability": {"RAW": true, "INV": true, "REL": true}, "rot_u_final_accuracy": {"RAW": 0.4951171875, "INV": 1.0, "REL": 1.0}, "none_immediate_accuracy": {"INV": 1.0, "REL": 1.0}, "c_norm": 0.0, "c_angle": 0.0, "R_seed_pass": true, "M_seed_pass": false},
+      {"seed": 20005, "iid_learnability": {"RAW": false, "INV": true, "REL": true}, "rot_u_final_accuracy": {"RAW": 0.5029296875, "INV": 1.0, "REL": 0.5068359375}, "none_immediate_accuracy": {"INV": 1.0, "REL": 0.5068359375}, "c_norm": 0.0, "c_angle": 0.0166015625, "R_seed_pass": false, "M_seed_pass": false}
+    ],
+    "branch_logic": "R fails because REL seed 20005 misses the fixed ROT_U final >=0.95 and >=0.20 RAW-gap guards. M fails on every seed because C_N=0 rather than >=0.10; C_A meets 0.10 only for seed 20002, and REL seed 20005 also misses the NONE immediate >=0.95 guard. All four new INV/REL models meet IID learnability, but the long-sequence NONE guard fails, so the frozen both-false branch is INCONCLUSIVE rather than FALSIFIED. No threshold or primary endpoint was changed.",
+    "unexpected_observations": "REL seed 20005 also has LONG_U final 0.5068359375 and LONG_H/ROT_H final 0.5; REL seed 20004 has LONG_H/ROT_H final 0.5 while LONG_U/ROT_U are 1.0. Thus the REL failures are not attributable specifically to stronger rotation. RAW IID_U learnability fails at seeds 20003 and 20005, retained in full rather than omitted. NORM immediate INV and REL accuracies remain 1.0 on the three NONE-qualified seeds; INV final accuracy after NORM is 0.9970703125, 0.6943359375, 0.9169921875 and 0.7646484375 across seeds 20002-20005, a descriptive delayed effect only."
+  },
+  "interpretation_limits": "This is a synthetic task and unequal RAW/INV/REL model packages (502/406/340 parameters; same six recurrent state scalars), with executed FLOPs and peak memory not measured. It is not Gate 1 evidence or an isolated topology effect. The replay shares frozen forward, generator and intervention implementations, although it independently checks stored data XOR, metric reductions and intervention invariants; it is not an independent implementation or retraining replication. NORM_SHAM can be unreachable for some examples (up to 5.57% among four new seeds); ANGLE_SHAM has materially different displacement and is not an equal-amplitude control. Immediate readout sensitivity does not establish training causality, stable semantic specialization or autonomous correction. The later NORM effect cannot replace the preregistered immediate crossover endpoint. The old seed and t-intervals are descriptive, not confirmation units.",
+  "paths": {
+    "reproduction": "research/iterations/ITER-0016/reproduction.json",
+    "execution_audit": "research/iterations/ITER-0016/audit_execution.json"
+  }
+}

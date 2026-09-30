@@ -1,0 +1,635 @@
+{
+  "schema": "align0001_channel_sweep_v1",
+  "status": "engineering premise check; not a verdict, no training, no Gate 1 effect",
+  "question": "Does any pair of conditions in this task family have a capacity channel small enough (< delta_min/2) while both conditions stay non-local?",
+  "constants": {
+    "M": 6,
+    "T": 64,
+    "grid": 32,
+    "delta_min": 0.05,
+    "gap_gate": 0.2,
+    "episodes": 60,
+    "projection_episodes": 40,
+    "seed": 20260924
+  },
+  "cells": {
+    "0": {
+      "cross_edges": 0,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "degree_sequence": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "aligned_projection_kl": 0.0381,
+      "crossed_projection_kl": 0.0642,
+      "delta": 0.0261,
+      "delta_ci95": [
+        0.015,
+        0.0393
+      ],
+      "gap16_mean": 0.366,
+      "gap16_ci95": [
+        0.3022,
+        0.4303
+      ],
+      "nonlocality_gate_pass": true
+    },
+    "1": {
+      "cross_edges": 1,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "degree_sequence": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "aligned_projection_kl": 0.0339,
+      "crossed_projection_kl": 0.0548,
+      "delta": 0.0209,
+      "delta_ci95": [
+        0.0139,
+        0.0292
+      ],
+      "gap16_mean": 0.415,
+      "gap16_ci95": [
+        0.3161,
+        0.5224
+      ],
+      "nonlocality_gate_pass": true
+    },
+    "2": {
+      "cross_edges": 2,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "degree_sequence": [
+        0,
+        2,
+        2,
+        2,
+        2,
+        4
+      ],
+      "aligned_projection_kl": 0.027,
+      "crossed_projection_kl": 0.0416,
+      "delta": 0.0146,
+      "delta_ci95": [
+        0.0094,
+        0.0206
+      ],
+      "gap16_mean": 0.4883,
+      "gap16_ci95": [
+        0.4023,
+        0.5717
+      ],
+      "nonlocality_gate_pass": true
+    },
+    "3": {
+      "cross_edges": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ]
+      ],
+      "degree_sequence": [
+        1,
+        1,
+        1,
+        2,
+        2,
+        5
+      ],
+      "aligned_projection_kl": 0.0308,
+      "crossed_projection_kl": 0.0294,
+      "delta": -0.0014,
+      "delta_ci95": [
+        -0.0047,
+        0.002
+      ],
+      "gap16_mean": 0.3716,
+      "gap16_ci95": [
+        0.3171,
+        0.4432
+      ],
+      "nonlocality_gate_pass": true
+    },
+    "4": {
+      "cross_edges": 4,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "degree_sequence": [
+        1,
+        1,
+        1,
+        2,
+        3,
+        4
+      ],
+      "aligned_projection_kl": 0.033,
+      "crossed_projection_kl": 0.035,
+      "delta": 0.002,
+      "delta_ci95": [
+        -0.0006,
+        0.0054
+      ],
+      "gap16_mean": 0.4132,
+      "gap16_ci95": [
+        0.3143,
+        0.5267
+      ],
+      "nonlocality_gate_pass": true
+    },
+    "5": {
+      "cross_edges": 5,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "degree_sequence": [
+        0,
+        1,
+        2,
+        2,
+        3,
+        4
+      ],
+      "aligned_projection_kl": 0.021,
+      "crossed_projection_kl": 0.0213,
+      "delta": 0.0003,
+      "delta_ci95": [
+        -0.0013,
+        0.0021
+      ],
+      "gap16_mean": 0.4428,
+      "gap16_ci95": [
+        0.3628,
+        0.5327
+      ],
+      "nonlocality_gate_pass": true
+    },
+    "6": {
+      "cross_edges": 6,
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "degree_sequence": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "aligned_projection_kl": 0.043,
+      "crossed_projection_kl": 0.0366,
+      "delta": -0.0064,
+      "delta_ci95": [
+        -0.0109,
+        -0.0028
+      ],
+      "gap16_mean": 0.4033,
+      "gap16_ci95": [
+        0.315,
+        0.5066
+      ],
+      "nonlocality_gate_pass": true
+    }
+  },
+  "pairs": [
+    {
+      "c1": 0,
+      "c2": 1,
+      "component": 0.0052,
+      "conservative_upper_bound": 0.025,
+      "both_conditions_nonlocal": true,
+      "viable": false
+    },
+    {
+      "c1": 0,
+      "c2": 2,
+      "component": 0.0115,
+      "conservative_upper_bound": 0.0293,
+      "both_conditions_nonlocal": true,
+      "viable": false
+    },
+    {
+      "c1": 0,
+      "c2": 3,
+      "component": 0.0275,
+      "conservative_upper_bound": 0.043,
+      "both_conditions_nonlocal": true,
+      "viable": false
+    },
+    {
+      "c1": 0,
+      "c2": 4,
+      "component": 0.0241,
+      "conservative_upper_bound": 0.0393,
+      "both_conditions_nonlocal": true,
+      "viable": false
+    },
+    {
+      "c1": 0,
+      "c2": 5,
+      "component": 0.0258,
+      "conservative_upper_bound": 0.0396,
+      "both_conditions_nonlocal": true,
+      "viable": false
+    },
+    {
+      "c1": 0,
+      "c2": 6,
+      "component": 0.0325,
+      "conservative_upper_bound": 0.0487,
+      "both_conditions_nonlocal": true,
+      "viable": false
+    },
+    {
+      "c1": 1,
+      "c2": 2,
+      "component": 0.0063,
+      "conservative_upper_bound": 0.0195,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 1,
+      "c2": 3,
+      "component": 0.0223,
+      "conservative_upper_bound": 0.0333,
+      "both_conditions_nonlocal": true,
+      "viable": false
+    },
+    {
+      "c1": 1,
+      "c2": 4,
+      "component": 0.0189,
+      "conservative_upper_bound": 0.0295,
+      "both_conditions_nonlocal": true,
+      "viable": false
+    },
+    {
+      "c1": 1,
+      "c2": 5,
+      "component": 0.0206,
+      "conservative_upper_bound": 0.0299,
+      "both_conditions_nonlocal": true,
+      "viable": false
+    },
+    {
+      "c1": 1,
+      "c2": 6,
+      "component": 0.0273,
+      "conservative_upper_bound": 0.039,
+      "both_conditions_nonlocal": true,
+      "viable": false
+    },
+    {
+      "c1": 2,
+      "c2": 3,
+      "component": 0.016,
+      "conservative_upper_bound": 0.0249,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 2,
+      "c2": 4,
+      "component": 0.0126,
+      "conservative_upper_bound": 0.0212,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 2,
+      "c2": 5,
+      "component": 0.0143,
+      "conservative_upper_bound": 0.0216,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 2,
+      "c2": 6,
+      "component": 0.021,
+      "conservative_upper_bound": 0.0307,
+      "both_conditions_nonlocal": true,
+      "viable": false
+    },
+    {
+      "c1": 3,
+      "c2": 4,
+      "component": -0.0034,
+      "conservative_upper_bound": 0.0098,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 3,
+      "c2": 5,
+      "component": -0.0017,
+      "conservative_upper_bound": 0.0067,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 3,
+      "c2": 6,
+      "component": 0.005,
+      "conservative_upper_bound": 0.0124,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 4,
+      "c2": 5,
+      "component": 0.0017,
+      "conservative_upper_bound": 0.0064,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 4,
+      "c2": 6,
+      "component": 0.0084,
+      "conservative_upper_bound": 0.0155,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 5,
+      "c2": 6,
+      "component": 0.0067,
+      "conservative_upper_bound": 0.0124,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    }
+  ],
+  "nonlocal_conditions": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "viable_pairs": [
+    {
+      "c1": 1,
+      "c2": 2,
+      "component": 0.0063,
+      "conservative_upper_bound": 0.0195,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 2,
+      "c2": 3,
+      "component": 0.016,
+      "conservative_upper_bound": 0.0249,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 2,
+      "c2": 4,
+      "component": 0.0126,
+      "conservative_upper_bound": 0.0212,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 2,
+      "c2": 5,
+      "component": 0.0143,
+      "conservative_upper_bound": 0.0216,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 3,
+      "c2": 4,
+      "component": -0.0034,
+      "conservative_upper_bound": 0.0098,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 3,
+      "c2": 5,
+      "component": -0.0017,
+      "conservative_upper_bound": 0.0067,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 3,
+      "c2": 6,
+      "component": 0.005,
+      "conservative_upper_bound": 0.0124,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 4,
+      "c2": 5,
+      "component": 0.0017,
+      "conservative_upper_bound": 0.0064,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 4,
+      "c2": 6,
+      "component": 0.0084,
+      "conservative_upper_bound": 0.0155,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    },
+    {
+      "c1": 5,
+      "c2": 6,
+      "component": 0.0067,
+      "conservative_upper_bound": 0.0124,
+      "both_conditions_nonlocal": true,
+      "viable": true
+    }
+  ],
+  "verdict": "VIABLE_CONSTRUCTION_EXISTS",
+  "reading": "10 condition pair(s) satisfy both the capacity-channel bound and the non-locality gate; a new design could be built on one of them.",
+  "environment": {
+    "python": "3.13.15",
+    "numpy": "2.3.3",
+    "platform": "macOS-26.7-arm64-arm-64bit-Mach-O"
+  }
+}

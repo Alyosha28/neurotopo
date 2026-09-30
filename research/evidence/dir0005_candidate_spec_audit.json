@@ -1,0 +1,171 @@
+{
+  "admissible_class": "C7: same capacity, representation equivalence provable, level endpoint, architecture-free baseline",
+  "boundaries": {
+    "gate1": "NOT_PASSED",
+    "gate2": "NOT_STARTED",
+    "non_regression": "12 closed items remain closed",
+    "registrations": 0,
+    "rule_change_proposed": false,
+    "training_authorized": false
+  },
+  "candidates": {
+    "C1_routing_alignment": {
+      "K1_headroom": "PASS",
+      "K2_attributable": "FAIL",
+      "K3_identifiable": "FAIL",
+      "K4_endpoint": "PASS",
+      "K5_matching": "PASS",
+      "K6_generality": "UNKNOWN",
+      "K7_novelty": "FAIL",
+      "K8_gate_power": "FAIL",
+      "K9_no_leakage": "PASS",
+      "control": "same matrix, different input routing",
+      "mechanism": "aligned vs cross-group routing, shared circulant matrix",
+      "status": "stopped_by_0073",
+      "task": "F/X or channel-sweep condition pair"
+    },
+    "C2_realize_the_bound": {
+      "K1_headroom": "PASS",
+      "K2_attributable": "FAIL",
+      "K3_identifiable": "FAIL",
+      "K4_endpoint": "PASS",
+      "K5_matching": "PASS",
+      "K6_generality": "UNKNOWN",
+      "K7_novelty": "FAIL",
+      "K8_gate_power": "FAIL",
+      "K9_no_leakage": "PASS",
+      "control": "same as C1",
+      "mechanism": "beta = Delta + (e_U - e_S)",
+      "status": "stopped_by_0073",
+      "task": "same condition pair as C1"
+    },
+    "C3_chaos_tracking_organization": {
+      "K1_headroom": "FAIL",
+      "K2_attributable": "FAIL",
+      "K3_identifiable": "UNKNOWN",
+      "K4_endpoint": "PASS",
+      "K5_matching": "UNKNOWN",
+      "K6_generality": "UNKNOWN",
+      "K7_novelty": "UNKNOWN",
+      "K8_gate_power": "FAIL",
+      "K9_no_leakage": "FAIL",
+      "control": "matched dense state",
+      "mechanism": "declared expanding/contracting partition",
+      "status": "stopped_by_0081",
+      "task": "hidden unstable mode tracking"
+    },
+    "C4_algorithmic_alignment_class": {
+      "K1_headroom": "PASS",
+      "K2_attributable": "PASS",
+      "K3_identifiable": "FAIL",
+      "K4_endpoint": "PASS",
+      "K5_matching": "FAIL",
+      "K6_generality": "NEEDS_SELF_BINDING",
+      "K7_novelty": "FAIL",
+      "K8_gate_power": "SATISFIABLE",
+      "K9_no_leakage": "NEEDS_DESIGN",
+      "control": "matched dense network",
+      "mechanism": "declared algorithmic structure vs matched dense control",
+      "status": "structurally_inadmissible_under_v3",
+      "task": "function classes with provable approximation floors (parity, counting, group words)"
+    },
+    "C5_exact_renormalization": {
+      "K1_headroom": "FAIL",
+      "K2_attributable": "NEEDS_DESIGN",
+      "K3_identifiable": "UNKNOWN",
+      "K4_endpoint": "PASS",
+      "K5_matching": "UNKNOWN",
+      "K6_generality": "NEEDS_SELF_BINDING",
+      "K7_novelty": "UNKNOWN",
+      "K8_gate_power": "NEEDS_DESIGN",
+      "K9_no_leakage": "NEEDS_DESIGN",
+      "control": "matched state without exact carry",
+      "mechanism": "exact multi-unit carry/shift",
+      "status": "same_cause_as_C3",
+      "task": "chaotic tracking with observable unstable direction"
+    },
+    "C6_timescale_hierarchy": {
+      "K1_headroom": "FAIL",
+      "K2_attributable": "NEEDS_DESIGN",
+      "K3_identifiable": "UNKNOWN",
+      "K4_endpoint": "RISK_EFFICIENCY_ENDPOINT",
+      "K5_matching": "SATISFIABLE",
+      "K6_generality": "NEEDS_SELF_BINDING",
+      "K7_novelty": "FAIL",
+      "K8_gate_power": "NEEDS_DESIGN",
+      "K9_no_leakage": "NEEDS_DESIGN",
+      "control": "matched single stream",
+      "mechanism": "modular recurrent state / hierarchical timescales",
+      "status": "headroom_and_novelty_both_missing",
+      "task": "multi-timescale delayed tasks"
+    },
+    "C7_optimization_dynamics_same_capacity": {
+      "K1_headroom": "UNKNOWN",
+      "K2_attributable": "SATISFIABLE",
+      "K3_identifiable": "SATISFIABLE",
+      "K4_endpoint": "PASS",
+      "K5_matching": "SATISFIABLE",
+      "K6_generality": "NEEDS_SELF_BINDING",
+      "K7_novelty": "UNKNOWN",
+      "K8_gate_power": "SATISFIABLE",
+      "K9_no_leakage": "NEEDS_DESIGN",
+      "control": "matched capacity + architecture-free baseline",
+      "mechanism": "named organization operation, representation-equivalence provable",
+      "status": "only_class_not_yet_refuted_but_no_named_candidate",
+      "task": "any task with measured matched-control headroom"
+    }
+  },
+  "checks": {
+    "every_candidate_has_all_nine_items": true,
+    "labels_match_frozen_rule": true,
+    "no_unknown_read_as_pass": true
+  },
+  "date": "2026-09-25",
+  "label": "NO_REGISTERABLE_CANDIDATE_NOW",
+  "label_basis": "evidence items (K1 headroom, K2 baseline, K3 channel bound) fail for every named candidate; no rule item alone blocks a candidate that would otherwise pass",
+  "missing_piece": "a named organization operation with an a-priori mechanism prediction on a task with measured matched-control headroom",
+  "predesign": {
+    "commit": "c3c3fe5",
+    "path": "research/design/dir0005_portfolio_predesign_v0.md"
+  },
+  "reopening_conditions": [
+    "named manipulation with a one-sentence mechanism prediction and a control differing only in that quantity (K5/K7)",
+    "measured matched-control headroom with a derived delta_min; no same-family difficulty inflation (K1)",
+    "a valid bound on the representation-reachability difference, much smaller than delta_min, or the C7 representation-equivalence route (K3)",
+    "architecture-free baseline; the oracle arm stays diagnostic (K2)",
+    "preregistered levels, tolerances, sample sizes and power for every qualification gate; no label leakage (K8/K9)",
+    "self-bound frozen generality predicate and full axis disclosure (K6/K5)"
+  ],
+  "schema": "dir0005_candidate_spec_audit_v1",
+  "tensions": [
+    {
+      "anchors": [
+        "decision0073",
+        "G1-ALIGN S1/S2/S4",
+        "alignment capacity sweep"
+      ],
+      "id": "T1",
+      "name": "representational content vs capacity channel",
+      "statement": "a manipulation with representational content creates a projection-cost channel; a channel provably near zero leaves only optimization-path differences"
+    },
+    {
+      "anchors": [
+        "decision0069",
+        "TH-0001",
+        "decision0071"
+      ],
+      "id": "T2",
+      "name": "capacity-type effect vs G1-MATCH-v3",
+      "statement": "if the advantage comes from effective capacity, the declared consumed axis is capacity; matching that axis under v3 removes the advantage, so capacity-type effects are structurally inadmissible for Gate 1"
+    },
+    {
+      "anchors": [
+        "CAL-0008",
+        "DIR-0004 review I7"
+      ],
+      "id": "T3",
+      "name": "headroom vs task degeneration",
+      "statement": "constructing a task whose exact solution is not a low-dimensional smooth approximation tends to make information rather than organization the binding constraint, making the organization effect unattributable"
+    }
+  ]
+}

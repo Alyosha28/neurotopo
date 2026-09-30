@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="406" viewBox="0 0 760 406" font-family="Helvetica,Arial,sans-serif">
+<rect width="100%" height="100%" fill="white"/>
+<text x="30" y="34" font-size="18" font-weight="bold">Nested tanh-matched control: contrast collapses below the artifact band</text>
+<text x="30" y="54" font-size="12" fill="#444">dark = max contrast on grid, mid = long-lag contrast (k&#8805;20), light = artifact band</text>
+<line x1="90.0" y1="64" x2="90.0" y2="366" stroke="#e4e4e4"/>
+<text x="90.0" y="384" font-size="11" fill="#555" text-anchor="middle">0.00</text>
+<line x1="247.1" y1="64" x2="247.1" y2="366" stroke="#e4e4e4"/>
+<text x="247.1" y="384" font-size="11" fill="#555" text-anchor="middle">0.02</text>
+<line x1="404.3" y1="64" x2="404.3" y2="366" stroke="#e4e4e4"/>
+<text x="404.3" y="384" font-size="11" fill="#555" text-anchor="middle">0.04</text>
+<line x1="561.4" y1="64" x2="561.4" y2="366" stroke="#e4e4e4"/>
+<text x="561.4" y="384" font-size="11" fill="#555" text-anchor="middle">0.06</text>
+<text x="30" y="84" font-size="13">seed 0 (tanh total ratio 1.0019)</text>
+<rect x="90" y="90" width="45.5" height="10" fill="#333"/>
+<text x="141.5" y="99" font-size="10" fill="#444">0.0058</text>
+<rect x="90" y="103" width="6.7" height="10" fill="#777"/>
+<text x="102.7" y="112" font-size="10" fill="#444">0.0008</text>
+<rect x="90" y="116" width="472.2" height="10" fill="#ccc"/>
+<text x="568.2" y="125" font-size="10" fill="#444">0.0601</text>
+<text x="30" y="176" font-size="13">seed 1 (tanh total ratio 1.0029)</text>
+<rect x="90" y="182" width="16.8" height="10" fill="#333"/>
+<text x="112.8" y="191" font-size="10" fill="#444">0.0021</text>
+<rect x="90" y="195" width="6.3" height="10" fill="#777"/>
+<text x="102.3" y="204" font-size="10" fill="#444">0.0008</text>
+<rect x="90" y="208" width="397.5" height="10" fill="#ccc"/>
+<text x="493.5" y="217" font-size="10" fill="#444">0.0506</text>
+<text x="30" y="268" font-size="13">seed 2 (tanh total ratio 0.9882)</text>
+<rect x="90" y="274" width="183.1" height="10" fill="#333"/>
+<text x="279.1" y="283" font-size="10" fill="#444">0.0233</text>
+<rect x="90" y="287" width="37.6" height="10" fill="#777"/>
+<text x="133.6" y="296" font-size="10" fill="#444">0.0048</text>
+<rect x="90" y="300" width="449.3" height="10" fill="#ccc"/>
+<text x="545.3" y="309" font-size="10" fill="#444">0.0572</text>
+</svg>

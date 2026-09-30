@@ -1,0 +1,166 @@
+{
+  "experiment_id": "EXP-0004",
+  "version": "v1",
+  "analysis": "matched_architecture",
+  "output": "artifacts/EXP-0004/v1",
+  "base_config": "configs/exp0001_v2.json",
+  "seeds": [
+    9101,
+    9102,
+    9103,
+    9104,
+    9105,
+    9106,
+    9107,
+    9108,
+    9109,
+    9110
+  ],
+  "train_seed_offset": 610000,
+  "monitor_seed": 620000,
+  "test_seed": 630000,
+  "monitor_pairs": 256,
+  "test_pairs": 1024,
+  "checkpoints": [
+    400,
+    2000,
+    3000,
+    4000,
+    6000
+  ],
+  "eval_delays": [
+    8,
+    16,
+    32,
+    64
+  ],
+  "eval_payloads": [
+    "noise"
+  ],
+  "minimum_pre_accuracy": 0.9,
+  "minimum_joint_accuracy": 0.5,
+  "arms": [
+    {
+      "name": "gru_small",
+      "model": "gru_small",
+      "payload": "noise",
+      "schedule": [
+        [
+          0,
+          2000
+        ],
+        [
+          2,
+          1000
+        ],
+        [
+          4,
+          1000
+        ],
+        [
+          8,
+          2000
+        ]
+      ]
+    },
+    {
+      "name": "gru_wide",
+      "model": "gru_wide",
+      "payload": "noise",
+      "schedule": [
+        [
+          0,
+          2000
+        ],
+        [
+          2,
+          1000
+        ],
+        [
+          4,
+          1000
+        ],
+        [
+          8,
+          2000
+        ]
+      ]
+    },
+    {
+      "name": "sparse_rnn",
+      "model": "sparse_rnn",
+      "payload": "noise",
+      "schedule": [
+        [
+          0,
+          2000
+        ],
+        [
+          2,
+          1000
+        ],
+        [
+          4,
+          1000
+        ],
+        [
+          8,
+          2000
+        ]
+      ]
+    },
+    {
+      "name": "multi_gru",
+      "model": "multi_gru",
+      "payload": "noise",
+      "schedule": [
+        [
+          0,
+          2000
+        ],
+        [
+          2,
+          1000
+        ],
+        [
+          4,
+          1000
+        ],
+        [
+          8,
+          2000
+        ]
+      ]
+    },
+    {
+      "name": "random_gru",
+      "model": "random_gru",
+      "payload": "noise",
+      "schedule": [
+        [
+          0,
+          2000
+        ],
+        [
+          2,
+          1000
+        ],
+        [
+          4,
+          1000
+        ],
+        [
+          8,
+          2000
+        ]
+      ]
+    }
+  ],
+  "primary_delay": 32,
+  "robustness_delay": 64,
+  "minimum_effect": 0.03,
+  "max_confirm_degradation": 0.01,
+  "primary_floor": 0.1,
+  "bootstrap_samples": 20000,
+  "bootstrap_seed": 640001
+}

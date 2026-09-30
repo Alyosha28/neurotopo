@@ -1,0 +1,667 @@
+{
+  "area": "D_connectome_null_discipline",
+  "retrieved_at": "2026-09-25T02:29:14+08:00",
+  "audit_date": "2026-09-25",
+  "channels_used": [
+    "europepmc",
+    "arxiv",
+    "crossref"
+  ],
+  "channels_unavailable": [
+    "openalex (daily free budget exhausted: Rate limit exceeded)",
+    "duckduckgo html (anti-bot anomaly page)",
+    "semantic scholar (429)"
+  ],
+  "local_reproduction": false,
+  "queries": [
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"null model\" AND TITLE:\"spatial\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22null%20model%22%20AND%20TITLE%3A%22spatial%22&format=json&resultType=core&pageSize=4",
+      "n_results": 4
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Measures of degeneracy and redundancy in biological networks\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Measures%20of%20degeneracy%20and%20redundancy%20in%20biological%20networks%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"degeneracy\" AND TITLE:\"neural networks\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22degeneracy%22%20AND%20TITLE%3A%22neural%20networks%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Exploring biological network structure with clustered random networks\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Exploring%20biological%20network%20structure%20with%20clustered%20random%20networks%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Connectome-based reservoir computing with the conn2res toolbox\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Connectome-based%20reservoir%20computing%20with%20the%20conn2res%20toolbox%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"A simulated annealing algorithm for randomizing weighted networks\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22A%20simulated%20annealing%20algorithm%20for%20randomizing%20weighted%20networks%22&format=json&resultType=core&pageSize=4",
+      "n_results": 2
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Controllability of structural brain networks\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Controllability%20of%20structural%20brain%20networks%22&format=json&resultType=core&pageSize=4",
+      "n_results": 4
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Null models in network neuroscience\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Null%20models%20in%20network%20neuroscience%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Acute off-target effects of neural circuit manipulations\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Acute%20off-target%20effects%20of%20neural%20circuit%20manipulations%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"many-to-one\" AND TITLE:\"structure\" AND TITLE:\"function\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22many-to-one%22%20AND%20TITLE%3A%22structure%22%20AND%20TITLE%3A%22function%22&format=json&resultType=core&pageSize=4",
+      "n_results": 0
+    },
+    {
+      "engine": "europepmc",
+      "query": "AUTH:\"Vasa\" AND TITLE:\"null models\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=AUTH%3A%22Vasa%22%20AND%20TITLE%3A%22null%20models%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Equifinality\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Equifinality%22&format=json&resultType=core&pageSize=4",
+      "n_results": 4
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"exponential random graph\" AND TITLE:\"brain\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22exponential%20random%20graph%22%20AND%20TITLE%3A%22brain%22&format=json&resultType=core&pageSize=4",
+      "n_results": 4
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"compensation\" AND TITLE:\"lesion\" AND TITLE:\"network\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22compensation%22%20AND%20TITLE%3A%22lesion%22%20AND%20TITLE%3A%22network%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Structural and functional\" AND TITLE:\"many-to-one\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Structural%20and%20functional%22%20AND%20TITLE%3A%22many-to-one%22&format=json&resultType=core&pageSize=4",
+      "n_results": 0
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Structural and practical identifiability analysis of partially observed dynamical models\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Structural%20and%20practical%20identifiability%20analysis%20of%20partially%20observed%20dynamical%20models%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Superfamilies of evolved and designed networks\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Superfamilies%20of%20evolved%20and%20designed%20networks%22&format=json&resultType=core&pageSize=4",
+      "n_results": 2
+    },
+    {
+      "engine": "europepmc",
+      "query": "\"degeneracy\" AND \"connectome\" AND TITLE:\"degeneracy\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22degeneracy%22%20AND%20%22connectome%22%20AND%20TITLE%3A%22degeneracy%22&format=json&resultType=core&pageSize=4",
+      "n_results": 4
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Multiple models to capture the variability in biological neurons and networks\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Multiple%20models%20to%20capture%20the%20variability%20in%20biological%20neurons%20and%20networks%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Network motifs\" AND AUTH:\"Milo\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Network%20motifs%22%20AND%20AUTH%3A%22Milo%22&format=json&resultType=core&pageSize=4",
+      "n_results": 4
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Navigating the neural space in search of the neural code\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Navigating%20the%20neural%20space%20in%20search%20of%20the%20neural%20code%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Connectome-constrained networks predict neural activity across the fly visual system\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Connectome-constrained%20networks%20predict%20neural%20activity%20across%20the%20fly%20visual%20system%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Learning function from structure in neuromorphic networks\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Learning%20function%20from%20structure%20in%20neuromorphic%20networks%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"The promise and perils of causal circuit manipulations\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22The%20promise%20and%20perils%20of%20causal%20circuit%20manipulations%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"geometric\" AND TITLE:\"null model\" AND TITLE:\"network\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22geometric%22%20AND%20TITLE%3A%22null%20model%22%20AND%20TITLE%3A%22network%22&format=json&resultType=core&pageSize=4",
+      "n_results": 0
+    },
+    {
+      "engine": "europepmc",
+      "query": "AUTH:\"Betzel\" AND TITLE:\"null\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=AUTH%3A%22Betzel%22%20AND%20TITLE%3A%22null%22&format=json&resultType=core&pageSize=4",
+      "n_results": 0
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Null model\" AND TITLE:\"connectome\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Null%20model%22%20AND%20TITLE%3A%22connectome%22&format=json&resultType=core&pageSize=4",
+      "n_results": 2
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"neuromorphic networks\" AND AUTH:\"Suarez\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22neuromorphic%20networks%22%20AND%20AUTH%3A%22Suarez%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Optimal modularity and memory capacity of neural reservoirs\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Optimal%20modularity%20and%20memory%20capacity%20of%20neural%20reservoirs%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"necessity\" AND TITLE:\"sufficiency\" AND TITLE:\"optogenetic\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22necessity%22%20AND%20TITLE%3A%22sufficiency%22%20AND%20TITLE%3A%22optogenetic%22&format=json&resultType=core&pageSize=4",
+      "n_results": 0
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Generative models of the human connectome\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Generative%20models%20of%20the%20human%20connectome%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"connectome\" AND TITLE:\"null model\" AND TITLE:\"generative\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22connectome%22%20AND%20TITLE%3A%22null%20model%22%20AND%20TITLE%3A%22generative%22&format=json&resultType=core&pageSize=4",
+      "n_results": 0
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Learning function from structure in neuromorphic networks\" AND SRC:MED",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Learning%20function%20from%20structure%20in%20neuromorphic%20networks%22%20AND%20SRC%3AMED&format=json&resultType=core&pageSize=4",
+      "n_results": 0
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Navigation of brain networks\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Navigation%20of%20brain%20networks%22&format=json&resultType=core&pageSize=4",
+      "n_results": 3
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"hub\" AND TITLE:\"null model\" AND TITLE:\"connectome\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22hub%22%20AND%20TITLE%3A%22null%20model%22%20AND%20TITLE%3A%22connectome%22&format=json&resultType=core&pageSize=4",
+      "n_results": 0
+    },
+    {
+      "engine": "europepmc",
+      "query": "\"degree-preserving\" AND TITLE:\"randomization\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22degree-preserving%22%20AND%20TITLE%3A%22randomization%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Variability, compensation and homeostasis in neuron and network function\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Variability%2C%20compensation%20and%20homeostasis%20in%20neuron%20and%20network%20function%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Similar network activity from disparate circuit parameters\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Similar%20network%20activity%20from%20disparate%20circuit%20parameters%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Communication dynamics in complex brain networks\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Communication%20dynamics%20in%20complex%20brain%20networks%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Unbiased degree-preserving randomization of directed binary networks\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Unbiased%20degree-preserving%20randomization%20of%20directed%20binary%20networks%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Simple models of human brain functional networks\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Simple%20models%20of%20human%20brain%20functional%20networks%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Degeneracy and complexity in biological systems\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Degeneracy%20and%20complexity%20in%20biological%20systems%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Specificity and stability in topology of protein networks\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Specificity%20and%20stability%20in%20topology%20of%20protein%20networks%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Null models\" AND TITLE:\"comparison\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Null%20models%22%20AND%20TITLE%3A%22comparison%22&format=json&resultType=core&pageSize=4",
+      "n_results": 4
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"distance-dependent\" AND TITLE:\"connectome\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22distance-dependent%22%20AND%20TITLE%3A%22connectome%22&format=json&resultType=core&pageSize=4",
+      "n_results": 0
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Universally sloppy parameter sensitivities in systems biology models\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Universally%20sloppy%20parameter%20sensitivities%20in%20systems%20biology%20models%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Specificity and robustness of long-distance connections in weighted, interareal connectomes\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Specificity%20and%20robustness%20of%20long-distance%20connections%20in%20weighted%2C%20interareal%20connectomes%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"reservoir\" AND TITLE:\"degree\" AND TITLE:\"null\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22reservoir%22%20AND%20TITLE%3A%22degree%22%20AND%20TITLE%3A%22null%22&format=json&resultType=core&pageSize=4",
+      "n_results": 0
+    },
+    {
+      "engine": "europepmc",
+      "query": "TITLE:\"Weight-conserving characterization of complex functional brain networks\"",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22Weight-conserving%20characterization%20of%20complex%20functional%20brain%20networks%22&format=json&resultType=core&pageSize=4",
+      "n_results": 1
+    },
+    {
+      "engine": "europepmc",
+      "query": "Similar network activity from disparate circuit parameters",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=Similar%20network%20activity%20from%20disparate%20circuit%20parameters&format=json&resultType=core&pageSize=4",
+      "n_results": 3
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"uniform generation of random graphs with prescribed degree sequences\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22uniform%20generation%20of%20random%20graphs%20with%20prescribed%20degree%20sequences%22&max_results=6",
+      "n_results": 1
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"when to stop a Markov chain while generating random graphs\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22when%20to%20stop%20a%20Markov%20chain%20while%20generating%20random%20graphs%22&max_results=6",
+      "n_results": 1
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"reciprocal degree sequence\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22reciprocal%20degree%20sequence%22&max_results=6",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"connectome-constrained\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22connectome-constrained%22&max_results=6",
+      "n_results": 6
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"reciprocal\" AND all:\"degree sequence\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22reciprocal%22%20AND%20all%3A%22degree%20sequence%22&max_results=6",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "id_list=1210.5288",
+      "url": "https://export.arxiv.org/api/query?search_query=id_list%3D1210.5288&max_results=6",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "abs page 1210.5288 (direct HTML)",
+      "url": "https://arxiv.org/abs/1210.5288",
+      "n_results": 1
+    },
+    {
+      "engine": "crossref",
+      "query": "10.1103/physreve.85.046103",
+      "url": "https://api.crossref.org/works/10.1103/physreve.85.046103",
+      "n_results": 1
+    },
+    {
+      "engine": "crossref",
+      "query": "Learning function from structure in neuromorphic networks Suarez",
+      "url": "https://api.crossref.org/works?query.bibliographic=Learning+function+from+structure+in+neuromorphic+networks+Suarez&rows=3",
+      "n_results": 3
+    },
+    {
+      "engine": "crossref",
+      "query": "10.1038/s41467-024-44900-4",
+      "url": "https://api.crossref.org/works/10.1038/s41467-024-44900-4",
+      "n_results": 1
+    }
+  ],
+  "sources": [
+    {
+      "title": "Null models in network neuroscience",
+      "year": 2022,
+      "id": "10.1038/s41583-022-00601-9",
+      "url": "https://doi.org/10.1038/s41583-022-00601-9",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Specificity and stability in topology of protein networks",
+      "year": 2002,
+      "id": "10.1126/science.1065103",
+      "url": "https://doi.org/10.1126/science.1065103",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Unbiased degree-preserving randomization of directed binary networks",
+      "year": 2012,
+      "id": "10.1103/PhysRevE.85.046103",
+      "url": "https://doi.org/10.1103/PhysRevE.85.046103",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "A Scalable Null Model for Directed Graphs Matching All Degree Distributions: In, Out, and Reciprocal",
+      "year": 2012,
+      "id": "arXiv:1210.5288",
+      "url": "https://arxiv.org/abs/1210.5288",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "On the uniform generation of random graphs with prescribed degree sequences",
+      "year": 2003,
+      "id": "arXiv:cond-mat/0312028",
+      "url": "https://arxiv.org/abs/cond-mat/0312028",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Are we there yet? When to stop a Markov chain while generating random graphs",
+      "year": 2012,
+      "id": "arXiv:1202.3473",
+      "url": "https://arxiv.org/abs/1202.3473",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "A simulated annealing algorithm for randomizing weighted networks",
+      "year": 2025,
+      "id": "10.1038/s43588-024-00735-z",
+      "url": "https://doi.org/10.1038/s43588-024-00735-z",
+      "verified_layer": "pmc_fulltext_section"
+    },
+    {
+      "title": "A simulated annealing algorithm for randomizing weighted networks",
+      "year": 2024,
+      "id": "10.1101/2024.02.23.581792",
+      "url": "https://doi.org/10.1101/2024.02.23.581792",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Weight-conserving characterization of complex functional brain networks",
+      "year": 2011,
+      "id": "10.1016/j.neuroimage.2011.03.069",
+      "url": "https://doi.org/10.1016/j.neuroimage.2011.03.069",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Exploring biological network structure with clustered random networks",
+      "year": 2009,
+      "id": "10.1186/1471-2105-10-405",
+      "url": "https://doi.org/10.1186/1471-2105-10-405",
+      "verified_layer": "pmc_fulltext_section"
+    },
+    {
+      "title": "Generative models of the human connectome",
+      "year": 2016,
+      "id": "10.1016/j.neuroimage.2015.09.041",
+      "url": "https://doi.org/10.1016/j.neuroimage.2015.09.041",
+      "verified_layer": "pmc_fulltext_section"
+    },
+    {
+      "title": "Simple models of human brain functional networks",
+      "year": 2012,
+      "id": "10.1073/pnas.1111738109",
+      "url": "https://doi.org/10.1073/pnas.1111738109",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Network motifs: simple building blocks of complex networks",
+      "year": 2002,
+      "id": "10.1126/science.298.5594.824",
+      "url": "https://doi.org/10.1126/science.298.5594.824",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Superfamilies of evolved and designed networks",
+      "year": 2004,
+      "id": "10.1126/science.1089167",
+      "url": "https://doi.org/10.1126/science.1089167",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Comment on \"Network motifs: simple building blocks of complex networks\" and \"Superfamilies of evolved and designed networks\"",
+      "year": 2004,
+      "id": "10.1126/science.1099334",
+      "url": "https://doi.org/10.1126/science.1099334",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Navigation of brain networks",
+      "year": 2018,
+      "id": "10.1073/pnas.1801351115",
+      "url": "https://doi.org/10.1073/pnas.1801351115",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Specificity and robustness of long-distance connections in weighted, interareal connectomes",
+      "year": 2018,
+      "id": "10.1073/pnas.1720186115",
+      "url": "https://doi.org/10.1073/pnas.1720186115",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "A practical guide to methodological considerations in the controllability of structural brain networks",
+      "year": 2020,
+      "id": "10.1088/1741-2552/ab6e8b",
+      "url": "https://doi.org/10.1088/1741-2552/ab6e8b",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "A null model of the mouse whole-neocortex micro-connectome",
+      "year": 2019,
+      "id": "10.1038/s41467-019-11630-x",
+      "url": "https://doi.org/10.1038/s41467-019-11630-x",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Communication dynamics in complex brain networks",
+      "year": 2017,
+      "id": "10.1038/nrn.2017.149",
+      "url": "https://doi.org/10.1038/nrn.2017.149",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Topological Sensitivity in Connectome-Constrained Neural Networks",
+      "year": 2026,
+      "id": "arXiv:2604.04033",
+      "url": "https://arxiv.org/abs/2604.04033",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "A frozen rate operator from the complete larval connectome: degree and weight govern the gross response, exact wiring governs input routing and mushroom-body modes",
+      "year": 2026,
+      "id": "arXiv:2606.17745",
+      "url": "https://arxiv.org/abs/2606.17745",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Degeneracy and complexity in biological systems",
+      "year": 2001,
+      "id": "10.1073/pnas.231499798",
+      "url": "https://doi.org/10.1073/pnas.231499798",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Measures of degeneracy and redundancy in biological networks",
+      "year": 1999,
+      "id": "10.1073/pnas.96.6.3257",
+      "url": "https://doi.org/10.1073/pnas.96.6.3257",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Similar network activity from disparate circuit parameters",
+      "year": 2004,
+      "id": "10.1038/nn1352",
+      "url": "https://doi.org/10.1038/nn1352",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Variability, compensation and homeostasis in neuron and network function",
+      "year": 2006,
+      "id": "10.1038/nrn1949",
+      "url": "https://doi.org/10.1038/nrn1949",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Multiple models to capture the variability in biological neurons and networks",
+      "year": 2011,
+      "id": "10.1038/nn.2735",
+      "url": "https://doi.org/10.1038/nn.2735",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "The promise and perils of causal circuit manipulations",
+      "year": 2018,
+      "id": "10.1016/j.conb.2018.01.004",
+      "url": "https://doi.org/10.1016/j.conb.2018.01.004",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Acute off-target effects of neural circuit manipulations",
+      "year": 2015,
+      "id": "10.1038/nature16442",
+      "url": "https://doi.org/10.1038/nature16442",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Navigating the Neural Space in Search of the Neural Code",
+      "year": 2017,
+      "id": "10.1016/j.neuron.2017.02.019",
+      "url": "https://doi.org/10.1016/j.neuron.2017.02.019",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Universally sloppy parameter sensitivities in systems biology models",
+      "year": 2007,
+      "id": "10.1371/journal.pcbi.0030189",
+      "url": "https://doi.org/10.1371/journal.pcbi.0030189",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Structural and practical identifiability analysis of partially observed dynamical models by exploiting the profile likelihood",
+      "year": 2009,
+      "id": "10.1093/bioinformatics/btp358",
+      "url": "https://doi.org/10.1093/bioinformatics/btp358",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Measuring and Controlling Solution Degeneracy across Task-Trained Recurrent Neural Networks",
+      "year": 2025,
+      "id": "PMID:42111901",
+      "url": "https://europepmc.org/article/MED/42111901",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Chronic vs acute manipulations reveal degeneracy in a thermosensory neuron network",
+      "year": 2021,
+      "id": "10.17912/micropub.biology.000355",
+      "url": "https://doi.org/10.17912/micropub.biology.000355",
+      "verified_layer": "pmc_fulltext_section"
+    },
+    {
+      "title": "The role of connectivity for the degeneracy of the brain's resting state dynamics",
+      "year": 2026,
+      "id": "10.1007/s10827-025-00919-0",
+      "url": "https://doi.org/10.1007/s10827-025-00919-0",
+      "verified_layer": "pmc_fulltext_section"
+    },
+    {
+      "title": "Connectome-constrained networks predict neural activity across the fly visual system",
+      "year": 2024,
+      "id": "10.1038/s41586-024-07939-3",
+      "url": "https://doi.org/10.1038/s41586-024-07939-3",
+      "verified_layer": "pmc_fulltext_section"
+    },
+    {
+      "title": "Learning function from structure in neuromorphic networks",
+      "year": 2021,
+      "id": "10.1038/s42256-021-00376-1",
+      "url": "https://doi.org/10.1038/s42256-021-00376-1",
+      "verified_layer": "metadata_only"
+    },
+    {
+      "title": "Learning function from structure in neuromorphic networks",
+      "year": 2020,
+      "id": "10.1101/2020.11.10.350876",
+      "url": "https://doi.org/10.1101/2020.11.10.350876",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Connectome-based reservoir computing with the conn2res toolbox",
+      "year": 2024,
+      "id": "10.1038/s41467-024-44900-4",
+      "url": "https://doi.org/10.1038/s41467-024-44900-4",
+      "verified_layer": "abstract"
+    },
+    {
+      "title": "Optimal modularity and memory capacity of neural reservoirs",
+      "year": 2019,
+      "id": "10.1162/netn_a_00082",
+      "url": "https://doi.org/10.1162/netn_a_00082",
+      "verified_layer": "abstract"
+    }
+  ],
+  "counts": {
+    "queries_total": 60,
+    "queries_europepmc": 50,
+    "queries_arxiv": 7,
+    "queries_crossref": 3,
+    "distinct_sources": 40
+  }
+}

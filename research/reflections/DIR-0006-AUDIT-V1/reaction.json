@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "6fb6534120dc8b94f17ad779fa491ecccc5fb2843aa604af150da7bcc6d9e1a6",
+  "review_sha256": "c165251f5d73b05daa9e34681786fac1596df3f599546d6707dfeb84c8ceb383",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "接受一次性更正复核，关闭DIR-0006审计；维持不搜索、不训练，继续独立C9设计。"
+}

@@ -1,0 +1,461 @@
+{
+  "claims_not_made": [
+    "no training",
+    "population quantities of frozen linear cores only",
+    "matched rungs are a construction for a future design, not evidence"
+  ],
+  "config": {
+    "bands": [
+      [
+        0.2,
+        0.4
+      ],
+      [
+        0.6,
+        0.75
+      ],
+      [
+        0.9,
+        0.97
+      ]
+    ],
+    "bootstrap_seed": 20260924,
+    "grid": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      16,
+      20,
+      24,
+      32,
+      48
+    ],
+    "phi": 0.5,
+    "ridge_relative": 0.01,
+    "tolerance": 0.02,
+    "units": 64
+  },
+  "extreme_pair": [
+    {
+      "delta_total_ratio": -0.01857423348485654,
+      "first_flip_grid_lag": 20,
+      "gap_at_grid_lag_1": 0.0245657061161908,
+      "gap_at_grid_lag_24": -0.008889224466391427,
+      "gap_at_grid_lag_6": 0.07930018363941493,
+      "max_gap_first_arm_k_le_6": 0.11768480921690905,
+      "max_gap_second_arm_k_ge_20": 0.009364509491364942,
+      "pair": [
+        [
+          49,
+          11,
+          4
+        ],
+        [
+          10,
+          18,
+          36
+        ]
+      ]
+    }
+  ],
+  "generated_by": "scripts/dir0003_v1_exact_check.py",
+  "matched_rungs": [
+    {
+      "counts": [
+        49,
+        11,
+        4
+      ],
+      "mean_decay": 0.3950993306419529,
+      "spectral_radius": 0.97,
+      "total": 18.902444071853104,
+      "total_ratio": 0.9999709840396591
+    },
+    {
+      "counts": [
+        7,
+        52,
+        5
+      ],
+      "mean_decay": 0.6510068643597926,
+      "spectral_radius": 0.97,
+      "total": 18.912323759928224,
+      "total_ratio": 1.0004936361035366
+    },
+    {
+      "counts": [
+        3,
+        55,
+        6
+      ],
+      "mean_decay": 0.679145316983051,
+      "spectral_radius": 0.97,
+      "total": 18.906286039021904,
+      "total_ratio": 1.0001742305444936
+    },
+    {
+      "counts": [
+        2,
+        55,
+        7
+      ],
+      "mean_decay": 0.6893282207341542,
+      "spectral_radius": 0.97,
+      "total": 18.886927044785836,
+      "total_ratio": 0.9991501072912956
+    },
+    {
+      "counts": [
+        2,
+        54,
+        8
+      ],
+      "mean_decay": 0.6934272937122486,
+      "spectral_radius": 0.97,
+      "total": 18.917631319471006,
+      "total_ratio": 1.000774414902229
+    },
+    {
+      "counts": [
+        2,
+        53,
+        9
+      ],
+      "mean_decay": 0.6975264079121174,
+      "spectral_radius": 0.97,
+      "total": 18.92810313282729,
+      "total_ratio": 1.0013283913862623
+    },
+    {
+      "counts": [
+        51,
+        3,
+        10
+      ],
+      "mean_decay": 0.4077206007266399,
+      "spectral_radius": 0.97,
+      "total": 18.898641768025904,
+      "total_ratio": 0.9997698357920966
+    },
+    {
+      "counts": [
+        2,
+        51,
+        11
+      ],
+      "mean_decay": 0.7057247113546912,
+      "spectral_radius": 0.97,
+      "total": 18.91790175340943,
+      "total_ratio": 1.0007887213109927
+    },
+    {
+      "counts": [
+        2,
+        50,
+        12
+      ],
+      "mean_decay": 0.7098238873757778,
+      "spectral_radius": 0.97,
+      "total": 18.904355328853008,
+      "total_ratio": 1.0000720927394484
+    },
+    {
+      "counts": [
+        46,
+        5,
+        13
+      ],
+      "mean_decay": 0.4499821133620956,
+      "spectral_radius": 0.97,
+      "total": 18.917782531810317,
+      "total_ratio": 1.0007824142885076
+    },
+    {
+      "counts": [
+        44,
+        6,
+        14
+      ],
+      "mean_decay": 0.46606911039901167,
+      "spectral_radius": 0.97,
+      "total": 18.925002719128514,
+      "total_ratio": 1.001164374303312
+    },
+    {
+      "counts": [
+        43,
+        6,
+        15
+      ],
+      "mean_decay": 0.4761632995289451,
+      "spectral_radius": 0.97,
+      "total": 18.88630661173273,
+      "total_ratio": 0.9991172853425421
+    },
+    {
+      "counts": [
+        3,
+        45,
+        16
+      ],
+      "mean_decay": 0.7201367931096885,
+      "spectral_radius": 0.97,
+      "total": 18.905001816604567,
+      "total_ratio": 1.0001062930254347
+    },
+    {
+      "counts": [
+        38,
+        9,
+        17
+      ],
+      "mean_decay": 0.5143335234426627,
+      "spectral_radius": 0.97,
+      "total": 18.91012035738258,
+      "total_ratio": 1.000377072414554
+    },
+    {
+      "counts": [
+        4,
+        42,
+        18
+      ],
+      "mean_decay": 0.722310388417186,
+      "spectral_radius": 0.97,
+      "total": 18.90621712609996,
+      "total_ratio": 1.0001705849353804
+    },
+    {
+      "counts": [
+        33,
+        12,
+        19
+      ],
+      "mean_decay": 0.5525057251441552,
+      "spectral_radius": 0.97,
+      "total": 18.903791759582425,
+      "total_ratio": 1.0000422789801307
+    },
+    {
+      "counts": [
+        30,
+        14,
+        20
+      ],
+      "mean_decay": 0.574589618654729,
+      "spectral_radius": 0.97,
+      "total": 18.901566365927366,
+      "total_ratio": 0.9999245519245886
+    },
+    {
+      "counts": [
+        26,
+        17,
+        21
+      ],
+      "mean_decay": 0.6026688138553697,
+      "spectral_radius": 0.97,
+      "total": 18.903638002620735,
+      "total_ratio": 1.0000341449790617
+    },
+    {
+      "counts": [
+        21,
+        21,
+        22
+      ],
+      "mean_decay": 0.636743810089504,
+      "spectral_radius": 0.97,
+      "total": 18.90299256033556,
+      "total_ratio": 1.0
+    },
+    {
+      "counts": [
+        14,
+        27,
+        23
+      ],
+      "mean_decay": 0.6828117168483763,
+      "spectral_radius": 0.97,
+      "total": 18.89167969071548,
+      "total_ratio": 0.9994015302294613
+    },
+    {
+      "counts": [
+        14,
+        26,
+        24
+      ],
+      "mean_decay": 0.6869109907016814,
+      "spectral_radius": 0.97,
+      "total": 18.865377729477334,
+      "total_ratio": 0.9980101123809808
+    },
+    {
+      "counts": [
+        13,
+        26,
+        25
+      ],
+      "mean_decay": 0.6970062619454809,
+      "spectral_radius": 0.97,
+      "total": 18.839267819011685,
+      "total_ratio": 0.9966288543403657
+    },
+    {
+      "counts": [
+        13,
+        25,
+        26
+      ],
+      "mean_decay": 0.7011055435000115,
+      "spectral_radius": 0.97,
+      "total": 18.813376266143294,
+      "total_ratio": 0.9952591477827533
+    },
+    {
+      "counts": [
+        13,
+        24,
+        27
+      ],
+      "mean_decay": 0.7052048322460728,
+      "spectral_radius": 0.97,
+      "total": 18.787422969506213,
+      "total_ratio": 0.993886174876255
+    },
+    {
+      "counts": [
+        12,
+        24,
+        28
+      ],
+      "mean_decay": 0.7153003164428223,
+      "spectral_radius": 0.97,
+      "total": 18.76171854800493,
+      "total_ratio": 0.9925263678817148
+    },
+    {
+      "counts": [
+        12,
+        23,
+        29
+      ],
+      "mean_decay": 0.7193996138391114,
+      "spectral_radius": 0.97,
+      "total": 18.73598183180897,
+      "total_ratio": 0.9911648524436798
+    },
+    {
+      "counts": [
+        12,
+        22,
+        30
+      ],
+      "mean_decay": 0.7234989200611328,
+      "spectral_radius": 0.97,
+      "total": 18.710044846322454,
+      "total_ratio": 0.9897927424243942
+    },
+    {
+      "counts": [
+        11,
+        22,
+        31
+      ],
+      "mean_decay": 0.7335946795214505,
+      "spectral_radius": 0.97,
+      "total": 18.68421731309187,
+      "total_ratio": 0.9884264226129599
+    },
+    {
+      "counts": [
+        11,
+        21,
+        32
+      ],
+      "mean_decay": 0.7376939962436209,
+      "spectral_radius": 0.97,
+      "total": 18.658251713469674,
+      "total_ratio": 0.9870527988579212
+    },
+    {
+      "counts": [
+        11,
+        20,
+        33
+      ],
+      "mean_decay": 0.7417933243474428,
+      "spectral_radius": 0.97,
+      "total": 18.631899551816637,
+      "total_ratio": 0.9856587253233248
+    },
+    {
+      "counts": [
+        10,
+        20,
+        34
+      ],
+      "mean_decay": 0.7518894496728598,
+      "spectral_radius": 0.97,
+      "total": 18.605326099156635,
+      "total_ratio": 0.984252945123434
+    },
+    {
+      "counts": [
+        10,
+        19,
+        35
+      ],
+      "mean_decay": 0.7559887913173712,
+      "spectral_radius": 0.97,
+      "total": 18.578648917205122,
+      "total_ratio": 0.9828416774701053
+    },
+    {
+      "counts": [
+        10,
+        18,
+        36
+      ],
+      "mean_decay": 0.7600881483016809,
+      "spectral_radius": 0.97,
+      "total": 18.551335474474925,
+      "total_ratio": 0.9813967505548026
+    }
+  ],
+  "reference_allocation": [
+    21,
+    21,
+    22
+  ],
+  "reference_total": 18.90299256033556,
+  "ridge_sensitivity": [
+    {
+      "first_flip_grid_lag": 24,
+      "ridge_relative": 0.003,
+      "total_ratio": 1.017136733000719
+    },
+    {
+      "first_flip_grid_lag": 20,
+      "ridge_relative": 0.01,
+      "total_ratio": 1.018926324622897
+    },
+    {
+      "first_flip_grid_lag": 20,
+      "ridge_relative": 0.03,
+      "total_ratio": 1.0258420735847402
+    }
+  ],
+  "schema": "dir0003_v1_exact_check_v1",
+  "self_checks": {
+    "gram_closed_form_vs_direct_sum_max_abs_error": 6.252776074688882e-13,
+    "phi_zero_total_wide_band_should_match_v0_h4000_3_699": 3.7020118516594707
+  }
+}

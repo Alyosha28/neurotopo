@@ -1,0 +1,19 @@
+{
+  "scientific_decision": "FALSIFIED",
+  "scope": "preregistered >=5pp block loss in uncued linear-access accuracy at delay32",
+  "reproduction_scope": "seed9101, three frozen models, delay32/64",
+  "evidence": [
+    {
+      "path": "research/iterations/ITER-0004/review.md",
+      "sha256": "6ace407c38fd16e52e7c43afc55ba2f8c74122cc9b67070484f7dd242fc37e3a"
+    },
+    {
+      "path": "docs/EXP-0006_reproduction.md",
+      "sha256": "a8d3cd8fdc721d232ef10032ba9168f036b8affa9bd57e805ece5a165aa83e67"
+    },
+    {
+      "path": "artifacts/EXP-0006/v2/analysis.json",
+      "sha256": "94be271024b84fc9dd7d33133a7ebe69d392afe67e2dccd87ac910421f283f82"
+    }
+  ]
+}

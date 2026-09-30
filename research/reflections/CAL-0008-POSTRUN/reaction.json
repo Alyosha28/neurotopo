@@ -1,0 +1,59 @@
+{
+  "decision_impact": "UNCHANGED",
+  "next_action": "判词为配置级 CLOSE_CONFIGS：这 4 个固定配置在 B=4000 下无末端余量，预算锚点通过。项目轨若要继续检验组织类假设，需要结构性不同的任务（精确解不可用低维平滑近似），属新独立研究问题，须另立事前设计与审查；不得据本筛查注册 EXP。Gate 1 与全部既有判词不变。",
+  "packet_sha256": "d01665a60de57b4ec2e74996ce560f3bdc96996db7c1908b1c564d9f5fcfd41f",
+  "responses": [
+    {
+      "action": "结果记录已声明该流程缺口；决定0063 记录投递接口限制，并规定今后运行后审查 packet 须含注册设计全文。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/evidence/CAL-0008_terminal_headroom_screen.md",
+        "research/decisions/0063_cal0008_close_configs.md"
+      ],
+      "id": "CAL-0008-POSTRUN-R1",
+      "reason": "真实缺口：packet 未含注册设计 v7 全文，故预注册合规与门槛标定无法由 packet 独立核查。"
+    },
+    {
+      "action": "已按 t 重算四个配置上界（0.000627/0.004191/0.001481/0.001716），表中同时公布 z 与 t 并标明以 t 为准；判词不变（最大 t 上界对 ε 低 11.9 倍）。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/evidence/CAL-0008_terminal_headroom_screen.md",
+        "research/decisions/0063_cal0008_close_configs.md"
+      ],
+      "id": "CAL-0008-POSTRUN-R2",
+      "reason": "真实错误：脚本用 1.96(z) 而非 t(0.975,2)=4.303，n=3 下区间被低估约 2.2 倍，却标为 95% t 区间。"
+    },
+    {
+      "action": "已按选定 LR 更正，并补记只能说在注册预算下低于阈值、不能说已收敛。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/evidence/CAL-0008_terminal_headroom_screen.md",
+        "research/decisions/0063_cal0008_close_configs.md"
+      ],
+      "id": "CAL-0008-POSTRUN-R3",
+      "reason": "真实错误：C2 平台落差引用非判定 LR 的 0.26–0.30，选定 LR 实为 0.0261–0.0279。"
+    },
+    {
+      "action": "已如实报告本轮 ρ 与跨 LR 一致门未获独立检验，并保留旗标原值不作事后重解释。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/evidence/CAL-0008_terminal_headroom_screen.md",
+        "research/decisions/0063_cal0008_close_configs.md"
+      ],
+      "id": "CAL-0008-POSTRUN-R4",
+      "reason": "真实问题：绝对残余门旗标语义未在 packet 内定义；本轮判词实际由该门单独决定，ρ 与跨 LR 门从未参与。"
+    },
+    {
+      "action": "判词收窄为配置级：在这 4 个固定配置与 B=4000 下不存在；族级结论明确标注为不可由本筛查得出。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/evidence/CAL-0008_terminal_headroom_screen.md",
+        "research/decisions/0063_cal0008_close_configs.md"
+      ],
+      "id": "CAL-0008-POSTRUN-R5",
+      "reason": "真实过度外推：4 个配置（M=8 仅单一图种子）不足以支撑族级不可能有余量。"
+    }
+  ],
+  "review_sha256": "f18cf874e93918d68e52a4867569b93db165a54055e9b00f8c16fba946368a36",
+  "schema_version": 1
+}

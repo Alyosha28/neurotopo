@@ -1,0 +1,15 @@
+# Uncued labels remain linearly accessible despite a behavioral gap
+
+EXP-0006 v2 uses original full-noise task inputs and frozen EXP-0004 recurrent models. At the pre-evidence query it extracts one hidden state for each unique counterfactual prefix, then fits the same train-only standardized 1,040-coefficient ridge decoder for every model. The decoder predicts each of the four candidate labels, while the primary endpoint is accuracy on the **three candidates not selected by the prior cue**. Train/validation/test task streams and old-model checkpoints are fixed and separate. The task's value labels are permutations, so knowing only the prior candidate's label still leaves 1/3 conditional guessing accuracy per uncued candidate.
+
+| Delay32 result, ten trained seeds | Independent block M3 | Matched random C0 | Contextual wide GRU |
+|---|---:|---:|---:|
+| Uncued candidate linear decoding | 98.82% | 99.30% | 98.55% |
+| Prior candidate linear decoding | 97.92% | 98.58% | 98.58% |
+| Original model joint task success | 58.63% | 67.95% | 90.88% |
+
+The primary M3−C0 uncued difference is −0.48 percentage points with a paired model-seed 95% bootstrap interval [−1.19,+0.14] pp. Predeclared probe and original-task adequacy guards passed. The interval excludes the registered prediction of at least **5 pp less** linear access in M3, so the automated decision is **FALSIFIED for that narrow prediction**. Delay64 is secondary: M3 and C0 uncued scores are 97.37% and 97.99%; the paired interval spans zero.
+
+The original model's early prior-answer accuracy on the same delay32 instances remains lower in M3 (72.06%) than C0 (80.74%), while a separately fitted linear probe can recover prior labels from either hidden state at about98%. This discrepancy narrows the problem: a simple loss of *linearly accessible* candidate labels at the pre-evidence state is not sufficient to explain the tested task-performance gap. It does **not** establish that the original readout can use that information, that nonlinear/state-space information is equal, or that multi-trajectory semantic hypotheses exist. The probe was trained separately on synthetic labels and at the tested delay; the source models were trained with delay at most8. Differences in readout training and delay-dependent state geometry remain plausible explanations.
+
+Thirty complete model-seed probe records, both delay endpoints, probe coefficients/scaling, dataset hashes, original checkpoint replay checks and separate train/validation/test metrics are under `artifacts/EXP-0006/v2/`. Independent scientific review confirmed the scoped FALSIFIED decision in `research/iterations/ITER-0004/review.md`. A clean-checkout numerical replay matched the full seed9101 three-model subset in `docs/EXP-0006_reproduction.md`; it does not add independent model seeds. The linear probe is close to ceiling, so the result only excludes the preregistered >=5pp accuracy deficit in this decoder family and setting. Gate1 and the earlier EXP-0004/0005 decisions remain unchanged.

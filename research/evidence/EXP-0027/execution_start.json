@@ -1,0 +1,8 @@
+{
+  "source_commit": "68200dc92b9fc5b7f490d47e0953c54215a847fd",
+  "start_utc": "2026-09-28T17:47:56.232789+00:00",
+  "module": "neurotopo.computation_compatibility",
+  "output": "~/.local/share/neurotopo/experiment-runs/EXP-0027/v2",
+  "data_base": "~/.local/share/neurotopo/experiment-runs",
+  "storage_note": "Two old ITER0021 receipt entries remain I/O errors; this run uses verified APFS source artifacts and new output path; old entries not overwritten."
+}

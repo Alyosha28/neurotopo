@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "track": "project_gate1",
+  "experiment_id": "EXP-9003",
+  "direction": "dry_run_reference_project",
+  "question": "Entry-policy dry run C",
+  "purpose": "Check that a named prior-art K factor cannot silently score for the unresolved project gate.",
+  "gate1_claim": true,
+  "resource_cap": {"max_updates": 100, "max_wall_seconds": 60},
+  "task_search": {"max_configurations": 1, "retain_all_attempts": true, "heldout_rule": "Use a disjoint final test stream."},
+  "branches": {
+    "success": "Evaluate only a prospective project gate rule.",
+    "failure": "Keep Gate 1 closed.",
+    "borderline": "Do not advance the project gate."
+  },
+  "factor": {
+    "kind": "reference_k",
+    "name": "PF-GRU particle count dry-run factor",
+    "manipulation": "Partition 64 recurrent coordinates across K=1 or K=4 particles.",
+    "ablation": "Disable resampling and compare an equal-budget control.",
+    "prediction": "A specified K contrast changes delayed-evidence posterior KL in the preregistered direction.",
+    "actual_primary_control": "K=1 reference cell plus an equal-state and equal-compute single-stream control.",
+    "state_matching": "Count total particle states and retained weights against the single-state control.",
+    "parameter_matching": "Account for allocated and effective particle/scorer parameters.",
+    "executed_compute_matching": "Account for actual scorer, resampling and recurrent operations.",
+    "prior_art_boundary": "PF-RNN and RIM-style alternatives remain mandatory comparators."
+  }
+}

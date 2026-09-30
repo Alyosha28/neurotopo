@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "2cc18a71d9c969f2e988448e40108148e22f45601fdd4e47477089514f94d49f",
+  "review_sha256": "041301c1a4500c055ad91377f874ccf0b35126365875ebd7ab4ff54e8e1e2ede",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "完成固定候选goal的归档交付；保留未支持的预测/修复结果，不新增系数、seed或任务。"
+}

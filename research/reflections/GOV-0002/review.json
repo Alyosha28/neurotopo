@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "bb8d5f7fdeb94cc9e86cf44dfbc220f6266ea5f3fb3abe48b0e62ade5689b6a0",
+  "reviewer": {"model": "gpt-6-sol", "effort": "high", "context": "fresh_only_packet"},
+  "issues": [
+    {
+      "id": "GOV-0002-R1", "source": "both", "severity": "medium",
+      "evidence": [
+        "与已资格的**实际主匹配控制**、具体任务/解析或受界 oracle、数值效应/失败消融及状态/参数/执行计算计划相配",
+        "经独立批评后，才有资格另行冻结有限任务菜单并校准该控制"
+      ],
+      "problem": "设计问题把“已有合格主控制”列为当前可注册性的条件，行动却把主控制校准放在新候选合同与独立批评之后。须区分候选合同可进入设计审查、控制资格测试可启动、正式 EXP 可注册三个状态；否则可能把尚待前瞻校准的合格新方向误判为完全无入口。",
+      "why_it_matters": "这会把候选优先流程中的正常中间状态写成科学 NO-GO。行动已限定为现存材料不足，因而尚未证明发生了这种误挡，但状态边界需要核实。",
+      "falsifiable_check": "给出一个完整、预先版本化的候选因素合同，但尚无 headroom 测试；逐项运行现行入口规则，记录它能否进入设计审查和有限校准，以及何时才允许正式 EXP 注册。"
+    },
+    {
+      "id": "GOV-0002-R2", "source": "action", "severity": "medium",
+      "evidence": [
+        "\"real_project_entry_contract_count\": 0",
+        "\"scope\": \"source paths and current state only; semantic adequacy requires independent review\"",
+        "上述行不是候选空间穷尽证明；它们仅列当前仓库有名字、有来源的组合。"
+      ],
+      "problem": "零真实入口 JSON 是形式事实，不能单独推出科学 NO-GO。行动另有逐组合语义论证，并明确限定范围，因此 packet 没显示直接偷换；但其验证输出尚不能独立核实组合清单是否完整、各项语义缺口是否真实。",
+      "why_it_matters": "若已有非 JSON、但足以形成前瞻合同的候选材料被遗漏，当前结论的适用范围就比标题和标签更窄。",
+      "falsifiable_check": "按事前定义的检索范围重新列出所有具名候选、因素与任务合同，包括非入口 JSON 的版本化材料；逐项核对五类必需材料。发现一组满足条件，即推翻当前可注册性判断，而不改写旧实验结果。"
+    },
+    {
+      "id": "GOV-0002-R3", "source": "both", "severity": "low",
+      "evidence": [
+        "EXP-0004 的有余量旧任务虽然不支持 H3 语义，但可能用于另一明确的记忆/检索问题。",
+        "旧任务可以在另一个具名记忆/检索问题中重新注册，但不能追认竞争假设语义或改 EXP-0004 原判。",
+        "M3：旧实验是项目 Gate 1 代理；新 `project_gate1` 入口需另一 H3 因素。"
+      ],
+      "problem": "行动明确保留旧任务的新记忆问题，因此没有直接误挡；但没有指定该新问题的 claim track 和入口判据。表格中“新 project_gate1 入口需另一 H3 因素”可能被执行者扩张为对一切使用旧任务的新实验的禁令。",
+      "why_it_matters": "同一任务可以检验不同的预写主张；必须让新主张保留独立注册路径，同时不追认旧 EXP-0004 的 H3 解释。",
+      "falsifiable_check": "构造一份只主张记忆或检索效应、明确模型操纵和匹配控制的新预注册草案；检查入口策略是否允许其进入相应 track，并确认旧 EXP-0004 的 FALSIFIED 标签保持不变。"
+    },
+    {
+      "id": "GOV-0002-R4", "source": "action", "severity": "medium",
+      "evidence": [
+        "独立 `field_reference`/`independent_benchmark` 轨保持开放且不得冒充项目效果。",
+        "独立 benchmark 和领域参考因素可按各自目的/预算/三分支运行；不自动计项目 Gate 1。",
+        "其项目过门资格按决定0019/0023仍未裁定。"
+      ],
+      "problem": "开放声明清楚，但 packet 没提供这两条轨道的可执行入口、预算上限、成功/失败/不确定三分支及参考 K 何时可申请项目计分的明确判据。决定仍未裁定并不应自动阻止独立领域研究。",
+      "why_it_matters": "缺少操作判据时，“保持开放”可能在实际登记中变成隐性封锁，或反过来让领域结果越界计入 Gate 1。",
+      "falsifiable_check": "用一份前瞻的 reference K 因素或独立 benchmark 草案试走各自入口；记录允许的预算与三分支结果，并验证任何项目计分都须先解决决定0019/0023的归属问题。"
+    },
+    {
+      "id": "GOV-0002-R5", "source": "action", "severity": "medium",
+      "evidence": [
+        "\"path\": \"research/stage_gates.md\"",
+        "\"path\": \"research/loop/current_frontier.md\"",
+        "旧 EXP/CAL/SCR 标签与 Gate 1 `NOT_PASSED` 原样保留。",
+        "当下导航和客观重开条件在 `research/loop/current_frontier.md`。"
+      ],
+      "problem": "packet 只有阶段门与 frontier 的路径、哈希及行动对其内容的陈述，没有改动前后文本。独立审查无法据此确认阶段门未被隐性收紧、旧判词未改写，也无法确认 frontier 的重开条件具体到可由第三方复核的材料和判定步骤。",
+      "why_it_matters": "这些文件是后续入口的执行依据；即使本次决定表述审慎，导航或阶段门中的措辞也可能产生不同的实际规则。",
+      "falsifiable_check": "比较本次提交前后的阶段门和旧结果条目语义差异；再由未参与决策者仅凭 frontier 对一份新候选合同判断是否重开，并记录所需文件、控制、预算、审查人与判定结果是否一致。"
+    }
+  ],
+  "overall_assessment": "基于 packet，NO_REGISTERABLE_PROJECT_GATE1_EXP_NOW 被明确限定为当前仓库、现行项目入口和现存组合的判断；行动没有直接把缺 JSON 偷换成多轨迹机制的科学否证，也明确保留旧任务的新记忆问题及独立研究轨。主要剩余风险是“可进入设计审查”与“可注册正式 EXP”的阶段边界，以及 packet 未提供阶段门、frontier 和底层证据正文供独立核对。此反思不判定上述问题已实际造成误挡或历史改写。"
+}

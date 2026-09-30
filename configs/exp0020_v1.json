@@ -1,0 +1,67 @@
+{
+  "experiment_id": "EXP-0020",
+  "version": "v1",
+  "workflow": "protected_operator",
+  "protocol": "experiments/EXP-0020/v1.md",
+  "entry_contract": "research/entries/EXP-0020.json",
+  "output": "artifacts/EXP-0020/v1",
+  "gate1_claim": false,
+  "matching_criterion_version": "G1-MATCH-v3",
+  "seeds": [
+    20001,
+    20002,
+    20003
+  ],
+  "examples": 512,
+  "steps": 128,
+  "namespace": 201001,
+  "cells": {
+    "SHARED": [
+      0.0,
+      0.0
+    ],
+    "LEAK02": [
+      0.2,
+      0.0
+    ],
+    "LEAK06": [
+      0.6,
+      0.0
+    ],
+    "LEAK12": [
+      1.2,
+      0.0
+    ],
+    "LEAK20": [
+      2.0,
+      0.0
+    ],
+    "LOGICAL": [
+      0.0,
+      0.1
+    ]
+  },
+  "modes": [
+    "HOLD",
+    "UPDATE"
+  ],
+  "arms": [
+    "PASSIVE",
+    "RELATIONAL",
+    "CLASSICAL",
+    "LOCKED"
+  ],
+  "resource": {
+    "worker_wall_seconds_cap": 120,
+    "reproduction_wall_seconds_cap": 120,
+    "research_update_cap": 0
+  },
+  "thresholds": {
+    "equivalence_atol": 1e-10,
+    "protected_accuracy": 0.999,
+    "locked_flip_max": 0.001,
+    "passive_leak12_max": 0.8,
+    "repair_gain_min": 0.2,
+    "logical_noise_max": 0.65
+  }
+}

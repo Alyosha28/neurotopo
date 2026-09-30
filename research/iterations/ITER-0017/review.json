@@ -1,0 +1,126 @@
+{
+  "experiment_id": "EXP-0022",
+  "version": "v2",
+  "review_type": "independent_frozen_result_review",
+  "review_scope": "ITER-0017/result_review_scope.md",
+  "execution_commit": "52425d300f9cbe0e97e6e800005d4f9dd092f8ed",
+  "verdict": "PASS_RESULT_AUDIT",
+  "scientific_decision": "INCONCLUSIVE",
+  "substatus": "NO_REGISTERED_WITNESS_FOUND",
+  "gate1_claim": false,
+  "checks": {
+    "frozen_checkout_clean_at_invocation": true,
+    "source_and_frozen_artifact_hashes_verified_by_replay": true,
+    "all_45_cells_recomputed": true,
+    "data_prefix_search_test_reproduced_and_targets_checked": true,
+    "selection_recomputed_using_search_only": true,
+    "test_logits_gram_curves_and_first_error_counts_matched": true,
+    "all_cells_candidate_and_sham_valid": true,
+    "all_four_primary_none_current_and_future_accuracy_one": true,
+    "zero_updates": true,
+    "single_invocation_under_cap": true,
+    "sham_equivariance_alarm_absent": true
+  },
+  "primary": {
+    "arm": "INV",
+    "radius": 0.15,
+    "replication_unit": "prior confirmation training seed; four reused seeds 20002..20005",
+    "guards_pass": true,
+    "selected_minus_none_future_bce_nat": {
+      "by_seed": {
+        "20002": 5.250315848748244e-09,
+        "20003": 7.141468655325056e-08,
+        "20004": -7.751326414062731e-09,
+        "20005": 2.7910007235898426e-08
+      },
+      "mean": 2.4205920805958625e-08,
+      "sample_sd": 3.4751347354400186e-08,
+      "range": [
+        -7.751326414062731e-09,
+        7.141468655325056e-08
+      ],
+      "descriptive_t95": [
+        -3.109122768493257e-08,
+        7.950306929684982e-08
+      ]
+    },
+    "none_minus_selected_final_accuracy": {
+      "by_seed": {
+        "20002": 0.0,
+        "20003": 0.0,
+        "20004": 0.0,
+        "20005": 0.0
+      },
+      "mean": 0.0,
+      "sample_sd": 0.0,
+      "range": [
+        0.0,
+        0.0
+      ],
+      "descriptive_t95": [
+        0.0,
+        0.0
+      ]
+    },
+    "large_joint_seed_count": 0,
+    "small_bce_seed_count": 0,
+    "small_last_seed_count": 0,
+    "registered_decision_recomputed": true
+  },
+  "secondary": {
+    "directional_search_pass": false,
+    "selected_minus_random_future_bce_nat": {
+      "by_seed": {
+        "20002": 5.105274536454374e-11,
+        "20003": 4.485447735458337e-09,
+        "20004": 8.771179338395996e-10,
+        "20005": 7.533301607520748e-09
+      },
+      "mean": 3.236730005545807e-09,
+      "sample_sd": 3.4513829225820516e-09,
+      "range": [
+        5.105274536454374e-11,
+        7.533301607520748e-09
+      ],
+      "descriptive_t95": [
+        -2.2551904090098684e-09,
+        8.728650420101483e-09
+      ]
+    },
+    "REL_20004_r015_selected_minus_none_future_bce_nat": 0.07234602324391405,
+    "REL_20004_r015_final_accuracy_decline": 0.0400390625,
+    "REL_20004_r015_selected_minus_random_future_bce_nat": 1.0928726260933663e-05,
+    "interpretation": "REL20004 sensitivity is secondary and selected approximately equals random; cannot replace INV primary or establish directed-search advantage."
+  },
+  "constraints": {
+    "max_candidate_logit_error": 1.1920928955078125e-06,
+    "max_candidate_relative_radius_error": 4.233038073397921e-06,
+    "max_candidate_relative_norm_error": 4.8264074736792395e-08,
+    "max_sham_logit_error": 9.5367431640625e-07,
+    "max_sham_relative_radius_error": 4.100900619530279e-06,
+    "candidate_direction_fallbacks": 0,
+    "sham_direction_fallbacks": 0
+  },
+  "resources": {
+    "parent_training_updates_in_this_run": 0,
+    "candidate_states": 46080,
+    "search_suffix_rollouts": 184320,
+    "test_suffix_rollouts": 184320,
+    "model_parameter_counts": {
+      "RAW": 502,
+      "INV": 406,
+      "REL": 340
+    },
+    "state_bytes_per_example": 24,
+    "executed_flops": "NOT_MEASURED",
+    "peak_memory": "NOT_MEASURED",
+    "replay_wall_seconds": 8.10772654199991
+  },
+  "limits": [
+    "Reproduction shares frozen forward and candidate geometry implementation; target, BCE, selection, and decision reductions were independently recomputed.",
+    "Candidate family preserves total Frobenius norm and readout eigenbasis column norms as well as current logit; finite negative result does not establish robustness over all equal-logit states or a minimum failure radius.",
+    "Posthoc read-only geometry finds INV near rank one with small but nonzero candidate Gram spread; this can explain limited direction diversity but is not a registered endpoint or exact identity claim.",
+    "Training seeds 20002..20005 were previously exposed; 20001 is exploratory and excluded from primary decision.",
+    "No architecture superiority, causal organization isolation, biological effect, or Gate 1 claim follows from this frozen-state diagnostic."
+  ]
+}

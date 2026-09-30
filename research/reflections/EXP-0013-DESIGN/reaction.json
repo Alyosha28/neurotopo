@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "67764bb666d4fd30e59130b4b9f6824541398a6c49ae9aa59790d3ef026657aa",
+  "review_sha256": "47ce4709f915054915fd44330292feb0111b0ae6f3f74208651598ec9d049b56",
+  "responses": [
+    {
+      "id": "EXP0013-DESIGN-01",
+      "disposition": "accept",
+      "reason": "The earlier action wording could be read as allowing samples from the first frozen matrix before a complete reviewed protocol.",
+      "action": "Explicitly prohibited all EXP-0013 H/cue/u/y samples until the full numeric protocol and independent pre-run review pass.",
+      "evidence_paths": [
+        "research/decisions/0050_exp0013_design_reflection_corrections.md"
+      ]
+    },
+    {
+      "id": "EXP0013-DESIGN-02",
+      "disposition": "accept",
+      "reason": "Cue-only and last-frame controls do not identify the contribution of pre-switch input history.",
+      "action": "Specified an exact Gaussian truncated-history oracle and required a preregistered minimum full-versus-truncated information gain.",
+      "evidence_paths": [
+        "research/decisions/0050_exp0013_design_reflection_corrections.md"
+      ]
+    },
+    {
+      "id": "EXP0013-DESIGN-03",
+      "disposition": "accept",
+      "reason": "Moving from the failed EXP-0012 matrix family to phase-reveal EXP-0013 is adaptive task design despite no model effects.",
+      "action": "Disclosed the EXP-0012 to EXP-0013 selection chain, capped further task search, and required a frozen held-out cue/phase slice with bounded claims.",
+      "evidence_paths": [
+        "research/decisions/0050_exp0013_design_reflection_corrections.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep samples and training prohibited; independently review the one-shot matrix freeze, then complete numeric task/control/resource/statistical protocol including pre-switch-history and held-out-slice guards."
+}

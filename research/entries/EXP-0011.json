@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "track": "field_reference",
+  "experiment_id": "EXP-0011",
+  "direction": "pfstyle-four-candidate-vs-single-8d",
+  "question": "Does an explicit four-candidate PF-style recurrent package reduce OOD32 posterior KL versus a resource-conservative single GRU on one fixed 8D latent-mode task?",
+  "purpose": "Bounded field-reference architecture-package effect and score-state diagnostics; no project Gate 1 credit or novelty claim.",
+  "gate1_claim": false,
+  "resource_cap": {
+    "max_updates": 98000,
+    "max_wall_seconds": 3600
+  },
+  "task_search": {
+    "max_configurations": 1,
+    "retain_all_attempts": true,
+    "heldout_rule": "The four 8D matrices are already fixed and SHA-pinned before any task data. Task-information root 8050001 and qualification seeds 12101-12103 cannot alter the generator, endpoint or thresholds. Formal seeds 12201-12210 and replication seeds 12301-12305 use disjoint model/data roots; all attempted controls and failures are retained."
+  },
+  "branches": {
+    "success": "After every task, control, resource, effect and independent-replication guard passes, report only a fixed-task field PF-style package benefit. A separate prospective project candidate and independent effect data would still be required for Gate 1.",
+    "failure": "If task or actual strong-control qualification fails, close this fixed configuration without K4 research training; if a qualified formal CI excludes the 0.05-nat useful package gain, record that bounded negative result.",
+    "borderline": "Preserve all seeds, costs and anomalies; label uncertain, resource-mismatched or incomplete cases INCONCLUSIVE without tuning matrices, noise, length, arms or endpoint."
+  },
+  "factor": {
+    "kind": "reference_k",
+    "name": "FR-0002 PF-style K4 scored recurrent package versus K1 GRU",
+    "manipulation": "K4_score keeps four independent width-16 recurrent latent states plus four normalized accumulated evidence scores; the primary S68_sparse has one width-68 connected GRU state and direct four-class posterior output.",
+    "ablation": "S64_score tests whether a single connected H64 state with the same four Gaussian heads and scores can match K4; K4_unscored tests the particular package's reliance on accumulated scoring. They are diagnostics, not a clean orthogonal decomposition.",
+    "prediction": "On the single fixed 8D-mode task, K4_score lowers OOD32 oracle-relative posterior KL by at least 0.05 nat in paired-seed mean versus S68_sparse, with a positive CI and strong dense/replication guards.",
+    "actual_primary_control": "S68_sparse: one H68 GRU with degree-15 strongly-connected mask, direct four-class readout, identical task targets and training stream; separately qualify its oracle-relative OOD32 headroom.",
+    "state_matching": "All arms have 68 persistent float32 values: K4 64 recurrent plus four log scores; primary K1 H68. Early four-logit cache is recorded separately.",
+    "parameter_matching": "Before data, verify predicted K4 13200 allocated/3984 effective versus primary K1 14964/4152; K1 conservative ratios capped at 1.15 and 1.05, with no inactive padding.",
+    "executed_compute_matching": "Same examples, 1200 updates, one recurrent step per observation; K1 has no fewer forward-linear MACs. Full operator inventory is disclosed and batch-128 training/inference p50 candidate/control ratio must be at most 1.08 across three timing blocks to treat latency as bounded.",
+    "prior_art_boundary": "PF-RNN already has weighted recurrent particles, RIMs modular recurrence, and EviTrack scored trajectories. This is a field package comparison, not a pure K causal effect, a replication of author results, or a NeuroTopo-specific novelty claim."
+  }
+}

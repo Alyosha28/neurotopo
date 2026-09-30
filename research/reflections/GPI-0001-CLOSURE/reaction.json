@@ -1,0 +1,73 @@
+{
+  "decision_impact": "UNCHANGED",
+  "next_action": "关闭记录与机器输出已按 CLOSURE_NEEDS_NARROWING 收窄并补齐可审计字段；判词仍为 CLOSED_BEFORE_REGISTRATION，但表述限定为基于冻结最小有用效应的资源配置判定，保留结论限定为控制层面的观察。Gate 1 与全部既有判词不变；不注册实验、不授权训练。若仍要推进，需新的独立研究问题与不限于掩码的组织操纵。",
+  "packet_sha256": "072cc4fad58f1cd322900167c046d8e2dc8dc368dd3e63b56217fa150865d4ca",
+  "responses": [
+    {
+      "action": "已在机器输出补齐 two_arm.per_arm_kl_and_auc（每条件×每臂×每 seed 的检查点 KL 与 AUC）与 control_sweep.per_cell（1600/3200 原始 KL），并写明 AUC 定义与排除 curve[0] 的理由。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/structural_task_probe/gpi_v2_measurements.json",
+        "research/decisions/0066_gpi0001_closed_before_registration.md"
+      ],
+      "id": "GPI-0001-CLOSURE-R1",
+      "reason": "真实缺口：机器输出只有已差分的 D/I，没有逐臂逐检查点 AUC，故关闭所依赖的首要量无法由 packet 独立重算。"
+    },
+    {
+      "action": "关闭记录新增 §1.5 记录出处（δ_min／ε_abs／gap 门／停止规则冻结于 GPI-0001 v1 §8，决定0065，早于 pilot），并规定今后此类 packet 必须纳入冻结常数与停止规则。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/gpi0001_closure_v0.md",
+        "research/decisions/0066_gpi0001_closed_before_registration.md"
+      ],
+      "id": "GPI-0001-CLOSURE-R2",
+      "reason": "真实缺口：packet 设计槽不含冻结的停止规则与 δ_min，无法区分事前冻结的门与看数后选的阈值。"
+    },
+    {
+      "action": "保留结论 1 已收窄为控制层面的观察（不是任务族属性），并写明两个学习率与一次预算加倍无法排除共享优化下界。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/gpi0001_closure_v0.md",
+        "research/design/structural_task_probe/gpi_v2_measurements.json",
+        "research/decisions/0066_gpi0001_closed_before_registration.md"
+      ],
+      "id": "GPI-0001-CLOSURE-R3",
+      "reason": "真实过度表述：解析形状代价 0.063 已高于 ε_abs 且距最小末端 KL 仅 0.0025，故保持在阈值之上几乎由该数字蕴含。"
+    },
+    {
+      "action": "已删去块组织一致劣于的表述，改为在该掩码式操纵下未检测到优势，并明写混淆与替代解释。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/gpi0001_closure_v0.md",
+        "research/design/structural_task_probe/gpi_v2_measurements.json",
+        "research/decisions/0066_gpi0001_closed_before_registration.md"
+      ],
+      "id": "GPI-0001-CLOSURE-R4",
+      "reason": "真实过度表述：密度匹配只固定非零个数，掩码位置与跨组混合相混淆；且 D<0 在 F 也成立，正是一般混合效应所预测的。"
+    },
+    {
+      "action": "已改为在冻结最小有用效应处无信号，并明写这不是效应不存在的证明；关闭被表述为资源配置判定。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/gpi0001_closure_v0.md",
+        "research/design/structural_task_probe/gpi_v2_measurements.json",
+        "research/decisions/0066_gpi0001_closed_before_registration.md"
+      ],
+      "id": "GPI-0001-CLOSURE-R5",
+      "reason": "真实过度表述：δ_min=0.05 落在区间 [−0.0466, +0.0584] 内，且 sd 只有 df=2，故决定性否定过强。"
+    },
+    {
+      "action": "本轮补齐了控制与两臂的原始数组；gap／形状代价／状态规模仍为散文来源，已在关闭记录中标注为需在复用 F/X 对时另行附上。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/gpi0001_closure_v0.md",
+        "research/design/structural_task_probe/gpi_v2_measurements.json",
+        "research/decisions/0066_gpi0001_closed_before_registration.md"
+      ],
+      "id": "GPI-0001-CLOSURE-R6",
+      "reason": "真实缺口：gap(16)、0.063 推导与有效状态规模在机器输出中没有对应字段，保留结论 2–4 在 packet 内不可审计。"
+    }
+  ],
+  "review_sha256": "5c690a4fb6885256dd822a07cf6e2d5e45642ba3266321bcceb16f7d359b145a",
+  "schema_version": 1
+}

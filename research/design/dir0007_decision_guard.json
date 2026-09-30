@@ -1,0 +1,157 @@
+{
+  "scope": "POST_REVIEW_DECISION_GUARD_ONLY",
+  "original_cases_preserved": 8,
+  "nonfinite_cases": [
+    {
+      "nonfinite": "nan",
+      "side": "lower",
+      "index": 0,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "nan",
+      "side": "lower",
+      "index": 1,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "nan",
+      "side": "lower",
+      "index": 2,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "nan",
+      "side": "lower",
+      "index": 3,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "nan",
+      "side": "upper",
+      "index": 0,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "nan",
+      "side": "upper",
+      "index": 1,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "nan",
+      "side": "upper",
+      "index": 2,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "nan",
+      "side": "upper",
+      "index": 3,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "positive_inf",
+      "side": "lower",
+      "index": 0,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "positive_inf",
+      "side": "lower",
+      "index": 1,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "positive_inf",
+      "side": "lower",
+      "index": 2,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "positive_inf",
+      "side": "lower",
+      "index": 3,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "positive_inf",
+      "side": "upper",
+      "index": 0,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "positive_inf",
+      "side": "upper",
+      "index": 1,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "positive_inf",
+      "side": "upper",
+      "index": 2,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "positive_inf",
+      "side": "upper",
+      "index": 3,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "negative_inf",
+      "side": "lower",
+      "index": 0,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "negative_inf",
+      "side": "lower",
+      "index": 1,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "negative_inf",
+      "side": "lower",
+      "index": 2,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "negative_inf",
+      "side": "lower",
+      "index": 3,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "negative_inf",
+      "side": "upper",
+      "index": 0,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "negative_inf",
+      "side": "upper",
+      "index": 1,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "negative_inf",
+      "side": "upper",
+      "index": 2,
+      "result": "INCONCLUSIVE_EXECUTION"
+    },
+    {
+      "nonfinite": "negative_inf",
+      "side": "upper",
+      "index": 3,
+      "result": "INCONCLUSIVE_EXECUTION"
+    }
+  ],
+  "malformed_cases_passed": 2,
+  "all_pass": true,
+  "original_nan_bug_reproduced": true,
+  "source_sha256": "e890d540942fe0ad76e26c493ee1e7d29b1e02e48d98d4653d68452ac028bc61",
+  "research_samples": 0,
+  "optimization_updates": 0,
+  "included_in_review_packet": false
+}

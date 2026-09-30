@@ -1,0 +1,69 @@
+{
+  "block_counts": [
+    {
+      "0": 100,
+      "1": 100,
+      "2": 100
+    },
+    {
+      "0": 100,
+      "1": 100,
+      "2": 100
+    },
+    {
+      "0": 100,
+      "1": 100,
+      "2": 100
+    },
+    {
+      "0": 100,
+      "1": 100,
+      "2": 100
+    },
+    {
+      "0": 100,
+      "1": 100,
+      "2": 100
+    }
+  ],
+  "design_commit": "c838f3b",
+  "fixed_d2_dense_forward_linear_flops": 140328960000,
+  "fixed_d2_tokens": 4992000,
+  "flops_proxy_increase_pct": 44.26478019201616,
+  "frozen_calibration_commit": "5422a672eaf4216604e59841ec3b91acda2d0934",
+  "frozen_resource_source_sha256": "b50546302ee68d73e513aa7752535bd500edb47e5fc2fd8b921cccae18638187",
+  "frozen_script_sha256": "5cff77a0aefb7930ca1f20b8e19431eedc4830d45bed7a4b82c3b85689d4f8fa",
+  "frozen_task_source_sha256": "a425d14e6fd670b0cc890a299305a9331dbd397287ea918b2e6e6ae4dcce1a73",
+  "frozen_values_match": true,
+  "frozen_varied_dense_forward_linear_flops": 97271808000,
+  "frozen_varied_tokens": 3456000,
+  "kind": "CAL-0005_REACTION_VERIFICATION",
+  "per_d": {
+    "0": {
+      "dense_forward_linear_flops_per_batch": 36143104,
+      "input_steps": 10
+    },
+    "1": {
+      "dense_forward_linear_flops_per_batch": 64847872,
+      "input_steps": 18
+    },
+    "2": {
+      "dense_forward_linear_flops_per_batch": 93552640,
+      "input_steps": 26
+    }
+  },
+  "schedule_counts": {
+    "0": 500,
+    "1": 500,
+    "2": 500
+  },
+  "scope_deviation": "Directly read source_belief_task.py and resources.py beyond the three explicitly named design inputs; the former matches frozen source SHA, and the latter changed only later cache-accounting/commentary fields without altering dense forward linear proxy formula.",
+  "source_sha256": {
+    "scripts/calibrate_cadence.py": "5cff77a0aefb7930ca1f20b8e19431eedc4830d45bed7a4b82c3b85689d4f8fa",
+    "src/neurotopo/resources.py": "3bf42c84ba26c284c28a5c8af638b6646492dfe6ecc4cb33d0c233cb3b05e4ad",
+    "src/neurotopo/source_belief_task.py": "a425d14e6fd670b0cc890a299305a9331dbd397287ea918b2e6e6ae4dcce1a73"
+  },
+  "token_increase_pct": 44.44444444444444,
+  "varied_dense_forward_linear_flops": 97271808000,
+  "varied_tokens": 3456000
+}

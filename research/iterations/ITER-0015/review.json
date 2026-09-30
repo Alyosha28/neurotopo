@@ -1,0 +1,29 @@
+{
+  "experiment_id": "EXP-0020",
+  "version": "v2",
+  "reviewer_model": "gpt-6-sol/high",
+  "review_type": "independent_result_review",
+  "scope": "固定 b489ff8 独立 clone 的静态逻辑检查；原件哈希、随机流、15 个监测检查点、3 模型×8 条件终点评估、XOR/NumPy 指标及 Gram 描述的一次重放。未独立重训。",
+  "verdict": "ACCEPT_LOCAL_SINGLE_SEED_BRANCH",
+  "scientific_decision": "SUPPORTED",
+  "substatus": "SINGLE_SEED_LEARNABILITY_ONLY",
+  "checks": {
+    "execution": "三模型各 1000 更新，共 3000；RAW/INV/REL 的训练数据哈希相同，编码器和读出初始哈希相同。复核进程退出码 0，未重试。",
+    "replay": {
+      "monitor_checkpoints": 15,
+      "evaluation_conditions": 24,
+      "max_logit_error": 0.0,
+      "max_gram_error": 0.0,
+      "independent_training_updates": 0
+    },
+    "iid_learning": "REL 的 IID_H 全时点、IID_U 全时点与 IID_U 翻转时点准确率均为 1.0，满足事先固定的 0.95 局部分支。INV 三项也均为 1.0，RAW 三项分别约 0.99718、0.99967、0.99978。",
+    "transfer": "REL 在 LONG/ROT 两种长度 64 条件下全时点准确率均为 1.0，LEAK04_U 为 0.99997；INV 的对应值为 1.0 与 0.99943。RAW 在 ROT_U 约 0.51935、LEAK04_U 约 0.51702。所有八条件均保留。",
+    "gram": "保存的终点 Gram 均值与读出系数分解重算相符；REL 的 IID_U g12 均值 logit 差贡献约 4.6423，两个范数项约 0 与 0.0445；这是描述性关联。",
+    "logic": "后续转移只接收当前 H 与命令 u；b0 仅进入初态编码。INV 保留为使用同一 Gram+u 输入的强控制，不以其表现阻断 REL。"
+  },
+  "limits": "单 seed、单配置；REL/RAW 有残差，INV 无残差，函数类、参数量和初始化动态不同（REL 340、INV 406、RAW 502）。未做资源精确匹配或独立重训；重放沿用冻结模型/数据生成代码，仅 XOR 与指标独立重算。Gram 分解不能证明语义或因果专化。强 INV 同样成功，本结果不支持 REL 方法优越性、Gate 1 或整条方向的成败。",
+  "paths": {
+    "reproduction": "research/iterations/ITER-0015/reproduction.json",
+    "execution_audit": "research/iterations/ITER-0015/audit_execution.json"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "actual_exp0009_pre_shapes": {
+    "multi_gru": [
+      128,
+      8
+    ],
+    "random_gru": [
+      128,
+      8
+    ]
+  },
+  "checks": {
+    "all_input_evidence_and_query_tags_match": true,
+    "all_posterior_differences_below_1e_6": true,
+    "balanced_source_counts_at_queries": true,
+    "cal0001_pre_cache_matches_output": true,
+    "exp0009_pre_cache_matches_both_outputs": true
+  },
+  "examples_per_task": 128,
+  "input_tag_checks": {
+    "cal0001": true,
+    "cal0002": true
+  },
+  "kind": "TH0001_POST_REFLECTION_IMPLEMENTATION_SANITY_NOT_MODEL_EFFECT",
+  "max_absolute_posterior_differences": {
+    "cal0001_final": 2.950554367497915e-08,
+    "cal0001_pre": 2.933907394808699e-08,
+    "cal0002_final": 2.907895157999718e-08,
+    "cal0002_pre": 2.82869502266081e-08
+  },
+  "pass": true,
+  "resource_accounts": {
+    "cal0001_dense": {
+      "memory_limit": "Byte estimates assume project-reference float32. Recurrent h and retained pre-query readout are counted separately; temporary activations, autograd/optimizer and allocator peak memory are not measured.",
+      "parameter_dtype": "torch.float32",
+      "pre_readout_cache_bytes": 16,
+      "pre_readout_cache_floats": 4,
+      "recurrent_hidden_floats": 64
+    },
+    "multi_gru": {
+      "memory_limit": "Byte estimates assume project-reference float32. Recurrent h and retained pre-query readout are counted separately; temporary activations, autograd/optimizer and allocator peak memory are not measured.",
+      "parameter_dtype": "torch.float32",
+      "pre_readout_cache_bytes": 32,
+      "pre_readout_cache_floats": 8,
+      "recurrent_hidden_floats": 64
+    },
+    "random_gru": {
+      "memory_limit": "Byte estimates assume project-reference float32. Recurrent h and retained pre-query readout are counted separately; temporary activations, autograd/optimizer and allocator peak memory are not measured.",
+      "parameter_dtype": "torch.float32",
+      "pre_readout_cache_bytes": 32,
+      "pre_readout_cache_floats": 8,
+      "recurrent_hidden_floats": 64
+    }
+  },
+  "rng_seeds": {
+    "cal0001": 710001,
+    "cal0002": 720001,
+    "model": 810001
+  },
+  "scope": "Independent direct likelihood product on fixed synthetic examples; current float32 resource fields; no training, no frozen EXP rewrite, no peak memory measurement.",
+  "script_sha256": "2bced554c770a7eb803488b51c1dfefb7c8b7284b431ebd00baa6f21bb9eede8",
+  "source_balanced_at_final": true,
+  "source_balanced_at_pre": true,
+  "source_sha256": {
+    "src/neurotopo/belief_task.py": "2a3ccc142db0736a61808e53e8895b6c7ee3ae3205971243f657dd8af21f54ba",
+    "src/neurotopo/models.py": "829a6088079c6fd9f0ad8ef3271646bf6e8da7ea193b4fa2918b51f2e4dc46f7",
+    "src/neurotopo/resources.py": "3bf42c84ba26c284c28a5c8af638b6646492dfe6ecc4cb33d0c233cb3b05e4ad",
+    "src/neurotopo/source_belief_task.py": "a425d14e6fd670b0cc890a299305a9331dbd397287ea918b2e6e6ae4dcce1a73"
+  }
+}

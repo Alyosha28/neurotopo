@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "02ced7c7376c6b20f25df027777d3c770838fbeae9569d217113f7be964d8562",
+  "review_sha256": "10d1de6261d400d9ae979baf8b6fca742a17536570bf1c9c25b866196733bf26",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Preserve FR-0002 as FIELD_ONLY and stop project-motivated v7 score optimization; seek a new prospective K-update factor with a functional K1 control, orthogonal score/readout checks, and resource/headroom qualification before any effect data."
+}

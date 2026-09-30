@@ -1,0 +1,4087 @@
+{
+  "directions_tried": {
+    "frozen-distractor-payload-sensitivity": [
+      "ITER-0003"
+    ],
+    "matched-recurrence-long-delay-transfer": [
+      "ITER-0002"
+    ],
+    "payload-x-fixed-curriculum": [
+      "ITER-0001"
+    ]
+  },
+  "exported_at": "2026-09-23T14:55:26+00:00",
+  "findings": [
+    {
+      "event_id": "event-000010",
+      "evidence": {
+        "path": "research/iterations/ITER-0001/decision.md",
+        "sha256": "efc5286556a4f6fa828a766feff0c0966e1a470458e8d077aa811ad2b87083b5",
+        "size": 893
+      },
+      "finding": "Fixed length curriculum restores original delayed-noise task learning in three fresh seeds; removal of payload alone is not consistently sufficient.",
+      "iteration": 1,
+      "phase": "DECIDED",
+      "time": "2026-09-23T13:39:36+00:00"
+    },
+    {
+      "event_id": "event-000019",
+      "evidence": {
+        "path": "research/iterations/ITER-0002/decision.md",
+        "sha256": "02d5c4fe8c57d5252fe877f21baacd13c7842e4c830031ffb905520cedfc2d92",
+        "size": 1183
+      },
+      "finding": "With IID learning resolved and resources matched, independent blocks lose to random masks at primary delay32; the registered useful-gain prediction is falsified.",
+      "iteration": 2,
+      "phase": "DECIDED",
+      "time": "2026-09-23T13:53:58+00:00"
+    },
+    {
+      "event_id": "event-000028",
+      "evidence": {
+        "path": "research/iterations/ITER-0003/decision.md",
+        "sha256": "e7105f097da057f0bf13bbded041954d9968f89806ba48aa90dcf4704ad2c3f1",
+        "size": 1720
+      },
+      "finding": "Zeroing distractor payload harms both frozen models and collapses the matched control, invalidating the apparent gap closure; the paired interaction also spans zero.",
+      "iteration": 3,
+      "phase": "DECIDED",
+      "time": "2026-09-23T14:55:26+00:00"
+    }
+  ],
+  "iteration_log": [
+    {
+      "directions_tried": {},
+      "id": "event-000001",
+      "kind": "init",
+      "progress": {
+        "current": null,
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 0,
+        "last_seen": "2026-09-23T13:32:39+00:00",
+        "phase": null,
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:32:39+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "experiment": "EXP-0003",
+      "id": "event-000002",
+      "kind": "begin",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {},
+          "experiment": "EXP-0003",
+          "findings": {},
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:32:39+00:00",
+        "phase": "QUESTION",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:32:39+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "research/prior_art/learning_conditions.md",
+        "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+        "size": 1013
+      },
+      "finding": null,
+      "id": "event-000003",
+      "kind": "advance",
+      "phase": "PRIOR_ART",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            }
+          },
+          "experiment": "EXP-0003",
+          "findings": {
+            "PRIOR_ART": null
+          },
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:32:39+00:00",
+        "phase": "PRIOR_ART",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:32:39+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "docs/EXP-0003_pre_run_review.md",
+        "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+        "size": 3912
+      },
+      "finding": null,
+      "id": "event-000004",
+      "kind": "advance",
+      "phase": "CRITIQUE",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0003_pre_run_review.md",
+              "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+              "size": 3912
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            }
+          },
+          "experiment": "EXP-0003",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null
+          },
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:32:39+00:00",
+        "phase": "CRITIQUE",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:32:39+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "experiments/EXP-0003/v2.md",
+        "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+        "size": 4983
+      },
+      "finding": null,
+      "id": "event-000005",
+      "kind": "advance",
+      "phase": "REGISTERED",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0003_pre_run_review.md",
+              "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+              "size": 3912
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0003/v2.md",
+              "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+              "size": 4983
+            }
+          },
+          "experiment": "EXP-0003",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null
+          },
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:32:39+00:00",
+        "phase": "REGISTERED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:32:39+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "artifacts/validation/suite.json",
+        "sha256": "20aec5f459ab9f929a786a15ca1466a55774d746f77099f4e754c3b801d80465",
+        "size": 5192
+      },
+      "finding": null,
+      "id": "event-000006",
+      "kind": "advance",
+      "phase": "VALIDATED",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0003_pre_run_review.md",
+              "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+              "size": 3912
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0003/v2.md",
+              "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+              "size": 4983
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "20aec5f459ab9f929a786a15ca1466a55774d746f77099f4e754c3b801d80465",
+              "size": 5192
+            }
+          },
+          "experiment": "EXP-0003",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:32:39+00:00",
+        "phase": "VALIDATED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:32:39+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "artifacts/auto_research/live/jobs/ITER-0001/job_start.json",
+        "sha256": "9a3114263f0db94882773f8b3732c1f8ddb855640a44b00bc5bc6647cf2e7d3d",
+        "size": 2034
+      },
+      "finding": null,
+      "id": "event-000007",
+      "kind": "advance",
+      "phase": "RUNNING",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0003_pre_run_review.md",
+              "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+              "size": 3912
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0003/v2.md",
+              "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+              "size": 4983
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0001/job_start.json",
+              "sha256": "9a3114263f0db94882773f8b3732c1f8ddb855640a44b00bc5bc6647cf2e7d3d",
+              "size": 2034
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "20aec5f459ab9f929a786a15ca1466a55774d746f77099f4e754c3b801d80465",
+              "size": 5192
+            }
+          },
+          "experiment": "EXP-0003",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:32:46+00:00",
+        "phase": "RUNNING",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:32:46+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "artifacts/EXP-0003/v2/analysis.json",
+        "sha256": "125bb62310c880f9e1eb0a4bbe7b2921e8dd921bfe6545cede43a1f78dc1fbf2",
+        "size": 45900
+      },
+      "finding": null,
+      "id": "event-000008",
+      "kind": "advance",
+      "phase": "ANALYZED",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "ANALYZED": {
+              "path": "artifacts/EXP-0003/v2/analysis.json",
+              "sha256": "125bb62310c880f9e1eb0a4bbe7b2921e8dd921bfe6545cede43a1f78dc1fbf2",
+              "size": 45900
+            },
+            "CRITIQUE": {
+              "path": "docs/EXP-0003_pre_run_review.md",
+              "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+              "size": 3912
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0003/v2.md",
+              "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+              "size": 4983
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0001/job_start.json",
+              "sha256": "9a3114263f0db94882773f8b3732c1f8ddb855640a44b00bc5bc6647cf2e7d3d",
+              "size": 2034
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "20aec5f459ab9f929a786a15ca1466a55774d746f77099f4e754c3b801d80465",
+              "size": 5192
+            }
+          },
+          "experiment": "EXP-0003",
+          "findings": {
+            "ANALYZED": null,
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:34:51+00:00",
+        "phase": "ANALYZED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:34:51+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "research/iterations/ITER-0001/review.md",
+        "sha256": "a08727bb6786d0613eb52303a77ae3aefb1e2606352d959892497de1c3c2b438",
+        "size": 4345
+      },
+      "finding": null,
+      "id": "event-000009",
+      "kind": "advance",
+      "phase": "REVIEWED",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "ANALYZED": {
+              "path": "artifacts/EXP-0003/v2/analysis.json",
+              "sha256": "125bb62310c880f9e1eb0a4bbe7b2921e8dd921bfe6545cede43a1f78dc1fbf2",
+              "size": 45900
+            },
+            "CRITIQUE": {
+              "path": "docs/EXP-0003_pre_run_review.md",
+              "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+              "size": 3912
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0003/v2.md",
+              "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+              "size": 4983
+            },
+            "REVIEWED": {
+              "path": "research/iterations/ITER-0001/review.md",
+              "sha256": "a08727bb6786d0613eb52303a77ae3aefb1e2606352d959892497de1c3c2b438",
+              "size": 4345
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0001/job_start.json",
+              "sha256": "9a3114263f0db94882773f8b3732c1f8ddb855640a44b00bc5bc6647cf2e7d3d",
+              "size": 2034
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "20aec5f459ab9f929a786a15ca1466a55774d746f77099f4e754c3b801d80465",
+              "size": 5192
+            }
+          },
+          "experiment": "EXP-0003",
+          "findings": {
+            "ANALYZED": null,
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "REVIEWED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:39:36+00:00",
+        "phase": "REVIEWED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:39:36+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "research/iterations/ITER-0001/decision.md",
+        "sha256": "efc5286556a4f6fa828a766feff0c0966e1a470458e8d077aa811ad2b87083b5",
+        "size": 893
+      },
+      "finding": "Fixed length curriculum restores original delayed-noise task learning in three fresh seeds; removal of payload alone is not consistently sufficient.",
+      "id": "event-000010",
+      "kind": "advance",
+      "phase": "DECIDED",
+      "progress": {
+        "current": {
+          "decision": "SUPPORTED",
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "ANALYZED": {
+              "path": "artifacts/EXP-0003/v2/analysis.json",
+              "sha256": "125bb62310c880f9e1eb0a4bbe7b2921e8dd921bfe6545cede43a1f78dc1fbf2",
+              "size": 45900
+            },
+            "CRITIQUE": {
+              "path": "docs/EXP-0003_pre_run_review.md",
+              "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+              "size": 3912
+            },
+            "DECIDED": {
+              "path": "research/iterations/ITER-0001/decision.md",
+              "sha256": "efc5286556a4f6fa828a766feff0c0966e1a470458e8d077aa811ad2b87083b5",
+              "size": 893
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0003/v2.md",
+              "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+              "size": 4983
+            },
+            "REVIEWED": {
+              "path": "research/iterations/ITER-0001/review.md",
+              "sha256": "a08727bb6786d0613eb52303a77ae3aefb1e2606352d959892497de1c3c2b438",
+              "size": 4345
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0001/job_start.json",
+              "sha256": "9a3114263f0db94882773f8b3732c1f8ddb855640a44b00bc5bc6647cf2e7d3d",
+              "size": 2034
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "20aec5f459ab9f929a786a15ca1466a55774d746f77099f4e754c3b801d80465",
+              "size": 5192
+            }
+          },
+          "experiment": "EXP-0003",
+          "finding": "Fixed length curriculum restores original delayed-noise task learning in three fresh seeds; removal of payload alone is not consistently sufficient.",
+          "findings": {
+            "ANALYZED": null,
+            "CRITIQUE": null,
+            "DECIDED": "Fixed length curriculum restores original delayed-noise task learning in three fresh seeds; removal of payload alone is not consistently sufficient.",
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "REVIEWED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0001",
+          "next_action": "Run EXP-0004 matched recurrence transfer comparison with unchanged curriculum and fresh seeds.",
+          "no_new_finding": false,
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 1,
+        "findings_count": 1,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:39:36+00:00",
+        "phase": "DECIDED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:39:36+00:00"
+    },
+    {
+      "directions_tried": {
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "experiment": "EXP-0004",
+      "id": "event-000011",
+      "kind": "begin",
+      "progress": {
+        "current": {
+          "direction": "matched-recurrence-long-delay-transfer",
+          "evidence": {},
+          "experiment": "EXP-0004",
+          "findings": {},
+          "id": "ITER-0002",
+          "question": "Does block recurrence add long-delay generalization after matched models learn the IID task?",
+          "replication_of": null
+        },
+        "decisions_count": 1,
+        "findings_count": 1,
+        "iteration": 2,
+        "last_seen": "2026-09-23T13:39:36+00:00",
+        "phase": "QUESTION",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:39:36+00:00"
+    },
+    {
+      "directions_tried": {
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "research/prior_art/evidence_matrix.md",
+        "sha256": "926c307eaea579a67836bbe9b29133bcd31d8f82a7b1def6b5d5f89dc9477e5a",
+        "size": 10327
+      },
+      "finding": null,
+      "id": "event-000012",
+      "kind": "advance",
+      "phase": "PRIOR_ART",
+      "progress": {
+        "current": {
+          "direction": "matched-recurrence-long-delay-transfer",
+          "evidence": {
+            "PRIOR_ART": {
+              "path": "research/prior_art/evidence_matrix.md",
+              "sha256": "926c307eaea579a67836bbe9b29133bcd31d8f82a7b1def6b5d5f89dc9477e5a",
+              "size": 10327
+            }
+          },
+          "experiment": "EXP-0004",
+          "findings": {
+            "PRIOR_ART": null
+          },
+          "id": "ITER-0002",
+          "question": "Does block recurrence add long-delay generalization after matched models learn the IID task?",
+          "replication_of": null
+        },
+        "decisions_count": 1,
+        "findings_count": 1,
+        "iteration": 2,
+        "last_seen": "2026-09-23T13:39:37+00:00",
+        "phase": "PRIOR_ART",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:39:37+00:00"
+    },
+    {
+      "directions_tried": {
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "docs/EXP-0004_pre_run_review.md",
+        "sha256": "a5402d20b3d3f3bf1a502c2904832f601c362bcd1d567306f64f0debac771e57",
+        "size": 2969
+      },
+      "finding": null,
+      "id": "event-000013",
+      "kind": "advance",
+      "phase": "CRITIQUE",
+      "progress": {
+        "current": {
+          "direction": "matched-recurrence-long-delay-transfer",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0004_pre_run_review.md",
+              "sha256": "a5402d20b3d3f3bf1a502c2904832f601c362bcd1d567306f64f0debac771e57",
+              "size": 2969
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/evidence_matrix.md",
+              "sha256": "926c307eaea579a67836bbe9b29133bcd31d8f82a7b1def6b5d5f89dc9477e5a",
+              "size": 10327
+            }
+          },
+          "experiment": "EXP-0004",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null
+          },
+          "id": "ITER-0002",
+          "question": "Does block recurrence add long-delay generalization after matched models learn the IID task?",
+          "replication_of": null
+        },
+        "decisions_count": 1,
+        "findings_count": 1,
+        "iteration": 2,
+        "last_seen": "2026-09-23T13:41:53+00:00",
+        "phase": "CRITIQUE",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:41:53+00:00"
+    },
+    {
+      "directions_tried": {
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "experiments/EXP-0004/v1.md",
+        "sha256": "78b581fee8817bbbaef4301725653411d39f9f5fa28c9ed887d636907e08f539",
+        "size": 4170
+      },
+      "finding": null,
+      "id": "event-000014",
+      "kind": "advance",
+      "phase": "REGISTERED",
+      "progress": {
+        "current": {
+          "direction": "matched-recurrence-long-delay-transfer",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0004_pre_run_review.md",
+              "sha256": "a5402d20b3d3f3bf1a502c2904832f601c362bcd1d567306f64f0debac771e57",
+              "size": 2969
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/evidence_matrix.md",
+              "sha256": "926c307eaea579a67836bbe9b29133bcd31d8f82a7b1def6b5d5f89dc9477e5a",
+              "size": 10327
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0004/v1.md",
+              "sha256": "78b581fee8817bbbaef4301725653411d39f9f5fa28c9ed887d636907e08f539",
+              "size": 4170
+            }
+          },
+          "experiment": "EXP-0004",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null
+          },
+          "id": "ITER-0002",
+          "question": "Does block recurrence add long-delay generalization after matched models learn the IID task?",
+          "replication_of": null
+        },
+        "decisions_count": 1,
+        "findings_count": 1,
+        "iteration": 2,
+        "last_seen": "2026-09-23T13:41:53+00:00",
+        "phase": "REGISTERED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:41:53+00:00"
+    },
+    {
+      "directions_tried": {
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "artifacts/validation/suite.json",
+        "sha256": "2b520af9a71b6ed1047bec5b9bb79041688f8f65eb31bed1fa15aceddb1ef078",
+        "size": 5191
+      },
+      "finding": null,
+      "id": "event-000015",
+      "kind": "advance",
+      "phase": "VALIDATED",
+      "progress": {
+        "current": {
+          "direction": "matched-recurrence-long-delay-transfer",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0004_pre_run_review.md",
+              "sha256": "a5402d20b3d3f3bf1a502c2904832f601c362bcd1d567306f64f0debac771e57",
+              "size": 2969
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/evidence_matrix.md",
+              "sha256": "926c307eaea579a67836bbe9b29133bcd31d8f82a7b1def6b5d5f89dc9477e5a",
+              "size": 10327
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0004/v1.md",
+              "sha256": "78b581fee8817bbbaef4301725653411d39f9f5fa28c9ed887d636907e08f539",
+              "size": 4170
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "2b520af9a71b6ed1047bec5b9bb79041688f8f65eb31bed1fa15aceddb1ef078",
+              "size": 5191
+            }
+          },
+          "experiment": "EXP-0004",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0002",
+          "question": "Does block recurrence add long-delay generalization after matched models learn the IID task?",
+          "replication_of": null
+        },
+        "decisions_count": 1,
+        "findings_count": 1,
+        "iteration": 2,
+        "last_seen": "2026-09-23T13:41:53+00:00",
+        "phase": "VALIDATED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:41:53+00:00"
+    },
+    {
+      "directions_tried": {
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "artifacts/auto_research/live/jobs/ITER-0002/job_start.json",
+        "sha256": "39f90b6f9f2410a065fb2721e8dddde2cf9dceb2f458e877fa3fceafb9171fd9",
+        "size": 2984
+      },
+      "finding": null,
+      "id": "event-000016",
+      "kind": "advance",
+      "phase": "RUNNING",
+      "progress": {
+        "current": {
+          "direction": "matched-recurrence-long-delay-transfer",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0004_pre_run_review.md",
+              "sha256": "a5402d20b3d3f3bf1a502c2904832f601c362bcd1d567306f64f0debac771e57",
+              "size": 2969
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/evidence_matrix.md",
+              "sha256": "926c307eaea579a67836bbe9b29133bcd31d8f82a7b1def6b5d5f89dc9477e5a",
+              "size": 10327
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0004/v1.md",
+              "sha256": "78b581fee8817bbbaef4301725653411d39f9f5fa28c9ed887d636907e08f539",
+              "size": 4170
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0002/job_start.json",
+              "sha256": "39f90b6f9f2410a065fb2721e8dddde2cf9dceb2f458e877fa3fceafb9171fd9",
+              "size": 2984
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "2b520af9a71b6ed1047bec5b9bb79041688f8f65eb31bed1fa15aceddb1ef078",
+              "size": 5191
+            }
+          },
+          "experiment": "EXP-0004",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0002",
+          "question": "Does block recurrence add long-delay generalization after matched models learn the IID task?",
+          "replication_of": null
+        },
+        "decisions_count": 1,
+        "findings_count": 1,
+        "iteration": 2,
+        "last_seen": "2026-09-23T13:42:02+00:00",
+        "phase": "RUNNING",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:42:02+00:00"
+    },
+    {
+      "directions_tried": {
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "artifacts/EXP-0004/v1/analysis.json",
+        "sha256": "492e589816ed158313bd4c44dfeadd69c87838b0868af09af8cb6e3adc0a551a",
+        "size": 152311
+      },
+      "finding": null,
+      "id": "event-000017",
+      "kind": "advance",
+      "phase": "ANALYZED",
+      "progress": {
+        "current": {
+          "direction": "matched-recurrence-long-delay-transfer",
+          "evidence": {
+            "ANALYZED": {
+              "path": "artifacts/EXP-0004/v1/analysis.json",
+              "sha256": "492e589816ed158313bd4c44dfeadd69c87838b0868af09af8cb6e3adc0a551a",
+              "size": 152311
+            },
+            "CRITIQUE": {
+              "path": "docs/EXP-0004_pre_run_review.md",
+              "sha256": "a5402d20b3d3f3bf1a502c2904832f601c362bcd1d567306f64f0debac771e57",
+              "size": 2969
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/evidence_matrix.md",
+              "sha256": "926c307eaea579a67836bbe9b29133bcd31d8f82a7b1def6b5d5f89dc9477e5a",
+              "size": 10327
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0004/v1.md",
+              "sha256": "78b581fee8817bbbaef4301725653411d39f9f5fa28c9ed887d636907e08f539",
+              "size": 4170
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0002/job_start.json",
+              "sha256": "39f90b6f9f2410a065fb2721e8dddde2cf9dceb2f458e877fa3fceafb9171fd9",
+              "size": 2984
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "2b520af9a71b6ed1047bec5b9bb79041688f8f65eb31bed1fa15aceddb1ef078",
+              "size": 5191
+            }
+          },
+          "experiment": "EXP-0004",
+          "findings": {
+            "ANALYZED": null,
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0002",
+          "question": "Does block recurrence add long-delay generalization after matched models learn the IID task?",
+          "replication_of": null
+        },
+        "decisions_count": 1,
+        "findings_count": 1,
+        "iteration": 2,
+        "last_seen": "2026-09-23T13:48:35+00:00",
+        "phase": "ANALYZED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:48:35+00:00"
+    },
+    {
+      "directions_tried": {
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "research/iterations/ITER-0002/verification.json",
+        "sha256": "6262472637cd415807937afcd5c285004ee061271caa3d100d7a5f40b7e1cb13",
+        "size": 646
+      },
+      "finding": null,
+      "id": "event-000018",
+      "kind": "advance",
+      "phase": "REVIEWED",
+      "progress": {
+        "current": {
+          "direction": "matched-recurrence-long-delay-transfer",
+          "evidence": {
+            "ANALYZED": {
+              "path": "artifacts/EXP-0004/v1/analysis.json",
+              "sha256": "492e589816ed158313bd4c44dfeadd69c87838b0868af09af8cb6e3adc0a551a",
+              "size": 152311
+            },
+            "CRITIQUE": {
+              "path": "docs/EXP-0004_pre_run_review.md",
+              "sha256": "a5402d20b3d3f3bf1a502c2904832f601c362bcd1d567306f64f0debac771e57",
+              "size": 2969
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/evidence_matrix.md",
+              "sha256": "926c307eaea579a67836bbe9b29133bcd31d8f82a7b1def6b5d5f89dc9477e5a",
+              "size": 10327
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0004/v1.md",
+              "sha256": "78b581fee8817bbbaef4301725653411d39f9f5fa28c9ed887d636907e08f539",
+              "size": 4170
+            },
+            "REVIEWED": {
+              "path": "research/iterations/ITER-0002/verification.json",
+              "sha256": "6262472637cd415807937afcd5c285004ee061271caa3d100d7a5f40b7e1cb13",
+              "size": 646
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0002/job_start.json",
+              "sha256": "39f90b6f9f2410a065fb2721e8dddde2cf9dceb2f458e877fa3fceafb9171fd9",
+              "size": 2984
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "2b520af9a71b6ed1047bec5b9bb79041688f8f65eb31bed1fa15aceddb1ef078",
+              "size": 5191
+            }
+          },
+          "experiment": "EXP-0004",
+          "findings": {
+            "ANALYZED": null,
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "REVIEWED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0002",
+          "question": "Does block recurrence add long-delay generalization after matched models learn the IID task?",
+          "replication_of": null
+        },
+        "decisions_count": 1,
+        "findings_count": 1,
+        "iteration": 2,
+        "last_seen": "2026-09-23T13:53:58+00:00",
+        "phase": "REVIEWED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:53:58+00:00"
+    },
+    {
+      "directions_tried": {
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "research/iterations/ITER-0002/decision.md",
+        "sha256": "02d5c4fe8c57d5252fe877f21baacd13c7842e4c830031ffb905520cedfc2d92",
+        "size": 1183
+      },
+      "finding": "With IID learning resolved and resources matched, independent blocks lose to random masks at primary delay32; the registered useful-gain prediction is falsified.",
+      "id": "event-000019",
+      "kind": "advance",
+      "phase": "DECIDED",
+      "progress": {
+        "current": {
+          "decision": "FALSIFIED",
+          "direction": "matched-recurrence-long-delay-transfer",
+          "evidence": {
+            "ANALYZED": {
+              "path": "artifacts/EXP-0004/v1/analysis.json",
+              "sha256": "492e589816ed158313bd4c44dfeadd69c87838b0868af09af8cb6e3adc0a551a",
+              "size": 152311
+            },
+            "CRITIQUE": {
+              "path": "docs/EXP-0004_pre_run_review.md",
+              "sha256": "a5402d20b3d3f3bf1a502c2904832f601c362bcd1d567306f64f0debac771e57",
+              "size": 2969
+            },
+            "DECIDED": {
+              "path": "research/iterations/ITER-0002/decision.md",
+              "sha256": "02d5c4fe8c57d5252fe877f21baacd13c7842e4c830031ffb905520cedfc2d92",
+              "size": 1183
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/evidence_matrix.md",
+              "sha256": "926c307eaea579a67836bbe9b29133bcd31d8f82a7b1def6b5d5f89dc9477e5a",
+              "size": 10327
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0004/v1.md",
+              "sha256": "78b581fee8817bbbaef4301725653411d39f9f5fa28c9ed887d636907e08f539",
+              "size": 4170
+            },
+            "REVIEWED": {
+              "path": "research/iterations/ITER-0002/verification.json",
+              "sha256": "6262472637cd415807937afcd5c285004ee061271caa3d100d7a5f40b7e1cb13",
+              "size": 646
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0002/job_start.json",
+              "sha256": "39f90b6f9f2410a065fb2721e8dddde2cf9dceb2f458e877fa3fceafb9171fd9",
+              "size": 2984
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "2b520af9a71b6ed1047bec5b9bb79041688f8f65eb31bed1fa15aceddb1ef078",
+              "size": 5191
+            }
+          },
+          "experiment": "EXP-0004",
+          "finding": "With IID learning resolved and resources matched, independent blocks lose to random masks at primary delay32; the registered useful-gain prediction is falsified.",
+          "findings": {
+            "ANALYZED": null,
+            "CRITIQUE": null,
+            "DECIDED": "With IID learning resolved and resources matched, independent blocks lose to random masks at primary delay32; the registered useful-gain prediction is falsified.",
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "REVIEWED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0002",
+          "next_action": "STOP_MECHANISM_ESCALATION. Current bounded research objective completed; Gate1 remains closed.",
+          "no_new_finding": false,
+          "question": "Does block recurrence add long-delay generalization after matched models learn the IID task?",
+          "replication_of": null
+        },
+        "decisions_count": 2,
+        "findings_count": 2,
+        "iteration": 2,
+        "last_seen": "2026-09-23T13:53:58+00:00",
+        "phase": "DECIDED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:53:58+00:00"
+    },
+    {
+      "directions_tried": {
+        "frozen-distractor-payload-sensitivity": [
+          "ITER-0003"
+        ],
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "experiment": "EXP-0005",
+      "id": "event-000020",
+      "kind": "begin",
+      "progress": {
+        "current": {
+          "direction": "frozen-distractor-payload-sensitivity",
+          "evidence": {},
+          "experiment": "EXP-0005",
+          "findings": {},
+          "id": "ITER-0003",
+          "question": "Does removing distractor payload alleviate the independent-block disadvantage at delay32 with weights and time fixed?",
+          "replication_of": null
+        },
+        "decisions_count": 2,
+        "findings_count": 2,
+        "iteration": 3,
+        "last_seen": "2026-09-23T14:39:21+00:00",
+        "phase": "QUESTION",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T14:39:21+00:00"
+    },
+    {
+      "directions_tried": {
+        "frozen-distractor-payload-sensitivity": [
+          "ITER-0003"
+        ],
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "research/prior_art/interference_diagnostics.md",
+        "sha256": "c76a6653f328519e00075914494dee20d821c0192454c7abb80d1a3a118c4384",
+        "size": 4614
+      },
+      "finding": null,
+      "id": "event-000021",
+      "kind": "advance",
+      "phase": "PRIOR_ART",
+      "progress": {
+        "current": {
+          "direction": "frozen-distractor-payload-sensitivity",
+          "evidence": {
+            "PRIOR_ART": {
+              "path": "research/prior_art/interference_diagnostics.md",
+              "sha256": "c76a6653f328519e00075914494dee20d821c0192454c7abb80d1a3a118c4384",
+              "size": 4614
+            }
+          },
+          "experiment": "EXP-0005",
+          "findings": {
+            "PRIOR_ART": null
+          },
+          "id": "ITER-0003",
+          "question": "Does removing distractor payload alleviate the independent-block disadvantage at delay32 with weights and time fixed?",
+          "replication_of": null
+        },
+        "decisions_count": 2,
+        "findings_count": 2,
+        "iteration": 3,
+        "last_seen": "2026-09-23T14:43:49+00:00",
+        "phase": "PRIOR_ART",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T14:43:49+00:00"
+    },
+    {
+      "directions_tried": {
+        "frozen-distractor-payload-sensitivity": [
+          "ITER-0003"
+        ],
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "docs/EXP-0005_pre_run_review.md",
+        "sha256": "aa9b168d41eb88163577c03086af9f076b0e15d4b1297b0890d7cc2af899cd95",
+        "size": 3645
+      },
+      "finding": null,
+      "id": "event-000022",
+      "kind": "advance",
+      "phase": "CRITIQUE",
+      "progress": {
+        "current": {
+          "direction": "frozen-distractor-payload-sensitivity",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0005_pre_run_review.md",
+              "sha256": "aa9b168d41eb88163577c03086af9f076b0e15d4b1297b0890d7cc2af899cd95",
+              "size": 3645
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/interference_diagnostics.md",
+              "sha256": "c76a6653f328519e00075914494dee20d821c0192454c7abb80d1a3a118c4384",
+              "size": 4614
+            }
+          },
+          "experiment": "EXP-0005",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null
+          },
+          "id": "ITER-0003",
+          "question": "Does removing distractor payload alleviate the independent-block disadvantage at delay32 with weights and time fixed?",
+          "replication_of": null
+        },
+        "decisions_count": 2,
+        "findings_count": 2,
+        "iteration": 3,
+        "last_seen": "2026-09-23T14:47:02+00:00",
+        "phase": "CRITIQUE",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T14:47:02+00:00"
+    },
+    {
+      "directions_tried": {
+        "frozen-distractor-payload-sensitivity": [
+          "ITER-0003"
+        ],
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "experiments/EXP-0005/v2.md",
+        "sha256": "49278ee45b7a29037919f4b11e1a101ce6f5538981aef64487e80df44c9e9f14",
+        "size": 8104
+      },
+      "finding": null,
+      "id": "event-000023",
+      "kind": "advance",
+      "phase": "REGISTERED",
+      "progress": {
+        "current": {
+          "direction": "frozen-distractor-payload-sensitivity",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0005_pre_run_review.md",
+              "sha256": "aa9b168d41eb88163577c03086af9f076b0e15d4b1297b0890d7cc2af899cd95",
+              "size": 3645
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/interference_diagnostics.md",
+              "sha256": "c76a6653f328519e00075914494dee20d821c0192454c7abb80d1a3a118c4384",
+              "size": 4614
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0005/v2.md",
+              "sha256": "49278ee45b7a29037919f4b11e1a101ce6f5538981aef64487e80df44c9e9f14",
+              "size": 8104
+            }
+          },
+          "experiment": "EXP-0005",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null
+          },
+          "id": "ITER-0003",
+          "question": "Does removing distractor payload alleviate the independent-block disadvantage at delay32 with weights and time fixed?",
+          "replication_of": null
+        },
+        "decisions_count": 2,
+        "findings_count": 2,
+        "iteration": 3,
+        "last_seen": "2026-09-23T14:47:02+00:00",
+        "phase": "REGISTERED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T14:47:02+00:00"
+    },
+    {
+      "directions_tried": {
+        "frozen-distractor-payload-sensitivity": [
+          "ITER-0003"
+        ],
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "artifacts/validation/suite.json",
+        "sha256": "bf2e90dcd6484392d76275826a6f22c26fefd370426c1fa0e44b322e71a6280e",
+        "size": 5397
+      },
+      "finding": null,
+      "id": "event-000024",
+      "kind": "advance",
+      "phase": "VALIDATED",
+      "progress": {
+        "current": {
+          "direction": "frozen-distractor-payload-sensitivity",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0005_pre_run_review.md",
+              "sha256": "aa9b168d41eb88163577c03086af9f076b0e15d4b1297b0890d7cc2af899cd95",
+              "size": 3645
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/interference_diagnostics.md",
+              "sha256": "c76a6653f328519e00075914494dee20d821c0192454c7abb80d1a3a118c4384",
+              "size": 4614
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0005/v2.md",
+              "sha256": "49278ee45b7a29037919f4b11e1a101ce6f5538981aef64487e80df44c9e9f14",
+              "size": 8104
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "bf2e90dcd6484392d76275826a6f22c26fefd370426c1fa0e44b322e71a6280e",
+              "size": 5397
+            }
+          },
+          "experiment": "EXP-0005",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0003",
+          "question": "Does removing distractor payload alleviate the independent-block disadvantage at delay32 with weights and time fixed?",
+          "replication_of": null
+        },
+        "decisions_count": 2,
+        "findings_count": 2,
+        "iteration": 3,
+        "last_seen": "2026-09-23T14:47:46+00:00",
+        "phase": "VALIDATED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T14:47:46+00:00"
+    },
+    {
+      "directions_tried": {
+        "frozen-distractor-payload-sensitivity": [
+          "ITER-0003"
+        ],
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "artifacts/auto_research/live/jobs/ITER-0003/job_start.json",
+        "sha256": "5c50867fc5c48bfd891f532c8868214a3d54ced2ac69e9edfa0b55667f9d3c70",
+        "size": 1306
+      },
+      "finding": null,
+      "id": "event-000025",
+      "kind": "advance",
+      "phase": "RUNNING",
+      "progress": {
+        "current": {
+          "direction": "frozen-distractor-payload-sensitivity",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0005_pre_run_review.md",
+              "sha256": "aa9b168d41eb88163577c03086af9f076b0e15d4b1297b0890d7cc2af899cd95",
+              "size": 3645
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/interference_diagnostics.md",
+              "sha256": "c76a6653f328519e00075914494dee20d821c0192454c7abb80d1a3a118c4384",
+              "size": 4614
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0005/v2.md",
+              "sha256": "49278ee45b7a29037919f4b11e1a101ce6f5538981aef64487e80df44c9e9f14",
+              "size": 8104
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0003/job_start.json",
+              "sha256": "5c50867fc5c48bfd891f532c8868214a3d54ced2ac69e9edfa0b55667f9d3c70",
+              "size": 1306
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "bf2e90dcd6484392d76275826a6f22c26fefd370426c1fa0e44b322e71a6280e",
+              "size": 5397
+            }
+          },
+          "experiment": "EXP-0005",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0003",
+          "question": "Does removing distractor payload alleviate the independent-block disadvantage at delay32 with weights and time fixed?",
+          "replication_of": null
+        },
+        "decisions_count": 2,
+        "findings_count": 2,
+        "iteration": 3,
+        "last_seen": "2026-09-23T14:47:47+00:00",
+        "phase": "RUNNING",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T14:47:47+00:00"
+    },
+    {
+      "directions_tried": {
+        "frozen-distractor-payload-sensitivity": [
+          "ITER-0003"
+        ],
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "artifacts/EXP-0005/v2/results/analysis.json",
+        "sha256": "d5961437afa04629e04ebfa3aa635aff88c78e78ad4c018fe5014ec435dcf82a",
+        "size": 21521
+      },
+      "finding": null,
+      "id": "event-000026",
+      "kind": "advance",
+      "phase": "ANALYZED",
+      "progress": {
+        "current": {
+          "direction": "frozen-distractor-payload-sensitivity",
+          "evidence": {
+            "ANALYZED": {
+              "path": "artifacts/EXP-0005/v2/results/analysis.json",
+              "sha256": "d5961437afa04629e04ebfa3aa635aff88c78e78ad4c018fe5014ec435dcf82a",
+              "size": 21521
+            },
+            "CRITIQUE": {
+              "path": "docs/EXP-0005_pre_run_review.md",
+              "sha256": "aa9b168d41eb88163577c03086af9f076b0e15d4b1297b0890d7cc2af899cd95",
+              "size": 3645
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/interference_diagnostics.md",
+              "sha256": "c76a6653f328519e00075914494dee20d821c0192454c7abb80d1a3a118c4384",
+              "size": 4614
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0005/v2.md",
+              "sha256": "49278ee45b7a29037919f4b11e1a101ce6f5538981aef64487e80df44c9e9f14",
+              "size": 8104
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0003/job_start.json",
+              "sha256": "5c50867fc5c48bfd891f532c8868214a3d54ced2ac69e9edfa0b55667f9d3c70",
+              "size": 1306
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "bf2e90dcd6484392d76275826a6f22c26fefd370426c1fa0e44b322e71a6280e",
+              "size": 5397
+            }
+          },
+          "experiment": "EXP-0005",
+          "findings": {
+            "ANALYZED": null,
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0003",
+          "question": "Does removing distractor payload alleviate the independent-block disadvantage at delay32 with weights and time fixed?",
+          "replication_of": null
+        },
+        "decisions_count": 2,
+        "findings_count": 2,
+        "iteration": 3,
+        "last_seen": "2026-09-23T14:48:22+00:00",
+        "phase": "ANALYZED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T14:48:22+00:00"
+    },
+    {
+      "directions_tried": {
+        "frozen-distractor-payload-sensitivity": [
+          "ITER-0003"
+        ],
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "research/iterations/ITER-0003/verification.json",
+        "sha256": "d207a1d3a6087e90c55135a3aa14acd8c53003d4efd646d834e04466740e6bee",
+        "size": 655
+      },
+      "finding": null,
+      "id": "event-000027",
+      "kind": "advance",
+      "phase": "REVIEWED",
+      "progress": {
+        "current": {
+          "direction": "frozen-distractor-payload-sensitivity",
+          "evidence": {
+            "ANALYZED": {
+              "path": "artifacts/EXP-0005/v2/results/analysis.json",
+              "sha256": "d5961437afa04629e04ebfa3aa635aff88c78e78ad4c018fe5014ec435dcf82a",
+              "size": 21521
+            },
+            "CRITIQUE": {
+              "path": "docs/EXP-0005_pre_run_review.md",
+              "sha256": "aa9b168d41eb88163577c03086af9f076b0e15d4b1297b0890d7cc2af899cd95",
+              "size": 3645
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/interference_diagnostics.md",
+              "sha256": "c76a6653f328519e00075914494dee20d821c0192454c7abb80d1a3a118c4384",
+              "size": 4614
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0005/v2.md",
+              "sha256": "49278ee45b7a29037919f4b11e1a101ce6f5538981aef64487e80df44c9e9f14",
+              "size": 8104
+            },
+            "REVIEWED": {
+              "path": "research/iterations/ITER-0003/verification.json",
+              "sha256": "d207a1d3a6087e90c55135a3aa14acd8c53003d4efd646d834e04466740e6bee",
+              "size": 655
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0003/job_start.json",
+              "sha256": "5c50867fc5c48bfd891f532c8868214a3d54ced2ac69e9edfa0b55667f9d3c70",
+              "size": 1306
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "bf2e90dcd6484392d76275826a6f22c26fefd370426c1fa0e44b322e71a6280e",
+              "size": 5397
+            }
+          },
+          "experiment": "EXP-0005",
+          "findings": {
+            "ANALYZED": null,
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "REVIEWED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0003",
+          "question": "Does removing distractor payload alleviate the independent-block disadvantage at delay32 with weights and time fixed?",
+          "replication_of": null
+        },
+        "decisions_count": 2,
+        "findings_count": 2,
+        "iteration": 3,
+        "last_seen": "2026-09-23T14:55:26+00:00",
+        "phase": "REVIEWED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T14:55:26+00:00"
+    },
+    {
+      "directions_tried": {
+        "frozen-distractor-payload-sensitivity": [
+          "ITER-0003"
+        ],
+        "matched-recurrence-long-delay-transfer": [
+          "ITER-0002"
+        ],
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "research/iterations/ITER-0003/decision.md",
+        "sha256": "e7105f097da057f0bf13bbded041954d9968f89806ba48aa90dcf4704ad2c3f1",
+        "size": 1720
+      },
+      "finding": "Zeroing distractor payload harms both frozen models and collapses the matched control, invalidating the apparent gap closure; the paired interaction also spans zero.",
+      "id": "event-000028",
+      "kind": "advance",
+      "phase": "DECIDED",
+      "progress": {
+        "current": {
+          "decision": "INCONCLUSIVE",
+          "direction": "frozen-distractor-payload-sensitivity",
+          "evidence": {
+            "ANALYZED": {
+              "path": "artifacts/EXP-0005/v2/results/analysis.json",
+              "sha256": "d5961437afa04629e04ebfa3aa635aff88c78e78ad4c018fe5014ec435dcf82a",
+              "size": 21521
+            },
+            "CRITIQUE": {
+              "path": "docs/EXP-0005_pre_run_review.md",
+              "sha256": "aa9b168d41eb88163577c03086af9f076b0e15d4b1297b0890d7cc2af899cd95",
+              "size": 3645
+            },
+            "DECIDED": {
+              "path": "research/iterations/ITER-0003/decision.md",
+              "sha256": "e7105f097da057f0bf13bbded041954d9968f89806ba48aa90dcf4704ad2c3f1",
+              "size": 1720
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/interference_diagnostics.md",
+              "sha256": "c76a6653f328519e00075914494dee20d821c0192454c7abb80d1a3a118c4384",
+              "size": 4614
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0005/v2.md",
+              "sha256": "49278ee45b7a29037919f4b11e1a101ce6f5538981aef64487e80df44c9e9f14",
+              "size": 8104
+            },
+            "REVIEWED": {
+              "path": "research/iterations/ITER-0003/verification.json",
+              "sha256": "d207a1d3a6087e90c55135a3aa14acd8c53003d4efd646d834e04466740e6bee",
+              "size": 655
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0003/job_start.json",
+              "sha256": "5c50867fc5c48bfd891f532c8868214a3d54ced2ac69e9edfa0b55667f9d3c70",
+              "size": 1306
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "bf2e90dcd6484392d76275826a6f22c26fefd370426c1fa0e44b322e71a6280e",
+              "size": 5397
+            }
+          },
+          "experiment": "EXP-0005",
+          "finding": "Zeroing distractor payload harms both frozen models and collapses the matched control, invalidating the apparent gap closure; the paired interaction also spans zero.",
+          "findings": {
+            "ANALYZED": null,
+            "CRITIQUE": null,
+            "DECIDED": "Zeroing distractor payload harms both frozen models and collapses the matched control, invalidating the apparent gap closure; the paired interaction also spans zero.",
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "REVIEWED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0003",
+          "next_action": "STOP_MECHANISM_ESCALATION. Retain the unresolved causal explanation; Gate1 remains closed.",
+          "no_new_finding": false,
+          "question": "Does removing distractor payload alleviate the independent-block disadvantage at delay32 with weights and time fixed?",
+          "replication_of": null
+        },
+        "decisions_count": 3,
+        "findings_count": 3,
+        "iteration": 3,
+        "last_seen": "2026-09-23T14:55:26+00:00",
+        "phase": "DECIDED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T14:55:26+00:00"
+    }
+  ],
+  "logs": {
+    "heartbeat": [
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=0.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:32:46+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=5.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:32:51+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=10.3s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:32:56+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=15.4s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:01+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=20.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:06+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=25.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:12+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=30.7s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:17+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=35.9s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:22+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=41.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:27+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=46.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:32+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=51.2s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:37+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=56.4s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:42+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=61.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:47+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=66.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:53+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=71.7s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:58+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=76.8s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:03+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=82.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:08+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=87.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:13+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=92.2s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:18+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=97.3s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:23+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=102.4s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:28+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=107.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:33+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=112.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:39+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=117.8s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:44+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=122.9s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:49+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44448; module=neurotopo.study_analysis; elapsed=0.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:50+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=0.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:42:02+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=5.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:42:08+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=10.2s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:42:13+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=15.3s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:42:18+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=20.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:42:23+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=25.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:42:28+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=30.7s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:42:33+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=35.8s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:42:38+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=40.9s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:42:43+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=46.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:42:48+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=51.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:42:54+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=56.3s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:42:59+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=61.4s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:43:04+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=66.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:43:09+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=71.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:43:14+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=76.7s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:43:19+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=81.8s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:43:24+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=87.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:43:29+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=92.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:43:35+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=97.2s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:43:40+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=102.3s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:43:45+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=107.4s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:43:50+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=112.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:43:55+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=117.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:44:00+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=122.8s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:44:05+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=127.9s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:44:10+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=133.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:44:15+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=138.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:44:21+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=143.2s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:44:26+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=148.3s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:44:31+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=153.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:44:36+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=158.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:44:41+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=163.7s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:44:46+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=168.8s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:44:51+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=174.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:44:56+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=179.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:45:02+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=184.2s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:45:07+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=189.3s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:45:12+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=194.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:45:17+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=199.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:45:22+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=204.7s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:45:27+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=209.9s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:45:32+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=215.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:45:37+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=220.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:45:43+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=225.2s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:45:48+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=230.3s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:45:53+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=235.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:45:58+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=240.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:46:03+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=245.7s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:46:08+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=250.9s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:46:13+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=256.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:46:18+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=261.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:46:23+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=266.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:46:29+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=271.2s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:46:34+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=276.3s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:46:39+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=281.4s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:46:44+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=286.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:46:49+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=291.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:46:54+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=296.7s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:46:59+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=301.9s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:47:04+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=307.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:47:09+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=312.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:47:15+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=317.2s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:47:20+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=322.4s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:47:25+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=327.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:47:30+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=332.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:47:35+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=337.7s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:47:40+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=342.9s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:47:45+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=348.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:47:50+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=353.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:47:56+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=358.2s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:48:01+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=363.3s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:48:06+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=368.4s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:48:11+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=373.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:48:16+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=378.7s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:48:21+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=383.8s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:48:26+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=45438; module=neurotopo.study; elapsed=388.9s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:48:31+00:00"
+      },
+      {
+        "iteration": 2,
+        "note": "pid=47321; module=neurotopo.study_analysis; elapsed=0.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:48:34+00:00"
+      },
+      {
+        "iteration": 3,
+        "note": "pid=57923; module=neurotopo.replay; elapsed=0.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T14:47:47+00:00"
+      },
+      {
+        "iteration": 3,
+        "note": "pid=57923; module=neurotopo.replay; elapsed=5.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T14:47:52+00:00"
+      },
+      {
+        "iteration": 3,
+        "note": "pid=57923; module=neurotopo.replay; elapsed=10.3s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T14:47:57+00:00"
+      },
+      {
+        "iteration": 3,
+        "note": "pid=57923; module=neurotopo.replay; elapsed=15.4s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T14:48:02+00:00"
+      },
+      {
+        "iteration": 3,
+        "note": "pid=57923; module=neurotopo.replay; elapsed=20.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T14:48:07+00:00"
+      },
+      {
+        "iteration": 3,
+        "note": "pid=57923; module=neurotopo.replay; elapsed=25.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T14:48:12+00:00"
+      },
+      {
+        "iteration": 3,
+        "note": "pid=57923; module=neurotopo.replay; elapsed=30.8s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T14:48:17+00:00"
+      },
+      {
+        "iteration": 3,
+        "note": "pid=58300; module=neurotopo.replay_analysis; elapsed=0.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T14:48:21+00:00"
+      }
+    ],
+    "orchestrator": [
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:32:46+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:32:46+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:32:51+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:32:51+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:32:56+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:32:56+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:01+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:01+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:06+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:06+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:12+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:12+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:17+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:17+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:22+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:22+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:27+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:27+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:32+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:32+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:37+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:37+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:42+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:42+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:47+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:47+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:53+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:53+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:58+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:58+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:03+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:03+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:08+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:08+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:13+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:13+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:18+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:18+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:23+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:23+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:28+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:28+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:33+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:33+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:39+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:39+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:44+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:44+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:49+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:49+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:50+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:50+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:42:02+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:42:02+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:42:08+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:42:08+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:42:13+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:42:13+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:42:18+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:42:18+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:42:23+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:42:23+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:42:28+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:42:28+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:42:33+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:42:33+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:42:38+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:42:38+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:42:43+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:42:43+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:42:48+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:42:48+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:42:54+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:42:54+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:42:59+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:42:59+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:43:04+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:43:04+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:43:09+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:43:09+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:43:14+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:43:14+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:43:19+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:43:19+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:43:24+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:43:24+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:43:29+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:43:29+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:43:35+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:43:35+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:43:40+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:43:40+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:43:45+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:43:45+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:43:50+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:43:50+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:43:55+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:43:55+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:44:00+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:44:00+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:44:05+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:44:05+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:44:10+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:44:10+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:44:15+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:44:15+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:44:21+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:44:21+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:44:26+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:44:26+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:44:31+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:44:31+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:44:36+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:44:36+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:44:41+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:44:41+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:44:46+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:44:46+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:44:51+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:44:51+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:44:56+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:44:56+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:45:02+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:45:02+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:45:07+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:45:07+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:45:12+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:45:12+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:45:17+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:45:17+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:45:22+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:45:22+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:45:27+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:45:27+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:45:32+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:45:32+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:45:37+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:45:37+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:45:43+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:45:43+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:45:48+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:45:48+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:45:53+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:45:53+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:45:58+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:45:58+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:46:03+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:46:03+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:46:08+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:46:08+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:46:13+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:46:13+00:00"
+      },
+      {
+        "age_seconds": 1,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:46:18+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:46:19+00:00"
+      },
+      {
+        "age_seconds": 1,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:46:23+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:46:24+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:46:29+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:46:29+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:46:34+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:46:34+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:46:39+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:46:39+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:46:44+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:46:44+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:46:49+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:46:49+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:46:54+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:46:54+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:46:59+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:46:59+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:47:04+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:47:04+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:47:09+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:47:09+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:47:15+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:47:15+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:47:20+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:47:20+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:47:25+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:47:25+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:47:30+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:47:30+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:47:35+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:47:35+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:47:40+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:47:40+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:47:45+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:47:45+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:47:50+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:47:50+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:47:56+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:47:56+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:48:01+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:48:01+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:48:06+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:48:06+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:48:11+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:48:11+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:48:16+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:48:16+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:48:21+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:48:21+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:48:26+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:48:26+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:48:31+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:48:31+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:48:34+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:48:34+00:00"
+      },
+      {
+        "age_seconds": 39,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:53:58+00:00",
+        "phase": "DECIDED",
+        "stale": true,
+        "stale_seconds": 1,
+        "time": "2026-09-23T13:54:37+00:00"
+      },
+      {
+        "active": false,
+        "age_seconds": 107,
+        "iteration": 2,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:53:58+00:00",
+        "phase": "DECIDED",
+        "stale": false,
+        "stale_seconds": 1,
+        "time": "2026-09-23T13:55:45+00:00"
+      },
+      {
+        "active": true,
+        "age_seconds": 0,
+        "iteration": 3,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T14:47:47+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T14:47:47+00:00"
+      },
+      {
+        "active": true,
+        "age_seconds": 0,
+        "iteration": 3,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T14:47:52+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T14:47:52+00:00"
+      },
+      {
+        "active": true,
+        "age_seconds": 0,
+        "iteration": 3,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T14:47:57+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T14:47:57+00:00"
+      },
+      {
+        "active": true,
+        "age_seconds": 0,
+        "iteration": 3,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T14:48:02+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T14:48:02+00:00"
+      },
+      {
+        "active": true,
+        "age_seconds": 0,
+        "iteration": 3,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T14:48:07+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T14:48:07+00:00"
+      },
+      {
+        "active": true,
+        "age_seconds": 0,
+        "iteration": 3,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T14:48:12+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T14:48:12+00:00"
+      },
+      {
+        "active": true,
+        "age_seconds": 1,
+        "iteration": 3,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T14:48:17+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T14:48:18+00:00"
+      },
+      {
+        "active": true,
+        "age_seconds": 0,
+        "iteration": 3,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T14:48:21+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T14:48:21+00:00"
+      }
+    ],
+    "work": [
+      {
+        "event_id": "event-000001",
+        "iteration": 0,
+        "kind": "init",
+        "phase": null,
+        "time": "2026-09-23T13:32:39+00:00"
+      },
+      {
+        "event_id": "event-000002",
+        "iteration": 1,
+        "kind": "begin",
+        "phase": "QUESTION",
+        "time": "2026-09-23T13:32:39+00:00"
+      },
+      {
+        "event_id": "event-000003",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "PRIOR_ART",
+        "time": "2026-09-23T13:32:39+00:00"
+      },
+      {
+        "event_id": "event-000004",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "CRITIQUE",
+        "time": "2026-09-23T13:32:39+00:00"
+      },
+      {
+        "event_id": "event-000005",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "REGISTERED",
+        "time": "2026-09-23T13:32:39+00:00"
+      },
+      {
+        "event_id": "event-000006",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "VALIDATED",
+        "time": "2026-09-23T13:32:39+00:00"
+      },
+      {
+        "event_id": "event-000007",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:32:46+00:00"
+      },
+      {
+        "event_id": "event-000008",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "ANALYZED",
+        "time": "2026-09-23T13:34:51+00:00"
+      },
+      {
+        "event_id": "event-000009",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "REVIEWED",
+        "time": "2026-09-23T13:39:36+00:00"
+      },
+      {
+        "event_id": "event-000010",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "DECIDED",
+        "time": "2026-09-23T13:39:36+00:00"
+      },
+      {
+        "event_id": "event-000011",
+        "iteration": 2,
+        "kind": "begin",
+        "phase": "QUESTION",
+        "time": "2026-09-23T13:39:36+00:00"
+      },
+      {
+        "event_id": "event-000012",
+        "iteration": 2,
+        "kind": "advance",
+        "phase": "PRIOR_ART",
+        "time": "2026-09-23T13:39:37+00:00"
+      },
+      {
+        "event_id": "event-000013",
+        "iteration": 2,
+        "kind": "advance",
+        "phase": "CRITIQUE",
+        "time": "2026-09-23T13:41:53+00:00"
+      },
+      {
+        "event_id": "event-000014",
+        "iteration": 2,
+        "kind": "advance",
+        "phase": "REGISTERED",
+        "time": "2026-09-23T13:41:53+00:00"
+      },
+      {
+        "event_id": "event-000015",
+        "iteration": 2,
+        "kind": "advance",
+        "phase": "VALIDATED",
+        "time": "2026-09-23T13:41:53+00:00"
+      },
+      {
+        "event_id": "event-000016",
+        "iteration": 2,
+        "kind": "advance",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:42:02+00:00"
+      },
+      {
+        "event_id": "event-000017",
+        "iteration": 2,
+        "kind": "advance",
+        "phase": "ANALYZED",
+        "time": "2026-09-23T13:48:35+00:00"
+      },
+      {
+        "event_id": "event-000018",
+        "iteration": 2,
+        "kind": "advance",
+        "phase": "REVIEWED",
+        "time": "2026-09-23T13:53:58+00:00"
+      },
+      {
+        "event_id": "event-000019",
+        "iteration": 2,
+        "kind": "advance",
+        "phase": "DECIDED",
+        "time": "2026-09-23T13:53:58+00:00"
+      },
+      {
+        "event_id": "event-000020",
+        "iteration": 3,
+        "kind": "begin",
+        "phase": "QUESTION",
+        "time": "2026-09-23T14:39:21+00:00"
+      },
+      {
+        "event_id": "event-000021",
+        "iteration": 3,
+        "kind": "advance",
+        "phase": "PRIOR_ART",
+        "time": "2026-09-23T14:43:49+00:00"
+      },
+      {
+        "event_id": "event-000022",
+        "iteration": 3,
+        "kind": "advance",
+        "phase": "CRITIQUE",
+        "time": "2026-09-23T14:47:02+00:00"
+      },
+      {
+        "event_id": "event-000023",
+        "iteration": 3,
+        "kind": "advance",
+        "phase": "REGISTERED",
+        "time": "2026-09-23T14:47:02+00:00"
+      },
+      {
+        "event_id": "event-000024",
+        "iteration": 3,
+        "kind": "advance",
+        "phase": "VALIDATED",
+        "time": "2026-09-23T14:47:46+00:00"
+      },
+      {
+        "event_id": "event-000025",
+        "iteration": 3,
+        "kind": "advance",
+        "phase": "RUNNING",
+        "time": "2026-09-23T14:47:47+00:00"
+      },
+      {
+        "event_id": "event-000026",
+        "iteration": 3,
+        "kind": "advance",
+        "phase": "ANALYZED",
+        "time": "2026-09-23T14:48:22+00:00"
+      },
+      {
+        "event_id": "event-000027",
+        "iteration": 3,
+        "kind": "advance",
+        "phase": "REVIEWED",
+        "time": "2026-09-23T14:55:26+00:00"
+      },
+      {
+        "event_id": "event-000028",
+        "iteration": 3,
+        "kind": "advance",
+        "phase": "DECIDED",
+        "time": "2026-09-23T14:55:26+00:00"
+      }
+    ]
+  },
+  "progress": {
+    "current": {
+      "decision": "INCONCLUSIVE",
+      "direction": "frozen-distractor-payload-sensitivity",
+      "evidence": {
+        "ANALYZED": {
+          "path": "artifacts/EXP-0005/v2/results/analysis.json",
+          "sha256": "d5961437afa04629e04ebfa3aa635aff88c78e78ad4c018fe5014ec435dcf82a",
+          "size": 21521
+        },
+        "CRITIQUE": {
+          "path": "docs/EXP-0005_pre_run_review.md",
+          "sha256": "aa9b168d41eb88163577c03086af9f076b0e15d4b1297b0890d7cc2af899cd95",
+          "size": 3645
+        },
+        "DECIDED": {
+          "path": "research/iterations/ITER-0003/decision.md",
+          "sha256": "e7105f097da057f0bf13bbded041954d9968f89806ba48aa90dcf4704ad2c3f1",
+          "size": 1720
+        },
+        "PRIOR_ART": {
+          "path": "research/prior_art/interference_diagnostics.md",
+          "sha256": "c76a6653f328519e00075914494dee20d821c0192454c7abb80d1a3a118c4384",
+          "size": 4614
+        },
+        "REGISTERED": {
+          "path": "experiments/EXP-0005/v2.md",
+          "sha256": "49278ee45b7a29037919f4b11e1a101ce6f5538981aef64487e80df44c9e9f14",
+          "size": 8104
+        },
+        "REVIEWED": {
+          "path": "research/iterations/ITER-0003/verification.json",
+          "sha256": "d207a1d3a6087e90c55135a3aa14acd8c53003d4efd646d834e04466740e6bee",
+          "size": 655
+        },
+        "RUNNING": {
+          "path": "artifacts/auto_research/live/jobs/ITER-0003/job_start.json",
+          "sha256": "5c50867fc5c48bfd891f532c8868214a3d54ced2ac69e9edfa0b55667f9d3c70",
+          "size": 1306
+        },
+        "VALIDATED": {
+          "path": "artifacts/validation/suite.json",
+          "sha256": "bf2e90dcd6484392d76275826a6f22c26fefd370426c1fa0e44b322e71a6280e",
+          "size": 5397
+        }
+      },
+      "experiment": "EXP-0005",
+      "finding": "Zeroing distractor payload harms both frozen models and collapses the matched control, invalidating the apparent gap closure; the paired interaction also spans zero.",
+      "findings": {
+        "ANALYZED": null,
+        "CRITIQUE": null,
+        "DECIDED": "Zeroing distractor payload harms both frozen models and collapses the matched control, invalidating the apparent gap closure; the paired interaction also spans zero.",
+        "PRIOR_ART": null,
+        "REGISTERED": null,
+        "REVIEWED": null,
+        "RUNNING": null,
+        "VALIDATED": null
+      },
+      "id": "ITER-0003",
+      "next_action": "STOP_MECHANISM_ESCALATION. Retain the unresolved causal explanation; Gate1 remains closed.",
+      "no_new_finding": false,
+      "question": "Does removing distractor payload alleviate the independent-block disadvantage at delay32 with weights and time fixed?",
+      "replication_of": null
+    },
+    "decisions_count": 3,
+    "findings_count": 3,
+    "iteration": 3,
+    "last_seen": "2026-09-23T14:55:26+00:00",
+    "phase": "DECIDED",
+    "pivot_required": false,
+    "review_required": false,
+    "stale_count": 0,
+    "task_spec": {
+      "path": "research/loop/task_spec.md",
+      "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+      "size": 2224
+    },
+    "version": 1
+  },
+  "version": 1
+}

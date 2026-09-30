@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "6306f177d62738d218b54c35eba92bb3fcda8223d3587bc102b84d2e7fab087d",
+  "reviewer": {
+    "model": "inherited-model-not-exposed",
+    "effort": "inherited",
+    "context": "fresh_only_packet"
+  },
+  "issues": [],
+  "overall_assessment": "ACCEPT_SCOPED_CONTROL_CEILING。包内原协议、分析、manifest、独立复算回执及结果说明相互一致，未发现阻止本次限定范围接纳的科学问题。H三个seed的IID约.274至.284，OOD评估CI上界约.282至.287，明确不满足IID<.10且OOD上界<.02的第一阶段停止条件；manifest显示h_ceiling_stop=false，随后B/U/D各三个seed全部COMPLETED且各3000更新，连同H共36000研究更新，A更新为0。B/U/D的每seed IID均<.15、各臂IID三seed均值均<.10；其OOD三seed均值分别.07851643、.06287512、.01698163，均低于冻结.08下界，且D全部逐seed低于.04，因此按冻结优先顺序必须是INCONCLUSIVE / CONTROL_CEILING，而非LEARNING_FAILURE或CONTROL_PILOT_WINDOW。研究完成回执92.30653354199967秒和复算2.9126392920006765秒均在各自预算内；manifest的90.90559462500096秒为另一计时范围，不构成预算超限或数值矛盾。冻结commit、配置hash、来源hash、验证hash及复算引用的manifest/analysis hash在包内相符。复算回执报告完整checkpoint重放、独立float64 oracle、KL与bootstrap/metrics检查，最大误差2.220446049250313e-15且分支一致；本审查仅核读这些包内证据，未运行代码、读取外部原数组或独立重训，不将回执审查表述为亲自复算。98304是12个模型各两长度4096例的评估呈现/重放数，同seed跨四臂共享观测；独特评估序列数为3×2×4096=24576，均不能替代三个独立训练seed。训练576000条共享序列、2304000模型样本呈现量和73728000训练tokens的区分正确。所有bootstrap CI仅条件于固定模型和评估样本，不覆盖训练seed总体变异。D的非负KL余量界是本轮固定三个训练实例与指定评估样本上的算术界：相对这些D预测的平均改进至多.01698163<.02；它不是对未来seed、预算、任务或架构类别的总体不可能性证明，也不直接约束相对实际主对照B的改进。D/16002的OOD CI上界.020040389985681563略高于.02，结果说明已准确保留这一事实。H在固定优化预算下未充分学习，不能被当作强学习基线或精确filter不可行的证明；结果说明亦明确排除此解释。A没有实例化或训练，不能称A效果已测、候选被FALSIFIED或软等变一般无效。参数/状态/时间已披露，executed compute未profile且峰值内存未测，符合此次无匹配效果判词的诊断范围；不能据此升级为Gate1、资源匹配因果证据或完整八seed资格。接受停止这一固定T/发射/长度/预算配置及保留其阴性诊断，Gate1仍NOT_PASSED。FILES_READ: derived/design.md; derived/action.md; derived/embedded_v1.md; derived/embedded_manifest.json; derived/embedded_independent_reproduction.json; derived/embedded_job_end.json; derived/embedded_validation.json; derived/embedded_EXP-0016_control_results.md; derived/EXTRACTION_MANIFEST.json; derived/action_output_0_verification.json（重复原件封装部分读取，原件由对应embedded文件核读）。"
+}

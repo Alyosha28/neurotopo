@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "track": "independent_benchmark",
+  "experiment_id": "EXP-0019",
+  "direction": "co_paired_history_dynamics",
+  "question": "Do opposite-b CO histories merge into identical complete frozen states under a shared suffix?",
+  "purpose": "Bounded frozen dynamics diagnosis with same-state history and float64 controls; no training or Gate1 claim.",
+  "gate1_claim": false,
+  "factor": null,
+  "resource_cap": {
+    "max_updates": 0,
+    "max_wall_seconds": 360
+  },
+  "task_search": {
+    "max_configurations": 1,
+    "retain_all_attempts": true,
+    "heldout_rule": "Fixed conditional prefix family and namespace191001; no outcome selection; namespace173001 untouched."
+  },
+  "branches": {
+    "success": "Record finite-precision collapse for measured pairs, not global information absence or topology causality.",
+    "failure": "No exact merger does not establish b encoding; stop diagnostic without architecture change.",
+    "borderline": "Preserve partial and initial-merger cases, no threshold/precision/menu expansion."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "c5597a6382930b52b70d8ee66128c2f7aa3306a1ea3d4a567513ff16081a2571",
+  "review_sha256": "6875125fe51f9c4650f195516dd0859c9c6dd1589b95778d5eef75ad2b600e64",
+  "responses": [
+    {
+      "id": "EXP0016-PRERUN-01",
+      "disposition": "accept",
+      "reason": "两字段确实残留EXP0015措辞，正文/config范围始终为控制训练。",
+      "action": "更正入口的条件训练与控制诊断措辞；原审查packet保留，不修改任何数值合同。",
+      "evidence_paths": [
+        "research/entries/EXP-0016.json"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "完成工程验收后，从冻结干净源码执行已获准的独立控制pilot，不实例化A、不计Gate1。"
+}

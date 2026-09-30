@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "303179185ed537db2d48cf8947120c61d73681b96d672fd87564c4801c3bf280",
+  "reviewer": {
+    "model": "inherited-model-not-exposed",
+    "effort": "inherited",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "SRC-001",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "失败/脏树/无效验证被误放行",
+        "preserved.write_bytes(existing.read_bytes())",
+        "analysis_module.analyze(output)",
+        "Refusing to overwrite analysis"
+      ],
+      "problem": "loop_worker异常恢复分支遇到已经写出的analysis.json时只复制备份，随后直接调用orbit_information_analysis.analyze；后者首行检查该原文件仍存在并立即抛FileExistsError。可触发路径是analysis写完后子进程超时，或run+analysis总时间检查刚好超过300秒。此时worker_failure已写出，但原先可能为SUPPORTED的analysis仍原名保留，INCONCLUSIVE恢复不会完成，账本也不会推进到ANALYZED。",
+      "why_it_matters": "协议明确要求预算/工程失败保留输出并形成失败分支。现有逻辑在最需要撤销临时成功判词的边界上失败，留下相互冲突的worker_failure与analysis。",
+      "falsifiable_check": "只用工程夹具模拟analysis.json已经生成后发生TimeoutError，验证旧analysis字节被保存，正式analysis为INCONCLUSIVE/INCOMPLETE_BUDGET，账本能以失败证据进入ANALYZED，并且不覆盖更早运行输出；整个测试不调用两个研究根。"
+    },
+    {
+      "id": "SRC-002",
+      "source": "action",
+      "severity": "high",
+      "evidence": [
+        "独立复核脚本不导入主filter/生成器，以显式转移矩阵及不同bootstrap分块重算原数组，不增加新任务样本。",
+        "检查原数组/来源hash。"
+      ],
+      "problem": "reproduce_exp0015.py只核验raw/oracle文件hash和raw数组描述；它没有核验manifest的source_sha256、frozen_hashes、config_sha256、validation_sha256、git_commit或解释器/NumPy来源。报告末尾计算manifest_sha256与script_sha256是记录当前文件，不能代替与冻结来源逐项比较。因而改动协议、入口、配置、源码或验证回执的已声明hash仍可能得到pass_=true。",
+      "why_it_matters": "数值复算正确只说明现有数组能被第二算法复算，不能兑现本次明确要求的来源复核。正式结果必须同时来自被冻结且验证过的实现与协议。",
+      "falsifiable_check": "在不生成研究样本的复核夹具中分别改变一项来源hash、冻结配置/协议/入口/锁文件、源码或验证回执，复核必须明确失败并保存差异；真实冻结checkout可通过。复核可以接受显式来源目录或不可变来源快照，但不得仅信任manifest自述。"
+    },
+    {
+      "id": "SRC-003",
+      "source": "action",
+      "severity": "medium",
+      "evidence": [
+        "独立原数组复核预算300秒",
+        "elapsed=time.monotonic()-start",
+        "elapsed<=300"
+      ],
+      "problem": "独立复核的300秒限制只在完成全部filter与10000次bootstrap之后进入passed条件，没有中途deadline或包内受监督调用入口；而hash断言、读取异常或计算异常发生时没有失败报告写出。单独调用该脚本可能超预算很久才失败，也可能在报告生成前直接退出而不留下结构化REPRODUCTION_UNRESOLVED证据。",
+      "why_it_matters": "协议冻结了总执行加复核不超过600秒且工程/复核失败保留输出。仅事后将passed设为false不能限制实际消耗，也不能保证失败归档。",
+      "falsifiable_check": "提供受监督的独立复核入口或等效deadline机制；使用工程夹具注入超时与hash不匹配，确认限时终止、保存已有输出及失败原因、形成INCONCLUSIVE的复核失败证据。若依赖外部监督，须把具体调用和失败归档实现纳入可审查包。"
+    },
+    {
+      "id": "SRC-004",
+      "source": "action",
+      "severity": "medium",
+      "evidence": [
+        "验证10000对均值/区间/判词",
+        "保留上界以区分明显不足与精度不足，但不改分支。"
+      ],
+      "problem": "独立复核虽计算完整interval，但只比较uniform_mean、suffix1_lower、suffix8_lower三个analysis字段，并只比较substatus/failed，没有比较两个上界及顶层decision。仅改动analysis的suffix1_upper、suffix8_upper或decision，复核仍可pass_=true。",
+      "why_it_matters": "这没有实现协议声明的完整区间及判词复核。上界用于解释不足与精度不足，顶层decision用于后续账本和审查，不能让错误字段携带通过的复核回执。",
+      "falsifiable_check": "在固定工程复核夹具中分别改变两个上界和顶层decision，复核均须拒绝；数值字段应使用明确容差，分类字段要求完全一致，且不增加任务样本。"
+    }
+  ],
+  "overall_assessment": "SOURCE_NEEDS_FIX。本次仅静态packet-only审查，未执行研究或工程代码，未读取包外文件或网络。生成器三路SeedSequence次序、先转移后发射、column转移方向、suffix重新从uniform初始化、自然对数KL、b/c共用bootstrap索引与C-order分块、原阈值、零优化更新设计均与冻结协议相符。迁移仅允许v1到v2、要求非空证据及DECIDED/反思完成、追加事件且相同证据幂等，未见重写旧current或旧事件的实现。四项问题均为实现或失败恢复缺口，不要求改变任务参数、阈值、样本数或科学问题；修复并用工程夹具验证后可重新审查。主run的clean-tree及验证源码hash比较在调用层存在，但source_fingerprints/git_output/write_json的定义未入包，不能据本包断言这些辅助函数的内部覆盖范围。没有正式样本或科学判词被本审查认可。FILES_READ: design.md; action.md; EXTRACTION_MANIFEST.json; action_output_0_verification.json（头部及逐字短片段检索，源正文通过对应embedded文件审读）; embedded_v1.md; embedded_exp0015_v1.json; embedded_EXP-0015.json; embedded_orbit_information.py; embedded_orbit_information_analysis.py; embedded_reproduce_exp0015.py; embedded_loop_worker.py; embedded_loop.py; embedded_test_orbit_information.py; embedded_test_entry_policy.py; embedded_exp0015_policy_migration.json; embedded_0080_entry_rule_architecture_organization.md。全部位于指定derived目录，未读取._文件。 Main-agent metadata normalization: SRC-001 source action -> both because its first quote belongs to design; original JSON retained as review_received.json; issue substance unchanged."
+}

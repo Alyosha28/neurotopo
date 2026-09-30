@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "feb5eac244acdf2d8080fa9314d2728592c26c3e5a10b163d20df5f702060e48",
+  "review_sha256": "0a2d22f6eb785195fd343937220eb5530aa782f276f6970a877897334a2e2214",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "固定线性probe诊断完成并归档；不启动复杂读出、GRU训练或Gate1比较。"
+}

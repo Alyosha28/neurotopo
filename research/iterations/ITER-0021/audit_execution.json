@@ -1,0 +1,1 @@
+{"run":"~/.local/share/neurotopo/experiment-runs/EXP-0026/v2","checkout":"/private/tmp/neurotopo-exp26-freeze","script_sha256":"fd279445234a0ca8833b990c21831efaadc66e16564f5971e054ab1942edd17b","started_unix":1790613517.7913542,"raw_audit_seconds":47.62121166699944,"status":"PASS","total_seconds":185.1036948750043,"raw_rows":1300,"replay_rollouts":200}

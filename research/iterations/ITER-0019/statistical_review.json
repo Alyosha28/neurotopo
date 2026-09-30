@@ -1,0 +1,13 @@
+{
+  "pass": true,
+  "unit": "exposed trained seed; primary is prespecified single checkpoint23005",
+  "primary_status": "SUPPORTED/FROZEN_CASE_STATE_REFRESH_RESCUE",
+  "case_difference": 0.25,
+  "population_effect_not_established": true,
+  "six_seed_mean": 0.041666666666666664,
+  "six_seed_t95": [
+    -0.06544090983333337,
+    0.14877424316666668
+  ],
+  "randomized_new_training_seeds": false
+}

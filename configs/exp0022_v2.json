@@ -1,0 +1,39 @@
+{
+  "experiment_id": "EXP-0022",
+  "version": "v2",
+  "workflow": "equal_output_stress",
+  "protocol": "experiments/EXP-0022/v2.md",
+  "entry_contract": "research/entries/EXP-0022.json",
+  "output": "artifacts/EXP-0022/v2",
+  "parent": "artifacts/EXP-0021/v1",
+  "seeds": [
+    20002,
+    20003,
+    20004,
+    20005,
+    20001
+  ],
+  "arms": [
+    "RAW",
+    "INV",
+    "REL"
+  ],
+  "radii": [
+    0.01,
+    0.05,
+    0.15
+  ],
+  "prefixes": 64,
+  "candidates": 16,
+  "search_suffixes": 4,
+  "test_suffixes": 16,
+  "suffix_length": 32,
+  "gate1_claim": false,
+  "matching_criterion_version": "G1-MATCH-v3",
+  "resource": {
+    "worker_wall_seconds_cap": 900,
+    "reproduction_wall_seconds_cap": 300,
+    "research_update_cap": 0,
+    "general_validation_overfit_cap": 900
+  }
+}

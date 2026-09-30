@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "unit": "training seed, all exposed",
+  "conditional_failure_seeds": [
+    25002,
+    25003,
+    25008
+  ],
+  "window_seeds": [
+    25002
+  ],
+  "registered_primary_denominator": 3,
+  "registered_primary_window_count": 1,
+  "scope": "Conditional screen on previously exposed main NONE outcomes; no independent seed confirmation, tau not a modal timescale, no inverse law test.",
+  "all_conditions_and_negative_effects_retained": true,
+  "descriptive_effects_sha256": "8b6ff585b873ebec1c7aae4acbc19514ffc4a2ee9c520c2835ca2eb6f6b759a7"
+}

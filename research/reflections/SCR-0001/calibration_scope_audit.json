@@ -1,0 +1,62 @@
+{
+  "claim_scope": "CAL-0001 and CAL-0002 calibration only; no new task or model effect",
+  "kind": "EXISTING_SMALL_TASK_BASELINE_SCOPE_AUDIT",
+  "records": [
+    {
+      "all_below_saturation_threshold": true,
+      "batch_size": 128,
+      "calibration_stream_seed": 193001,
+      "cell": "dense_gru",
+      "hidden": 64,
+      "id": "CAL-0001",
+      "kl_metric": "final_kl_to_oracle",
+      "prespecified_saturation_threshold_nat": 0.01,
+      "rows": [
+        {
+          "oracle_relative_kl_nat": 0.0005421143766674782,
+          "seed": 101
+        },
+        {
+          "oracle_relative_kl_nat": 0.00028792772906079274,
+          "seed": 102
+        },
+        {
+          "oracle_relative_kl_nat": 0.00033873073442332037,
+          "seed": 103
+        }
+      ],
+      "source_path": "artifacts/calibration/gate1_belief_v1.json",
+      "source_sha256": "0cdce5f484ddc690f92a0692953fc6ab6d0769169dd44be1f99e51cd38499a3c",
+      "task_hypotheses": 4,
+      "updates": 1500
+    },
+    {
+      "all_below_saturation_threshold": true,
+      "batch_size": 128,
+      "calibration_stream_seed": 293001,
+      "cell": "dense_gru",
+      "hidden": 64,
+      "id": "CAL-0002",
+      "kl_metric": "final_joint_kl_to_oracle",
+      "prespecified_saturation_threshold_nat": 0.01,
+      "rows": [
+        {
+          "oracle_relative_kl_nat": 0.0022676745354857234,
+          "seed": 201
+        },
+        {
+          "oracle_relative_kl_nat": 0.0018214203326242721,
+          "seed": 202
+        },
+        {
+          "oracle_relative_kl_nat": 0.0020322541263694937,
+          "seed": 203
+        }
+      ],
+      "source_path": "artifacts/calibration/gate1_source_belief_v1.json",
+      "source_sha256": "aeb4688e3985d476353571b18aec4a6b9171bc2a7cf460fb1d52623abf1a0d70",
+      "task_hypotheses": 4,
+      "updates": 1500
+    }
+  ]
+}

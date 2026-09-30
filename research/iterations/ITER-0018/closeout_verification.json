@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "raw_files_hash_verified_in_both_copies": 446,
+  "raw_bytes": 151263085,
+  "source_matches_execution": true,
+  "tests": 300,
+  "research_updates": 24000,
+  "new_training_models": 24,
+  "old_frozen_diagnostics": 15,
+  "general_engineering_updates": 300,
+  "special_fit_updates": 90,
+  "replay_invocations": 1,
+  "replay_updates": 0,
+  "phase": "DECIDED",
+  "reflection_issues": 0,
+  "decision": "INCONCLUSIVE/LEARNING_GUARD_FAILURE",
+  "goal_acceptance": "Completed registered fixed-candidate prediction, intervention and repair test with all controls, new seeds and independent archival; successful mechanism/repair not established.",
+  "unregistered_retuning": false
+}

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "3c46470cc41ecbdc2fa7a5c2c727cc97aa126432f6633a8553acea44a7fb3dc4",
+  "reviewer": {
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "CAL-0005-R1",
+      "source": "action",
+      "severity": "low",
+      "evidence": [
+        "97,271,808,000",
+        "140,328,960,000",
+        "43,057,152,000 代理 FLOPs，均多44.44%"
+      ],
+      "problem": "所列代理 FLOPs 的增幅约为 44.26%，不是 44.44%；44.44% 适用于输入 token。",
+      "why_it_matters": "资源差异是本审计的核心量化证据，百分比应与绝对数一致。此误差不推翻严格约束下的不可匹配证明。",
+      "falsifiable_check": "计算 (140328960000 − 97271808000) / 97271808000，分别报告 token 与代理 FLOPs 的增幅。"
+    },
+    {
+      "id": "CAL-0005-R2",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "输入范围限于 `research/design/gate1_cadence_calibration.md`、`research/evidence/CAL-0004_cadence_qualification.md`、`scripts/calibrate_cadence.py`",
+        "本次只读审计依据 `source_belief_task.py` 的长度式、`scripts/calibrate_cadence.py` 的冻结日程与 `resources.py` 的 dense 前向线性代理计算"
+      ],
+      "problem": "行动审计直接使用了设计所限定范围之外的两个文件，packet 没有登记证据范围变更。",
+      "why_it_matters": "仅凭 packet 无法判断新增来源中的长度式和资源代理是否与冻结的 CAL-0004 口径一致。",
+      "falsifiable_check": "核对设计列出的输入是否已包含相同长度式与资源代理；若没有，登记范围变更并重新核对计算口径。"
+    },
+    {
+      "id": "CAL-0005-R3",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "本任务只做代数和当前任务生成器的只读检查",
+        "当前更强的项目障碍仍是没有具可证伪预测的候选轨迹机制和有主对照余量的任务，故本审计不启动新的模型实验"
+      ],
+      "problem": "action 将本次预算可识别性审计扩展为项目层面的障碍排序；packet 没有提供支持该排序的机制候选、任务余量或判定标准。",
+      "why_it_matters": "固定 d=2 对照的停止决定可以由所给约束支持，但不能据此判定其他研究方向受到何种更强障碍。",
+      "falsifiable_check": "提供独立登记的机制预测、主对照余量及项目决策规则来核对该判断；否则将结论限定为本次固定 d=2 对照。"
+    }
+  ],
+  "overall_assessment": "packet 中的约束证明支持停止所拟议的严格匹配固定 d=2 对照；代理 FLOPs 百分比、证据范围及项目层面的延伸判断需要修正或另行举证。本审查不验证 packet 之外的代码或实验结果。"
+}

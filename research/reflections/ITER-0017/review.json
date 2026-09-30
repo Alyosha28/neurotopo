@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "33321237d72186141513c12ae4112a077b721c2cc20707b1f38508353e2a7f12",
+  "reviewer": {
+    "model": "gpt-6-luna",
+    "effort": "max",
+    "context": "fresh_only_packet"
+  },
+  "issues": [],
+  "overall_assessment": "未发现可由本 packet 支持的设计、执行与判决不一致。设计预设主结论限于 INV、半径 0.15 下四个既有确认训练 seed 的未见后缀效果；45 个 seed-arm-radius cell 覆盖完整，主四格的候选及 SHAM 约束比例均为 1.0，NONE 当前与未来基线准确率均为 1.0。按 cell 数值复核，四个主 seed 的 SELECTED−NONE 未来 BCE 均值为 2.4205920802489178e-8 nat，末步准确率下降均为 0；大效应和小效应门槛均未达到，S 的定向搜索门槛也未达到。故 E guards 通过、E 无注册见证、S=false 与 INCONCLUSIVE / NO_REGISTERED_WITNESS_FOUND 相符。复演摘要报告 45 个 cell、最大差 0、无重训，与冻结执行和复演说明一致。"
+}

@@ -1,0 +1,35 @@
+{
+  "note": "Post-hoc (added in response to the packet reflection; not pre-registered): paired contrasts and leave-one-seed-out sensitivity on the five comparison seeds.",
+  "pairing": "CAND_V4 - SEL_INV (pre-registered primary) and CAND_V4 - EXTRA_V4 (post-hoc mechanism contrast)",
+  "cand_minus_sel_pp": 11.26,
+  "cand_minus_sel_loo_pp": [
+    15.66,
+    10.67,
+    12.18,
+    5.49,
+    12.3
+  ],
+  "cand_minus_extra_pp": 7.92,
+  "cand_minus_extra_per_seed_pp": [
+    14.19,
+    31.02,
+    -11.46,
+    15.47,
+    -9.6
+  ],
+  "cand_minus_extra_loo_pp": [
+    6.36,
+    2.15,
+    12.77,
+    6.04,
+    12.3
+  ],
+  "seeds": [
+    29311,
+    29312,
+    29313,
+    29314,
+    29315
+  ],
+  "interpretation": "the primary effect survives dropping any single seed (+5.5pp..+15.7pp), but the bootstrap interval is wide; the extra-supervision contrast is +7.9pp on the mean and reverses sign on two seeds, consistent with seed-dominated variance"
+}

@@ -1,0 +1,43 @@
+{
+  "experiment_id": "EXP-0021",
+  "version": "v1",
+  "workflow": "protected_replication",
+  "protocol": "experiments/EXP-0021/v1.md",
+  "entry_contract": "research/entries/EXP-0021.json",
+  "output": "artifacts/EXP-0021/v1",
+  "seeds": [
+    20002,
+    20003,
+    20004,
+    20005
+  ],
+  "pilot_seed": 20001,
+  "pilot_source": "artifacts/EXP-0020/v2",
+  "arms": [
+    "RAW",
+    "INV",
+    "REL"
+  ],
+  "monitor_steps": [
+    0,
+    25,
+    50,
+    75,
+    100,
+    125,
+    150,
+    200,
+    250,
+    375,
+    500,
+    750,
+    1000
+  ],
+  "gate1_claim": false,
+  "matching_criterion_version": "G1-MATCH-v3",
+  "resource": {
+    "worker_wall_seconds_cap": 600,
+    "reproduction_wall_seconds_cap": 180,
+    "research_update_cap": 12000
+  }
+}

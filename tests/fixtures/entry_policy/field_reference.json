@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "track": "field_reference",
+  "experiment_id": "EXP-9004",
+  "direction": "dry_run_reference_field",
+  "question": "Entry-policy dry run D",
+  "purpose": "Check that a bounded reference-factor study can enter the field track without claiming project Gate 1.",
+  "gate1_claim": false,
+  "resource_cap": {"max_updates": 100, "max_wall_seconds": 60},
+  "task_search": {"max_configurations": 1, "retain_all_attempts": true, "heldout_rule": "Reserve untouched final tasks and seeds."},
+  "branches": {
+    "success": "Report a field-level factor effect with the stated controls only.",
+    "failure": "Record the field-level null result.",
+    "borderline": "Keep the field-level claim inconclusive."
+  },
+  "factor": {
+    "kind": "reference_k",
+    "name": "PF-GRU particle count dry-run factor",
+    "manipulation": "Partition 64 recurrent coordinates across K=1 or K=4 particles.",
+    "ablation": "Disable resampling and compare an equal-budget control.",
+    "prediction": "A specified K contrast changes delayed-evidence posterior KL in the preregistered direction.",
+    "actual_primary_control": "K=1 reference cell plus an equal-state and equal-compute single-stream control.",
+    "state_matching": "Count total particle states and retained weights against the single-state control.",
+    "parameter_matching": "Account for allocated and effective particle/scorer parameters.",
+    "executed_compute_matching": "Account for actual scorer, resampling and recurrent operations.",
+    "prior_art_boundary": "PF-RNN and RIM-style alternatives remain mandatory comparators."
+  }
+}

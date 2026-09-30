@@ -1,0 +1,113 @@
+{
+  "experiment_id": "EXP-0017",
+  "version": "v2",
+  "reviewer_context": "independent local clone /private/tmp/neurotopo-exp0017-review-fe0907b, frozen execution commit fe0907ba99b63b7aa76cf218ded5d43ea7454fc3, model gpt-6-sol/high",
+  "protocol_read_before_results": true,
+  "review_scope": "Frozen protocol, completed manifest and analysis, 24 model result/checkpoint/prediction triplets, all 48 evaluation streams, independent log-domain posterior and KL, seed-level statistics, registered decision branch, and disclosed resource totals. No retraining, candidate training, threshold change, source-run mutation, or Gate 1 inference.",
+  "artifact_integrity": {
+    "manifest_status": "COMPLETED",
+    "models": 24,
+    "missing_or_duplicate_model_keys": 0,
+    "missing_result_checkpoint_or_prediction_files": 0,
+    "all_models_have_750_losses_and_updates": true,
+    "checkpoint_and_prediction_hashes_verified": true,
+    "frozen_source_and_config_hashes_verified": true,
+    "evaluation_tokens_and_latents_regenerated_and_equal": true,
+    "D16_D64_training_data_hash_paired_per_seed_cell": true,
+    "training_stream_hash_regenerated": false,
+    "training_stream_hash_scope_note": "The frozen replay checks D16/D64 paired training hashes; it does not independently regenerate 750 training batches for each seed and cell. The result review does not claim that stronger check."
+  },
+  "replay": {
+    "frozen_module_pass": false,
+    "frozen_module_failure_record": "research/iterations/ITER-0012/reproduction_frozen_failure.json",
+    "frozen_module_failure": "At CO/17001/D16, readout(hidden[:, -1]) instead of the registered readout(hidden)[:, -1] changed float32 matrix multiplication shape. The 32-operation maximum logit difference was 1.9073486328125e-6, exceeding the unchanged 1e-6 limit; the maximum KL difference was 9.613802782748593e-7. The 128-operation maximum logit difference was also 1.9073486328125e-6. The frozen module therefore stopped at its first model and produced no passing receipt.",
+    "supplemental_diagnostic_pass": true,
+    "supplemental_script": "research/iterations/ITER-0012/exp0017_replay_diagnostic.py",
+    "supplemental_script_sha256": "fa89883740b504f4f47cd86d8d28cc9b5515076e98c889d6d97687526fcb541f",
+    "supplemental_command": "PYTHONPATH=src /private/tmp/neurotopo-venv/bin/python research/iterations/ITER-0012/exp0017_replay_diagnostic.py",
+    "supplemental_cwd": "/private/tmp/neurotopo-exp0017-review-fe0907b",
+    "supplemental_change_from_frozen_replay": "Only the Linear evaluation shape uses readout(hidden)[:, -1], identical to the registered forward operation. The independent log-domain oracle, KL computation, and 1e-12/1e-6 tolerances are unchanged.",
+    "supplemental_receipt": "research/iterations/ITER-0012/reproduction.json",
+    "maximum_posterior_absolute_error": 7.771561172376096e-16,
+    "maximum_logit_absolute_error": 0.0,
+    "maximum_KL_absolute_error": 3.1086244689504383e-15,
+    "interpretation": "The original frozen replay module failed numerically at its first assertion. A separate no-training full replay using the registered forward shape validates all 24 stored checkpoints and both evaluation lengths. This diagnostic does not retroactively turn the frozen module's failed invocation into a pass."
+  },
+  "registered_thresholds": {
+    "D64_each_seed_IID_KL_strictly_below": 0.1,
+    "D64_three_seed_mean_OOD_KL_at_least": 0.02,
+    "OOD_aggregation": "4096-sequence mean within each seed, then mean of three seeds",
+    "replication_unit": "training seed; n=3 per cell and arm",
+    "t95_df2_critical": 4.302652729911275
+  },
+  "cells": {
+    "CO": {
+      "D64_IID_KL_by_seed": [0.6997558563736272, 0.6997080400643216, 0.7032694903441247],
+      "D64_IID_mean": 0.7009111289273579,
+      "learning_pass": false,
+      "D64_OOD_KL_by_seed": [0.6983167644937547, 0.7000947961091735, 0.7052838544865442],
+      "D64_OOD_mean": 0.7012318050298241,
+      "headroom_pass": true
+    },
+    "CU": {
+      "D64_IID_KL_by_seed": [0.46125256919765745, 0.45503758326648513, 0.46309306928401367],
+      "D64_IID_mean": 0.4597944072493854,
+      "learning_pass": false,
+      "D64_OOD_KL_by_seed": [0.1173572450127435, 0.11270133777188276, 0.11081026052766335],
+      "D64_OOD_mean": 0.1136229477707632,
+      "headroom_pass": true
+    },
+    "NO": {
+      "D64_IID_KL_by_seed": [0.5890964760274474, 0.7146377995595685, 0.4386381483154357],
+      "D64_IID_mean": 0.5807908079674838,
+      "learning_pass": false,
+      "D64_OOD_KL_by_seed": [0.8165264401118968, 0.71113138325078, 0.731063145107465],
+      "D64_OOD_mean": 0.7529069894900472,
+      "headroom_pass": true
+    },
+    "NU": {
+      "D64_IID_KL_by_seed": [0.05720998748812024, 0.0520688819466662, 0.05336588392378194],
+      "D64_IID_mean": 0.054214917786189455,
+      "learning_pass": true,
+      "D64_OOD_KL_by_seed": [0.021725698425492868, 0.01775489322424311, 0.01953949019716946],
+      "D64_OOD_mean": 0.019673360615635148,
+      "D64_OOD_t95_df2": [0.01473294562261777, 0.024613775608652525],
+      "headroom_pass": false,
+      "headroom_shortfall": 0.0003266393843648521
+    }
+  },
+  "statistics_check": "The supplemental replay recomputed all four D64 IID/OOD three-seed means, sample standard deviations, and df=2 t intervals; all agree with analysis.json within 1e-6. The NU OOD interval crossing 0.02 does not change the registered point-estimate rule. D16 is an anchor and never enters either gate.",
+  "registered_decision": {
+    "decision": "INCONCLUSIVE",
+    "substatus": "LEARNING_FAILURE",
+    "branch_reason": "CO, CU, and NO each have all D64 seed IID KL values above the strict 0.10 learning gate. Learning failure has priority over the independently observed NU headroom failure. All 24 model records are complete and finite, so this is neither engineering abort nor budget incompleteness.",
+    "scientific_interpretation": "The fixed four-cell control-qualification window is rejected for the proposed subsequent 2x2 effect comparison: three cells fail to show learned IID filtering, while NU learns IID but its three-seed OOD mean is below the frozen headroom threshold. High OOD KL in cells that failed learning is not usable headroom evidence. No candidate was trained and no topology, mechanism, biology, generalization, Gate 1, or model-package advantage follows."
+  },
+  "resources": {
+    "research_updates": 18000,
+    "candidate_updates": 0,
+    "models_by_arm": {"D16": 12, "D64": 12},
+    "parameters_per_model": {"D16": 1206, "D64": 14022},
+    "dynamic_state_values_per_model": {"D16": 16, "D64": 64},
+    "training_examples_total": 1152000,
+    "training_input_tokens_total": 46080000,
+    "training_cpu_seconds_summed_from_records": 63.127139,
+    "training_wall_seconds_summed_from_records": 63.696960792,
+    "model_wall_seconds_summed_from_records": 72.708212919,
+    "run_manifest_wall_seconds": 73.96118766699988,
+    "run_budget_seconds": 900,
+    "executed_flops": "NOT_MEASURED",
+    "peak_memory": "NOT_MEASURED",
+    "resource_interpretation": "These are control-qualification arms with unequal parameter and state sizes, not a matched mechanism comparison. Executed FLOPs were not measured and do not block the registered no-effect-claim pilot decision."
+  },
+  "review_timing": {
+    "frozen_replay_first_failure_process_seconds": "NOT_RECORDED",
+    "frozen_replay_repeat_failure_process_seconds": "NOT_RECORDED",
+    "targeted_first_model_diagnostics_process_seconds": "NOT_RECORDED",
+    "supplemental_first_attempt_tool_wall_seconds": 10.259114375,
+    "supplemental_first_attempt_result": "Diagnostic completed computation but JSON serialization failed on a numpy boolean; its incomplete output was removed before the final exclusive-create write.",
+    "supplemental_successful_process_seconds": 30.213309500000378,
+    "total_review_elapsed_seconds": "NOT_RECORDED",
+    "total_replay_budget_assessment": "The successful full diagnostic alone is below 300 seconds. Exact cumulative elapsed time across the failed frozen invocations, targeted diagnosis, and two supplemental attempts was not measured; no cumulative-budget pass is claimed."
+  }
+}

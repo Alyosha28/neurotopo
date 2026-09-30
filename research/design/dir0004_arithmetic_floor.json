@@ -1,0 +1,120 @@
+{
+  "config": {
+    "bits": [
+      4,
+      8,
+      12,
+      16,
+      20,
+      22,
+      24,
+      26,
+      28,
+      32,
+      40,
+      48
+    ],
+    "eps": 0.001,
+    "t_max": 200,
+    "z0": 0.3141592653589793
+  },
+  "fits": {
+    "float32_slope_over_all_bits": 0.43127786032689447,
+    "float32_slope_steps_per_bit_bits_le_24": 0.8438566552901025,
+    "float64_slope_over_all_bits": 0.939078751857355,
+    "float64_slope_steps_per_bit_bits_le_24": 0.8438566552901025
+  },
+  "rows": [
+    {
+      "bits": 4,
+      "float32_effective_start_bits": 4,
+      "float32_start_exactly_representable": true,
+      "float32_steps": 0.0,
+      "float64_steps": 0.0
+    },
+    {
+      "bits": 8,
+      "float32_effective_start_bits": 8,
+      "float32_start_exactly_representable": true,
+      "float32_steps": 0.0,
+      "float64_steps": 0.0
+    },
+    {
+      "bits": 12,
+      "float32_effective_start_bits": 12,
+      "float32_start_exactly_representable": true,
+      "float32_steps": 4.0,
+      "float64_steps": 4.0
+    },
+    {
+      "bits": 16,
+      "float32_effective_start_bits": 16,
+      "float32_start_exactly_representable": true,
+      "float32_steps": 7.0,
+      "float64_steps": 7.0
+    },
+    {
+      "bits": 20,
+      "float32_effective_start_bits": 20,
+      "float32_start_exactly_representable": true,
+      "float32_steps": 12.0,
+      "float64_steps": 12.0
+    },
+    {
+      "bits": 22,
+      "float32_effective_start_bits": 22,
+      "float32_start_exactly_representable": true,
+      "float32_steps": 13.0,
+      "float64_steps": 13.0
+    },
+    {
+      "bits": 24,
+      "float32_effective_start_bits": 24,
+      "float32_start_exactly_representable": true,
+      "float32_steps": 16.0,
+      "float64_steps": 16.0
+    },
+    {
+      "bits": 26,
+      "float32_effective_start_bits": 24,
+      "float32_start_exactly_representable": false,
+      "float32_steps": 16.0,
+      "float64_steps": 17.0
+    },
+    {
+      "bits": 28,
+      "float32_effective_start_bits": 24,
+      "float32_start_exactly_representable": false,
+      "float32_steps": 16.0,
+      "float64_steps": 19.0
+    },
+    {
+      "bits": 32,
+      "float32_effective_start_bits": 24,
+      "float32_start_exactly_representable": false,
+      "float32_steps": 16.0,
+      "float64_steps": 23.0
+    },
+    {
+      "bits": 40,
+      "float32_effective_start_bits": 24,
+      "float32_start_exactly_representable": false,
+      "float32_steps": 16.0,
+      "float64_steps": 32.0
+    },
+    {
+      "bits": 48,
+      "float32_effective_start_bits": 24,
+      "float32_start_exactly_representable": false,
+      "float32_steps": 16.0,
+      "float64_steps": 39.0
+    }
+  ],
+  "schema": "dir0004_arithmetic_floor_v1",
+  "self_checks": {
+    "float32_horizon_gap_beyond_mantissa_steps": NaN,
+    "float32_saturates_beyond_mantissa": true,
+    "float32_slope_near_one_within_own_mantissa": false,
+    "float64_slope_near_one_within_float32_mantissa": false
+  }
+}

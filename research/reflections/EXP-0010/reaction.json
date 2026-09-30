@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "436bcc9fefd5ea6847ef2a5a879b6592b6f00248237c2548941887fc2f8132ef",
+  "review_sha256": "d4b25c7be55a351ac53a0a14266fdf3ea1e1b1fafc61c5305f0373952c9888e8",
+  "responses": [
+    {
+      "id": "EXP-0010-R1",
+      "disposition": "accept",
+      "reason": "Gate 1 priority does not erase the temperature factor’s independent scientific value; the original action used overbroad language and lacked an opportunity-cost comparison.",
+      "action": "Separated independent-field and Gate 1 decision axes, stated conditional resource opportunity cost and kept v1 closed also on its concrete run/statistical blockers.",
+      "evidence_paths": [
+        "research/reflections/EXP-0010/reaction_evidence.md",
+        "docs/EXP-0010_pre_run_review.md"
+      ]
+    },
+    {
+      "id": "EXP-0010-R2",
+      "disposition": "accept",
+      "reason": "The four-row shorthand incorrectly mapped point estimates to predeclared confidence-interval decisions and omitted partial support and formal guard failures.",
+      "action": "Replaced shorthand with mutually exclusive qualification, guard, supported, partial, falsified and inconclusive partitions without altering the frozen v1 design.",
+      "evidence_paths": [
+        "research/reflections/EXP-0010/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "EXP-0010-R3",
+      "disposition": "accept",
+      "reason": "A checklist did not constitute a candidate-control research action toward Gate 1.",
+      "action": "Saved a concrete mode-bank candidate before review, accepted its independent NO-GO before training, then saved a different external delayed-disambiguation candidate with actual matched connected and strong dense controls for independent review. No candidate has been registered or trained.",
+      "evidence_paths": [
+        "research/design/g1_mode_bank_candidate_v0.md",
+        "docs/G1-MB-0001_predecision_review.md",
+        "research/decisions/0030_g1_modebank_candidate_no_go.md",
+        "research/design/g1_external_dd_candidate_v0.md",
+        "research/reflections/EXP-0010/reaction_evidence.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "EXP-0010 v1 remains closed before training; complete independent review of G1-DD-0001 and only then, if scientifically viable, freeze a numerical qualification/effect protocol against its actual matched single-state control."
+}

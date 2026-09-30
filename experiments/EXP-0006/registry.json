@@ -1,0 +1,62 @@
+{
+  "id": "EXP-0006",
+  "version": "v2",
+  "title": "Linear accessibility of uncued candidate values",
+  "status": "COMPLETED",
+  "research_question": "Does the block state permit less linear decoding of the three uncued candidate values at delay32 than the matched random state?",
+  "prior_art_checked": [
+    "Kozachkov2022 linear decoder",
+    "conn2res fixed reservoir/readout",
+    "RIMs",
+    "TRNN"
+  ],
+  "strongest_rejection_reason": "Linear decoding tests coordinate/decoder accessibility, not total information or semantic hypothesis states.",
+  "hypothesis": "Uncued candidate decoding difference M3-C0 <=-5pp with paired CI upper<-5pp at delay32, subject to adequacy and original-behavior guards.",
+  "baselines": [
+    "random_gru",
+    "gru_wide contextual"
+  ],
+  "intervention": "Identical fixed ridge probe on frozen pre-evidence hidden states; no recurrent intervention",
+  "controls": [
+    "same checkpoint input hashes",
+    "same original full-noise samples",
+    "unique counterfactual prefixes",
+    "same H64/probe capacity",
+    "train-only normalization",
+    "no model updates",
+    "behavioral gap guard"
+  ],
+  "dataset": "Fresh task-generator streams 850000/860000/870000+delay for probe train/validation/test",
+  "metrics": [
+    "uncued candidate linear-probe accuracy primary",
+    "prior/all-candidate accuracy",
+    "all-four exact table",
+    "behavioral pre/final and common early-correct pair secondary"
+  ],
+  "resource_matching": "M3/C0 trained weights inherited from matched EXP-0004; identical 1040-coefficient ridge probe, state dimension, sample counts and inference steps",
+  "seeds": [
+    9101,
+    9102,
+    9103,
+    9104,
+    9105,
+    9106,
+    9107,
+    9108,
+    9109,
+    9110
+  ],
+  "commit": "3ed1f14",
+  "config": "configs/exp0006_v2.json",
+  "result": "artifacts/EXP-0006/v2/analysis.json",
+  "interpretation": "Uncued candidate labels are near-linearly decodable in both models; the preregistered >=5pp block deficit is excluded, while original task behavior differs.",
+  "limitations": [
+    "post-hoc direction after EXP-0004/0005",
+    "linear decoder family only",
+    "fixed new test set",
+    "reused model seeds",
+    "no causal state intervention"
+  ],
+  "decision": "FALSIFIED",
+  "next_action": "STOP_MECHANISM_ESCALATION; do not rescue architecture. A distinct fixed-probe cross-delay mapping question can be registered without changing model weights or Gate1."
+}

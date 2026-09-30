@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "620601f48f10517834b5ab0d98bef2d2e7a5c4d660163aa14864eed886327185",
+  "review_sha256": "f979e4be07d5fed5bceefac24a4829b669abff1ed82a210ad4ad108702269933",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "固定冻结动态诊断完成归档；不自动增加长度、probe或新训练干预。"
+}

@@ -1,0 +1,5 @@
+# EXP0026 prior-art and strongest alternative
+
+2026-09-28。引用已实读的crossfield_research_practice_audit.md与DIR-0010_temporal_subspace_identifiability.md。Sussillo–Barak固定/慢点、Littman–Sutton–Singh未来tests、Geiger反事实抽象和Wang–Niepert有限状态正则是直接方法先例；不宣称周期投影、阈值触发或Gram读出核为新原理。本轮不复制外部代码，不推断生物或Gate1贡献。
+
+当前最强替代是额外监督二状态codebook、刷新调用频率/相位和浮点敏感性。共同R在leak0是精确Gram gauge，R/I配对只能量化本实现中的数值与历史动态差；τ是指定原型距离的首次越界，不是特征模时间常数。COUNT使用完整T1024自适应调用总数，是事后调用数控制而非在线方法。采用原强INV、GAUGE、FULL/SCALE、相位和计数控制，保留全部seed及不可行事件。本轮只识别暴露病例的调度窗口，后续方向消融和新训练seed要另冻结。

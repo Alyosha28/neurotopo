@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "raw_files_hash_verified": 178,
+  "raw_bytes": 55914983,
+  "source_matches_execution": true,
+  "tests": 296,
+  "research_rerun_after_recovery": false,
+  "replay_rerun_after_recovery": false,
+  "research_updates": 0,
+  "phase": "DECIDED",
+  "reflection_issues": 0,
+  "reaction": "UNCHANGED",
+  "storage_restored": true,
+  "temporary_raw_backup": "/private/tmp/neurotopo-exp0022-recovery/restored_snapshot",
+  "pass_scope": "Scientific artifacts, validation, reflected ledger and successful result archive.",
+  "git_final_commit_completed": true,
+  "git_head_preserved": "52425d300f9cbe0e97e6e800005d4f9dd092f8ed",
+  "archive_commit": "552e2dc30f55ee6376f6667561befc20931d053e",
+  "prior_git_storage_limitation": "Loose object directory b0 gives I/O error; strict index-pack rejects existing object1b99116a63671a1f623d19358c5d6d67b02dbd1a invalid compressed header, HEAD tree traversal also cannot read702a96d61bcefc41a46c9f34aef3a0de318ddb7d. No ref update; original index restored.",
+  "active_git_storage": "~/.local/share/neurotopo/Neurotopo.git",
+  "git_recovery_record": "research/iterations/ITER-0017/git_recovery_completion.json"
+}

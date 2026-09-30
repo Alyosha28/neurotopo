@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "2c1481d2501ab35370117ec89bff57c454b64aed271e786b10ef920f42e7aca4",
+  "review_sha256": "69703dcc1974daf1a3944eb3cd6b62400e188c535bf3842e872e1feac62d8642",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "交付已修订的可训练论文设计；原未运行手写算子协议撤回直接执行定位。"
+}

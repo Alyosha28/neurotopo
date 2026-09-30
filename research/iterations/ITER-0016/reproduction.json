@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "decision": "INCONCLUSIVE",
+  "replication": false,
+  "mechanism": false,
+  "models": 15,
+  "evaluation_cells": 120,
+  "intervention_conditions": 75,
+  "monitor_checkpoints": 156,
+  "max_error": 0.0,
+  "replay_updates": 0,
+  "seconds": 9.449494208000033,
+  "scope": "All checkpoints/cells replayed; independent XOR, loss, contrast and verdict reductions. Shared forward/intervention implementation plus independent invariants; no retraining."
+}

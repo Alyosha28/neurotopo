@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "920d6dff6531638a7532dbdd8612dbcbc5f4a6d587f1b7d6a925d08bb41c528f",
+  "review_sha256": "bb57785872ea2996a56fc2d1305a6c2d8732423c0ab00f81e5754122a605fda2",
+  "responses": [
+    {
+      "id": "R1",
+      "disposition": "accept",
+      "reason": "部分观测中的oracle也会硬分类出错，原分类诊断不足以归因捷径。",
+      "action": "草案§4改为oracle相对后验诊断，点质量子集才解释完整状态；oracle自身须通过捷径负对照。",
+      "evidence_paths": [
+        "research/design/dir0008_order_observation_v0.md",
+        "research/reflections/DIR-0008/corrections.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "本轮研究审计完成；交付报告、修订草案与核查证据，不启动未注册研究训练。"
+}

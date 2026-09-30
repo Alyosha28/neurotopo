@@ -1,0 +1,224 @@
+{
+  "design": "research/design/g1_align0001_predesign_v1.md",
+  "matching_criterion_version": "G1-MATCH-v3",
+  "declared_axis": "none (both arms share the same tensors; only input routing differs)",
+  "tolerance": 0.02,
+  "cells": [
+    {
+      "k": 2,
+      "width": 32,
+      "partition_S": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "partition_U": [
+        [
+          2,
+          3,
+          5
+        ],
+        [
+          0,
+          1,
+          4
+        ]
+      ],
+      "recurrent_matrix_sha_shared": "d8c1cb625758694ed5b9a0f3a417cde1e1a037b612734db1a53b168e382be918",
+      "input_weight_sha_shared": "bf60a088e8485839ea7be5a94757928a023dcad41186fe7a14497f61bbfbcbf1",
+      "route_S_nonzeros": 192,
+      "route_U_nonzeros": 192,
+      "route_per_block_S": [
+        96,
+        96
+      ],
+      "route_per_block_U": [
+        96,
+        96
+      ],
+      "ratios": {
+        "allocated_parameters": 1.0,
+        "effective_parameters": 1.0,
+        "recurrent_state": 1.0,
+        "examples": 1.0,
+        "updates": 1.0,
+        "internal_steps": 1.0,
+        "latency_p50": 0.9971433893726266
+      },
+      "absolute": {
+        "allocated_parameters": 2432,
+        "recurrent_state_floats": 64,
+        "internal_steps_per_forward": 128,
+        "recurrent_nonzeros": 2048,
+        "p50_seconds_S": 0.0020071250037290156,
+        "p50_seconds_U": 0.0020128750038566068,
+        "repeats": 101,
+        "warmup": 3
+      }
+    },
+    {
+      "k": 4,
+      "width": 16,
+      "partition_S": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "partition_U": [
+        [
+          0,
+          5
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4
+        ],
+        [
+          1
+        ]
+      ],
+      "recurrent_matrix_sha_shared": "9432afa5bb7153c3715769f72d8bd96f5db9824a213790b68e6ff52aecd2a70b",
+      "input_weight_sha_shared": "0f435b96210edd14a10fa39e570c8e6f57bb4b6f56ec20e03819e3221dba7241",
+      "route_S_nonzeros": 96,
+      "route_U_nonzeros": 96,
+      "route_per_block_S": [
+        32,
+        16,
+        32,
+        16
+      ],
+      "route_per_block_U": [
+        32,
+        32,
+        16,
+        16
+      ],
+      "ratios": {
+        "allocated_parameters": 1.0,
+        "effective_parameters": 1.0,
+        "recurrent_state": 1.0,
+        "examples": 1.0,
+        "updates": 1.0,
+        "internal_steps": 1.0,
+        "latency_p50": 1.002851711892689
+      },
+      "absolute": {
+        "allocated_parameters": 1408,
+        "recurrent_state_floats": 64,
+        "internal_steps_per_forward": 256,
+        "recurrent_nonzeros": 1024,
+        "p50_seconds_S": 0.002754959001322277,
+        "p50_seconds_U": 0.002747124992311001,
+        "repeats": 101,
+        "warmup": 3
+      }
+    }
+  ],
+  "operation_counts": [
+    {
+      "k": 2,
+      "steps": 5,
+      "counts_S": {
+        "forward_calls": 5,
+        "backward_calls": 5,
+        "optimizer_steps": 5,
+        "tensors_updated": 5,
+        "updated_scalars": 2496,
+        "examples_seen": 640,
+        "internal_steps": 640
+      },
+      "counts_U": {
+        "forward_calls": 5,
+        "backward_calls": 5,
+        "optimizer_steps": 5,
+        "tensors_updated": 5,
+        "updated_scalars": 2496,
+        "examples_seen": 640,
+        "internal_steps": 640
+      },
+      "ratios": {
+        "backward_calls": 1.0,
+        "examples_seen": 1.0,
+        "forward_calls": 1.0,
+        "internal_steps": 1.0,
+        "optimizer_steps": 1.0,
+        "tensors_updated": 1.0,
+        "updated_scalars": 1.0
+      },
+      "final_loss_S": 32.4883918762207,
+      "final_loss_U": 28.9000244140625,
+      "all_counts_equal": true,
+      "scope": "Real forward/backward/optimiser counting on engineering random inputs only. No task samples, no learning result, no Gate 1 effect."
+    },
+    {
+      "k": 4,
+      "steps": 5,
+      "counts_S": {
+        "forward_calls": 5,
+        "backward_calls": 5,
+        "optimizer_steps": 5,
+        "tensors_updated": 9,
+        "updated_scalars": 1472,
+        "examples_seen": 640,
+        "internal_steps": 1280
+      },
+      "counts_U": {
+        "forward_calls": 5,
+        "backward_calls": 5,
+        "optimizer_steps": 5,
+        "tensors_updated": 9,
+        "updated_scalars": 1472,
+        "examples_seen": 640,
+        "internal_steps": 1280
+      },
+      "ratios": {
+        "backward_calls": 1.0,
+        "examples_seen": 1.0,
+        "forward_calls": 1.0,
+        "internal_steps": 1.0,
+        "optimizer_steps": 1.0,
+        "tensors_updated": 1.0,
+        "updated_scalars": 1.0
+      },
+      "final_loss_S": 23.137332916259766,
+      "final_loss_U": 35.49618911743164,
+      "all_counts_equal": true,
+      "scope": "Real forward/backward/optimiser counting on engineering random inputs only. No task samples, no learning result, no Gate 1 effect."
+    }
+  ],
+  "violations": [],
+  "excess_consumption_argmax": {
+    "k": 2,
+    "axis": "latency_p50",
+    "excess": 0.0028566106273734126
+  },
+  "verdict": "DECLARATION_VALID",
+  "environment": {
+    "python": "3.13.15",
+    "torch": "2.8.0",
+    "platform": "macOS-26.7-arm64-arm-64bit-Mach-O",
+    "threads": 1
+  },
+  "scope": "Structural, timing and operation-count pilot only. The operation counts are real forward/backward/optimiser calls on engineering random inputs; there is no task sample, no learning result and no Gate 1 effect. Not a task qualification, not a verdict."
+}

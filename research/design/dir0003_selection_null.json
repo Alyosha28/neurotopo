@@ -1,0 +1,167 @@
+{
+  "cells": {
+    "adjacent": {
+      "fisher_df": 16,
+      "fisher_stat": 39.35790716539552,
+      "median_rank_fraction": 0.8621100394187625,
+      "median_selected_vs_median_family": 2.084984859401755,
+      "n_seeds": 8,
+      "rows": [
+        {
+          "K": 861,
+          "max_contrast": 0.11987534728185856,
+          "median_contrast": 0.03865977754736272,
+          "p_uniform": 0.5447154471544715,
+          "seed": 0,
+          "selected_contrast": 0.03572283492548112,
+          "selected_rank": 392
+        },
+        {
+          "K": 939,
+          "max_contrast": 0.18236128533175622,
+          "median_contrast": 0.030309136949569493,
+          "p_uniform": 0.12886048988285415,
+          "seed": 1,
+          "selected_contrast": 0.05749399283676526,
+          "selected_rank": 818
+        },
+        {
+          "K": 848,
+          "max_contrast": 0.16001271785511717,
+          "median_contrast": 0.03349093506595063,
+          "p_uniform": 0.007075471698113178,
+          "seed": 2,
+          "selected_contrast": 0.15347092636701154,
+          "selected_rank": 842
+        },
+        {
+          "K": 967,
+          "max_contrast": 0.10921569596631997,
+          "median_contrast": 0.04566015739670004,
+          "p_uniform": 0.31437435367114785,
+          "seed": 3,
+          "selected_contrast": 0.056261762896172796,
+          "selected_rank": 663
+        },
+        {
+          "K": 1017,
+          "max_contrast": 0.15692896338637097,
+          "median_contrast": 0.04014180476326601,
+          "p_uniform": 0.2586037364798427,
+          "seed": 4,
+          "selected_contrast": 0.055798123956971146,
+          "selected_rank": 754
+        },
+        {
+          "K": 633,
+          "max_contrast": 0.11766996584234723,
+          "median_contrast": 0.02921499764750135,
+          "p_uniform": 0.14691943127962082,
+          "seed": 5,
+          "selected_contrast": 0.06640715686347598,
+          "selected_rank": 540
+        },
+        {
+          "K": 1057,
+          "max_contrast": 0.14240289210286583,
+          "median_contrast": 0.04263116404164735,
+          "p_uniform": 0.012298959318826852,
+          "seed": 6,
+          "selected_contrast": 0.13255586229507765,
+          "selected_rank": 1044
+        },
+        {
+          "K": 873,
+          "max_contrast": 0.11589389149249552,
+          "median_contrast": 0.02765937181317457,
+          "p_uniform": 0.038946162657502836,
+          "seed": 7,
+          "selected_contrast": 0.07805523665309899,
+          "selected_rank": 839
+        }
+      ]
+    },
+    "separated": {
+      "fisher_df": 16,
+      "fisher_stat": 241.15852505898147,
+      "median_rank_fraction": 0.9963768115942029,
+      "median_selected_vs_median_family": 5.048520833672469,
+      "n_seeds": 8,
+      "rows": [
+        {
+          "K": 11,
+          "max_contrast": 0.2390615377230605,
+          "median_contrast": 0.10021400288682702,
+          "p_uniform": 0.7272727272727273,
+          "seed": 0,
+          "selected_contrast": 0.021157753857429462,
+          "selected_rank": 3
+        },
+        {
+          "K": 32,
+          "max_contrast": 0.16578735890103147,
+          "median_contrast": 0.03895768979667108,
+          "p_uniform": 0.0625,
+          "seed": 1,
+          "selected_contrast": 0.09813347908855519,
+          "selected_rank": 30
+        },
+        {
+          "K": 29,
+          "max_contrast": 0.31361229365778986,
+          "median_contrast": 0.03640787600594353,
+          "p_uniform": 0.0,
+          "seed": 2,
+          "selected_contrast": 0.31361229365778986,
+          "selected_rank": 29
+        },
+        {
+          "K": 36,
+          "max_contrast": 0.21063043453764282,
+          "median_contrast": 0.03634268840091842,
+          "p_uniform": 0.0,
+          "seed": 3,
+          "selected_contrast": 0.21063043453764282,
+          "selected_rank": 36
+        },
+        {
+          "K": 21,
+          "max_contrast": 0.3349226173396562,
+          "median_contrast": 0.047671020330124825,
+          "p_uniform": 0.0,
+          "seed": 4,
+          "selected_contrast": 0.3349226173396562,
+          "selected_rank": 21
+        },
+        {
+          "K": 46,
+          "max_contrast": 0.26654394914641244,
+          "median_contrast": 0.04188306101731587,
+          "p_uniform": 0.13043478260869568,
+          "seed": 5,
+          "selected_contrast": 0.20239431570431882,
+          "selected_rank": 40
+        },
+        {
+          "K": 35,
+          "max_contrast": 0.33778795532502526,
+          "median_contrast": 0.06416121928668517,
+          "p_uniform": 0.0,
+          "seed": 6,
+          "selected_contrast": 0.33778795532502526,
+          "selected_rank": 35
+        },
+        {
+          "K": 138,
+          "max_contrast": 0.3113323387096405,
+          "median_contrast": 0.0690842436606291,
+          "p_uniform": 0.007246376811594235,
+          "seed": 7,
+          "selected_contrast": 0.3094083384234858,
+          "selected_rank": 137
+        }
+      ]
+    }
+  },
+  "schema": "dir0003_selection_null_v1"
+}

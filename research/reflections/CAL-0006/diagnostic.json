@@ -1,0 +1,80 @@
+{
+  "kind": "POST_HOC_FIXED_CHECKPOINT_DIAGNOSTIC_NOT_FORMAL_RECLASSIFICATION",
+  "formal_status_unchanged": "CEILING",
+  "source_commit": "f170e9b3acea0ad7611746f5a61c9e1f86e980a4",
+  "protocol_sha256": "a5bfceae0c86dc90139876918f37ebf38919aa7818867bff49dc3b1da0303c64",
+  "script_sha256": "2582cd0641cfe81e4493087332130b6e0140df6410a1f49746139479797df720",
+  "checkpoint_sha256": "d0e6d122b7455b78b38383c02eb2573574ef91c3cb724f614df0610a609b02ea",
+  "per_example_array_sha256": "7b366015854cd9dc102a5b8f8b2b3ed759f66d4fe86e16a8310c86bbd3da3851",
+  "per_example_kl_bytes_sha256": "7ad73377ec4872690f99e2e57605b9c2857e64ddf9751f76ef96b293a809ccba",
+  "evaluation_examples": 8192,
+  "natural_revision_examples": 3381,
+  "overall": {
+    "mean_kl": 0.06496780739188451,
+    "mean_minus_0_08": -0.015032192608115488,
+    "bootstrap_draws": 5000,
+    "bootstrap_seed": 6600001,
+    "bootstrap_95_percentile": [
+      0.05915329130818253,
+      0.07124798451112653
+    ],
+    "bootstrap_ge_0_08_fraction": 0.0,
+    "per_example_quantiles": [
+      4.768372718899988e-07,
+      0.00011700661155164927,
+      0.001254551751439922,
+      0.01954509485145456,
+      7.5424863957668205
+    ]
+  },
+  "natural_revision_slice": {
+    "mean_kl": 0.09819348353378883,
+    "bootstrap_draws": 5000,
+    "bootstrap_seed": 6600002,
+    "bootstrap_95_percentile": [
+      0.08696516567776945,
+      0.11037649715879806
+    ],
+    "threshold_applicable": false
+  },
+  "six_frozen_checkpoint_replay_differences": [
+    {
+      "seed": 601,
+      "arm": "dense",
+      "iid_kl_difference": 0.0,
+      "ood_kl_difference": 0.0
+    },
+    {
+      "seed": 601,
+      "arm": "random",
+      "iid_kl_difference": 0.0,
+      "ood_kl_difference": 0.0
+    },
+    {
+      "seed": 602,
+      "arm": "dense",
+      "iid_kl_difference": 0.0,
+      "ood_kl_difference": 0.0
+    },
+    {
+      "seed": 602,
+      "arm": "random",
+      "iid_kl_difference": 0.0,
+      "ood_kl_difference": 0.0
+    },
+    {
+      "seed": 603,
+      "arm": "dense",
+      "iid_kl_difference": 0.0,
+      "ood_kl_difference": 0.0
+    },
+    {
+      "seed": 603,
+      "arm": "random",
+      "iid_kl_difference": 0.0,
+      "ood_kl_difference": 0.0
+    }
+  ],
+  "optimizer_retrained": false,
+  "uncertainty_scope": "Evaluation-example resampling conditional on seed603 dense weights; no training-seed uncertainty"
+}

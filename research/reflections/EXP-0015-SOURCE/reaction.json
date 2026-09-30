@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "303179185ed537db2d48cf8947120c61d73681b96d672fd87564c4801c3bf280",
+  "review_sha256": "1170b858904745abad83529a99beec387981ec45fc0cf1d7c5cae5120b27f994",
+  "responses": [
+    {
+      "id": "SRC-001",
+      "disposition": "accept",
+      "reason": "源码与故障夹具确认该缺口。",
+      "action": "逐项修复并完成28项回归，保持科学配置和门槛不变；详见整改记录。",
+      "evidence_paths": [
+        "research/evidence/EXP-0015_source_fixes.md",
+        "src/neurotopo/orbit_information_reproduce.py",
+        "tests/test_orbit_information_reproduce.py",
+        "tests/test_loop_worker_commands.py"
+      ]
+    },
+    {
+      "id": "SRC-002",
+      "disposition": "accept",
+      "reason": "源码与故障夹具确认该缺口。",
+      "action": "逐项修复并完成28项回归，保持科学配置和门槛不变；详见整改记录。",
+      "evidence_paths": [
+        "research/evidence/EXP-0015_source_fixes.md",
+        "src/neurotopo/orbit_information_reproduce.py",
+        "tests/test_orbit_information_reproduce.py",
+        "tests/test_loop_worker_commands.py"
+      ]
+    },
+    {
+      "id": "SRC-003",
+      "disposition": "accept",
+      "reason": "源码与故障夹具确认该缺口。",
+      "action": "逐项修复并完成28项回归，保持科学配置和门槛不变；详见整改记录。",
+      "evidence_paths": [
+        "research/evidence/EXP-0015_source_fixes.md",
+        "src/neurotopo/orbit_information_reproduce.py",
+        "tests/test_orbit_information_reproduce.py",
+        "tests/test_loop_worker_commands.py"
+      ]
+    },
+    {
+      "id": "SRC-004",
+      "disposition": "accept",
+      "reason": "源码与故障夹具确认该缺口。",
+      "action": "逐项修复并完成28项回归，保持科学配置和门槛不变；详见整改记录。",
+      "evidence_paths": [
+        "research/evidence/EXP-0015_source_fixes.md",
+        "src/neurotopo/orbit_information_reproduce.py",
+        "tests/test_orbit_information_reproduce.py",
+        "tests/test_loop_worker_commands.py"
+      ]
+    }
+  ],
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "只对源码整改进行独立复核；接受后冻结干净源码并执行EXP0015，不放行模型研究。"
+}

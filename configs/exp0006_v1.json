@@ -1,0 +1,18 @@
+{
+  "experiment_id":"EXP-0006", "version":"v1", "workflow":"probe",
+  "output":"artifacts/EXP-0006/v1", "source_experiment":"EXP-0004/v1",
+  "source_commit":"eec9ca4", "checkpoint_manifest":"configs/exp0005_checkpoint_inputs.json",
+  "models":["multi_gru","random_gru","gru_wide"],
+  "seeds":[9101,9102,9103,9104,9105,9106,9107,9108,9109,9110],
+  "delays":[32,64], "primary_delay":32,
+  "train_pairs":4096, "validation_pairs":1024, "test_pairs":2048,
+  "train_seed":850000, "validation_seed":860000, "test_seed":870000,
+  "ridge_lambda":1.0, "std_floor":0.001,
+  "bootstrap_samples":20000, "bootstrap_seed":880001,
+  "minimum_uncued_deficit":0.05,
+  "adequate_mean_validation_uncued":0.45,
+  "adequate_seed_validation_uncued":0.40,
+  "adequate_seed_count":8,
+  "minimum_behavior_gap":-0.01, "minimum_behavior_joint":0.10,
+  "minimum_common_early_pairs":256
+}

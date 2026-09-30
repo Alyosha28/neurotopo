@@ -1,0 +1,80 @@
+{
+  "packet": "research/reflections/EXP-0015-PRERUN/packet.json",
+  "packet_sha256": "f1a1c8bbee73f6f239277d8673dd1fc3df5dc909f36dbb7ed2436c8e9947c2a9",
+  "parts": [
+    {
+      "bytes": 1055,
+      "matches_packet_digest": true,
+      "part": "design.md",
+      "sha256": "c008c5e0e8734396a161ebfbfd03b0f18c7efee21b868af211a2a4f365c74398"
+    },
+    {
+      "bytes": 5992,
+      "matches_packet_digest": true,
+      "part": "action.md",
+      "sha256": "f637587339f836715977200932ff0d5411b6a91f08ace89fcfdb14c3a6acb3d9"
+    },
+    {
+      "bytes": 29350,
+      "matches_packet_digest": true,
+      "part": "action_output_0_verification.json",
+      "sha256": "be023115e52a24484e6ccc76eb4a071f25a6e2aaccedfe1f0f6ed6bb09691d1f"
+    },
+    {
+      "bytes": 882,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_exp0015_v1.json",
+      "sha256": "e572a51d5137634e2a3e722d1f015f2b471fe84e5ad2bea25493a6c923f8d639",
+      "source_path": "configs/exp0015_v1.json"
+    },
+    {
+      "bytes": 2439,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_EXP-0015.json",
+      "sha256": "a0e0b0b528f36a6be94ef245bba23c5f40382d92b2e9d71b7e01770bee54189e",
+      "source_path": "research/entries/EXP-0015.json"
+    },
+    {
+      "bytes": 13996,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0007_orbit_regularization_v1.md",
+      "sha256": "a37375a6671cfa8cc3d40f0a7afa3f1f847e80430edc52628d82ce7d49d02d95",
+      "source_path": "research/design/dir0007_orbit_regularization_v1.md"
+    },
+    {
+      "bytes": 2577,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_DIR-0007_review_resolution.md",
+      "sha256": "b2fad9849a2a95550c52a731fb3817aaac4238220d598e428b8f813837463a24",
+      "source_path": "research/evidence/DIR-0007_review_resolution.md"
+    },
+    {
+      "bytes": 2269,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0084_dir0007_design_hold.md",
+      "sha256": "7008bc6c394082367e7d923d3fb387bad6dde281925648399a4dcb80ad79fb4e",
+      "source_path": "research/decisions/0084_dir0007_design_hold.md"
+    },
+    {
+      "bytes": 1457,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0029_exp0010_close_before_run.md",
+      "sha256": "9025e32d200f9eebb0f291645781816f3771ae404dd505843ad69ab96ac11308",
+      "source_path": "research/decisions/0029_exp0010_close_before_run.md"
+    },
+    {
+      "bytes": 1083,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0049_g1rs_task_search_cap.md",
+      "sha256": "9e9e559d72b6d3ac54c1830919b22eacfe3de1060313277fedc35264d1d69a25",
+      "source_path": "research/decisions/0049_g1rs_task_search_cap.md"
+    },
+    {
+      "bytes": 2799,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0007_soft_equivariance.md",
+      "sha256": "5ed573889737b9b225e4fe0c290ce7398043fe41a8b4195325895c222dccae0f",
+      "source_path": "research/prior_art/dir0007_soft_equivariance.md"
+    }
+  ]
+}

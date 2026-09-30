@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "d7a03c66d022ea2aea8364f09a1341210f77c34245fe104954fbbcab4a52c54e",
+  "review_sha256": "06df80511083f599ff927bf5ad930eaff695a5daf945b03c276685d8099bf77d",
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "按送审前固定的决策规则执行 `V0_1_REJECTED`：**停止 DIR-0004 整条设计线**，不产出 v0.2、不以换措辞/条件/参数重开，出决定0081 并保留负面结果与全部可复用资产。9 项逐条 accept；其中 I1 与 I2 经机械复核属实（I1 的根因是我重跑观测控制时误传 `--eps 1e-6`，I2 是我的 v0.1 更正漏改 §0）。I7（任务族互斥退化）与 I9（缺无架构基线、oracle 臂未排除）为结构级致命项，不能在族内修好；若日后仍走该方向，已属**新任务族提案**，须从第 0 步重走新设计→新独立审查。本轮另记两项 packet 之后的发现（float32 算术地板；第二单元只在精确进位下有效），均支持停止判定、不构成重开理由。Gate 1 仍 `NOT_PASSED`；无 EXP 注册、无训练授权；非回归清单无一重开。",
+  "responses": [
+    {
+      "id": "I7",
+      "disposition": "accept",
+      "reason": "成立且为结构级致命项，经独立复核：design 要求扩张列在 H 中恒为零（不可观测），则对任意 t 有 Var[z_u(t)|y_{1:t}] = Var[z_u(t)|y_{1:t-1}]，观测对该方向零信息，§1 的\"观测信息量足够确定潜状态到所需精度\"不可能成立；反过来若观测对该方向足够，按本包自己的核验分离消失。故族内不存在同时满足两条的配置，任务退化为\"高精度保存未知初值\"，与本设计引用的 AUS 直觉（不稳定方向由观测约束）相反。这是族定义级缺陷，任何修法都会同时抹掉本设计的可供性。",
+      "action": "停止 DIR-0004 整条线（决定0081 §3），不产出 v0.2；禁止据本设计注册 EXP、启动探针或训练；不得读成\"混沌跟踪方向无效\"。日后若走该方向须作为新任务族提案从第 0 步重走。",
+      "evidence_paths": [
+        "research/decisions/0081_dir0004_stopped.md",
+        "research/loop/current_frontier.md"
+      ]
+    },
+    {
+      "id": "I9",
+      "disposition": "accept",
+      "reason": "成立且为第二条结构级致命项。`F` 已知且扩张模态不可观测时，匹配预算下的最优预测器可以完全不含被声明组织——直接对初始标量做高精度编码并迭代 `F`；设计自己的最强拒绝 A 已承认稠密状态可用多个单元承载该标量，而 §5 四级阶梯里没有任何这样的无架构/直接迭代参考臂，故效应不可归因。第二部分同样成立：`action.md` 全文未把 oracle 臂限定为诊断臂，而 `design.md` 承认其进入主比较即失去资格。",
+      "action": "接受；停止本设计（决定0081 §3）。另记主代理 packet 之后的量化补充：第二个 float32 单元只有在更新实现精确进位/移位时才买到第二份尾数（`exact48` 39 步 vs `f32_recombined` 16 步 = 单单元），说明\"多单元承载同一标量\"这条救法需要一个与\"扩张/收缩分区\"不同的机制，与缺无架构基线同向。",
+      "evidence_paths": [
+        "research/decisions/0081_dir0004_stopped.md",
+        "research/design/dir0004_carry_units.json"
+      ]
+    },
+    {
+      "id": "I1",
+      "disposition": "accept",
+      "reason": "机械复核**属实**：`research/design/dir0004_precision_check_observed.json` 的 `config` 为 `eps=1e-6`、`sigma=1e-3`、`observe_expanding=true`，其 32 行 `crossing_T` 与隐藏组**逐行相同**（14,15,…,45），`nan present: False`，`final_var_expanding = 7.5e-7 = 0.75·sigma^2`。而 action.md 正文称\"对照运行 `--observe-expanding` 得 `T* = NaN`\"（该 NaN 来自原运行的 `eps=1.0`）。**根因在我**：我为\"修正口径\"重跑观测控制时误传 `--eps 1e-6`，于是既在 packet 内造出一个退化控制，又让正文与自家产物矛盾。",
+      "action": "接受。停止本设计（该控制产物是 I7 的边界条件证据，修数字不触及 I7/I9）；决定0081 §2 记录根因与机械复核值；设计稿顶部加状态横幅，注明该产物的退化参数化与本条审查编号，正文保留原文不改。",
+      "evidence_paths": [
+        "research/decisions/0081_dir0004_stopped.md",
+        "research/design/dir0004_chaos_predesign_v0.md"
+      ]
+    },
+    {
+      "id": "I2",
+      "disposition": "accept",
+      "reason": "机械复核**属实**：`action.md` §0 第 11 行仍是\"同时它给出**可证明的表示分离**，而不是靠调参制造\"，与同稿 §2 的 C2 更正（架构侧未证）及 §5\"第 1 级是唯一能产生架构分离主张的关口\"互斥。我的 v0.1 自查只改了 §2、漏改 §0，属更正不彻底。",
+      "action": "接受。不在现稿内改写（本设计已停止，改写会抹掉被审查稿的原样）；决定0081 §2 记录该残留，设计稿顶部横幅逐条标注其位置与审查编号。",
+      "evidence_paths": [
+        "research/decisions/0081_dir0004_stopped.md",
+        "research/design/dir0004_chaos_predesign_v0.md"
+      ]
+    },
+    {
+      "id": "I3",
+      "disposition": "accept",
+      "reason": "成立。§4 的关闭规则判据是\"最小充分统计量维数 D 是否随 T 无界\"，而被产出的筛查量是 `min_bits(T)`（`required_bits_span=60`、斜率 1.000）。二者不是同一命题：`m` 与 `H` 事前固定，精确解（真实潜轨迹或其解析后验）的维数并不随 T 增长，随 T 线性增长的只是\"在每坐标固定 b 比特编码这一存储模型下所需的比特数\"。故\"不存在有界维精确解\"里\"有界维\"无依据，\"有界精度\"恰是 v0.1 声称已删除的模型类假设；闸门对\"任务族是否结构性不同\"零分辨力。",
+      "action": "接受。筛查闸按现文判据不再作为推进依据（决定0081 §3 列入停止范围）；机器产物本身保留为可复用工具，但不得再被当作\"D 无界\"的核验。",
+      "evidence_paths": [
+        "research/decisions/0081_dir0004_stopped.md",
+        "research/loop/current_frontier.md"
+      ]
+    },
+    {
+      "id": "I4",
+      "disposition": "accept",
+      "reason": "成立。3.2× 只在\"总比特恒为 64 ＋ 稠密臂强制 32/32 对称\"下成立；按 action.md 自定的\"同 H 个浮点\"口径，读表 `T*(b) = b − 18` 即得 fp64（53 比特）`T* = 35` 对 45，优势降到约 1.29×；若允许设计自认的最强拒绝 A（多单元定点码），优势为 1.00×。匹配口径未冻结则效应量、余量门 δ 与对照臂构造都无从确定；`G1-MATCH-v3` 轴清单与决定0080 谓词原文不在 packet 内，属 packet 不足。",
+      "action": "接受。该口径问题在族内无法解决（依赖 I7/I9 的修法），故不产出 v0.2；决定0081 §2/§5 记录，并注明 packet 不足项须在**任何**未来注册前结清。",
+      "evidence_paths": [
+        "research/decisions/0081_dir0004_stopped.md",
+        "research/design/dir0004_carry_units.json"
+      ]
+    },
+    {
+      "id": "I5",
+      "disposition": "accept",
+      "reason": "成立。§5 第 1 级被明写为唯一关口，但其判据在冻结点为空：\"能否达到 oracle 水平\"无水平、容差、样本量与功效定义；余量门要求的 δ 也不在包内。更严重的是\"直接监督拟合 oracle\"以含扩张坐标的真实潜轨迹为标签：允许该监督则不可观测前提对训练臂失效（退化为监督回归），不允许则隐藏扩张模态没有任何学习信号（见 I7）——两条路都使第 1 级无法构成一次判定。",
+      "action": "接受。oracle 拟合探针不启动（决定0081 §3）；本条的\"S4 型名义通过\"教训与 G1-BOUND-0001 的 S4 并列留档，供未来设计预注册水平/容差/功效时引用。",
+      "evidence_paths": [
+        "research/decisions/0081_dir0004_stopped.md",
+        "research/loop/current_frontier.md"
+      ]
+    },
+    {
+      "id": "I6",
+      "disposition": "accept",
+      "reason": "成立（medium）。把 T* 降为描述量并未把时间量移出判词：分离只在 T 超过交叉点后出现，故冻结的 T 实际由该 steps-to-threshold 量决定（决定0062 B 关注的时间量经\"T 怎么选\"重回判词）；且末端 KL 的水平由混沌发散主导（隐藏组 `final_var_expanding ≈ 1.6e100`），对组织差异不敏感。",
+      "action": "接受。记录为终点设计的已知失败模式；本设计不修订（已停止）。",
+      "evidence_paths": [
+        "research/decisions/0081_dir0004_stopped.md"
+      ]
+    },
+    {
+      "id": "I8",
+      "disposition": "accept",
+      "reason": "成立（medium）。先例核查自认机制内核已被 AUS 覆盖（且 2010 年那篇已讨论\"最优子空间维数\"这一资源分配问题），但证据仅元数据级（正文与定理条件未读、arXiv 通道本轮全部失败），因此 C2 的新颖性边界在 packet 内不可判定（属 packet 不足）。按仓库纪律，新颖性须在注册前结清，不能在注册时再补。",
+      "action": "接受。先例记录保持元数据级标注不升级；决定0081 §2 记为 packet 不足；未来任何方向在注册前须完成正文级或定理级核查。",
+      "evidence_paths": [
+        "research/decisions/0081_dir0004_stopped.md",
+        "research/prior_art/dir0004_chaos_tracking.md"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "9374a2eeca66195343d0ce50f46e25b8be5d21298e9eb69d0c7248910ab04b1c",
+  "review_sha256": "2fc4ee3da1ce2465dd8b95971b211dbb9595a04a84cdfae1bb457d59686fce09",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep G1-RS v1 at design-only READY_FOR_NUMERIC_PROTOCOL; freeze one bounded generator, resource and actual-control qualification before any task sample, and do not inspect RS4 effect until all staged guards pass."
+}

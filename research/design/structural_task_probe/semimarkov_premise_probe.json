@@ -1,0 +1,127 @@
+{
+  "constants": {
+    "M": 2,
+    "T": 32,
+    "beta": 0.8,
+    "coupling": 0.25,
+    "d_max": 32,
+    "episodes": 3000,
+    "hazard_d0": 8.0,
+    "hazard_kappa": 2.0,
+    "lambda": 0.7,
+    "seed": 20260924,
+    "train": 2000
+  },
+  "oracle_entropy_nats": {
+    "markov": 0.7971936787394825,
+    "semi_markov": 0.8687560555338542
+  },
+  "probe": {
+    "markov": [
+      {
+        "dim": 2,
+        "kl_nats": 0.41331208111454526,
+        "summary": "window_k1"
+      },
+      {
+        "dim": 4,
+        "kl_nats": 0.38295652962387855,
+        "summary": "window_k2"
+      },
+      {
+        "dim": 8,
+        "kl_nats": 0.37359400167592605,
+        "summary": "window_k4"
+      },
+      {
+        "dim": 16,
+        "kl_nats": 0.37278156847677724,
+        "summary": "window_k8"
+      },
+      {
+        "dim": 32,
+        "kl_nats": 0.372281553674802,
+        "summary": "window_k16"
+      },
+      {
+        "dim": 64,
+        "kl_nats": 0.3719006429704926,
+        "summary": "window_k32"
+      },
+      {
+        "dim": 4,
+        "kl_nats": 0.541941560545446,
+        "summary": "accumulated_evidence"
+      },
+      {
+        "dim": 10,
+        "kl_nats": 0.37347850831568546,
+        "summary": "window_k4_plus_sign_changes"
+      },
+      {
+        "dim": 18,
+        "kl_nats": 0.37277039764888964,
+        "summary": "window_k8_plus_sign_changes"
+      },
+      {
+        "dim": 34,
+        "kl_nats": 0.37226331334339335,
+        "summary": "window_k16_plus_sign_changes"
+      }
+    ],
+    "semi_markov": [
+      {
+        "dim": 2,
+        "kl_nats": 0.3745624903874656,
+        "summary": "window_k1"
+      },
+      {
+        "dim": 4,
+        "kl_nats": 0.3545696330998427,
+        "summary": "window_k2"
+      },
+      {
+        "dim": 8,
+        "kl_nats": 0.3514438773074653,
+        "summary": "window_k4"
+      },
+      {
+        "dim": 16,
+        "kl_nats": 0.3366867386685912,
+        "summary": "window_k8"
+      },
+      {
+        "dim": 32,
+        "kl_nats": 0.3353963840966404,
+        "summary": "window_k16"
+      },
+      {
+        "dim": 64,
+        "kl_nats": 0.3351889894009511,
+        "summary": "window_k32"
+      },
+      {
+        "dim": 4,
+        "kl_nats": 0.5055358224703659,
+        "summary": "accumulated_evidence"
+      },
+      {
+        "dim": 10,
+        "kl_nats": 0.35089265315424145,
+        "summary": "window_k4_plus_sign_changes"
+      },
+      {
+        "dim": 18,
+        "kl_nats": 0.33604286514470744,
+        "summary": "window_k8_plus_sign_changes"
+      },
+      {
+        "dim": 34,
+        "kl_nats": 0.33495561452627104,
+        "summary": "window_k16_plus_sign_changes"
+      }
+    ]
+  },
+  "schema": "semimarkov_premise_probe_v1",
+  "status": "engineering premise check only; not a registered run, not a verdict"
+}

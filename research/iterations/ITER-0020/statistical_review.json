@@ -1,0 +1,326 @@
+{
+  "pass": true,
+  "unit": "prospective training seed; paired REL/INV; reference23005 excluded",
+  "R": "R_NOT_SUPPORTED",
+  "M": "M_NOT_SUPPORTED",
+  "methods": {
+    "FULL8": {
+      "repair_original_failures": {
+        "count": 1,
+        "denominator": 5,
+        "rate": 0.2,
+        "wilson95": [
+          0.036224108620327655,
+          0.6244653703187697
+        ]
+      },
+      "harm_qualified_successes": {
+        "count": 0,
+        "denominator": 4,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.48989083657188465
+        ]
+      },
+      "all_negative_deltas": {
+        "25001": -0.0185546875,
+        "25004": -0.0849609375,
+        "25005": -0.2529296875,
+        "25006": -0.25,
+        "25007": -0.25,
+        "25009": -0.095703125
+      }
+    },
+    "EQUAL8": {
+      "repair_original_failures": {
+        "count": 2,
+        "denominator": 5,
+        "rate": 0.4,
+        "wilson95": [
+          0.11762077420017036,
+          0.7692757187795287
+        ]
+      },
+      "harm_qualified_successes": {
+        "count": 0,
+        "denominator": 4,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.48989083657188465
+        ]
+      },
+      "all_negative_deltas": {
+        "25003": -0.0009765625,
+        "25005": -0.005859375
+      }
+    },
+    "SCALE8": {
+      "repair_original_failures": {
+        "count": 0,
+        "denominator": 5,
+        "rate": 0.0,
+        "wilson95": [
+          0.0,
+          0.4344824648984954
+        ]
+      },
+      "harm_qualified_successes": {
+        "count": 1,
+        "denominator": 4,
+        "rate": 0.25,
+        "wilson95": [
+          0.04558726079439873,
+          0.6993581574915435
+        ]
+      },
+      "all_negative_deltas": {
+        "25001": -0.08203125,
+        "25003": -0.2099609375,
+        "25004": -0.1005859375,
+        "25005": -0.2470703125,
+        "25006": -0.25,
+        "25009": -0.1123046875
+      }
+    }
+  },
+  "M_conditional_repair": {
+    "count": 1,
+    "denominator": 2,
+    "rate": 0.5,
+    "wilson95": [
+      0.09453120570165269,
+      0.9054687942983473
+    ]
+  },
+  "new_seed_effects": {
+    "REL": {
+      "GAUGE8": {
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "descriptive_t95": [
+          0.0,
+          0.0
+        ]
+      },
+      "FULL8": {
+        "values": [
+          -0.0185546875,
+          0.25,
+          0.1298828125,
+          -0.0849609375,
+          -0.2529296875,
+          -0.25,
+          -0.25,
+          0.1396484375,
+          -0.095703125,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": -0.036051432291666664,
+        "sample_sd": 0.16208020296318196,
+        "min": -0.2529296875,
+        "max": 0.25,
+        "descriptive_t95": [
+          -0.13903228016658256,
+          0.06692941558324925
+        ]
+      },
+      "EQUAL8": {
+        "values": [
+          0.00390625,
+          0.25,
+          -0.0009765625,
+          0.0,
+          -0.005859375,
+          0.0029296875,
+          0.0,
+          0.2509765625,
+          0.001953125,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.041910807291666664,
+        "sample_sd": 0.09745581199848688,
+        "min": -0.005859375,
+        "max": 0.2509765625,
+        "descriptive_t95": [
+          -0.02000966150378746,
+          0.10383127608712078
+        ]
+      },
+      "SCALE8": {
+        "values": [
+          -0.08203125,
+          0.0,
+          -0.2099609375,
+          -0.1005859375,
+          -0.2470703125,
+          -0.25,
+          0.0,
+          0.1484375,
+          -0.1123046875,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": -0.07112630208333333,
+        "sample_sd": 0.12000477848749894,
+        "min": -0.25,
+        "max": 0.1484375,
+        "descriptive_t95": [
+          -0.14737370066594363,
+          0.005121096499276959
+        ]
+      }
+    },
+    "INV": {
+      "GAUGE8": {
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "descriptive_t95": [
+          0.0,
+          0.0
+        ]
+      },
+      "FULL8": {
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "descriptive_t95": [
+          0.0,
+          0.0
+        ]
+      },
+      "EQUAL8": {
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "descriptive_t95": [
+          0.0,
+          0.0
+        ]
+      },
+      "SCALE8": {
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "sample_sd": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "descriptive_t95": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "M_exclusion": {
+    "25001": "NOT_QUALIFICATION_FAILURE",
+    "25002": null,
+    "25003": null,
+    "25004": "EQUAL_FEASIBILITY",
+    "25005": "NOT_QUALIFICATION_FAILURE",
+    "25006": "NOT_QUALIFICATION_FAILURE",
+    "25007": "NOT_QUALIFICATION_FAILURE",
+    "25008": "EQUAL_FEASIBILITY",
+    "25009": "EQUAL_FEASIBILITY",
+    "25010": "NOT_QUALIFICATION_FAILURE",
+    "25011": "NOT_QUALIFICATION_FAILURE",
+    "25012": "NOT_QUALIFICATION_FAILURE"
+  },
+  "qualification_failures": [
+    25002,
+    25003,
+    25004,
+    25008,
+    25009
+  ],
+  "qualified_successes": [
+    25001,
+    25010,
+    25011,
+    25012
+  ],
+  "old_reference_excluded": true,
+  "independent_result_review_pending": false,
+  "scope": "Descriptive intervals and protocol conjunction, no unique causal or generalization claim.",
+  "independent_reproduction_passed": true
+}

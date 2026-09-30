@@ -1,0 +1,175 @@
+{
+  "note": "Lean view of artifacts/EXP-0033/v1/analysis.json; per-run details and monitor data omitted, all aggregate numbers and flags unchanged.",
+  "experiment": "EXP-0033",
+  "version": "v1",
+  "gate": "A2_EXPLORATORY_PROBE",
+  "decision": "SUPPORTED",
+  "substatus": "EXPLORATORY_ARCHITECTURE_ADVANTAGE",
+  "scope": "Exploratory probe only: even SUPPORTED here is not an A2 gate pass and needs independent replication; no A1 or old Gate 1 credit.",
+  "carrier": {
+    "selected": {
+      "width": 96,
+      "blocks": 2,
+      "mean": 0.6978190104166666,
+      "inference_ops": 2115
+    },
+    "seeds": [
+      29301,
+      29302,
+      29303
+    ],
+    "by_config": {
+      "w32b3": {
+        "width": 32,
+        "blocks": 3,
+        "accuracy": [
+          0.60029296875,
+          0.5857421875,
+          0.6716796875
+        ],
+        "mean": 0.61923828125,
+        "min": 0.5857421875,
+        "max": 0.6716796875,
+        "parameters": 1186,
+        "inference_ops": 1059,
+        "qualified": false
+      },
+      "w48b2": {
+        "width": 48,
+        "blocks": 2,
+        "accuracy": [
+          0.706640625,
+          0.58984375,
+          0.70849609375
+        ],
+        "mean": 0.6683268229166667,
+        "min": 0.58984375,
+        "max": 0.70849609375,
+        "parameters": 1180,
+        "inference_ops": 1059,
+        "qualified": true
+      },
+      "w48b3": {
+        "width": 48,
+        "blocks": 3,
+        "accuracy": [
+          0.60029296875,
+          0.601171875,
+          0.73466796875
+        ],
+        "mean": 0.6453776041666667,
+        "min": 0.60029296875,
+        "max": 0.73466796875,
+        "parameters": 1762,
+        "inference_ops": 1587,
+        "qualified": false
+      },
+      "w64b2": {
+        "width": 64,
+        "blocks": 2,
+        "accuracy": [
+          0.7103515625,
+          0.67900390625,
+          0.7025390625
+        ],
+        "mean": 0.6972981770833333,
+        "min": 0.67900390625,
+        "max": 0.7103515625,
+        "parameters": 1564,
+        "inference_ops": 1411,
+        "qualified": true
+      },
+      "w96b2": {
+        "width": 96,
+        "blocks": 2,
+        "accuracy": [
+          0.6875,
+          0.69638671875,
+          0.7095703125
+        ],
+        "mean": 0.6978190104166666,
+        "min": 0.6875,
+        "max": 0.7095703125,
+        "parameters": 2332,
+        "inference_ops": 2115,
+        "qualified": true
+      },
+      "w96b3": {
+        "width": 96,
+        "blocks": 3,
+        "accuracy": [
+          0.63505859375,
+          0.60703125,
+          0.57509765625
+        ],
+        "mean": 0.6057291666666668,
+        "min": 0.57509765625,
+        "max": 0.63505859375,
+        "parameters": 3490,
+        "inference_ops": 3171,
+        "qualified": false
+      }
+    }
+  },
+  "comparison": {
+    "seeds": [
+      29311,
+      29312,
+      29313,
+      29314,
+      29315
+    ],
+    "budget": 2000,
+    "task": "DELAY-2",
+    "accuracy": {
+      "CAND_V4": [
+        0.63955078125,
+        0.81904296875,
+        0.75537109375,
+        0.97763671875,
+        0.7326171875
+      ],
+      "SEL_INV": [
+        0.70302734375,
+        0.6828125,
+        0.67958984375,
+        0.63427734375,
+        0.66162109375
+      ],
+      "EXTRA_V4": [
+        0.49765625,
+        0.5087890625,
+        0.87001953125,
+        0.82294921875,
+        0.82861328125
+      ]
+    },
+    "means": {
+      "CAND_V4": 0.78484375,
+      "SEL_INV": 0.672265625,
+      "EXTRA_V4": 0.70560546875
+    },
+    "effect_pp": 11.26,
+    "ci95_pp": [
+      0.35,
+      23.69
+    ],
+    "control_in_band": true,
+    "delta_pp": 3.0,
+    "resources": {
+      "candidate_parameters": 664,
+      "candidate_inference_ops": 1161,
+      "control_parameters": null,
+      "control_inference_ops": 2115,
+      "extra_inference_ops": 873
+    },
+    "decision": "SUPPORTED",
+    "substatus": "EXPLORATORY_ARCHITECTURE_ADVANTAGE",
+    "carrier": {
+      "width": 96,
+      "blocks": 2,
+      "mean": 0.6978190104166666,
+      "inference_ops": 2115
+    }
+  }
+}

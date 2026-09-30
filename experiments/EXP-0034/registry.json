@@ -1,0 +1,77 @@
+{
+  "experiment": "EXP-0034",
+  "active_version": "v1",
+  "versions": {
+    "v1": "COMPLETED"
+  },
+  "gate": "A2_MATCHED_REPLICATION",
+  "title": "Independent matched-compute replication of the DELAY-2 probe",
+  "protocol": "experiments/EXP-0034/v1.md",
+  "config": "configs/exp0034_v1.json",
+  "implementation": "src/neurotopo/arch0001_a2_probe.py",
+  "output": "artifacts/EXP-0034/v1",
+  "comparison_seeds": [
+    29321,
+    29322,
+    29323,
+    29324,
+    29325
+  ],
+  "carrier": {
+    "config": "w48b2",
+    "inference_ops": 1059,
+    "parameters": 1180,
+    "ops_ratio_vs_candidate": 0.912
+  },
+  "comparison": {
+    "CAND_V4": [
+      0.5022,
+      0.7371,
+      0.6432,
+      0.6401,
+      0.796
+    ],
+    "SEL_INV": [
+      0.7084,
+      0.8247,
+      0.7231,
+      0.6975,
+      0.6769
+    ],
+    "EXTRA_V4": [
+      0.8464,
+      0.687,
+      0.5031,
+      0.5011,
+      0.8208
+    ],
+    "effect_pp": -6.24,
+    "ci95_pp": [
+      -15.04,
+      4.1
+    ],
+    "control_in_band": true
+  },
+  "decision": "FALSIFIED",
+  "substatus": "NO_REPLICATED_ADVANTAGE",
+  "closes": "ARCH-0001 (SC-REL-v3/v4) in tested scope",
+  "report": "research/evidence/EXP-0034/report.md",
+  "decision_record": "research/decisions/0109_exp0034_falsification_and_route_closure.md",
+  "literal_row_substatus": "CONTROL_BETTER",
+  "correction": "reflection: CI straddles zero and candidate seed 29321 is at chance; authoritative substatus is the intersection reading",
+  "exclusion_of_chance_seed_pp": -2.65,
+  "carrier_verified": {
+    "parameters": 1180,
+    "inference_ops": 1059,
+    "check": "verification.json.carrier_check.pass_=true"
+  },
+  "replay": "all five comparison seeds with zero hash/metric gaps",
+  "reflection": {
+    "packet": "research/reflections/EXP-0034/packet.json",
+    "review": "research/reflections/EXP-0034/review.json",
+    "reaction": "research/reflections/EXP-0034/reaction.json",
+    "execution": "research/reflections/EXP-0034/execution.md",
+    "issues": 4,
+    "decision_impact": "REASSESSMENT_REQUIRED"
+  }
+}

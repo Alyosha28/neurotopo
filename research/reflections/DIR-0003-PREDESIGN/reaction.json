@@ -1,0 +1,171 @@
+{
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "独立前瞻审查判 **V0_REJECTED**（17 项：9 high / 8 medium，全部 accept）。三类致命项：①『总容量匹配』是 horizon=200 的截断和——主代理独立复算显示未截断比值由 1.0000000000009 跌至 0.4126091，宽带真实总量为窄带 2.4 倍，残差 58.74% 且集中在预测的 k≥25 侧；②匹配在 i.i.d. 探针下构造而判词在 AR(1) 下作出——复算显示 φ=0.5 下比值 0.9115045 且同带宽任务分布匹配不可行；③估计量在 8 个任务格点上未定义、预检泛函误差与待预测效应同量级。据此出**决定0074：v0 判据架构作废，不注册、不跑资格流、不训练、不按现稿推进**；NQ-3 问题本身未被否定，重开须逐条满足决定0074 §5 的七项条件并重新冻结 packet 送审。Gate 1 仍 `NOT_PASSED`；非回归清单 12 条无一重开；检索通道事实（web_search 402 / web_fetch fake-IP / bash curl 可用）与两处规则真空缺（0069 后 `Generic` 无可核验操作化；`project_gate1` 强制 `h3_candidate`）已留档。",
+  "packet_sha256": "0d4b29e6180d02d1d46756824914141946715bf3b69e5bbc318bac5dc7e5c2fe",
+  "responses": [
+    {
+      "action": "接受。v0 判据架构作废，不注册、不训练；重开须按决定0074 §5.1 在**声明 horizon 与未截断总量两个口径上同时披露并匹配**，并把 horizon 影响做成受控自变量。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md",
+        "research/design/dir0003_truncation_check.json"
+      ],
+      "id": "I1",
+      "reason": "成立，且本轮独立复算后**比审查所述更严重**：i.i.d. 下宽带总容量 h=200 为 1.5263113、h=4000 为 3.6991701，窄带/宽带比值由 1.0000000000009 跌至 0.4126091，即宽带真实总容量是窄带的 2.4 倍；截断残差 2.1728588（占 58.74%）且几乎全部落在 k≥25 的预测优势侧。v0 的『总容量匹配』是截断假象。"
+    },
+    {
+      "action": "接受。决定0074 §5.2 要求匹配必须在任务输入分布下构造，并把『两个分布能否同时匹配』设为注册前的 S1 型可行性门。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md",
+        "research/design/dir0003_capacity_precheck_ar1.json"
+      ],
+      "id": "I2",
+      "reason": "成立。匹配在 i.i.d. 探针分布下构造、判词在 AR(1) 下作出，包内确无 AR(1) 系数与 AR(1) 容量数字。本轮独立复算给出量级：φ=0.5 下探针匹配窄带的比值降至 0.9115045，且同带宽在任务分布下重新匹配时中心顶到退化边界（0.9999）而失败（比值 0.0025384）——不是补一个常数可修。"
+    },
+    {
+      "action": "接受。决定0074 §5.3：主终点改为格点上的**离散符号向量**与/或事前定义插值估计量及其 CI；容差带须至少含两个格点。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md"
+      ],
+      "id": "I3",
+      "reason": "成立。任务 lag 仅 8 个格点（长侧间隔 8），机器交叉位置是分数（12.08），rung 1.15 的 ±2 带 [10.08,14.08] 不含任何格点，k̂* 估计量在 §6 未定义。"
+    },
+    {
+      "action": "接受。决定0074 §5.2/§5.5：AR(1) 系数事前冻结并写入注册；S6 须变成可判定条款（输入分布差异写入终点定义，而非声明）。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md"
+      ],
+      "id": "I4",
+      "reason": "成立。S6 只在 §10 声明，§6 五分支无一引用它，也无机械触发判定其被违反；AR(1) 强度未注册。"
+    },
+    {
+      "action": "接受。决定0074 §5.4：预注册『预检误差预算 ≪ 待预测效应』的量级比，否则不得对长延迟侧作任何主张。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md",
+        "research/design/dir0003_truncation_check.json"
+      ],
+      "id": "I5",
+      "reason": "成立。预检泛函自身的解析-留出模拟差（单模 0.01128、全库 0.00304）与长延迟侧待预测效应（0.0092–0.0143）同量级，故长延迟侧的符号与量级在本泛函下**不可分辨**。"
+    },
+    {
+      "action": "接受。决定0074 §5.2/§5.6：v1 须给出可单轴化的构造或明确声明该对比为 `PACKAGE_EFFECT` 轨并加资源未匹配标志。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md",
+        "research/design/dir0003_capacity_precheck_ar1.json"
+      ],
+      "id": "I6",
+      "reason": "成立。两臂同时改变带宽、带中心/时间尺度与谱半径（0.9987445 对 0.8574792），v0 自认中心不可选，故无干净单轴归因。"
+    },
+    {
+      "action": "接受。决定0074 §5.5：跨 rung 单调性须写成预注册假设并配多重性控制，或明确降级为描述性。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md"
+      ],
+      "id": "I7",
+      "reason": "成立。阶梯预测（k* 单调下降）只是 §5 的叙述，§6 判决函数只对单一配置定义，无跨 rung 规则与多重性控制。"
+    },
+    {
+      "action": "接受。决定0074 §5.5：统一为单一阈值来源并证明分支两两互斥。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md"
+      ],
+      "id": "I8",
+      "reason": "成立。分支 1 用 Δ_eq=0.02 判 T_null 等价，机械触发②却用 δ_null=0.01，某臂 R²_null=0.015 时两条同时命中，分支不互斥。"
+    },
+    {
+      "action": "接受。决定0074 §5.5：补入该分支并给出每个分支的具体触发数值。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md"
+      ],
+      "id": "I9",
+      "reason": "成立。『无交叉 + 未达全档等价 + 三触发皆不触发』是空分支，可达性自检只是断言。"
+    },
+    {
+      "action": "接受。决定0074 §5.5：阈值改为由预检实测分布导出的**事前**数值（并覆盖任务侧 Gram）。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md",
+        "research/design/dir0003_capacity_precheck_ar1.json"
+      ],
+      "id": "I10",
+      "reason": "成立。触发③阈值 1e8 与实测条件数 6368.5/5890.4 差四个数量级，且只有探针侧数字，实际不可达。"
+    },
+    {
+      "action": "接受。决定0074 §5.5：所有阈值与功效数须由脚本输出或资格流实测给出，不得凭取整。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md",
+        "research/design/dir0003_capacity_precheck_ar1.json"
+      ],
+      "id": "I11",
+      "reason": "成立。δ_task=0.05、Δ_eq=0.02、δ_null=0.01、±2 lag、n_streams=8 与每流样本量均无来源；审查复算 MDD≈0.0050 与文中 0.006 不符（我方为粗略取整）。"
+    },
+    {
+      "action": "接受。决定0074 §5.3/§5.5：位置偏差须有独立降级规则，或把位置从主终点评词中移除。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md"
+      ],
+      "id": "I12",
+      "reason": "成立。位置失败被吸收为 `PARTIALLY_SUPPORTED` 而仍算部分支持 band 模型，无降级映射，位置成分不可伪造。"
+    },
+    {
+      "action": "接受。决定0074 §5.2/§5.4：oracle 解析式与系数进入注册，功效按任务分布重算。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md",
+        "research/design/dir0003_capacity_precheck_ar1.json"
+      ],
+      "id": "I13",
+      "reason": "成立。终点未给 oracle 解析式与 AR(1) 系数，长延迟侧符号可能在噪声或天花板上判定；与本轮 I2 复算同源。"
+    },
+    {
+      "action": "接受。决定0074 §5.5/§5.7：T_mix 要么给出冻结预测与分支，要么从注册中移除；骨架须填实。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md"
+      ],
+      "id": "I14",
+      "reason": "成立。T_mix 被列为任务但无预测、无符号、无分支归属，等于可事后使用的任务；注册骨架 branches 仍是 `\"...\"` 占位。"
+    },
+    {
+      "action": "接受。决定0074 §1 与本轮综合文件已把六通道与被停止方向的对照写入可核验记录；v1 送审 packet 必须自带所依赖方向的定义引用。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md"
+      ],
+      "id": "I15",
+      "reason": "成立。被比较方向（GPI-0001/G1-ALIGN/G1-BOUND）的六项定义不在包内，改名判定在包内不可执行。"
+    },
+    {
+      "action": "接受。决定0074 §5.7：脚本与全部固定配置必须进入 packet；本轮已把两个脚本与三个机器输出留档。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md",
+        "research/design/dir0003_truncation_check.json"
+      ],
+      "id": "I16",
+      "reason": "成立。生成脚本在包外，容量泛函定义（岭化 MC、二分法、交叉点求法、留出模拟）包内不可复核；config 含 blocks/bootstrap_seed/sim_steps 未在 design 披露。"
+    },
+    {
+      "action": "接受。决定0074 §5.6：γ_rel 须给理由并附至少三个 γ 的敏感性对照，或改用无岭/双口径披露。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0074_dir0003_new_question_predesign_rejected.md",
+        "research/design/dir0003_truncation_check.json"
+      ],
+      "id": "I17",
+      "reason": "成立。岭化容量作匹配目标无理由、无岭对照；同一泛函的单模解析-模拟差即 0.0113，结论对 γ_rel 敏感。"
+    }
+  ],
+  "review_sha256": "d4b390e94353f0c84b4e2253ba20976f4d508e5ee25d016d25d0881d6eebbc3c",
+  "schema_version": 1
+}

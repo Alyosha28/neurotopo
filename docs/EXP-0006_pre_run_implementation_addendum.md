@@ -1,0 +1,7 @@
+# EXP-0006 v2 pre-run implementation addendum
+
+The independent reviewer approved the frozen scientific design in `EXP-0006_pre_run_review.md`, then read the new implementation without seeing official outcomes. One verification gap remained: the first source version checked hidden-state/readout equality on only the first128 test prefixes, while the registered protocol calls for checking the same examples used in the probe. Before any scientific run, `probe.py` was extended to check every unique prefix in **train, validation and test** with exact forward/readout equality. The public task generator still supplies full paired sequences for the separate behavioral guard.
+
+The runner now records the unique-prefix count for each split, state-extraction wall time, readout-equivalence wall time, probe-fit time, behavioral-evaluation time, and a labelled extraction linear-FLOP proxy. The analysis rejects a mismatch in registered split counts or M3/C0 extraction linear operations. The probe-family, fixed λ, train-only standardization, input/test RNG streams and decision thresholds did not change. These are implementation and audit corrections under the same v2 protocol; no EXP-0006 outcome was viewed.
+
+Engineering checks: the synthetic ridge test decodes all candidate labels, prefix deduplication and no-future-input checks pass, and synthetic decision fixtures cover support/partial/falsification/inconclusive branches. The registered run still requires a clean committed tree and a full source-hashed validation suite.

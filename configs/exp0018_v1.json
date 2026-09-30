@@ -1,0 +1,82 @@
+{
+  "experiment_id": "EXP-0018",
+  "version": "v1",
+  "workflow": "frozen_binary_probe",
+  "protocol": "experiments/EXP-0018/v1.md",
+  "entry_contract": "research/entries/EXP-0018.json",
+  "output": "artifacts/EXP-0018/v1",
+  "gate1_claim": false,
+  "matching_criterion_version": "G1-MATCH-v3",
+  "sources": [
+    {
+      "seed": 17001,
+      "arm": "D64",
+      "path": "artifacts/EXP-0017/v2/seed-17001/CO/D64/final.pt",
+      "sha256": "917f37392328c9b0709d11a26adff6aeb71c7dd7559ab5ab284548c98c5277a5"
+    },
+    {
+      "seed": 17001,
+      "arm": "D16",
+      "path": "artifacts/EXP-0017/v2/seed-17001/CO/D16/final.pt",
+      "sha256": "df18554053842d27f83d046f73064b92a7acaf0df86279604dd322eef4f05b64"
+    },
+    {
+      "seed": 17002,
+      "arm": "D64",
+      "path": "artifacts/EXP-0017/v2/seed-17002/CO/D64/final.pt",
+      "sha256": "31e2dc3ac2ac6421397611faac8cfb169dc7fbbd505034f7ad619ed54a1e7607"
+    },
+    {
+      "seed": 17002,
+      "arm": "D16",
+      "path": "artifacts/EXP-0017/v2/seed-17002/CO/D16/final.pt",
+      "sha256": "49b5f192404f5746f00cd86b44152b47aeacfbbcf6aa636f8103587c20c2bec9"
+    },
+    {
+      "seed": 17003,
+      "arm": "D64",
+      "path": "artifacts/EXP-0017/v2/seed-17003/CO/D64/final.pt",
+      "sha256": "5df014ba3f3759ef19c02bc2ab3a5bafc1c97491c4ad7fe52c7950a4f5573a9b"
+    },
+    {
+      "seed": 17003,
+      "arm": "D16",
+      "path": "artifacts/EXP-0017/v2/seed-17003/CO/D16/final.pt",
+      "sha256": "644700e7695cdcecfdd86466ba2d00173a3ac9038281d2fb20f80d6712fc5c80"
+    }
+  ],
+  "data": {
+    "fit_examples": 8192,
+    "test_examples": 4096,
+    "fit_operations": 32,
+    "test_operations": [
+      32,
+      128
+    ],
+    "namespace": 181001,
+    "shuffle_namespace": 184001
+  },
+  "probe": {
+    "l2": 0.001,
+    "max_updates": 50,
+    "gradient_tolerance": 1e-07,
+    "armijo": 0.0001,
+    "backtracks": 25,
+    "scale_floor": 1e-08
+  },
+  "resource": {
+    "worker_wall_seconds_cap": 120,
+    "reproduction_wall_seconds_cap": 120,
+    "research_update_cap": 600
+  },
+  "thresholds": {
+    "strong_accuracy": 0.8,
+    "strong_gap": 0.2,
+    "weak_accuracy": 0.55,
+    "weak_gap": 0.05,
+    "control_low": 0.47,
+    "control_high": 0.53,
+    "original_b_max": 0.55,
+    "original_j_min": 0.95
+  }
+}

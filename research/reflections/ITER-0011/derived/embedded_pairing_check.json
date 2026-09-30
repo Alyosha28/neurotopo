@@ -1,0 +1,25 @@
+{
+  "scope": "POST_RUN_PAIRING_CHECK_NO_NEW_SAMPLES",
+  "checks": {
+    "16001": {
+      "all_four_train_stream_hashes_equal": true,
+      "eval_stream_hashes_equal": true,
+      "B_U_initial_state_identical": true
+    },
+    "16002": {
+      "all_four_train_stream_hashes_equal": true,
+      "eval_stream_hashes_equal": true,
+      "B_U_initial_state_identical": true
+    },
+    "16003": {
+      "all_four_train_stream_hashes_equal": true,
+      "eval_stream_hashes_equal": true,
+      "B_U_initial_state_identical": true
+    }
+  },
+  "unique_generated_training_sequences": 576000,
+  "training_model_presentations": 2304000,
+  "independently_generated_eval_sequences": 24576,
+  "evaluation_model_presentations": 98304,
+  "manifest_sha256": "ff0df3d498954b1d8d40a1e83e30d1f71d6a039d62fc35877b5a2f6fd279805c"
+}

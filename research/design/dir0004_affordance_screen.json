@@ -1,0 +1,217 @@
+{
+  "conditions": {
+    "hidden": {
+      "bootstrap": {
+        "ci95_high": 1.0000000000000007,
+        "ci95_low": 0.9999999999999994,
+        "draws": 2000
+      },
+      "empirical_endpoint_slope": 1.0,
+      "expanding_observed": false,
+      "fit": {
+        "degenerate_flat_fit": false,
+        "intercept_bits": 9.0,
+        "max_abs_residual_bits": 1.4210854715202004e-14,
+        "r_squared": 1.0,
+        "slope_bits_per_step": 1.0000000000000002
+      },
+      "required_bits_span": 60.0,
+      "rows": [
+        {
+          "T": 4,
+          "min_bits": 13
+        },
+        {
+          "T": 8,
+          "min_bits": 17
+        },
+        {
+          "T": 12,
+          "min_bits": 21
+        },
+        {
+          "T": 16,
+          "min_bits": 25
+        },
+        {
+          "T": 20,
+          "min_bits": 29
+        },
+        {
+          "T": 24,
+          "min_bits": 33
+        },
+        {
+          "T": 28,
+          "min_bits": 37
+        },
+        {
+          "T": 32,
+          "min_bits": 41
+        },
+        {
+          "T": 36,
+          "min_bits": 45
+        },
+        {
+          "T": 40,
+          "min_bits": 49
+        },
+        {
+          "T": 44,
+          "min_bits": 53
+        },
+        {
+          "T": 48,
+          "min_bits": 57
+        },
+        {
+          "T": 52,
+          "min_bits": 61
+        },
+        {
+          "T": 56,
+          "min_bits": 65
+        },
+        {
+          "T": 60,
+          "min_bits": 69
+        },
+        {
+          "T": 64,
+          "min_bits": 73
+        }
+      ]
+    },
+    "observed": {
+      "bootstrap": {
+        "ci95_high": 1.3177149978804697e-16,
+        "ci95_low": -1.3936321073696638e-16,
+        "draws": 2000
+      },
+      "empirical_endpoint_slope": 0.0,
+      "expanding_observed": true,
+      "fit": {
+        "degenerate_flat_fit": true,
+        "intercept_bits": 8.999999999999993,
+        "max_abs_residual_bits": 7.105427357601002e-15,
+        "r_squared": 1.0,
+        "slope_bits_per_step": 1.148165318365411e-16
+      },
+      "required_bits_span": 0.0,
+      "rows": [
+        {
+          "T": 4,
+          "min_bits": 9
+        },
+        {
+          "T": 8,
+          "min_bits": 9
+        },
+        {
+          "T": 12,
+          "min_bits": 9
+        },
+        {
+          "T": 16,
+          "min_bits": 9
+        },
+        {
+          "T": 20,
+          "min_bits": 9
+        },
+        {
+          "T": 24,
+          "min_bits": 9
+        },
+        {
+          "T": 28,
+          "min_bits": 9
+        },
+        {
+          "T": 32,
+          "min_bits": 9
+        },
+        {
+          "T": 36,
+          "min_bits": 9
+        },
+        {
+          "T": 40,
+          "min_bits": 9
+        },
+        {
+          "T": 44,
+          "min_bits": 9
+        },
+        {
+          "T": 48,
+          "min_bits": 9
+        },
+        {
+          "T": 52,
+          "min_bits": 9
+        },
+        {
+          "T": 56,
+          "min_bits": 9
+        },
+        {
+          "T": 60,
+          "min_bits": 9
+        },
+        {
+          "T": 64,
+          "min_bits": 9
+        }
+      ]
+    }
+  },
+  "config": {
+    "eps": 0.001,
+    "lam_u": 2.0,
+    "linear_check": "research/design/dir0004_precision_check.json",
+    "nonlinear_check": "research/design/dir0004_nonlinear_bitcheck.json",
+    "output": "research/design/dir0004_affordance_screen.json",
+    "seed": 0,
+    "sigma": 1e-06,
+    "t_max": 64,
+    "t_min": 4,
+    "t_step": 4
+  },
+  "declared": {
+    "eps": 0.001,
+    "lam_u": 2.0,
+    "predicted_bits_per_step_amplitude": 1.0,
+    "predicted_bits_per_step_variance": 2.0,
+    "sigma": 1e-06
+  },
+  "nonlinear_replication": {
+    "logistic": {
+      "bits_per_step": 1.0730088495575225,
+      "source": "research/design/dir0004_nonlinear_bitcheck.json",
+      "source_sha256": "1572a91079669068d3a8051ef4308e1ab588d8fb3b6658bad06c23e3aa4ae201",
+      "steps_per_bit": 0.9319587628865976
+    },
+    "tent": {
+      "bits_per_step": 1.029723991507431,
+      "source": "research/design/dir0004_nonlinear_bitcheck.json",
+      "source_sha256": "1572a91079669068d3a8051ef4308e1ab588d8fb3b6658bad06c23e3aa4ae201",
+      "steps_per_bit": 0.9711340206185567
+    }
+  },
+  "schema": "dir0004_affordance_screen_v1",
+  "self_checks": {
+    "control_verdict": "BOUNDED",
+    "hidden_relation_linear_within_one_bit": true,
+    "hidden_slope_matches_log2_lam_u": true,
+    "linear_check_sha256": "10a60177af2c123cb8abe06129d549e233170867f9047b27325974056676bf18",
+    "necessary_condition_hidden_mode": true,
+    "nonlinear_bits_per_step_within_15pct_of_one": true,
+    "observation_informative_enough_for_control": true,
+    "observed_control_bits_span_bounded": true,
+    "observed_control_not_unbounded": true,
+    "observed_control_slope_bounded": true,
+    "screen_valid": true
+  }
+}

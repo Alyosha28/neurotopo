@@ -1,0 +1,18 @@
+{
+  "experiment_id": "EXP-0020",
+  "version": "v2",
+  "review_type": "independent_static_prerun",
+  "scope": "The preregistered single-seed learned-transition pilot, implementation, engineering checks, and checkpoint replay. Static inspection only; no model or research data were executed by this reviewer.",
+  "checks": [
+    "Targets are generated from b0 XOR cumulative commands on separate train, monitor, and evaluation namespaces. Forward uses b0 only to encode H0; later transitions receive H and the current command, while rotation and leak matrices act only as environment perturbations. The engineering test independently recomputes targets and checks visible-prefix consistency.",
+    "RAW, INV, and REL all train encoder, controller, and learned Gram readout for 1000 Adam updates on the same generated training stream. Encoder and readout are reinitialized identically across arms; parameter counts are 502, 406, and 340 and the unequal transition forms are explicitly disclosed.",
+    "The rho small-norm branch has the specified continuous series and a 1.5 derivative at zero. The test checks its finite zero gradient, REL equivariance, INV input invariance, and nonzero gradients in each model component.",
+    "INV remains the strong control: it reads the same Gram-plus-command features as REL and produces a new canonical 3x2 state without retaining the old gauge. Its result is always evaluated and reported; neither its success nor failure gates REL execution.",
+    "Eight fixed cells, five monitoring checkpoints per arm, full-time/hold/flip metrics, and all arm outcomes are retained. The reproduction path reloads 15 checkpoints without training, regenerates all monitor/evaluation streams, independently recomputes XOR and scores, and checks 24 arm-cell outputs within the registered tolerances.",
+    "R/E matrices are environment inputs to the forward pass and never controller features. The Gram readout includes both column norms and their inner product, so independent rotation of column two is not guaranteed to defeat a learned norm encoding. Saved evaluation Gram tensors, learned readout coefficients, and final mean-logit separation terms are descriptive diagnostics, not a semantic or causal mechanism gate.",
+    "The training cap is 3000 research updates and the worker's shared run-plus-analysis cap is 600 seconds; the single replay has a 180-second timer. The engineering T1 fit is a separate fixed-root 150-update validation, not pilot evidence. A positive verdict is limited to REL single-seed learnability on three frozen IID metrics, with no method-superiority or Gate 1 inference."
+  ],
+  "blocking": [],
+  "verdict": "PASS_STATIC_PRERUN",
+  "limits": "This review establishes no empirical effect, passed engineering test, successful full run, or confirmed checkpoint reproduction. REL and RAW have residual updates while INV does not; any one-run difference also admits an optimization explanation."
+}

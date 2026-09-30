@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "artifact_commit": "907d7d67797d092e9abeb35b3bdd6907fbcc2fd8",
+  "immutable_files": 1080,
+  "immutable_bytes": 642272564,
+  "apfs_project_sha256_equal": true,
+  "commit_blobs_equal": true,
+  "source_commit": "1305b1516eaa38dd97f037b4d2e10a14d3ba2553",
+  "research_reruns": 0,
+  "independent_replays": 1,
+  "independent_replay_pass": true,
+  "general_suite_invocations": 1,
+  "scope": "All raw files unchanged after result review and archive; final reflection ledger saved separately."
+}

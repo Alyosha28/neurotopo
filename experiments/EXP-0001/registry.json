@@ -1,0 +1,68 @@
+{
+  "id": "EXP-0001",
+  "title": "Matched block vs random recurrence on delayed evidence",
+  "version": "v2",
+  "status": "COMPLETED",
+  "research_question": "Does block-independent recurrence improve overt delayed-evidence revision with matched effective parameters, allocated parameters, hidden state and dense execution?",
+  "prior_art_checked": [
+    "RIMs",
+    "TRNN",
+    "conn2res",
+    "FlyVis",
+    "CTM",
+    "ncps"
+  ],
+  "strongest_rejection_reason": "Caching values plus late selection suffices; internal competing hypotheses are not established.",
+  "hypothesis": "Block independent GRU improves joint pair accuracy by at least 0.03 vs matched random GRU in IID and OOD.",
+  "baselines": [
+    "gru_small",
+    "gru_wide",
+    "sparse_rnn",
+    "random_gru"
+  ],
+  "intervention": "Block-diagonal vs non-diagonally rewired recurrence; self-connections and row/column degrees fixed.",
+  "controls": [
+    "effective and allocated parameters",
+    "hidden state",
+    "dense linear operations",
+    "paired input streams",
+    "self-feedback",
+    "fixed optimizer and updates",
+    "shared test sets"
+  ],
+  "dataset": "delayed-evidence-v1; deterministic synthetic counterfactual pairs",
+  "metrics": [
+    "joint_pair_accuracy",
+    "pre_accuracy",
+    "confirm_accuracy",
+    "revise_accuracy",
+    "conditional revise",
+    "NLL",
+    "latency"
+  ],
+  "resource_matching": "Exact primary pair; contextual dense/tanh controls disclose mismatches.",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "commit": "60af9c6",
+  "config": "configs/exp0001_v2.json",
+  "result": "artifacts/EXP-0001/v2/analysis.json",
+  "interpretation": "All models near chance; pre-answer learning gate failed.",
+  "limitations": [
+    "synthetic cache/selection shortcut",
+    "single fixed schedule",
+    "joint graph/training seed variation",
+    "no semantic mechanism intervention"
+  ],
+  "decision": "INCONCLUSIVE",
+  "next_action": "EXP-0002 registered baseline learnability diagnosis; no new architectural mechanism."
+}

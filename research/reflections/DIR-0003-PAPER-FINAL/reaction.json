@@ -1,0 +1,102 @@
+{
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "终审判 PAPER_NEEDS_MAJOR_REVISION（10 项：5 high / 4 medium / 1 low，全部 accept）。核心是两类可比性仍未解决：① 观测是 34–906 个候选上的极大值，而零是固定组织下的单次抽取（I1），且 84 对并非独立（I2，有效自由度约 28）；② §3.1 的决定性比较分位点错位（I3），同分位点下观测约为零的 1.5–1.7 倍而非'落在零的 p90'。另有：四格零未入账本（I5）、两档与三档带混称（I6）、tanh 两条账本记录矛盾（I7）、'极值选择'缺检验（I8）、typical-null 比值非检验（I9）、程序性主张依赖包外记录（I10）。已逐条接受并写入论文与账本 v5；下一轮必做**选择匹配零**（对同一匹配族做同规模极大、并以随机选择准则作对照），在此之前论文的判词体系保持'重叠/不可分辨'且不主张任何几何差异。",
+  "packet_sha256": "8da1de0fdb5e7735dd1acaeafbff0c7ff79243123b404531afaa6217df0e2d42",
+  "responses": [
+    {
+      "action": "接受。论文已把该对比降级为描述性，并明确写出'极大值不可用单次抽取的零检验'；需要的是**选择匹配零**（对同一族做同规模极大），列入下一轮必做项。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I1",
+      "reason": "成立：零的两臂组织完全相同（族规模 1、无选择），而观测是 34–906 个候选上的极值选择，两者不是同一统计量。"
+    },
+    {
+      "action": "接受。下一轮按 γ 分层报告零（每层 n=28）并给有效自由度；本轮已在论文中加入该限制说明。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I2",
+      "reason": "成立且严重：84 对并非独立——8 个 seed 在同一 γ 下的无序对最多 28，84 = 28×3（跨 γ 重复使用同一对），有效独立数被高估约 3 倍。"
+    },
+    {
+      "action": "接受。已改写为同分位点比较，并把判词表述从'落在零的 p90 附近'改为'约为零的 1.5–1.7 倍，落在重叠区'。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I3",
+      "reason": "成立：§3.1 用观测**中位数** `0.0097` 对零的 **p90** `0.0093`，分位点错位；同分位点比较应为 中位 0.0097 vs 0.0057、p90 0.0143 vs 0.0093，即观测约为零的 1.5–1.7 倍。"
+    },
+    {
+      "action": "接受。删除旧判词列，只在出处说明中提及被取代的规则；R2 段按新口径重写。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I4",
+      "reason": "成立：§3.2 表仍保留 superseded 判词列、§4 R2 段仍有旧口径表述。"
+    },
+    {
+      "action": "接受。重建账本 v5，纳入四格零（含 φ=0.7/0.3），并说明同一份零同时用于相邻与分离几何。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/dir0003_null_contrast.json",
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I5",
+      "reason": "成立：packet 的申报账本只有 φ=0.5 两格的零，而论文引用了四格零。"
+    },
+    {
+      "action": "接受。分别标注：冻结规则用两档带；三档全对带是事后加宽（审查 I5）的结果，不得混称。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I6",
+      "reason": "成立：冻结规则用的是 |γ=0.01−0.03| 两档带（中位 0.061），而摘要/§3.4 把'旧阈值'写成三档全对带（中位 0.131），两者是不同定义。"
+    },
+    {
+      "action": "接受。保留两条但显式标注 same_rule 为取代项、nested_matched 为被取代项，并说明选择规则差异。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/dir0003_paper_claims_v3.json",
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I7",
+      "reason": "成立：账本中 tanh 有两条互相矛盾的记录（nested_matched 与 same_rule，选中成员 counts 不同）。"
+    },
+    {
+      "action": "接受。已把它降级为'待检验的解释'，并把选择匹配零（随机选择准则下的同规模极大）列为下一轮必做计算。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I8",
+      "reason": "'大值来自极值选择'确为断言而非检验：全文没有 max-of-k 零分布。"
+    },
+    {
+      "action": "接受。改写为描述性对比，明确它不是假设检验；正式检验需要选择匹配零。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I9",
+      "reason": "'typical vs 零'的比值不是可识别性检验（零在构造上固定组织，其期望为 0）。"
+    },
+    {
+      "action": "接受。下一版 packet 将自带冻结规则原文与所选历史记录；本轮如实记录该不可核验性。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md",
+        "research/design/dir0003_paper_claims_v3.json"
+      ],
+      "id": "I10",
+      "reason": "关键程序性主张依赖包外记录（决定0077、v1 的 14 项审查、复现清单与图均不在包内）。"
+    }
+  ],
+  "review_sha256": "e92d4fd226e6f172732f1378ad24bcf90b125ee0a4bec395e33570dc9c432831",
+  "schema_version": 1
+}

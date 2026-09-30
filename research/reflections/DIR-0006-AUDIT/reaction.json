@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "046cfb67f8801af1b4fbd4241698d360a2241e7f7b300b57ecc905e261723140",
+  "review_sha256": "df8ff575a39ca9e16cbeafd2139df7d76eb1702dc3b98343d30285d931ade0df",
+  "responses": [
+    {
+      "id": "DIR6-R01",
+      "disposition": "accept",
+      "reason": "核对冻结原件后确认该范围或归因错误。",
+      "action": "v1逐项更正；撤回统一标签，维持不搜索的当前决定，不把未知作不可能。",
+      "evidence_paths": [
+        "research/evidence/DIR-0006_c8_registerability_audit_v1.md"
+      ]
+    },
+    {
+      "id": "DIR6-R02",
+      "disposition": "accept",
+      "reason": "核对冻结原件后确认该范围或归因错误。",
+      "action": "v1逐项更正；撤回统一标签，维持不搜索的当前决定，不把未知作不可能。",
+      "evidence_paths": [
+        "research/evidence/DIR-0006_c8_registerability_audit_v1.md"
+      ]
+    },
+    {
+      "id": "DIR6-R03",
+      "disposition": "accept",
+      "reason": "核对冻结原件后确认该范围或归因错误。",
+      "action": "v1逐项更正；撤回统一标签，维持不搜索的当前决定，不把未知作不可能。",
+      "evidence_paths": [
+        "research/evidence/DIR-0006_c8_registerability_audit_v1.md"
+      ]
+    },
+    {
+      "id": "DIR6-R04",
+      "disposition": "accept",
+      "reason": "核对冻结原件后确认该范围或归因错误。",
+      "action": "v1逐项更正；撤回统一标签，维持不搜索的当前决定，不把未知作不可能。",
+      "evidence_paths": [
+        "research/evidence/DIR-0006_c8_registerability_audit_v1.md"
+      ]
+    },
+    {
+      "id": "DIR6-R05",
+      "disposition": "accept",
+      "reason": "核对冻结原件后确认该范围或归因错误。",
+      "action": "v1逐项更正；撤回统一标签，维持不搜索的当前决定，不把未知作不可能。",
+      "evidence_paths": [
+        "research/evidence/DIR-0006_c8_registerability_audit_v1.md"
+      ]
+    }
+  ],
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "仅对一次性v1更正进行独立复核；不搜索、不训练，不改变Gate1。"
+}

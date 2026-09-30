@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "7cc94cf8cfc6e4be84c37eecb56ac004601a74ee546193fb4ebaacbc16e33e40",
+  "reviewer": {
+    "model": "agent-default (independent subagent; provider model id not exposed to orchestrator)",
+    "effort": "agent-default",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "verification-wrong-experiment",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "独立复核在干净源码副本重放 Part 1 与 Part 2 各 1 个运行（比较参数/数据/预测哈希与指标）。",
+        "Fresh-process retrain replay of all five EXP-0034 comparison seeds and one EXP-0033 seed; no retuning or reselection.",
+        "-6.238281250000002",
+        "载体独立确认（fresh seed 29301–29303）选出最强合格控制 `INV-COMP(w96b2)`（均值 0.6978）；对照（fresh seed 29311–29315）中 `SC-REL-v4`（664 参数、1161 算子）均值 0.7848、控制 0.6723、`EXTRA_V4` 0.7056，效应 +11.26pp、分层 bootstrap 95% 区间 [+0.35, +23.69]pp。"
+      ],
+      "problem": "The fresh-process replay record replays five EXP-0034 seeds plus one EXP-0033 seed, checks carrier w48b2, and reports a recorded effect of -6.24pp, whereas the decision reports +11.26pp for EXP-0033's selected carrier w96b2; the record therefore verifies a different experiment and contradicts rather than confirms the EXP-0033 result.",
+      "why_it_matters": "The design requires replay of Part 1 and Part 2, so the SUPPORTED verdict lacks the promised independent verification, and the only fresh matched-compute evidence in the packet points the opposite way; the final decision should be revised or explicitly reconciled with EXP-0034.",
+      "falsifiable_check": "Replay EXP-0033's carrier seeds 29301-29303 and comparison seeds 29311-29315 with w96b2 and compare parameter, data and prediction hashes and metrics; if this reproduces +11.26pp and output 1 is confirmed to be a separate EXP-0034 record, the concern is resolved."
+    },
+    {
+      "id": "compute-mismatch-unresolved",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "- 选择：在所有合格配置中取**均值最高者**（即对候选最不利的强控制），并列时取推理算子量更接近候选 1161 者，再并列取参数少者。",
+        "- 资源：披露三臂参数、推理算子量（候选 1161；控制按菜单）、训练算子量估计、状态值、每 seed 实测时间；匹配口径按 `ARCH-MATCH-v1` 声明推理执行计算为主轴并报告全部轴。",
+        "控制的推理算子量是候选的 1.82 倍，不满足 `ARCH-MATCH-v1` 的 ≤10% 匹配口径；样本仅 5 seed、单一合成任务；区间下界仅 +0.35pp；`EXTRA_V4`（同监督、无修正）也达 0.7056，提示差异可能主要来自 seed 级波动。",
+        "control_parameters"
+      ],
+      "problem": "The selection rule was applied as written (w96b2 had the highest qualified mean, 0.6978), but it imposes no compute-match constraint, so the primary SEL_INV contrast is w96b2 at 2115 inference ops versus the candidate at 1161 (1.82x) and `control_parameters` is null; the packet's own matched follow-up with w48b2 (1059 ops) reports -6.24pp.",
+      "why_it_matters": "Because the main +11.26pp effect is not compute-matched and the matched-compute replay is negative, the exploratory architecture claim cannot be treated as supported even as a candidate signal without the promised matched reproduction.",
+      "falsifiable_check": "Recompute the paired effect with a control within 10% of 1161 ops (w48b2 at 1059) on the same task and seeds; if the advantage persists, the resource confound is not material."
+    },
+    {
+      "id": "extra-arm-and-seed-variance",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "- 臂：`CAND_V4`＝`SC-REL-v4`；`SEL_INV`＝Part 1 选定控制（同行预算、同任务、同评估流）；`EXTRA_V4`＝与 `CAND_V4` 同编码器/控制器/同分支监督但不施加修正的基础 REL。",
+        "- 主端点：`meaningful_accuracy`（只统计 `r∈[3,12]`）。效应＝`mean(CAND_V4 − SEL_INV)`（配对，按 seed）；不确定度用**分层 bootstrap**（先重采样 seed，再在 seed 内重采样 1024 条评估样本，4000 次）。",
+        "0.70560546875",
+        "0.97763671875"
+      ],
+      "problem": "EXTRA_V4 is reported only as a mean (0.7056) with no paired CAND_V4-EXTRA_V4 effect or CI, while the pre-registered uncertainty covers only CAND_V4-SEL_INV; with five seeds and CAND_V4 ranging from 0.6396 to 0.9776, both the primary effect and the correction-specific effect are dominated by seed-level variance.",
+      "why_it_matters": "EXTRA_V4 was included to separate the V4 supervision/correction from the candidate, so the absence of a paired contrast leaves the mechanism untested and the SUPPORTED label potentially driven by one or two favorable seeds.",
+      "falsifiable_check": "Compute paired CAND_V4-EXTRA_V4 differences and a hierarchical bootstrap or leave-one-seed-out interval on the five seeds; if the interval excludes zero and survives dropping seeds 29312 and 29314, the concern is resolved."
+    },
+    {
+      "id": "verdict-threshold-marginal",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "| Part 2 效应 ≥3pp、bootstrap 95% 下界 >0、且控制在 5 seed 上仍在带内 | `SUPPORTED / EXPLORATORY_ARCHITECTURE_ADVANTAGE`（**不是 A2 通过**；需独立复现后才可申请 A2） |",
+        "| 其余（|效应|<3pp 或区间含 0） | `FALSIFIED / NO_EXPLORATORY_ADVANTAGE` |",
+        "11.26",
+        "0.35"
+      ],
+      "problem": "The frozen SUPPORTED row was applied literally: +11.26pp clears 3pp on the point estimate and +0.35pp clears zero on the bootstrap lower bound, but the interval [+0.35,+23.69]pp includes effects below the 3pp delta and near zero, and the action gives no explicit per-seed band-check components or bootstrap distribution.",
+      "why_it_matters": "The row's 3pp threshold can be read as establishing a 3pp architecture advantage at 95%, while the interval is compatible with a much smaller effect; the packet's own caveats and the negative matched replay reinforce that this is a weak, replication-dependent signal.",
+      "falsifiable_check": "Recompute the hierarchical bootstrap interval for the paired CAND_V4-SEL_INV effect and the per-seed band-check components; if the lower bound exceeds +3pp or the matched replication is positive, the concern is resolved."
+    }
+  ],
+  "overall_assessment": "探索性判词按冻结行字面成立，但四项问题成立：验证记录覆盖的是复现实验、匹配口径未满足且匹配复现为负、无预注册的 EXTRA 对照、区间不支持 3pp 主张。"
+}

@@ -1,0 +1,23 @@
+{
+  "scientific_decision": "INCONCLUSIVE",
+  "scope": "registered >0.05 nat matched block benefit at d4",
+  "reproduction_scope": "seed9401 paired three-model subset",
+  "evidence": [
+    {
+      "path": "research/iterations/ITER-0007/review.md",
+      "sha256": "157b23565ec1f8d5da27ad8b851be3fa932957d2f3fc60663cded103067d8b31"
+    },
+    {
+      "path": "docs/EXP-0009_reproduction.md",
+      "sha256": "87ac9bae17010d107a3ed534b74254c317845337c04e587f331bd8f6e6c2482d"
+    },
+    {
+      "path": "artifacts/EXP-0009/v1/analysis.json",
+      "sha256": "210a43d0493cc1949127174e669e561eed353d7dab77a36358a221ed3fab3f54"
+    },
+    {
+      "path": "artifacts/EXP-0009/v1/manifest.json",
+      "sha256": "7a90b2e3212d081cfa6da5251367d2a334cdbf25f1ca48cfb0e1d5bcefdd20d2"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# ITER-0010 操作留痕
+
+运行前：原v1账本与v2代码不兼容；新增显式有授权依据的单向迁移，在复制品验证原事件字节前缀/旧current保持，再在live追加event-000088。源码审查指出4项实现缺口，全部在研究根调用前修复，并由新上下文接受；全套250项工程检查通过。
+
+审查JSON的两处机械格式修正已保存原始副本：SOURCE的SRC-001引文跨design/action，source标签改为both；SOURCE-FIX的额外解释字段原样折入overall_assessment。没有改问题或判词。SOURCE-FIX第一次标准格式校验失败，修正后校验通过并另提交，正式运行使用后一冻结提交e8b4d3c，未用未过格式校验的提交运行。
+
+结果归档时一次误用系统python导入neurotopo，得到ModuleNotFoundError；随后过早推进DECIDED被状态机拒绝（仍在ANALYZED）。修正为已验证外部解释器后先记录REVIEWED，再DECIDED；未重跑科学样本、未改结果或阈值。此操作失败不属于研究worker故障，raw/analysis的SHA保持原值。
+
+正式运行只有一次；16,384条研究序列与bootstrap来源在manifest；独立复核只重算同一原数组，不生成额外研究样本。研究更新0，但仓库回归测试包含历史模型的合成优化夹具，工程与科学成本分别描述。原始数据未覆盖。
+
+本执行说明是主代理的流程补充记录；不追认为早先冻结packet已包含的证据。独立任务后反思的输入以其packet为准。

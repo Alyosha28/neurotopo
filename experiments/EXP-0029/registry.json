@@ -1,0 +1,70 @@
+{
+  "experiment": "EXP-0029",
+  "active_version": "v1",
+  "versions": {
+    "v1": "COMPLETED"
+  },
+  "gate": "A1_LEARNING_QUALIFICATION",
+  "title": "ARCH-0001 learning-qualification replication over 12 fresh seeds",
+  "protocol": "experiments/EXP-0029/v1.md",
+  "config": "configs/exp0029_v1.json",
+  "implementation": "src/neurotopo/arch0001_learning_qualification.py",
+  "frozen_module": "src/neurotopo/arch0001_core.py",
+  "tests": "tests/test_arch0001_learning_qualification.py",
+  "output": "artifacts/EXP-0029/v1",
+  "seeds": [
+    28201,
+    28202,
+    28203,
+    28204,
+    28205,
+    28206,
+    28207,
+    28208,
+    28209,
+    28210,
+    28211,
+    28212
+  ],
+  "arms": [
+    "CAND",
+    "EXTRA_SUP",
+    "INV_COMP"
+  ],
+  "runs": 36,
+  "training_updates": 36000,
+  "decision": "PARTIALLY_SUPPORTED",
+  "substatus": "LEARNING_QUALIFICATION_AT_BUDGET",
+  "passes": {
+    "CAND": "12/12",
+    "EXTRA_SUP": "12/12",
+    "INV_COMP-w32-b1": "12/12"
+  },
+  "combined_with_exp0028": {
+    "CAND": "14/15",
+    "INV_COMP": "15/15",
+    "only_failure": "seed28103 HOLD_COLLAPSE"
+  },
+  "report": "research/evidence/EXP-0029/report.md",
+  "verification": "research/evidence/EXP-0029/verification.json",
+  "provenance_check": "research/evidence/EXP-0029/provenance_check.json",
+  "decision_record": "research/decisions/0104_exp0029_learning_qualification.md",
+  "provenance_note": "git commit f5a6e2c, git_dirty=true (active git metadata outside the writable sandbox); engineering-only analysis fixes documented in provenance_check.json",
+  "guard": "A1 gate still not passed (no non-ceiling qualified task); A2-A6 not evaluated; old Gate 1 unchanged",
+  "reflection": {
+    "packet": "research/reflections/EXP-0029/packet.json",
+    "review": "research/reflections/EXP-0029/review.json",
+    "reaction": "research/reflections/EXP-0029/reaction.json",
+    "execution": "research/reflections/EXP-0029/execution.md",
+    "issues": 6,
+    "decision_impact": "UNCHANGED",
+    "accepted": [
+      "merge-prior-seeds",
+      "frozen-hash-chain",
+      "run-phase-deviation",
+      "replay-plan-deviation",
+      "all-pass-row-gap",
+      "per-seed-diagnostics-gap"
+    ]
+  }
+}

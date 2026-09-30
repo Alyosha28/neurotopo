@@ -1,0 +1,28 @@
+{
+  "numerical_replay_pass": true,
+  "frozen_replay_module_pass": false,
+  "models": 24,
+  "eval_lengths": [
+    32,
+    128
+  ],
+  "max_posterior_error": 7.771561172376096e-16,
+  "max_logit_error": 0.0,
+  "max_kl_error": 3.1086244689504383e-15,
+  "supplemental_replay_seconds": 30.213309500000378,
+  "cumulative_replay_seconds": "NOT_RECORDED",
+  "cumulative_300_second_budget_compliance": "UNVERIFIABLE",
+  "deviations": [
+    "Original replay Linear input shape caused float32 rounding beyond tolerance; original failure retained and supplemental exact-forward replay passed without loosening tolerance.",
+    "First supplemental JSON serialization failed; incomplete output was removed and not preserved. Failure documented in independent review."
+  ],
+  "research_run_seconds": 75.19190891599987,
+  "research_updates": 18000,
+  "candidate_updates": 0,
+  "analysis_decision": "INCONCLUSIVE",
+  "analysis_substatus": "LEARNING_FAILURE",
+  "supplemental_replay_sha256": "8d1dbac7c6ce19f42534f5fd72cdf66954efba99e5ffe574d43346c27ea3b873",
+  "independent_science_review_sha256": "dc43a057259c0e68a92b5dc6bbe50e075c0f56bb19524ce7b00a557deea88956",
+  "script_sha256": "fa89883740b504f4f47cd86d8d28cc9b5515076e98c889d6d97687526fcb541f",
+  "scope": "All fixed checkpoint predictions and oracle numerics verified; no retraining; cumulative replay process compliance not certified."
+}

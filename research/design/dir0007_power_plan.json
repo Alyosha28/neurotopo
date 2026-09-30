@@ -1,0 +1,168 @@
+{
+  "assumed_all_effects_lower": 0.04,
+  "assumed_sd_upper": 0.04,
+  "assumptions": [
+    "IID_normal_seed_differences",
+    "each_SD_at_most_0.04",
+    "each_effect_at_least_0.04"
+  ],
+  "assumptions_empirically_verified": false,
+  "candidate_samples": 0,
+  "comparisons": 4,
+  "conditional_check_pass": true,
+  "critical_t": 2.2682874285459267,
+  "decision_cases": [
+    {
+      "actual": "SUPPORTED_LOCAL_ONLY",
+      "expected": "SUPPORTED_LOCAL_ONLY",
+      "lower": [
+        0.03,
+        0.03,
+        0.03,
+        0.03
+      ],
+      "options": {},
+      "upper": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ]
+    },
+    {
+      "actual": "FALSIFIED_CONJUNCTION",
+      "expected": "FALSIFIED_CONJUNCTION",
+      "lower": [
+        0.01,
+        0.03,
+        0.03,
+        0.03
+      ],
+      "options": {},
+      "upper": [
+        0.02,
+        0.04,
+        0.04,
+        0.04
+      ]
+    },
+    {
+      "actual": "PARTIALLY_SUPPORTED",
+      "expected": "PARTIALLY_SUPPORTED",
+      "lower": [
+        0.03,
+        0.015,
+        0.015,
+        0.015
+      ],
+      "options": {},
+      "upper": [
+        0.04,
+        0.025,
+        0.025,
+        0.025
+      ]
+    },
+    {
+      "actual": "INCONCLUSIVE",
+      "expected": "INCONCLUSIVE",
+      "lower": [
+        0.015,
+        0.015,
+        0.015,
+        0.015
+      ],
+      "options": {},
+      "upper": [
+        0.025,
+        0.025,
+        0.025,
+        0.025
+      ]
+    },
+    {
+      "actual": "INCONCLUSIVE_PRECISION",
+      "expected": "INCONCLUSIVE_PRECISION",
+      "lower": [
+        0.021,
+        0.021,
+        0.021,
+        0.021
+      ],
+      "options": {},
+      "upper": [
+        0.06,
+        0.06,
+        0.06,
+        0.06
+      ]
+    },
+    {
+      "actual": "INCONCLUSIVE_GATES",
+      "expected": "INCONCLUSIVE_GATES",
+      "lower": [
+        0.03,
+        0.03,
+        0.03,
+        0.03
+      ],
+      "options": {
+        "gates": false
+      },
+      "upper": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ]
+    },
+    {
+      "actual": "INCONCLUSIVE_EXECUTION",
+      "expected": "INCONCLUSIVE_EXECUTION",
+      "lower": [
+        0.03,
+        0.03,
+        0.03,
+        0.03
+      ],
+      "options": {
+        "complete": false
+      },
+      "upper": [
+        0.04,
+        0.04,
+        0.04,
+        0.04
+      ]
+    },
+    {
+      "actual": "FALSIFIED_CONJUNCTION",
+      "expected": "FALSIFIED_CONJUNCTION",
+      "lower": [
+        0.02,
+        0.02,
+        0.02,
+        0.02
+      ],
+      "options": {},
+      "upper": [
+        0.02,
+        0.02,
+        0.02,
+        0.02
+      ]
+    }
+  ],
+  "delta": 0.02,
+  "df": 127,
+  "family_alpha": 0.05,
+  "joint_power_lower_bound_under_assumptions": 0.9903948825821212,
+  "maximum_halfwidth": 0.01,
+  "mean_failure_upper": 0.0023388674905235884,
+  "n": 128,
+  "precision_failure_upper": 6.241186394612782e-05,
+  "research_updates": 0,
+  "sample_sd_cap": 0.04987775515838111,
+  "scope": "CONDITIONAL_PLANNING_NOT_EMPIRICAL_POWER",
+  "source_sha256": "4e3a40a6b23fa586df693addf662705614fa761e89b7ecc6c2efb8d24b42fd77"
+}

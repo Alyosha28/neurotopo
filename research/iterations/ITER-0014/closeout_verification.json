@@ -1,0 +1,18 @@
+{
+  "pass_": true,
+  "raw_files_verified": 34,
+  "parent_checkpoints_unchanged": 6,
+  "existing_probe_files_unchanged": 6,
+  "tests_passed": 280,
+  "source_suite_matches": true,
+  "phase": "DECIDED",
+  "iteration": "ITER-0014",
+  "decision": "INCONCLUSIVE",
+  "substatus": "NO_NEW_EXACT_MERGER_OBSERVED",
+  "reflection_issues": 0,
+  "run_analysis_seconds": 4.374951457999487,
+  "audit_outer_seconds": 2.218119000000115,
+  "gru_updates": 0,
+  "probe_updates": 0,
+  "execution_commit": "65209d9eaf2c44fbc69567e43a2ca353352e11de"
+}

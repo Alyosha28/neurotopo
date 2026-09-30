@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "neurotopo"
+version = "0.1.0"
+description = "Falsifiable topology and recurrent computation experiments"
+requires-python = ">=3.13,<3.14"
+dependencies = ["torch==2.8.0", "numpy==2.3.3"]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2", "pyyaml==6.0.2"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/neurotopo"]

@@ -1,0 +1,242 @@
+{
+  "note": "Lean view of artifacts/EXP-0032/v2/analysis.json (v2 is the authoritative rerun after the v1 defect; the protocol addendum documents the defect). Monitor data omitted; all numbers and flags unchanged.",
+  "experiment": "EXP-0032",
+  "version": "v2",
+  "gate": "A2_TASK_CARRIER",
+  "decision": "INCONCLUSIVE",
+  "substatus": "QUALIFICATION_NOT_REPRODUCED",
+  "scope": "Control-side task-carrier sweep only; no candidate run, no A2 effect, no A1 or old Gate 1 credit.",
+  "sweep": {
+    "selected": {
+      "d": 2,
+      "width": 48,
+      "blocks": 2,
+      "budget": 2000,
+      "meaningful": 0.7064
+    },
+    "stage_a": [
+      {
+        "d": 2,
+        "w": 32,
+        "b": 1,
+        "meaningful": 0.6058,
+        "params": 406,
+        "ops": 355
+      },
+      {
+        "d": 2,
+        "w": 32,
+        "b": 2,
+        "meaningful": 1.0,
+        "params": 796,
+        "ops": 707
+      },
+      {
+        "d": 2,
+        "w": 32,
+        "b": 3,
+        "meaningful": 0.9139,
+        "params": 1186,
+        "ops": 1059
+      },
+      {
+        "d": 2,
+        "w": 48,
+        "b": 1,
+        "meaningful": 0.6058,
+        "params": 598,
+        "ops": 531
+      },
+      {
+        "d": 2,
+        "w": 48,
+        "b": 2,
+        "meaningful": 0.7064,
+        "params": 1180,
+        "ops": 1059
+      },
+      {
+        "d": 2,
+        "w": 48,
+        "b": 3,
+        "meaningful": 0.6784,
+        "params": 1762,
+        "ops": 1587
+      },
+      {
+        "d": 2,
+        "w": 64,
+        "b": 1,
+        "meaningful": 0.608,
+        "params": 790,
+        "ops": 707
+      },
+      {
+        "d": 2,
+        "w": 64,
+        "b": 2,
+        "meaningful": 0.7455,
+        "params": 1564,
+        "ops": 1411
+      },
+      {
+        "d": 2,
+        "w": 64,
+        "b": 3,
+        "meaningful": 0.4968,
+        "params": 2338,
+        "ops": 2115
+      },
+      {
+        "d": 2,
+        "w": 96,
+        "b": 1,
+        "meaningful": 0.6058,
+        "params": 1174,
+        "ops": 1059
+      },
+      {
+        "d": 2,
+        "w": 96,
+        "b": 2,
+        "meaningful": 0.6827,
+        "params": 2332,
+        "ops": 2115
+      },
+      {
+        "d": 2,
+        "w": 96,
+        "b": 3,
+        "meaningful": 0.6992,
+        "params": 3490,
+        "ops": 3171
+      },
+      {
+        "d": 3,
+        "w": 32,
+        "b": 1,
+        "meaningful": 0.6162,
+        "params": 406,
+        "ops": 355
+      },
+      {
+        "d": 3,
+        "w": 32,
+        "b": 2,
+        "meaningful": 0.6162,
+        "params": 796,
+        "ops": 707
+      },
+      {
+        "d": 3,
+        "w": 32,
+        "b": 3,
+        "meaningful": 0.6359,
+        "params": 1186,
+        "ops": 1059
+      },
+      {
+        "d": 3,
+        "w": 48,
+        "b": 1,
+        "meaningful": 0.6162,
+        "params": 598,
+        "ops": 531
+      },
+      {
+        "d": 3,
+        "w": 48,
+        "b": 2,
+        "meaningful": 0.6145,
+        "params": 1180,
+        "ops": 1059
+      },
+      {
+        "d": 3,
+        "w": 48,
+        "b": 3,
+        "meaningful": 0.6009,
+        "params": 1762,
+        "ops": 1587
+      },
+      {
+        "d": 3,
+        "w": 64,
+        "b": 1,
+        "meaningful": 0.6162,
+        "params": 790,
+        "ops": 707
+      },
+      {
+        "d": 3,
+        "w": 64,
+        "b": 2,
+        "meaningful": 0.6188,
+        "params": 1564,
+        "ops": 1411
+      },
+      {
+        "d": 3,
+        "w": 64,
+        "b": 3,
+        "meaningful": 0.6182,
+        "params": 2338,
+        "ops": 2115
+      },
+      {
+        "d": 3,
+        "w": 96,
+        "b": 1,
+        "meaningful": 0.6162,
+        "params": 1174,
+        "ops": 1059
+      },
+      {
+        "d": 3,
+        "w": 96,
+        "b": 2,
+        "meaningful": 0.5849,
+        "params": 2332,
+        "ops": 2115
+      },
+      {
+        "d": 3,
+        "w": 96,
+        "b": 3,
+        "meaningful": 0.6143,
+        "params": 3490,
+        "ops": 3171
+      }
+    ],
+    "stage_b": []
+  },
+  "confirm": {
+    "selected": {
+      "width": 48,
+      "blocks": 2,
+      "budget": 2000
+    },
+    "seeds": [
+      29101,
+      29102,
+      29111,
+      29112,
+      29113
+    ],
+    "accuracy": [
+      0.7064453125,
+      0.56591796875,
+      0.694140625,
+      0.61123046875,
+      0.649609375
+    ],
+    "mean": 0.6455,
+    "min": 0.5659,
+    "max": 0.7064,
+    "learn": false,
+    "nonceiling": true,
+    "memoryless_max": 0.5099609375,
+    "oracle_min": 1.0,
+    "reproduced": false
+  }
+}

@@ -1,0 +1,292 @@
+{
+  "rows": [
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "L": 0.08176892428909355,
+      "A": 1.0,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 0.012300925370890115,
+        "D_rel": 0.002012009525549803,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_CYCLE",
+      "L": 0.07556495084730491,
+      "A": 1.0,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 7.970480497832e-09,
+        "D_rel": 1.2223535142272e-09,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_EXTRA",
+      "L": 0.07836933453875762,
+      "A": 1.0,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 0.006626001096448508,
+        "D_rel": 0.0010477786739924652,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "L": 0.06271234827728463,
+      "A": 1.0,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 3.120017533220221e-08,
+        "D_rel": 3.5108196142336607e-09,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "L": 0.06652388311377665,
+      "A": 1.0,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 0.000200461928010931,
+        "D_rel": 2.79499348171779e-05,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_CYCLE",
+      "L": 0.10615707979732446,
+      "A": 1.0,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 0.004661043101141904,
+        "D_rel": 0.0008995152766164393,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_EXTRA",
+      "L": 0.3920906870806729,
+      "A": 0.7509765625,
+      "iid_pass": false,
+      "diagnostic": {
+        "D": 1.618237729184813,
+        "D_rel": 0.4105568062671718,
+        "current_accuracy": 0.75
+      }
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "L": 0.06684055607383113,
+      "A": 1.0,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 3.008815419036637e-11,
+        "D_rel": 4.215404786540666e-12,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "L": 0.0570620524428692,
+      "A": 1.0,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 1.6413654879698925e-08,
+        "D_rel": 2.0425165987343502e-09,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_CYCLE",
+      "L": 0.060719668756042455,
+      "A": 1.0,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 0.014378286564421083,
+        "D_rel": 0.0018394271953120897,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_EXTRA",
+      "L": 0.48134755092152776,
+      "A": 0.75,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 4.188584146191943e-09,
+        "D_rel": 5.313855221755396e-10,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "L": 0.05975292270527146,
+      "A": 1.0,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 8.382583516208797e-10,
+        "D_rel": 1.0792835636923944e-10,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "L": 0.45249109135953736,
+      "A": 0.7451171875,
+      "iid_pass": false,
+      "diagnostic": {
+        "D": 0.34570096870830497,
+        "D_rel": 0.09171450876334636,
+        "current_accuracy": 0.765625
+      }
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_CYCLE",
+      "L": 0.43810367037928516,
+      "A": 0.7565104166666666,
+      "iid_pass": false,
+      "diagnostic": {
+        "D": 0.6720485272527609,
+        "D_rel": 0.19430193561834308,
+        "current_accuracy": 0.8359375
+      }
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_EXTRA",
+      "L": 0.10005287557595752,
+      "A": 0.9713541666666666,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 0.0020907209032989815,
+        "D_rel": 0.0002542469726820696,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "L": 0.06410627425599091,
+      "A": 1.0,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 3.214470298829042e-07,
+        "D_rel": 3.9270568566010314e-08,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "L": 0.5809598523374504,
+      "A": 0.75,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 4.875771015822039e-07,
+        "D_rel": 6.713184111840386e-08,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_CYCLE",
+      "L": 0.2287028046647485,
+      "A": 0.8935546875,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 1.166927530382722e-06,
+        "D_rel": 1.4894247298753298e-07,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_EXTRA",
+      "L": 0.5966548681812915,
+      "A": 0.7434895833333334,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 3.679933799904944e-07,
+        "D_rel": 4.8421304710625615e-08,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "L": 0.061607813593541214,
+      "A": 1.0,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 1.4380652224588175e-10,
+        "D_rel": 1.892834143116787e-11,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "L": 0.09409356754011673,
+      "A": 1.0,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 4.29644707627963e-05,
+        "D_rel": 7.762463385499801e-06,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_CYCLE",
+      "L": 0.7642512151828376,
+      "A": 0.5032552083333334,
+      "iid_pass": false,
+      "diagnostic": {
+        "D": 0.7550812960749642,
+        "D_rel": 0.3199874102234645,
+        "current_accuracy": 0.7265625
+      }
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_EXTRA",
+      "L": 0.7180318364606252,
+      "A": 0.6861979166666666,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 0.006097676002775332,
+        "D_rel": 0.0007385744024572592,
+        "current_accuracy": 1.0
+      }
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "L": 0.06267976695947841,
+      "A": 1.0,
+      "iid_pass": true,
+      "diagnostic": {
+        "D": 2.741563924768542e-07,
+        "D_rel": 3.452955694347666e-08,
+        "current_accuracy": 1.0
+      }
+    }
+  ]
+}

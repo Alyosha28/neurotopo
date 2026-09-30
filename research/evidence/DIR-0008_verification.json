@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "scope": "Documentation, finite algebra, source manifest and reflection only; no model tests or training",
+  "loop_experiment": "EXP-0016",
+  "loop_phase": "DECIDED",
+  "reflection_issues": 1,
+  "reflection_accepted": 1,
+  "files": [
+    {
+      "path": "research/design/dir0008_research_protocol.md",
+      "sha256": "38b2907f7a6cdae1d984363f87c3390fa13fa384d7e088cfdb770db31ec2a801"
+    },
+    {
+      "path": "research/design/dir0008_order_observation_v0.md",
+      "sha256": "543ace74b34026f6fc68c9ff5b2ba9f8ebb3ca7be1bb908f30af730de9ea4271"
+    },
+    {
+      "path": "research/prior_art/dir0008_state_update_research.md",
+      "sha256": "fab23a19292e83d00ce4c87489f9b9ca0aed52d5f94d97719bd821eedbc44df2"
+    },
+    {
+      "path": "research/evidence/DIR-0008_algebra.json",
+      "sha256": "1f3442c94191fb189316efdc0c32b93ec3f9a06f4b3bb0c0727cbe9cffd6406a"
+    },
+    {
+      "path": "research/evidence/DIR-0008_sources.json",
+      "sha256": "ff7972df3a35405436f692c23712cb91928f7aaf8c2c11af1c63c706f9f08ede"
+    },
+    {
+      "path": "research/reflections/DIR-0008/corrections.md",
+      "sha256": "7a843f35c4effa7f7ec1019024fa231f2bdff4e8f1ea68cf0793a064b7848af0"
+    },
+    {
+      "path": "research/reflections/DIR-0008/review.json",
+      "sha256": "bb57785872ea2996a56fc2d1305a6c2d8732423c0ab00f81e5754122a605fda2"
+    },
+    {
+      "path": "research/reflections/DIR-0008/reaction.json",
+      "sha256": "a93636994e078acab1dcb196072c6c4fda1d72e5dd11ab8c7ebc485a7cb9ab6e"
+    },
+    {
+      "path": "scripts/audit_dir0008_algebra.py",
+      "sha256": "89518e744d4f968cc05cd4da60013693cf87468e6667e9d00a7ddc0823e4c771"
+    }
+  ]
+}

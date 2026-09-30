@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "8ac9ad914a11193580bf6adfb257a0fc39a3e7311db871e421aa18778d0700f6",
+  "review_sha256": "7d9c977f72017599f505616c40243f6161d70f95ae4200b908a971864b111687",
+  "decision_impact": "UNCHANGED",
+  "next_action": "v1 再送审判 V1_NEEDS_NARROWING（14 项，全部 accept，无 reject）。v0 的「写不出 R2/R3/R4 条款即 REJECTED」触发条件**不再满足**，但 R4 实质未满足、R2 的扣除常数用错划分算出且解释无效、R3 的协变量与 MDD 不可执行。本轮已执行的决定性重算：以 §2 **冻结划分**重跑自同构（I2 驳回在正确划分下仍成立：|Aut(F)|=72、|Aut(X)|=12、四单元 same_orbit=False）与解析分解——**K=4 表示代价成分为 0.0388 [0.0285,0.0508]，不是 0.0097**，超过 §8.4 的 0.02 门，故 **I_beyond_capacity 废弃**；K=2 为 0.0642，仍超 δ_min，保持描述性。配对 bootstrap 把 MC 半宽从 0.083 收到 0.0111。据此按审查 R-f 的唯一救援路径出 v2：不做扣除，直接报告 I 及其配对 CI，把表示代价成分作为**披露上界**，SUPPORTED 要求 I 的 CI 下界高于该上界；并按 R-d 新增与终点独立的臂级优化难度探针作为必要条件。另已关闭 I10 的缺口：pilot 现做真实前向/反向/优化器计数，两臂全轴计数精确相等。v2 仍未注册、未过审；Gate 1 仍 NOT_PASSED；不注册实验、不授权训练。 独立性记录：审查者自报实际读取的文件为 [\"research/reflections/G1-ALIGN-0001-DESIGN-V1/packet.json\"]，与投递时的单一文件限定一致；该字段按验证器要求置于 reaction 而非 review。 独立性记录：审查者自报实际读取的文件为 [\"research/reflections/G1-ALIGN-0001-DESIGN-V1/packet.json\"]，与投递时的单一文件限定一致；该字段按验证器要求并入本字段而非单列。",
+  "responses": [
+    {
+      "id": "I1",
+      "disposition": "accept",
+      "reason": "成立，且是本轮最严重的交付缺陷：我改了 analytic_decomposition.py 与 axis_pilot.py 的划分，唯独漏改 symmetry_check.py，故 packet 内的自同构判定用的是 v0 的错误划分（其 K=4「S」是跨组的 (01)(23)(4)(5)，其「U」恰是 v1 的对齐划分），K=2 的 U 也非冻结划分。",
+      "action": "已按冻结划分重跑（脚本 design 字段改为 v1，新增 partitions_used 与 partition_checks）。结果：|Aut(F)|=72、|Aut(X)|=12，K=2 轨道 1、K=4 轨道 9(F)/6(X)，四个单元 same_orbit=False，跨组维数 K=2 为 6、K=4 为 4。**I2 的驳回在正确划分下依然成立**，但现在有正确证据。",
+      "evidence_paths": [
+        "research/design/structural_task_probe/align0001_symmetry_check.json",
+        "scripts/align0001_symmetry_check.py"
+      ]
+    },
+    {
+      "id": "I2",
+      "disposition": "accept",
+      "reason": "成立。脚本原先用随机种子抽取跨组划分，抽到的 K=4 只有 2/6 维跨组，而 §2 冻结的 (05)(23)(4)(1) 有 4/6 维跨组。故 0.0097/0.0008 是为更弱的扰动算的。",
+      "action": "脚本改为直接使用 §2 冻结划分并加断言。重算后 K=4：F 对齐 0.0438 对跨组 0.0734、X 0.0821 对 0.0729，**表示代价成分 0.0388**（非 0.0097）；K=2 为 0.0642。0.0388 超过 §8.4 的 0.02 门 → **扣除常数失效**。",
+      "evidence_paths": [
+        "research/design/structural_task_probe/align0001_analytic_decomposition.json",
+        "scripts/align0001_analytic_decomposition.py"
+      ]
+    },
+    {
+      "id": "I3",
+      "disposition": "accept",
+      "reason": "成立。β_X 点预测 +0.0008 与扣除常数同源；+0.02 上界在 packet 内无任何计算来源，且扣除常数的 MC 误差未进入 CI。",
+      "action": "v2 按 R-c 改写：β_X 的 95% 上界**由资格流实测的逐 seed β_X 的 95% CI 给出**；解析值仅标为**构造成分先验**，不作独立证据。因 I2 重算后扣除常数已废弃，MC 误差进入 CI 的要求随之失去对象，但配对 bootstrap 已落地（见 I2）。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v2.md",
+        "research/design/structural_task_probe/align0001_analytic_decomposition.json"
+      ]
+    },
+    {
+      "id": "I4",
+      "disposition": "accept",
+      "reason": "成立，且是最深的一条。按可加模型 I_beyond=(ε_U^F−ε_S^F)−(ε_U^X−ε_S^X)，扣除把终点变成了**优化难度对比**，正是 §10 自己列为次级拒绝的混淆项；两臂都达最优时该量恒为 0。最强拒绝 A 未被消除。",
+      "action": "**`I_beyond_capacity` 予以废弃**，不再使用「超出容量」措辞。v2 按 R-f 的救援路径改为：主终点直接报告 `I = (KL_U−KL_S)_F − (KL_U−KL_S)_X` 及其配对 CI，并把表示代价成分作为**披露上界**（冻结值 `0.0388 [0.0285, 0.0508]`）而非扣除项；`SUPPORTED` 要求 `I` 的 CI 下界**高于该上界**。并按 R-d 新增**与终点独立的臂级优化难度探针**（steps-to-threshold KL）作为 `SUPPORTED` 的必要条件。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v2.md",
+        "research/design/structural_task_probe/align0001_analytic_decomposition.json"
+      ]
+    },
+    {
+      "id": "I5",
+      "disposition": "accept",
+      "reason": "成立。§3/§10 用 K=2 的 0.0000/0.0434 论证 β_F>0 由构造成立，但主终点是 K=4，其对齐投影代价是 0.0438（非 0.0000），构造下限为 0.0105，且 S 臂本身有损。",
+      "action": "v2 §3/§4 改以 **K=4 的 0.0438/0.0734（重算后）** 陈述构造下限，0.0000/0.0416 明确归入 K=2 描述性段落；主终点段落不再出现以 0.0000 论证的句子。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v2.md",
+        "research/design/structural_task_probe/align0001_analytic_decomposition.json"
+      ]
+    },
+    {
+      "id": "I6",
+      "disposition": "accept",
+      "reason": "成立。降级规则单向且区间不全，使「资格样本前冻结」只在时间意义上成立。",
+      "action": "v2 §8.4 按 R-f 改为对 `K∈{2,4}` 同时生效的**对称规则**并覆盖全部复算区间：成分 `>0.02` 该 K 单元停止；`K=2` 复算 `≤δ_min` 则恢复为次级终点并预注册其判词分支；落在中间区间按预注册的保守端点处理。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v2.md"
+      ]
+    },
+    {
+      "id": "I7",
+      "disposition": "accept",
+      "reason": "成立。θ 后验熵在 packet 内是每条件标量，在 `d_i` 内无 seed 间变异，ANCOVA `df=n−2` 与分层单调性检查按字面不可执行。",
+      "action": "v2 §7 按 R-e 改为**逐 seed** 协变量（逐 seed 末端信念熵），并写明：仅当资格流显示该协变量在 seed 间有方差时才用 `df=n−2`，否则退回 `df=n−1`；§9 单调性检查写明方向、统计量与阈值。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v2.md"
+      ]
+    },
+    {
+      "id": "I8",
+      "disposition": "accept",
+      "reason": "成立。sd 出处与 MDD 功率约定均未定义，使升级分支可在看到数据后被触发或不触发。审查并指出算术上 n=8 并非不足（sd=0.0211 时 power≈0.99、MDD₈₀≈0.024）。",
+      "action": "v2 §7 写明 sd 来源文件与 sha256、声明它是**差之差** sd（或预先作 √2 保守放大）、给出 MDD 的 alpha/功率约定，并把升级到 n=16 的触发条件写成对实测 sd 的**预先声明函数**。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v2.md"
+      ]
+    },
+    {
+      "id": "I9",
+      "disposition": "accept",
+      "reason": "成立。包内两个数（2.649/2.6773）给出 0.028 < ε_abs，与 §6「超过 ε_abs」的表述矛盾；只有 400-episode 版给 0.068，而该文件不在包内。",
+      "action": "v2 §6 按 R-h 改为「θ 后验熵差 `<值>` [`CI`]，来源 `<file>` sha256 `<hash>`」，并**在资格流复算前不写入「超过 ε_abs」**。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v2.md"
+      ]
+    },
+    {
+      "id": "I10",
+      "disposition": "accept",
+      "reason": "成立。§5 一边声明全轴实测 1.000，一边承认三轴是构造恒等式；给出比值表的 pilot 又被排除在 packet 外。",
+      "action": "**该缺口已在本轮关闭**：pilot 现真实执行前向/反向/Adam 步并计数，两臂在全部计数轴上精确相等（K=2 与 K=4 均为 5/5/5，640 样本，K=2 内部步 640、K=4 为 1280），比值恒为 1.0。v2 §5 按 R-g 改写为「构造性恒等轴（examples/updates/internal_steps）**已由实测计数落地**；其余轴由 repeats≥101 的 pilot 实测」，并附收敛序列。",
+      "evidence_paths": [
+        "research/design/structural_task_probe/align0001_axis_pilot.json",
+        "scripts/align0001_axis_pilot.py"
+      ]
+    },
+    {
+      "id": "I11",
+      "disposition": "accept",
+      "reason": "成立。§12 第 1 条宣称「对齐成立」，但该条件要求评价逐步假设更新，而 §7 写死末端终点。",
+      "action": "v2 §12 第 1 条按 R-g 改标「**部分满足**：本设计为末端终点，不评价逐步假设更新」，并明确该条不得被后续记录当作先例覆盖证据引用。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v2.md"
+      ]
+    },
+    {
+      "id": "I12",
+      "disposition": "accept",
+      "reason": "成立。§8.4 用同一生成器复算同一解析量，只检验 MC 稳定性，不检验可加性；而可加性恰是 R2/A 的核心假设。",
+      "action": "v2 中该门的名称与含义已改写：它**不再**被称为对表示代价的检验，而是「解析估计的 MC 稳定性门」，并写明它**不**检验可加性；可加性改由 R-d 的独立优化难度探针承担。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v2.md"
+      ]
+    },
+    {
+      "id": "I13",
+      "disposition": "accept",
+      "reason": "成立。K=4 时 S 划分按列出顺序块大小为 (2,1,2,1)，U 的 (05)(23)(4)(1) 为 (2,2,1,1)，「逐元素相同的同一循环矩阵」与「块 b 接收第 b 组」不能同时按字面成立。",
+      "action": "v2 §2 写明：共享的是**块大小序列相同的同构矩阵**，两臂**按各自的划分重排块索引**（块身份随臂置换），并把自同构论证的射程限定为「在（任务图 × 分块结构）上，两臂不是同一问题的重标号」。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v2.md",
+        "research/design/structural_task_probe/align0001_symmetry_check.json"
+      ]
+    },
+    {
+      "id": "I14",
+      "disposition": "accept",
+      "reason": "成立。T 从未在 §6/§7 写出，而本项目已有两次 T 归属错误的先例。",
+      "action": "v2 §6/§7 写明 `T=64`（与生成器一致），并规定 `gap(k)` 曲线须覆盖到 `k=T`。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v2.md"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "2503a1f7b26ea33457068305fca2b60f5d6f362433a34b0dd315a3b5fe2bda0e",
+  "review_sha256": "35517a49f6629feaf7aaf7816f84eaa38ddea1dbcea09803290da8448db06551",
+  "responses": [
+    {
+      "id": "repro-gate-evidence",
+      "disposition": "accept",
+      "reason": "属实：协议只要求 PLAIN 逐位一致，记录却给出无法与 6 个 PLAIN 对应的 12/12 计数，且 packet 只暴露 8 位哈希前缀，训练数据哈希未出现。",
+      "action": "在 provenance 增加 reproduction_detail：按运行列出父子 final_hash 与 training_data_sha256 及相等标志，PLAIN 6/6、BRANCH 6/6（执行范围是协议要求的超集），并把误命名字段改为 runs_hash_equal。判词与数字不变。",
+      "evidence_paths": [
+        "research/evidence/EXP-0031/provenance_check.json"
+      ]
+    },
+    {
+      "id": "branch-variant-can-win",
+      "disposition": "accept",
+      "reason": "属实：协议允许 BRANCH 在均值严格更高时成为该 d 的读数，却未定义其是否具备资格，同时又把 BRANCH 的独立确认推给 v4。",
+      "action": "在 provenance 记录三个 d 的变体均值（d1 1.0000/1.0000、d2 0.5991/0.5991、d3 0.6109/0.6000），确认严格取胜分支未被触发；并在决定0106 要求后续版本明确该分支的资格。",
+      "evidence_paths": [
+        "research/evidence/EXP-0031/provenance_check.json",
+        "research/decisions/0106_exp0031_requalification.md"
+      ]
+    },
+    {
+      "id": "memoryless-margin-undefined",
+      "disposition": "accept",
+      "reason": "属实：协议写 memoryless_best 的均值与最大两个统计量，但参照集每条件只给一个值；实现用两 seed 流与四类参照的最大值填两个槽位。",
+      "action": "在 provenance 记录实际执行的统计量、各 d 的取值与绑定阈值，并确认余量不具约束力（任一读法下可学旗标相同）；要求后续版本写明单一统计量。",
+      "evidence_paths": [
+        "research/evidence/EXP-0031/provenance_check.json"
+      ]
+    },
+    {
+      "id": "replay-plan-not-executed",
+      "disposition": "accept",
+      "reason": "属实：协议要求重放扫描与确认各 1 个，但本轮无确认运行，第二个重放改为另一 d 的扫描运行，且未在记录中说明。",
+      "action": "在 provenance 记录该偏离（确认腿为空、替代目标、条款应改为以存在合格条件为前提）；判词不受影响。",
+      "evidence_paths": [
+        "research/evidence/EXP-0031/provenance_check.json"
+      ]
+    },
+    {
+      "id": "replay-script-unpinned",
+      "disposition": "accept",
+      "reason": "属实：协议要求把重放脚本哈希写入 provenance，而 packet 摘要与原记录均未暴露该哈希。",
+      "action": "provenance 现记录 scripts/verify_exp0031_replay.py 的 SHA-256 56c7eef1d3ce…，并核对与当前文件一致；后续 packet 摘要须包含该字段。",
+      "evidence_paths": [
+        "research/evidence/EXP-0031/provenance_check.json"
+      ]
+    },
+    {
+      "id": "supersession-not-in-rules",
+      "disposition": "accept",
+      "reason": "属实：决定同时写取代 EXP0030 判词与全部旧判词不变，且 packet 未点明被取代条件的具体身份。",
+      "action": "决定0106 现明确被取代的是 d=2 与 PLAIN、INV_COMP(w32,b1)、2000 更新的任务资格判定，并把旧判词不变限定为 EXP0030 之前的判词与旧 Gate 1；EXP0030 注册表也记录了 superseded_by。",
+      "evidence_paths": [
+        "research/decisions/0106_exp0031_requalification.md",
+        "experiments/EXP-0030/registry.json"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "判词与 EXP0030 取代关系不变。下一轮按决定0106：在修正端点上先冻结并扫完控制菜单（w∈{32,48,64,96}×blocks∈{1,2,3}）或另立任务族；候选侧须先冻结 v4 合同（含分支末位掩码与分支一致性指标）。不得复用已暴露 d、seed 与位置曲线反推端点。"
+}

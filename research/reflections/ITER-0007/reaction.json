@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "01a68efb8c19f703d2d79cdeadd374795b13e4b9ecaeae456ab25331ad8e6bcc",
+  "review_sha256": "2ba724a98cdae9abf972ae801da472d9ac336c59046af631918e8525d347d2b0",
+  "responses": [
+    {
+      "id": "R1",
+      "disposition": "accept",
+      "reason": "The dense-only pilot did not establish headroom for the actual C0 primary control; its observed KL makes a >0.05-nat gain impossible on this test stream.",
+      "action": "Required independent primary-control oracle-relative calibration for future useful-effect thresholds and stopped tuning the current block proxy.",
+      "evidence_paths": [
+        "research/reflections/ITER-0007/reaction_evidence.md",
+        "research/decisions/0003_exp0009_headroom_and_h3.md",
+        ".codex/skills/benchmark-design/SKILL.md",
+        "docs/experiment_protocol.md"
+      ]
+    },
+    {
+      "id": "R2",
+      "disposition": "accept",
+      "reason": "The frozen INCONCLUSIVE label is correct, but the benchmark-qualification failure and fixed-task effect bound need separate presentation.",
+      "action": "Archived a decision-table audit and reported the observed CI plus mathematical headroom limit without revising the frozen result.",
+      "evidence_paths": [
+        "research/reflections/ITER-0007/reaction_evidence.md",
+        "research/reflections/ITER-0007/decision_table_audit.md",
+        "research/evidence/exp0009_posterior_transfer.md"
+      ]
+    },
+    {
+      "id": "R3",
+      "disposition": "accept",
+      "reason": "Only seed9401 was clean-checkout retrained and the seed bootstrap conditions on one frozen test stream.",
+      "action": "Bounded the reproducibility and uncertainty claim to the verified subset and fixed stream; did not spend more compute on a non-discriminating design.",
+      "evidence_paths": [
+        "research/reflections/ITER-0007/reaction_evidence.md",
+        "docs/EXP-0009_reproduction.md",
+        "research/iterations/ITER-0007/review.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep Gate 1 closed; stop block-only difficulty searches and require a prior-art-grounded, candidate-specific causal design with a separately calibrated primary control before another architecture experiment."
+}

@@ -1,0 +1,394 @@
+{
+  "pass": true,
+  "experiment_id": "EXP-0026",
+  "version": "v2",
+  "decision": "PARTIALLY_SUPPORTED",
+  "substatus": "SINGLE_EXPOSED_SCHEDULE_WINDOW",
+  "tests": 323,
+  "general_overfit_updates": 300,
+  "special_optimizer_updates": 0,
+  "frozen_source_commit": "007ccbb",
+  "independent_raw_rollouts_audited": 1300,
+  "independent_rollouts_replayed": 200,
+  "reproduction_seconds": 185.1036948750043,
+  "reproduction_scope": "23 main conditions per task plus four tau NONE per model; full 512x1024 trajectories and listed raw fields matched exactly",
+  "shared_components": "LearnedMemory transition, gram/radial, task generate and frozen Python/PyTorch/NumPy packages; independent scheduling, candidate refresh orchestration, endpoints, tau and window reduction",
+  "reproduction_sha256": "545818d0eeb7f6677e796db7eeea57f6d717cc6121bbfb2646a4aa4a349a497c",
+  "review_sha256": "50056c4930689bf6210872e64b8f277efa5e6111565409472272e733b8cb957c",
+  "artifact_files": 2685,
+  "artifact_bytes": 4625876082,
+  "apfs_project_hashes_equal": true,
+  "inventory_sha256": "f7687cdc4dad983388db9a9e7fe40f212774ac6409c111537987e06aaca63409",
+  "resource": {
+    "main_rollouts": 1196,
+    "tau_rollouts": 104,
+    "base_transitions": 681574400,
+    "command_transitions": 851968,
+    "diagnostic_refresh_proposals": 425984,
+    "refresh_attempts": 69366266,
+    "refresh_valid": 67590467,
+    "wall_seconds": 1055.6762099160005
+  },
+  "analysis_seconds": 103.84892533400125,
+  "user_question_exact_50_percent": [
+    {
+      "seed": 25002,
+      "condition": "NONE",
+      "label_counts": [
+        256,
+        256
+      ],
+      "HOLD_target_exact": true,
+      "final_confusion": [
+        [
+          256,
+          0
+        ],
+        [
+          256,
+          0
+        ]
+      ],
+      "final_logits": {
+        "0": {
+          "min": -2.6314005851745605,
+          "max": -2.631399154663086,
+          "mean": -2.631399631500244,
+          "exact_zero": 0
+        },
+        "1": {
+          "min": -2.6314005851745605,
+          "max": -2.631399154663086,
+          "mean": -2.6313998699188232,
+          "exact_zero": 0
+        }
+      },
+      "first_errors": {
+        "0": {
+          "ever_wrong": 0,
+          "first_error_histogram": {}
+        },
+        "1": {
+          "ever_wrong": 256,
+          "first_error_histogram": {
+            "45": 256
+          }
+        }
+      }
+    },
+    {
+      "seed": 25002,
+      "condition": "ONCE8",
+      "label_counts": [
+        256,
+        256
+      ],
+      "HOLD_target_exact": true,
+      "final_confusion": [
+        [
+          256,
+          0
+        ],
+        [
+          256,
+          0
+        ]
+      ],
+      "final_logits": {
+        "0": {
+          "min": -2.6314003467559814,
+          "max": -2.6313986778259277,
+          "mean": -2.631399631500244,
+          "exact_zero": 0
+        },
+        "1": {
+          "min": -2.6314005851745605,
+          "max": -2.631399154663086,
+          "mean": -2.6313998699188232,
+          "exact_zero": 0
+        }
+      },
+      "first_errors": {
+        "0": {
+          "ever_wrong": 0,
+          "first_error_histogram": {}
+        },
+        "1": {
+          "ever_wrong": 256,
+          "first_error_histogram": {
+            "36": 256
+          }
+        }
+      }
+    },
+    {
+      "seed": 25002,
+      "condition": "K16",
+      "label_counts": [
+        256,
+        256
+      ],
+      "HOLD_target_exact": true,
+      "final_confusion": [
+        [
+          256,
+          0
+        ],
+        [
+          0,
+          256
+        ]
+      ],
+      "final_logits": {
+        "0": {
+          "min": -2.6314003467559814,
+          "max": -2.6313986778259277,
+          "mean": -2.631399631500244,
+          "exact_zero": 0
+        },
+        "1": {
+          "min": 2.545541763305664,
+          "max": 2.5455427169799805,
+          "mean": 2.5455422401428223,
+          "exact_zero": 0
+        }
+      },
+      "first_errors": {
+        "0": {
+          "ever_wrong": 0,
+          "first_error_histogram": {}
+        },
+        "1": {
+          "ever_wrong": 0,
+          "first_error_histogram": {}
+        }
+      }
+    },
+    {
+      "seed": 25002,
+      "condition": "K32",
+      "label_counts": [
+        256,
+        256
+      ],
+      "HOLD_target_exact": true,
+      "final_confusion": [
+        [
+          256,
+          0
+        ],
+        [
+          256,
+          0
+        ]
+      ],
+      "final_logits": {
+        "0": {
+          "min": -2.6314003467559814,
+          "max": -2.6313986778259277,
+          "mean": -2.6313998699188232,
+          "exact_zero": 0
+        },
+        "1": {
+          "min": -2.6314005851745605,
+          "max": -2.6313986778259277,
+          "mean": -2.631399631500244,
+          "exact_zero": 0
+        }
+      },
+      "first_errors": {
+        "0": {
+          "ever_wrong": 0,
+          "first_error_histogram": {}
+        },
+        "1": {
+          "ever_wrong": 256,
+          "first_error_histogram": {
+            "36": 256
+          }
+        }
+      }
+    },
+    {
+      "seed": 25003,
+      "condition": "NONE",
+      "label_counts": [
+        256,
+        256
+      ],
+      "HOLD_target_exact": true,
+      "final_confusion": [
+        [
+          0,
+          256
+        ],
+        [
+          0,
+          256
+        ]
+      ],
+      "final_logits": {
+        "0": {
+          "min": 3.3482933044433594,
+          "max": 3.3482956886291504,
+          "mean": 3.348294496536255,
+          "exact_zero": 0
+        },
+        "1": {
+          "min": 3.3482937812805176,
+          "max": 3.3482956886291504,
+          "mean": 3.348294496536255,
+          "exact_zero": 0
+        }
+      },
+      "first_errors": {
+        "0": {
+          "ever_wrong": 256,
+          "first_error_histogram": {
+            "24": 256
+          }
+        },
+        "1": {
+          "ever_wrong": 0,
+          "first_error_histogram": {}
+        }
+      }
+    },
+    {
+      "seed": 25003,
+      "condition": "ONCE8",
+      "label_counts": [
+        256,
+        256
+      ],
+      "HOLD_target_exact": true,
+      "final_confusion": [
+        [
+          0,
+          256
+        ],
+        [
+          0,
+          256
+        ]
+      ],
+      "final_logits": {
+        "0": {
+          "min": 3.3482933044433594,
+          "max": 3.3482956886291504,
+          "mean": 3.348294734954834,
+          "exact_zero": 0
+        },
+        "1": {
+          "min": 3.3482933044433594,
+          "max": 3.3482956886291504,
+          "mean": 3.348294258117676,
+          "exact_zero": 0
+        }
+      },
+      "first_errors": {
+        "0": {
+          "ever_wrong": 256,
+          "first_error_histogram": {
+            "27": 256
+          }
+        },
+        "1": {
+          "ever_wrong": 0,
+          "first_error_histogram": {}
+        }
+      }
+    },
+    {
+      "seed": 25003,
+      "condition": "K16",
+      "label_counts": [
+        256,
+        256
+      ],
+      "HOLD_target_exact": true,
+      "final_confusion": [
+        [
+          0,
+          256
+        ],
+        [
+          0,
+          256
+        ]
+      ],
+      "final_logits": {
+        "0": {
+          "min": 3.3482937812805176,
+          "max": 3.3482956886291504,
+          "mean": 3.348294734954834,
+          "exact_zero": 0
+        },
+        "1": {
+          "min": 3.3482937812805176,
+          "max": 3.3482956886291504,
+          "mean": 3.348294496536255,
+          "exact_zero": 0
+        }
+      },
+      "first_errors": {
+        "0": {
+          "ever_wrong": 256,
+          "first_error_histogram": {
+            "33": 256
+          }
+        },
+        "1": {
+          "ever_wrong": 0,
+          "first_error_histogram": {}
+        }
+      }
+    },
+    {
+      "seed": 25003,
+      "condition": "K32",
+      "label_counts": [
+        256,
+        256
+      ],
+      "HOLD_target_exact": true,
+      "final_confusion": [
+        [
+          0,
+          256
+        ],
+        [
+          0,
+          256
+        ]
+      ],
+      "final_logits": {
+        "0": {
+          "min": 3.3482937812805176,
+          "max": 3.3482956886291504,
+          "mean": 3.348294496536255,
+          "exact_zero": 0
+        },
+        "1": {
+          "min": 3.3482937812805176,
+          "max": 3.3482956886291504,
+          "mean": 3.348294734954834,
+          "exact_zero": 0
+        }
+      },
+      "first_errors": {
+        "0": {
+          "ever_wrong": 256,
+          "first_error_histogram": {
+            "27": 256
+          }
+        },
+        "1": {
+          "ever_wrong": 0,
+          "first_error_histogram": {}
+        }
+      }
+    }
+  ],
+  "posthoc_question_scope": "Read-only check after user question; no endpoints or model runs added."
+}

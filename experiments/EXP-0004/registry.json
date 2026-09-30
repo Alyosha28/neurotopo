@@ -1,0 +1,68 @@
+{
+  "id": "EXP-0004",
+  "title": "Matched architecture long-delay transfer after fixed curriculum",
+  "version": "v1",
+  "status": "COMPLETED",
+  "research_question": "Does block recurrence improve delay32 transfer, replicated at64, after IID learning under matched resources?",
+  "prior_art_checked": [
+    "RIMs",
+    "TRNN",
+    "conn2res",
+    "FlyVis",
+    "CTM",
+    "ncps"
+  ],
+  "strongest_rejection_reason": "One curriculum and finite synthetic transfer task cannot establish semantic hypotheses; IID ceiling and OOD floor require care.",
+  "hypothesis": "M3 joint success exceeds C0 by>=3pp at32/64 with paired lower CI>0; contextual M1 mean margin>=3pp.",
+  "baselines": [
+    "gru_small",
+    "gru_wide",
+    "sparse_rnn",
+    "random_gru"
+  ],
+  "intervention": "Block-diagonal vs non-diagonally rewired recurrence; self-connections and row/column degrees fixed.",
+  "controls": [
+    "effective and allocated parameters",
+    "hidden state",
+    "dense linear operations",
+    "paired input streams",
+    "self-feedback",
+    "fixed optimizer and updates",
+    "shared test sets"
+  ],
+  "dataset": "Original-noise delayed-evidence-v1 with fresh seeds; IID8, primary OOD32, robustness64",
+  "metrics": [
+    "joint_pair_accuracy",
+    "pre_accuracy",
+    "confirm_accuracy",
+    "revise_accuracy",
+    "conditional revise",
+    "NLL",
+    "latency"
+  ],
+  "resource_matching": "Exact primary pair; contextual dense/tanh controls disclose mismatches.",
+  "seeds": [
+    9101,
+    9102,
+    9103,
+    9104,
+    9105,
+    9106,
+    9107,
+    9108,
+    9109,
+    9110
+  ],
+  "commit": "eec9ca4b8d664d7945da554f5237a36153e09bb2",
+  "config": "configs/exp0004_v1.json",
+  "result": "artifacts/EXP-0004/v1/analysis.json",
+  "interpretation": "Primary32 block-minus-random joint effect -0.0910; paired95%CI [-0.1490,-0.0360]. IID learning and matching passed.",
+  "limitations": [
+    "synthetic cache/selection shortcut",
+    "single fixed schedule",
+    "joint graph/training seed variation",
+    "no semantic mechanism intervention"
+  ],
+  "decision": "FALSIFIED",
+  "next_action": "STOP_MECHANISM_ESCALATION: Gate1 not passed; retain falsified scoped prediction and independent reproduction record."
+}

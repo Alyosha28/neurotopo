@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "6170d0f8daf8643095deeaf00fa7231bb9d99d5358af3214319850adcd5f5f63",
+  "review_sha256": "f70af8fd5a8fd0f1cf8e3471e1f11fc02f191ec7cd9352d6a48e55271deea969",
+  "responses": [
+    {
+      "id": "TH-0001-R1",
+      "disposition": "accept",
+      "reason": "A state-dimension argument cannot exclude a separately preregistered model-by-K learning or transfer interaction.",
+      "action": "Explicitly limited the stop to unmotivated capacity-story K inflation and preserved resource-matched K interaction as an open empirical question.",
+      "evidence_paths": [
+        "research/reflections/TH-0001/reaction_evidence.md",
+        "research/open_questions.md"
+      ]
+    },
+    {
+      "id": "TH-0001-R2",
+      "disposition": "accept",
+      "reason": "The packet could not itself verify the new resource field or the equal non-feedback pre-query cache in both EXP-0009 arms.",
+      "action": "Added and tested explicit pre-readout cache accounting, then archived current float32 model-output shapes and source-hashed resource results.",
+      "evidence_paths": [
+        "research/reflections/TH-0001/reaction_evidence.md",
+        "research/reflections/TH-0001/implementation_audit.json",
+        "src/neurotopo/resources.py",
+        "tests/test_source_belief_study.py"
+      ]
+    },
+    {
+      "id": "TH-0001-R3",
+      "disposition": "accept",
+      "reason": "Code-to-formula claims needed a direct numeric sanity check beyond text-only packet citations.",
+      "action": "Checked two fixed synthetic batches against independently multiplied likelihood products and validated evidence/distractor/query tags and source balance.",
+      "evidence_paths": [
+        "research/reflections/TH-0001/reaction_evidence.md",
+        "research/reflections/TH-0001/implementation_audit.json",
+        "scripts/audit_gate1_state_accounts.py"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep Gate 1 closed; do not use hypothesis-count inflation as a capacity proof, and require a distinct registered learning or transfer claim before any new K experiment."
+}

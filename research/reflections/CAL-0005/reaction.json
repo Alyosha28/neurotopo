@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "3c46470cc41ecbdc2fa7a5c2c727cc97aa126432f6633a8553acea44a7fb3dc4",
+  "review_sha256": "afc271db7f7d4cdc94a464c676ca1637876f563573a0933256ade1d2f2bbc9f5",
+  "responses": [
+    {
+      "id": "CAL-0005-R1",
+      "disposition": "accept",
+      "reason": "The two listed absolute FLOP totals imply 44.264780%, while token count implies 44.444444%.",
+      "action": "Recomputed both percentages and made the corrected values authoritative in decision 0018; preserved the original action in the packet.",
+      "evidence_paths": [
+        "research/reflections/CAL-0005/verification.json",
+        "research/reflections/CAL-0005/reaction_evidence.md",
+        "research/decisions/0018_cal0005_fixed_d2_contrast.md"
+      ]
+    },
+    {
+      "id": "CAL-0005-R2",
+      "disposition": "accept",
+      "reason": "The direct task generator and resource files were beyond the three explicitly named inputs, even though they are imported by the named script.",
+      "action": "Recorded the scope deviation and checked generator and resource calculations against the frozen CAL-0004 artifact and source diff.",
+      "evidence_paths": [
+        "research/reflections/CAL-0005/verification.json",
+        "research/reflections/CAL-0005/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "CAL-0005-R3",
+      "disposition": "accept",
+      "reason": "CAL-0005 cannot rank project-wide obstacles from the arithmetic feasibility check alone.",
+      "action": "Limited decision 0018 to stopping the proposed strictly matched fixed-d2 contrast, without a new priority or Gate 1 claim.",
+      "evidence_paths": [
+        "research/reflections/CAL-0005/reaction_evidence.md",
+        "research/decisions/0018_cal0005_fixed_d2_contrast.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "The proposed fixed-d2 matched contrast is stopped as NO_GO_FOR_CLEAN_D2_CONTRAST; CAL-0004 causal mechanism and Gate 1 status remain unresolved and unchanged."
+}

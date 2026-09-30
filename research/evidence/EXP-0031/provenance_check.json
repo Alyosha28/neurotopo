@@ -1,0 +1,269 @@
+{
+  "purpose": "EXP-0031 provenance: frozen-run facts, pre-run validation record and known record defects.",
+  "manifest_recorded_hashes": {
+    "configs/exp0031_v1.json": "ff8c183aaf0d715e9c120343972c423e25ea3c302b6666ad4cfced0c9657fec8",
+    "experiments/EXP-0031/v1.md": "a8e56538027197e86a1a0e8c39db3ca7e31655b6ed4f06cd01c68172fa9b434f",
+    "src/neurotopo/arch0001_memory_task.py": "9965e11a76a2ae7fa58bb036fa67271014d9064e3a5e6c06640a812d97de72ff",
+    "configs/exp0030_v1.json": "e2a1f9624682d467bd07d572c376b30f1186753cd2b4c157b59c494df241329e",
+    "uv.lock": "a4228ebafd79e9e2cafbacff4cae0cfd8ea1c5a768a8a95c6d5a03dea61b509b",
+    "artifacts/validation/suite.json": "dfd8af2317fd907fcd6ce7ebd57027643e9515073f4811b006d5c42fbfb60b32",
+    "src/neurotopo/arch0001_memory_requalification.py": "3aec0ba9c06c65780de4132d2600b7f0d1994d390f48cbe7b7acb70f6adaf55d",
+    "tests/test_arch0001_memory_requalification.py": "8091878303dad851ce39f877d330de75c0311eae00a1fb6d34afff9c2ea7cb27"
+  },
+  "current_hashes": {
+    "configs/exp0031_v1.json": "ff8c183aaf0d715e9c120343972c423e25ea3c302b6666ad4cfced0c9657fec8",
+    "experiments/EXP-0031/v1.md": "a8e56538027197e86a1a0e8c39db3ca7e31655b6ed4f06cd01c68172fa9b434f",
+    "src/neurotopo/arch0001_memory_task.py": "9965e11a76a2ae7fa58bb036fa67271014d9064e3a5e6c06640a812d97de72ff",
+    "configs/exp0030_v1.json": "e2a1f9624682d467bd07d572c376b30f1186753cd2b4c157b59c494df241329e",
+    "uv.lock": "a4228ebafd79e9e2cafbacff4cae0cfd8ea1c5a768a8a95c6d5a03dea61b509b",
+    "artifacts/validation/suite.json": "dfd8af2317fd907fcd6ce7ebd57027643e9515073f4811b006d5c42fbfb60b32",
+    "src/neurotopo/arch0001_memory_requalification.py": "3aec0ba9c06c65780de4132d2600b7f0d1994d390f48cbe7b7acb70f6adaf55d",
+    "tests/test_arch0001_memory_requalification.py": "8091878303dad851ce39f877d330de75c0311eae00a1fb6d34afff9c2ea7cb27"
+  },
+  "pre_run_validation": {
+    "pytest": "358 passed, 1 warning",
+    "suite_pass": true,
+    "suite_source_hashes_match_runtime": true,
+    "suite_file_sha256": "dfd8af2317fd907fcd6ce7ebd57027643e9515073f4811b006d5c42fbfb60b32",
+    "replay_script_sha256": "56c7eef1d3ce932cfde77d3cecc0af6b1b0e2a5adf043a6342fc7e2fbd78f1a4",
+    "note": "arch0001_memory_requalification.run refuses to run unless the suite passes and its source hashes match the runtime sources"
+  },
+  "reproduction": {
+    "parent_artifacts": "artifacts/EXP-0030/v1",
+    "total_runs": 12,
+    "verification": {
+      "pass_": true,
+      "branch_hash_exposed": true,
+      "max_metric_gap": 0.0
+    },
+    "runs_hash_equal": "12/12"
+  },
+  "known_defects": [
+    {
+      "where": "configs/exp0030_v1.json task string",
+      "what": "says readout t>=1 equals u_{t-d}, off by one vs the protocol/implementation y_r = u_{r-1-d}",
+      "action": "frozen config not rewritten; EXP-0031 uses the protocol/implementation and pins the defect here"
+    },
+    {
+      "where": "branch_targets terminal entry",
+      "what": "last index copies y_T instead of being masked",
+      "action": "deferred to the v4 contract; the qualified-free PLAIN variant does not use the branch loss"
+    },
+    {
+      "where": "EXP-0030 verification record",
+      "what": "only an aggregate logits_hash_equal was exposed",
+      "action": "EXP-0031 verification exposes logits_hash_equal and branch_hash_equal separately"
+    }
+  ],
+  "git": {
+    "commit": "f5a6e2c0f593fb5265ee3dd7bea91a9e471efe9e",
+    "dirty": true,
+    "note": "active git metadata outside the writable sandbox; no commit created"
+  },
+  "reproduction_detail": {
+    "scope": "all 12 runs (6 PLAIN + 6 BRANCH); the protocol required PLAIN only, so the executed check is a superset",
+    "runs": [
+      {
+        "run": "D1_BRANCH_seed29101.json",
+        "d": 1,
+        "sup": "BRANCH",
+        "seed": 29101,
+        "child_final_hash": "ce1076cd8c56e390fedbb890e1eecc49c9b698634cf40beb1b0df9cb76ca5039",
+        "parent_final_hash": "ce1076cd8c56e390fedbb890e1eecc49c9b698634cf40beb1b0df9cb76ca5039",
+        "child_data_hash": "5eb3c2f0b17c1cd33e93b5f6424bc411ff4332f4d4e4c63cc5254db9906575eb",
+        "parent_data_hash": "5eb3c2f0b17c1cd33e93b5f6424bc411ff4332f4d4e4c63cc5254db9906575eb",
+        "final_hash_equal": true,
+        "data_hash_equal": true
+      },
+      {
+        "run": "D1_BRANCH_seed29102.json",
+        "d": 1,
+        "sup": "BRANCH",
+        "seed": 29102,
+        "child_final_hash": "3d46803e76866e54bf493d3bfed436a74efa5b285c826ae08c8d424ec83da0ca",
+        "parent_final_hash": "3d46803e76866e54bf493d3bfed436a74efa5b285c826ae08c8d424ec83da0ca",
+        "child_data_hash": "fc0a4e27240aefb2dc84b8c83c5384fa486ef47396869f94797572c158507a95",
+        "parent_data_hash": "fc0a4e27240aefb2dc84b8c83c5384fa486ef47396869f94797572c158507a95",
+        "final_hash_equal": true,
+        "data_hash_equal": true
+      },
+      {
+        "run": "D1_PLAIN_seed29101.json",
+        "d": 1,
+        "sup": "PLAIN",
+        "seed": 29101,
+        "child_final_hash": "09d3a6756d5b2dd22f62d5783d7292c90ed057f5c8a7a040473a829b84c854b6",
+        "parent_final_hash": "09d3a6756d5b2dd22f62d5783d7292c90ed057f5c8a7a040473a829b84c854b6",
+        "child_data_hash": "5eb3c2f0b17c1cd33e93b5f6424bc411ff4332f4d4e4c63cc5254db9906575eb",
+        "parent_data_hash": "5eb3c2f0b17c1cd33e93b5f6424bc411ff4332f4d4e4c63cc5254db9906575eb",
+        "final_hash_equal": true,
+        "data_hash_equal": true
+      },
+      {
+        "run": "D1_PLAIN_seed29102.json",
+        "d": 1,
+        "sup": "PLAIN",
+        "seed": 29102,
+        "child_final_hash": "d1a428769bfcf90b0cce9bbd65fe92e38c18972ae4e5b3ecb6ef3b5d6339e189",
+        "parent_final_hash": "d1a428769bfcf90b0cce9bbd65fe92e38c18972ae4e5b3ecb6ef3b5d6339e189",
+        "child_data_hash": "fc0a4e27240aefb2dc84b8c83c5384fa486ef47396869f94797572c158507a95",
+        "parent_data_hash": "fc0a4e27240aefb2dc84b8c83c5384fa486ef47396869f94797572c158507a95",
+        "final_hash_equal": true,
+        "data_hash_equal": true
+      },
+      {
+        "run": "D2_BRANCH_seed29101.json",
+        "d": 2,
+        "sup": "BRANCH",
+        "seed": 29101,
+        "child_final_hash": "ec2d0f89a944ab2265cfe3c13256ec23713251eff801b21c3fd5f139e0ab592c",
+        "parent_final_hash": "ec2d0f89a944ab2265cfe3c13256ec23713251eff801b21c3fd5f139e0ab592c",
+        "child_data_hash": "e1955d93cd9d312ea1edc48ad7846289f128e2a5ac1f656250ea4b56b2519dcb",
+        "parent_data_hash": "e1955d93cd9d312ea1edc48ad7846289f128e2a5ac1f656250ea4b56b2519dcb",
+        "final_hash_equal": true,
+        "data_hash_equal": true
+      },
+      {
+        "run": "D2_BRANCH_seed29102.json",
+        "d": 2,
+        "sup": "BRANCH",
+        "seed": 29102,
+        "child_final_hash": "fa622f9440ba33f0fa36c05adfe75a59108b215356d42780aa1345f6446c0e29",
+        "parent_final_hash": "fa622f9440ba33f0fa36c05adfe75a59108b215356d42780aa1345f6446c0e29",
+        "child_data_hash": "e431c2aa0012d60b382a107a741e2e9fe7ec3bc893b5ab5a5bbcd73d7dea0056",
+        "parent_data_hash": "e431c2aa0012d60b382a107a741e2e9fe7ec3bc893b5ab5a5bbcd73d7dea0056",
+        "final_hash_equal": true,
+        "data_hash_equal": true
+      },
+      {
+        "run": "D2_PLAIN_seed29101.json",
+        "d": 2,
+        "sup": "PLAIN",
+        "seed": 29101,
+        "child_final_hash": "972eca8c2ad44fe9a2e3065b10dc81b980bd4b782e17a78025ac4f96a3a3e118",
+        "parent_final_hash": "972eca8c2ad44fe9a2e3065b10dc81b980bd4b782e17a78025ac4f96a3a3e118",
+        "child_data_hash": "e1955d93cd9d312ea1edc48ad7846289f128e2a5ac1f656250ea4b56b2519dcb",
+        "parent_data_hash": "e1955d93cd9d312ea1edc48ad7846289f128e2a5ac1f656250ea4b56b2519dcb",
+        "final_hash_equal": true,
+        "data_hash_equal": true
+      },
+      {
+        "run": "D2_PLAIN_seed29102.json",
+        "d": 2,
+        "sup": "PLAIN",
+        "seed": 29102,
+        "child_final_hash": "d11d6889522eec9d6e9b48801da447a4b2dd730de93dbcca1170bae6a7b3a9b8",
+        "parent_final_hash": "d11d6889522eec9d6e9b48801da447a4b2dd730de93dbcca1170bae6a7b3a9b8",
+        "child_data_hash": "e431c2aa0012d60b382a107a741e2e9fe7ec3bc893b5ab5a5bbcd73d7dea0056",
+        "parent_data_hash": "e431c2aa0012d60b382a107a741e2e9fe7ec3bc893b5ab5a5bbcd73d7dea0056",
+        "final_hash_equal": true,
+        "data_hash_equal": true
+      },
+      {
+        "run": "D3_BRANCH_seed29101.json",
+        "d": 3,
+        "sup": "BRANCH",
+        "seed": 29101,
+        "child_final_hash": "1480c1b9d1a46c9ac92d2fd89399ac2a6e595628c3b3991f660d4c31ca148408",
+        "parent_final_hash": "1480c1b9d1a46c9ac92d2fd89399ac2a6e595628c3b3991f660d4c31ca148408",
+        "child_data_hash": "ad243e4091c93e0b0abe6fe462858fa71af3e500cd181844dccc9dc2ccfd60e0",
+        "parent_data_hash": "ad243e4091c93e0b0abe6fe462858fa71af3e500cd181844dccc9dc2ccfd60e0",
+        "final_hash_equal": true,
+        "data_hash_equal": true
+      },
+      {
+        "run": "D3_BRANCH_seed29102.json",
+        "d": 3,
+        "sup": "BRANCH",
+        "seed": 29102,
+        "child_final_hash": "a90d01735fb2ffdd76098328274f25c650a0f07ffd66683acaf3d8dbe4855a27",
+        "parent_final_hash": "a90d01735fb2ffdd76098328274f25c650a0f07ffd66683acaf3d8dbe4855a27",
+        "child_data_hash": "7499d364ee4ce8b76f9c335f7ff15527a2feb486d0d33b21d53d94dbaf8237fb",
+        "parent_data_hash": "7499d364ee4ce8b76f9c335f7ff15527a2feb486d0d33b21d53d94dbaf8237fb",
+        "final_hash_equal": true,
+        "data_hash_equal": true
+      },
+      {
+        "run": "D3_PLAIN_seed29101.json",
+        "d": 3,
+        "sup": "PLAIN",
+        "seed": 29101,
+        "child_final_hash": "b5a52b91fbc0a4504aa364b7091f6f24e48088eff8cb71e003b801680d92b214",
+        "parent_final_hash": "b5a52b91fbc0a4504aa364b7091f6f24e48088eff8cb71e003b801680d92b214",
+        "child_data_hash": "ad243e4091c93e0b0abe6fe462858fa71af3e500cd181844dccc9dc2ccfd60e0",
+        "parent_data_hash": "ad243e4091c93e0b0abe6fe462858fa71af3e500cd181844dccc9dc2ccfd60e0",
+        "final_hash_equal": true,
+        "data_hash_equal": true
+      },
+      {
+        "run": "D3_PLAIN_seed29102.json",
+        "d": 3,
+        "sup": "PLAIN",
+        "seed": 29102,
+        "child_final_hash": "ca84b49e0ed0a806263089217f856a4901885318cf4e24fc71b4cd597d66ac3d",
+        "parent_final_hash": "ca84b49e0ed0a806263089217f856a4901885318cf4e24fc71b4cd597d66ac3d",
+        "child_data_hash": "7499d364ee4ce8b76f9c335f7ff15527a2feb486d0d33b21d53d94dbaf8237fb",
+        "parent_data_hash": "7499d364ee4ce8b76f9c335f7ff15527a2feb486d0d33b21d53d94dbaf8237fb",
+        "final_hash_equal": true,
+        "data_hash_equal": true
+      }
+    ],
+    "plain_equal": 6,
+    "plain_total": 6,
+    "branch_equal": 6,
+    "branch_total": 6
+  },
+  "memoryless_margin_statistic": {
+    "protocol_text": "memoryless_best_mean + 0.05 / memoryless_best_max + 0.02",
+    "executed": "memoryless_max = max over the two seed streams and the four reference kinds; used in both margin slots",
+    "values": {
+      "d1": 0.5071,
+      "d2": 0.5068,
+      "d3": 0.5062
+    },
+    "binding_thresholds": {
+      "d1": [
+        0.65,
+        0.58
+      ],
+      "d2": [
+        0.65,
+        0.58
+      ],
+      "d3": [
+        0.65,
+        0.58
+      ]
+    },
+    "note": "margins are non-binding (0.5068+0.05=0.5568<0.65; 0.5068+0.02=0.5268<0.58), so learn flags are unchanged under either reading; the next version must name a single statistic"
+  },
+  "branch_variant_eligibility": {
+    "strictly_better_branch": [],
+    "d_means": {
+      "d1": {
+        "PLAIN": 1.0,
+        "BRANCH": 1.0
+      },
+      "d2": {
+        "PLAIN": 0.5991,
+        "BRANCH": 0.5991
+      },
+      "d3": {
+        "PLAIN": 0.6109,
+        "BRANCH": 0.6
+      }
+    },
+    "note": "no d had a strictly higher BRANCH mean, so the undefined BRANCH-wins branch was never exercised; a future version must state whether a BRANCH-winning d is eligible (BRANCH carries the recorded terminal-label defect)"
+  },
+  "replay_plan_note": {
+    "protocol": "replay one scan run and one confirm run",
+    "executed": [
+      "D2_PLAIN:seed29101 (scan)",
+      "D3_PLAIN:seed29102 (scan)"
+    ],
+    "confirm_leg": "vacuous: the confirm phase never ran because no condition qualified",
+    "substitution": "second replay targeted a different d on a scan seed",
+    "note": "the clause was frozen unconditionally; the next version must make it conditional on a qualified condition"
+  },
+  "replay_script_sha256": "56c7eef1d3ce932cfde77d3cecc0af6b1b0e2a5adf043a6342fc7e2fbd78f1a4"
+}

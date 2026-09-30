@@ -1,0 +1,9 @@
+{"model": [25002, "REL"], "completed": 1, "seconds": 14.03383416700035}
+{"model": [25002, "INV"], "completed": 2, "seconds": 27.222936459000266}
+{"model": [25003, "REL"], "completed": 3, "seconds": 40.88829895900017}
+{"model": [25003, "INV"], "completed": 4, "seconds": 53.44021275000023}
+{"model": [25008, "REL"], "completed": 5, "seconds": 58.768925417000446}
+{"model": [25008, "INV"], "completed": 6, "seconds": 63.21877175000009}
+{"model": [25010, "REL"], "completed": 7, "seconds": 68.57756683400021}
+{"model": [25010, "INV"], "completed": 8, "seconds": 73.67595529200025}
+{"decision": "SUPPORTED", "substatus": "EXPOSED_STATE_COMPUTATION_INCOMPATIBILITY", "seconds": 73.67609020900045, "raw_files": 192}

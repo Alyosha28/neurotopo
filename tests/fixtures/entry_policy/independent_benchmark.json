@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "track": "independent_benchmark",
+  "experiment_id": "EXP-9002",
+  "direction": "dry_run_independent_benchmark",
+  "question": "Entry-policy dry run B",
+  "purpose": "Test whether a standalone benchmark with its own decision remains structurally admissible, without a Gate 1 claim.",
+  "gate1_claim": false,
+  "resource_cap": {"max_updates": 100, "max_wall_seconds": 60},
+  "task_search": {"max_configurations": 1, "retain_all_attempts": true, "heldout_rule": "Hold out an independent seed and retain failed calibrations."},
+  "branches": {
+    "success": "Admit only this benchmark configuration for its separate domain study.",
+    "failure": "Close this benchmark configuration and keep the negative result.",
+    "borderline": "Keep the configuration unqualified without tuning its threshold."
+  },
+  "factor": null
+}

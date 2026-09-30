@@ -1,0 +1,24 @@
+{
+  "audit_id": "BND-0001",
+  "bounds": [
+    {
+      "name": "total_cross_count_upper_bound",
+      "registered_graph_family": "H64, 1024 directed edges, per-node in/out degree 16, 64 self-loops, fixed total crossEdges and strong connectivity",
+      "bound_actually_uses": "960 off-diagonal directed edges and parity of total crossEdges / within-block edges",
+      "excluded_target_graphs": 0,
+      "inference_if_excluded": "Would rule out the +0.10 target under the registered count constraints; not observed",
+      "inference_if_not_excluded": "Necessary count bound is nondecisive; does not prove construction or reachability"
+    },
+    {
+      "name": "full_block_matrix_upper_bound",
+      "registered_graph_family": "Strict subset that also fixes each directed E_ab of the original 4x4 block matrix",
+      "bound_actually_uses": "Within-block off-diagonal parity and opposite-direction edge imbalance for each block pair",
+      "excluded_target_graphs": 0,
+      "inference_if_excluded": "Would only rule out the target in this stricter full-block-matrix family, not the registered total-cross family; not observed",
+      "inference_if_not_excluded": "Necessary count bound is nondecisive even under the stronger family"
+    }
+  ],
+  "target_status": "+0.10 is an exploratory graph contrast, not a demonstrated useful task-effect threshold",
+  "candidate_status": "LOCAL_WITNESS_ONLY",
+  "gate1_status": "NOT_PASSED"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "620601f48f10517834b5ab0d98bef2d2e7a5c4d660163aa14864eed886327185",
+  "reviewer": {
+    "model": "gpt-6-luna",
+    "effort": "max",
+    "context": "fresh_only_packet"
+  },
+  "issues": [],
+  "overall_assessment": "设计规定主判定仅使用D64 float32三个seed；行动记录均为384/384对前缀时状态不同、共同后缀后0对新按位合并，按冻结判定规则归为INCONCLUSIVE / NO_NEW_EXACT_MERGER_OBSERVED。D16合并及距离、读出保持描述性用途，未替代主门；行动亦未提出Gate 1、训练、总体信息缺失或语义专化主张。判词与适用范围一致。"
+}

@@ -1,0 +1,53 @@
+{
+  "id": "EXP-0003",
+  "version": "v2",
+  "title": "Nuisance payload x curriculum",
+  "status": "COMPLETED",
+  "research_question": "Can a fixed curriculum restore original delayed task learnability?",
+  "prior_art_checked": [
+    "Bengio2009",
+    "Pascanu2013",
+    "RIMs",
+    "TRNN"
+  ],
+  "strongest_rejection_reason": "Payload changes magnitude and curriculum changes distribution/exposure; no unique mechanism identified.",
+  "hypothesis": "Noise curriculum recovers feasibility across3seeds while direct does not; gain>=0.10 each.",
+  "baselines": [
+    "noise_direct",
+    "blank_direct"
+  ],
+  "intervention": [
+    "blank_payload",
+    "fixed_length_curriculum"
+  ],
+  "controls": [
+    "model parameters",
+    "paired initialization",
+    "updates/examples",
+    "same-schedule tokens/flops",
+    "final data hashes"
+  ],
+  "dataset": "delayed-evidence-v1 and explicit blank-payload derivative",
+  "metrics": [
+    "pre_accuracy",
+    "joint_pair_accuracy",
+    "NLL",
+    "cross-condition differences"
+  ],
+  "resource_matching": "Equal examples/updates; report lower curriculum token cost; exact same-schedule matches",
+  "seeds": [
+    8101,
+    8102,
+    8103
+  ],
+  "commit": "0a5069b",
+  "config": "configs/exp0003_v2.json",
+  "result": "artifacts/EXP-0003/v2/analysis.json",
+  "interpretation": "Fixed curriculum restores original-noise delayed task across three diagnostic seeds; direct training does not.",
+  "limitations": [
+    "three seed screen",
+    "not an architectural effect"
+  ],
+  "decision": "SUPPORTED",
+  "next_action": "EXP-0004: unchanged curriculum, fresh ten-seed matched architecture transfer comparison."
+}

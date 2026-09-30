@@ -1,0 +1,259 @@
+{
+  "D_base_48": 161.95313705068236,
+  "D_base_diagnostic": {
+    "16": 0.0,
+    "32": 71.86871709769281,
+    "48": 161.95313705068236,
+    "8": 0.0
+  },
+  "D_base_float64_bits_hex": "2ca94519803e6440",
+  "D_base_nonfinite_repr": null,
+  "child_rule": "np.random.SeedSequence(36017).spawn(2), one PCG64(child).standard_normal((6,6)) per child in order",
+  "decay": 0.98,
+  "dimension": 6,
+  "failure_reason": null,
+  "gamma": 0.13610245059775603,
+  "gamma_float64_bits_hex": "4b851c1bce6bc13f",
+  "gamma_le_float64_sha256": "36b66da32c4c19f3bb92b3c5c5a0fc1749fd85dc3395ff5d9eef6ec77570db15",
+  "gamma_nonfinite_repr": null,
+  "gamma_window": [
+    0.1,
+    1.5
+  ],
+  "generator_source_sha256": "f0b079a4eb672115306eb59398de86e8c9d940728d0a2ce0d1d084cf152700b4",
+  "lock_sha256": "a4228ebafd79e9e2cafbacff4cae0cfd8ea1c5a768a8a95c6d5a03dea61b509b",
+  "matrices": [
+    [
+      [
+        -0.15858653243485768,
+        0.027590495688736824,
+        -0.5637152587685628,
+        0.6395720146403182,
+        0.4418393338259792,
+        0.11153396111754396
+      ],
+      [
+        -0.5386952323484079,
+        -0.023603546349347193,
+        0.1965216879084092,
+        -0.30992489868359374,
+        0.3446216953164293,
+        0.645144936986762
+      ],
+      [
+        0.23210565428197938,
+        0.8352318216363428,
+        -0.2738178471417542,
+        -0.18060594871483973,
+        -0.130096873823992,
+        0.2905079184343564
+      ],
+      [
+        0.7311535674992142,
+        -0.25072074237485914,
+        -0.009736517727544365,
+        -0.2125290599109216,
+        0.5161258030017618,
+        0.22650457935299914
+      ],
+      [
+        -0.18283674780300913,
+        0.34158814712855373,
+        0.12050333171024939,
+        -0.25562543707189506,
+        0.5923314169513934,
+        -0.6160895526260668
+      ],
+      [
+        -0.15221664827379283,
+        -0.2862273368455598,
+        -0.7172253948857694,
+        -0.5587152415756033,
+        -0.11066318986370557,
+        -0.1283848659377265
+      ]
+    ],
+    [
+      [
+        0.34408567023815156,
+        -0.25862846150192326,
+        -0.8354766962773424,
+        0.2543907620071862,
+        -0.05700352632119094,
+        -0.09555625886230766
+      ],
+      [
+        0.687985696702497,
+        -0.436488295905337,
+        0.35428502775307935,
+        -0.32266245109757347,
+        -0.16408297624295407,
+        -0.20000371831392236
+      ],
+      [
+        -0.27922582181120065,
+        -0.3531025695404669,
+        0.24550103739224405,
+        0.5768807125566796,
+        -0.11259775776591921,
+        -0.593305271241792
+      ],
+      [
+        0.48971179594091757,
+        0.4366634456497597,
+        0.23893822632051245,
+        0.6294535404962743,
+        -0.1287828557607115,
+        0.24498802536293313
+      ],
+      [
+        0.2205439205733129,
+        0.4427515766639669,
+        -0.049556356714202034,
+        -0.106415213458819,
+        0.5828306455005771,
+        -0.6018802447155356
+      ],
+      [
+        0.0475016748954722,
+        -0.43772587131396923,
+        0.13054785038004843,
+        0.22637793408021498,
+        0.7491812428029597,
+        0.3701045901086428
+      ]
+    ]
+  ],
+  "matrix_le_float64_sha256": "52218cad0f2b5aa35b7a516be864ba28c62121bd8f1ada68d859b6e5afdb60ed",
+  "noise_std": 0.8,
+  "numpy_build_config_at_freeze": "Build Dependencies:\n  blas:\n    detection method: system\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: accelerate\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: unknown\n  lapack:\n    detection method: system\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: accelerate\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: unknown\nCompilers:\n  c:\n    commands: cc\n    linker: ld64\n    name: clang\n    version: 15.0.0\n  c++:\n    commands: c++\n    linker: ld64\n    name: clang\n    version: 15.0.0\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.1.3\nMachine Information:\n  build:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\n  host:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\nPython Information:\n  path: /private/var/folders/y6/nj790rtn62lfktb1sh__79hc0000gn/T/build-env-e43io0i0/bin/python\n  version: '3.13'\nSIMD Extensions:\n  baseline:\n  - NEON\n  - NEON_FP16\n  - NEON_VFPV4\n  - ASIMD\n  found:\n  - ASIMDHP\n  not found:\n  - ASIMDFHM\n\n",
+  "numpy_core_binary_sha256": "a30c5d4a5b9fffef4886967542169a9bb31c401802336af0dd6632d193960a30",
+  "numpy_record_sha256": "f365245db11fb3d48375348aa67eacfd4f9992028b7f2976229c5f60a525b28f",
+  "numpy_version_at_freeze": "2.3.3",
+  "protocol": "research/design/exp0013_matrix_gamma_freeze_v2.md",
+  "protocol_sha256": "58e0f789406115be15151a132a627a0325d97f0d6665b162552bd1bb0ee91869",
+  "python_executable_at_freeze": "/private/tmp/neurotopo-venv/bin/python",
+  "python_executable_sha256": "1988a0dd685f91bbaf20b5267046e13cb78859dbb3b5f030e89b448c1fbfe8d4",
+  "python_version_at_freeze": "3.13.15 (main, Aug  5 2026, 12:25:43) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "q_matrices": [
+    [
+      [
+        -0.16182299228046704,
+        0.02815356702932329,
+        -0.5752196518046558,
+        0.6526245047350185,
+        0.45085646308773386,
+        0.11381016440565711
+      ],
+      [
+        -0.5496890126004162,
+        -0.02408525137688489,
+        0.20053233460041756,
+        -0.31624989661591196,
+        0.35165479113921355,
+        0.6583111601905735
+      ],
+      [
+        0.2368425043693667,
+        0.8522773690166764,
+        -0.27940596647117777,
+        -0.1842917844028977,
+        -0.13275191206529796,
+        0.296436651463629
+      ],
+      [
+        0.7460750688767492,
+        -0.255837492219244,
+        -0.009935222170963638,
+        -0.21686638766420574,
+        0.526658982654859,
+        0.23112712178877465
+      ],
+      [
+        -0.18656811000307053,
+        0.34855933380464665,
+        0.12296258337780551,
+        -0.2608422827264235,
+        0.6044198132157075,
+        -0.628662808802109
+      ],
+      [
+        -0.15532311048346206,
+        -0.29206871106689775,
+        -0.7318626478426219,
+        -0.5701175934444931,
+        -0.11292162230990364,
+        -0.13100496524257807
+      ]
+    ],
+    [
+      [
+        0.35110782677362407,
+        -0.26390659336930944,
+        -0.8525272410993291,
+        0.2595824102114145,
+        -0.05816686359305198,
+        -0.09750638659419149
+      ],
+      [
+        0.7020262211249969,
+        -0.4453962203115684,
+        0.3615153344419177,
+        -0.3292473990791566,
+        -0.16743160841117763,
+        -0.2040854268509412
+      ],
+      [
+        -0.2849243079706129,
+        -0.36030874442904787,
+        0.250511262645147,
+        0.5886537883231425,
+        -0.11489567118971349,
+        -0.6054135420834612
+      ],
+      [
+        0.4997059142254261,
+        0.4455749445405711,
+        0.24381451665358414,
+        0.6422995311186472,
+        -0.13141107730684848,
+        0.24998778098258484
+      ],
+      [
+        0.2250448169115438,
+        0.4517873231264969,
+        -0.05056771093285922,
+        -0.10858695250899898,
+        0.5947251484699766,
+        -0.6141635150158526
+      ],
+      [
+        0.04847109683211449,
+        -0.4466590523611931,
+        0.13321209222453922,
+        0.23099789191858672,
+        0.7644706559213875,
+        0.37765774500881916
+      ]
+    ]
+  ],
+  "qr_sign_rule": "make intermediate R diagonal positive, then flip final Q column if det(Q)<0",
+  "raw_matrix_sha256": [
+    "57837d9dc728e078c81d15b9ec3be9f9e45431c254ea0ee3eabb82281434ef28",
+    "50f99970b925165609334495c1b267fcfb1e29ea5f36d6502e1e09ecd91de0af"
+  ],
+  "root_seed": 36017,
+  "runtime_thread_env_at_freeze": {
+    "MKL_NUM_THREADS": null,
+    "NUMEXPR_NUM_THREADS": null,
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null,
+    "VECLIB_MAXIMUM_THREADS": null
+  },
+  "schema_version": 1,
+  "scope": "zero-sample fixed-matrix and analytic-signal freeze",
+  "source_commit": "ddce115a1f931009358af1c433c70bcf2fcba961",
+  "status": "SELECTED",
+  "switch_step": 16,
+  "target_expected_kl_at_48": 3.0
+}

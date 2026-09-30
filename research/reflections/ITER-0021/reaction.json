@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "d7a673531032d6e0abd239da164581928949eb2cf6e4306dc1199b58defa2edf",
+  "review_sha256": "ff9dfb33f3de3bc540b080dd913dce4a9a9eab0230ac9da6623e621714c8f806",
+  "responses": [
+    {
+      "id": "ITER0021-ACTION-REPLAY-SCOPE",
+      "disposition": "accept",
+      "reason": "原复演文件已列4模型/200行，但packet中的精简verification省略具体子集，因此无法从packet单独定位；全量raw审计与子集再生成范围需要明确。",
+      "action": "核对200唯一行键等于运行前冻结的4模型子集，补列模型、行键和精确匹配字段，明确其余1100仅raw审计，更新报告。",
+      "evidence_paths": [
+        "research/iterations/ITER-0021/replay_scope_clarification.json",
+        "research/evidence/EXP-0026_schedule_drift.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "完成反思登记与原始结果归档；保持单个暴露窗口及明确复演子集的结论。"
+}

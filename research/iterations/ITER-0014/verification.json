@@ -1,0 +1,36 @@
+{
+  "decision": "INCONCLUSIVE",
+  "substatus": "NO_NEW_EXACT_MERGER_OBSERVED",
+  "conditions_replayed": 12,
+  "max_float32_error": 0.0,
+  "max_float64_error": 0.0,
+  "exact_flags_match": true,
+  "physics_verified": true,
+  "gru_updates": 0,
+  "probe_updates": 0,
+  "primary_counts": [
+    {
+      "initial_distinct_count": 384,
+      "new_merger_count": 0,
+      "terminal_merge_fraction_among_initial_distinct": 0.0
+    },
+    {
+      "initial_distinct_count": 384,
+      "new_merger_count": 0,
+      "terminal_merge_fraction_among_initial_distinct": 0.0
+    },
+    {
+      "initial_distinct_count": 384,
+      "new_merger_count": 0,
+      "terminal_merge_fraction_among_initial_distinct": 0.0
+    }
+  ],
+  "numerical_replay_pass": true,
+  "numerical_processes": 1,
+  "outer_elapsed_seconds": 2.218119000000115,
+  "budget_seconds": 180,
+  "budget_pass": true,
+  "run_analysis_seconds": 4.374951457999487,
+  "review_sha256": "e2e1e3aaebd289fdba9bc93dddd249a2830b97a9e1d3b70c04b551ec12f887c6",
+  "deviations": []
+}

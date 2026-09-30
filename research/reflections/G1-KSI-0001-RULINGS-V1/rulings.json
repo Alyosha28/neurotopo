@@ -1,0 +1,12 @@
+{
+  "packet_sha256": "a907918c696354c430a7b31600439b215d876b3b24363cd57c5d9794bd7f402d",
+  "review_sha256": "e7353201bee1fb928b3d0ffaec6ae680112e06fc71d1e0da13e4881b4662dc57",
+  "rulings": {
+    "conditions_if_narrowed": "A（仅非项目轨 `independent_benchmark`）：(A1) 在任何资格样本前注册一句话的新问题，其否定不被“多轨迹组织有益”蕴含，并逐字记录 EXP-0012/0013 的问题、生成器、终点与估计对象的记录 ID；(A2) 去掉第 (ii) 条差异轴后重新评分 A；(A3) 在注册的 n 下报告 `gap_F_minus_X_normalised` 及其 SE，并要么在两个条件下以预注册界守住 §4.7 门，要么把难度预注册为协变量并固定模型与自由度；(A4) 把核的实际平稳律（而非 `p_J`）注册为 X 的生成对象；(A5) 记录不主张任何 Gate 1 计分，在资格前固定 K、实际匹配控制与预测，并声明不重开 EXP-0013 生成器。B（主终点类别仅在下述全部满足时允许）：(B1) 在任何效果轮前冻结 `AUC_B` 定义、δ_min 及其最小有意义效应理由、τ_term 与单侧非劣检验、实际主控制的 ε、每单元 n、alpha、δ_min 处功效 0.8、以及确切的交互统计量与自由度，资格后不得修改；(B2) 具名两个 K 取值，并称之为对照而非剂量反应；(B3) 使 τ_term 成为门——违反即判 `INCONCLUSIVE`，不论 `AUC_B` 如何；(B4) 预注册伪影探针及其判废规则；(B5) 使不可行停止可机器核验，并禁止事后下调 δ_min；(B6) 要求资格门报告实际控制的 `AUC_B` 及其 CI 与该估计量的最小可分辨差，并按决定0044 要求控制达 ε，否则不启动效果轮；(B7) 保持 MON-0001/决定0009 路径关闭，不放宽任何资源或控制匹配。",
+    "question_1_request_A_0049": "NARROW",
+    "question_2_request_B_efficiency_endpoint": "NARROW",
+    "question_3_packet_sufficient_for_ruling": "no",
+    "what_would_change_the_verdict": "A 转 ACCEPT：以记录锚定地写出已关闭方向线的问题，并给出判别器说明新问题的答案不被旧问题蕴含，且在预注册界内给出难度匹配的 F/X 对。A 转 REJECT：证据显示 EXP-0012/0013 已使用 Markov 潜过程、或已估计过 K × 耦合交互。B 转 ACCEPT：冻结 δ_min、τ_term、ε 并完成功效计算，证明在可行 n 内 δ_min 处功效 0.8，且资格轮中实际控制达 ε 而终端非劣完好。B 转 REJECT：冻结数字显示有意义功效不可达，或为使效应存活而放宽 τ_term。问题 3 转 yes：把 v3 的 §2/§4.7/§5 与已关闭方向线的记录放进 packet。"
+  },
+  "schema_version": 1
+}

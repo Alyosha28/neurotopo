@@ -1,0 +1,184 @@
+{
+  "issues": [
+    {
+      "evidence": [
+        "0.199"
+      ],
+      "falsifiable_check": "在 verification JSON 中检索任何键值四舍五入到 0.199；若不存在，则把论文改为 0.198 或 0.20，或补上产生 0.199 的脚本与输出键。",
+      "id": "I1",
+      "problem": "论文 §4 R1 写 'Short-lag contrasts stay large (median 0.057, up to 0.199)'，action Q2 又把它作为待查数字列出，但 outputs 中没有任何键等于或可四舍五入到 0.199：verification 的 C2_max_abs_contrast_on_grid.max = 0.19845532322583725（三位小数应为 0.198），abstract 另写 'up to 0.20'。该数字无法由所附机器输出复算。",
+      "severity": "high",
+      "source": "both",
+      "why_it_matters": "Q2 的核心是表内数字与 outputs 是否一一对应；一个被作者自己点名的数字对不上，说明 R1 段落的数字不是从 outputs 直接生成的，读者无法区分哪些数字可复算。"
+    },
+    {
+      "evidence": [
+        "0.82–0.88",
+        "the total ratio is 0.72, 0.85 and 0.89 across three seeds"
+      ],
+      "falsifiable_check": "对照 decision 输出三行的 tanh_total_ratio：min=0.7196、max=0.8878，故摘要必须写成 0.72–0.89；若坚持 0.82，需给出第四个不同定义下的计算。",
+      "id": "I2",
+      "problem": "abstract 称 tanh 控制下线性匹配对的 total ratio 为 '0.82–0.88'，§4 同一实验写 '0.72, 0.85 and 0.89'；decision 输出的 linear_matched_pair_for_this_seed.tanh_total_ratio 为 0.8496626904306799 / 0.8877918112526483 / 0.71955301668811，即 0.85/0.89/0.72。abstract 的区间两端都与正文和输出不符（0.72 被写成 0.82，0.89 被写成 0.88）。",
+      "severity": "high",
+      "source": "design",
+      "why_it_matters": "摘要里的区间是审稿人唯一必读的数字；摘要与正文/输出互相矛盾且有方向性偏差（区间被收窄，弱化了不可移植的证据），直接损害可信度。"
+    },
+    {
+      "evidence": [
+        "2×2 design that varies band separation and input correlation time independently",
+        "varying band separation and φ independently",
+        "Input correlation time never changes the verdict",
+        "not by the input correlation time"
+      ],
+      "falsifiable_check": "补跑（相邻带, φ=0.3）与（分离带, φ=0.7）各 8 seeds × 3 ridges；若四格判决仍分别是 FALSIFIED/OVERLAP，则可保留；否则删去 'independently'、'never'，并把标题限定为 'in the two geometries tested'。",
+      "id": "I3",
+      "problem": "所谓 2×2 并非正交因子设计：manifest（heldout summary）四行分别是（相邻带, φ=0.5, 12 seeds=主规格）、（相邻带, φ=0.7）、（分离带, φ=0.5）、（分离带, φ=0.3）。相邻带只测 0.5/0.7，分离带只测 0.3/0.5，缺少（相邻带, φ=0.3）与（分离带, φ=0.7），因此 φ 与带几何完全混淆，不能声称二者被'独立'变动；其中第一行还是用于定规则的主规格（非 held out）。在这个基础上再写 'Input correlation time never changes the verdict' 与标题的 'not by the input correlation time'，是把两个几何 × 两个 φ 的四格外推成普遍律。",
+      "severity": "high",
+      "source": "design",
+      "why_it_matters": "Q1 的核心：主结论的因果归因（几何决定、φ 无关）没有独立变动作为支撑，'never'/'not by' 在证据上不成立；若 φ=0.3 配相邻带出现不同判决，主结论即被推翻。"
+    },
+    {
+      "evidence": [
+        "artifact band"
+      ],
+      "falsifiable_check": "构造零假设：固定同一臂、仅在 matched family 内随机配对（组织差异≈0），重复抽样得到 contrast 分布，取其 p90 作为阈值；若该零分布 p90 与 artifact band 相差一个量级，则现规则无效，应改用该零分布或把规则改述为'仅作数量级参照'。",
+      "id": "I4",
+      "problem": "artifact band 的定义是同一臂自身曲线在 γ_rel∈{0.01,0.03} 之间的最大变化（§3），属'同一系统对读出旋钮的敏感度'；判决规则（§3.1，decision 0077）却把它当作'两臂之差'的判决阈值（contrast p90 < artifact p10 → FALSIFIED）。两者虽同为 MC 单位的绝对差（因此'量纲不可比'的指控不完全成立），但一个是 knob 扰动幅度、一个是组织差异幅度，且 artifact band 不是'无组织差异'零假设下 contrast 的抽样分布，无法给出假阳性率；更要命的是 contrast 分布本身就是在同一组 seeds×ridges 上取的，ridge 变异已被计入 contrast 的 p10/p90，因此把 ridge 敏感度再当作独立噪声底线属重复计数。",
+      "severity": "high",
+      "source": "both",
+      "why_it_matters": "Q3 的核心：若该阈值不成立，§3.1 的 FALSIFIED_FIELD_LEVEL 与 §3.2 四行判决（FALSIFIED/OVERLAP）全部失去依据，全文唯一的判决性结论随之失效。"
+    },
+    {
+      "evidence": [
+        "the largest change of one arm",
+        "own curve when the ridge moves between 0.01 and 0.03"
+      ],
+      "falsifiable_check": "把 γ_rel=0.003 也纳入 artifact band 计算，并改在 12 个 seed 上取分位数，重算四行判决；若任一行由 FALSIFIED 变 OVERLAP（或反之），则现表不可用。",
+      "id": "I5",
+      "problem": "artifact band 只用 γ_rel 0.01→0.03 两档，而 contrast 分布覆盖 0.003/0.01/0.03 三档（verification config 'ridges': [0.003, 0.01, 0.03]），阈值与被比较对象的支撑集不对称。verification 中 own_curve_ridge_band 对每个 seed 只有 1 个取值、36 行里仅 12 个不同值（如 seed0 恒为 0.057041866879063874），同一数值被复制 3 次参与 min/p10/median/p90/max 计算；按 12 个独立值重算，p10=0.0571、p90=0.0733，与表 3.1 的 0.0570/0.0742 不同。",
+      "severity": "high",
+      "source": "design",
+      "why_it_matters": "判决规则刚好卡在 p10 上（0.0570 vs 长滞后 p90 0.0143），阈值一侧的分布被 3 倍复制，p10/p90 不是 36 个独立观测的分位数；换一种聚合就可能改判，属于'口径决定判决'。"
+    },
+    {
+      "evidence": [
+        "Rule fixed in advance (decision 0077)",
+        "The rule of §3.1 was fixed after the primary run",
+        "FALSIFIED_FIELD_LEVEL",
+        "INCONCLUSIVE_OVERLAP"
+      ],
+      "falsifiable_check": "给出 decision 0077 的时间戳/内容与主规格运行时间的先后证据；并在正文中写明规则作用于哪一个 contrast 量；若无法证明事前，则把 'fixed in advance' 改为 'fixed after the primary run, then applied out of sample'。",
+      "id": "I6",
+      "problem": "同一份稿子既写 §3.1 的规则 'Rule fixed in advance (decision 0077)'，又在 §3.2 写 'The rule of §3.1 was fixed after the primary run'，二者直接冲突；manifest 只写 'rule: decision 0077: ...'，不含'事后再定'的限定，读者会把它当作事前登记。此外规则本身未指定用哪个 contrast：同一条规则被套用在长滞后与 max-on-grid 两个不同量上，分别得到 FALSIFIED_FIELD_LEVEL 与 INCONCLUSIVE_OVERLAP 两个判决，而这两个标签在 outputs 中不存在（manifest 只有 FALSIFIED/OVERLAP）。",
+      "severity": "high",
+      "source": "design",
+      "why_it_matters": "若规则是看主规格之后才定的，它就不是预注册，而是事后选择；再叠加'一条规则两个判决'，任何结论都可被说成规则允许的结果，Q6 所问的边界问题在此变成实质的方法学缺陷。"
+    },
+    {
+      "evidence": [
+        "(0.019–0.028 vs 0.052–0.054)",
+        "0.023–0.057"
+      ],
+      "falsifiable_check": "在 packet 三个 output 中检索 0.019–0.028 / 0.052–0.054 / 0.023–0.057 的键；若不存在，则补脚本输出第一段 R2 的逐 seed contrast 与 artifact band，或删去该段。",
+      "id": "I7",
+      "problem": "§4 R2 第一段（未匹配的线性匹配对）的全部数字——长滞后 contrast 0.019–0.028、artifact band 0.052–0.054、短滞后 0.023–0.057——在 decision 输出中都没有对应键。该输出每行只有一个 contrast_max_on_grid / contrast_long_lag_ge_20 / artifact_band，其值（0.0058/0.0021/0.0233、0.0008/0.0008/0.0048、0.0601/0.0506/0.0572）对应论文中 R2 第二段（nested re-matching），第一段（portability）的数值没有任何输出支撑。",
+      "severity": "high",
+      "source": "design",
+      "why_it_matters": "Q2：R2 是论文两大控制之一，其 portability 结论（0.72/0.85/0.89）只由 linear_matched_pair_for_this_seed 一行支撑，而该行没有 contrast 字段，等于用不可复算的数字支撑'不跨核心类移植'的结论。"
+    },
+    {
+      "evidence": [
+        "every allocation within 2% is",
+        "The matched family is large"
+      ],
+      "falsifiable_check": "对同一 seed 在三个 ridge 上重算 |total_ratio−1|≤0.02 的分配计数；若三值不等则 matched_rung_count 不是容量匹配家族大小，需改名或在正文说明其随 γ_rel 变化的含义。",
+      "id": "I8",
+      "problem": "§2 说匹配只由解析容量在 2% 内决定（与读出无关），但 verification 的 matched_rung_count 对同一 seed 随 ridge 变化：seed0 = 917/861/760，seed5 = 1039/633/510（ridge 0.003/0.01/0.03）。表 3.1 与 abstract 的 '510–1410' 正是取这 36 个值的 min/max，其中 min 510 来自 seed5 的 ridge=0.03、max 1410 来自 seed11 的 ridge=0.01。",
+      "severity": "high",
+      "source": "design",
+      "why_it_matters": "'匹配家族很大'是全文第一个卖点；若家族大小依赖 γ_rel，则要么匹配口径并非纯容量 2%（键名或实现与正文不符），要么 510–1410 是两个不同读出下的极值拼接，读者会误以为它与读出无关。"
+    },
+    {
+      "evidence": [
+        "the member closest to the reference was retained",
+        "it survives it more strongly than in the linear case",
+        "10–70 times below"
+      ],
+      "falsifiable_check": "在 tanh 核上重建与线性核相同规模（≥510 个候选）的匹配家族，并按同一'最大 spread contrast'规则选成员；若 contrast 不再低 10–70 倍，则删去'更强'与'10–70 倍'的表述。",
+      "id": "I9",
+      "problem": "线性规格曲线是'选 log-timescale-spread contrast 最大的成员'，而 nested tanh 重匹配是'选 tanh 总容量最接近参考的成员'再测 contrast：两者的选择目标不同，后者的低 contrast 至少部分是选择规则的产物，论文没有报告'tanh 匹配家族内同样取最大 contrast'的反事实。此外 nested 搜索只是 decision config 的七档 ladder_n3（seeds=3、phi=0.5 单一设定），而线性结论基于 510–1410 个匹配分配 × 12 seeds × 3 ridges；'10–70 倍'还是把两个不同量的比值混在一个区间（max-on-grid/artifact = 10.4/23.6/11.9；long-lag/artifact = 70.8/63.2/12.0）。",
+      "severity": "high",
+      "source": "design",
+      "why_it_matters": "Q4：两条 R2 结论中，'不可跨核心类移植'与'嵌套匹配后对比度低'在逻辑上可以并存，但后者不构成对线性结论的独立确认——它是不同选择规则、不同样本量、不同搜索空间的结果，'survives it more strongly than in the linear case' 因此不成立。"
+    },
+    {
+      "evidence": [
+        "tail fraction 0.002–0.008 beyond lag 100"
+      ],
+      "falsifiable_check": "由 decision 的 tail_fraction_beyond_lag_100 直接复算区间（应为 −0.0030–0.0079），并解释负值来源（例如尾部按比值定义）；否则需修脚本重算。",
+      "id": "I10",
+      "problem": "§7 写 tanh 控制的截断滞后尾部比例为 '0.002–0.008 beyond lag 100'，但 decision 的 tail_fraction_beyond_lag_100 三值为 0.001652346377546478、0.007920889413200311、−0.003037708456320398。下限 0.00165 < 0.002 已越界，第三个 seed 甚至为负值——MC 估计的尾部比例不可能为负，说明该统计量含数值/实现噪声或定义与正文不同。",
+      "severity": "medium",
+      "source": "design",
+      "why_it_matters": "Q2：限制节用这个区间来保证'截断滞后和'的可靠性；区间既不覆盖实际值，又掩盖了一个不可能的负值，读者无法判断 tanh 结果是否可信。"
+    },
+    {
+      "evidence": [
+        "roughly tenfold seed variance",
+        "the overlap being driven by seed variance"
+      ],
+      "falsifiable_check": "要求 outputs 提供 seed 级 contrast（每 seed 三个 ridge 的先合并再做 seed 间分位数）；若 seed 间 p10/p90 比不足 10 倍，则删去 'tenfold seed variance'。",
+      "id": "I11",
+      "problem": "abstract 与 §3.2 把分离带判决 OVERLAP 归因于 'seed variance'，但 manifest 每个 held-out 规格是 8 seeds × 3 ridges = 24 cells（primary 36 cells），p10/p90 是跨 seeds×ridges 的分位数，ridge 维度已被计入，输出中没有任何 seed 级方差或 seed 内离散度键；且 'tenfold' 与 manifest 自身的分位比不符（分离带 φ=0.5：0.0397→0.2753 ≈ 6.9 倍；φ=0.3：0.0185→0.2342 ≈ 12.7 倍），'variance' 也不是'倍数'。",
+      "severity": "medium",
+      "source": "design",
+      "why_it_matters": "该归因是'OVERLAP 不是小中位数造成的'这一辩护的唯一依据；把 seeds 与 ridges 的变异合并后再叫 seed variance，属于口径混淆，且倍数与输出不符。"
+    },
+    {
+      "evidence": [
+        "Restricting the family to allocations matching both the total capacity and",
+        "leaves 62–128 members per specification",
+        "member with the largest log-timescale-spread contrast against the reference, and record the contrast on a"
+      ],
+      "falsifiable_check": "补出参考分配的 moment1/moment2 与 tolerance 语义（绝对/相对），并检查全部 C2 成员是否满足；同时给出被选成员的 spread 值序列。",
+      "id": "I12",
+      "problem": "R1 声称同时匹配总量与 log-timescale 一阶矩，但 packet 中没有任何键给出参考分配 (21,21,22) 的 moment1/moment2 目标值，只有每行的 moment1/moment2；C2 被选成员的 moment1 跨度为 1.3903–1.4787（0.0884），已超过 verification config 的 'moment1_tolerance': 0.05，因此按字面（绝对容差）不可能存在一个参考目标同时满足这三个选择。此外'选 log-timescale-spread 最大的成员'这一选择变量在输出中无键（输出只有 counts/moment1/moment2/total_ratio/first_flip_grid_lag/contrast/own_curve_ridge_band）。",
+      "severity": "medium",
+      "source": "design",
+      "why_it_matters": "Q2：R1 是'只报总量匹配会高估'的唯一反证；若其一阶矩匹配本身不可核验（甚至超出容差），R1 的结论与 62–128 都只是键名，不能算证据。"
+    },
+    {
+      "evidence": [
+        "dir0003_repro_manifest.json",
+        "methodological literature we audited agrees on the shape of the problem",
+        "Six confounds recur in resource-matched architecture comparisons"
+      ],
+      "falsifiable_check": "在 packet 内检索任何参考文献列表、bib 条目或脚本清单键；若为空，则补齐 references 节并把 repro manifest 纳入送审包（含脚本 hash）。",
+      "id": "I13",
+      "problem": "Q5 投稿完整性：稿子开头与 §6 把全部数字的出处指向 'paper/dir0003_repro_manifest.json'，但 action 明说 packet 内只有五个文件，该 repro manifest（以及所引用的 reviews/byte hashes）不在包内，故'每个数字由所列脚本产生'不可核验；正文对'六种混淆'与'我们审计的方法学文献'给出结论性陈述却没有任何引用或参考文献节（全文无 bibliography），而同类审稿可直接要求可追溯来源。",
+      "severity": "medium",
+      "source": "design",
+      "why_it_matters": "方法学论文的价值在于可追溯；出处在包外意味着最关键的复算路径对审稿人封闭，文献断言无引用则无法判断是综述结论还是作者印象。"
+    },
+    {
+      "evidence": [
+        "does not transfer across core classes",
+        "survives a static nonlinearity"
+      ],
+      "falsifiable_check": "把两句改写为限定式（'in this single tanh core at gain 1.0'），并删去包外纲领性数字或给出包内证据；若作者坚持普遍表述，需补第二类非线性核与 gain 扫描。",
+      "id": "I14",
+      "problem": "尽管全文声明不主张能力与生物学，仍有句子可被读成超出单一构件的普遍/机制主张：R2 由单个 tanh（gain=1.0、3 seeds、7 档 ladder、MC 估计）推出 'does not transfer across core classes'（对'核心类'整体的陈述），并称线性结论 'survives a static nonlinearity'（把一次非线性控制读成对非线性的稳健性）。§1 还有 'Our own programme closed fifteen candidate mechanisms' 这类包外、无法核验的纲领性断言。",
+      "severity": "medium",
+      "source": "design",
+      "why_it_matters": "Q6 要求的边界表述：这些句子会被后续引用为'容量匹配在非线性核上不成立'的一般结论，与 §7 'nothing here speaks to ... any biological system' 的免责自相削弱（免责声明与正文强度不匹配）。"
+    }
+  ],
+  "overall_assessment": "判词：PAPER_NEEDS_MAJOR_REVISION（decision_impact: REASSESSMENT_REQUIRED）。\n\n总评：这是一份克制、可复算程度高于平均的负结果稿——表 3.1 的五列统计量、表 3.2 四行、R2 的 0.0058/0.0021/0.0233、0.0008/0.0008/0.0048、0.72/0.85/0.89（输出实为 0.7196/0.8497/0.8878）、62–128、510–1410、crossover 九个取值，我都用包内 verification/manifest/decision 复算命中；design/action 与三份输出的 sha256 也全部自洽。但四个判决性环节不可核验或自相矛盾：(1) artifact band 的口径（Q3）不能充当判决阈值；(2) 2×2 非正交、φ 与几何混淆，却写成 'independently'/'never'（Q1）；(3) 规则'事前固定'与'看主规格后才固定'同稿并存（Q6）；(4) R2 第一段数值与 0.199 在 outputs 中无键。因此结论方向（匹配比较默认不可识别）或许成立，但当前的判决与标题强度必须重做。\n\nQ1（过度主张）：不成立。四格是（相邻,0.5 主规格 12 seeds）、（相邻,0.7）、（分离,0.5）、（分离,0.3），缺（相邻,0.3）与（分离,0.7），φ 未与几何独立变动，其中一格还是定规则用的主规格；'Input correlation time never changes the verdict' 与标题 'not by the input correlation time' 因此是对 2 几何 × 2 φ 的外推（I3）。标题可保留为 'in the two band geometries tested'。见 I2–I4。\n\nQ2（口径一致性）：大部分命中，少数不命中。命中：510/1410（matched_rung_count min/max）、62/128（r1_pool_size）、表 3.1 与 3.2 全部四舍五入值、R2 两段的 0.0058/0.0021/0.0233、0.0008/0.0008/0.0048、0.0601/0.0506/0.0572、0.7196/0.8497/0.8878（论文写作 0.72/0.85/0.89）、crossover {2,3,4,5,8,10,20,24,48}。不命中：0.199（最近值 0.198455→0.198，I1）、abstract 的 0.82–0.88（与 0.72/0.85/0.89 矛盾，I2）、R2 第一段 0.019–0.028 / 0.052–0.054 / 0.023–0.057（无键，I7）、tail fraction 0.002–0.008（实为 −0.0030–0.0079，I10）、matched_rung_count 随 ridge 变化（I8）、R1 一阶矩目标与 spread 选择变量无键（I12）。\n\nQ3（伪影带是否公平）：不可比问题的实质不在'量纲'（两者都是同一滞后网格上的 MC 单位绝对差），而在于 artifact band 是同一臂对读出旋钮 γ 的敏感度，不是'无组织差异'零假设下臂间 contrast 的抽样分布，给不出假阳性率；且 contrast 分布本身已包含同一组 ridges 的变异，把 ridge 敏感度再当独立底线是重复计数。实现上还有三处硬伤：只用 0.01→0.03 两档而 contrast 用三档；36 行里 artifact band 只有 12 个不同值（每 seed 一个，复制 3 次），p10/p90 不是独立分位数；判决恰好卡在 p10 上（0.0570 vs 0.0143）。替代方案：以'同臂内随机配对'的零分布 p90 作阈值（或置换检验），并把 artifact band 降级为数量级参照。见 I4、I5。\n\nQ4（R2 是否重复计数）：两条结论逻辑上不互相蕴含（可移植性 vs 嵌套匹配后的可识别性），但第二条不成立为'对线性结论的独立确认'：线性分析按'最大 spread contrast'选成员，nested tanh 按'最接近参考总容量'选成员，选择规则不同使低 contrast 至少部分是选择产物，且搜索空间只有 7 档 ladder、3 seeds、单一 φ，'10–70 倍'还混合了 max-on-grid 比（10.4–23.6）与 long-lag 比（12.0–70.8）两个量。建议只保留'不可跨核心类移植'，删去'survives it more strongly than in the linear case'。见 I9。\n\nQ5（投稿完整性）：致命项是 provenance 与统计处理——repro manifest 不在包内、无参考文献节（I13）、artifact band 阈值无零分布（I4/I5）、判决规则未指明作用于哪个 contrast（I6）、held-out 只有汇总分位数、无 seed 级数据与置信区间（I11）。加分项：2×2 补全两格、补第二类非线性核、给出图（规格曲线图/散点）、与既有 matching 文献的对照表。限制节写得比多数短文诚实（明确 no training / no biology），但未披露'规则事后固定'与'第一段 R2 数值无输出'。\n\nQ6（边界表述）：仍有可读成普遍主张的句子——'does not transfer across core classes'、'survives a static nonlinearity'（I14），以及包外的 'Our own programme closed fifteen candidate mechanisms'；'provably exceeds that band' 对 MC + 规格曲线而言也过强。其余免责声明（no capability/no biology/no Gate 1）与 action 的未授权事项一致，未见声称能力或生物学效应。\n\nFILES_READ: [\"research/reflections/DIR-0003-PAPER/packet.json\"]",
+  "packet_sha256": "6d11ceb8afa7191c02011cec93509589e62a38b11945c5bcd1b62ed955c777e5",
+  "reviewer": {
+    "context": "fresh_only_packet",
+    "effort": "high",
+    "model": "deepseek-v4.1-flash"
+  },
+  "schema_version": 1
+}

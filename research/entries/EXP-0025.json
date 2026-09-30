@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "track": "independent_benchmark",
+  "experiment_id": "EXP-0025",
+  "direction": "refresh_new_seed_equal_logit",
+  "question": "Does prototype refresh rescue independently qualified failures in new seeds, and can a logit-preserving shape intervention do so?",
+  "purpose": "New-seed replication and constrained geometry paths with explicit codebook prior, not Gate1.",
+  "gate1_claim": false,
+  "factor": null,
+  "resource_cap": {
+    "max_updates": 24000,
+    "max_wall_seconds": 2400
+  },
+  "task_search": {
+    "max_configurations": 1,
+    "retain_all_attempts": true,
+    "heldout_rule": "Fixed12newseeds, one period8, independent qualification/test, allconditions; no extra failed-seed recruitment."
+  },
+  "branches": {
+    "success": "Report new-batch replication and separate equal-logit family evidence with finite denominators.",
+    "failure": "Retain insufficient failures, harms, constraints and no rescue; no tuning.",
+    "borderline": "Separate R/M outcomes and descriptive uncertainty, no threshold changes."
+  }
+}

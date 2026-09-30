@@ -1,0 +1,58 @@
+{
+  "experiment": "EXP-0031",
+  "active_version": "v1",
+  "versions": {
+    "v1": "COMPLETED"
+  },
+  "gate": "A2_TASK_QUALIFICATION_CORRECTED",
+  "title": "Corrected-endpoint re-qualification of the DELAY-d task family",
+  "protocol": "experiments/EXP-0031/v1.md",
+  "config": "configs/exp0031_v1.json",
+  "implementation": "src/neurotopo/arch0001_memory_requalification.py",
+  "training_module": "src/neurotopo/arch0001_memory_task.py",
+  "tests": "tests/test_arch0001_memory_requalification.py",
+  "output": "artifacts/EXP-0031/v1",
+  "seeds": {
+    "scan": [
+      29101,
+      29102
+    ],
+    "confirm": [
+      29111,
+      29112,
+      29113
+    ]
+  },
+  "runs": 12,
+  "training_updates": 24000,
+  "decision": "INCONCLUSIVE",
+  "substatus": "NO_QUALIFIED_MEMORY_CONDITION",
+  "corrected_endpoint": "meaningful_accuracy on readout positions r in [d+1, T]",
+  "results": {
+    "d1": 1.0,
+    "d2": 0.5991,
+    "d3": 0.6109,
+    "memoryless_max": 0.5068,
+    "oracle": 1.0
+  },
+  "reproduction": {
+    "plain_runs_hash_equal": "12/12",
+    "verification_pass": true
+  },
+  "report": "research/evidence/EXP-0031/report.md",
+  "verification": "research/evidence/EXP-0031/verification.json",
+  "provenance_check": "research/evidence/EXP-0031/provenance_check.json",
+  "decision_record": "research/decisions/0106_exp0031_requalification.md",
+  "supersedes": "experiments/EXP-0030/registry.json",
+  "guard": "Corrected-endpoint re-qualification only; no candidate training, no A2 effect, A1 and old Gate 1 unchanged",
+  "provenance_note": "git commit f5a6e2c, git_dirty=true (active git metadata outside the writable sandbox)",
+  "reflection": {
+    "packet": "research/reflections/EXP-0031/packet.json",
+    "review": "research/reflections/EXP-0031/review.json",
+    "reaction": "research/reflections/EXP-0031/reaction.json",
+    "execution": "research/reflections/EXP-0031/execution.md",
+    "issues": 6,
+    "decision_impact": "UNCHANGED",
+    "note": "first packet attempt (166KB action view) exhausted the reviewer token budget; re-sent as a 12.9KB lean view"
+  }
+}

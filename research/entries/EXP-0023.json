@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "track": "independent_benchmark",
+  "experiment_id": "EXP-0023",
+  "direction": "composition_consistency_repair",
+  "question": "Does HOLD/FLIP composition drift predict long-horizon failures and does targeted training repair them beyond equal-operation supervised training?",
+  "purpose": "One fixed composition-consistency training candidate and prospective new-seed mechanism test, not Gate1.",
+  "gate1_claim": false,
+  "factor": null,
+  "resource_cap": {
+    "max_updates": 24000,
+    "max_wall_seconds": 1500
+  },
+  "task_search": {
+    "max_configurations": 1,
+    "retain_all_attempts": true,
+    "heldout_rule": "One coefficient. Six new training seeds, disjoint diagnosis/eval namespaces, all8cells. Old checkpoints descriptive only."
+  },
+  "branches": {
+    "success": "Report supported local prediction/intervention/repair chain only if all preregistered links pass.",
+    "failure": "Retain failures, strong INV, and no coefficient/seed search; conclude scoped non-support.",
+    "borderline": "Separate repair from mechanism; no retrospective threshold changes."
+  }
+}

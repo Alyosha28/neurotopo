@@ -1,0 +1,55 @@
+{
+  "experiment_id": "EXP-0026",
+  "version": "v1",
+  "review_type": "independent_static_prerun",
+  "scope": "Registration, config, entry, prior EXP-0025/DYN-0001 evidence and relevant frozen-source definitions only. No new model execution, training, prototype fit or outcome-based calibration.",
+  "verdict": "PROTOCOL_AMENDMENT_REQUIRED_BEFORE_IMPLEMENTATION",
+  "blocking": [
+    {
+      "id": "B1_ENDPOINT_AND_DENOMINATOR",
+      "location": "experiments/EXP-0026/v1.md:9,27,31",
+      "issue": "Three-horizon accuracy is not explicitly fixed as terminal accuracy at indices 256, 512 and 1024 rather than all-time accuracy. The main failure stratum is additionally selected on this same round's NONE outcomes, so the denominator is conditional on exposed main data; the protocol does not state how a qualification-passing seed with a CONTROL_INCONCLUSIVE GAUGE gate is counted in the zero-window verdict.",
+      "exact_fix": "Freeze terminal accuracy as mean((pre_logit[:,T]>=0)==target[:,T]) at T=256,512,1024, separately for HOLD and UPDATE, with the same 512 sequences and same-path NONE. First list the nine previously qualified new REL seeds from EXP-0025, then for each R path report all nine NONE patterns and the predeclared all-three-HOLD-<.95 conditional failure subset; keep the other seeds and old 23005 descriptive. Label this subset as selected on exposed main outcomes, not a new independent confirmation. Apply the ORIGINAL GAUGE gate before counting a seed as a supported window; report a separate CONTROL_INCONCLUSIVE count and do not label an all-control-failed set NO_REGISTERED_SCHEDULE_WINDOW without that qualification."
+    },
+    {
+      "id": "B2_WINDOW_PARTITION",
+      "location": "experiments/EXP-0026/v1.md:29",
+      "issue": "The six-bit success vector is not exhaustively classified: a contiguous successful suffix ending at K64 but starting after K2 is neither a prefix, bounded middle segment, all-success, nor discontinuous set under the stated wording. A single successful K64 is the simplest counterexample.",
+      "exact_fix": "Freeze an exhaustive ordered-six-bit classification before implementation: empty=NO_WINDOW; all six=RIGHT_CENSORED_64; contiguous proper prefix starting K2=PREFIX_WINDOW; contiguous interior block bounded by failed shorter and longer k=BOUNDED_WINDOW; contiguous proper suffix ending K64=LEFT_CENSORED_WINDOW (or explicitly name another distinct suffix label); every remaining noncontiguous set=NONMONOTONIC_WINDOW. State whether a proper suffix contributes to the primary supported-window count; it must not silently enter or leave that count after observing results."
+    },
+    {
+      "id": "B3_PHASE_METHOD",
+      "location": "experiments/EXP-0026/v1.md:11",
+      "issue": "PHASE16/PHASE32 specify event times but not which refresh operator is applied. The sentence assigning EXP-0025 EQUAL8 covers K and ONCE only, while FULL/SCALE/GAUGE are separately named methods.",
+      "exact_fix": "Declare PHASE16/PHASE32 as the same frozen EQUAL proposal, validity checks, fallback and pre-refresh scoring as K16/K32, changing only the event schedule; or explicitly name and justify another frozen operator. Record attempted and valid event counts for each phase condition."
+    },
+    {
+      "id": "B4_ADAPT_COUNT_EVENT_CONTRACT",
+      "location": "experiments/EXP-0026/v1.md:13,37",
+      "issue": "ADAPT90 thresholding and COUNT90 times are mostly specified, but the protocol does not explicitly say COUNT attempts the EQUAL operator or whether its fixed schedule is computed from each sequence's own ADAPT90 attempts under the same model, arm, input and ORIGINAL path, independent of intervention validity. These choices alter the count control.",
+      "exact_fix": "Freeze COUNT90 as EQUAL at its integer scheduled times, using n_i equal to the full-T1024 ADAPT90 attempt count for the identical model/arm/seed/task/example and ORIGINAL input, including invalid attempts and t1024; COUNT's schedule remains fixed after its own trajectory diverges. Use pre-refresh d_t for ADAPT, update the cooldown after every attempted EQUAL even on fallback, and make n_i=0 produce no attempt. Save n_i, ordered ADAPT and COUNT attempt times, validity and reason per example; compare count matching only at T1024 and describe future-count access explicitly."
+    },
+    {
+      "id": "B5_RAW_RECOMPUTABILITY",
+      "location": "experiments/EXP-0026/v1.md:37",
+      "issue": "The optional aggregation clause has no exact retained schema. Time-aggregated curves alone cannot recompute the same-example ADAPT/COUNT pairing, event-level validity and logit maxima, tau censoring, or per-seed gate outcomes. It also leaves ambiguous whether a future reviewer can recalculate terminal decisions without rerunning all model trajectories.",
+      "exact_fix": "Before implementation freeze a minimal per-example/per-time schema: source IDs and input hashes; pre-refresh logits at every t for every rollout; target or immutable target-source binding; per-example attempt and validity masks, invalid reasons and post-event logit/Gram errors; per-example full d_t for ADAPT and all tau NONE streams; ADAPT/COUNT attempt indices and n_i; per-example tau crossing index plus censor flag; NONE ORIGINAL/IDENTITY Gram trajectories; and exact terminal counts/denominators for each condition at all three horizons. Keep post values and displacement diagnostics for attempted events. An aggregate-only replacement must be independently sufficient to recalculate every claimed endpoint and control gate; otherwise retain the full raw arrays."
+    }
+  ],
+  "nonblocking": [
+    "Arithmetic is internally consistent: 26 models, 26 parent input files, 1196 main rollouts, 104 new tau rollouts, 1300 total; 681574400 base transition tokens and 851968 paired command transition tokens. Entry max_wall_seconds=4200 equals protocol run+analysis 3600 plus read-only reproduction 600; zero research updates and zero new prototype fits agree with the config.",
+    "The previously qualified new REL seeds in EXP-0025v2 are 25001,25002,25003,25004,25008,25009,25010,25011,25012; 23005 is correctly designated an old reference. Qualification and main data are distinct, but the new NONE failure screen uses the same exposed trajectories as the schedule outcomes, limiting inference to conditional exposed windows.",
+    "Weighted Gram Frobenius distance can reuse the frozen convention (Gxx,sqrt(2)Gxy,Gyy); theta uses all 512x8 pre-refresh calibration points and np.quantile(method='linear') without target labels. Check calibration array shapes and frozen hashes, and keep threshold, selected predicted class and strict d_t>theta in raw evidence.",
+    "Tau censoring arithmetic is correct: t8..1024 yields lags 0..1016; 1017 is a right-censor marker. The 256th one-based order statistic is the lower median of 512 values; if it is 1017, output null and TAU_NOT_REACHED. Preserve the number at risk, crossings, censor flags and class-switch rates rather than a median among crossed examples.",
+    "For GAUGE, require the maximum absolute post/pre Gram component and logit error at every scheduled event in both tasks to pass 1e-5, plus all six task-by-horizon absolute accuracy differences from NONE <=.005; do not let fallback or zero attempted events create a vacuous pass. For EQUAL, count invalid attempts in the denominator and preserve original-H fallback, sign and float32 head rechecks. The K valid-rate gate applies separately to full-T1024 HOLD and UPDATE attempts; report both paths even though only ORIGINAL gated windows contribute to the primary verdict.",
+    "For command-response geometry, freeze the weighted metric and projection formula: in Frobenius coordinates use (Gxx,sqrt(2)Gxy,Gyy), with readout normal (wxx,wxy/sqrt(2),wyy). Mark cosine and kernel projection unavailable if either vector norm or the readout-normal norm is <1e-6 or nonfinite. Specify whether an invalid EQUAL proposal yields no displacement or a recorded raw proposal; never substitute a fallback zero vector as a measured proposal. No Gram inverse or near-singular tangent solve is needed.",
+    "The prior DYN-0001 trajectory and EXP-0025 operator source support exact NONE/ORIGINAL and ONCE8/ORIGINAL replay checks. Source-matched engineering validation must establish these identities before a formal run. Current missing EXP-0026 implementation is expected at this pre-implementation review and is not treated as a research failure.",
+    "R/IDENTITY is a paired finite-precision/history diagnostic. A historical trajectory difference cannot identify a same-state rotation perturbation. Supervised two-state codebook, event count/phase and float32 amplification remain live alternatives; no slow-mode, unique organisation, biology or Gate 1 conclusion follows from a schedule window."
+  ],
+  "exact_fixes": [
+    "Version the protocol amendment and retain v1 unchanged; update config/version/output and entry pointers together before implementation.",
+    "Implement B1-B5 literally, including the full negative-outcome branch table, before any source-matched engineering validation or research run.",
+    "In engineering-only checks, exercise all six-bit window patterns including a proper suffix; baseline nonfailure, GAUGE failure, EQUAL invalid fallback, zero ADAPT count, invalid-attempt cooldown, COUNT future-count pairing, tau censoring at 256/257 censored examples, and near-zero projection denominators. Use synthetic fixtures, never research model outcomes to choose thresholds.",
+    "Keep the registered complete matrix and budget on engineering/runtime failure; issue INCONCLUSIVE/ENGINEERING_ABORT or INCOMPLETE_BUDGET with partial artifacts rather than dropping cells or changing thresholds."
+  ]
+}

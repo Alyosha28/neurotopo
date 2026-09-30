@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "d7a673531032d6e0abd239da164581928949eb2cf6e4306dc1199b58defa2edf",
+  "reviewer": {
+    "model": "gpt-6-luna",
+    "effort": "max",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "ITER0021-ACTION-REPLAY-SCOPE",
+      "source": "action",
+      "severity": "low",
+      "evidence": [
+        "\"independent_rollouts_replayed\":200",
+        "23 main conditions per task plus four tau NONE per model; full 512x1024 trajectories and listed raw fields matched exactly"
+      ],
+      "problem": "packet报告200条精确复演，却没有给出这200条对应的(seed, arm, cell, rotation, condition)键或选择规则。范围文字可读成每模型覆盖23个主条件/任务并加4条tau；对26个模型这会是1300条，与200条计数不一致，除非该描述仅指某个未列明的模型子集。",
+      "why_it_matters": "无法仅凭packet将精确复演结论映射回冻结矩阵，也无法确认复演子集是否为运行前固定、是否覆盖窗口和关键失败行。该记录缺口影响工程复演证据的可审计性；它本身不推翻packet所报的全量原始rollout审计或预注册判词。",
+      "falsifiable_check": "检查复演记录是否列出恰好200个唯一矩阵行键，并逐个映射到冻结1196主行和104条tau行；再核对该键集及选择规则是否在运行前固定。若明细存在且一致，补充明确子集范围即可关闭此问题。"
+    }
+  ],
+  "overall_assessment": "仅按packet审阅。1196行主矩阵和104行tau矩阵覆盖完整且无重复；25002的ORIGINAL窗口、其余条件失败种子及SINGLE_EXPOSED_SCHEDULE_WINDOW判词与冻结门槛一致。发现1项低严重度复演范围追溯缺口；没有发现足以改变科学判词的可定位矛盾。"
+}

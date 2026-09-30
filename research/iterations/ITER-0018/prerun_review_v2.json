@@ -1,0 +1,19 @@
+{
+  "experiment_id": "EXP-0023",
+  "version": "v2",
+  "review_type": "independent_static_prerun_delta",
+  "base_review": "research/iterations/ITER-0018/prerun_review.json",
+  "scope": "Compared EXP-0023 v2 protocol and config directly with v1. No research data or model was executed.",
+  "verdict": "APPROVED_FOR_IMPLEMENTATION_SUBJECT_TO_REGISTERED_ENGINEERING_CHECKS",
+  "findings": [
+    "The v2 M rule closes the v1 zero-versus-zero loophole: a seed is eligible only when REL_EXTRA D and D_rel both exceed 1e-12; fewer than four eligible seeds has priority as M_INCONCLUSIVE_FLOOR. Four of six eligible seeds must each meet both 50% reductions, and the original all-six mean reductions are still required for M_SUPPORTED. All other cases are M_NOT_SUPPORTED, with floor never counted as M=true.",
+    "The protocol diff changes only the version heading, M rule and prospective amendment note. The config diff changes only version, protocol path and output path. Training, coefficient, seed sets, fixed cells, P/R endpoints and resource limits remain as reviewed in v1.",
+    "v1 is preserved and explicitly marked unimplemented and unrun. The versioned correction occurred before scientific execution."
+  ],
+  "blocking": [],
+  "implementation_checks": [
+    "Test M at exactly 1e-12, at three versus four eligible seeds, with zero-versus-zero seeds, and at the all-six mean-reduction boundary. Apply floor priority before the improvement count.",
+    "Carry forward the v1 review's branch-gradient, paired-data, parent-provenance, P/R-boundary, resource and independent-replay checks; do not use any old exposed seed in the prospective P verdict."
+  ],
+  "interpretation_limits": "This approval concerns protocol consistency and the v1 blocker resolution. It is not evidence that the candidate improves long-horizon behavior or that M is a unique causal mediator."
+}

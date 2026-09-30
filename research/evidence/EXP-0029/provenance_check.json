@@ -1,0 +1,99 @@
+{
+  "purpose": "EXP-0029 provenance: record mid-run engineering-only deviations and confirm frozen-module integrity.",
+  "manifest_recorded_hashes": {
+    "module": "ca33834786bac93063c1591d274cd8e46c09b91b5118c0cfcca11b86612d848b",
+    "core": "fa9e18a71d19c7966483ec919db1c300f39599d754628d1b58b736c57819c2e2",
+    "config": "a3f2b00f1df9d77b8572cdcbd7efddd8751f35edb004edaac7def850f1ddf926",
+    "protocol": "cf30a5332d6b9e75866c5c394e84b183b98dd2d29e7f54d076231b768249b9da"
+  },
+  "current_hashes": {
+    "module": "7fb6bf812760127423a444464386c4a3d7d42cdb4b724980e713bf10ce81bf99",
+    "core": "fa9e18a71d19c7966483ec919db1c300f39599d754628d1b58b736c57819c2e2",
+    "config": "a3f2b00f1df9d77b8572cdcbd7efddd8751f35edb004edaac7def850f1ddf926",
+    "protocol": "cf30a5332d6b9e75866c5c394e84b183b98dd2d29e7f54d076231b768249b9da"
+  },
+  "deviations": [
+    {
+      "where": "arch0001_learning_qualification.summarize",
+      "what": "HOLD cells have flip_accuracy=None; cells_mean used np.mean over None and aborted the first --phases run after all 36 run records were written",
+      "fix": "mean over defined values only",
+      "affects_training_or_metrics": false
+    },
+    {
+      "where": "arch0001_learning_qualification.run (analyze phase)",
+      "what": "runs/*.json glob picked up macOS AppleDouble ._* sidecars and raised UnicodeDecodeError",
+      "fix": "filter names starting with ._",
+      "affects_training_or_metrics": false
+    },
+    {
+      "where": "arch0001_learning_qualification.run (run phase)",
+      "what": "a crashed run could not resume because records use exclusive create",
+      "fix": "load already-written per-run records instead of refitting",
+      "affects_training_or_metrics": false
+    }
+  ],
+  "verification": {
+    "core_module_unchanged": true,
+    "evidence": "verification.json replays 3 archived runs with zero hash/metric gaps"
+  },
+  "git": {
+    "commit": "f5a6e2c0f593fb5265ee3dd7bea91a9e471efe9e",
+    "dirty": true,
+    "note": "active git metadata lives outside the writable sandbox; no commit created this session"
+  },
+  "module_hash_chain": [
+    {
+      "stage": "first --phases run (all 36 run records written)",
+      "sha256": "ca33834786bac93063c1591d274cd8e46c09b91b5118c0cfcca11b86612d848b",
+      "note": "recorded in the run manifest frozen_hashes"
+    },
+    {
+      "stage": "after summarizer None-guard and resume support (analysis-only paths)",
+      "sha256": "3de25da0e6ae31f9eb8fdc97df5a1ce8f99c9ffd4e30063d21c7a806cb",
+      "note": "transient state; cited as 'after fix' in the first revision of decision0104"
+    },
+    {
+      "stage": "after AppleDouble sidecar filter (current)",
+      "sha256": "7fb6bf812760127423a444464386c4a3d7d42cdb4b724980e713bf10ce81bf99",
+      "note": "matches provenance.current_hashes.module and the file used for the recorded analyze phase"
+    }
+  ],
+  "engine_paths_unchanged": {
+    "fit_evaluate_actions_untouched": true,
+    "frozen_core_module": {
+      "sha256": "fa9e18a71d19c7966483ec919db1c300f39599d754628d1b58b736c57819c2e2",
+      "equals_exp0028_manifest": true
+    },
+    "deviation_scope": "summarize(), runs/*.json globbing and resume-read in run(); no change inside fit/evaluate/condition_metrics"
+  },
+  "engineering_classification": {
+    "crash_site": "arch0001_learning_qualification.summarize (TypeError: np.mean over None for HOLD-cell flip_accuracy)",
+    "when": "after all 36 run records had been written and validated on disk",
+    "records_affected": 0,
+    "check": "all 36 artifacts/EXP-0029/v1/runs/*.json exist and parse; no missing record, no non-finite metric",
+    "resume_used_for_recovery": false,
+    "conclusion": "protocol ENGINEERING row (异常/缺记录) does not fire; the exception is an analysis-path defect recorded here"
+  },
+  "suite_verification": {
+    "current_suite_sha256": "e6c5f29c3d0d7ae418f01885d346410335a394c5e098228ee06f8c1dd0903210",
+    "current_source_hashes_match": true,
+    "guard": "arch0001_learning_qualification.run refuses to execute unless suite pass and source hashes match; the guard did fire on the first analyze attempt (documented)",
+    "note": "运行与分析阶段均在 verify 通过、套件源码哈希与运行时一致后执行"
+  },
+  "replay_deviation": {
+    "protocol": "2 archived runs (one passing, one failing if one exists)",
+    "executed": 3,
+    "targets": [
+      "CAND:seed28212 (passing)",
+      "INV_COMP-w32-b1:seed28201 (passing)",
+      "EXTRA_SUP:seed28209 (hardest seed, post-hoc selection)"
+    ],
+    "failing_run_in_this_study": false,
+    "note": "EXP-0029 produced no failing run; the known failure seed28103 belongs to EXP0028 and is replayed there with zero error"
+  },
+  "packet_summary_completeness": {
+    "omitted": "per-seed secondary-cell metrics (LONG_H/LONG_U/ROT_H/ROT_U/LEAK01_U/LEAK04_U) and per-seed current_ok_next_response_bad",
+    "available_in": "artifacts/EXP-0029/v1/runs/*.json (all 8 cells per seed) and analysis.json summary.arms[*].cells_mean",
+    "note": "packet action summary is not field-complete; its 'Loss-free view' wording referred only to omitting loss arrays and is superseded by this note"
+  }
+}

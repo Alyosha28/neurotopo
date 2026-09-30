@@ -1,0 +1,62 @@
+{
+  "experiment_id": "EXP-0017",
+  "version": "v1",
+  "workflow": "order_observation",
+  "protocol": "experiments/EXP-0017/v1.md",
+  "entry_contract": "research/entries/EXP-0017.json",
+  "output": "artifacts/EXP-0017/v1",
+  "matching_criterion_version": "G1-MATCH-v3",
+  "gate1_claim": false,
+  "task": {
+    "cells": [
+      "CO",
+      "CU",
+      "NO",
+      "NU"
+    ],
+    "train_operations": 32,
+    "eval_operations": [
+      32,
+      128
+    ],
+    "sensor_every": 4,
+    "mask_probability": 0.25,
+    "train_namespace": 171001,
+    "eval_namespace": 172001,
+    "reserved_namespace": 173001,
+    "engineering_namespace": 179001,
+    "eval_examples": 4096
+  },
+  "training": {
+    "seeds": [
+      17001,
+      17002,
+      17003
+    ],
+    "arms": [
+      "D16",
+      "D64"
+    ],
+    "batch_size": 64,
+    "updates": 750,
+    "lr": 0.001,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip": 1.0,
+    "threads": 1,
+    "monitor_every": 150
+  },
+  "qualification": {
+    "d64_iid_each_max": 0.1,
+    "d64_ood_mean_min": 0.02,
+    "t_critical_df2": 4.302652729911275
+  },
+  "resource": {
+    "worker_wall_seconds_cap": 900,
+    "reproduction_wall_seconds_cap": 300,
+    "research_update_cap": 18000
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "accept_primary_branch": true,
+  "decision": "INCONCLUSIVE",
+  "descriptive_only": "D16 float32/float64 have exact mergers, including same-b controls; D64 float64 has none. These arms do not change the prespecified D64 float32 verdict, and their distances or merger counts do not establish b information loss or presence.",
+  "experiment": "EXP-0019/v2",
+  "interpretation": "The registered main branch is INCONCLUSIVE: no new exact full-state merger was observed among 384 initially distinct opposite-b pairs in each D64 float32 seed. Distance shrank in opposite-b and same-b controls; a small nonzero distance does not establish loss or preservation of b information.",
+  "limits": "The replay regenerates inputs and condition forward passes with the frozen implementation, then independently checks integer physics and raw-array reductions. It confirms this implementation and these conditional sampled trajectories, not all possible histories, alternative numerical kernels, a semantic code, a biological effect, or a topology mechanism.",
+  "primary_D64_float32": {
+    "initially_distinct_opposite_pairs": [
+      384,
+      384,
+      384
+    ],
+    "new_exact_opposite_mergers": [
+      0,
+      0,
+      0
+    ],
+    "new_exact_same_b_mergers": [
+      0,
+      0,
+      0
+    ],
+    "seeds": [
+      17001,
+      17002,
+      17003
+    ],
+    "terminal_median_opposite_L2": [
+      4.555837953173046e-07,
+      4.593318100415731e-07,
+      5.063604686131135e-07
+    ]
+  },
+  "replay": {
+    "audit_log": "research/iterations/ITER-0014/audit_execution.json",
+    "conditions": 12,
+    "exact_flags_match": true,
+    "max_float32_error": 0.0,
+    "max_float64_error": 0.0,
+    "outer_elapsed_seconds": 2.218119000000115,
+    "passed": true,
+    "physics_verified": true,
+    "result": "research/iterations/ITER-0014/reproduction.json"
+  },
+  "reviewer_effort": "high",
+  "reviewer_model": "gpt-6-sol",
+  "scope": "Independent result review of frozen paired-history diagnosis and one supervised numerical replay; no training, new sample, threshold change, or Gate 1 assessment.",
+  "source_commit": "65209d9eaf2c44fbc69567e43a2ca353352e11de",
+  "substatus": "NO_NEW_EXACT_MERGER_OBSERVED"
+}

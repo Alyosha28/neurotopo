@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "summaries": 3,
+  "method": "Python statistics independent mean/stdev and registered t critical",
+  "unit": "existing training seed,4 primary INV seeds; prefix/suffix not independent models",
+  "pilot_excluded": true,
+  "primary": "INCONCLUSIVE/NO_REGISTERED_WITNESS_FOUND",
+  "secondaryS": false
+}

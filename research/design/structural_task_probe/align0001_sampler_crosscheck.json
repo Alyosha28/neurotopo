@@ -1,0 +1,553 @@
+{
+  "schema": "align0001_sampler_crosscheck_v1",
+  "status": "engineering premise check; not a verdict, no training",
+  "conditions": {
+    "F": {
+      "episodes": 600,
+      "per_J_transition_check": {
+        "0": {
+          "chi2": 18.82,
+          "df": 32,
+          "z_score": -1.648,
+          "cells_used": 32,
+          "pass_3sigma": true,
+          "pairs": 1071
+        },
+        "1": {
+          "chi2": 23.93,
+          "df": 53,
+          "z_score": -2.824,
+          "cells_used": 53,
+          "pass_3sigma": true,
+          "pairs": 1386
+        },
+        "2": {
+          "chi2": 19.0,
+          "df": 24,
+          "z_score": -0.722,
+          "cells_used": 24,
+          "pass_3sigma": true,
+          "pairs": 945
+        },
+        "3": {
+          "chi2": 39.16,
+          "df": 63,
+          "z_score": -2.124,
+          "cells_used": 63,
+          "pass_3sigma": true,
+          "pairs": 1827
+        },
+        "4": {
+          "chi2": 19.82,
+          "df": 27,
+          "z_score": -0.978,
+          "cells_used": 27,
+          "pass_3sigma": true,
+          "pairs": 1008
+        },
+        "5": {
+          "chi2": 8.38,
+          "df": 12,
+          "z_score": -0.738,
+          "cells_used": 12,
+          "pass_3sigma": true,
+          "pairs": 630
+        },
+        "6": {
+          "chi2": 17.01,
+          "df": 25,
+          "z_score": -1.129,
+          "cells_used": 25,
+          "pass_3sigma": true,
+          "pairs": 1134
+        },
+        "7": {
+          "chi2": 13.48,
+          "df": 26,
+          "z_score": -1.736,
+          "cells_used": 26,
+          "pass_3sigma": true,
+          "pairs": 1071
+        },
+        "8": {
+          "chi2": 22.51,
+          "df": 39,
+          "z_score": -1.867,
+          "cells_used": 39,
+          "pass_3sigma": true,
+          "pairs": 1386
+        },
+        "9": {
+          "chi2": 12.31,
+          "df": 20,
+          "z_score": -1.216,
+          "cells_used": 20,
+          "pass_3sigma": true,
+          "pairs": 945
+        },
+        "10": {
+          "chi2": 6.19,
+          "df": 19,
+          "z_score": -2.077,
+          "cells_used": 19,
+          "pass_3sigma": true,
+          "pairs": 882
+        },
+        "11": {
+          "chi2": 11.73,
+          "df": 20,
+          "z_score": -1.308,
+          "cells_used": 20,
+          "pass_3sigma": true,
+          "pairs": 756
+        },
+        "12": {
+          "chi2": 5.37,
+          "df": 9,
+          "z_score": -0.857,
+          "cells_used": 9,
+          "pass_3sigma": true,
+          "pairs": 504
+        },
+        "13": {
+          "chi2": 17.35,
+          "df": 27,
+          "z_score": -1.313,
+          "cells_used": 27,
+          "pass_3sigma": true,
+          "pairs": 882
+        },
+        "14": {
+          "chi2": 22.2,
+          "df": 42,
+          "z_score": -2.16,
+          "cells_used": 42,
+          "pass_3sigma": true,
+          "pairs": 945
+        },
+        "15": {
+          "chi2": 10.67,
+          "df": 29,
+          "z_score": -2.407,
+          "cells_used": 29,
+          "pass_3sigma": true,
+          "pairs": 945
+        },
+        "16": {
+          "chi2": 51.41,
+          "df": 75,
+          "z_score": -1.926,
+          "cells_used": 75,
+          "pass_3sigma": true,
+          "pairs": 1764
+        },
+        "17": {
+          "chi2": 45.33,
+          "df": 70,
+          "z_score": -2.085,
+          "cells_used": 70,
+          "pass_3sigma": true,
+          "pairs": 1575
+        },
+        "18": {
+          "chi2": 48.58,
+          "df": 64,
+          "z_score": -1.363,
+          "cells_used": 64,
+          "pass_3sigma": true,
+          "pairs": 1386
+        },
+        "19": {
+          "chi2": 27.32,
+          "df": 30,
+          "z_score": -0.346,
+          "cells_used": 30,
+          "pass_3sigma": true,
+          "pairs": 945
+        },
+        "20": {
+          "chi2": 22.5,
+          "df": 31,
+          "z_score": -1.079,
+          "cells_used": 31,
+          "pass_3sigma": true,
+          "pairs": 1134
+        },
+        "21": {
+          "chi2": 55.04,
+          "df": 68,
+          "z_score": -1.111,
+          "cells_used": 68,
+          "pass_3sigma": true,
+          "pairs": 1638
+        },
+        "22": {
+          "chi2": 32.05,
+          "df": 38,
+          "z_score": -0.682,
+          "cells_used": 38,
+          "pass_3sigma": true,
+          "pairs": 1323
+        },
+        "23": {
+          "chi2": 22.71,
+          "df": 32,
+          "z_score": -1.161,
+          "cells_used": 32,
+          "pass_3sigma": true,
+          "pairs": 1197
+        },
+        "24": {
+          "chi2": 5.87,
+          "df": 19,
+          "z_score": -2.131,
+          "cells_used": 19,
+          "pass_3sigma": true,
+          "pairs": 1008
+        },
+        "25": {
+          "chi2": 12.33,
+          "df": 29,
+          "z_score": -2.189,
+          "cells_used": 29,
+          "pass_3sigma": true,
+          "pairs": 1260
+        },
+        "26": {
+          "chi2": 33.67,
+          "df": 51,
+          "z_score": -1.716,
+          "cells_used": 51,
+          "pass_3sigma": true,
+          "pairs": 1638
+        },
+        "27": {
+          "chi2": 21.85,
+          "df": 27,
+          "z_score": -0.7,
+          "cells_used": 27,
+          "pass_3sigma": true,
+          "pairs": 1260
+        },
+        "28": {
+          "chi2": 20.97,
+          "df": 28,
+          "z_score": -0.939,
+          "cells_used": 28,
+          "pass_3sigma": true,
+          "pairs": 1260
+        },
+        "29": {
+          "chi2": 29.3,
+          "df": 43,
+          "z_score": -1.478,
+          "cells_used": 43,
+          "pass_3sigma": true,
+          "pairs": 1575
+        },
+        "30": {
+          "chi2": 11.4,
+          "df": 19,
+          "z_score": -1.233,
+          "cells_used": 19,
+          "pass_3sigma": true,
+          "pairs": 1323
+        },
+        "31": {
+          "chi2": 4.44,
+          "df": 5,
+          "z_score": -0.177,
+          "cells_used": 5,
+          "pass_3sigma": true,
+          "pairs": 1197
+        }
+      },
+      "worst_abs_z": 2.824,
+      "initial_vs_stationary_max_dev": 0.01779,
+      "transition_pass": true
+    },
+    "X": {
+      "episodes": 600,
+      "per_J_transition_check": {
+        "0": {
+          "chi2": 18.82,
+          "df": 32,
+          "z_score": -1.648,
+          "cells_used": 32,
+          "pass_3sigma": true,
+          "pairs": 1071
+        },
+        "1": {
+          "chi2": 26.92,
+          "df": 51,
+          "z_score": -2.385,
+          "cells_used": 51,
+          "pass_3sigma": true,
+          "pairs": 1386
+        },
+        "2": {
+          "chi2": 20.73,
+          "df": 28,
+          "z_score": -0.971,
+          "cells_used": 28,
+          "pass_3sigma": true,
+          "pairs": 945
+        },
+        "3": {
+          "chi2": 30.5,
+          "df": 57,
+          "z_score": -2.482,
+          "cells_used": 57,
+          "pass_3sigma": true,
+          "pairs": 1827
+        },
+        "4": {
+          "chi2": 36.27,
+          "df": 28,
+          "z_score": 1.106,
+          "cells_used": 28,
+          "pass_3sigma": true,
+          "pairs": 1008
+        },
+        "5": {
+          "chi2": 11.02,
+          "df": 14,
+          "z_score": -0.563,
+          "cells_used": 14,
+          "pass_3sigma": true,
+          "pairs": 630
+        },
+        "6": {
+          "chi2": 23.43,
+          "df": 32,
+          "z_score": -1.071,
+          "cells_used": 32,
+          "pass_3sigma": true,
+          "pairs": 1134
+        },
+        "7": {
+          "chi2": 15.84,
+          "df": 29,
+          "z_score": -1.728,
+          "cells_used": 29,
+          "pass_3sigma": true,
+          "pairs": 1071
+        },
+        "8": {
+          "chi2": 18.99,
+          "df": 41,
+          "z_score": -2.431,
+          "cells_used": 41,
+          "pass_3sigma": true,
+          "pairs": 1386
+        },
+        "9": {
+          "chi2": 19.72,
+          "df": 27,
+          "z_score": -0.991,
+          "cells_used": 27,
+          "pass_3sigma": true,
+          "pairs": 945
+        },
+        "10": {
+          "chi2": 11.82,
+          "df": 26,
+          "z_score": -1.967,
+          "cells_used": 26,
+          "pass_3sigma": true,
+          "pairs": 882
+        },
+        "11": {
+          "chi2": 15.97,
+          "df": 24,
+          "z_score": -1.158,
+          "cells_used": 24,
+          "pass_3sigma": true,
+          "pairs": 756
+        },
+        "12": {
+          "chi2": 4.64,
+          "df": 14,
+          "z_score": -1.769,
+          "cells_used": 14,
+          "pass_3sigma": true,
+          "pairs": 504
+        },
+        "13": {
+          "chi2": 19.93,
+          "df": 38,
+          "z_score": -2.073,
+          "cells_used": 38,
+          "pass_3sigma": true,
+          "pairs": 882
+        },
+        "14": {
+          "chi2": 24.07,
+          "df": 34,
+          "z_score": -1.204,
+          "cells_used": 34,
+          "pass_3sigma": true,
+          "pairs": 945
+        },
+        "15": {
+          "chi2": 27.84,
+          "df": 36,
+          "z_score": -0.962,
+          "cells_used": 36,
+          "pass_3sigma": true,
+          "pairs": 945
+        },
+        "16": {
+          "chi2": 33.92,
+          "df": 60,
+          "z_score": -2.381,
+          "cells_used": 60,
+          "pass_3sigma": true,
+          "pairs": 1764
+        },
+        "17": {
+          "chi2": 31.96,
+          "df": 54,
+          "z_score": -2.121,
+          "cells_used": 54,
+          "pass_3sigma": true,
+          "pairs": 1575
+        },
+        "18": {
+          "chi2": 37.06,
+          "df": 56,
+          "z_score": -1.79,
+          "cells_used": 56,
+          "pass_3sigma": true,
+          "pairs": 1386
+        },
+        "19": {
+          "chi2": 21.67,
+          "df": 44,
+          "z_score": -2.381,
+          "cells_used": 44,
+          "pass_3sigma": true,
+          "pairs": 945
+        },
+        "20": {
+          "chi2": 24.91,
+          "df": 46,
+          "z_score": -2.198,
+          "cells_used": 46,
+          "pass_3sigma": true,
+          "pairs": 1134
+        },
+        "21": {
+          "chi2": 35.68,
+          "df": 56,
+          "z_score": -1.921,
+          "cells_used": 56,
+          "pass_3sigma": true,
+          "pairs": 1638
+        },
+        "22": {
+          "chi2": 36.62,
+          "df": 50,
+          "z_score": -1.338,
+          "cells_used": 50,
+          "pass_3sigma": true,
+          "pairs": 1323
+        },
+        "23": {
+          "chi2": 26.64,
+          "df": 47,
+          "z_score": -2.1,
+          "cells_used": 47,
+          "pass_3sigma": true,
+          "pairs": 1197
+        },
+        "24": {
+          "chi2": 37.93,
+          "df": 37,
+          "z_score": 0.108,
+          "cells_used": 37,
+          "pass_3sigma": true,
+          "pairs": 1008
+        },
+        "25": {
+          "chi2": 26.89,
+          "df": 37,
+          "z_score": -1.175,
+          "cells_used": 37,
+          "pass_3sigma": true,
+          "pairs": 1260
+        },
+        "26": {
+          "chi2": 29.92,
+          "df": 52,
+          "z_score": -2.165,
+          "cells_used": 52,
+          "pass_3sigma": true,
+          "pairs": 1638
+        },
+        "27": {
+          "chi2": 18.67,
+          "df": 36,
+          "z_score": -2.043,
+          "cells_used": 36,
+          "pass_3sigma": true,
+          "pairs": 1260
+        },
+        "28": {
+          "chi2": 22.53,
+          "df": 35,
+          "z_score": -1.491,
+          "cells_used": 35,
+          "pass_3sigma": true,
+          "pairs": 1260
+        },
+        "29": {
+          "chi2": 19.66,
+          "df": 40,
+          "z_score": -2.274,
+          "cells_used": 40,
+          "pass_3sigma": true,
+          "pairs": 1575
+        },
+        "30": {
+          "chi2": 25.44,
+          "df": 37,
+          "z_score": -1.343,
+          "cells_used": 37,
+          "pass_3sigma": true,
+          "pairs": 1323
+        },
+        "31": {
+          "chi2": 13.02,
+          "df": 22,
+          "z_score": -1.354,
+          "cells_used": 22,
+          "pass_3sigma": true,
+          "pairs": 1197
+        }
+      },
+      "worst_abs_z": 2.482,
+      "initial_vs_stationary_max_dev": 0.01672,
+      "transition_pass": true
+    }
+  },
+  "routing_equivalence": {
+    "aligned_K4_block0": {
+      "max_abs_diff": 2.384185791015625e-07,
+      "equal": true
+    },
+    "permuted_K4_block0": {
+      "max_abs_diff": 4.76837158203125e-07,
+      "equal": true
+    }
+  },
+  "routing_pass": true,
+  "verdict": "SAMPLER_ROUTING_CROSSCHECK_PASS",
+  "reading": "A second sampler (explicit categorical draw with an independent RNG stream, no cumulative-sum searchsorted) reproduces the generator's transition law and stationary initial law within Monte Carlo error, and the indexed routing path is elementwise identical to the masked one.",
+  "environment": {
+    "python": "3.13.15",
+    "numpy": "2.3.3",
+    "torch": "2.8.0",
+    "platform": "macOS-26.7-arm64-arm-64bit-Mach-O"
+  }
+}

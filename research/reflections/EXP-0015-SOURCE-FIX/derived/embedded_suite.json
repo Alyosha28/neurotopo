@@ -1,0 +1,70 @@
+{
+  "pass": true,
+  "source_sha256": {
+    "src/neurotopo/__init__.py": "abc1d2ce7afb59200c2a2b246b590e1b24b0d0ea408ffe4ad5838d43101b648c",
+    "src/neurotopo/analyze.py": "bf0ae63c0bafae03f6d13c9f5ee046f582c59584683b2d6a99613fde735b80f1",
+    "src/neurotopo/belief_task.py": "2a3ccc142db0736a61808e53e8895b6c7ee3ae3205971243f657dd8af21f54ba",
+    "src/neurotopo/dynamic_filter_task.py": "1909a82454a354766810dcb12bbcd20d9e0c76ee399efb761bf3dcabb5a26cbc",
+    "src/neurotopo/entry_policy.py": "770f2c71f5327d950bc1b09265152b16a24120790ef7ffaaef33f16a3a13102a",
+    "src/neurotopo/final_probe.py": "3cb4dfa8fddf1c1bb9b764890da9eeb3aaacb527982e9ced5031facc06ebc4cc",
+    "src/neurotopo/final_probe_analysis.py": "2c809743f6bde79fb1d913024e351d2958cf91f7529f9b077e45fb9c5f650124",
+    "src/neurotopo/loop.py": "814a0ed61ab4ba21f57c957cf3e3b4b6a67ca5943279f5022afb24b54351d02b",
+    "src/neurotopo/loop_worker.py": "72f054807af051e7e7a911e8adc11aa6db9d8238f1f97318ae02d95fc32a206b",
+    "src/neurotopo/models.py": "829a6088079c6fd9f0ad8ef3271646bf6e8da7ea193b4fa2918b51f2e4dc46f7",
+    "src/neurotopo/orbit_information.py": "597a1f91c87bd47d3dcfda6670ecb9ee5fae2b7f84dc58118d0244c9d6f75a34",
+    "src/neurotopo/orbit_information_analysis.py": "1e908d0d761e3fd238f8d3d4c4a0c1ae467706760f5f07395506d86aee163dcd",
+    "src/neurotopo/orbit_information_reproduce.py": "daeef3f3842cfe093b3ed727b6a02bc993d961c8bbfe20041272f574e870581b",
+    "src/neurotopo/pfstyle_analysis.py": "b1bda132d97ecbb5d596f3c620084249ed5c05dffdbe441db3081d108d81ed72",
+    "src/neurotopo/pfstyle_models.py": "34762f740e1b68dca993460da2dec21920273d04899d12ec6473867aa10cfbda",
+    "src/neurotopo/pfstyle_preflight.py": "0dc2abe138f7e5ea27df59f63574e63a8490353d5af5204054a55694154d6582",
+    "src/neurotopo/pfstyle_replay.py": "9561fa3c011b928f1788758f936dff1d16a1fa65f9e34ea76f4b67b6f355bfc6",
+    "src/neurotopo/pfstyle_resources.py": "65d271a37d473dbeac3cdd9915a5c65467ad36a06e2f2ce402544dd309bbb009",
+    "src/neurotopo/pfstyle_study.py": "cbdb7ce2f1cc2b56584a177ba1820d456195c27cd52b70d304d62ef7b5644b7a",
+    "src/neurotopo/pfstyle_task.py": "40dec8694c7b7a3d76e8a11a0ecce6174d7241610a2fa50a13f07cea014dcc7c",
+    "src/neurotopo/phase_reveal_formal.py": "f676531b3ae82e0cc7cbd368e1499191c0d9f4c2f05b09d0c34e8fc4f654316c",
+    "src/neurotopo/phase_reveal_formal_analysis.py": "4f2c08677e5c6717f2301d7b7cb8203a537f9d24803e0888d1185bdec8136432",
+    "src/neurotopo/phase_reveal_models.py": "14e77f402c44761a67fdc1d9ef3f580ddb7df0be238750c2419f16c8ae07f035",
+    "src/neurotopo/phase_reveal_qualification.py": "75be76ad04d9dcb0cb0ad9f101922f0ac75ac44ce604312e2a3c4a58956b307b",
+    "src/neurotopo/phase_reveal_qualification_analysis.py": "0d337f0bd7ba48c96212c598f3bc048f5c8ec5dce45aa8a4802ad0e81ad82544",
+    "src/neurotopo/phase_reveal_resources.py": "dd86756b63cc2b52d4d3906683deeb2e9dc993732ace934528ed3480c287bfc9",
+    "src/neurotopo/phase_reveal_task.py": "53fa06c6307b97702d81075b97525ee54f5cd27d85cc621703272ea76199f062",
+    "src/neurotopo/probe.py": "cb1e5b64cb627615cec8b0dcbda4d42de73de514c6df510cbd82bc042d2cc648",
+    "src/neurotopo/probe_analysis.py": "f02e21f3bc838259729294085c1daa43fe847a7a7f5dc70359f987fb999a68c5",
+    "src/neurotopo/reflection.py": "feb607c324a8f847b37261c824491940d7ebf93498517965c19f5337787ca272",
+    "src/neurotopo/replay.py": "63ca7c7d8dddb157d437ccdfe02939921d1f38b17d93715a559e900993422151",
+    "src/neurotopo/replay_analysis.py": "b451d6f796e9a2e696fefef54816b10f6d096656fa0adcede99407a115bc7e39",
+    "src/neurotopo/resources.py": "3bf42c84ba26c284c28a5c8af638b6646492dfe6ecc4cb33d0c233cb3b05e4ad",
+    "src/neurotopo/run.py": "fbd9bf20a2f4933b19862c905032299f8682cd5eb7002fb2ce9ef8f8550899ad",
+    "src/neurotopo/source_belief_analysis.py": "ab8e33ca96564d9e16956acf226cf31159af37bb7ac7917c890131befc8e059b",
+    "src/neurotopo/source_belief_study.py": "d19e3e0fcd12559fbdbf371256fcf88e27c358b39bbefaa135e0773ff8685c8c",
+    "src/neurotopo/source_belief_task.py": "a425d14e6fd670b0cc890a299305a9331dbd397287ea918b2e6e6ae4dcce1a73",
+    "src/neurotopo/study.py": "d74853f161c60bdef00cb8cf4b6c78dd7615ddd4db4ab2204a31fae0ae38dbf5",
+    "src/neurotopo/study_analysis.py": "5819d577392de63cbece65937f3adafd1ebe4794d4f8689f4a557ab99113ed55",
+    "src/neurotopo/task.py": "4b5b7f4a09139137286124276f9c57dfffbec86c2f29130c0f62be63b8da7d65",
+    "src/neurotopo/transfer_probe.py": "13611e2a42a6a3a630be24927fd319bf467360476cb158965d383eb53cbfab68",
+    "src/neurotopo/transfer_probe_analysis.py": "144e6d057d58f0a6858bbe0b5778c44a6646a2e6ab66b7b57a6724eabb9175bc"
+  },
+  "checks": [
+    {
+      "command": [
+        "/private/tmp/neurotopo-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdout": "........................................................................ [ 28%]\n........................................................................ [ 57%]\n........................................................................ [ 86%]\n..................................                                       [100%]\n250 passed in 11.71s\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/private/tmp/neurotopo-venv/bin/python",
+        "scripts/validate.py"
+      ],
+      "returncode": 0,
+      "stdout": "{\"model\": \"gru_small\", \"steps\": 100, \"initial_loss\": 1.3735986948013306, \"final_loss\": 0.0029384426306933165, \"metrics\": {\"pairs\": 8, \"joint_pair_accuracy\": 1.0, \"pre_accuracy\": 1.0, \"final_accuracy\": 1.0, \"confirm_accuracy\": 1.0, \"revise_accuracy\": 1.0, \"revise_given_pre_correct\": 1.0, \"revise_given_pre_correct_count\": 8, \"prior_consistent_error_on_revise\": 0.0, \"paired_final_accuracy\": 1.0, \"evidence_sensitivity\": 1.0, \"pre_nll\": 0.0017576405080035329, \"confirm_nll\": 0.00396371865645051, \"revise_nll\": 0.004274771083146334, \"prediction_sha256\": \"4133d41937a6bfba1ed9687422685e9ec20ff78bfa4ba3f34a390e00ad7170f9\"}, \"seconds\": 0.09721145799994702, \"pass\": true}\n{\"model\": \"gru_wide\", \"steps\": 50, \"initial_loss\": 1.3916783332824707, \"final_loss\": 0.002833949401974678, \"metrics\": {\"pairs\": 8, \"joint_pair_accuracy\": 1.0, \"pre_accuracy\": 1.0, \"final_accuracy\": 1.0, \"confirm_accuracy\": 1.0, \"revise_accuracy\": 1.0, \"revise_given_pre_correct\": 1.0, \"revise_given_pre_correct_count\": 8, \"prior_consistent_error_on_revise\": 0.0, \"paired_final_accuracy\": 1.0, \"evidence_sensitivity\": 1.0, \"pre_nll\": 0.0012554264394566417, \"confirm_nll\": 0.006067133042961359, \"revise_nll\": 0.002757810289040208, \"prediction_sha256\": \"d7fc339bf6bff26dbd8a7e7dcbe89e584fe931ce8ade3c34ed12f8a499c33560\"}, \"seconds\": 0.05235750000065309, \"pass\": true}\n{\"model\": \"sparse_rnn\", \"steps\": 50, \"initial_loss\": 1.365463376045227, \"final_loss\": 0.0019131717272102833, \"metrics\": {\"pairs\": 8, \"joint_pair_accuracy\": 1.0, \"pre_accuracy\": 1.0, \"final_accuracy\": 1.0, \"confirm_accuracy\": 1.0, \"revise_accuracy\": 1.0, \"revise_given_pre_correct\": 1.0, \"revise_given_pre_correct_count\": 8, \"prior_consistent_error_on_revise\": 0.0, \"paired_final_accuracy\": 1.0, \"evidence_sensitivity\": 1.0, \"pre_nll\": 0.0006432888912968338, \"confirm_nll\": 0.0034201827365905046, \"revise_nll\": 0.0029459267389029264, \"prediction_sha256\": \"4892044b84b5708ef286abbf729f20b0da45f8b0ff50da06c27f3c5fc0aa0dad\"}, \"seconds\": 0.027055541000663652, \"pass\": true}\n{\"model\": \"multi_gru\", \"steps\": 50, \"initial_loss\": 1.389732837677002, \"final_loss\": 0.009148798882961273, \"metrics\": {\"pairs\": 8, \"joint_pair_accuracy\": 1.0, \"pre_accuracy\": 1.0, \"final_accuracy\": 1.0, \"confirm_accuracy\": 1.0, \"revise_accuracy\": 1.0, \"revise_given_pre_correct\": 1.0, \"revise_given_pre_correct_count\": 8, \"prior_consistent_error_on_revise\": 0.0, \"paired_final_accuracy\": 1.0, \"evidence_sensitivity\": 1.0, \"pre_nll\": 0.002772621111944318, \"confirm_nll\": 0.017161814495921135, \"revise_nll\": 0.013888135552406311, \"prediction_sha256\": \"cd68c6fb2aa6df020f4b62255d187f635d30b4d485837ab621baabe0f02bbf9b\"}, \"seconds\": 0.05249020799965365, \"pass\": true}\n{\"model\": \"random_gru\", \"steps\": 50, \"initial_loss\": 1.3908436298370361, \"final_loss\": 0.0036901209969073534, \"metrics\": {\"pairs\": 8, \"joint_pair_accuracy\": 1.0, \"pre_accuracy\": 1.0, \"final_accuracy\": 1.0, \"confirm_accuracy\": 1.0, \"revise_accuracy\": 1.0, \"revise_given_pre_correct\": 1.0, \"revise_given_pre_correct_count\": 8, \"prior_consistent_error_on_revise\": 0.0, \"paired_final_accuracy\": 1.0, \"evidence_sensitivity\": 1.0, \"pre_nll\": 0.0007734341779723763, \"confirm_nll\": 0.00711037078872323, \"revise_nll\": 0.0061032441444695, \"prediction_sha256\": \"d020a100d4dbe93eb99c0916b9afa40e73376ccbceec85133d30160d4d119acb\"}, \"seconds\": 0.05283333299848891, \"pass\": true}\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "Engineering acceptance only; no held-out model selection"
+}

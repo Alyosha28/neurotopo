@@ -1,0 +1,35 @@
+{
+  "branches": {
+    "borderline": "Preserve all raw attempts and mark INCONCLUSIVE with a specific substatus; do not move thresholds, roots, switch time or gamma.",
+    "failure": "Any matrix/task-info/control/resource/learning failure closes this fixed G1-RS task line without RS4 effect training or new task type.",
+    "success": "Only if history/shortcut task-info and independently reviewed SC64/D64_full learning plus finite OOD headroom all pass, record CONTROL_STRONG_ENOUGH; still no Gate 1 credit."
+  },
+  "direction": "phase_reveal_control_qualification",
+  "experiment_id": "EXP-0013",
+  "factor": {
+    "ablation": "SC64 degree/self-loop/effective-parameter-matched connected control and D64_full stronger dense/full-input control; pre-registered branch state transplant, lesion and redundancy diagnostics. No persistent scores or Gaussian heads.",
+    "actual_primary_control": "SC64 one connected H64 GRU with identical per-stream routed input and full H64-to-four-class readout; its oracle-relative OOD48 headroom and learning are independently qualified in EXP-0013.",
+    "executed_compute_matching": "Same samples/updates/internal steps and dense masked GRU shape; synthetic engineering p50 RS4/SC64 ratio must pass the frozen threshold, with complete operator profiles and absolute wall-budget estimate.",
+    "kind": "h3_candidate",
+    "manipulation": "RS4 enforces four independent recurrent width-16 histories on four naturally routed evidence streams; SC64 has the same routed inputs, state, full readout and degree but permits cross-stream recurrent connections.",
+    "name": "G1-RS-0001 explicit four-branch independent recurrent organization",
+    "parameter_matching": "RS4/SC64 each allocate 16004 and activate 4484 parameters under matching input/recurrent masks; D64_full allocates and activates 16004 as a strong performance guard.",
+    "prediction": "On one fixed phase-reveal task after actual-control qualification, RS4 has OOD48 mean paired KL gain with 95% CI lower bound strictly greater than 0.05 nat versus SC64 and a positive CI versus D64_full, plus revision/heldout/replication and operation guards.",
+    "prior_art_boundary": "RIMs already has modular recurrent mechanisms, PF-RNN weighted particles and EviTrack delayed disambiguation; this tests a bounded architecture organization bias, not novelty, pure K count, hypothesis semantics, or biology.",
+    "state_matching": "RS4 and SC64 each have 64 recurrent floats and one four-logit early cache; D64_full has the same dynamic state and cache but more effective weights."
+  },
+  "gate1_claim": false,
+  "purpose": "Candidate-first control/task qualification for G1-RS-0001 only; no RS4 task training, no project Gate 1 effect credit. This has its own task informativeness and control-strength decision.",
+  "question": "Does the fixed phase-reveal generator require pre-switch history and leave both strong single-GRU controls learnable but non-ceiling at OOD48 under the frozen budget?",
+  "resource_cap": {
+    "max_updates": 29000,
+    "max_wall_seconds": 2700
+  },
+  "schema_version": 1,
+  "task_search": {
+    "heldout_rule": "EXP-0012 NO_MATRIX and this final task type attempt are retained. Task-info roots 9310001/9310002, control tuning/qualification roots and future EXP-0014 formal/replication roots are disjoint and frozen in the v3 protocol pair manifest before any task sample. Pre-sample config/protocol lock research/registrations/G1-RS-0001_config_lock.json SHA-256 c5ccad6ebeeeed8870998414326c0dfa476a59ebc427189f2f8bac6bdc24c10e is mandatory and must be verified from the committed bytes before any run.",
+    "max_configurations": 1,
+    "retain_all_attempts": true
+  },
+  "track": "independent_benchmark"
+}

@@ -1,0 +1,27 @@
+{
+  "packet_sha256": "3397c19b5c21c31689c2eb19ab7cbdf8997bef2820830e5abf2d20cf8e21b164",
+  "review_sha256": "b577618e7fb972cd4491365b1be5fc26ae5acc96540b02b43b3baba552dfdeec",
+  "rulings": {
+    "blocking_issues": [],
+    "can_a_barely_trained_control_be_labelled_headroom": "no",
+    "non_blocking_issues": [
+      "CAL-0008-PRERUN6-R1",
+      "CAL-0008-PRERUN6-R2",
+      "CAL-0008-PRERUN6-R3",
+      "CAL-0008-PRERUN6-R4",
+      "CAL-0008-PRERUN6-R5"
+    ],
+    "note": "第五轮唯一阻断项已修复：误标的未训练门被替换为逐 seed 良态上界 `ln 2^M + 0.5`，熵恒等式降为诊断，且 `H(后验)` 与未训练 KL 取自同一条 512-episode 评估流；按 packet 自身数字无任何配置被训练前拦截。审查者明确判定筛查可运行，五项问题均为低严重度且不改变任何可发出的判词。",
+    "seven_changes": {
+      "1_untrained_scale_measurement_reconciled": "implemented",
+      "2_ceiling_aggregation_level": "implemented",
+      "3_inconclusive_reason_codes": "implemented",
+      "4_stale_lr_wording_removed": "partially",
+      "5_version_ledger": "partially",
+      "6_pilot_aggregate_prose": "implemented",
+      "7_rho_well_posed": "implemented"
+    },
+    "verdict": "READY_TO_RUN"
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,72 @@
+{
+  "gate_reading": {
+    "budget_doubling": "FAIL on F (0.0101 and 0.0204 > 0.010); PASS on X (0.0007 and 0.0011)",
+    "correct_scope": "At 4x budget the dense H64 control plateaus at 0.077-0.081 nats on X (above eps_abs); on F the plateau tolerance is NOT met. The measurement is single-arm, single-optimiser, two seeds, and the K=2 arm's residual was never measured.",
+    "correction": "The original annotation recorded PASS with |KL(1600)-KL(6400)| <= 0.010 'in all four runs'. That was read off rounded printed values and is WRONG. Recomputed from the machine curves: F seed0 0.0101, F seed1 0.0204, X seed0 0.0007, X seed1 0.0011. Two of four runs exceed the frozen tau_plateau = 0.010, and the two F seeds move in opposite directions.",
+    "superseded_claim": "'PASS (|KL(1600)-KL(6400)| <= 0.010 in all four runs)'",
+    "terminal_headroom": "residual above eps_abs=0.05 in all four runs (min 0.0772)"
+  },
+  "grid_points": [
+    0,
+    200,
+    400,
+    800,
+    1600,
+    3200,
+    6400
+  ],
+  "model": "dense GRU H=64, input 6, head 32; Adam 3e-3; batch 128",
+  "reading": "Budget doubling decides the R2 compressibility question. From 1600 to 6400 updates the control's KL is flat (F seeds 0.070->0.080 and 0.157->0.137; X 0.081->0.081 and 0.076->0.077; all |delta| <= 0.010), so the residual is a genuine plateau, not undertraining. Residuals 0.077-0.137 nats sit above the 0.05 nat headroom scale => the theta posterior is NOT fully compressible into a 64-dimensional state and terminal headroom exists. Caveat: the analytic cost of forcing a two-group belief state is only 0.063 nat, and the dense control's X residual (0.081/0.077) is at or above that floor, so the headroom is not purely organisation-shaped -- a better model of any kind could capture part of it, and the interaction must be read as a learnability effect.",
+  "results": {
+    "F": {
+      "curves": [
+        {
+          "1600": 0.0695,
+          "200": 0.1871,
+          "3200": 0.0742,
+          "400": 0.1076,
+          "6400": 0.0796,
+          "800": 0.0803
+        },
+        {
+          "1600": 0.157,
+          "200": 0.7104,
+          "3200": 0.1265,
+          "400": 0.376,
+          "6400": 0.1366,
+          "800": 0.1847
+        }
+      ],
+      "target_entropy_nats": 2.6289,
+      "uniform_baseline_kl_nats": 0.8368
+    },
+    "X": {
+      "curves": [
+        {
+          "1600": 0.0808,
+          "200": 0.1615,
+          "3200": 0.0797,
+          "400": 0.1297,
+          "6400": 0.0815,
+          "800": 0.0876
+        },
+        {
+          "1600": 0.0761,
+          "200": 0.1778,
+          "3200": 0.075,
+          "400": 0.128,
+          "6400": 0.0772,
+          "800": 0.1016
+        }
+      ],
+      "target_entropy_nats": 2.7092,
+      "uniform_baseline_kl_nats": 0.7565
+    }
+  },
+  "schema": "gpi0001_v1_control_pilot_long_v1",
+  "seeds": [
+    0,
+    1
+  ],
+  "status": "engineering pilot; not a verdict"
+}

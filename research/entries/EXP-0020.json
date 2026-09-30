@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "track": "independent_benchmark",
+  "experiment_id": "EXP-0020",
+  "direction": "classical_protected_operator_contract",
+  "question": "What noise contract permits classical relational memory to both retain and update, and where does protection fail?",
+  "purpose": "Zero-training non-neural operator qualification and classical-equivalence audit; no novel architecture or Gate1 result.",
+  "gate1_claim": false,
+  "factor": null,
+  "resource_cap": {
+    "max_updates": 0,
+    "max_wall_seconds": 240
+  },
+  "task_search": {
+    "max_configurations": 6,
+    "retain_all_attempts": true,
+    "heldout_rule": "All six fixed fault cells and both modes retained; no selection or training."
+  },
+  "branches": {
+    "success": "Known classical operator contract only; no increment over classical and no learning claim.",
+    "failure": "Retain equivalence/protection/boundary failure; no rescue or parameter change.",
+    "borderline": "Apply frozen cells and thresholds, no additional attempts."
+  }
+}

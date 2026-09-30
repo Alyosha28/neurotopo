@@ -1,0 +1,23 @@
+{
+  "pass_": true,
+  "scope": "EXP-0033-scoped extract: replay of comparison seed 29313 on the w96b2 carrier; the five-seed EXP-0034 replay lives in that experiment's own verification record.",
+  "replays": [
+    {
+      "experiment": "EXP-0033",
+      "seed": 29313,
+      "all_hashes_equal": true,
+      "metric_gaps": {
+        "SEL_INV.meaningful": 0.0,
+        "SEL_INV.branch": 0.0,
+        "CAND_V4.meaningful": 0.0,
+        "CAND_V4.branch": 0.0,
+        "EXTRA_V4.meaningful": 0.0,
+        "EXTRA_V4.branch": 0.0
+      },
+      "max_metric_gap": 0.0,
+      "pass_": true
+    }
+  ],
+  "seconds": 281.0871674579994,
+  "note": "The shared replay run covered all five EXP-0034 seeds and one EXP-0033 seed; this record isolates the EXP-0033 half so the exploratory result is not read through the replication's effect estimate."
+}

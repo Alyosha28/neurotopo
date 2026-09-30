@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "7cc94cf8cfc6e4be84c37eecb56ac004601a74ee546193fb4ebaacbc16e33e40",
+  "review_sha256": "9704cd1b7f6ebd12a93556ccf60eff10b1c421d754f7fcdc90d255297e9ab1a7",
+  "responses": [
+    {
+      "id": "verification-wrong-experiment",
+      "disposition": "accept",
+      "reason": "属实：共享重放文件以 EXP0034 五个 seed 与 −6.24pp 为主，EXP0033 的 +11.26pp 未随之获得独立验证，读起来自相矛盾。",
+      "action": "已另存 EXP0033 专属验证记录（仅 seed 29313、w96b2 载体、哈希与指标差 0），并在决定0108 注明匹配复现（EXP0034）为负。",
+      "evidence_paths": [
+        "research/evidence/EXP-0033/verification.json",
+        "research/decisions/0108_exp0033_exploratory_probe.md"
+      ]
+    },
+    {
+      "id": "compute-mismatch-unresolved",
+      "disposition": "accept",
+      "reason": "属实：主对照控制算子为候选 1.82 倍，匹配口径未满足；唯一匹配复现为 −6.24pp。",
+      "action": "决定0108 明确：+11.26pp 只作未复现的探索信号保留，且已由匹配复现否定；判词仍为探索性、不授予 A2。",
+      "evidence_paths": [
+        "research/decisions/0108_exp0033_exploratory_probe.md",
+        "research/evidence/EXP-0034/report.md"
+      ]
+    },
+    {
+      "id": "extra-arm-and-seed-variance",
+      "disposition": "accept",
+      "reason": "属实：EXTRA_V4 只有均值、无配对对照或区间；五 seed 下主效应与机制效应都被 seed 级方差主导。",
+      "action": "已补事后对照：CAND−EXTRA 均值 +7.92pp、逐 seed 两个反号；主对照留一 seed 为 +5.49…+15.66pp，记录在 posthoc_contrasts.json 并标注为非预注册。",
+      "evidence_paths": [
+        "research/evidence/EXP-0033/posthoc_contrasts.json"
+      ]
+    },
+    {
+      "id": "verdict-threshold-marginal",
+      "disposition": "accept",
+      "reason": "属实：区间 [+0.35,+23.69]pp 含小于 3pp 的效应，不能支撑‘已达 3pp 优势’。",
+      "action": "决定0108 增补：本轮只主张存在待复现的正向信号，不主张 3pp 优势；门槛表述留待正式 A2 协议。",
+      "evidence_paths": [
+        "research/decisions/0108_exp0033_exploratory_probe.md"
+      ]
+    }
+  ],
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "EXP0033 判词保持 SUPPORTED/EXPLORATORY_ARCHITECTURE_ADVANTAGE，但已由 EXP0034 的匹配复现否定；后续任何该方向工作须另立 ARCH-0002 并按 A0 重走。"
+}

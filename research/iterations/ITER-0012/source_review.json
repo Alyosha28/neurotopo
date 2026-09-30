@@ -1,0 +1,70 @@
+{
+  "review_id": "EXP-0017-v2-independent-source-review",
+  "date": "2026-09-28",
+  "scope": {
+    "preregistered_scope": "research/design/exp0017_source_review_protocol.md",
+    "inputs": [
+      "research/iterations/ITER-0012/prerun_review.json",
+      "experiments/EXP-0017/v2.md",
+      "configs/exp0017_v2.json",
+      "src/neurotopo/order_observation.py",
+      "src/neurotopo/order_observation_reproduce.py",
+      "src/neurotopo/order_observation_analysis.py",
+      "scripts/exp0017_preflight.py",
+      "tests/test_order_observation.py",
+      "artifacts/validation/exp0017_preflight_initial.json",
+      "artifacts/validation/exp0017_preflight.json"
+    ],
+    "excluded": "未运行研究root、训练或联网；未查看研究结果。"
+  },
+  "findings": [
+    {
+      "id": "V1_QUANTIFIER_RESOLVED",
+      "severity": "NONE",
+      "status": "PASS",
+      "detail": "v2在科研样本前定义L(c,s)为4096例均值、H(c)为三个seed的L均值，四个H(c)均须>=.02，逐seedOOD不必分别过线。classify以np.mean(ood)>=.02实现，独立replay以sum(...)/3>=.02重算；边界测试包含[0,.02,.04]通过及[0,.02,.039]失败。v1及其预审保留。"
+    },
+    {
+      "id": "GENERATOR_ORACLE_AND_LEAKAGE",
+      "severity": "NONE",
+      "status": "PASS",
+      "detail": "generate分别spawn操作与遮蔽流、先从真实操作生成状态与sensor、只将可见token送模型，目标由可见前缀的oracle得到。r/s的逆置换推送、?的等权混合及sensor支持集条件化与注册一致；独立log-domain实现用标量来源状态和不同的归一化形式计算。测试覆盖四cell的逐token后验、O点质量、顺序反事实、不可观测sensor、局部RNG及共同前缀无泄漏。"
+    },
+    {
+      "id": "CONTROL_AND_TRAINING_BUDGET",
+      "severity": "NONE",
+      "status": "PASS",
+      "detail": "D16/D64均为input5全输入GRU加6维全读出，初始化、零hidden、Adam设置、梯度裁剪、全token软标签交叉熵及最终权重评估符合注册。每seed-cell-arm 750次更新，循环顺序和总24模型/18000更新正确；训练/评估root按已冻坐标重生，D16/D64共用数据。所有模型完整执行，不因某cell失败提前停。"
+    },
+    {
+      "id": "METRICS_AND_BRANCHES",
+      "severity": "NONE",
+      "status": "PASS",
+      "detail": "最终sensor后的float64 KL采用稳定logsoftmax且零概率贡献为0；分类先验证24个唯一完整记录及有限值，再以各D64逐seed IID<.10优先于四cell OOD均值>=.02，D16不门控。缺失/重复记录归工程中断；失败时保留failed.pt、failure.json、已尝试更新及部分manifest。内部TimeoutError若被worker退出码包装，failure_status读取run阶段manifest原始异常并恢复INCOMPLETE_BUDGET，其他worker错误保留原分类；有对应边界测试。"
+    },
+    {
+      "id": "PREFLIGHT_AND_PROVENANCE_BRIDGE",
+      "severity": "LOW",
+      "status": "PASS_WITH_DISCLOSED_SCOPE",
+      "detail": "原始工程预检报告独立保留：两臂100步混合T8过拟合和各10步dummy计时共220工程更新，均通过；预估117.2245秒<900秒。复核原报告字节SHA、原数值字段与当前桥接记录完全相同，当前oracle/generate/ControlGRU/input_tensor/kl_scores的AST SHA与桥接记录一致。桥接仅证明这五个数值定义未变；完整源码仍由suite.source_sha256重新验收。预检脚本本身不会自动生成桥接注记，冻结时须保留原报告及注记来源，不能称修改后的全部源码已重新跑过工程预检。"
+    },
+    {
+      "id": "REPLAY_AND_SCIENTIFIC_BOUNDARY",
+      "severity": "NONE",
+      "status": "PASS",
+      "detail": "独立复核从24个冻结checkpoint重算两长度logits、独立log-domain后验、KL、seed统计和分支，核数据重生、配对训练流、24记录及18000更新，300秒内限；不是重新训练复制。成功标签仅CONTROL_PILOT_WINDOW，保留已暴露pilot流、无A1/A2或可学习全转移滤波训练、无Gate1及组织因果判词。"
+    },
+    {
+      "id": "WALL_CAP_ENFORCEMENT",
+      "severity": "LOW",
+      "status": "CONDITION_FOR_EXECUTION",
+      "detail": "run在每个训练step和评估batch入口检查共享900秒deadline；完成后analyze没有自设deadline。正式运行须由已登记的loop_worker总时限覆盖run+analysis，并保留超时原件；不能只把run内检查视为完整900秒保证。"
+    }
+  ],
+  "verdict": {
+    "code": "SOURCE_REVIEW_PASS_CONDITIONAL_ON_EXECUTION_GATES",
+    "blocking_issues": [],
+    "can_run_after": "冻结的完整verify/suite通过、桥接预检报告验收、源码及注册指纹冻结、干净隔离checkout和loop_worker总墙钟监督通过后，可以按v2开展控制资格正式运行。",
+    "not_concluded": "本审查不证明D64最终学会或留有余量，也不替代正式运行、独立重放与结果审查。"
+  }
+}

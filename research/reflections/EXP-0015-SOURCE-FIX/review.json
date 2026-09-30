@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "4be27d88944e2df9ac959217b76ba2708bd5f038fafd966535d23bcddd705aa8",
+  "reviewer": {
+    "model": "inherited-model-not-exposed",
+    "effort": "inherited",
+    "context": "fresh_only_packet"
+  },
+  "issues": [],
+  "overall_assessment": "FIXES_ACCEPTED\n{\n  \"assessment_detail\": {\n    \"SRC-001\": \"闭合。worker 在失败回执落盘后用 existing.replace(preserved) 保存迟到分析，清出规范路径，再调用只读分析器产生 INCONCLUSIVE。真实分析器优先读取 worker_failure.json；夹具确实执行此分析器并断言原内容保留、INCOMPLETE_BUDGET 和 RUNNING→ANALYZED。\",\n    \"SRC-002\": \"闭合。独立模块不导入主生成器或 oracle；核查 HEAD、干净状态、全 src 指纹、提交 blob 字节、冻结文件、配置摘要及内容、完整 validation 文件摘要及 source 表、运行时版本、解释器摘要和实际执行的 auditor 字节。包内测试包含正常通过、来源声明篡改和冻结文件修改的拒绝。\",\n    \"SRC-003\": \"闭合。正式脚本入口调用独立模块 main→execute，execute 在 evaluate 前安装 SIGALRM 和 300 秒 ITIMER_REAL，中途异常转为 pass_=false / REPRODUCTION_UNRESOLVED，finally 解除 timer 并恢复 handler，输出采用独占创建。测试是 timeout/hash 异常注入及 timer 调用断言，能够支持异常回执与解除 alarm 的结论；它不是实际等待 300 秒的时限实测，本复核也没有将其声称为此类实测。\",\n    \"SRC-004\": \"闭合。独立重算全部七个指标后检查字段集合与数值误差，并独立计算 failed、substatus 和顶层 decision。上界、均值和 decision 篡改夹具均要求拒绝；另检查 gate1_claim=false 与 research_updates=0。\",\n    \"scope\": \"源码及测试静态复核，未读取 derived 之外的证据，未联网、未执行样本或测试。完整工程通过依据为包内 embedded_suite.json 的 250 passed in 11.71s 及 validation 回执，不是本审查重新运行所得。生成器、配置和协议的任务规模、随机根、阈值及 bootstrap 约定在包内一致。通过仅表示这四项整改可接受，正式执行仍须使用当前验证匹配的干净冻结源码。没有研究结果判词，也不重新审查或改变 Gate1 及 ORBIT 效果资格。\"\n  },\n  \"FILES_READ\": [\n    \"derived/design.md\",\n    \"derived/action.md\",\n    \"derived/EXTRACTION_MANIFEST.json\",\n    \"derived/embedded_v1.md\",\n    \"derived/embedded_exp0015_v1.json\",\n    \"derived/embedded_orbit_information.py\",\n    \"derived/embedded_orbit_information_analysis.py\",\n    \"derived/embedded_orbit_information_reproduce.py\",\n    \"derived/embedded_loop_worker.py\",\n    \"derived/embedded_run.py\",\n    \"derived/embedded_reproduce_exp0015.py\",\n    \"derived/embedded_test_orbit_information_reproduce.py\",\n    \"derived/embedded_test_loop_worker_commands.py\",\n    \"derived/embedded_suite.json\"\n  ],\n  \"partial_reads\": [\n    \"derived/action_output_0_verification.json: 工具显示截断；评价使用其另行完整读取的 embedded 副本。\"\n  ]\n}\nMain-agent serialization normalization only: extra explanatory fields moved verbatim into overall_assessment; review_received.json preserves the original. No finding or verdict changed."
+}

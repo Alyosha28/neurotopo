@@ -1,0 +1,136 @@
+{
+  "checks": {
+    "A_v0_mean_only_dependence": {
+      "max_abs_diff_J0": 7.115076756936123e-20,
+      "max_abs_diff_JX": 1.9312351197398048e-19,
+      "method": "algebraic identity verified numerically at the design's frozen constants; the proof is the identity Sum_t||y_t-z||^2 = Sum_t||y_t-ybar||^2 + T||ybar-z||^2"
+    },
+    "B_F_joint_equals_product_of_chains": {
+      "max_abs_diff": 2.7755575615628914e-17,
+      "total_variation": 3.7947076036992655e-17
+    },
+    "C_F_per_chain_sufficiency_with_positive_control": {
+      "field_semantics": "entries are [P(z_0=+1), P(z_0=-1)] for the terminal time step; chain0_from_joint marginalises the 16-state joint, chain0_independent runs the standalone two-state filter on stream 0 only",
+      "independent_filter_original": [
+        0.04843990961976218,
+        0.9515600903802377
+      ],
+      "independent_filter_other_streams_replaced": [
+        0.04843990961976218,
+        0.9515600903802377
+      ],
+      "independent_filter_own_stream_replaced": [
+        0.5936002630979761,
+        0.40639973690202386
+      ],
+      "insensitivity_to_other_streams": 2.220446049250313e-16,
+      "joint_marginal_original": [
+        0.04843990961976219,
+        0.9515600903802378
+      ],
+      "joint_marginal_other_streams_replaced": [
+        0.04843990961976212,
+        0.951560090380238
+      ],
+      "joint_marginal_own_stream_replaced": [
+        0.5936002630979761,
+        0.4063997369020238
+      ],
+      "sensitivity_to_own_stream": 0.545160353478214
+    },
+    "D_X_joint_not_product_of_marginals": {
+      "max_abs_diff": 0.643250168041109,
+      "note": "J>0: independent per-chain marginals do not reconstruct the joint",
+      "total_variation": 0.9511802372777323
+    },
+    "E_independent_brute_force_oracle": {
+      "horizon": 4,
+      "max_abs_diff_JF": 2.7755575615628914e-15,
+      "max_abs_diff_JX": 1.8596235662471372e-15,
+      "note": "second implementation: direct enumeration over all 16^4 trajectories, no shared recursion with the forward algorithm",
+      "trajectories_enumerated": 65536
+    },
+    "F_condition_difficulty_gap": {
+      "F": {
+        "episodes": 2000,
+        "mean_entropy_nats": 1.5582043087615833,
+        "mean_max_probability": 0.46803578284219927,
+        "mean_normalised_entropy": 0.5620034072355379,
+        "sd_normalised_entropy": 0.14978543116963397
+      },
+      "X": {
+        "episodes": 2000,
+        "mean_entropy_nats": 1.4859730304923224,
+        "mean_max_probability": 0.4915148165465596,
+        "mean_normalised_entropy": 0.5359514804965045,
+        "sd_normalised_entropy": 0.16051691425986836
+      },
+      "gap_F_minus_X_normalised": 0.026051926739033338,
+      "gap_se": 0.004909244094266605,
+      "note": "difficulty proxy for the §4.7 hard gate; a large gap means the coupling condition is also easier/harder and the primary interaction is confounded"
+    },
+    "G_stationary_law_and_marginals": {
+      "max_abs_deviation_from_ising_target_X": 0.05958951648109451,
+      "max_abs_deviation_from_uniform_F": 2.7755575615628914e-17,
+      "note": "F is uniform by construction (independent symmetric chains); X is the kernel's own stationary law, which is not p_J. Marginal priors are the quantity the ruling's same-marginals condition depends on.",
+      "stationary_marginals_F": [
+        0.5000000000000001,
+        0.5000000000000001,
+        0.5000000000000001,
+        0.5
+      ],
+      "stationary_marginals_X": [
+        0.4999999999999989,
+        0.4999999999999989,
+        0.49999999999999895,
+        0.49999999999999895
+      ]
+    }
+  },
+  "design_constants": {
+    "J_F": 0.0,
+    "J_X": 0.25,
+    "T": 16,
+    "beta_persistence": 0.8,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    "lambda": 0.7
+  },
+  "limits": [
+    "这些检查只核对解析主张与实现一致性，不构成任务资格、控制余量、功效或任何架构效果证据。",
+    "B/C/E 的成立依赖 J=0 或给定的耦合矩阵与按维分解的发射模型；若改动生成器须重推。",
+    "D 只证明该 J 取值下联合后验不可由逐链边缘重建，不证明任何架构在该任务上会成功或失败。",
+    "E 在 T=4 上做枚举，是 oracle 的第二实现，不是对 T=16 运行档的独立重放。",
+    "F 的熵差只作为 §4.7 难度硬门的输入数字，不构成架构效果证据。",
+    "E 曾抓到一次真实实现缺陷：修正前的前向递推在最后一步多做一次转移（得到 z_{T+1} 的预测分布而非 z_T 的滤波后验），而 B/C/D 因两个实现共享同一约定错误无法发现。该缺陷已修，E 现为 PASS。"
+  ],
+  "read_only": "无训练、无任务样本、无冻结指标重算；仅小规模精确推断",
+  "rng": "numpy default_rng(20260924)，本地、不写入任何运行档",
+  "schema": "g1_ksi_0001_math_verification_v3",
+  "task": "G1-KSI-0001 设计数学主张的只读核对（含独立 oracle 与阳性对照）",
+  "verdict": {
+    "A_confirms_v0_flaw": true,
+    "B_confirms_F_factorization": true,
+    "C_confirms_per_chain_sufficiency": true,
+    "D_confirms_X_coupling_is_real": true,
+    "E_confirms_forward_against_enumeration": true,
+    "G_marginals_uniform_in_both_conditions": true,
+    "G_reports_stationary_law": true
+  }
+}

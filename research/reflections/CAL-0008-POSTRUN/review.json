@@ -1,0 +1,77 @@
+{
+  "issues": [
+    {
+      "evidence": [
+        "送审 packet 只含：本审查说明、注册设计（判据与分支的权威文本）、结果记录、以及运行产物 `screen_v1.json`。",
+        "**它本身是事后撰写的**（运行已完成），因此不得被表述为预注册。",
+        "注册设计与判据见 `research/design/cal0008_terminal_headroom_predesign.md`（v7，第六轮预运行审查判 `READY_TO_RUN`"
+      ],
+      "falsifiable_check": "打开预设计 v7，确认其判据、分支顺序与 §8 在 packet 中完全不存在。",
+      "id": "CAL-0008-POSTRUN-R1",
+      "problem": "packet 只有运行后审查说明（自称非预注册）与结果记录；权威的预设计 v7（判据、分支顺序、§2 规则、§8、门定义）不在其中。",
+      "severity": "high",
+      "source": "both",
+      "why_it_matters": "预注册合规、`ε` 标定、模型定义核对与 §8 的授权范围都无法审计。"
+    },
+    {
+      "evidence": [
+        "末端 KL 的 3-seed t 区间上界是否都 ≤ `ε_abs = 0.05`",
+        "terminal_kl_ci95",
+        "0.0003399297217701377"
+      ],
+      "falsifiable_check": "由逐 seed 末端 KL 重算 `t(0.975,2)·s/√3`。",
+      "id": "CAL-0008-POSTRUN-R2",
+      "problem": "`terminal_kl_ci95` 不是 t 区间：C1 半宽 `8.974e-5` 等于 `1.96·s/√3`，而非 `t(0.975,2)·s/√3 = 1.970e-4`（C2–C4 同样差 0.456 倍），故正确的 3-seed 区间宽约 2.2 倍（如 C1 上界 `0.000627`、C2 `0.004191`）。",
+      "severity": "medium",
+      "source": "both",
+      "why_it_matters": "判据用的是 t 上界，而公布的 12–96 倍裕度用的是 z 上界；判词不变，但统计量被标错。"
+    },
+    {
+      "evidence": [
+        "`C2` 的平台门未过（`250→500` 落差 `0.26–0.30` > `τ=0.01`）",
+        "0.02790415659546852",
+        "0.05971292406320572"
+      ],
+      "falsifiable_check": "对两种学习率分别由每行 `kl_curve` 重算 250→500 落差。",
+      "id": "CAL-0008-POSTRUN-R3",
+      "problem": "所引 `0.26–0.30` 属于**非判定**的 LR=0.001 流；使 `plateau_all_seeds` 为假的**选定 LR** 流其 C2 落差为 `0.0261–0.0279`（seed 0：由 `0.05971292406320572` 降至 `0.0318087674677372`）。",
+      "severity": "medium",
+      "source": "action",
+      "why_it_matters": "唯一未过的门用了一条并未决定它的流来解释，且所引范围无法由 `plateau_gaps_per_seed` 复现；结论本身不受影响。"
+    },
+    {
+      "evidence": [
+        "absolute_residual_ci_lower",
+        "TERMINAL_KL_CI_UPPER_AT_OR_BELOW_EPSILON",
+        "tail_flat"
+      ],
+      "falsifiable_check": "查阅注册设计或脚本中的门定义。",
+      "id": "CAL-0008-POSTRUN-R4",
+      "problem": "四个配置的 `absolute_residual_ci_lower` 均为 false，而判词都是 `SATURATED`、reason 为 `TERMINAL_KL_CI_UPPER_AT_OR_BELOW_EPSILON`，与“绝对残余门单独决定”的说法表面矛盾；`tail_flat` 在 C2 六个单元全为 false，而两个尾窗（`0.0084`、`0.0034`）低于 `τ=0.01`。两个旗标在 packet 内均无定义。",
+      "severity": "medium",
+      "source": "action",
+      "why_it_matters": "决定判词的分支无法审计，判词实际只依赖绝对 `ε`。"
+    },
+    {
+      "evidence": [
+        "在本项目资源约束与该生成器族下未找到保留末端余量的配置",
+        "不存在（在本族与本预算下）",
+        "只关闭这 4 个固定配置"
+      ],
+      "falsifiable_check": "统计 `configs` 中不同的 `(M, T, λ, graph_seed)` 组合数。",
+      "id": "CAL-0008-POSTRUN-R5",
+      "problem": "该句由四个配置（`M` 为 4/8、`T` 为 16/32、`λ` 为 0.4/0.7、一个阻挫变体、图种子 4101/8307）外推到**族级**，而限制条款只关闭那四个；族级这一步依赖 packet 中不存在的预设计 §8。",
+      "severity": "medium",
+      "source": "action",
+      "why_it_matters": "`M=8` 只有单一图种子，四个点无法承担族级“不可能有余量”的主张。"
+    }
+  ],
+  "overall_assessment": "`RESULTS_NEED_NARROWING`。分支决定可复现且稳健：24/24 单元至多 `0.00863` nat，公布的均值与区间相符，`CLOSE_CONFIGS` 由绝对门推出，分支顺序应用一致，两个未过的门均已披露。缺陷不会翻转判词：区间是 z 基却被标为 3-seed t 区间；所引 C2 平台落差来自非判定流；两个门旗标未定义；族级措辞超出四个抽样配置。决定本身可靠，但措辞必须收窄；在补交预设计之前，问题 1 只能针对记录中重述的判据认证。",
+  "packet_sha256": "d01665a60de57b4ec2e74996ce560f3bdc96996db7c1908b1c564d9f5fcfd41f",
+  "reviewer": {
+    "context": "fresh_only_packet",
+    "effort": "default",
+    "model": "dsh-subagent (deepseek-v4.1-flash, fresh context)"
+  },
+  "schema_version": 1
+}

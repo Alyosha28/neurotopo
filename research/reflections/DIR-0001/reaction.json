@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "b27beec529470561fbb61c5a1403dd317c884d4f4a7a45b3a8dd551c7d267b3f",
+  "review_sha256": "59003cfe6bb4695d7fd6c7a29f6cf2ee950bbd71d28bf087d8a673866817014e",
+  "responses": [
+    {
+      "id": "DIR-0001-I1",
+      "disposition": "accept",
+      "reason": "The original GO rule required a complete search specification before deciding whether to write that specification.",
+      "action": "Separated permission to draft a method specification from permission to run a fully specified graph search.",
+      "evidence_paths": [
+        "research/reflections/DIR-0001/reaction_evidence.md",
+        "research/design/h1_method_reentry_table.md"
+      ]
+    },
+    {
+      "id": "DIR-0001-I2",
+      "disposition": "accept",
+      "reason": "A method candidate status can change without an immediate capability experiment; finite-budget search failure is not mathematical impossibility.",
+      "action": "Defined outcome-specific method statuses and retained the no-search decision for the current underspecified route.",
+      "evidence_paths": [
+        "research/reflections/DIR-0001/reaction_evidence.md",
+        "research/design/h1_method_reentry_table.md",
+        "research/decisions/0015_h1_method_scope_correction.md"
+      ]
+    },
+    {
+      "id": "DIR-0001-I3",
+      "disposition": "accept",
+      "reason": "Gate 1 blocks unsupported capability escalation, not every independently useful graph-only method audit.",
+      "action": "Clarified that only the current full reciprocity range/spectral search is stopped, while prewritten no-new-graph constraint audits remain distinct from model training.",
+      "evidence_paths": [
+        "research/reflections/DIR-0001/reaction_evidence.md",
+        "research/decisions/0015_h1_method_scope_correction.md"
+      ]
+    },
+    {
+      "id": "DIR-0001-I4",
+      "disposition": "accept",
+      "reason": "The original decision had fields for a future search but no workable trigger or registered-work inventory.",
+      "action": "Recorded observable reentry triggers, stage-specific evidence and the limited registered-iteration inventory without claiming OS process status.",
+      "evidence_paths": [
+        "research/reflections/DIR-0001/reaction_evidence.md",
+        "research/design/h1_method_reentry_table.md"
+      ]
+    },
+    {
+      "id": "DIR-0001-I5",
+      "disposition": "accept",
+      "reason": "A count-only bound audit can rule out some prespecified graph targets without creating a null sampler or task claim.",
+      "action": "Prespecified and executed BND-0001 as a no-new-graph audit; its bounds were nondecisive and the audit stopped.",
+      "evidence_paths": [
+        "research/reflections/DIR-0001/reaction_evidence.md",
+        "research/design/h1_reciprocity_count_bound_protocol.md",
+        "research/evidence/h1_reciprocity_count_bound.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep the current full graph search stopped; retain the local witness and nondecisive count bounds as method evidence only, with Gate 1 unchanged."
+}

@@ -1,0 +1,236 @@
+{
+  "schema": "dir0003_heldout_summary_v2",
+  "rule": "decision 0077: SUPPORTED if contrast p10 > artifact p90; FALSIFIED if contrast p90 < artifact p10; else OVERLAP",
+  "seed_count_robustness": "the primary cell gives the same verdict and the same order of magnitude at 8 and 12 seeds",
+  "rows": [
+    {
+      "spec": "adjacent bands, phi=0.5 (primary, balanced 8 seeds)",
+      "bands": [
+        [
+          0.2,
+          0.4
+        ],
+        [
+          0.6,
+          0.75
+        ],
+        [
+          0.9,
+          0.97
+        ]
+      ],
+      "phi": 0.5,
+      "seeds": 8,
+      "cells": 24,
+      "short_p10_med_p90": [
+        0.0363,
+        0.0569,
+        0.132
+      ],
+      "long_p10_med_p90": [
+        0.0067,
+        0.0097,
+        0.0143
+      ],
+      "artifact_p10_med_p90": [
+        0.057,
+        0.0619,
+        0.0744
+      ],
+      "verdict_long_lag": "FALSIFIED",
+      "flip_lags": [
+        2,
+        3,
+        4,
+        5,
+        8,
+        10,
+        20,
+        24,
+        48
+      ]
+    },
+    {
+      "spec": "adjacent bands, phi=0.5 (12 seeds, fuller curve)",
+      "bands": [
+        [
+          0.2,
+          0.4
+        ],
+        [
+          0.6,
+          0.75
+        ],
+        [
+          0.9,
+          0.97
+        ]
+      ],
+      "phi": 0.5,
+      "seeds": 12,
+      "cells": 36,
+      "short_p10_med_p90": [
+        0.0412,
+        0.0625,
+        0.1569
+      ],
+      "long_p10_med_p90": [
+        0.0065,
+        0.0106,
+        0.0143
+      ],
+      "artifact_p10_med_p90": [
+        0.057,
+        0.0611,
+        0.0742
+      ],
+      "verdict_long_lag": "FALSIFIED",
+      "flip_lags": [
+        2,
+        3,
+        4,
+        5,
+        8,
+        10,
+        20,
+        24,
+        48
+      ]
+    },
+    {
+      "spec": "adjacent bands, phi=0.7 (held out)",
+      "bands": [
+        [
+          0.2,
+          0.4
+        ],
+        [
+          0.6,
+          0.75
+        ],
+        [
+          0.9,
+          0.97
+        ]
+      ],
+      "phi": 0.7,
+      "seeds": 8,
+      "cells": 24,
+      "short_p10_med_p90": [
+        0.0253,
+        0.0483,
+        0.1018
+      ],
+      "long_p10_med_p90": [
+        0.0114,
+        0.0159,
+        0.0205
+      ],
+      "artifact_p10_med_p90": [
+        0.0429,
+        0.0481,
+        0.0594
+      ],
+      "verdict_long_lag": "FALSIFIED",
+      "flip_lags": [
+        2,
+        3,
+        4,
+        5,
+        20,
+        24
+      ]
+    },
+    {
+      "spec": "separated bands, phi=0.5 (held out)",
+      "bands": [
+        [
+          0.1,
+          0.3
+        ],
+        [
+          0.5,
+          0.7
+        ],
+        [
+          0.85,
+          0.95
+        ]
+      ],
+      "phi": 0.5,
+      "seeds": 8,
+      "cells": 24,
+      "short_p10_med_p90": [
+        0.0659,
+        0.2065,
+        0.3374
+      ],
+      "long_p10_med_p90": [
+        0.0397,
+        0.1937,
+        0.2753
+      ],
+      "artifact_p10_med_p90": [
+        0.0563,
+        0.0607,
+        0.0707
+      ],
+      "verdict_long_lag": "OVERLAP",
+      "flip_lags": [
+        2,
+        3,
+        5,
+        6,
+        8,
+        12,
+        16
+      ]
+    },
+    {
+      "spec": "separated bands, phi=0.3 (held out)",
+      "bands": [
+        [
+          0.1,
+          0.3
+        ],
+        [
+          0.5,
+          0.7
+        ],
+        [
+          0.85,
+          0.95
+        ]
+      ],
+      "phi": 0.3,
+      "seeds": 8,
+      "cells": 24,
+      "short_p10_med_p90": [
+        0.0817,
+        0.1788,
+        0.3069
+      ],
+      "long_p10_med_p90": [
+        0.0185,
+        0.1788,
+        0.2342
+      ],
+      "artifact_p10_med_p90": [
+        0.0773,
+        0.0817,
+        0.096
+      ],
+      "verdict_long_lag": "OVERLAP",
+      "flip_lags": [
+        2,
+        3,
+        5,
+        6,
+        8,
+        12,
+        16,
+        32
+      ]
+    }
+  ]
+}

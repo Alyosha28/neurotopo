@@ -1,0 +1,74 @@
+{
+  "condition": {
+    "id": "N5_T64_leak0_s40",
+    "length": 64,
+    "leak": 0.0,
+    "sigma": 0.4
+  },
+  "seeds": [
+    28101,
+    28102,
+    28103,
+    28104,
+    28105
+  ],
+  "per_seed": [
+    {
+      "seed": 28101,
+      "source": "archived",
+      "flip": 0.6257443609022556,
+      "hold": 0.6075116027069576
+    },
+    {
+      "seed": 28102,
+      "source": "archived",
+      "flip": 0.6178045112781955,
+      "hold": 0.5903579971785488
+    },
+    {
+      "seed": 28103,
+      "source": "posthoc",
+      "flip": 0.5954285714285714,
+      "hold": 0.6050581668745272
+    },
+    {
+      "seed": 28104,
+      "source": "posthoc",
+      "flip": 0.60396992481203,
+      "hold": 0.6054466275479954
+    },
+    {
+      "seed": 28105,
+      "source": "posthoc",
+      "flip": 0.6044511278195489,
+      "hold": 0.5851853366318415
+    }
+  ],
+  "flip_mean": 0.6094796992481203,
+  "flip_min": 0.5954285714285714,
+  "flip_max": 0.6257443609022556,
+  "hold_mean": 0.5987119461879742,
+  "hold_min": 0.5851853366318415,
+  "hold_max": 0.6075116027069576,
+  "bootstrap_example_resampling": {
+    "seed": 28103,
+    "flip_ci95": [
+      0.5713674232276933,
+      0.6190946502148921
+    ],
+    "hold_ci95": [
+      0.5865674940830751,
+      0.6235456611020865
+    ],
+    "draws": 4000
+  },
+  "frozen_rule": "flip mean in [.60,.95], every seed in [.55,.97], hold mean >= .60",
+  "frozen_two_seed_result": {
+    "flip_mean": 0.62175,
+    "hold_mean": 0.5989347999427532,
+    "qualified": false
+  },
+  "interpretation": "Added seeds and example bootstrap are post-hoc robustness only; the frozen two-seed scan verdict and EXP-0028 decision are unchanged.",
+  "candidate_inference_ops": 1161,
+  "control_parameters": 406
+}

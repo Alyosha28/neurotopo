@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "e48e2c566b9f42b068e7f6acd57ee1e3a4702bfe347009de7a367fc73f104bd8",
+  "review_sha256": "2e679c7e5ebab1a1bb8c2aaf91dc2182da9cfcdcd3003305e20b113851e51e58",
+  "responses": [
+    {
+      "id": "CAL3-R1",
+      "disposition": "accept",
+      "reason": "The OOD manipulation confounds nuisance payload count, sequence length and train-length shift; paired evidence and targets do not isolate a mechanism.",
+      "action": "Bounded the interpretation and registered a separate matched-budget training-cadence question without claiming pure time or payload causation.",
+      "evidence_paths": [
+        "research/reflections/CAL-0003/reaction_evidence.md",
+        "research/design/gate1_cadence_calibration.md"
+      ]
+    },
+    {
+      "id": "CAL3-R2",
+      "disposition": "accept",
+      "reason": "No prespecified OOD delay met the floor/headroom rules; filling d=2/3 after seeing these outcomes would be a new difficulty search.",
+      "action": "Retained the failed grid and fixed d=4 in a new cadence-intervention plan with exact token-budget checks.",
+      "evidence_paths": [
+        "research/negative_results/CAL-0003_distractor_transfer_floor.md",
+        "research/design/gate1_cadence_calibration.md",
+        "tests/test_cadence_calibration.py"
+      ]
+    },
+    {
+      "id": "CAL3-R3",
+      "disposition": "accept",
+      "reason": "The original runner was untracked at execution, so byte identity and replay needed proof; the first clean test exposed a packaging error.",
+      "action": "Committed the frozen runner, repaired clean-checkout test loading, and fully reproduced all three seeds and four delays in a new clean clone.",
+      "evidence_paths": [
+        "docs/CAL-0003_reproduction.md",
+        "scripts/calibrate_distractor_transfer.py",
+        "tests/test_distractor_calibration.py"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep Gate 1 closed; execute the separately specified fixed-versus-varied cadence calibration and preserve every outcome."
+}

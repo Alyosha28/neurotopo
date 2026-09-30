@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "track": "independent_benchmark",
+  "experiment_id": "EXP-0018",
+  "direction": "frozen_co_binary_linear_access",
+  "question": "Is CO binary parity linearly recoverable from frozen hidden states on independent IID and longer sequences?",
+  "purpose": "Bounded frozen-state diagnostic; no recurrent training, architecture effect or Gate1 inference.",
+  "gate1_claim": false,
+  "factor": null,
+  "resource_cap": {
+    "max_updates": 600,
+    "max_wall_seconds": 240
+  },
+  "task_search": {
+    "max_configurations": 1,
+    "retain_all_attempts": true,
+    "heldout_rule": "Namespace181001 independent probe fit/test; 173001 remains untouched; no parameter search."
+  },
+  "branches": {
+    "success": "Record bounded linear accessibility, not causal use; finish this diagnostic.",
+    "failure": "No useful linear readout is not no information; no escalation or GRU training.",
+    "borderline": "Retain fixed seeds, thresholds and all weak/mixed results; stop."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "041a9cf492d3c562437d811e024af4eb144cd40445842f56e8b5667646c2d20c",
+  "reviewer": {
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "context": "fresh_only_packet"
+  },
+  "issues": [],
+  "overall_assessment": "依据冻结 packet，九个候选/主对照 p50 时延比值均超过注册的 1.12 资源停止线；RESOURCE_STOP、零研究更新及 INCONCLUSIVE/RESOURCE_MISMATCH 与设计规则一致。决定没有把资源失败推断为任务效果或 Gate 1 结论，对实现成本的解释也明确标为尚待前瞻干预验证。后续等价评分实现与资源检查被限定为另行事前注册，未在本轮改变 v6 协议。packet 未提供原始计时和报告正文，因此本审查只判断 packet 内部逻辑，不独立复核底层测量。"
+}

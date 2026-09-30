@@ -1,0 +1,51 @@
+{
+  "experiment_id": "EXP-0023",
+  "version": "v2",
+  "workflow": "composition_repair",
+  "protocol": "experiments/EXP-0023/v2.md",
+  "entry_contract": "research/entries/EXP-0023.json",
+  "output": "artifacts/EXP-0023/v2",
+  "parent": "artifacts/EXP-0021/v1",
+  "old_seeds": [
+    20001,
+    20002,
+    20003,
+    20004,
+    20005
+  ],
+  "seeds": [
+    23001,
+    23002,
+    23003,
+    23004,
+    23005,
+    23006
+  ],
+  "arms": [
+    "REL_BASE",
+    "REL_CYCLE",
+    "REL_EXTRA",
+    "INV_BASE"
+  ],
+  "coefficient": 0.1,
+  "updates": 1000,
+  "batch_size": 64,
+  "monitor_steps": [
+    0,
+    125,
+    250,
+    500,
+    1000
+  ],
+  "evaluation_examples": 512,
+  "diagnostic_examples": 128,
+  "gate1_claim": false,
+  "matching_criterion_version": "G1-MATCH-v3",
+  "resource": {
+    "worker_wall_seconds_cap": 1200,
+    "reproduction_wall_seconds_cap": 300,
+    "research_update_cap": 24000,
+    "general_validation_overfit_cap": 900,
+    "special_fit_update_cap": 90
+  }
+}

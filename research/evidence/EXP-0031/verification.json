@@ -1,0 +1,43 @@
+{
+  "pass_": true,
+  "replays": [
+    {
+      "label": "D2_PLAIN:seed29101",
+      "seed": 29101,
+      "final_hash_equal": true,
+      "data_hash_equal": true,
+      "logits_hash_equal": true,
+      "branch_hash_equal": true,
+      "parent_reproduced": true,
+      "max_metric_gap": 0.0,
+      "metric_gaps": {
+        "meaningful_accuracy": 0.0,
+        "accuracy_all": 0.0,
+        "final_accuracy": 0.0,
+        "tail_mean": 0.0,
+        "branch_joint_accuracy": 0.0
+      },
+      "pass_": true
+    },
+    {
+      "label": "D3_PLAIN:seed29102",
+      "seed": 29102,
+      "final_hash_equal": true,
+      "data_hash_equal": true,
+      "logits_hash_equal": true,
+      "branch_hash_equal": true,
+      "parent_reproduced": true,
+      "max_metric_gap": 0.0,
+      "metric_gaps": {
+        "meaningful_accuracy": 0.0,
+        "accuracy_all": 0.0,
+        "final_accuracy": 0.0,
+        "tail_mean": 0.0,
+        "branch_joint_accuracy": 0.0
+      },
+      "pass_": true
+    }
+  ],
+  "seconds": 14.09909916700417,
+  "scope": "Fresh-process retrain replay; no retuning or reselection."
+}

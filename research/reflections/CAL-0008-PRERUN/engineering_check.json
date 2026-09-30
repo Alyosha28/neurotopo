@@ -1,0 +1,530 @@
+{
+  "engineering_fix_record": [
+    {
+      "fix": "按批向量化 oracle、每配置只建一次转移矩阵、数据集缓存复用",
+      "issue": "v2 首版 pilot 因 oracle 按 episode 逐个构建 256×256 转移矩阵而超时（>60s）"
+    },
+    {
+      "fix": "分歧源于检查代码自身混用 log 与线性空间；改为两实现各自完整递推后逐步比较",
+      "issue": "v3 首版逐时步检查报出 0.35–0.91 分歧而最终后验仅差 1e-16",
+      "result": "修正后 1.1e-16–3.9e-16"
+    },
+    {
+      "fix": "删除死代码块",
+      "issue": "v4 首版 model_definition_checks 残留死代码致形状报错"
+    }
+  ],
+  "entropy_identity_diagnostic": {
+    "note": "H(后验) 与未训练 KL 取自同一条评估流；残差为诊断项，不设门。按公布端点计最大残差为 C1 0.0715、C4 0.0712（≤0.072）",
+    "per_config": {
+      "C1": {
+        "ln2M_minus_H": 1.3612,
+        "posterior_entropy_nats": 1.4114359434148434,
+        "untrained_kl_range": [
+          1.2897086143493652,
+          1.4307944774627686
+        ]
+      },
+      "C2": {
+        "ln2M_minus_H": 2.5896,
+        "posterior_entropy_nats": 2.955606395738467,
+        "untrained_kl_range": [
+          2.576500415802002,
+          2.600806951522827
+        ]
+      },
+      "C3": {
+        "ln2M_minus_H": 1.5009,
+        "posterior_entropy_nats": 4.044269023273868,
+        "untrained_kl_range": [
+          1.4914062023162842,
+          1.528796911239624
+        ]
+      },
+      "C4": {
+        "ln2M_minus_H": 1.382,
+        "posterior_entropy_nats": 4.1631632815788695,
+        "untrained_kl_range": [
+          1.3752548694610596,
+          1.4531859159469604
+        ]
+      }
+    }
+  },
+  "limits": [
+    "工程 pilot 的 KL 值不构成末端余量判定；判定只能用注册预算 B=4000 的完整筛查结果。",
+    "独立重建能排除索引/图/符号/发射语义的转录错误，但不排除 §2 规则本身写错（那属于设计层面，须由审查判断）。",
+    "C1 锚点只是必要条件，不能认证 C2–C4 的预算充分性。"
+  ],
+  "model_definition_checks": {
+    "C1": {
+      "J0_factorisation_residual": 1.1102230246251565e-16,
+      "emission_ratio_identity_residual": 2.220446049250313e-16,
+      "emission_vs_expanded_residual": 1.7763568394002505e-15,
+      "energy_vs_bruteforce_residual": 0.0,
+      "graph_rebuild_edge_count_match": true,
+      "graph_sign_residual": 0.0,
+      "shared_construction_note": "the enumeration oracle reuses transition_matrix and emission_loglik, so it cannot detect a shared model-definition error; these four structural checks are the independent path for that",
+      "state_indexing_residual": 0.0,
+      "transition_row_sum_residual": 2.220446049250313e-16
+    },
+    "C2": {
+      "J0_factorisation_residual": 5.551115123125783e-17,
+      "emission_ratio_identity_residual": 2.220446049250313e-15,
+      "emission_vs_expanded_residual": 3.552713678800501e-15,
+      "energy_vs_bruteforce_residual": 0.0,
+      "graph_rebuild_edge_count_match": true,
+      "graph_sign_residual": 0.0,
+      "shared_construction_note": "the enumeration oracle reuses transition_matrix and emission_loglik, so it cannot detect a shared model-definition error; these four structural checks are the independent path for that",
+      "state_indexing_residual": 0.0,
+      "transition_row_sum_residual": 5.551115123125783e-16
+    },
+    "C3": {
+      "J0_factorisation_residual": 5.551115123125783e-17,
+      "emission_ratio_identity_residual": 5.412337245047638e-16,
+      "emission_vs_expanded_residual": 3.552713678800501e-15,
+      "energy_vs_bruteforce_residual": 0.0,
+      "graph_rebuild_edge_count_match": true,
+      "graph_sign_residual": 0.0,
+      "shared_construction_note": "the enumeration oracle reuses transition_matrix and emission_loglik, so it cannot detect a shared model-definition error; these four structural checks are the independent path for that",
+      "state_indexing_residual": 0.0,
+      "transition_row_sum_residual": 5.551115123125783e-16
+    },
+    "C4": {
+      "J0_factorisation_residual": 5.551115123125783e-17,
+      "emission_ratio_identity_residual": 5.412337245047638e-16,
+      "emission_vs_expanded_residual": 3.552713678800501e-15,
+      "energy_vs_bruteforce_residual": 0.0,
+      "graph_rebuild_edge_count_match": true,
+      "graph_sign_residual": 0.0,
+      "shared_construction_note": "the enumeration oracle reuses transition_matrix and emission_loglik, so it cannot detect a shared model-definition error; these four structural checks are the independent path for that",
+      "state_indexing_residual": 0.0,
+      "transition_row_sum_residual": 4.440892098500626e-16
+    }
+  },
+  "oracle_checks": {
+    "C1": {
+      "enumeration_horizon": 3,
+      "kl_two_routes_abs_diff": 4.440892098500626e-16,
+      "max_abs_diff_log_vs_enumeration": 3.885780586188048e-16,
+      "max_abs_diff_log_vs_scaled": 1.1102230246251565e-16,
+      "normalisation_log_space": 0.9999999999999998,
+      "normalisation_scaled": 1.0,
+      "per_timestep_max": 1.1102230246251565e-16,
+      "per_timestep_max_abs_diff": [
+        3.469446951953614e-17,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16,
+        5.551115123125783e-17,
+        5.551115123125783e-17,
+        2.7755575615628914e-17,
+        1.1102230246251565e-16,
+        6.938893903907228e-17,
+        5.551115123125783e-17,
+        8.326672684688674e-17,
+        2.0816681711721685e-17,
+        1.1102230246251565e-16,
+        1.3877787807814457e-17
+      ],
+      "posterior_entropy_nats": 1.4770623639480194,
+      "production_horizon": 16,
+      "soft_target_normalisation_residual": 2.220446049250313e-16,
+      "trajectories_enumerated": 4096
+    },
+    "C2": {
+      "enumeration_horizon": 2,
+      "kl_two_routes_abs_diff": 0.0,
+      "max_abs_diff_log_vs_enumeration": 2.0816681711721685e-16,
+      "max_abs_diff_log_vs_scaled": 1.6653345369377348e-16,
+      "normalisation_log_space": 1.0,
+      "normalisation_scaled": 1.0,
+      "per_timestep_max": 1.6653345369377348e-16,
+      "per_timestep_max_abs_diff": [
+        2.7755575615628914e-17,
+        9.71445146547012e-17,
+        8.326672684688674e-17,
+        2.7755575615628914e-17,
+        4.85722573273506e-17,
+        3.122502256758253e-17,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16,
+        1.1102230246251565e-16,
+        6.245004513516506e-17,
+        5.551115123125783e-17,
+        5.551115123125783e-17,
+        6.938893903907228e-17,
+        4.163336342344337e-17,
+        1.6653345369377348e-16,
+        1.6653345369377348e-16
+      ],
+      "posterior_entropy_nats": 2.6722546052745946,
+      "production_horizon": 16,
+      "soft_target_normalisation_residual": 0.0,
+      "trajectories_enumerated": 65536
+    },
+    "C3": {
+      "enumeration_horizon": 2,
+      "kl_two_routes_abs_diff": 4.440892098500626e-16,
+      "max_abs_diff_log_vs_enumeration": 1.5265566588595902e-16,
+      "max_abs_diff_log_vs_scaled": 4.163336342344337e-17,
+      "normalisation_log_space": 1.0,
+      "normalisation_scaled": 1.0,
+      "per_timestep_max": 3.885780586188048e-16,
+      "per_timestep_max_abs_diff": [
+        1.0408340855860843e-17,
+        2.0816681711721685e-17,
+        2.7755575615628914e-17,
+        4.163336342344337e-17,
+        5.551115123125783e-17,
+        2.7755575615628914e-17,
+        2.7755575615628914e-17,
+        8.326672684688674e-17,
+        3.885780586188048e-16,
+        9.71445146547012e-17,
+        4.163336342344337e-17,
+        5.551115123125783e-17,
+        2.7755575615628914e-17,
+        4.163336342344337e-17,
+        4.163336342344337e-17,
+        4.163336342344337e-17,
+        6.938893903907228e-17,
+        4.163336342344337e-17,
+        9.71445146547012e-17,
+        3.122502256758253e-17,
+        1.3877787807814457e-16,
+        6.938893903907228e-17,
+        5.551115123125783e-17,
+        2.0816681711721685e-17,
+        4.85722573273506e-17,
+        4.163336342344337e-17,
+        3.8163916471489756e-17,
+        4.85722573273506e-17,
+        9.020562075079397e-17,
+        4.163336342344337e-17,
+        8.326672684688674e-17,
+        4.163336342344337e-17
+      ],
+      "posterior_entropy_nats": 3.889868967714737,
+      "production_horizon": 32,
+      "soft_target_normalisation_residual": 0.0,
+      "trajectories_enumerated": 65536
+    },
+    "C4": {
+      "enumeration_horizon": 2,
+      "kl_two_routes_abs_diff": 4.440892098500626e-16,
+      "max_abs_diff_log_vs_enumeration": 1.457167719820518e-16,
+      "max_abs_diff_log_vs_scaled": 6.938893903907228e-17,
+      "normalisation_log_space": 0.9999999999999999,
+      "normalisation_scaled": 1.0,
+      "per_timestep_max": 1.1102230246251565e-16,
+      "per_timestep_max_abs_diff": [
+        1.0408340855860843e-17,
+        1.734723475976807e-17,
+        2.7755575615628914e-17,
+        6.938893903907228e-17,
+        4.163336342344337e-17,
+        3.469446951953614e-17,
+        8.326672684688674e-17,
+        2.7755575615628914e-17,
+        1.1102230246251565e-16,
+        3.469446951953614e-17,
+        2.7755575615628914e-17,
+        4.163336342344337e-17,
+        3.469446951953614e-17,
+        1.734723475976807e-17,
+        6.938893903907228e-17,
+        4.85722573273506e-17,
+        2.7755575615628914e-17,
+        6.245004513516506e-17,
+        6.938893903907228e-17,
+        3.469446951953614e-17,
+        6.938893903907228e-17,
+        9.71445146547012e-17,
+        5.551115123125783e-17,
+        6.938893903907228e-17,
+        4.163336342344337e-17,
+        3.469446951953614e-17,
+        4.163336342344337e-17,
+        6.938893903907228e-17,
+        6.938893903907228e-17,
+        8.326672684688674e-17,
+        9.71445146547012e-17,
+        6.938893903907228e-17
+      ],
+      "posterior_entropy_nats": 3.686377740582647,
+      "production_horizon": 32,
+      "soft_target_normalisation_residual": 1.1102230246251565e-16,
+      "trajectories_enumerated": 65536
+    }
+  },
+  "oracle_verdict": {
+    "all_within_1e_12": true,
+    "enumeration_max": 3.885780586188048e-16,
+    "final_log_vs_scaled_max": 1.6653345369377348e-16,
+    "kl_two_route_max": 4.440892098500626e-16,
+    "model_definition_max": 3.552713678800501e-15,
+    "normalisation_residual_max": 2.220446049250313e-16,
+    "per_step_max": 3.885780586188048e-16
+  },
+  "pilot_200_updates": {
+    "aggregate": "NOT_APPLICABLE_ENGINEERING_PILOT",
+    "aggregate_note": "pilot 的 aggregate 记为 NOT_APPLICABLE_ENGINEERING_PILOT（哨兵值，不构成判词，也不是 HEADROOM/SATURATED 之一）",
+    "note": "200 updates，仅用于工程健全性与计时；**不是注册预算下的结果，不得用于任何判词**",
+    "rows": [
+      {
+        "config": "C1",
+        "learned_fraction": 0.9657497628177559,
+        "lr": 0.001,
+        "posterior_entropy_nats": 1.4114359434148434,
+        "seed": 0,
+        "terminal_kl_nats": 0.04900505021214485,
+        "train_seconds": 0.57,
+        "untrained_kl_nats": 1.4307944774627686
+      },
+      {
+        "config": "C1",
+        "learned_fraction": 0.9952085878749904,
+        "lr": 0.003,
+        "posterior_entropy_nats": 1.4114359434148434,
+        "seed": 0,
+        "terminal_kl_nats": 0.006855526007711887,
+        "train_seconds": 0.56,
+        "untrained_kl_nats": 1.4307944774627686
+      },
+      {
+        "config": "C1",
+        "learned_fraction": 0.9663068705944988,
+        "lr": 0.001,
+        "posterior_entropy_nats": 1.457144144707989,
+        "seed": 1,
+        "terminal_kl_nats": 0.04345431923866272,
+        "train_seconds": 0.55,
+        "untrained_kl_nats": 1.2897086143493652
+      },
+      {
+        "config": "C1",
+        "learned_fraction": 0.994566589761999,
+        "lr": 0.003,
+        "posterior_entropy_nats": 1.457144144707989,
+        "seed": 1,
+        "terminal_kl_nats": 0.007007515989243984,
+        "train_seconds": 0.55,
+        "untrained_kl_nats": 1.2897086143493652
+      },
+      {
+        "config": "C1",
+        "learned_fraction": 0.9668686269625326,
+        "lr": 0.001,
+        "posterior_entropy_nats": 1.4721238483012566,
+        "seed": 2,
+        "terminal_kl_nats": 0.04358489066362381,
+        "train_seconds": 0.54,
+        "untrained_kl_nats": 1.3155171871185303
+      },
+      {
+        "config": "C1",
+        "learned_fraction": 0.9943357863877185,
+        "lr": 0.003,
+        "posterior_entropy_nats": 1.4721238483012566,
+        "seed": 2,
+        "terminal_kl_nats": 0.007451370358467102,
+        "train_seconds": 0.58,
+        "untrained_kl_nats": 1.3155171871185303
+      },
+      {
+        "config": "C2",
+        "learned_fraction": 0.7817733768152983,
+        "lr": 0.001,
+        "posterior_entropy_nats": 2.955606395738467,
+        "seed": 0,
+        "terminal_kl_nats": 0.5622609853744507,
+        "train_seconds": 0.6,
+        "untrained_kl_nats": 2.576500415802002
+      },
+      {
+        "config": "C2",
+        "learned_fraction": 0.9714234812974929,
+        "lr": 0.003,
+        "posterior_entropy_nats": 2.955606395738467,
+        "seed": 0,
+        "terminal_kl_nats": 0.07362741231918335,
+        "train_seconds": 0.57,
+        "untrained_kl_nats": 2.576500415802002
+      },
+      {
+        "config": "C2",
+        "learned_fraction": 0.7781271221691919,
+        "lr": 0.001,
+        "posterior_entropy_nats": 2.9650511617637183,
+        "seed": 1,
+        "terminal_kl_nats": 0.5769745707511902,
+        "train_seconds": 0.63,
+        "untrained_kl_nats": 2.600473642349243
+      },
+      {
+        "config": "C2",
+        "learned_fraction": 0.9731248000742997,
+        "lr": 0.003,
+        "posterior_entropy_nats": 2.9650511617637183,
+        "seed": 1,
+        "terminal_kl_nats": 0.06988824903964996,
+        "train_seconds": 0.58,
+        "untrained_kl_nats": 2.600473642349243
+      },
+      {
+        "config": "C2",
+        "learned_fraction": 0.8006472889447064,
+        "lr": 0.001,
+        "posterior_entropy_nats": 2.947940313869575,
+        "seed": 2,
+        "terminal_kl_nats": 0.5184779167175293,
+        "train_seconds": 0.61,
+        "untrained_kl_nats": 2.600806951522827
+      },
+      {
+        "config": "C2",
+        "learned_fraction": 0.9740212745477755,
+        "lr": 0.003,
+        "posterior_entropy_nats": 2.947940313869575,
+        "seed": 2,
+        "terminal_kl_nats": 0.06756564974784851,
+        "train_seconds": 0.68,
+        "untrained_kl_nats": 2.600806951522827
+      },
+      {
+        "config": "C3",
+        "learned_fraction": 0.9008947813341122,
+        "lr": 0.001,
+        "posterior_entropy_nats": 4.044269023273868,
+        "seed": 0,
+        "terminal_kl_nats": 0.14780613780021667,
+        "train_seconds": 1.2,
+        "untrained_kl_nats": 1.4914062023162842
+      },
+      {
+        "config": "C3",
+        "learned_fraction": 0.9850103699221362,
+        "lr": 0.003,
+        "posterior_entropy_nats": 4.044269023273868,
+        "seed": 0,
+        "terminal_kl_nats": 0.02235562726855278,
+        "train_seconds": 1.25,
+        "untrained_kl_nats": 1.4914062023162842
+      },
+      {
+        "config": "C3",
+        "learned_fraction": 0.9061913133574233,
+        "lr": 0.001,
+        "posterior_entropy_nats": 4.055844258964067,
+        "seed": 1,
+        "terminal_kl_nats": 0.14122892916202545,
+        "train_seconds": 1.25,
+        "untrained_kl_nats": 1.5054994821548462
+      },
+      {
+        "config": "C3",
+        "learned_fraction": 0.9866887648670188,
+        "lr": 0.003,
+        "posterior_entropy_nats": 4.055844258964067,
+        "seed": 1,
+        "terminal_kl_nats": 0.020040057599544525,
+        "train_seconds": 1.26,
+        "untrained_kl_nats": 1.5054994821548462
+      },
+      {
+        "config": "C3",
+        "learned_fraction": 0.9104515014178355,
+        "lr": 0.001,
+        "posterior_entropy_nats": 4.023556574778643,
+        "seed": 2,
+        "terminal_kl_nats": 0.13690146803855896,
+        "train_seconds": 1.33,
+        "untrained_kl_nats": 1.528796911239624
+      },
+      {
+        "config": "C3",
+        "learned_fraction": 0.9861494082351734,
+        "lr": 0.003,
+        "posterior_entropy_nats": 4.023556574778643,
+        "seed": 2,
+        "terminal_kl_nats": 0.02117474190890789,
+        "train_seconds": 1.2,
+        "untrained_kl_nats": 1.528796911239624
+      },
+      {
+        "config": "C4",
+        "learned_fraction": 0.9090519338924528,
+        "lr": 0.001,
+        "posterior_entropy_nats": 4.1631632815788695,
+        "seed": 0,
+        "terminal_kl_nats": 0.1250767707824707,
+        "train_seconds": 1.26,
+        "untrained_kl_nats": 1.3752548694610596
+      },
+      {
+        "config": "C4",
+        "learned_fraction": 0.9846743183294133,
+        "lr": 0.003,
+        "posterior_entropy_nats": 4.1631632815788695,
+        "seed": 0,
+        "terminal_kl_nats": 0.021076718345284462,
+        "train_seconds": 1.27,
+        "untrained_kl_nats": 1.3752548694610596
+      },
+      {
+        "config": "C4",
+        "learned_fraction": 0.9136386289595512,
+        "lr": 0.001,
+        "posterior_entropy_nats": 4.157513666073514,
+        "seed": 1,
+        "terminal_kl_nats": 0.12039163708686829,
+        "train_seconds": 1.28,
+        "untrained_kl_nats": 1.3940449953079224
+      },
+      {
+        "config": "C4",
+        "learned_fraction": 0.9852245739346099,
+        "lr": 0.003,
+        "posterior_entropy_nats": 4.157513666073514,
+        "seed": 1,
+        "terminal_kl_nats": 0.020597608759999275,
+        "train_seconds": 1.25,
+        "untrained_kl_nats": 1.3940449953079224
+      },
+      {
+        "config": "C4",
+        "learned_fraction": 0.9190676017642686,
+        "lr": 0.001,
+        "posterior_entropy_nats": 4.098811375017496,
+        "seed": 2,
+        "terminal_kl_nats": 0.11760982125997543,
+        "train_seconds": 1.26,
+        "untrained_kl_nats": 1.4531859159469604
+      },
+      {
+        "config": "C4",
+        "learned_fraction": 0.9841192568038426,
+        "lr": 0.003,
+        "posterior_entropy_nats": 4.098811375017496,
+        "seed": 2,
+        "terminal_kl_nats": 0.023077672347426414,
+        "train_seconds": 1.27,
+        "untrained_kl_nats": 1.4531859159469604
+      }
+    ],
+    "timing": "24 个单元 × 200 updates 约 30 秒；完整 4000-updates 筛查预计 6–10 分钟"
+  },
+  "read_only": "未改动任何既有运行档、阈值或判词；仅新增实现与工程 pilot",
+  "review_response": "v7 处理第五轮全部七项要求：良态上界 ln 2^M + 0.5（逐 seed）替换被误标的熵恒等式门；H(后验) 与未训练 KL 改为同一条 512-episode 评估流（残差由 0.27–0.48 降至按公布端点计 ≤0.072）；每个 INCONCLUSIVE 记录 reason 并分类归档；删除过时 LR 措辞；台账逐条对应版本；pilot aggregate 措辞对齐；说明 ρ 的良定性。",
+  "schema": "cal0008_engineering_check_v7",
+  "script": {
+    "bytes": 32530,
+    "path": "scripts/cal0008_terminal_headroom_screen.py",
+    "sha256": "c0809e11fbfabe73531922ee41ef4dafa3680eb6678e5dc69c46410081f34ec5"
+  },
+  "shared_construction_disclosure": "实现 ② 与枚举 oracle 均复用同一 transition_matrix／emission_loglik **定义**（仅算术路径不同）。v6 新增的独立重建（索引按位解码、图与符号按构造规则重写、发射比值恒等式 logp(s)−logp(s′)=2λy_b s_b）是从设计规则出发的独立路径，用于排除共享语义错误；其残差已公布。",
+  "task": "CAL-0008 v7 注册运行前的工程核对（非科学结果）"
+}

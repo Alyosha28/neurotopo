@@ -1,0 +1,61 @@
+{
+  "review_id": "EXP-0017-v1-independent-prerun",
+  "date": "2026-09-28",
+  "scope": {
+    "purpose": "只审查控制资格注册是否自洽、可执行并保留强控制的否决能力；不审查实现、训练结果或候选效果。",
+    "preregistered_review_scope": "research/design/exp0017_prerun_review_protocol.md",
+    "read_only_evidence": [
+      "experiments/EXP-0017/v1.md",
+      "configs/exp0017_v1.json",
+      "research/entries/EXP-0017.json",
+      "research/prior_art/dir0008_state_update_research.md",
+      "research/stage_gates.md（顶部及当前匹配判据）",
+      "experiments/EXP-0016/v1.md"
+    ],
+    "excluded": "未读取科研样本或结果，未运行模型、未联网、未审查实现。"
+  },
+  "checks": [
+    {
+      "id": "OOD_HEADROOM_QUANTIFIER",
+      "severity": "HIGH",
+      "status": "BLOCKING_BEFORE_RUN",
+      "finding": "余量门写作“四cell的D64各3seed OOD均值>=.02”，但没有明确量词所辖层级。可解释为每个cell的三个seed均值的平均值达到.02，也可解释为每个cell的三个逐seed均值分别达到.02。两者会对同一完整24模型矩阵给出不同判词；config的d64_ood_mean_min及entry中的“all four cells”均未消歧。",
+      "required_resolution": "在接触正式样本或训练前，把余量门写成唯一公式，并同步注册、config或明确config字段的含义、判定测试及独立复核。保留.02阈值与全部四cell；不能在看到结果后选择量词。"
+    },
+    {
+      "id": "MODEL_COUNT_AND_PARAMETERS",
+      "severity": "NONE",
+      "status": "PASS",
+      "finding": "3 seed × 4 cell × 2 arm = 24模型，24 × 750 = 18000研究更新，与配置及entry上限一致。PyTorch GRU的input-hidden权重为15H、hidden-hidden权重为3H²、两组门bias为6H、读出为6H+6，合计3H²+27H+6；H16=1206，H64=14022。"
+    },
+    {
+      "id": "ORACLE_AND_GENERATOR",
+      "severity": "NONE",
+      "status": "PASS",
+      "finding": "q=3b+j的两个生成元都是六状态置换；C的r/s交换，N的r/s不交换。遮蔽独立于操作时，?后验为两种置换的等权混合；随后sensor按j=0与否条件化。传感器来自真实轨迹，因此生成样本的过滤分母应为正。O条件的可见操作从q0确定真实状态，oracle应保持点质量。协议要求float64与独立log-domain比较、支持/归一化检查，足以识别关键oracle错误；不把C/U滤波整体误称为交换。"
+    },
+    {
+      "id": "CONTROL_STRENGTH_AND_LEARNING",
+      "severity": "MEDIUM",
+      "status": "LIMITATION_DISCLOSED_NOT_BLOCKING",
+      "finding": "D64是全输入、全读出的稠密GRU，D16仅作锚点；没有通过缩窄输入或读出削弱强控制。750更新和逐seed IID KL<.10是有限预算学习门，可能允许OOD欠拟合，但本实验只决定pilot窗口，不授予强控制充分性、未来候选效果或Gate1资格。六状态精确滤波器给出零KL算法上限，因此观测OOD余量不能被称作一般表示能力下界。未来效果注册仍须另行审查实际匹配主控制与训练公平性。"
+    },
+    {
+      "id": "BRANCH_PRECEDENCE",
+      "severity": "LOW",
+      "status": "IMPLEMENTATION_CLARIFICATION",
+      "finding": "工程错误优先于预算超时；完整24模型后先判学习失败，再判余量不足，最后才给CONTROL_PILOT_WINDOW。超时自然造成缺记录，执行时应按已写明的因果优先级归入INCOMPLETE_BUDGET，除非超时前已发生独立工程错误；否则“缺记录”文字会吞掉预算分支。保留各cell事实旗标和部分原件。"
+    },
+    {
+      "id": "RESOURCE_AND_STAGE_BOUNDARY",
+      "severity": "NONE",
+      "status": "PASS",
+      "finding": "900秒正式run+analysis、300秒独立重放合计1200秒，与entry一致。四cell固定、三个暴露pilot seed、未来独立namespace保留、不训练A1/A2与可学习滤波器；成功仅为CONTROL_PILOT_WINDOW。independent_benchmark、factor=null与gate1_claim=false一致；G1-MATCH-v3仅登记版本，不借此形成Gate1或PACKAGE_EFFECT判词。EXP-0016已关闭的ORBIT配置未重开。"
+    }
+  ],
+  "verdict": {
+    "code": "BLOCKED_PENDING_PROSPECTIVE_QUANTIFIER_FIX",
+    "reason": "OOD余量门的seed量词可改变唯一科学分支，须在正式运行前消歧。除此之外，注册结构可执行，未发现通过弱化D64控制或改写EXP-0016结论取得资格的设计。",
+    "release_condition": "将OOD判定写为唯一可执行公式并冻结于正式运行前；实现验收、verify、干净冻结提交与独立重放仍是运行条件，不因本设计审查替代。"
+  }
+}

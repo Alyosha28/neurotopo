@@ -1,0 +1,10 @@
+openalex	orth1	200	orthogonal recurrent neural network vanishing gradient long range
+openalex	anti1	200	antisymmetric recurrent neural network long-term dependency
+openalex	iso1	200	dynamical isometry trainability deep recurrent networks initialization
+openalex	timescale1	200	multiple timescales recurrent network long-term memory organization
+openalex	ssm1	200	structured state space model initialization long range dependency
+crossref	orth1	200	orthogonal recurrent neural networks gradient flow
+crossref	anti1	200	antisymmetric recurrent neural networks
+crossref	iso1	200	dynamical isometry and a mean field theory of RNNs
+crossref	timescale1	200	clockwork recurrent neural network timescales
+crossref	ssm1	200	efficiently modeling long sequences with structured state spaces

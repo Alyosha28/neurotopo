@@ -1,0 +1,36 @@
+{
+  "purpose": "Reflection reaction evidence: pin the committed ARCH-GATES-v1 criteria and the untouched old loop ledger.",
+  "gate_criteria": {
+    "source": "git show f5a6e2c:research/stage_gates.md",
+    "sha256_at_commit": "52ff8b4dabb27c15f00cb9aa92dbbcad4569225df5f351997de4cae5a3df95a4",
+    "sha256_working_tree": "c0c4f5f1c55dc2239f11260466b131193cb2efed2c3a8ad9829ddcdc6dde2139",
+    "a1_criteria_row_identical": true,
+    "explanation": "The only working-tree difference in stage_gates.md is the A0/A1 status cell; the A1 pass criteria text used by EXP-0028 was committed at f5a6e2c before the run. The gate file is not in the run manifest frozen_hashes; that omission is recorded here rather than repaired retroactively."
+  },
+  "protocol_preregistration": {
+    "path": "experiments/EXP-0028/v1.md",
+    "sha256": "5fefd4f36e18555a17610b39de7b4aa1c707463df4139a488b3fdeb9f2460c42",
+    "commit": null,
+    "limitation": "No commit could be created this session (active git metadata outside the writable sandbox), so the pre-run ordering is attested only by the run manifest's frozen_hashes and the packet, not by an immutable revision."
+  },
+  "old_loop_ledger": {
+    "before": {
+      "iteration": 21,
+      "experiment": "EXP-0026",
+      "phase": "DECIDED",
+      "decision": "PARTIALLY_SUPPORTED",
+      "entry_contract_sha256": "c9cbee506e9f9872d94903754a6c384653961b4c82568b589446ed05ea0e7744",
+      "task_spec_sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e"
+    },
+    "after": {
+      "iteration": 21,
+      "experiment": "EXP-0026",
+      "phase": "DECIDED",
+      "decision": "PARTIALLY_SUPPORTED",
+      "entry_contract_sha256": "c9cbee506e9f9872d94903754a6c384653961b4c82568b589446ed05ea0e7744",
+      "task_spec_sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e"
+    },
+    "changed": false,
+    "note": "Read with `python -m neurotopo.loop status` before the run and after the decision; no loop event was written by EXP-0028 and the `project_gate1` entry contract hash is unchanged."
+  }
+}

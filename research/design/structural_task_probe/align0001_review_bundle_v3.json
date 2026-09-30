@@ -1,0 +1,1250 @@
+{
+  "schema": "align0001_review_bundle_v3",
+  "purpose": "Machine outputs the G1-BOUND-0001 review needs: the capacity-channel sweep over task-graph coupling (source of C_ub = 0.0064 and of the non-locality check for c=4 and c=5) and the analytic decomposition on the frozen partitions.",
+  "note": "Both are reproduced verbatim with their own sha256. The axis-declaration pilot, the oracle cross-check and the sampler/routing cross-check are not needed for these seven questions and are therefore excluded.",
+  "members": {
+    "align0001_channel_sweep.json": {
+      "sha256_full_file": "c9245566b89fe5e8eef7a068cc8d30db32c5b917169f0b1e63d3fb9f51163570",
+      "content": {
+        "schema": "align0001_channel_sweep_v1",
+        "status": "engineering premise check; not a verdict, no training, no Gate 1 effect",
+        "question": "Does any pair of conditions in this task family have a capacity channel small enough (< delta_min/2) while both conditions stay non-local?",
+        "constants": {
+          "M": 6,
+          "T": 64,
+          "grid": 32,
+          "delta_min": 0.05,
+          "gap_gate": 0.2,
+          "episodes": 60,
+          "projection_episodes": 40,
+          "seed": 20260924
+        },
+        "cells": {
+          "0": {
+            "cross_edges": 0,
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                3
+              ]
+            ],
+            "degree_sequence": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "aligned_projection_kl": 0.0381,
+            "crossed_projection_kl": 0.0642,
+            "delta": 0.0261,
+            "delta_ci95": [
+              0.015,
+              0.0393
+            ],
+            "gap16_mean": 0.366,
+            "gap16_ci95": [
+              0.3022,
+              0.4303
+            ],
+            "nonlocality_gate_pass": true
+          },
+          "1": {
+            "cross_edges": 1,
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "degree_sequence": [
+              1,
+              2,
+              2,
+              2,
+              2,
+              3
+            ],
+            "aligned_projection_kl": 0.0339,
+            "crossed_projection_kl": 0.0548,
+            "delta": 0.0209,
+            "delta_ci95": [
+              0.0139,
+              0.0292
+            ],
+            "gap16_mean": 0.415,
+            "gap16_ci95": [
+              0.3161,
+              0.5224
+            ],
+            "nonlocality_gate_pass": true
+          },
+          "2": {
+            "cross_edges": 2,
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                0,
+                4
+              ]
+            ],
+            "degree_sequence": [
+              0,
+              2,
+              2,
+              2,
+              2,
+              4
+            ],
+            "aligned_projection_kl": 0.027,
+            "crossed_projection_kl": 0.0416,
+            "delta": 0.0146,
+            "delta_ci95": [
+              0.0094,
+              0.0206
+            ],
+            "gap16_mean": 0.4883,
+            "gap16_ci95": [
+              0.4023,
+              0.5717
+            ],
+            "nonlocality_gate_pass": true
+          },
+          "3": {
+            "cross_edges": 3,
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                0,
+                4
+              ],
+              [
+                0,
+                5
+              ]
+            ],
+            "degree_sequence": [
+              1,
+              1,
+              1,
+              2,
+              2,
+              5
+            ],
+            "aligned_projection_kl": 0.0308,
+            "crossed_projection_kl": 0.0294,
+            "delta": -0.0014,
+            "delta_ci95": [
+              -0.0047,
+              0.002
+            ],
+            "gap16_mean": 0.3716,
+            "gap16_ci95": [
+              0.3171,
+              0.4432
+            ],
+            "nonlocality_gate_pass": true
+          },
+          "4": {
+            "cross_edges": 4,
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                0,
+                4
+              ],
+              [
+                0,
+                5
+              ],
+              [
+                1,
+                3
+              ]
+            ],
+            "degree_sequence": [
+              1,
+              1,
+              1,
+              2,
+              3,
+              4
+            ],
+            "aligned_projection_kl": 0.033,
+            "crossed_projection_kl": 0.035,
+            "delta": 0.002,
+            "delta_ci95": [
+              -0.0006,
+              0.0054
+            ],
+            "gap16_mean": 0.4132,
+            "gap16_ci95": [
+              0.3143,
+              0.5267
+            ],
+            "nonlocality_gate_pass": true
+          },
+          "5": {
+            "cross_edges": 5,
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                3
+              ],
+              [
+                0,
+                4
+              ],
+              [
+                0,
+                5
+              ],
+              [
+                1,
+                3
+              ],
+              [
+                1,
+                4
+              ]
+            ],
+            "degree_sequence": [
+              0,
+              1,
+              2,
+              2,
+              3,
+              4
+            ],
+            "aligned_projection_kl": 0.021,
+            "crossed_projection_kl": 0.0213,
+            "delta": 0.0003,
+            "delta_ci95": [
+              -0.0013,
+              0.0021
+            ],
+            "gap16_mean": 0.4428,
+            "gap16_ci95": [
+              0.3628,
+              0.5327
+            ],
+            "nonlocality_gate_pass": true
+          },
+          "6": {
+            "cross_edges": 6,
+            "edges": [
+              [
+                0,
+                3
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                2,
+                5
+              ],
+              [
+                5,
+                0
+              ]
+            ],
+            "degree_sequence": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "aligned_projection_kl": 0.043,
+            "crossed_projection_kl": 0.0366,
+            "delta": -0.0064,
+            "delta_ci95": [
+              -0.0109,
+              -0.0028
+            ],
+            "gap16_mean": 0.4033,
+            "gap16_ci95": [
+              0.315,
+              0.5066
+            ],
+            "nonlocality_gate_pass": true
+          }
+        },
+        "pairs": [
+          {
+            "c1": 0,
+            "c2": 1,
+            "component": 0.0052,
+            "conservative_upper_bound": 0.025,
+            "both_conditions_nonlocal": true,
+            "viable": false
+          },
+          {
+            "c1": 0,
+            "c2": 2,
+            "component": 0.0115,
+            "conservative_upper_bound": 0.0293,
+            "both_conditions_nonlocal": true,
+            "viable": false
+          },
+          {
+            "c1": 0,
+            "c2": 3,
+            "component": 0.0275,
+            "conservative_upper_bound": 0.043,
+            "both_conditions_nonlocal": true,
+            "viable": false
+          },
+          {
+            "c1": 0,
+            "c2": 4,
+            "component": 0.0241,
+            "conservative_upper_bound": 0.0393,
+            "both_conditions_nonlocal": true,
+            "viable": false
+          },
+          {
+            "c1": 0,
+            "c2": 5,
+            "component": 0.0258,
+            "conservative_upper_bound": 0.0396,
+            "both_conditions_nonlocal": true,
+            "viable": false
+          },
+          {
+            "c1": 0,
+            "c2": 6,
+            "component": 0.0325,
+            "conservative_upper_bound": 0.0487,
+            "both_conditions_nonlocal": true,
+            "viable": false
+          },
+          {
+            "c1": 1,
+            "c2": 2,
+            "component": 0.0063,
+            "conservative_upper_bound": 0.0195,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 1,
+            "c2": 3,
+            "component": 0.0223,
+            "conservative_upper_bound": 0.0333,
+            "both_conditions_nonlocal": true,
+            "viable": false
+          },
+          {
+            "c1": 1,
+            "c2": 4,
+            "component": 0.0189,
+            "conservative_upper_bound": 0.0295,
+            "both_conditions_nonlocal": true,
+            "viable": false
+          },
+          {
+            "c1": 1,
+            "c2": 5,
+            "component": 0.0206,
+            "conservative_upper_bound": 0.0299,
+            "both_conditions_nonlocal": true,
+            "viable": false
+          },
+          {
+            "c1": 1,
+            "c2": 6,
+            "component": 0.0273,
+            "conservative_upper_bound": 0.039,
+            "both_conditions_nonlocal": true,
+            "viable": false
+          },
+          {
+            "c1": 2,
+            "c2": 3,
+            "component": 0.016,
+            "conservative_upper_bound": 0.0249,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 2,
+            "c2": 4,
+            "component": 0.0126,
+            "conservative_upper_bound": 0.0212,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 2,
+            "c2": 5,
+            "component": 0.0143,
+            "conservative_upper_bound": 0.0216,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 2,
+            "c2": 6,
+            "component": 0.021,
+            "conservative_upper_bound": 0.0307,
+            "both_conditions_nonlocal": true,
+            "viable": false
+          },
+          {
+            "c1": 3,
+            "c2": 4,
+            "component": -0.0034,
+            "conservative_upper_bound": 0.0098,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 3,
+            "c2": 5,
+            "component": -0.0017,
+            "conservative_upper_bound": 0.0067,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 3,
+            "c2": 6,
+            "component": 0.005,
+            "conservative_upper_bound": 0.0124,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 4,
+            "c2": 5,
+            "component": 0.0017,
+            "conservative_upper_bound": 0.0064,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 4,
+            "c2": 6,
+            "component": 0.0084,
+            "conservative_upper_bound": 0.0155,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 5,
+            "c2": 6,
+            "component": 0.0067,
+            "conservative_upper_bound": 0.0124,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          }
+        ],
+        "nonlocal_conditions": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "viable_pairs": [
+          {
+            "c1": 1,
+            "c2": 2,
+            "component": 0.0063,
+            "conservative_upper_bound": 0.0195,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 2,
+            "c2": 3,
+            "component": 0.016,
+            "conservative_upper_bound": 0.0249,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 2,
+            "c2": 4,
+            "component": 0.0126,
+            "conservative_upper_bound": 0.0212,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 2,
+            "c2": 5,
+            "component": 0.0143,
+            "conservative_upper_bound": 0.0216,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 3,
+            "c2": 4,
+            "component": -0.0034,
+            "conservative_upper_bound": 0.0098,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 3,
+            "c2": 5,
+            "component": -0.0017,
+            "conservative_upper_bound": 0.0067,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 3,
+            "c2": 6,
+            "component": 0.005,
+            "conservative_upper_bound": 0.0124,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 4,
+            "c2": 5,
+            "component": 0.0017,
+            "conservative_upper_bound": 0.0064,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 4,
+            "c2": 6,
+            "component": 0.0084,
+            "conservative_upper_bound": 0.0155,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          },
+          {
+            "c1": 5,
+            "c2": 6,
+            "component": 0.0067,
+            "conservative_upper_bound": 0.0124,
+            "both_conditions_nonlocal": true,
+            "viable": true
+          }
+        ],
+        "verdict": "VIABLE_CONSTRUCTION_EXISTS",
+        "reading": "10 condition pair(s) satisfy both the capacity-channel bound and the non-locality gate; a new design could be built on one of them.",
+        "environment": {
+          "python": "3.13.15",
+          "numpy": "2.3.3",
+          "platform": "macOS-26.7-arm64-arm-64bit-Mach-O"
+        }
+      }
+    },
+    "align0001_analytic_decomposition.json": {
+      "sha256_full_file": "c5101974236ffc6ab98cbee041b628235ac9f0f4367636b4206b7954f2a269c4",
+      "content": {
+        "schema": "gpi0001_align_decomposition_v1",
+        "design": "research/design/g1_align0001_predesign_v0.md",
+        "status": "engineering premise check; not a verdict, not a qualification, no Gate 1 effect",
+        "generator": {
+          "nodes": 6,
+          "F_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              3
+            ]
+          ],
+          "X_edges": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              5,
+              0
+            ]
+          ],
+          "degree": 2,
+          "edges": 6,
+          "theta_grid": 32,
+          "grid_step": 0.01935,
+          "beta": 0.8,
+          "lambda": 0.7,
+          "T": 64,
+          "episodes": 200,
+          "projection_episodes": 60,
+          "seed": 20260924,
+          "perm_seed": 20260924
+        },
+        "partitions": {
+          "aligned_K2": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              3,
+              4,
+              5
+            ]
+          ],
+          "permuted_K2": [
+            [
+              1,
+              2,
+              5
+            ],
+            [
+              0,
+              3,
+              4
+            ]
+          ],
+          "aligned_K4": [
+            [
+              0,
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5
+            ]
+          ],
+          "permuted_K4": [
+            [
+              0,
+              5
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4
+            ],
+            [
+              1
+            ]
+          ]
+        },
+        "partition_checks": {
+          "task_groups": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              3,
+              4,
+              5
+            ]
+          ],
+          "aligned_K2_is_aligned": true,
+          "aligned_K4_is_aligned": true,
+          "permuted_K2_crosses_groups": true,
+          "permuted_K4_crosses_groups": true,
+          "crossing_dims_K2": 6,
+          "crossing_dims_K4": 4
+        },
+        "results": {
+          "F": {
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                3
+              ]
+            ],
+            "theta_posterior_entropy_nats": 2.649,
+            "uniform_baseline_kl_nats": 0.8168,
+            "gap": {
+              "4": {
+                "mean": 0.69,
+                "ci95": [
+                  0.6414,
+                  0.7459
+                ]
+              },
+              "8": {
+                "mean": 0.5691,
+                "ci95": [
+                  0.517,
+                  0.6121
+                ]
+              },
+              "16": {
+                "mean": 0.4023,
+                "ci95": [
+                  0.3578,
+                  0.4421
+                ]
+              },
+              "32": {
+                "mean": 0.2259,
+                "ci95": [
+                  0.1932,
+                  0.2633
+                ]
+              }
+            },
+            "factored_projection_kl_nats": {
+              "aligned_K2": -0.0,
+              "permuted_K2": 0.0416,
+              "aligned_K4": 0.0438,
+              "permuted_K4": 0.0734
+            },
+            "factored_projection_ci95": {
+              "aligned_K2": [
+                -0.0,
+                0.0
+              ],
+              "permuted_K2": [
+                0.0305,
+                0.0562
+              ],
+              "aligned_K4": [
+                0.0318,
+                0.0582
+              ],
+              "permuted_K4": [
+                0.0514,
+                0.094
+              ]
+            },
+            "paired_extra_cost_per_episode": {
+              "K2": [
+                0.023325646179571932,
+                0.04689894765000349,
+                0.010217819116650517,
+                0.08930183902190786,
+                6.955562186903272e-05,
+                0.21403702095757585,
+                0.049823893975241125,
+                0.18834494573138402,
+                0.02358125510911452,
+                0.0012101832068578127,
+                0.025986788594039696,
+                0.009820823351740718,
+                0.054872428641661995,
+                0.07318715498778344,
+                0.04468036200542483,
+                0.002940579467374355,
+                0.013398970579700069,
+                0.019564817346056026,
+                0.030950086539570203,
+                0.04479427428223869,
+                0.03737077731230684,
+                0.008808385946147329,
+                0.018580345203336512,
+                0.009587855612355716,
+                0.0020779004399570635,
+                0.005556586356711203,
+                0.016210425204836485,
+                0.024788388207532656,
+                0.020891478000711113,
+                0.006869943489268013,
+                0.023369634788003156,
+                0.0019241582573931283,
+                0.007133303623855129,
+                0.028719073112352618,
+                0.01662648089037334,
+                0.03576545222838037,
+                0.02372591578337216,
+                0.1523715328470675,
+                0.000953107059463187,
+                0.011627929040117193,
+                0.12871607616587005,
+                0.055187350719099915,
+                0.09220641610608354,
+                0.22668219309699283,
+                0.0064721581768609525,
+                0.05733721526916438,
+                0.006052764289294158,
+                0.07746163997842936,
+                0.16726165283819075,
+                0.00567056068125407,
+                0.02803205346077517,
+                0.027395676736325644,
+                0.08100234029292819,
+                0.06530655099602654,
+                0.017089122372675316,
+                0.015016171482531964,
+                0.0023090576139789994,
+                0.003313297530706359,
+                0.009912727794693887,
+                0.0037695208031457953
+              ],
+              "K4": [
+                0.010412352570645152,
+                0.030019588344418757,
+                0.013240784296861624,
+                0.05886914692477363,
+                0.00023201756865876902,
+                0.17231351451212948,
+                0.041276851437463846,
+                0.17005292346446266,
+                0.0054589609427644,
+                0.0006061783702404672,
+                0.023992354979216344,
+                0.0034166163840197786,
+                0.09451055491704385,
+                0.017828552840922857,
+                0.022556211561602993,
+                0.0030384510561357334,
+                0.00853030994182629,
+                0.010795773725934418,
+                0.03357888343458759,
+                0.03584565633217406,
+                0.010418641757507924,
+                0.00496960966069517,
+                0.02075158177300776,
+                0.01043556637603401,
+                0.0002733110892098973,
+                0.006147427091498532,
+                0.00951486823044671,
+                0.0023906322997262267,
+                0.01433922774474532,
+                0.0038960892888526407,
+                0.003080094213468769,
+                0.01270725611537862,
+                0.004688991364880719,
+                0.018218831432108444,
+                0.017007483365656204,
+                0.0215787663238331,
+                0.017419970384803043,
+                0.09721163846028208,
+                0.0006079734094948869,
+                0.011530012079503538,
+                0.08620750819211381,
+                0.03961510946933388,
+                0.05857093109602329,
+                0.170604494300895,
+                0.0005886660746204893,
+                0.04301797633638229,
+                0.004062970193908054,
+                0.07290694950616661,
+                0.11126935325008086,
+                0.0018703236389962068,
+                0.019786011035740972,
+                0.012769988077361374,
+                0.054532977253065565,
+                0.03524259444431306,
+                0.005300924696417061,
+                0.006754078065456456,
+                0.0004879846963648125,
+                0.0010994673502776652,
+                0.005849692339201743,
+                0.003987542662342827
+              ]
+            }
+          },
+          "X": {
+            "edges": [
+              [
+                0,
+                3
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                2,
+                5
+              ],
+              [
+                5,
+                0
+              ]
+            ],
+            "theta_posterior_entropy_nats": 2.6773,
+            "uniform_baseline_kl_nats": 0.7885,
+            "gap": {
+              "4": {
+                "mean": 0.6361,
+                "ci95": [
+                  0.5775,
+                  0.6963
+                ]
+              },
+              "8": {
+                "mean": 0.5448,
+                "ci95": [
+                  0.4876,
+                  0.591
+                ]
+              },
+              "16": {
+                "mean": 0.3853,
+                "ci95": [
+                  0.3407,
+                  0.4411
+                ]
+              },
+              "32": {
+                "mean": 0.2156,
+                "ci95": [
+                  0.1846,
+                  0.2447
+                ]
+              }
+            },
+            "factored_projection_kl_nats": {
+              "aligned_K2": 0.0768,
+              "permuted_K2": 0.0542,
+              "aligned_K4": 0.0821,
+              "permuted_K4": 0.0729
+            },
+            "factored_projection_ci95": {
+              "aligned_K2": [
+                0.0563,
+                0.1001
+              ],
+              "permuted_K2": [
+                0.0387,
+                0.0728
+              ],
+              "aligned_K4": [
+                0.058,
+                0.1097
+              ],
+              "permuted_K4": [
+                0.0511,
+                0.0994
+              ]
+            },
+            "paired_extra_cost_per_episode": {
+              "K2": [
+                -0.04517088970921408,
+                -0.0010488714397462228,
+                -0.006719674791327811,
+                -0.0023583318714003043,
+                -0.031808762068481905,
+                -0.011705270947497667,
+                -0.00901519991989655,
+                -0.009092358165768252,
+                -0.04410317068179752,
+                -0.0020063942796250955,
+                -0.007513080154304467,
+                -0.0018624474405435753,
+                -0.0002148669630527187,
+                -0.023701735318554497,
+                -0.04013707803845351,
+                -0.004481968969419341,
+                -0.01943240509607486,
+                -0.11648865511307877,
+                -0.02116696062241874,
+                -0.00043595568607517196,
+                -0.021103929582288503,
+                -0.005023808519943357,
+                -0.0035109199221669118,
+                -0.027969449137325627,
+                -0.006642082509047055,
+                -0.0033083204151983393,
+                -0.022540358378266574,
+                -0.011041717519763367,
+                -0.02048253581315357,
+                -0.06479124013266846,
+                -0.0035779503883523675,
+                -0.002206905881523129,
+                -0.039655252191591175,
+                -0.0027262498642298266,
+                -0.04798296529286504,
+                -0.025858206717041282,
+                -0.0009973298531767674,
+                -0.049558498494583464,
+                -0.06411174405572752,
+                -0.008682002636461723,
+                -0.004568426697958143,
+                -0.10328648881034336,
+                -0.014050228984965926,
+                -0.002550429629542026,
+                -0.12477373940526021,
+                -0.006854430726501586,
+                -0.007968137346691662,
+                -0.014198470680502676,
+                -0.09237438381012639,
+                -0.003102706550881358,
+                -0.01906941108681559,
+                -0.01110309012629164,
+                -0.009128667048063699,
+                -0.0027371352042502997,
+                -0.038899473189283676,
+                -0.015098518333684443,
+                -0.0029087113648478616,
+                -0.018669063252045818,
+                -0.004937135444141212,
+                -0.02994677162126591
+              ],
+              "K4": [
+                -0.025659487047598975,
+                -0.00018515400272093056,
+                0.0007689777442819457,
+                -0.00014896972246382367,
+                -0.007683713829821165,
+                -0.007625396913397808,
+                -0.01941259092128144,
+                -0.002537012326587894,
+                -0.032626333744003116,
+                -0.003808952203456048,
+                -0.0013526648901002122,
+                -0.0010152646732882417,
+                -0.0002157293777347371,
+                -0.0013592173592237508,
+                -0.03411804102058705,
+                -0.0011451096614289533,
+                -0.02060278037980341,
+                -0.03379603823346988,
+                0.02390682295694324,
+                -0.00047914528895542366,
+                -0.005512598920357728,
+                0.00034886001458750426,
+                -0.007774063693769994,
+                -0.005155676265390811,
+                -0.0010788209145999525,
+                -0.0037550362043188307,
+                -0.005217784940423409,
+                -0.00860084721092251,
+                -0.001429719582099781,
+                -0.07493848875299894,
+                -0.0006379557227699497,
+                -0.007460258637972958,
+                -0.0008888072987463524,
+                -0.0012926503993193,
+                -0.00221574951878889,
+                -0.010984155334646799,
+                -0.0003701596124126476,
+                -0.017558917802580953,
+                -0.03957836492174463,
+                -0.011452352087826974,
+                -9.180108232666878e-05,
+                -0.019485675745156472,
+                -0.0032449710674944815,
+                -0.00014158489551210733,
+                -0.034928110155839964,
+                -0.0049909898131799205,
+                -0.0014182660173155566,
+                -0.00466830535428428,
+                -0.03216141643265309,
+                0.0002696277336338218,
+                -0.018506597086704914,
+                0.00043679681694482053,
+                -0.008127692644089385,
+                -0.0031560469448659216,
+                -0.028915338477884966,
+                -0.0023919407890429095,
+                -0.00028120565660212735,
+                -0.009093517754503094,
+                -0.0026931887845976117,
+                -0.0032145231884144337
+              ]
+            }
+          }
+        },
+        "decomposition": {
+          "K2": {
+            "extra_cost_of_permuted_in_F_nats": 0.0416,
+            "extra_cost_of_permuted_in_X_nats": -0.0226,
+            "representational_component_of_I_nats": 0.0642,
+            "mc_ci95_paired": [
+              0.0501,
+              0.0799
+            ],
+            "mc_halfwidth_paired_nats": 0.0149,
+            "per_condition_sd_F": 0.0531,
+            "per_condition_sd_X": 0.0285
+          },
+          "K4": {
+            "extra_cost_of_permuted_in_F_nats": 0.0296,
+            "extra_cost_of_permuted_in_X_nats": -0.0092,
+            "representational_component_of_I_nats": 0.0388,
+            "mc_ci95_paired": [
+              0.0285,
+              0.0508
+            ],
+            "mc_halfwidth_paired_nats": 0.0111,
+            "per_condition_sd_F": 0.0419,
+            "per_condition_sd_X": 0.0146
+          }
+        },
+        "environment": {
+          "python": "3.13.15",
+          "numpy": "2.3.3",
+          "platform": "macOS-26.7-arm64-arm-64bit-Mach-O"
+        }
+      }
+    }
+  }
+}

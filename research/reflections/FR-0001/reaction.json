@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "ccd69ae3a00e3e34a24c37d4c2960a62d21319c1429f069fbe2f200c9c6a04ae",
+  "review_sha256": "81ff6c3889bec8721e049ba77bd58dc7b1e7246043313f5004945c08846bdd89",
+  "responses": [
+    {
+      "id": "FR0001-R1",
+      "disposition": "accept",
+      "reason": "The design wording was ambiguous about qualification training; the decision cannot authorize either training phase.",
+      "action": "Clarified that the full protocol is frozen before qualification training, that qualification and effect seeds are disjoint, and that failed qualification stops the fixed specification.",
+      "evidence_paths": [
+        "research/reflections/FR-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "FR0001-R2",
+      "disposition": "accept",
+      "reason": "Gate separation checks manipulate gate values but cannot identify a mediated computation because temperature also changes optimization and persistence.",
+      "action": "Restricted any future positive claim to the temperature soft-gating package; mechanism attribution requires a separately registered frozen-weight intervention and matched perturbation.",
+      "evidence_paths": [
+        "research/reflections/FR-0001/reaction_evidence.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Retain the zero-training factor-spec decision; prospective independent-benchmark QUESTION may proceed only with qualification/effect separation and package-only claim scope."
+}

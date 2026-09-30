@@ -1,0 +1,317 @@
+{
+  "claims_not_made": [
+    "held-out ridge estimates on a frozen nonlinear core",
+    "truncated lag sum is reported with its tail fraction",
+    "no training, no capability claim, no Gate 1 claim"
+  ],
+  "config": {
+    "gain": 1.0,
+    "grid": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      16,
+      20,
+      24,
+      32,
+      48
+    ],
+    "k_max": 200,
+    "ladder_n3": [
+      0,
+      8,
+      16,
+      24,
+      32,
+      40,
+      48
+    ],
+    "phi": 0.5,
+    "seeds": 3,
+    "steps": 40000,
+    "units": 64
+  },
+  "generated_by": "scripts/dir0003_tanh_matched.py",
+  "rows": [
+    {
+      "all_candidates": [
+        {
+          "counts": [
+            37,
+            27,
+            0
+          ],
+          "linear_total_ratio": 0.465905103728162,
+          "tanh_total_ratio": 0.4958266744472794
+        },
+        {
+          "counts": [
+            37,
+            19,
+            8
+          ],
+          "linear_total_ratio": 0.9988933889664251,
+          "tanh_total_ratio": 0.9113816365163976
+        },
+        {
+          "counts": [
+            20,
+            28,
+            16
+          ],
+          "linear_total_ratio": 1.0002946239355166,
+          "tanh_total_ratio": 0.9826222415341669
+        },
+        {
+          "counts": [
+            21,
+            19,
+            24
+          ],
+          "linear_total_ratio": 1.0000341495403964,
+          "tanh_total_ratio": 1.0019026743948796
+        },
+        {
+          "counts": [
+            11,
+            21,
+            32
+          ],
+          "linear_total_ratio": 0.9731942579757703,
+          "tanh_total_ratio": 1.0744600141804175
+        },
+        {
+          "counts": [
+            10,
+            14,
+            40
+          ],
+          "linear_total_ratio": 0.9303167868129425,
+          "tanh_total_ratio": 1.0679295314321147
+        },
+        {
+          "counts": [
+            10,
+            6,
+            48
+          ],
+          "linear_total_ratio": 0.9221563187161188,
+          "tanh_total_ratio": 1.0910461473542772
+        }
+      ],
+      "artifact_band": 0.06009587380069681,
+      "contrast_long_lag_ge_20": 0.0008490744678856244,
+      "contrast_max_on_grid": 0.005791062297838767,
+      "linear_matched_pair_for_this_seed": {
+        "linear_total_ratio": 0.9200021321671695,
+        "note": "the pair used in the first R2 run",
+        "tanh_total_ratio": 0.8496626904306799
+      },
+      "nested_tanh_matched": {
+        "counts": [
+          21,
+          19,
+          24
+        ],
+        "linear_total_ratio": 1.0000341495403964,
+        "tanh_total_ratio": 1.0019026743948796
+      },
+      "reference": [
+        21,
+        21,
+        22
+      ],
+      "seed_index": 0,
+      "tail_fraction_beyond_lag_100": 0.001652346377546478
+    },
+    {
+      "all_candidates": [
+        {
+          "counts": [
+            47,
+            17,
+            0
+          ],
+          "linear_total_ratio": 0.4678089730917323,
+          "tanh_total_ratio": 0.4887019978817263
+        },
+        {
+          "counts": [
+            19,
+            37,
+            8
+          ],
+          "linear_total_ratio": 0.9438100117274699,
+          "tanh_total_ratio": 0.9626527755631222
+        },
+        {
+          "counts": [
+            42,
+            6,
+            16
+          ],
+          "linear_total_ratio": 1.000991065150186,
+          "tanh_total_ratio": 0.948985146137426
+        },
+        {
+          "counts": [
+            20,
+            20,
+            24
+          ],
+          "linear_total_ratio": 0.9944199548314139,
+          "tanh_total_ratio": 1.0029437541065844
+        },
+        {
+          "counts": [
+            17,
+            15,
+            32
+          ],
+          "linear_total_ratio": 0.9858982984191502,
+          "tanh_total_ratio": 1.0288430618881388
+        },
+        {
+          "counts": [
+            6,
+            18,
+            40
+          ],
+          "linear_total_ratio": 0.983286584239318,
+          "tanh_total_ratio": 1.0738226965742783
+        },
+        {
+          "counts": [
+            5,
+            11,
+            48
+          ],
+          "linear_total_ratio": 0.9604493291038853,
+          "tanh_total_ratio": 1.0906896681291025
+        }
+      ],
+      "artifact_band": 0.050594821689861735,
+      "contrast_long_lag_ge_20": 0.0008000782412358465,
+      "contrast_max_on_grid": 0.0021400462435170464,
+      "linear_matched_pair_for_this_seed": {
+        "linear_total_ratio": 0.9020878469302807,
+        "note": "the pair used in the first R2 run",
+        "tanh_total_ratio": 0.8877918112526483
+      },
+      "nested_tanh_matched": {
+        "counts": [
+          20,
+          20,
+          24
+        ],
+        "linear_total_ratio": 0.9944199548314139,
+        "tanh_total_ratio": 1.0029437541065844
+      },
+      "reference": [
+        21,
+        21,
+        22
+      ],
+      "seed_index": 1,
+      "tail_fraction_beyond_lag_100": 0.007920889413200311
+    },
+    {
+      "all_candidates": [
+        {
+          "counts": [
+            34,
+            30,
+            0
+          ],
+          "linear_total_ratio": 0.4955225111800696,
+          "tanh_total_ratio": 0.5180526240691462
+        },
+        {
+          "counts": [
+            5,
+            51,
+            8
+          ],
+          "linear_total_ratio": 0.9376159259372543,
+          "tanh_total_ratio": 0.9051119474741114
+        },
+        {
+          "counts": [
+            5,
+            43,
+            16
+          ],
+          "linear_total_ratio": 0.9954814282114975,
+          "tanh_total_ratio": 0.9882200766052051
+        },
+        {
+          "counts": [
+            5,
+            35,
+            24
+          ],
+          "linear_total_ratio": 0.9987675594679273,
+          "tanh_total_ratio": 1.0297155063355687
+        },
+        {
+          "counts": [
+            5,
+            27,
+            32
+          ],
+          "linear_total_ratio": 0.9878300051355151,
+          "tanh_total_ratio": 1.0452066574863923
+        },
+        {
+          "counts": [
+            5,
+            19,
+            40
+          ],
+          "linear_total_ratio": 0.994654592571162,
+          "tanh_total_ratio": 1.0719335366624143
+        },
+        {
+          "counts": [
+            5,
+            11,
+            48
+          ],
+          "linear_total_ratio": 0.9951874415984677,
+          "tanh_total_ratio": 1.093653802151298
+        }
+      ],
+      "artifact_band": 0.05718027389318925,
+      "contrast_long_lag_ge_20": 0.004782839032114294,
+      "contrast_max_on_grid": 0.023297625119261367,
+      "linear_matched_pair_for_this_seed": {
+        "linear_total_ratio": 0.9310460897597587,
+        "note": "the pair used in the first R2 run",
+        "tanh_total_ratio": 0.71955301668811
+      },
+      "nested_tanh_matched": {
+        "counts": [
+          5,
+          43,
+          16
+        ],
+        "linear_total_ratio": 0.9954814282114975,
+        "tanh_total_ratio": 0.9882200766052051
+      },
+      "reference": [
+        21,
+        21,
+        22
+      ],
+      "seed_index": 2,
+      "tail_fraction_beyond_lag_100": -0.003037708456320398
+    }
+  ],
+  "schema": "dir0003_tanh_matched_v1"
+}

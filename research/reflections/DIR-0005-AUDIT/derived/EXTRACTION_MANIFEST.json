@@ -1,0 +1,80 @@
+{
+  "packet": "research/reflections/DIR-0005-AUDIT/packet.json",
+  "packet_sha256": "58151ba7c65c0fddc3b9d5959e552a7d4d26b97b272cbc86f0b919e67e2008dd",
+  "parts": [
+    {
+      "bytes": 7049,
+      "matches_packet_digest": true,
+      "part": "design.md",
+      "sha256": "8cbccc2f5aa3b07ce22749efc624c060e34a6120045aad98b92455a492da1416"
+    },
+    {
+      "bytes": 11528,
+      "matches_packet_digest": true,
+      "part": "action.md",
+      "sha256": "9ba09dba77c3565c6221f4abd4caf5660779c8f0e9117842be07689653578de7"
+    },
+    {
+      "bytes": 69484,
+      "matches_packet_digest": true,
+      "part": "action_output_0_verification.json",
+      "sha256": "477672a79c48bd93e99f06399e114e0ad5420f5b27da613ed25ac34d60bdbece"
+    },
+    {
+      "bytes": 3604,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0063_cal0008_close_configs.md",
+      "sha256": "fa0ec0c1960f2f15573943516a6bde3b9d730df72fd66cd0efcb61807f0928c1",
+      "source_path": "research/decisions/0063_cal0008_close_configs.md"
+    },
+    {
+      "bytes": 7162,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0068_gate1_matching_clause.md",
+      "sha256": "b46b6882d886004ecf4eb7ed7d075284500dea43f64edd8c85f1c212c3575ae6",
+      "source_path": "research/decisions/0068_gate1_matching_clause.md"
+    },
+    {
+      "bytes": 5879,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0071_g1matchv3_reentry_screen.md",
+      "sha256": "f7100cd71eacd6192e503e7643cbfbe24bee097d31c9cbde34be59ee70a5ed9b",
+      "source_path": "research/decisions/0071_g1matchv3_reentry_screen.md"
+    },
+    {
+      "bytes": 5002,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0073_routing_alignment_direction_stopped.md",
+      "sha256": "9d685080a61ce41446b1f8c583bf6c145b74f43a08b48bc97df8948051cba215",
+      "source_path": "research/decisions/0073_routing_alignment_direction_stopped.md"
+    },
+    {
+      "bytes": 3511,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0080_entry_rule_architecture_organization.md",
+      "sha256": "9a9838660ebb9e6efcb475fc6169daed7f02abab97a848547149a6b513ea19c6",
+      "source_path": "research/decisions/0080_entry_rule_architecture_organization.md"
+    },
+    {
+      "bytes": 10602,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0081_dir0004_stopped.md",
+      "sha256": "fb2ad8695652e575337a8aedd54eb1d5356e11ea6f1b6be7c15da6d998d3eb63",
+      "source_path": "research/decisions/0081_dir0004_stopped.md"
+    },
+    {
+      "bytes": 24034,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_review.json",
+      "sha256": "06df80511083f599ff927bf5ad930eaff695a5daf945b03c276685d8099bf77d",
+      "source_path": "research/reflections/DIR-0004-PREDESIGN/review.json"
+    },
+    {
+      "bytes": 5401,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_stage_gates.md",
+      "sha256": "b4b4842363d42ce546da44b8e6a595ab89dd953d27f10ce3753005c3712feb62",
+      "source_path": "research/stage_gates.md"
+    }
+  ]
+}

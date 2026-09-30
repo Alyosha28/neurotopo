@@ -1,0 +1,69 @@
+{
+  "eps": 0.001,
+  "maps": {
+    "logistic": {
+      "note": "tent and logistic r=4 both have Lyapunov exponent ln 2",
+      "predicted": 0.6931471805599453,
+      "rows": [
+        {
+          "T_star": 1,
+          "bits": 8
+        },
+        {
+          "T_star": 6,
+          "bits": 12
+        },
+        {
+          "T_star": 10,
+          "bits": 16
+        },
+        {
+          "T_star": 12,
+          "bits": 20
+        },
+        {
+          "T_star": 17,
+          "bits": 24
+        },
+        {
+          "T_star": 22,
+          "bits": 30
+        }
+      ],
+      "steps_per_bit": 0.9319587628865976
+    },
+    "tent": {
+      "note": "tent and logistic r=4 both have Lyapunov exponent ln 2",
+      "predicted": 0.6931471805599453,
+      "rows": [
+        {
+          "T_star": 1,
+          "bits": 8
+        },
+        {
+          "T_star": 5,
+          "bits": 12
+        },
+        {
+          "T_star": 8,
+          "bits": 16
+        },
+        {
+          "T_star": 13,
+          "bits": 20
+        },
+        {
+          "T_star": 17,
+          "bits": 24
+        },
+        {
+          "T_star": 22,
+          "bits": 30
+        }
+      ],
+      "steps_per_bit": 0.9711340206185567
+    }
+  },
+  "schema": "dir0004_nonlinear_bitcheck_v1",
+  "x0": 0.3141592653589793
+}

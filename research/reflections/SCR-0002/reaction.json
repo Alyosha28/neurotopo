@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "3ca92e367e6a735f574d8eaf4485c4c2cd0e47a6f5070b508ed9aaf986d8115f",
+  "review_sha256": "d251badb1633d4f918b98d5b97e837241079cec7c305a58d8d996122b814d656",
+  "responses": [
+    {
+      "id": "SCR0002-R1",
+      "disposition": "accept",
+      "reason": "A fixed slot index and positive log weight do not guarantee its recurrent content represents the same hypothesis across updates.",
+      "action": "Wrote a two-slot A/B content-flip counterexample and required future observable semantic identity checks before using hypothesis-persistence language.",
+      "evidence_paths": [
+        "research/reflections/SCR-0002/identity_counterexample.md",
+        "research/decisions/0025_scr0002_identity_and_reference_scope.md",
+        "research/reflections/SCR-0002/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "SCR0002-R2",
+      "disposition": "accept",
+      "reason": "Only removing resampling from author PF-GRU differs from a new identity/context/zero-noise weighted-state template.",
+      "action": "Separated AUTH-PFGRU, proposed PFGRU-R0, and abstract PFSTYLE-ID0 with their actual state/operator and evidence boundaries.",
+      "evidence_paths": [
+        "research/reflections/SCR-0002/reference_disambiguation.md",
+        "research/decisions/0025_scr0002_identity_and_reference_scope.md",
+        "research/reflections/SCR-0002/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "SCR0002-R3",
+      "disposition": "accept",
+      "reason": "The original packet did not locate the local CAL-0001/0002 oracle-relative KL records used as an auxiliary scope argument.",
+      "action": "Pinned both frozen report paths, source commit, metric keys, seeds and values, limiting their relevance to their own small static tasks and budgets.",
+      "evidence_paths": [
+        "research/reflections/SCR-0002/local_calibration_scope.md",
+        "artifacts/calibration/gate1_belief_v1.json",
+        "artifacts/calibration/gate1_source_belief_v1.json",
+        "research/reflections/SCR-0002/reaction_evidence.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep SCR-0002 NO_DISTINCT_SPEC for the current fixed-slot sketch and Gate 1 NOT_PASSED; do not train H3-SLOT or choose another headroom task without a new operationally distinct candidate contract."
+}

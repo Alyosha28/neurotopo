@@ -1,0 +1,35 @@
+{
+  "branches": {
+    "success": "CONTROL_PILOT_WINDOW only; prepare full qualification without automatic A training.",
+    "failure": "H ceiling closes this fixed task configuration; other guards record the specific failure, never a candidate effect.",
+    "borderline": "Frozen criteria and budget; keep INCONCLUSIVE when precision or completion is insufficient, no extra seeds."
+  },
+  "direction": "orbit_staged_control_training",
+  "experiment_id": "EXP-0016",
+  "factor": {
+    "kind": "architecture_organization",
+    "name": "ORBIT-SOFT fixed group-projection regularization",
+    "manipulation": "Finite soft penalty toward cyclic weight organization in a full H16 GRU; no function-class restriction.",
+    "ablation": "Conjugate equal-strength equal-spectrum penalty B; no-penalty U, isotropic R, strong dense D; these are named but not trained here.",
+    "prediction": "Aligned prior could improve fixed-budget terminal posterior KL; task must first have the already specified long-history information.",
+    "actual_primary_control": "B: full H16 GRU with conjugate regularizer,1904 parameters; U H16 and D H64 strong guards. H is an algorithmic diagnostic, not a matched architecture arm.",
+    "state_matching": "B/U16,D64,H16 posterior values, explicitly disclosed; no matched effect claimed.",
+    "parameter_matching": "B/U1904,D16784,H256; H and D not parameter-matched, declared diagnostic roles.",
+    "executed_compute_matching": "Record all update/token/time costs; no effect matching verdict in this control pilot.",
+    "prior_art_boundary": "Soft equivariance/RPP and exact HMM filtering are established; screen tests task information only, not mechanism novelty, semantics or Gate1."
+  },
+  "gate1_claim": false,
+  "purpose": "Bounded control-training pilot with an early simple-algorithm ceiling stop; no candidate A training or project Gate1 verdict.",
+  "question": "Does a learned full-transition HMM already reach the fixed ORBIT task ceiling; otherwise can the named main and strong GRU controls learn with headroom?",
+  "resource_cap": {
+    "max_updates": 36000,
+    "max_wall_seconds": 1500
+  },
+  "schema_version": 1,
+  "task_search": {
+    "max_configurations": 1,
+    "retain_all_attempts": true,
+    "heldout_rule": "Fresh pilot roots only; all pilot roots become exposed. No A score or task/LR search."
+  },
+  "track": "independent_benchmark"
+}

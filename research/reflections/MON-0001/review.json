@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "67481feec2193de607a899999babe65520ef668f4ccfa6fbdeea22ae4c69b29f",
+  "reviewer": {
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "MON-0001-01",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "若任一早期 step 的 C0 十种子平均 KL<0.01，标 `UNINFORMATIVE_CEILING`。",
+        "第300步实际主对照 C0 的 d1 KL0.077642 尚有余量，但 M3 平均优势仅+0.009691 nat，配对区间[−0.003184,+0.021470]且只6/10种子正向；第900步 C0 平均 KL0.006858低于预写0.01余量线"
+      ],
+      "problem": "只要一个早期点触及 ceiling，就用单一标签覆盖两步；这会遮蔽第300步仍有区分度的方向信息。本次第300步本身未达到一致优势判据，因此不改变实际结论，但标签不能代替逐步判断。",
+      "why_it_matters": "后续若仅引用 `UNINFORMATIVE_CEILING`，读者可能误以为两个早期点都没有判别力，也无法看出第300步的不确定性来自种子间差异。",
+      "falsifiable_check": "分别列出第300、900步的 headroom 与优势判据结果，再核对总标签是否遗漏任何满足判据的非 ceiling 监控点。"
+    },
+    {
+      "id": "MON-0001-02",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "只使用 d=1 监控流",
+        "单条 d1 监控曲线也不测 d4 OOD 修订，更不证明候选竞争。",
+        "不追加当前 M3 的任务难度/预算搜索来救 H3"
+      ],
+      "problem": "设计正确限定了 d=1 证据范围；最终停止当前 M3 难度和预算搜索则是额外的研究资源决策，不能被表述为 d=4 或其他任务上样本效率已遭否定。",
+      "why_it_matters": "固定难度的少数监控点只能评价这组已有曲线，无法识别更高难度下是否存在较长的学习窗口或不同的资源收益。",
+      "falsifiable_check": "将停止搜索明确记录为资源配置决定；如需作更广的样本效率结论，预先登记独立 d=4／难度条件、学习曲线指标与匹配预算后检验。"
+    },
+    {
+      "id": "MON-0001-03",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "Paired model/graph/training seeds; one fixed d=1 validation stream; no episode or checkpoint resampling",
+        "只使用 d=1 监控流，报告各步十个配对差",
+        "监控中间预测原始数组未保存，结果范围限于可核的汇总记录和固定验证流。"
+      ],
+      "problem": "配对 bootstrap 区间只反映这十组种子在同一验证流上的变化；固定流、任务实例和中间预测的不确定性没有进入区间。输入核验通过也不能补上这些缺失层次。",
+      "why_it_matters": "区间若被泛化为新验证流或新任务的性能区间，会高估方向判断的外部适用范围。",
+      "falsifiable_check": "在独立生成的 d=1 验证流及新配对种子上重复预定监控点，分别报告种子间与流间变异。"
+    },
+    {
+      "id": "MON-0001-04",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "同时报告已存的训练秒数、累计解析前向线性 FLOP proxy 及其定义局限。",
+        "Stored analytical training forward-linear FLOP proxy and training wall time; not measured total training FLOPs",
+        "all_primary_resource_accounts_match",
+        "full_run_forward_linear_flops_per_arm"
+      ],
+      "problem": "资源核验支持已记录的总训练样本、更新数和前向线性 FLOP proxy 匹配；展示在各监控点的训练秒数及 FLOP 字段却是整次运行值，不能直接给出第300、900步的实际累计成本，也未覆盖完整训练 FLOPs。",
+      "why_it_matters": "按更新数比较的早期 KL 差异，不能自动解释为按实际计算量或延迟衡量的样本效率优势或劣势。",
+      "falsifiable_check": "若提出计算效率主张，记录每个监控点的累计训练耗时、实际执行计算及数据量，并在相同资源坐标上比较学习曲线。"
+    }
+  ],
+  "overall_assessment": "该审计的只读输入核验、配对种子分析和 d=1／d=4 边界总体清楚。现有结果足以否定“这条固定 d=1 监控曲线已展示一致早期优势”的说法；它不构成 M3 在其他难度、验证流或资源坐标下没有样本效率收益的检验。最需防范的是单一 ceiling 标签掩盖逐步信息，以及将停止后续搜索的策略决定误读为更广的实证判定。"
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "097bb06ecf57ab98518d2e8b0fdbf97f7b631c52832d9834761deb3bd5cee868",
+  "reviewer": {
+    "model": "inherited-model-not-exposed",
+    "effort": "inherited",
+    "context": "fresh_only_packet"
+  },
+  "issues": [],
+  "overall_assessment": "本次packet-only反思未发现需要改变执行判词或阻止本轮结案的问题。原设计明确以固定任务控制诊断决定去留，且先冻结分阶段预算、H停止保护、B/U/D学习与余量窗口及其判词优先级；实际产物完成H/B/U/D各三个训练seed、每实例3000更新，总计36000研究更新，候选A更新为0。H三个IID均值均远高于.10，未满足第一阶段停止保护，继续完整第二阶段符合协议；H在此预算下未充分学习不能被解释为精确过滤不可行。B/U/D全部通过冻结IID学习门，其OOD均值分别约.07851643、.06287512、.01698163，低于各臂均值.08的下界，D每seed还低于.04，因此INCONCLUSIVE / CONTROL_CEILING是冻结规则的正确分支，无需改窗口或把结果转成LEARNING_FAILURE。worker完成回执约92.307秒、复核约2.913秒分别满足1200/300秒预算；manifest另报约90.906秒的执行计时，不形成预算冲突。验证、manifest与复算回执中的来源commit、config及相关hash衔接一致。复核回执报告12个末checkpoint的评估重放、独立float64 oracle及KL/CI和分支核验，最大误差2.22e-15；本反思仅审读包内回执与数值，未执行复算、独立重训或读取包外数组。98304是跨12个模型与两个长度的模型评估呈现数，独立生成评估序列为24576；两者均不替代三个训练seed，bootstrap CI仅为固定模型条件下的评估样本不确定性。D的非负KL算术余量界只限本轮三实例及指定评估，不能约束未来seed/任务/预算，也不能直接限制相对B的增益；decision保留D/16002条件CI上界略高于.02的事实，未把它写成总体封顶证明。执行决定停止该固定配置的候选比较、不启动A、不扩大128seed、不调噪声/长度救同一配置，契合预先规定的诊断用途与失败分支。未训练的A不构成候选失败，三seed控制诊断不构成完整八seed资格或Gate1证据。executed compute未profile及峰值内存未测已明确披露，与本轮无资源匹配效果主张相符。接受本轮按固定配置停止并保留阴性诊断；无需因反思而重设计实验、追加训练或反复收窄结果文稿。FILES_READ: derived/design.md; derived/action.md; derived/action_output_0_manifest.json; derived/action_output_1_verification.json（封装内容部分读取，并由对应embedded复算、配对和验证文件核读）; derived/action_output_2_decision.json; derived/embedded_independent_reproduction.json; derived/embedded_pairing_check.json; derived/embedded_validation.json; derived/EXTRACTION_MANIFEST.json。embedded_review.json及embedded_job_end.json的内容通过verification封装读取，未单独打开。"
+}

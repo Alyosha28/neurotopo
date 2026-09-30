@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "e1f0e44f192c1673fa937a531d70d27271361f1386a93331f92ff1db9f1936d3",
+  "review_sha256": "fe1e013f1e5792a28e2cba515a868cbe0a822043f5585c70ece4a2453bb87e93",
+  "responses": [
+    {
+      "id": "A1",
+      "disposition": "accept",
+      "reason": "原措辞容易让跨论文综合流程被误认为五篇论文逐项共同实施；各篇实际支持的环节不同。",
+      "action": "将标题与段落改为本报告综合流程，并逐篇标明实际支持的环节。",
+      "evidence_paths": [
+        "research/evidence/crossfield_research_practice_audit.md"
+      ]
+    },
+    {
+      "id": "A2",
+      "disposition": "accept",
+      "reason": "25002/25003只给出修复与不修复的事实；吸引盆边界未测定。",
+      "action": "把跨越边界改为待检验解释，明确尚未测定吸引盆/边界及可证伪的相同后缀轨迹预期。",
+      "evidence_paths": [
+        "research/evidence/crossfield_research_practice_audit.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "保留已更正的来源归属与吸引盆假说边界，交付方法审计；不据此登记或运行新实验。"
+}

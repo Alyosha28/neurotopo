@@ -1,0 +1,33 @@
+{
+  "scope": "DESIGN_ONLY_REPRODUCTION",
+  "task_samples": 0,
+  "optimization_updates": 0,
+  "interpreter": "/private/tmp/neurotopo-venv/bin/python",
+  "temporary_directory": "/private/tmp/neurotopo-dir7-design-x4g6kqku",
+  "replays": [
+    {
+      "script": "dir0007_algebra_check.py",
+      "exit_code": 0,
+      "output": "dir0007_algebra_check.json",
+      "byte_identical": true,
+      "sha256": "412b2571acbd9c813cac2d736da981a91fd423befc9fce26faac1459b32036a3"
+    },
+    {
+      "script": "dir0007_power_plan.py",
+      "exit_code": 0,
+      "output": "dir0007_power_plan.json",
+      "byte_identical": true,
+      "sha256": "3795a63c6e6ee9afb941c53194ad6df98e52a9b589d8bb87175532d60fcc18ef"
+    }
+  ],
+  "scoped_tests": {
+    "command": "python -m pytest -q tests/test_reflection.py tests/test_entry_policy.py",
+    "passed": 14,
+    "full_suite": false
+  },
+  "limitations": [
+    "No candidate model implementation or training",
+    "No empirical power or resource measurements",
+    "Not Gate1 evidence"
+  ]
+}

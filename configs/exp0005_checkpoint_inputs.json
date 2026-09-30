@@ -1,0 +1,176 @@
+{
+  "source_experiment": "EXP-0004/v1",
+  "source_commit": "eec9ca4",
+  "copies": {
+    "9101": {
+      "multi_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9101/multi_gru.pt",
+        "sha256": "8a523d477e9b67e2c268a8a4eaa7e1e5ea66e303a2b1ba2eec8ceb21c87aec6f",
+        "size": 113655
+      },
+      "random_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9101/random_gru.pt",
+        "sha256": "04e3a22cf709085a93f679d3b5a3e38ad1454a48e84955bd1695fa5defa0548d",
+        "size": 113655
+      },
+      "gru_wide": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9101/gru_wide.pt",
+        "sha256": "5181d8bc81f7fbf21e932f13770f4c4f849c529f7011c034e12c3a350d242329",
+        "size": 113655
+      }
+    },
+    "9102": {
+      "multi_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9102/multi_gru.pt",
+        "sha256": "dcc6203d6ce47fa501a73cc76dbba58d108d61f2e67ffa941918aaf5e7e3a4de",
+        "size": 113655
+      },
+      "random_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9102/random_gru.pt",
+        "sha256": "f04b9ed9714b47ab0df832b5ecff6d52813a44c01d01306d07ed017e265a9385",
+        "size": 113655
+      },
+      "gru_wide": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9102/gru_wide.pt",
+        "sha256": "f086f1a61ddebc7da71a13084080240c69abe9fbf02e3d60e97505fd75173d1b",
+        "size": 113655
+      }
+    },
+    "9103": {
+      "multi_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9103/multi_gru.pt",
+        "sha256": "818c93b15d33638698661275534ce50dd29810cca0002a226f851e5186a45985",
+        "size": 113655
+      },
+      "random_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9103/random_gru.pt",
+        "sha256": "835566d8449127f4bf4e79061f404cb0f0678390af3e461e1b9567a02bede11f",
+        "size": 113655
+      },
+      "gru_wide": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9103/gru_wide.pt",
+        "sha256": "b6717db923faea145f58e39583af9b4b7d25a5f7c33f6920d627e83175bde602",
+        "size": 113655
+      }
+    },
+    "9104": {
+      "multi_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9104/multi_gru.pt",
+        "sha256": "e7f0277d036cde6ed86ae1d7b101311224c4d4481e86b34a011fdde5b0c64261",
+        "size": 113655
+      },
+      "random_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9104/random_gru.pt",
+        "sha256": "bff791accad9a4ad7669a298a67679b9fd89f87da283c291d8c9ea4002e0eb9a",
+        "size": 113655
+      },
+      "gru_wide": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9104/gru_wide.pt",
+        "sha256": "3393dec14ab7f82024d4eb395f034b979c44581f4c0b69027ff165c00321988b",
+        "size": 113655
+      }
+    },
+    "9105": {
+      "multi_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9105/multi_gru.pt",
+        "sha256": "f134e24209f0fccc8f0c861bb9e8ad6a920e736a0a4f6b350de9f976398ea035",
+        "size": 113655
+      },
+      "random_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9105/random_gru.pt",
+        "sha256": "a09d6479dd37d07da489bf475c16bbadd94ccabf98895ea894a243842f17d764",
+        "size": 113655
+      },
+      "gru_wide": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9105/gru_wide.pt",
+        "sha256": "e55a0e9910e292397c4738057a720796ca29c59b5786f7bd5eca70e5d1c36dd9",
+        "size": 113655
+      }
+    },
+    "9106": {
+      "multi_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9106/multi_gru.pt",
+        "sha256": "182050b1b0c43936c6787ed9f1049c671e75e4fa01a8023d879371b6a14ac2d8",
+        "size": 113655
+      },
+      "random_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9106/random_gru.pt",
+        "sha256": "f13f1ef5cfa8867b7b1be85018d053a768d387e01d52caa2c5be58fdcd01b9e3",
+        "size": 113655
+      },
+      "gru_wide": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9106/gru_wide.pt",
+        "sha256": "83da0a3f6bc526e8454cc19b0eae90d6d2229a04562c1f583ea9d1f140531987",
+        "size": 113655
+      }
+    },
+    "9107": {
+      "multi_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9107/multi_gru.pt",
+        "sha256": "ca2530cd2cf04ec63bb5f2db622b9a881efd83f21b558abe6ece8db294dad2f5",
+        "size": 113655
+      },
+      "random_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9107/random_gru.pt",
+        "sha256": "620517dea3dd3c35dded4e316ce60bc758f59e181f72d063ddd8ee5eefc1f9bf",
+        "size": 113655
+      },
+      "gru_wide": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9107/gru_wide.pt",
+        "sha256": "b948a12297c560bf635d66f2452caada851db5d1b7b246d5830bb37bf171e1bd",
+        "size": 113655
+      }
+    },
+    "9108": {
+      "multi_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9108/multi_gru.pt",
+        "sha256": "44526e373d7a8066367cbb4b8372ada623336db107c25d48c4c539c2196d87ba",
+        "size": 113655
+      },
+      "random_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9108/random_gru.pt",
+        "sha256": "e3bf81809cd6c8c2db94c8a2645d891493d7cb095a827f53fabff44953d48225",
+        "size": 113655
+      },
+      "gru_wide": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9108/gru_wide.pt",
+        "sha256": "a1318ebc4a32f24588b7bc581cb57df65ea04e61c826d881f8f2920cd79d8ad6",
+        "size": 113655
+      }
+    },
+    "9109": {
+      "multi_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9109/multi_gru.pt",
+        "sha256": "faed732bbbda9c8db362d46e39643859d872e0834b191bce22efc4fce31d4ed0",
+        "size": 113655
+      },
+      "random_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9109/random_gru.pt",
+        "sha256": "f66dff302ea42ff5825595689d8ddc617f9afd5a3115bc1ec556aa39dd6b6bb2",
+        "size": 113655
+      },
+      "gru_wide": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9109/gru_wide.pt",
+        "sha256": "7e7ef4b15061f28fd3d1d223cc7ef9201cb869eea769d6dedfae2a2a37ff926d",
+        "size": 113655
+      }
+    },
+    "9110": {
+      "multi_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9110/multi_gru.pt",
+        "sha256": "8b44d2df192f0279419aa7ee81ad638add53aabf2c11dcdb5732509a1aee9538",
+        "size": 113655
+      },
+      "random_gru": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9110/random_gru.pt",
+        "sha256": "d4293b0706f5e17a6f2b7f44d5b75b7ecf7faed240b537e042f501a2e0c7e592",
+        "size": 113655
+      },
+      "gru_wide": {
+        "path": "artifacts/EXP-0005/v1/input_checkpoints/seed-9110/gru_wide.pt",
+        "sha256": "65f713de69ebf2afc631a6f1855c319526a53634b2836e10d3cfc01da26971e7",
+        "size": 113655
+      }
+    }
+  }
+}

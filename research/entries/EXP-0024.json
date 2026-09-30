@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "track": "independent_benchmark",
+  "experiment_id": "EXP-0024",
+  "direction": "frozen_state_refresh",
+  "question": "Can supervised prototype refresh using only the model own predictions rescue a prespecified frozen long-horizon failure?",
+  "purpose": "Case-level state intervention with explicit finite-state codebook alternative, not new training-seed confirmation.",
+  "gate1_claim": false,
+  "factor": null,
+  "resource_cap": {
+    "max_updates": 0,
+    "max_wall_seconds": 1200
+  },
+  "task_search": {
+    "max_configurations": 1,
+    "retain_all_attempts": true,
+    "heldout_rule": "One prespecified case, fixed periods1/8, newcalibration/evalinputs, all12models retained."
+  },
+  "branches": {
+    "success": "Report frozen case rescue with supervision and codebook limits.",
+    "failure": "Retain no rescue/qualification failure, no oracle or period search.",
+    "borderline": "Report smaller caseeffect, no threshold change."
+  }
+}

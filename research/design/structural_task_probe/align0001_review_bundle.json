@@ -1,0 +1,580 @@
+{
+  "schema": "align0001_review_bundle_v1",
+  "purpose": "The two machine outputs that the v1 re-review questions actually need: the automorphism decision on issue I2 and the representational decomposition behind I_beyond_capacity and the beta_X prediction.",
+  "note": "Kept minimal on purpose; the axis-declaration pilot is not needed for these seven questions. Each member carries its own sha256 of the full repo file; the symmetry member is trimmed as described in trim_note.",
+  "members": {
+    "align0001_symmetry_check.json": {
+      "sha256_full_file": "234ece270faec7929cefed6a83b9d5f04896205f3a2709447fd310b1c2165f43",
+      "content": {
+        "schema": "gpi0001_align_symmetry_check_v1",
+        "design": "research/design/g1_align0001_predesign_v0.md",
+        "purpose": "Decide review issue I2: are the S and U arms merely a relabelling of the same problem? Two arms are equivalent on condition G iff some automorphism of G's edge set maps the S dimension partition onto the U partition.",
+        "status": "combinatorial check; not a verdict, no training, no Gate 1 effect",
+        "overall": {
+          "I2_holds_anywhere": false,
+          "reading": "I2 is REFUTED on every cell: no automorphism maps S onto U, so the two arms face genuinely different problems and an arm difference cannot be dismissed as relabelling. The claim that all axes being 1.000 forces the arms to be interchangeable is therefore false."
+        },
+        "environment": {
+          "python": "3.13.15",
+          "platform": "macOS-26.7-arm64-arm-64bit-Mach-O"
+        },
+        "cells": [
+          {
+            "condition": "F",
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                3
+              ]
+            ],
+            "automorphism_group_order": 72,
+            "partition_S": [
+              [
+                0,
+                1,
+                2
+              ],
+              [
+                3,
+                4,
+                5
+              ]
+            ],
+            "partition_U": [
+              [
+                0,
+                1,
+                4
+              ],
+              [
+                2,
+                3,
+                5
+              ]
+            ],
+            "S_orbit_size": 1,
+            "S_and_U_in_same_orbit": false,
+            "witness_automorphisms": [],
+            "verdict": "GENUINELY_DIFFERENT",
+            "K": "K2"
+          },
+          {
+            "condition": "X",
+            "edges": [
+              [
+                0,
+                3
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                2,
+                5
+              ],
+              [
+                5,
+                0
+              ]
+            ],
+            "automorphism_group_order": 12,
+            "partition_S": [
+              [
+                0,
+                1,
+                2
+              ],
+              [
+                3,
+                4,
+                5
+              ]
+            ],
+            "partition_U": [
+              [
+                0,
+                1,
+                4
+              ],
+              [
+                2,
+                3,
+                5
+              ]
+            ],
+            "S_orbit_size": 1,
+            "S_and_U_in_same_orbit": false,
+            "witness_automorphisms": [],
+            "verdict": "GENUINELY_DIFFERENT",
+            "K": "K2"
+          },
+          {
+            "condition": "F",
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                3
+              ]
+            ],
+            "automorphism_group_order": 72,
+            "partition_S": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                4
+              ],
+              [
+                5
+              ]
+            ],
+            "partition_U": [
+              [
+                0,
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                5
+              ]
+            ],
+            "S_orbit_size": 18,
+            "S_and_U_in_same_orbit": false,
+            "witness_automorphisms": [],
+            "verdict": "GENUINELY_DIFFERENT",
+            "K": "K4"
+          },
+          {
+            "condition": "X",
+            "edges": [
+              [
+                0,
+                3
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                2,
+                5
+              ],
+              [
+                5,
+                0
+              ]
+            ],
+            "automorphism_group_order": 12,
+            "partition_S": [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                4
+              ],
+              [
+                5
+              ]
+            ],
+            "partition_U": [
+              [
+                0,
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                5
+              ]
+            ],
+            "S_orbit_size": 6,
+            "S_and_U_in_same_orbit": false,
+            "witness_automorphisms": [],
+            "verdict": "GENUINELY_DIFFERENT",
+            "K": "K4"
+          }
+        ],
+        "trim_note": "The per-cell `automorphisms` arrays (72 and 12 permutations) are omitted here for size; the full file is at research/design/structural_task_probe/align0001_symmetry_check.json with the sha256 recorded below. Every field needed to check the orbit decision is retained."
+      }
+    },
+    "align0001_analytic_decomposition.json": {
+      "sha256_full_file": "d1915866a1ead93e868f91977f84f60d2f774dc938922d69ed6d548be3ec27b6",
+      "content": {
+        "schema": "gpi0001_align_decomposition_v1",
+        "design": "research/design/g1_align0001_predesign_v0.md",
+        "status": "engineering premise check; not a verdict, not a qualification, no Gate 1 effect",
+        "generator": {
+          "nodes": 6,
+          "F_edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              3
+            ]
+          ],
+          "X_edges": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              5,
+              0
+            ]
+          ],
+          "degree": 2,
+          "edges": 6,
+          "theta_grid": 32,
+          "grid_step": 0.01935,
+          "beta": 0.8,
+          "lambda": 0.7,
+          "T": 64,
+          "episodes": 200,
+          "projection_episodes": 60,
+          "seed": 20260924,
+          "perm_seed": 20260924
+        },
+        "partitions": {
+          "aligned_K2": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              3,
+              4,
+              5
+            ]
+          ],
+          "permuted_K2": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              4,
+              5
+            ]
+          ],
+          "aligned_K4": [
+            [
+              0,
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5
+            ]
+          ],
+          "permuted_K4": [
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              2
+            ],
+            [
+              0
+            ]
+          ]
+        },
+        "partition_checks": {
+          "task_groups": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              3,
+              4,
+              5
+            ]
+          ],
+          "aligned_K2_is_aligned": true,
+          "aligned_K4_is_aligned": true,
+          "permuted_K2_crosses_groups": true,
+          "permuted_K4_crosses_groups": true
+        },
+        "results": {
+          "F": {
+            "edges": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                4,
+                5
+              ],
+              [
+                5,
+                3
+              ]
+            ],
+            "theta_posterior_entropy_nats": 2.649,
+            "uniform_baseline_kl_nats": 0.8168,
+            "gap": {
+              "4": {
+                "mean": 0.69,
+                "ci95": [
+                  0.6414,
+                  0.7459
+                ]
+              },
+              "8": {
+                "mean": 0.5691,
+                "ci95": [
+                  0.517,
+                  0.6121
+                ]
+              },
+              "16": {
+                "mean": 0.4023,
+                "ci95": [
+                  0.3578,
+                  0.4421
+                ]
+              },
+              "32": {
+                "mean": 0.2259,
+                "ci95": [
+                  0.1932,
+                  0.2633
+                ]
+              }
+            },
+            "factored_projection_kl_nats": {
+              "aligned_K2": -0.0,
+              "permuted_K2": 0.0434,
+              "aligned_K4": 0.0438,
+              "permuted_K4": 0.0543
+            }
+          },
+          "X": {
+            "edges": [
+              [
+                0,
+                3
+              ],
+              [
+                3,
+                1
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                2
+              ],
+              [
+                2,
+                5
+              ],
+              [
+                5,
+                0
+              ]
+            ],
+            "theta_posterior_entropy_nats": 2.6773,
+            "uniform_baseline_kl_nats": 0.7885,
+            "gap": {
+              "4": {
+                "mean": 0.6361,
+                "ci95": [
+                  0.5775,
+                  0.6963
+                ]
+              },
+              "8": {
+                "mean": 0.5448,
+                "ci95": [
+                  0.4876,
+                  0.591
+                ]
+              },
+              "16": {
+                "mean": 0.3853,
+                "ci95": [
+                  0.3407,
+                  0.4411
+                ]
+              },
+              "32": {
+                "mean": 0.2156,
+                "ci95": [
+                  0.1846,
+                  0.2447
+                ]
+              }
+            },
+            "factored_projection_kl_nats": {
+              "aligned_K2": 0.0768,
+              "permuted_K2": 0.0558,
+              "aligned_K4": 0.0821,
+              "permuted_K4": 0.0829
+            }
+          }
+        },
+        "decomposition": {
+          "K2": {
+            "extra_cost_of_permuted_in_F_nats": 0.0434,
+            "extra_cost_of_permuted_in_X_nats": -0.021,
+            "representational_component_of_I_nats": 0.0644
+          },
+          "K4": {
+            "extra_cost_of_permuted_in_F_nats": 0.0105,
+            "extra_cost_of_permuted_in_X_nats": 0.0008,
+            "representational_component_of_I_nats": 0.0097
+          }
+        },
+        "environment": {
+          "python": "3.13.15",
+          "numpy": "2.3.3",
+          "platform": "macOS-26.7-arm64-arm-64bit-Mach-O"
+        }
+      }
+    }
+  }
+}

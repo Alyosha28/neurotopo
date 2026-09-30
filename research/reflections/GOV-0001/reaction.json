@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "343d4075e35d4ebcb82e941b57a76823720bb2c27b6cd4878553c7c46d21d369",
+  "review_sha256": "f77920b3c6e6cd43287134ea9892a239ddb7a63402dee3e93029734f1bd46ebd",
+  "responses": [
+    {
+      "id": "GOV-0001-R1",
+      "disposition": "accept",
+      "reason": "A packet-only reviewer could not verify charter interpretation from citations and paraphrases alone.",
+      "action": "Archived a direct source-to-claim map and required decisive excerpts in future source-interpretation packets.",
+      "evidence_paths": [
+        "research/reflections/GOV-0001/reaction_evidence.md",
+        "research/reflections/GOV-0001/source_claim_map.md",
+        "docs/post_task_reflection.md"
+      ]
+    },
+    {
+      "id": "GOV-0001-R2",
+      "disposition": "accept",
+      "reason": "The whole PF-GRU architecture changes more than trajectory count, so a matched package win would not identify K as the causal factor.",
+      "action": "Added a prospective estimand and targeted-ablation requirement, separating architecture-package and trajectory-factor claims.",
+      "evidence_paths": [
+        "research/reflections/GOV-0001/reaction_evidence.md",
+        "research/decisions/0013_gate1_causal_estimand_scope.md",
+        "docs/experiment_protocol.md"
+      ]
+    },
+    {
+      "id": "GOV-0001-R3",
+      "disposition": "defer",
+      "reason": "No concrete candidate or task generator exists from which to justify numerical effect, headroom or a bounded task-screening budget.",
+      "action": "Recorded the required entry contract and explicit no-go branch without pretending to have a runnable benchmark registration.",
+      "evidence_paths": [
+        "research/reflections/GOV-0001/reaction_evidence.md",
+        "research/decisions/0013_gate1_causal_estimand_scope.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep NeuroTopo Gate 1 closed and no PF implementation active; a new candidate and numerically bounded task protocol are prerequisites to any formal study."
+}

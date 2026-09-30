@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "9c27a3a03aa0dfad2c59bc93e8368ff37197b8bb8427d09b7f621cc476999155",
+  "review_sha256": "793e38c0cb1e31704ced11388eb5fbbc77b163f977c94529ce8b1cbd27ce0ea5",
+  "responses": [
+    {
+      "id": "R1",
+      "disposition": "accept",
+      "reason": "全256矩阵基元复核错误映射有0.0625偏差，正确Q平方投影恒等式为0。",
+      "action": "以后审查处置记录更正pushforward目标群，不覆写v1，不增加研究臂；完整模型验证仍未完成。",
+      "evidence_paths": [
+        "research/evidence/DIR-0007_review_resolution.md",
+        "research/design/dir0007_conjugacy_correction.json"
+      ]
+    },
+    {
+      "id": "R2",
+      "disposition": "accept",
+      "reason": "本地复现了NaN上界被原函数误判支持；原8例未覆盖。",
+      "action": "新增独立finite guard，原8例加24非有限值与2畸形输入全部通过；旧脚本保留但禁止直接用于runner。",
+      "evidence_paths": [
+        "research/evidence/DIR-0007_review_resolution.md",
+        "scripts/dir0007_decision_guard.py",
+        "research/design/dir0007_decision_guard.json"
+      ]
+    }
+  ],
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "本轮以DESIGN_INCOMPLETE_HOLD闭合；原设计和差错保留，不继续自动修稿，不注册、采样或训练，不改Gate1。"
+}

@@ -1,0 +1,24 @@
+{
+  "constants": {
+    "M": 6,
+    "T": 32,
+    "beta": 0.8,
+    "episodes": 200,
+    "lambda": 0.7,
+    "n_regimes": 1,
+    "seed": 20260924
+  },
+  "mean_posterior_entropy_nats": 2.160420037183546,
+  "mode": "single",
+  "reading": "gap(k) = KL(full-history posterior || posterior from the last k steps only). Slow decay in k means the posterior depends on distant history, so no bounded-memory model can reproduce it; decay to zero by small k means the task is effectively local and a fixed-state control can compress it.",
+  "schema": "nonlocality_probe_v1",
+  "status": "engineering premise check only; not a registered run, not a verdict",
+  "truncation_gap_nats": {
+    "1": 0.41015173668694355,
+    "16": 1.2515177115062196e-09,
+    "2": 0.10778988010701292,
+    "32": 0.0,
+    "4": 0.007081500960083288,
+    "8": 4.04769102610849e-05
+  }
+}

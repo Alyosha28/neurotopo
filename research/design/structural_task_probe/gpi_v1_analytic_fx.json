@@ -1,0 +1,194 @@
+{
+  "generator": {
+    "F_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "T": 64,
+    "X_edges": [
+      [
+        0,
+        3
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        5,
+        0
+      ]
+    ],
+    "beta": 0.8,
+    "degree": 2,
+    "edges": 6,
+    "episodes": 400,
+    "grid_step": 0.01935,
+    "lambda": 0.7,
+    "nodes": 6,
+    "seed": 20260924,
+    "theta_grid": 32
+  },
+  "reading": "gap(16) on the frozen grids: F 0.410 [0.380,0.447], X 0.385 [0.354,0.418] -- both far above the 0.20 gate. Difficulty is measured-matched: entropy 2.625 vs 2.693 nat, uniform-baseline KL 0.841 vs 0.773 (ratio 1.088). The analytic cost of forcing a two-group belief state is 0.000 nat in F (exact) and 0.063 nat in X, so the entire capacity-style asymmetry is 0.063 nat: any interaction must come from learnability, not representational capacity.",
+  "results": {
+    "F": {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "gap": {
+        "16": {
+          "ci95": [
+            0.3797,
+            0.4467
+          ],
+          "mean": 0.4097
+        },
+        "32": {
+          "ci95": [
+            0.2132,
+            0.2633
+          ],
+          "mean": 0.2384
+        },
+        "4": {
+          "ci95": [
+            0.6764,
+            0.7513
+          ],
+          "mean": 0.7141
+        },
+        "8": {
+          "ci95": [
+            0.5653,
+            0.646
+          ],
+          "mean": 0.6027
+        }
+      },
+      "meanfield_projection_kl_nats": 0.0,
+      "theta_posterior_entropy_nats": 2.6251,
+      "uniform_baseline_kl_nats": 0.8406
+    },
+    "X": {
+      "edges": [
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          5,
+          0
+        ]
+      ],
+      "gap": {
+        "16": {
+          "ci95": [
+            0.3543,
+            0.4178
+          ],
+          "mean": 0.3846
+        },
+        "32": {
+          "ci95": [
+            0.2102,
+            0.2639
+          ],
+          "mean": 0.2336
+        },
+        "4": {
+          "ci95": [
+            0.6051,
+            0.6793
+          ],
+          "mean": 0.6417
+        },
+        "8": {
+          "ci95": [
+            0.4847,
+            0.5622
+          ],
+          "mean": 0.5232
+        }
+      },
+      "meanfield_projection_kl_nats": 0.0635,
+      "theta_posterior_entropy_nats": 2.6929,
+      "uniform_baseline_kl_nats": 0.7729
+    }
+  },
+  "schema": "gpi0001_v1_analytic_v1",
+  "self_correction": "v1 of the F/X factor initially used 'two parameters vs one parameter', which cannot match grid step and parameter cardinality simultaneously. The matched factor is now edge PLACEMENT: same 6 nodes, same 6 edges, same degree 2, same single theta on the same 32-point grid, same target -- only within-group vs cross-group edges differ.",
+  "status": "engineering premise check; not a verdict"
+}

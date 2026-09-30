@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "frozen_commit": "1305b1516eaa38dd97f037b4d2e10a14d3ba2553",
+  "script_sha256": "d6a68f333377a5bcfe12bfe8aa02aa3e16aefc6df4756f95a4b94ef5493405fc",
+  "formal_output": "~/.local/share/neurotopo/experiment-runs/EXP-0025/v2",
+  "wall_seconds": 58.32416283400016,
+  "cap_seconds": 600,
+  "inventory": {
+    "monitor_checkpoints": 120,
+    "prototype_fits": 26,
+    "qualification_cells": 104,
+    "test_cells": 520,
+    "input_files": 129,
+    "raw_files": 624,
+    "model_states": 26
+  },
+  "discrepancies": [],
+  "shared_components": [
+    "LearnedMemory",
+    "generate",
+    "gram",
+    "radial",
+    "state_hash"
+  ],
+  "independent_components": [
+    "transition orchestration",
+    "intervention",
+    "calibration",
+    "metrics",
+    "geometry audit",
+    "R/M decisions"
+  ],
+  "no_optimizer_updates": true
+}

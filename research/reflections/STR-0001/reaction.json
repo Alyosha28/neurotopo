@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "47807f4a5f011c487486b6fb9dc0a15e7a51298c4b1acda380d30c7a946b299a",
+  "review_sha256": "13431d0fce7fc366e418b2591de44be5fb896fdbdb398afad8d28636f0b3e586",
+  "responses": [
+    {
+      "id": "STR-0001-R1",
+      "disposition": "accept",
+      "reason": "A field benchmark qualification has no automatic project-gate payoff while eligibility is unresolved, so its independent purpose and bounded cost must be specified first.",
+      "action": "Corrected decision0019 with decision0020: no qualification run until independent purpose, resource cap, success/failure branch, and prospective project eligibility if applicable are fixed.",
+      "evidence_paths": [
+        "research/decisions/0020_str0001_qualification_scope_correction.md",
+        "research/reflections/STR-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "STR-0001-R2",
+      "disposition": "accept",
+      "reason": "The packet did not contain a generator, primary control, numeric delta/epsilon, or runnable budget, despite describing a future protocol sequence.",
+      "action": "Marked benchmark qualification NOT_REGISTERED and listed the exact missing fields before any run.",
+      "evidence_paths": [
+        "research/decisions/0020_str0001_qualification_scope_correction.md",
+        "research/reflections/STR-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "STR-0001-R3",
+      "disposition": "accept",
+      "reason": "Packet-only reviewers could not inspect the charter and decision text cited by the STR action.",
+      "action": "Checked and recorded the source clauses in a separate claim map, retaining the narrow ambiguity verdict.",
+      "evidence_paths": [
+        "research/reflections/STR-0001/source_claim_map.md",
+        "research/reflections/STR-0001/reaction_evidence.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Preserve STR-0001 INCONCLUSIVE and Gate 1 NOT_PASSED; no benchmark qualification is registered or executable until its independent purpose, resource cap, task, controls and numeric failure rules are frozen."
+}

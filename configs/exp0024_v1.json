@@ -1,0 +1,37 @@
+{
+  "experiment_id": "EXP-0024",
+  "version": "v1",
+  "workflow": "state_refresh",
+  "protocol": "experiments/EXP-0024/v1.md",
+  "entry_contract": "research/entries/EXP-0024.json",
+  "output": "artifacts/EXP-0024/v1",
+  "parent": "artifacts/EXP-0023/v2",
+  "seeds": [
+    23001,
+    23002,
+    23003,
+    23004,
+    23005,
+    23006
+  ],
+  "arms": [
+    "REL_BASE",
+    "INV_BASE"
+  ],
+  "conditions": [
+    "NONE",
+    "GAUGE8",
+    "RESET8",
+    "RESET1"
+  ],
+  "examples": 512,
+  "primary_seed": 23005,
+  "gate1_claim": false,
+  "matching_criterion_version": "G1-MATCH-v3",
+  "resource": {
+    "worker_wall_seconds_cap": 900,
+    "reproduction_wall_seconds_cap": 300,
+    "research_update_cap": 0,
+    "general_validation_overfit_cap": 900
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "decision_impact": "UNCHANGED",
+  "next_action": "决定0068 已按 7 项问题与 8 条修正生效，采用取向 C：Gate 1 走严层（state 必须匹配、compute 匹配或 profile、其余轴预注册数值上限默认 1.15×、超限自动降级为非通用层），非通用主张沿用 0067 单轴口径；判据版本 G1-MATCH-v2 已同步进 stage_gates.md / AGENTS.md / program.md，并附变更日志行、非回归清单（9 条候选级 + 3 条任务级关闭，全部保持被否、无一重开）与有界追溯审计（区间内零注册）。Gate 1 状态仍 NOT_PASSED；不注册实验、不授权训练。",
+  "packet_sha256": "5c992eac74868c9fdd0783ed821b8d6202d8def314ef07beb1424fb89b024254",
+  "responses": [
+    {
+      "action": "接受为 packet 不足：决定0068 已把依据写成可核条目（Gate 1 原文、0067 的 R1b/R2a、候选清单与计数对账），并规定今后同类 packet 须纳入被引文本。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0068_gate1_matching_clause.md",
+        "research/stage_gates.md"
+      ],
+      "id": "DECISION-0068-R1",
+      "reason": "承重前提全在 packet 外，第 2 节却写成已定事实。"
+    },
+    {
+      "action": "已撤回该理由并否决取向 A；严层新增“state 必须匹配（不只声明的轴）”，修复该漏洞。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0068_gate1_matching_clause.md",
+        "research/stage_gates.md",
+        "AGENTS.md"
+      ],
+      "id": "DECISION-0068-R2",
+      "reason": "取向 A 的理由为假：0067 匹配声明的轴，而 Gate 1 点名 state 与 compute；R1b 只约束递归/组织类主张。"
+    },
+    {
+      "action": "已定：定层谓词注册时冻结（≥2 个预注册任务族或 1 个留出族，歧义落严层，判词时才命名者自动非通用）；每轴数值上限、默认 1.15×（含内部步数与时延）；标题已改为三个取向。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0068_gate1_matching_clause.md",
+        "research/stage_gates.md",
+        "AGENTS.md",
+        "research/program.md"
+      ],
+      "id": "DECISION-0068-R3",
+      "reason": "C 的两个决定性参数未定义；严层上限清单遗漏内部步数与时延；标题写两个取向却给三个。"
+    },
+    {
+      "action": "三文件已在同一次变更中同步为 G1-MATCH-v2（同一决定编号与版本 id），stage_gates.md 另加变更日志行，明写门槛双向变动、非统一降低。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/stage_gates.md",
+        "AGENTS.md",
+        "research/program.md",
+        "research/decisions/0068_gate1_matching_clause.md"
+      ],
+      "id": "DECISION-0068-R4",
+      "reason": "第 4 节只改 Gate 1 行，未提 AGENTS.md 与 program.md，防“标准降低”的目标在文档层面失效。"
+    },
+    {
+      "action": "已改为机制：判词记录必填 matching_criterion_version，由既有“每个 Gate 1 判词都有独立审查”环节拒绝缺失或无效字段的记录。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0068_gate1_matching_clause.md",
+        "AGENTS.md"
+      ],
+      "id": "DECISION-0068-R5",
+      "reason": "引用义务无执行者、触发点与校验器。"
+    },
+    {
+      "action": "已执行审计：0067→0068 区间内 experiments/ 与 research/entries/ 无任何变更（无注册、无 Gate 1 目的判词），确认无需追溯改判；该结论与审计命令一并记入决定0068 §6。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0068_gate1_matching_clause.md"
+      ],
+      "id": "DECISION-0068-R6",
+      "reason": "狭义判断正确，但需要一次有界注解审计，且前提不可核。"
+    },
+    {
+      "action": "已加：判据版本 id G1-MATCH-v2 与生效日期 2026-09-24；每个注册须存储该 id；早于 v2 的 Gate 1 目的注册按 v1 裁决或正式重新注册。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0068_gate1_matching_clause.md",
+        "research/stage_gates.md",
+        "AGENTS.md",
+        "research/program.md"
+      ],
+      "id": "DECISION-0068-R7",
+      "reason": "没有带版本的生效日期绑定新注册到判据版本。"
+    }
+  ],
+  "review_sha256": "c64954bf9c259a7edfa127ea101e8d62c0523e20b3df155544148bf79a08183e",
+  "schema_version": 1
+}

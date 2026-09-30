@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "097bb06ecf57ab98518d2e8b0fdbf97f7b631c52832d9834761deb3bd5cee868",
+  "review_sha256": "5b67070cbec833370de1012dc3e688ed000057946bc7e193e70fa1ef94bee2bf",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "关闭固定ORBIT任务配置、保留原始训练与复算证据，归档ITER0011；不训练A、不扩种子或更改任务挽救本配置，Gate1不变。"
+}

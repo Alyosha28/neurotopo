@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "328ada148da79a9aae23c04cb7bc428e1392af1c6f4ff1802a5ee6d1c6f96dd4",
+  "review_sha256": "1c917a9a26e8254c8aa5e3f88ef18eeeb8359ca6a64117a323ff1a1dca78c4ab",
+  "responses": [
+    {
+      "id": "G1-SB-0001-R1",
+      "disposition": "accept",
+      "reason": "The previous matched-mask plan left the candidate scoring mechanism inside both arms and could only identify graph organization.",
+      "action": "Saved a prospective field-only K1/K4 by score/no-score factorial direction and restricted its primary interpretation to an architecture package unless the factor ablations identify more.",
+      "evidence_paths": [
+        "research/design/fr0002_k_package_field_protocol.md",
+        "research/reflections/G1-SB-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "G1-SB-0001-R2",
+      "disposition": "accept",
+      "reason": "A statement of approximate fairness is not an executable parameter/state/compute criterion.",
+      "action": "Required a numeric per-arm resource table, tolerances, measured operator/time profile and failure branch before any qualification data or implementation; FR-0002 remains design-only.",
+      "evidence_paths": [
+        "research/design/fr0002_k_package_field_protocol.md",
+        "research/reflections/G1-SB-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "G1-SB-0001-R3",
+      "disposition": "accept",
+      "reason": "A field reference result has no automatic prospective project novelty or scoring status.",
+      "action": "Fixed FR-0002 as field_reference; project attribution and any entry-policy change must be independently versioned before a distinct project effect result, and field positives cannot be renamed Gate1 passage.",
+      "evidence_paths": [
+        "research/design/fr0002_k_package_field_protocol.md",
+        "docs/gate1_k_factor_qualification_template.md",
+        "research/reflections/G1-SB-0001/reaction_evidence.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep G1-SB-0001 closed before training; independently review the bounded FR-0002 field design, then freeze numeric resources and qualification branches if and only if that design is accepted."
+}

@@ -1,0 +1,10 @@
+{
+  "old_policy": "gate1_candidate_first_v1",
+  "new_policy": "gate1_candidate_first_v2",
+  "prior_events": 87,
+  "migration_event": "event-000088",
+  "old_prefix_sha256": "c3eba97aa095efbdc0b936319d17de567be60445f3284263d7bbddc297147193",
+  "old_prefix_preserved": true,
+  "old_current_unchanged": true,
+  "authority_sha256": "9a9838660ebb9e6efcb475fc6169daed7f02abab97a848547149a6b513ea19c6"
+}

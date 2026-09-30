@@ -1,0 +1,71 @@
+{
+  "config": {
+    "eps": 0.001,
+    "ladder": "research/design/dir0004_precision_check.json",
+    "lam_u": 2.0,
+    "screen": "research/design/dir0004_affordance_screen.json",
+    "sigma": 1e-06
+  },
+  "hidden_required_bits_delta": {
+    "4": 0,
+    "8": 0,
+    "12": 0,
+    "16": 0,
+    "20": 0,
+    "24": 0,
+    "28": 0,
+    "32": 0,
+    "36": 0,
+    "40": 0,
+    "44": 0,
+    "48": 0,
+    "52": 0,
+    "56": 0,
+    "60": 0,
+    "64": 0
+  },
+  "ladder_crossings": {
+    "32": {
+      "closed_form": 14.0,
+      "reported": 14.0
+    },
+    "63": {
+      "closed_form": 45.0,
+      "reported": 45.0
+    }
+  },
+  "method": "closed form (this script) versus step recursion plus bit scan (first implementation)",
+  "observed_required_bits": {
+    "closed_form": 9,
+    "deltas": {
+      "4": 0,
+      "8": 0,
+      "12": 0,
+      "16": 0,
+      "20": 0,
+      "24": 0,
+      "28": 0,
+      "32": 0,
+      "36": 0,
+      "40": 0,
+      "44": 0,
+      "48": 0,
+      "52": 0,
+      "56": 0,
+      "60": 0,
+      "64": 0
+    }
+  },
+  "schema": "dir0004_screen_crosscheck_v1",
+  "self_checks": {
+    "crosscheck_valid": true,
+    "hidden_required_bits_agree_exactly": true,
+    "ladder_crossings_agree_exactly": true,
+    "observation_floor_below_eps_squared": true,
+    "observed_required_bits_agree_exactly": true
+  },
+  "sources": {
+    "ladder_sha256": "10a60177af2c123cb8abe06129d549e233170867f9047b27325974056676bf18",
+    "screen_sha256": "4542c1d210a26d3579e12f79975ec50efd33690368e2f6c2b0cb2bbe36f11fce"
+  }
+}

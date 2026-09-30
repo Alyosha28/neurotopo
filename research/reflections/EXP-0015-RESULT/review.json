@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "2828cf53a6854f5d8fd9023b3d38ba588a152c9eb5951dbb1891053689dd8c0c",
+  "reviewer": {
+    "model": "inherited-model-not-exposed",
+    "effort": "inherited",
+    "context": "fresh_only_packet"
+  },
+  "issues": [],
+  "overall_assessment": "ACCEPT_TASK_INFORMATION_ONLY\n三个冻结门均通过：uniform_mean=2.0991721194867274 >= 0.20；suffix1 的双侧95% percentile bootstrap区间为[1.0727697612381293, 1.1018843361705173]，下界 >= 0.05；suffix8区间为[0.055905872852576505, 0.0645065476861682]，下界 >= 0.02。原分析failed=[]，SUPPORTED/TASK_INFORMATION_ONLY与冻结互斥分支一致。uniform门按预注册点估计判断，没有事后改成CI门；suffix门均按冻结下界判断。\n包内manifest报告COMPLETED、16384条序列、0研究更新、0模型实例，配置为单一固定16状态/64步生成器及冻结随机根。worker总回执3.3805307909988187秒低于300秒；manifest内部计算2.1940344579998055秒，CPU 2.004141秒；第二实现复算0.7555292500001087秒低于300秒，连同worker总时间仍低于600秒。复算记录task_samples_generated=0、optimization_updates=0，没有新增独立研究样本的声明。\n来源证据在包内相互一致：manifest与validation及复算均指向提交e8b4d3c258efcd544f67ea4a0288f54a693b31a0；manifest的git_status为空，配置/协议/source/解释器/原数组/oracle摘要及版本已记录；validation标VALIDATED、250 tests passed、research_roots_unread=true。manifest和复算所列validation_sha256对应validation中的validation_suite_sha256，不能误读为本包embedded_validation.json自身文件摘要。既有源码整改审查明确接受超时/来源/判词复核修复，且限定了测试与静态审查的范围。\n第二算法复算pass_=true，后验误差最大3.3306690738754696e-16，全部报告指标/重采样均值最大误差1.5765166949677223e-14，低于协议容差量级；其独立计算判词亦为SUPPORTED/TASK_INFORMATION_ONLY。包内没有工程、来源、预算或复核失败的正面证据需要触发INCONCLUSIVE分支。此结论依据包内记录的一致性，不宣称本次审查重新核验了包外原数组、执行源码、运行时或重跑测试。\n支持范围严格限于该固定生成器下full相对uniform、suffix1及suffix8后验的信息差条件。suffix8正差不能证明任意其他捷径均被排除，也不是实际GRU控制headroom、可学习性、训练充分性、组织效应、生物效应、任务族泛化或Gate1证据。CI只量化固定生成器下序列采样不确定性。显式矩阵复算是同一已暴露批次的第二算法验证，不能称为独立样本复制。该16384条序列必须继续标为已暴露，不能用于未来独立效果评估。项目因子资格、控制学习/余量及后续训练保持HOLD，Gate1保持NOT_PASSED；本接受仅允许局部结果结案与任务后反思。\n未发现包内足以拒绝这一有限结果主张的可定位问题；零issue不等于排除包外未知问题。\nFILES_READ: derived/design.md; derived/action.md; derived/EXTRACTION_MANIFEST.json; derived/embedded_v1.md; derived/embedded_manifest.json; derived/embedded_independent_reproduction.json; derived/embedded_validation.json; derived/embedded_review.json; derived/embedded_job_end.json; derived/embedded_EXP-0015_live_migration.json; derived/action_output_0_verification.json（工具输出部分截断；评价使用已单独完整呈现的对应embedded副本）。仅读取指定derived目录非._文件，未联网、未生成样本、未执行实验或测试，未读取包外上下文。"
+}

@@ -1,0 +1,183 @@
+{
+  "audit_date": "2026-09-24",
+  "scope": "Targeted prior-art and source inspection for delayed-evidence hypothesis revision; not an exhaustive literature review.",
+  "reproduction_status": "No source repository was installed or executed. No published result was reproduced. No external code was copied into NeuroTopo.",
+  "sources": [
+    {
+      "family": "Transient TRNN",
+      "paper": "https://doi.org/10.1038/s42003-024-07282-3",
+      "repository": "https://github.com/jiashuncheng/Transient",
+      "commit": "81eee3611b6f89b2eecb9ffac3cfabb2b7525691",
+      "last_commit_observed": "2024-11-08",
+      "license": null,
+      "paths_reviewed": [
+        "ODPA/new/model_torch.py",
+        "RL/examples/trnn.py",
+        "README.md",
+        "RL/test.py"
+      ],
+      "test_evidence": "RL/test.py is a local-log analysis script; no ODPA formal unit test suite identified.",
+      "execution": "read_only"
+    },
+    {
+      "family": "RIMs",
+      "paper": "https://arxiv.org/abs/1909.10893",
+      "repository": "https://github.com/anirudh9119/RIMs",
+      "commit": "aa61773a949c1e3f499d4c05dd77fcd2adbffa19",
+      "last_commit_observed": "2022-03-24",
+      "license": null,
+      "paths_reviewed": [
+        "README.md",
+        "event_based/blocks_core.py",
+        "event_based/BlockGRU.py",
+        "event_based/rnn_models.py"
+      ],
+      "test_evidence": "No formal unit test suite identified.",
+      "execution": "read_only"
+    },
+    {
+      "family": "Particle Filter Recurrent Neural Networks (PF-RNN)",
+      "paper": "https://ojs.aaai.org/index.php/AAAI/article/view/5952",
+      "repository": "https://github.com/Yusufma03/pfrnns",
+      "commit": "0a76d52a857f06d4128bbc7601c616d714b25734",
+      "last_commit_observed": "2024-06-22",
+      "license": "GPL-3.0",
+      "paths_reviewed": [
+        "README.md",
+        "pfrnns.py",
+        "model.py",
+        "LICENSE",
+        "requirements.txt"
+      ],
+      "test_evidence": "No formal unit test directory identified in inspected root; requirements pins torch==1.3.1.",
+      "execution": "read_only"
+    },
+    {
+      "family": "conn2res",
+      "paper": "https://doi.org/10.1038/s41467-024-44900-4",
+      "repository": "https://github.com/netneurolab/conn2res",
+      "commit": "3ccb7074261c910847dcd0164b00ff3b02bade90",
+      "last_commit_observed": "2024-12-20",
+      "license": "BSD-3-Clause",
+      "paths_reviewed": [
+        "conn2res/reservoir.py",
+        "conn2res/readout.py",
+        "conn2res/tasks.py",
+        "conn2res/tests/test_reservoir.py",
+        "conn2res/tests/test_tasks.py"
+      ],
+      "test_evidence": "Tests exist; pinned test_reservoir.py contains only a module docstring, task tests check fetch-data shape/type.",
+      "execution": "read_only"
+    },
+    {
+      "family": "Drosophila connectome reservoir for time-series prediction",
+      "paper": "https://doi.org/10.3390/biomimetics10050341",
+      "repository": "https://gitlab.com/EuropeanSpaceAgency/fly_connectome",
+      "commit": "90679d672cd25905758b3abc6674fa6a28525d52",
+      "last_commit_observed": "2025-05-04",
+      "license": null,
+      "paths_reviewed": [
+        "README.md",
+        "environment.yaml",
+        "src/utils.py",
+        "src/main.ipynb"
+      ],
+      "test_evidence": "No test directory or automated CI identified in inspected repository tree.",
+      "execution": "read_only"
+    },
+    {
+      "family": "flyvis",
+      "paper": "https://doi.org/10.1038/s41586-024-07939-3",
+      "repository": "https://github.com/TuragaLab/flyvis",
+      "commit": "92b3845cc426dd309a1a0e1b3890156c42e14021",
+      "last_commit_observed": "2026-08-06",
+      "license": "MIT",
+      "paths_reviewed": [
+        "flyvis/network/dynamics.py",
+        "flyvis/network/initialization.py",
+        "flyvis/network/network.py",
+        "flyvis/solver.py",
+        "tests/test_dynamics.py",
+        "tests/test_network.py",
+        ".github/workflows/auto_test.yml"
+      ],
+      "test_evidence": "Pytest suite and GitHub Actions matrix for Python 3.9-3.12 identified.",
+      "execution": "read_only"
+    },
+    {
+      "family": "Continuous Thought Machine",
+      "paper": "https://arxiv.org/abs/2505.05522",
+      "repository": "https://github.com/SakanaAI/continuous-thought-machines",
+      "commit": "4a6c9c3a7fb5dc4bca6381cc7883a3b9252c6466",
+      "last_commit_observed": "2025-12-29",
+      "license": "Apache-2.0",
+      "paths_reviewed": [
+        "models/ctm.py",
+        "models/modules.py",
+        "tests/tests.py",
+        "tests/README.md"
+      ],
+      "test_evidence": "Golden output, shape, and model-construction tests identified.",
+      "execution": "read_only"
+    },
+    {
+      "family": "ncps / NCP, LTC, CfC",
+      "paper": "https://www.nature.com/articles/s42256-020-00237-3",
+      "repository": "https://github.com/mlech26l/ncps",
+      "commit": "695ec22d7d1831f2ced67346ef7d2f08c525bd47",
+      "last_commit_observed": "2024-08-14",
+      "license": "Apache-2.0",
+      "paths_reviewed": [
+        "ncps/torch/ltc_cell.py",
+        "ncps/torch/cfc_cell.py",
+        "ncps/wirings/wirings.py",
+        "ncps/tests/test_torch.py"
+      ],
+      "test_evidence": "PyTorch wiring, cell, output-shape tests identified.",
+      "execution": "read_only"
+    },
+    {
+      "family": "Biological Processing Units (BPU)",
+      "paper": "https://arxiv.org/abs/2507.10951",
+      "repository": null,
+      "commit": null,
+      "last_commit_observed": null,
+      "license": null,
+      "paths_reviewed": [
+        "arXiv abstract and HTML full text, architecture/training description, code-links area"
+      ],
+      "test_evidence": "No clearly attributed author repository identified from the paper page inspected.",
+      "execution": "paper_only"
+    },
+    {
+      "family": "Neuromorphic hierarchical modular reservoirs",
+      "paper": "https://doi.org/10.1038/s41467-026-74466-2",
+      "repository": "https://github.com/fmilisav/milisav_hierarchical_modularity",
+      "commit": "28c132738775dc0b72802dfb20fa346320ef08ec",
+      "last_commit_observed": "2026-04-07",
+      "license": "BSD-3-Clause",
+      "paths_reviewed": [
+        "network.py",
+        "task.py",
+        "run.py",
+        "README.md",
+        "LICENSE"
+      ],
+      "test_evidence": "No test files or automated test workflow identified.",
+      "execution": "read_only"
+    },
+    {
+      "family": "EviTrack",
+      "paper": "https://arxiv.org/html/2605.19283",
+      "repository": null,
+      "commit": null,
+      "last_commit_observed": null,
+      "license": null,
+      "paths_reviewed": [
+        "arXiv HTML v1: method, synthetic experiment, ablations, limitations"
+      ],
+      "test_evidence": "No author code/tests confirmed in targeted paper and web search; no reproduction.",
+      "execution": "read_only"
+    }
+  ]
+}

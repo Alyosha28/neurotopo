@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "8d86331b94b593741fca55340115eb43c9ebc41ccb5700bda179a519d004dae2",
+  "review_sha256": "1babe22f9eaf8f777257a86d13512fb9bc32bb0fe05bc010b2b34911d7b67c34",
+  "responses": [
+    {
+      "id": "A0-V2-01",
+      "disposition": "accept",
+      "reason": "v2确将未来修订也命名v2，版本身份冲突。",
+      "action": "只改版本标识与说明，形成v3当前合同；若v3在A1失败，新候选必须命名v4，原失败保留。",
+      "evidence_paths": [
+        "research/design/arch0001_successor_compatible_core_v3.md"
+      ]
+    }
+  ],
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "以v3作为当前A0候选合同；v2的独立反思只暴露版本命名错误，v3除版本说明/标识外无科学条款变化，按字节差核验。"
+}

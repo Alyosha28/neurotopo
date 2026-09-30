@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "d79d718705c05e0af1b19b8fa051837ab6054761d67f8feeaec20d06171f6d55",
+  "review_sha256": "ec190a100ff71cbafac4761d8d34133b30da4190bd0c0f2b49fa666b177008d5",
+  "responses": [
+    {
+      "id": "STR-0003-R1",
+      "disposition": "accept",
+      "reason": "The earlier INCONCLUSIVE label combined the preregistered charter-interpretation question with an unregistered candidate-specific eligibility question.",
+      "action": "Recorded a new narrow correction using the original positive branch for Gate1/Gate3 semantic separation, while preserving the earlier decision and leaving K-factor scoring unresolved.",
+      "evidence_paths": [
+        "research/reflections/STR-0003/correction_protocol.md",
+        "research/decisions/0034_str0003_post_reflection_scope_correction.md",
+        "research/reflections/STR-0003/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "STR-0003-R2",
+      "disposition": "accept",
+      "reason": "Simply listing persistence/collapse diagnostics leaves Gate1 factor interpretation vulnerable to post-hoc decisions.",
+      "action": "Added a candidate-before-data template requiring preregistered diagnostics, numeric thresholds and PASS/FAIL/UNRESOLVED effects on Gate1, with Gate3-specific semantic interventions separate.",
+      "evidence_paths": [
+        "docs/gate1_k_factor_qualification_template.md",
+        "research/reflections/STR-0003/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "STR-0003-R3",
+      "disposition": "accept",
+      "reason": "An indefinitely unresolved reference-K/project-factor status can block research without a decision point.",
+      "action": "Specified qualification before project QUESTION, branch meanings and the present entry-policy rejection; an eligible reference factor would require a prospective project/Gate2 rule plus versioned entry-policy implementation before effect results.",
+      "evidence_paths": [
+        "docs/gate1_k_factor_qualification_template.md",
+        "research/decisions/0034_str0003_post_reflection_scope_correction.md",
+        "research/reflections/STR-0003/reaction_evidence.md"
+      ]
+    }
+  ],
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "Apply the narrow charter correction prospectively, keep Gate1 NOT_PASSED and existing entry-policy reference-K rejection, and require an independently reviewed named K-factor/control contract before project QUESTION or any qualification training."
+}

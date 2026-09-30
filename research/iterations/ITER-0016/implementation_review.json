@@ -1,0 +1,17 @@
+{
+  "experiment_id": "EXP-0021",
+  "version": "v1",
+  "review_type": "independent_static_implementation_review",
+  "scope": "Read-only comparison of the four EXP-0021 implementation modules, intervention tests, engineering preflight, and frozen v1 protocol/config. No research execution, source edits, threshold changes, or independent test execution by this reviewer. The five new engineering tests were reported as passing by the main agent.",
+  "checks": [
+    "The runner fixes seeds 20002-20005, three arms, 1000 Adam updates per arm and seed, the original curriculum and eight evaluation cells. Training batches use [202001,seed,step,0], monitoring [204001,seed,8,0], and evaluation [203001,seed,length,mode_id]. Per-seed shared data and initial encoder/readout hashes are checked.",
+    "The intervention generator uses [205021,seed,64,2] for 1024 T64 UPDATE examples. The rollout executes operations 1-32 before changing state and stores logits/Gram for t32 through t64. NONE is checked for exact equality against the unchanged forward implementation on the same data.",
+    "Perturbations use [206021,seed] independently of targets. NORM normalizes each column with the registered clamp, ANGLE rotates only the second column, and both shams apply a common rotation. NORM_SHAM uses a monotone angle bisection over [0,pi] and records unmatched residual and unreachable fraction; ANGLE_SHAM uses ANGLE's axis and angle without asserting displacement equality.",
+    "Immediate, next, final and suffix accuracy/BCE are computed on target columns 32:64. The analysis derives D_N, D_A, C_N and C_A from immediate accuracy, applies the frozen four-new-seed thresholds for R and M, excludes pilot seed 20001 from decisions, and retains all arms/conditions and descriptive seed statistics.",
+    "The pilot importer copies only the final checkpoint and source result, verifies source hashes and original eight-cell scores, records zero new pilot updates and empty new curves, and computes its intervention separately. The runner requires a clean frozen checkout, source-matched validation and intervention preflight; data, checkpoint, prediction, intervention and pilot-source hashes are retained.",
+    "The replay regenerates all data streams, reloads 15 final checkpoints and all new-seed monitor checkpoints, replays 120 arm-cell evaluations and 75 intervention conditions, independently recomputes XOR targets, scores, contrasts and verdict, and performs exact NONE and state-invariant checks without retraining. Its registered wall cap is 180 seconds."
+  ],
+  "blocking": [],
+  "verdict": "PASS_STATIC_IMPLEMENTATION_REVIEW",
+  "limits": "This is a static consistency review, not evidence that the new implementation completes within budget or reproduces trained outcomes. The replay deliberately shares the registered intervention rollout function with the run; its independent checks cover regenerated data, saved arrays, invariants, metrics and verdict, not an independent second implementation of the intervention algorithm. The primary immediate effect remains frozen Gram-readout sensitivity, with the scientific limits recorded in the v1 preregistration review."
+}

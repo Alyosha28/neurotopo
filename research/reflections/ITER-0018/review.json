@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "2cc18a71d9c969f2e988448e40108148e22f45601fdd4e47477089514f94d49f",
+  "reviewer": {
+    "model": "gpt-6-luna",
+    "effort": "max",
+    "context": "fresh_only_packet"
+  },
+  "issues": [],
+  "overall_assessment": "Within the SHA-identified packet, the registered guards and decision rules agree with the 24 new-model rows, 15 old diagnostic summaries, verification summary, and final INCONCLUSIVE / LEARNING_GUARD_FAILURE decision. The joint IID guard passes in 3/6 seeds; REL_BASE seed 23004 fails the registered prediction eligibility check; P is therefore learning-inconclusive. The M, paired-effect, resource, and replay summaries are consistent with the stated rules. No concrete discrepancy supported by packet evidence was found. This review does not independently validate evidence outside the packet."
+}

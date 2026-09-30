@@ -1,0 +1,9 @@
+{
+  "archive": "/private/tmp/neurotopo-exp0022-recovery/EXP0022-v2-verified-delivery.tar.gz",
+  "sha256": "a1c6355e835c202de339f421a9728a6f0888216947252ef1e9c9fff40d281030",
+  "snapshot_files_verified": 310,
+  "archive_bytes": 55577600,
+  "raw_files_verified": 178,
+  "archive_roundtrip_verified": true,
+  "git_final_commit_completed": false
+}

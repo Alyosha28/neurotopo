@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "archive_commit": "4d17d4c27a12aa662326c40d8ca92e43040464e7",
+  "frozen_execution_commit": "007ccbb",
+  "committed_raw_files": 2685,
+  "committed_raw_bytes": 4625876082,
+  "committed_tree_matches_verified_index": true,
+  "index_blob_map_sha256": "4564323db1b4b1ac3c88e0b2ab032ff09aa88d64243d6eeee158d718cddc8af1",
+  "apfs_project_all_hashes_equal": true,
+  "formal_rollouts_completed": 1300,
+  "independent_raw_audit": 1300,
+  "independent_trajectory_replay": 200,
+  "reflection": "VALID_1_ACCEPTED_SCOPE_CLARIFICATION",
+  "scientific_decision": "PARTIALLY_SUPPORTED / SINGLE_EXPOSED_SCHEDULE_WINDOW",
+  "latest_user_question": "Exact50% is256/512 correct after single-class predictions; labels/index and independent replay checked."
+}

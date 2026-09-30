@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "e379beff2f9e7572fff5f5226049c14b50a8d2f6a49e3949f14ef956b350233f",
+  "reviewer": {
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "H1-R01",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "若十图中至少八图存在 witness，只允许进入 null 模型设计评审",
+        "\"witnesses_found\": 10",
+        "\"original_reciprocity\": 0.25833333333333336,\n      \"changed_reciprocity\": 0.2604166666666667",
+        "One local degree/self-loop/cross-edge/connectedness preserving swap per seed; no uniform null, no spectrum matching, no model training."
+      ],
+      "problem": "存在性门槛已达到，但每图只展示一次局部交换。报告的互反比例变化很小，尚未说明在相同约束下可构造多大的变化范围。",
+      "why_it_matters": "下一步设计 null 图族时，若可达到的互反差异始终很小，该因素可能缺乏足够的实验对比强度。10 个 witness 只能支持进入设计评审，不能支持图族已经可用。",
+      "falsifiable_check": "在预先固定的搜索预算和约束下，对十个冻结图分别记录可达到的互反比例范围、每个目标差异的成功率及尝试次数；若预定的对比差异无法稳定取得，调整或否决该 null 图族设计。"
+    },
+    {
+      "id": "H1-R02",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "它不证明谱混合、motif、路径等其他结构也匹配",
+        "\"original_second_eigenvalue\": 0.24314531009947385,\n      \"changed_second_eigenvalue\": 0.2501696733471001",
+        "no spectrum matching"
+      ],
+      "problem": "报告已经显示交换前后的第二大绝对特征值会变化，而现有搜索没有谱匹配条件。",
+      "why_it_matters": "若后续图族用来比较互反结构的作用，谱变化可能同时改变动力学，使结果无法归因于互反结构。该 packet 对这一点有限定，但下一轮设计须把限定转成可检验的匹配规则。",
+      "falsifiable_check": "在构造图族前规定谱指标的匹配容差，并报告满足目标互反差异且落入容差的图数量；若不能同时满足，则将谱差异列为明确的混杂因素或放弃该比较。"
+    },
+    {
+      "id": "H1-R03",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "逐 seed 由冻结图生成器重建并核对正式 mask SHA",
+        "\"original_mask_sha256\": \"06d94fad5b7be900c6d33a90caf022efe80240fdc2be3c65208732bd17a2b826\"",
+        "\"degree_diagonal_connectivity_preserved\": true"
+      ],
+      "problem": "packet 给出了重建图的 SHA 和综合约束判定，却没有给出正式 mask 的预期 SHA 或逐 seed 的核对结果。因此，仅凭这份 packet 无法独立核实所用图确为登记的冻结输入。这是证据缺口，并非已证明输入错误。",
+      "why_it_matters": "冻结输入身份是后续 null 设计复现和对照的前提。",
+      "falsifiable_check": "在下一份证据中并列列出每个 seed 的正式 mask 预期 SHA、重建 SHA 和相等判定；任一不相等时停止沿用对应 witness。"
+    }
+  ],
+  "overall_assessment": "按 packet 报告的结果，10/10 图找到了满足所述约束且改变互反比例的局部 witness，因此达到设计中“进入 null 模型设计评审”的有限门槛。当前证据只支持图空间存在性；互反变化幅度、谱匹配及冻结输入核对仍需在下一行动中落实。packet 没有任务性能或生物效应证据。"
+}

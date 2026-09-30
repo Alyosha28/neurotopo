@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "figures_inspected": [
+    "accuracy_vs_interval.png",
+    "distance_and_accuracy.png",
+    "command_overlap_vs_windows.png"
+  ],
+  "formats": [
+    "PNG",
+    "SVG"
+  ],
+  "notes": "Visual inspection of all three final plots: complete axis ranges, readable legend and no overlapping case annotations; curves show all12 exposed REL seeds or predeclared cases; no model rerun.",
+  "sha256": {
+    "accuracy_vs_interval.png": "6eb0141881783c1bacca8f778043a022fa318b3be6f013cd37dff2fb0d8ed8af",
+    "accuracy_vs_interval.svg": "566d75816e5a18df2a7c27b5438ceb3f099de593b23b09b070751cccb2fc70bb",
+    "command_overlap_vs_windows.png": "bf3033e71d3619adf2a2f747123ba9036166dbb5dec9ca651ea7acb5bcb1b7c9",
+    "command_overlap_vs_windows.svg": "3b68abe2a0815fb42fe92ad8dceb6a6041d516cc5cd073c70785793391b9c7fa",
+    "distance_and_accuracy.png": "4b6a2d7b36290ef6e5503a42fd48f13f6a26f0bff6690fc0ecf7045521598f15",
+    "distance_and_accuracy.svg": "864a9151a557da4b5e2b127d9a488acd36823d75a64df30467ed2fb8e8100610"
+  },
+  "svg_xml_parse_after_whitespace_normalization": true
+}

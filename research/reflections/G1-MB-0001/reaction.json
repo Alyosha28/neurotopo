@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "123ae9754c1c95dd3794dbd09c6dcd6017238fec61cc7236824907e34b1a9f3d",
+  "review_sha256": "7d925a85258c38ceaa6439e296ccb2b89ab757cc2493966ce62e22f6c2a722f0",
+  "responses": [
+    {
+      "id": "G1-MB-R01",
+      "disposition": "accept",
+      "reason": "Graph connectedness was incorrectly treated as functional single-trajectory identity.",
+      "action": "Restricted SC64 to a connected recurrent control; future functional single-state claims require information-flow and lesion checks.",
+      "evidence_paths": [
+        "research/reflections/G1-MB-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "G1-MB-R02",
+      "disposition": "accept",
+      "reason": "The blockwise readout constrains the contextual dense arm.",
+      "action": "Required a full-state dense readout sensitivity control in future designs and kept the original design closed.",
+      "evidence_paths": [
+        "research/reflections/G1-MB-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "G1-MB-R03",
+      "disposition": "accept",
+      "reason": "One selected task cannot imply generic Gate 1 benefit.",
+      "action": "Removed automatic generic-gate interpretation; candidate was closed before any effect training.",
+      "evidence_paths": [
+        "research/reflections/G1-MB-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "G1-MB-R04",
+      "disposition": "accept",
+      "reason": "A narrow structural contrast is possible even though it cannot support the claimed mechanism.",
+      "action": "Preserved the testable block-connectivity question as separate field work, while declining this Gate 1 candidate.",
+      "evidence_paths": [
+        "research/reflections/G1-MB-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "G1-MB-R05",
+      "disposition": "accept",
+      "reason": "Parameter numbers were estimates without implemented model/resource checks.",
+      "action": "Explicitly marked 13508/4292 as predicted and required runtime parameter/state/operator/timing verification if revived.",
+      "evidence_paths": [
+        "research/reflections/G1-MB-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "G1-MB-R06",
+      "disposition": "accept",
+      "reason": "The next multi-hypothesis task needed operational controls and refusal rules.",
+      "action": "Specified a published continuous delayed-disambiguation task and paired controls before any candidate performance; its independent design critique and preregistered region audit revealed further obstacles, so no training was authorized.",
+      "evidence_paths": [
+        "research/reflections/G1-MB-0001/reaction_evidence.md",
+        "research/design/g1_external_dd_candidate_v0.md",
+        "research/design/evt0001_evitrack_region_exit_protocol.md",
+        "artifacts/validation/evt0001_region_exit.json"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep G1-MB-0001 closed before training. Preserve the narrower graph-isolation question separately; independently review and, if necessary, close the external DD candidate before any project-effect registration."
+}

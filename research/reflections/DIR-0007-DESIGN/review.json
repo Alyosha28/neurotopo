@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "10538bde80cb1feb641f9337f589152e16319a87ae4053c985a89bde02c76769",
+  "reviewer": {
+    "model": "inherited-model-not-exposed",
+    "effort": "inherited",
+    "context": "advisory_post_packet_message_received"
+  },
+  "issues": [
+    {
+      "id": "I1",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "范围：决定0043/0044/0049/0054/0062/0069/0080/0082、当前 stage_gates、已有简单滤波器先例；原始论文 Equivariance Through Parameter-Sharing、Group Equivariant Convolutional Networks、HashedNets、Flow Equivariant RNN。",
+        "先完成独立设计批评与 0049 新问题适用性判断，再谈正式注册。"
+      ],
+      "problem": "当前 packet 不含现行 stage_gates，也不含 EXP-0012/0013 问题、生成器、终点与估计对象的原始记录。决定0049与0062已嵌入，但不能据其摘要独立裁定本设计与关闭方向的关系。软训练目标先验的项目因子资格和自缚通用性谓词也未裁定，因此项目轨适用性仍为 UNRESOLVED。",
+      "why_it_matters": "这是准入依据缺失，不是新增效果试验能解决的问题。0080 的字段放行不是科学资格；F/X 一个任务族也不能自行解除 Generic/U3。",
+      "falsifiable_check": "在唯一允许的修订中明确选择本稿的审查轨和承诺范围；如仍申请项目轨，冻结缺失原件及一句话新问题，逐项给出0049适用性、软先验因子资格和自缚通用谓词的前瞻判定。无法闭合则止于非注册设计，不生成资格样本。"
+    },
+    {
+      "id": "I2",
+      "source": "action",
+      "severity": "high",
+      "evidence": [
+        "控制资格仅 B/U/R/D/H/E，A 不训练；",
+        "LR 菜单 {.001,.003} 对每臂公平，按 IID32 KL 最低选，平手取 .001。"
+      ],
+      "problem": "A 不训练与每臂用资格 IID32 选择学习率无法同时兑现。协议没有说明 A 的学习率来自何处，X 上各臂如何继承 F 的选择，也没有区分按 seed 选择还是跨资格 seed 统一选择。效果轮只预算每臂一次3000更新，不能容纳临时新增调参。",
+      "why_it_matters": "这是实际执行与信息隔离冲突，可能使 A 单独获得额外选择机会，或用不对称学习率把组织对齐与训练设置混在一起。",
+      "falsifiable_check": "冻结从资格记录到所有14个效果单元学习率的完整确定映射及选择聚合单位；若按共轭映射借用学习率，明示对应关系和未直接校准单元；若需额外候选训练，须另冻结非效果选择流、预算和暴露边界。相同资格表须唯一产生全部最终学习率。"
+    },
+    {
+      "id": "I3",
+      "source": "action",
+      "severity": "medium",
+      "evidence": [
+        "另记录硬 G 等变 GRU 的先例臂 E（共享参数 119，展开后同 1904 张量形状；不冒充资源匹配主臂）。",
+        "H/E 为先例和简单解保护：若候选不优于它们，最多报告组织对齐局部效应，不能声称胜出已有方法或已满足 Gate 1。"
+      ],
+      "problem": "E 只被定义为硬 G 等变，而 X 的已知正确群是 G'。若 F/X 均照同一个 G 实现 E，则 X 上先例臂被置于错误坐标，无法承担最强已有结构方法的保护；若计划 E 在 X 上共轭，协议尚未这样定义。",
+      "why_it_matters": "先例控制的身份必须在看到性能前固定，不能靠候选击败错配硬约束来形成先例增量。H/E 的优于也没有效应阈值或推断定义，不能据此升级结论。",
+      "falsifiable_check": "明确 E_F=P_G 硬约束、E_X=P_G' 硬约束，或写出维持固定 G 的科学理由并将其仅列为错配诊断；冻结 E/H 比较的估计量与何种结果只作描述，禁止未注册的胜出判词。"
+    },
+    {
+      "id": "I4",
+      "source": "action",
+      "severity": "high",
+      "evidence": [
+        "所有7个主要不等式（I 加两条件各 U/R/D）使用 Bonferroni family alpha=.05，配对 seed t 下界；要求每项半宽≤.01，否则 INCONCLUSIVE_PRECISION，不加种子。",
+        "n=48 的80%功效只在配对 SD≤约 .04 时可期，**没有候选方差数据，不宣称已证明功效达标**。"
+      ],
+      "problem": "这里的约80%至多是单一不等式的边际功效，不能代表七项全部通过及精度门同时通过的成功概率。在 n=48、Bonferroni 单侧临界值约2.55时，SD=.04 对应半宽约.0147，已经不满足 .01 的精度门；精度要求约 SD≤.027。保守方差来源与联合功效计算均尚未给出。",
+      "why_it_matters": "功效门面对的是完整判词，不能只对 I 或一项不等式计算。仅保留48种子和12小时上限而把方差来源留空，尚不足以认定计划可执行；即使真效应为.04，实际通过率也可能远低于80%。",
+      "falsifiable_check": "用冻结的、候选盲且对全部七项有效的方差/相关性假设，计算包括精度门的联合通过概率；清楚区分边际与联合80%。不能得到可信界则保留 POWER_UNRESOLVED 并停止效果注册，不下调δ或放宽CI以补救。"
+    },
+    {
+      "id": "I5",
+      "source": "action",
+      "severity": "medium",
+      "evidence": [
+        "X：把同一基础轨迹的 z/y/后验全部乘 Q，转移为 Q T Qᵀ。",
+        "两任务共轭使该交互的两半相关，**交互本身不证明超出已知对称性**。"
+      ],
+      "problem": "这不只是一般相关：对 GRU 全部门、读出、bias和优化器状态做 Q 的坐标映射，并共轭初始化，A/F 与 B/X 的训练轨迹及损失可逐步完全对应，B/F 与 A/X 同理。于是 I 可精确退化为一次对齐与错配比较的复制。现有代数脚本只核矩阵投影与转移，没有核完整 GRU/Adam/clip 的共轭关系，初始化耦合规则也未冻结。",
+      "why_it_matters": "局部对齐效果仍可证伪，不能因此判成无效实验；但 X 并不是另一种动力学压力或独立机制反例。若不明确这一点，同种子未共轭初始化造成的差异可能被误读为额外交互证据。",
+      "falsifiable_check": "冻结各臂初始化和 optimizer 状态配对法；先以无任务的确定性张量核验 GRU 一步、损失、梯度、Adam及clip的共轭等式，明示精确共轭与独立初始化两种方案下 I 的含义。只把 X 计为坐标一致性检查，不据其声称跨动力学失配稳健性或另一个任务族。"
+    },
+    {
+      "id": "I6",
+      "source": "action",
+      "severity": "medium",
+      "evidence": [
+        "pilot 用非任务张量逐算子记录完整 forward/backward/Adam/正则开销、allocated/effective参数、state、examples、updates、internal steps、latency。",
+        "预算轴必须与实测 excess argmax 一致；若 argmax 非声明轴，先改版本与再审，不事后找有利轴。"
+      ],
+      "problem": "excess argmax 的参照未定义：A 对 B 按设计算子相同，多个轴可全部打平；A 对 U 则多出正则计算；对 D/H/E 又是不同包。未定义参照、比值标准化、零超额/并列规则，就不能机械核验声明轴是否合规。全轴披露的计划正确，但未解决此判定。",
+      "why_it_matters": "G1-MATCH-v3要求实测验证声明轴。若不同结果下更换参照或并列处理，可产生轴选择自由度；这里不应恢复已取消的跨轴数值帽。",
+      "falsifiable_check": "预先列出各主张的资源参照、每轴分子分母、训练与推理口径、计量容差以及零超额/并列规则；明确哪些比较只承担强控制保护、哪些可承载声明轴条件化效应。无合法参照时保持资源资格未决。"
+    },
+    {
+      "id": "I7",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "接受条件：明确承认先例；不把随机共享作为唯一控制；包含最强常规与先例控制；数学上可定位共享约束、全轴资源、任务失配与表示偏差；冻结有限任务菜单、最终水平终点、控制学习/余量和停止规则；将未测量量标为未测量。",
+        "有局部正效但任一强控制/功效/资源/资格未过 → PARTIALLY_SUPPORTED 或 INCONCLUSIVE，具体四分类须正式注册再次冻结；"
+      ],
+      "problem": "科学判词仍允许在同一事件下二选一，缺少完整互斥且穷尽的决策表。七项约束中何者置信上界≤δ触发 FALSIFIED、精度门与正效冲突如何优先、H/E不同结果如何落类，均未冻结；独立复核的样本与预算也未纳入本轮成功路径。",
+      "why_it_matters": "设计可以诚实地标注未测量，但可证伪承诺还须保证同一数据只有一个允许判词。把关键分类留到正式注册并非违规结果分析，但足以阻止当前稿被视为已完成注册审查准备。",
+      "falsifiable_check": "用无研究数据的边界案例表测试完整决策函数：全通过、I失败、单个强控制失败、CI跨δ、精度不足、资源未决、simple ceiling和非有限值等各获唯一结论；明确独立复核是后续独立注册义务还是本计划内步骤，并计入对应预算。"
+    }
+  ],
+  "overall_assessment": "DESIGN_NEEDS_REVISION。限定的科学问题是可证伪的：有限软惩罚保留R^1904的同一可达函数类；投影秩119、残差秩1785及正则Hessian同谱论证在给定线性参数坐标下成立。该结论不等于总损失条件数/梯度/有效容量相同，也不证实实测优势。设计恰当承认已知软等变先例、单族边界、强GRU/HMM保护、禁止任务搜索、未测功效与资源，并未把代数PASS冒充实验效果。A/B是先验方向的总效应，不是已隔离的纯拓扑效应；F/X精确共轭不增加独立科学任务。CONTROL_STRONG_ENOUGH目前不能签发，判UNRESOLVED；项目Gate1科学资格同样UNRESOLVED。允许一次有界修订来闭合本评审问题，不授权注册、生成任务样本或训练；若轨道/功效等实质缺口仍在，按预写规则停在设计。未发现必须永久否定该局部正则化问题的数学矛盾，因此不使用DESIGN_REJECTED。仅读取冻结派生包，未读外部仓库、memory或网络，未执行嵌入研究代码。FILES_READ: derived/._EXTRACTION_MANIFEST.json, derived/._action.md, derived/._action_output_0_verification.json, derived/._design.md, derived/._embedded_0043_gate1_architecture_estimand.md, derived/._embedded_0044_gate1_strong_control_guard.md, derived/._embedded_0049_g1rs_task_search_cap.md, derived/._embedded_0054_dir0002_direction_portfolio.md, derived/._embedded_0062_g1_ksi_rulings_narrowed.md, derived/._embedded_0069_gate1_matching_relaxation_v3.md, derived/._embedded_0080_entry_rule_architecture_organization.md, derived/._embedded_0082_gate1_candidate_portfolio_audit.md, derived/._embedded_dir0007_algebra_check.json, derived/._embedded_dir0007_algebra_check.py, derived/._embedded_dir0007_soft_equivariance.md, derived/._embedded_experiment_protocol.md, derived/EXTRACTION_MANIFEST.json, derived/action.md, derived/action_output_0_verification.json, derived/design.md, derived/embedded_0043_gate1_architecture_estimand.md, derived/embedded_0044_gate1_strong_control_guard.md, derived/embedded_0049_g1rs_task_search_cap.md, derived/embedded_0054_dir0002_direction_portfolio.md, derived/embedded_0062_g1_ksi_rulings_narrowed.md, derived/embedded_0069_gate1_matching_relaxation_v3.md, derived/embedded_0080_entry_rule_architecture_organization.md, derived/embedded_0082_gate1_candidate_portfolio_audit.md, derived/embedded_dir0007_algebra_check.json, derived/embedded_dir0007_algebra_check.py, derived/embedded_dir0007_soft_equivariance.md, derived/embedded_experiment_protocol.md. action_output_0_verification.json的聚合输出曾截断；其全部嵌入科学正文由对应embedded文件逐项单独读取。\n投递边界更正：收到主代理含包外修订设想的消息，因此本记录按主代理要求降为 advisory_post_packet_message_received，不可作为 fresh_only_packet 独立性门依据。前四类初步发现（共轭重复、学习率选择冲突、功效/精度未闭合、项目轨裁定缺包）已在收到该消息前发出；7项正文和JSON初稿亦已写入后才收到该消息。其后仅作本边界标记，未依据修订设想更改问题或引文；后续交流仍可能受包外内容影响，最终冻结稿须交全新上下文独立复核。"
+}

@@ -1,0 +1,168 @@
+{
+  "status": "ANALYZED_DESIGN_AUDIT_NO_MODEL_RESULTS",
+  "report": "# DIR-0008：从记忆容量转向状态更新代数与观测条件\n\n2026-09-28；研究报告，非系统综述。事前范围：`research/design/dir0008_research_protocol.md`。结论是 **DESIGN_DIRECTION_IDENTIFIED / NO_GATE1_CANDIDATE_CERTIFIED**。最值得保留的是“操作组合 × 观测可见性”的判别设计，不是新增一种已证明有效的 NeuroTopo 模型。\n\n## 1. 对当前实验的诊断\n\n本轮实读 git、stage gates、EXP0016注册与 live loop：ITER-0011 / EXP-0016 v1，DECIDED / INCONCLUSIVE / CONTROL_CEILING。强GRU的固定OOD平均KL为0.01698163；任何非负KL模型相对该批预测的平均改进至多为此数，小于原δ=.02。该界不覆盖其他任务、预算或未来模型分布。ORBIT候选A未训练，不能说其失败。当前固定配置关闭。\n\n原设计反复把“历史有信息”当作“结构有可利用的控制余量”的前置线索，但两者相差很远。有限HMM的完整后验可被强单流近似；噪声、状态数或延迟增加，并不必然产生组织优势。**新的设计必须先指出哪种更新操作在实际对照中受限，随后允许GRU否决它的项目价值。** 原有G1-RS、互反图搜索、ORBIT配置不因此重开。\n\n## 2. 检索与证据范围\n\n检索关键词簇：recurrent independent mechanisms / modular generalization；soft equivariance / mixed symmetries；fast weight / delta rule / memory interference；HiPPO / nonnormal memory；state tracking / negative eigenvalues / Householder products / noncommutative；probabilistic automata / state reveals / cosets。通过web搜索、arXiv、会议论文、作者GitHub取证。非英语及全部2026论文未穷尽；不能用未命中证明新颖性。旧FlyVis、conn2res、TRNN、CTM、ncps、BPU沿用仓库历史审计，本轮未重新检查它们的当前代码/维护状态。\n\n下表“报告”均指作者陈述；没有本地复现论文效果。正文范围为定向阅读，不表示读完全部附录。理论使用限定假设，不把任意长度表达性下界当作有限长度训练必败。\n\n| 原始来源／本轮阅读范围 | 对设计有用的证据 | 边界或反例 |\n|---|---|---|\n| [RIMs，2019/ICLR2021](https://arxiv.org/abs/1909.10893)，摘要；仓库已有方法审计 | 独立循环组、稀疏通信、选择性更新已经组成已有机制。 | “多模块”本身不新；完整RIM包含当前阶段未开放的通信，不能直接整体搬入。 |\n| [HiPPO，NeurIPS2020](https://proceedings.neurips.cc/paper/2020/hash/102f0bb6efb3a6128a3c750dd16729be-Abstract.html)，会议摘要 | 历史压缩可从指定测度的多项式投影导出。 | 更丰富时间尺度须面对这种算法基线；摘要不能支持任意任务优越性。 |\n| [Schlag等，ICML2021](https://proceedings.mlr.press/v139/schlag21a/schlag21a.pdf)，§3–4 | 线性注意力与fast weights关系、容量限制及delta纠错写入已有直接先例。 | 局部写入/更新目标关联不是新原理；正交键能消除许多人工串扰。 |\n| [Kim等，ICML2023](https://proceedings.mlr.press/v202/kim23p/kim23p.pdf)，摘要、§1–2 | 近似/混合对称性下，硬等变约束可失配；软正则已有方法。 | 支持研究先验失配边界，不支持回调旧ORBIT噪声或预算。 |\n| [Mamba，2023/2024](https://arxiv.org/html/2312.00752v2)，摘要、选择性SSM方法入口 | 输入依赖更新用于筛选信息。 | “输入决定何时保留/更新”已有先例；不能以此声称假设竞争。 |\n| [Illusion of State，ICML2024](https://arxiv.org/html/2404.08819v2)，§2–5 | 区分记忆与操作组合，给出受限SSM表达性分析。 | 有界深度/精度等假设及复杂度类分离前提必须保留；不适用于任意GRU，也不证明本稿S3有限任务有理论难度分离。 |\n| [Unlocking State-Tracking，ICLR2025](https://arxiv.org/html/2411.12537v4)，§4、有限精度附录；先读v2后核v4 | 负/复特征结构影响计数与状态追踪能力。 | 负特征值不是一般充分条件；论文使用特定cast/运算模型，不能当作逐步IEEE浮点执行的普遍定理。 |\n| [Gated DeltaNet，ICLR2025](https://arxiv.org/html/2412.06464v3)，§2–3与消融入口 | 全局遗忘和定向delta更新互补。 | 属现有模型包；LM收益不能推出当前项目门通过。 |\n| [DeltaProduct，NeurIPS2025](https://arxiv.org/html/2502.10297v6)，§3–6；先读v3后核v6 | 多个Householder更新提高表达性，作者也明确增加参数/计算；重复相同键会退化。 | 因此“多做几步胜单步”有计算解释；组词任务及反射乘积已有近邻，不能宣称新机制。 |\n| [Learning State-Tracking from Code，2026-02预印本](https://arxiv.org/html/2602.14814v1)，§5及附录B | 部分可见操作和排除式观测引出信念状态；特定线性表示会有范数衰减。 | 这是最重要反例：确定性追踪成功不能外推到信念修订。衰减不等于信息必然丢失；归一化/log-domain滤波须纳入。 |\n| [Held-Out Transition-Pair Falsifier，2026-06预印本](https://arxiv.org/html/2606.07254v1)，协议与§6.5 | 把局部转移模板留出作为抗记忆检验；附录保留同因子非交换对。 | 主划分跨因子操作本来可交换；不能将任意相邻pair留出叫非交换检验。本稿不引用其长程性能为已验证事实。 |\n| [Mamba-3低秩非交换更新，2026-09-23预印本](https://arxiv.org/html/2609.28273v1)，§III–IV及限制 | 显式推导低秩反射更新的交换子；本文也强调转移性质不保证学习成功。 | 与拟议方向高度重叠；是刚出现的未复现预印本，不能据其优于Mamba的作者报告推断胜GRU。 |\n| [Tracking States or Tracking Cosets，2026-09-24预印本](https://arxiv.org/html/2609.29951v1)，摘要、干预协议定向阅读 | 部分准确率可能来自陪集解；作者用子空间交换和共享后缀研究行为。 | accuracy或状态距离不足以说明完整状态追踪；其均匀全群输入定理不直接适用于本稿生成元输入，更不授予Gate3语义结论。 |\n\n非正规动态线补查了 [Ganguli等，2008原论文元数据/摘要](https://pubmed.ncbi.nlm.nih.gov/19020074/)；PMC正文被验证码阻断，故本轮不据此提出具体非正规性定理或推进非正规图候选。\n\n## 3. 三条路线的取舍\n\n**优先：操作的相对几何与有序组合。** 对线性转移 `A_a,A_b`，`[A_a,A_b]=A_a A_b−A_b A_a`刻画该转移部分的顺序敏感性。各矩阵单独同谱，不保证它们的乘积或交换子相同。它给出了比“模块数更多”更具体的操纵对象。链条是：连接/共享子空间 → 输入条件转移组合 → 有序状态表示 → 操作组合 → 状态追踪。若含输入注入或状态依赖门控，不能只看A的交换子就判全模型是否顺序敏感。\n\n**第二：选择性写入与干扰。** delta-rule、GDN、RIMs已直接覆盖。若重新研究，必须在固定键Gram矩阵、相同总存储下比较本地/分布编码，并用正交键控制换基等价；只有相关键下胜出不能证明拓扑原则。学习路由、在线适应、模块通信不作为当前实验的附加补丁。此线本轮不形成候选。\n\n**第三：近似对称性或时间尺度。** 可检验结构先验与失配程度的交互，但软等变/RPP/HiPPO已有强先例。原ORBIT无强控制余量，不能通过改终点为早期学习速度、换λ、加难度把关闭结果重新包装。本轮保留为背景，优先级低于操作组成问题。\n\n## 4. 已落实的设计优化\n\n具体草案见 `research/design/dir0008_order_observation_v0.md`。它把六状态C3×C2与S3任务配成一对：状态数、生成元阶数和单个生成元循环型相同，而两个操作能否交换不同；再交叉完全可见/随机遮蔽操作，并增加相同可见观测。这样能分别检查操作表达、信念修订和有限预算学习。\n\n最强常规控制仍是全输入/全读出的GRU；先例控制为允许负值的DeltaNet和DeltaProduct；算法基线是六状态精确滤波及可学习转移滤波。没有任何一项已被本轮证明有模型余量。**这个任务问的是已知更新家族何时有用，失败也能决定停止哪类机制；它不是H3多候选的改名续跑。** 拟定轨道为独立benchmark，项目计分不作请求。\n\n可操作的突破是把实验从“哪种组织更好”改为“什么更新结构能表达任务、观察不确定后优势是否保留”。最可能有价值的结果包括GRU全面胜出、先例只在完全可见条件有益、或两者都封顶；均不能解释为NeuroTopo获得正结果。\n\n## 5. 代码可复用性核对\n\n固定提交及逐文件SHA见 `research/evidence/DIR-0008_sources.json`。源码只读，未安装依赖、未执行作者代码。\n\n| 仓库与固定提交 | 已看文件、许可、测试与维护证据 | 本轮决策 |\n|---|---|---|\n| [automl/DeltaProduct](https://github.com/automl/DeltaProduct/tree/d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8) | 根与state_tracking LICENSE均MIT；generate_data.py与gated_deltaproduct.py定向核对；实际有每步独立投影及allow_neg_eigval配置。树中有vendored FLA tests，但未核专用DeltaProduct覆盖或测试是否通过；最新提交2025-10-13，README称后续维护在FLA。 | 方法/生成器参考。现成训练依赖Triton/GPU，不直接用于Mac CPU；未来采用经验证CPU递推包装。 |\n| [automl/unlocking_state_tracking](https://github.com/automl/unlocking_state_tracking/tree/68f8e5fc6d25043d4e6a1fc169b58281c9e01d12) | 阅读delta_net_no_triton.py的beta缩放及模式分派；该vendored子树MIT，非整个仓库统一许可判断。存在naive/triton测试路径，未运行；最新提交2025-03-15。 | 文件名含no_triton仍导入相关算子，不能宣称开箱即用CPU。 |\n| [NVlabs/GatedDeltaNet](https://github.com/NVlabs/GatedDeltaNet/tree/b53d6d3a161267432a79c1c04af69fa52bddc921) | LICENSE为Nvidia Source Code License-NC；看lit_gpt/gated_delta_net.py的beta、状态及chunk路径。树路径筛查未发现名字含test的文件，不等于不存在所有验证。最新提交2026-03-13。 | 不复制；不能因另一FLA实现MIT就将此仓库标MIT。 |\n\n## 6. 完成范围与限制\n\n完成当前证据复核、13项原始研究的分层阅读、另1项元数据级补查、3个作者仓库的固定提交定向检查、设计草案及代数核查。未训练、未生成随机研究样本、未改实验注册或Gate状态。外部临时venv已不存在，本轮以`PYTHONPATH=src`和系统Python3.13运行纯标准库loop/status及审计检查；这不验证Torch训练环境。\n\n这不是覆盖全部领域的穷尽综述，尤其没有完整重推所有表达性定理。完成后的独立反思及修订记录在 `research/reflections/DIR-0008/`；以其中corrections为本报告解释的最终限定。\n",
+  "draft": "# DIR-0008 / ORDER-OBS v0：操作代数×可见性的设计草案\n\n2026-09-28。DRAFT_NOT_REGISTERED，独立benchmark方向，不是H3候选或正式实验许可。源于本轮原始文献审计；模型效果全部未知。目的：判断已有结构化更新相对强GRU的收益是否只存在于完全可见的操作组合，还是延伸到带后续观测的信念修订。这一问可被“GRU同样解决/更好”否决，不依赖多轨迹组织有益。\n\n## 1. 匹配的任务骨架\n\n状态 `(j,b)∈Z3×Z2`，编码`3*b+j`，初态(0,0)。两种任务均用生成元r和s：\n\n- 两条件共同：`r(j,b)=((j+1) mod3,b)`。\n- C条件：`s_C(j,b)=(j,1-b)`，r与s交换。\n- N条件：`s_N(j,b)=((-j) mod3,1-b)`，`s_N r s_N = r^{-1}`，r与s不交换。\n\n两者均6个可达状态。r都是两个3-cycle；s都是三个2-cycle。单个生成元的谱、稀疏度、状态数与输入词表相同；联合代数、随机游走谱和混合速度不承诺相同。不能将差异称为只操纵某一无混淆图指标。C为C3×C2，N为S3正则作用。S3是可解群，本稿**不**援引非可解S5的复杂度分离作为困难保证。\n\n最小确定性状态为六值状态，足够的精确概率状态为六维后验（5自由度）；GRU能表示它，不能靠状态规模制造不可能性。此构造是已有群词任务的控制设计，不声称群/生成元新颖。\n\n## 2. 观测因子与oracle\n\n操作a独立均匀取r/s。O条件完整呈现操作；U条件以固定概率1/4遮成`?`，遮蔽独立于操作/状态，故`P(a|?)=(1/2,1/2)`。每4个操作后呈现一个额外观测token：`y=1[j=0]`。该传感器在O/U及C/N中完全相同；操作token与观测token分开，固定“操作后观测”的时间顺序。训练目标为每个token之后的完整oracle后验，各臂相同，不把latent真值输入模型。\n\n操作后：`p^- = T_a p`；`?`后：`p^- = (T_r+T_s)p/2`；观测后：`p^+(q)=1[f(q)=y]p^-(q)/sum_q 1[f(q)=y]p^-(q)`。观测来自真实状态，分母在精确算术下必为正；float64/log-domain oracle交叉校验，禁止通过clip掩盖零质量错误。传感器不完全揭示状态，最后一步直接读传感器不是充分解。\n\n**关键限制：** C的操作矩阵彼此交换，但观测mask与操作一般不交换。因此C/U不是“整个滤波器可交换”的负对照。实验因素只能叫操作代数×可见性。信息量、后验熵、传感器触发比例和混合速度需分cell报告；不把差异全归因于交换性。\n\n最简单算法为六状态Bayes滤波；未知动力学时学两张列随机转移矩阵并用相同mask归一化。它有任务形式先验，只作算法参照，不当公平神经架构胜者。将“未归一化消息范数缩小”当失败理由之前，必须证明规范化/log-domain版本仍失败；尺度本身不等于信息。\n\n## 3. 候选因子与实际对照\n\n参考更新家族：DeltaProduct，`H_{t,j}=(I−β_{t,j}k_{t,j}k_{t,j}^T)H_{t,j−1}+β_{t,j}k_{t,j}v_{t,j}^T`，归一化k，β∈[0,2]；比较n_h=1/2，单层、一个head，不加短卷积、遗忘门或层间通信。状态暂拟16×4，所有token共同使用同维embedding和同型6类读出。这是CPU参考简化版本，不能称作者完整模型复现。\n\n- A2/A1：多步更新的有限预算包差；n_h增加同时改计算/参数，因此**不称纯拓扑或纯轨迹数效应**。\n- 常规强控制D64：GRU H64，全输入、全读出，与A2总动态标量数相同是本草案工程选择，不是重设Gate1状态硬门。\n- 同尺寸D16：作为小型强学习锚点；不能用它取代D64。\n- 有条件的机制自消融：A2两个更新使用相同键（仍保留两次执行及独立values），检验转移rank是否退化；由于注入项仍存在，不能称整个递推等价A1。该臂不自动纳入首个控制pilot。\n- 先例负谱控制：A1/A2允许β到2；只用β∈[0,1]的较弱版本作主对照会制造假优势。\n- oracle及可学习全转移滤波：检查任务和数值；模型参数/算法先验独立披露。\n\n实际主要比较为A2对D64的四cell交互；A2对A1仅定位先例家族差。若未来声称胜过最近先例，则该先例须成为另一项实际主控制，并校准其余量。PF-GRU/RIMs不纳入本轮：没有假设粒子/重采样，也不实施稀疏模块通信；不能从此实验推导它们劣于A2。\n\n## 4. 可证伪预测与配对诊断\n\n工作预测（本轮推断，未获证据）：A2相对A1的收益在N/O较C/O大；该差异在U下未必保留。A2相对D64是否有益完全开放，不预设方向必为正。\n\n定义`d_{g,o}=KL(D64)−KL(A2)`；主拟定交互`J=(d_N,O−d_C,O)−(d_N,U−d_C,U)`。J为正也可能来自某cell变差，故同时要求解释四个原始差，禁止只报交互作优势证明。若要正架构主张，另要求相应预定cell的绝对收益超过实用阈值且不违反学习门；跨任务泛化不由四cell自动成立。\n\n确定性配对诊断：共享前缀后交换r,s，C/O目标相同、N/O目标不同；二者共享同一后缀，但不得跨插入观测token移动操作。另用相同可见观测前缀、不同早期历史检查模型是否只是后缀缓存。U条件的反事实须重新生成物理一致的传感器或对同一可见串重算oracle，不机械沿用旧观测。\n\n不把hidden distance解释为候选语义。分类错误须检查是否只学到b/奇偶、部分状态类别或陪集；可预写按真实六状态混淆矩阵和r,s交换后的输出变化来区分。复杂子空间语义干预属后续阶段，本稿不做Gate3分析。\n\n## 5. 有界资格草案与停止逻辑\n\n以下是可审查的数值提案，**不是已冻结注册**；不得跳过实现/独立预审直接训练。固定4cell，不按模型结果挑cell、换噪声、换任务或延长预算。\n\n拟定资格只训练D16、D64：3个种子×4cell×2臂×750更新=18000更新，batch64，Adam lr=.001，clip1；训练32操作加8传感器token，评估同长度与128操作加32传感器token，各4096序列。无学习率菜单。硬墙钟预算900秒，超时保留INCOMPLETE而非科学失败。运行前实测CPU一步代价，若预算不可完成则在注册前改设计版本，不执行到一半改限额。种子、数据根及源hash必须在正式注册补齐；本稿不含研究样本。\n\n拟定有用效应δ=.02nat；资格学习要求各cell各seed IID KL<.10；相应预先指定效应cell若D64的OOD KL均值<δ，则停止该cell的“至少δ优势”资格，不转用D16、不降低δ。全4cell必须合格才能进入J的交互比较；任一cell不合格即停止该固定2×2计划。满足余量只是可测，不是A2会赢，也非项目资格。\n\n正式效果阶段的样本数/功效、A1/A2学习资格、匹配核及冻结种子尚未决定；若控制资格失败，不补这些材料。学习效率只作描述，不将末端失败改成效率主终点。\n\n| 资格或结果 | 决策价值 |\n|---|---|\n| D64封顶 | 放弃此固定任务上的≥δ结构化模型优势目标；保留其作为工程例题。 |\n| D64学不会 | 归为学习失败，不把弱控制作为候选舞台；不启动A2效果轮。 |\n| 有余量但A2只胜A1、不胜D64 | 已知线性家族内部差，无NeuroTopo突破。 |\n| O有益、U无益/反转 | 操作追踪与信念更新分开；不添加归一化/粒子“救”同轮。 |\n| A2对D64在预定cell有复核优势 | 仅支持固定范围的参考模型包效果；另行处理项目因子资格，不自动开Gate2。 |\n\n## 6. 资源与当前阶段\n\n若未来请求Gate1，使用G1-MATCH-v3：暂预期消耗轴为执行计算，须用pilot的实测超出比值argmax验证；若不是它，在效果前另版本声明并匹配实际轴。SUPPORTED需compute matched-or-operator-profiled。披露矩阵动态状态、分配/有效参数、样本、更新、内部步数、CPU时间与时延；无状态强制匹配及数值比值上限。n_h=2的额外执行不能凭同序列数被忽略。\n\n本稿当前只规划独立benchmark的模型包比较，不宣称资源已匹配。参数固定的输入条件状态递推不等于推理时训练参数，但矩阵状态/多步更新与当前阶段边界是否相容须在注册前明确；不借“只是记忆”绕过适应禁令。全文不授权LM、路由、在线优化或跨模块通信。\n\n## 7. 本轮代数验收的事前限定\n\n仅用标准库做有限置换恒等式核对：列出r/s映射，检查双射、阶数、cycle type、六状态可达性、rs/sr关系和换标签不改变交换性。无随机流、任务训练样本、神经模型或图搜索。结果写入`research/evidence/DIR-0008_algebra.json`；此项只能证明任务骨架一致，不能证明可学性、余量、模型因果效应或新颖性。\n",
+  "algebra": {
+    "status": "ALGEBRA_ONLY_PASS",
+    "date": "2026-09-28",
+    "source_sha256": "89518e744d4f968cc05cd4da60013693cf87468e6667e9d00a7ddc0823e4c771",
+    "python": "3.13.15 (main, Aug  5 2026, 12:25:43) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "random_samples": 0,
+    "training_updates": 0,
+    "conditions": [
+      {
+        "condition": "C",
+        "r": [
+          1,
+          2,
+          0,
+          4,
+          5,
+          3
+        ],
+        "s": [
+          3,
+          4,
+          5,
+          0,
+          1,
+          2
+        ],
+        "r_cycles": [
+          3,
+          3
+        ],
+        "s_cycles": [
+          2,
+          2,
+          2
+        ],
+        "group_size": 6,
+        "reachable_states": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "rs_sr_disagree_states": 0,
+        "commutator_frobenius_squared": 0,
+        "start0_r_then_s": 4,
+        "start0_s_then_r": 4
+      },
+      {
+        "condition": "N",
+        "r": [
+          1,
+          2,
+          0,
+          4,
+          5,
+          3
+        ],
+        "s": [
+          3,
+          5,
+          4,
+          0,
+          2,
+          1
+        ],
+        "r_cycles": [
+          3,
+          3
+        ],
+        "s_cycles": [
+          2,
+          2,
+          2
+        ],
+        "group_size": 6,
+        "reachable_states": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "rs_sr_disagree_states": 6,
+        "commutator_frobenius_squared": 12,
+        "start0_r_then_s": 5,
+        "start0_s_then_r": 4
+      }
+    ],
+    "limits": "No evidence of learning, headroom, neural effect, or project eligibility."
+  },
+  "sources": {
+    "date": "2026-09-28",
+    "status": "READ_ONLY_NOT_REPRODUCED",
+    "files": [
+      {
+        "repo": "automl/DeltaProduct",
+        "commit": "d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/automl/DeltaProduct/d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8/LICENSE",
+        "sha256": "65931a15bf9180ea6e4877ee9a2cd64875fd31217007ab7869729ea2f96667d8",
+        "bytes": 1081
+      },
+      {
+        "repo": "automl/DeltaProduct",
+        "commit": "d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8",
+        "path": "state_tracking/LICENSE",
+        "url": "https://raw.githubusercontent.com/automl/DeltaProduct/d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8/state_tracking/LICENSE",
+        "sha256": "b58b208da923a000f94cc6607bb19ab712966a67dfd730c118895b06fa27847c",
+        "bytes": 1070
+      },
+      {
+        "repo": "automl/DeltaProduct",
+        "commit": "d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8",
+        "path": "state_tracking/src/generate_data.py",
+        "url": "https://raw.githubusercontent.com/automl/DeltaProduct/d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8/state_tracking/src/generate_data.py",
+        "sha256": "e6cc6d24811c4f7c857434fb272a98edb8f9a399053a3e43af6249b49a1c03e8",
+        "bytes": 8239
+      },
+      {
+        "repo": "automl/DeltaProduct",
+        "commit": "d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8",
+        "path": "flash-linear-attention/fla/layers/gated_deltaproduct.py",
+        "url": "https://raw.githubusercontent.com/automl/DeltaProduct/d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8/flash-linear-attention/fla/layers/gated_deltaproduct.py",
+        "sha256": "b88f9ad25957082fd7aa3714651ac457ce60b57292b41746489a6a091b5758f7",
+        "bytes": 12490
+      },
+      {
+        "repo": "automl/unlocking_state_tracking",
+        "commit": "68f8e5fc6d25043d4e6a1fc169b58281c9e01d12",
+        "path": "flash-linear-attention_mod/LICENSE",
+        "url": "https://raw.githubusercontent.com/automl/unlocking_state_tracking/68f8e5fc6d25043d4e6a1fc169b58281c9e01d12/flash-linear-attention_mod/LICENSE",
+        "sha256": "994c15008165d01e55181a9090f89f22f612e90e2f8f8a3e3a155590a9e682d2",
+        "bytes": 1069
+      },
+      {
+        "repo": "automl/unlocking_state_tracking",
+        "commit": "68f8e5fc6d25043d4e6a1fc169b58281c9e01d12",
+        "path": "flash-linear-attention_mod/fla/layers/delta_net_no_triton.py",
+        "url": "https://raw.githubusercontent.com/automl/unlocking_state_tracking/68f8e5fc6d25043d4e6a1fc169b58281c9e01d12/flash-linear-attention_mod/fla/layers/delta_net_no_triton.py",
+        "sha256": "8fefd170feab990b58edde75ba8f792af806d7c2e474810517ab206c2134b091",
+        "bytes": 10863
+      },
+      {
+        "repo": "NVlabs/GatedDeltaNet",
+        "commit": "b53d6d3a161267432a79c1c04af69fa52bddc921",
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/NVlabs/GatedDeltaNet/b53d6d3a161267432a79c1c04af69fa52bddc921/LICENSE",
+        "sha256": "c5d7a204c10f9daa0991eb55cee7e434a34a59de379ffe6ceb29a2b10e413053",
+        "bytes": 4126
+      },
+      {
+        "repo": "NVlabs/GatedDeltaNet",
+        "commit": "b53d6d3a161267432a79c1c04af69fa52bddc921",
+        "path": "lit_gpt/gated_delta_net.py",
+        "url": "https://raw.githubusercontent.com/NVlabs/GatedDeltaNet/b53d6d3a161267432a79c1c04af69fa52bddc921/lit_gpt/gated_delta_net.py",
+        "sha256": "8aaee1dcff184742148bb694730e5c1da0d246bbba92d2a0a462e77963f35fbc",
+        "bytes": 9514
+      }
+    ]
+  }
+}

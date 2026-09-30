@@ -1,0 +1,114 @@
+{
+ "schema": "gpi_theta_recoverability_v1",
+ "status": "engineering premise check; not a verdict",
+ "constants": {
+  "M": 6,
+  "T": 64,
+  "lambda": 0.7,
+  "beta": 0.8,
+  "grid": 32,
+  "episodes": 800,
+  "seed": 20260924,
+  "grid_step": 0.01935483870967742
+ },
+ "rows": [
+  {
+   "summary": "autocorr_k1",
+   "dim": 1,
+   "r2": 0.0654,
+   "rmse_theta": 0.17664,
+   "rmse_over_step": 9.13
+  },
+  {
+   "summary": "autocorr_k2",
+   "dim": 2,
+   "r2": 0.0984,
+   "rmse_theta": 0.17349,
+   "rmse_over_step": 8.96
+  },
+  {
+   "summary": "autocorr_k4",
+   "dim": 4,
+   "r2": 0.1774,
+   "rmse_theta": 0.16572,
+   "rmse_over_step": 8.56
+  },
+  {
+   "summary": "autocorr_k8",
+   "dim": 8,
+   "r2": 0.1948,
+   "rmse_theta": 0.16396,
+   "rmse_over_step": 8.47
+  },
+  {
+   "summary": "autocorr_k16",
+   "dim": 16,
+   "r2": 0.2013,
+   "rmse_theta": 0.16329,
+   "rmse_over_step": 8.44
+  },
+  {
+   "summary": "window_k1",
+   "dim": 6,
+   "r2": -0.0409,
+   "rmse_theta": 0.18642,
+   "rmse_over_step": 9.63
+  },
+  {
+   "summary": "window_k2",
+   "dim": 12,
+   "r2": -0.0267,
+   "rmse_theta": 0.18515,
+   "rmse_over_step": 9.57
+  },
+  {
+   "summary": "window_k4",
+   "dim": 24,
+   "r2": -0.0334,
+   "rmse_theta": 0.18575,
+   "rmse_over_step": 9.6
+  },
+  {
+   "summary": "window_k8",
+   "dim": 48,
+   "r2": -0.0787,
+   "rmse_theta": 0.18977,
+   "rmse_over_step": 9.8
+  },
+  {
+   "summary": "evidence_k4",
+   "dim": 4,
+   "r2": -0.015,
+   "rmse_theta": 0.18408,
+   "rmse_over_step": 9.51
+  },
+  {
+   "summary": "evidence_k8",
+   "dim": 8,
+   "r2": -0.0144,
+   "rmse_theta": 0.18403,
+   "rmse_over_step": 9.51
+  },
+  {
+   "summary": "evidence_k16",
+   "dim": 16,
+   "r2": -0.0145,
+   "rmse_theta": 0.18404,
+   "rmse_over_step": 9.51
+  },
+  {
+   "summary": "evidence_k32",
+   "dim": 32,
+   "r2": -0.0144,
+   "rmse_theta": 0.18403,
+   "rmse_over_step": 9.51
+  },
+  {
+   "summary": "evidence_k64",
+   "dim": 64,
+   "r2": -0.0237,
+   "rmse_theta": 0.18487,
+   "rmse_over_step": 9.55
+  }
+ ]
+}

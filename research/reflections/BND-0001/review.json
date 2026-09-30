@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "e9dd8353f9686ae87c0f3bc3ccc7d407cdc85d124a17d6678f365c081659dfd6",
+  "reviewer": {
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "BND-01",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "计算两层**必要但可能很松**的上界：",
+        "上界未排除不证明可达。",
+        "\"excluded_by_total_count\": 0",
+        "\"excluded_by_full_block_matrix\": 0"
+      ],
+      "problem": "十图均未被计数上界排除，只能说明这两层必要条件没有否定目标；逐点度、强连通及谱、motif、路径等约束的联合可行性仍未知。",
+      "why_it_matters": "不能把 0/10 排除解释为 +0.10 可达，更不能据此开展能力或因果结论。",
+      "falsifiable_check": "在预先登记的全部图约束下给出可复核的达标构造，或用有界搜索证明指定图无可行解。"
+    },
+    {
+      "id": "BND-02",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "2. 额外固定完整4×4组间计数 `E_ab`：",
+        "这比本项目当前只固定总 `C` 的约束**更强**",
+        "\"scope\": \"Necessary count-only upper bounds. Full block matrix is stronger than the registered total-cross constraint. No new graphs, sampling, spectrum matching, model training or task scores.\""
+      ],
+      "problem": "完整块矩阵是额外加入的条件，不能被表述成当前图搜索必须满足的原约束。本次两层上界都未排除目标，因此没有发生这种误判；后续引用时仍须保留区别。",
+      "why_it_matters": "若以后只有完整块矩阵上界排除目标，该结果不能排除仅固定总跨块数时的可行图。",
+      "falsifiable_check": "逐项对照注册的图约束与任何后续可行性结论；凡使用完整块矩阵排除结果，明确限定在固定 `E_ab` 的图集合。"
+    },
+    {
+      "id": "BND-03",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "+0.10 是比一次交换约0.002显著更大的**探索性图处理对比目标**，并非已证明有任务效用的阈值",
+        "\"target_added_reciprocity\": 0.1",
+        "探索目标 +0.10 的选取是方法对比尺度而非能力效应阈值，不能被论文叙述成“有用拓扑差异”已验证。"
+      ],
+      "problem": "+0.10 有预先固定的操作尺度依据，但 packet 没有表明它是有用的处理强度或任务效应阈值。最终 decision 已正确限定其含义。",
+      "why_it_matters": "把图指标差异当作能力效应，会越过图可行性和任务因果检验两道尚未完成的步骤。",
+      "falsifiable_check": "若主张该强度有任务效用，预先登记处理强度、匹配控制与任务指标，比较多个强度下可复现的任务效应。"
+    },
+    {
+      "id": "BND-04",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "输出若 `BOUND_NONDECISIVE`，明确承认这条低成本路径未改变候选可行性，不继续叠加更复杂的图搜索来救 H3 或 Gate 1。",
+        "\"decision_label\": \"BOUND_NONDECISIVE\"",
+        "本轮按协议**停在上界审计**，不延伸为新的随机交换搜索、不训练模型、不改变 `LOCAL_WITNESS_ONLY` 候选状态。",
+        "H1/H2 仍 UNTESTED；Gate 1 仍 NOT_PASSED。"
+      ],
+      "problem": "结果足以触发本次审计的停止规则，却没有提供改变候选状态、启动后续实验或通过 Gate 1 的证据。最终 decision 与这一范围一致。",
+      "why_it_matters": "停止审计是协议行动，不是科学支持或反驳结论；两者混淆会使后续实验门槛失效。",
+      "falsifiable_check": "核对后续状态记录：本次结果应仅关闭上界审计；任何候选升级或 Gate 变更都须引用独立满足对应门槛的新证据。"
+    }
+  ],
+  "overall_assessment": "packet 中的公式、逐图目标和 0/10 排除结果支持 BOUND_NONDECISIVE。设计与最终决定均明确区分必要上界、额外块矩阵约束和探索性 +0.10 目标。主要剩余问题是这些宽松上界无法判断联合约束下的可达性，也不能改变 H1/H2 或 Gate 1 的科学状态。"
+}

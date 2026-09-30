@@ -1,0 +1,101 @@
+{
+  "packet": "research/reflections/DIR-0006-AUDIT/packet.json",
+  "packet_sha256": "046cfb67f8801af1b4fbd4241698d360a2241e7f7b300b57ecc905e261723140",
+  "parts": [
+    {
+      "bytes": 5309,
+      "matches_packet_digest": true,
+      "part": "design.md",
+      "sha256": "9fccae713a30a9c6474488ceb744a56ea6b7acfab878273bf5a06a6e09bb0a52"
+    },
+    {
+      "bytes": 8765,
+      "matches_packet_digest": true,
+      "part": "action.md",
+      "sha256": "794730076c6f8b9538e1fa66102a25093dbe9b09fbbcf94d1ddc099911d928d5"
+    },
+    {
+      "bytes": 36049,
+      "matches_packet_digest": true,
+      "part": "action_output_0_verification.json",
+      "sha256": "812efa8a6f136a4e1f59e9e82ca77c0370a8fc207816753892d91f70bd949f3d"
+    },
+    {
+      "bytes": 6197,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0006_c8_predesign_v0.md",
+      "sha256": "66f05379ad79157788790a6aa341047ad36ef60f2ad3e640df602ec49b0f5777",
+      "source_path": "research/design/dir0006_c8_predesign_v0.md"
+    },
+    {
+      "bytes": 3705,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_h1_h2_existing_evidence_audit.md",
+      "sha256": "4e6200f71800ac88eb86a6e24d3c0d092d8e0821e5178285e13b1cbdad445a9b",
+      "source_path": "research/evidence/h1_h2_existing_evidence_audit.md"
+    },
+    {
+      "bytes": 2860,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_h1_reciprocity_feasibility.md",
+      "sha256": "42d8067e9c1d61d0b519c06a1ed4289c014e2efdc77579d1f845c188271a2cd4",
+      "source_path": "research/evidence/h1_reciprocity_feasibility.md"
+    },
+    {
+      "bytes": 1956,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_h1_null_family_review_criteria.md",
+      "sha256": "43e5dbf8a33a3b791b8efaef8947a47e2c81a4a7ebbfdf9ec12b32c8743639b9",
+      "source_path": "research/design/h1_null_family_review_criteria.md"
+    },
+    {
+      "bytes": 2304,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_topology_null_feasibility.md",
+      "sha256": "12a8bf1e5f13789fe75c219d43d0a14b7e8df1599ad2fb9b6e68a8922e2a4abc",
+      "source_path": "research/prior_art/topology_null_feasibility.md"
+    },
+    {
+      "bytes": 5938,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_gate1_benchmark_baseline_audit.md",
+      "sha256": "7d3edfa4f41eb4d8212fcc036b1dff85c2feaad2085be55f4822529e0d1d43dd",
+      "source_path": "research/evidence/gate1_benchmark_baseline_audit.md"
+    },
+    {
+      "bytes": 1594,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_hypotheses.md",
+      "sha256": "b9776a696deeff68c2df2dc028b7d5afca02a757594428007f155e963517bedc",
+      "source_path": "research/hypotheses.md"
+    },
+    {
+      "bytes": 2764,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0004_h1_h2_evidence_scope.md",
+      "sha256": "33dcfb86b56bd5f7c63f3547f4b04846e41dcb1fe7ce12f1bf6e6a5c1c1d8694",
+      "source_path": "research/decisions/0004_h1_h2_evidence_scope.md"
+    },
+    {
+      "bytes": 1719,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0014_h1_range_no_go_now.md",
+      "sha256": "b5157e6d1ab894932eaee594adbfc3bcae852ffd1843346a0d43f6f6380ec9fd",
+      "source_path": "research/decisions/0014_h1_range_no_go_now.md"
+    },
+    {
+      "bytes": 1241,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0016_h1_count_bound_nondecisive.md",
+      "sha256": "b2da97c8e06cf110b2ae7de686b61285dac96ec200184091f664285ae9e7b040",
+      "source_path": "research/decisions/0016_h1_count_bound_nondecisive.md"
+    },
+    {
+      "bytes": 3511,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0080_entry_rule_architecture_organization.md",
+      "sha256": "9a9838660ebb9e6efcb475fc6169daed7f02abab97a848547149a6b513ea19c6",
+      "source_path": "research/decisions/0080_entry_rule_architecture_organization.md"
+    }
+  ]
+}

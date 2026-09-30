@@ -1,0 +1,731 @@
+{
+  "experiment_id": "EXP-0016",
+  "version": "v1",
+  "config": {
+    "experiment_id": "EXP-0016",
+    "version": "v1",
+    "workflow": "orbit_control_pilot",
+    "protocol": "experiments/EXP-0016/v1.md",
+    "entry_contract": "research/entries/EXP-0016.json",
+    "output": "artifacts/EXP-0016/v1",
+    "task": {
+      "states": 16,
+      "train_length": 32,
+      "eval_lengths": [
+        32,
+        64
+      ],
+      "train_root_base": 1600000000,
+      "eval_root_base": 1700000000,
+      "eval_examples": 4096
+    },
+    "training": {
+      "seeds": [
+        16001,
+        16002,
+        16003
+      ],
+      "batch_size": 64,
+      "updates": 3000,
+      "lr": 0.001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "clip": 1.0,
+      "threads": 1,
+      "monitor_every": 500
+    },
+    "qualification": {
+      "h_iid_max": 0.1,
+      "h_ood_upper_max": 0.02,
+      "iid_each_max": 0.15,
+      "iid_mean_max": 0.1,
+      "ood_each_min": 0.04,
+      "ood_each_max": 1.0,
+      "ood_mean_min": 0.08,
+      "ood_mean_max": 0.8,
+      "bootstrap_resamples": 10000,
+      "bootstrap_root_base": 1800000000
+    },
+    "resource": {
+      "worker_wall_seconds_cap": 1200,
+      "reproduction_wall_seconds_cap": 300,
+      "research_update_cap": 36000
+    },
+    "gate1_claim": false
+  },
+  "config_sha256": "c8d98eafebfd34c29eb55b414e3c2f8bfbcaf07092427303cf1a941299826fa6",
+  "source_repo": "/private/tmp/neurotopo-exp0016-frozen-pe7n_4ka/source",
+  "git_commit": "143b10966e777e4dd3f95ed4d7f55bc576b5d9d6",
+  "git_status": "",
+  "source_sha256": {
+    "src/neurotopo/__init__.py": "abc1d2ce7afb59200c2a2b246b590e1b24b0d0ea408ffe4ad5838d43101b648c",
+    "src/neurotopo/analyze.py": "bf0ae63c0bafae03f6d13c9f5ee046f582c59584683b2d6a99613fde735b80f1",
+    "src/neurotopo/belief_task.py": "2a3ccc142db0736a61808e53e8895b6c7ee3ae3205971243f657dd8af21f54ba",
+    "src/neurotopo/dynamic_filter_task.py": "1909a82454a354766810dcb12bbcd20d9e0c76ee399efb761bf3dcabb5a26cbc",
+    "src/neurotopo/entry_policy.py": "770f2c71f5327d950bc1b09265152b16a24120790ef7ffaaef33f16a3a13102a",
+    "src/neurotopo/final_probe.py": "3cb4dfa8fddf1c1bb9b764890da9eeb3aaacb527982e9ced5031facc06ebc4cc",
+    "src/neurotopo/final_probe_analysis.py": "2c809743f6bde79fb1d913024e351d2958cf91f7529f9b077e45fb9c5f650124",
+    "src/neurotopo/loop.py": "814a0ed61ab4ba21f57c957cf3e3b4b6a67ca5943279f5022afb24b54351d02b",
+    "src/neurotopo/loop_worker.py": "6bdf61aa4b433451fab369c088a4543a05ccf211f37f6ec434465ee63f898ce6",
+    "src/neurotopo/models.py": "829a6088079c6fd9f0ad8ef3271646bf6e8da7ea193b4fa2918b51f2e4dc46f7",
+    "src/neurotopo/orbit_control_pilot.py": "0a43a74bf94b0a3abbedb5b11f1bb55e06b592086a46976f6883398e165fbf7d",
+    "src/neurotopo/orbit_control_pilot_analysis.py": "f3b0e1417101e861ab5c8df75b713078ad8535c696d8baa794b4c7b190b7e8bb",
+    "src/neurotopo/orbit_control_reproduce.py": "a70fa1f5a0eeac9c6caeecfac85b75908d5d02462c1327a224880375e6fe0eb4",
+    "src/neurotopo/orbit_information.py": "597a1f91c87bd47d3dcfda6670ecb9ee5fae2b7f84dc58118d0244c9d6f75a34",
+    "src/neurotopo/orbit_information_analysis.py": "1e908d0d761e3fd238f8d3d4c4a0c1ae467706760f5f07395506d86aee163dcd",
+    "src/neurotopo/orbit_information_reproduce.py": "daeef3f3842cfe093b3ed727b6a02bc993d961c8bbfe20041272f574e870581b",
+    "src/neurotopo/pfstyle_analysis.py": "b1bda132d97ecbb5d596f3c620084249ed5c05dffdbe441db3081d108d81ed72",
+    "src/neurotopo/pfstyle_models.py": "34762f740e1b68dca993460da2dec21920273d04899d12ec6473867aa10cfbda",
+    "src/neurotopo/pfstyle_preflight.py": "0dc2abe138f7e5ea27df59f63574e63a8490353d5af5204054a55694154d6582",
+    "src/neurotopo/pfstyle_replay.py": "9561fa3c011b928f1788758f936dff1d16a1fa65f9e34ea76f4b67b6f355bfc6",
+    "src/neurotopo/pfstyle_resources.py": "65d271a37d473dbeac3cdd9915a5c65467ad36a06e2f2ce402544dd309bbb009",
+    "src/neurotopo/pfstyle_study.py": "cbdb7ce2f1cc2b56584a177ba1820d456195c27cd52b70d304d62ef7b5644b7a",
+    "src/neurotopo/pfstyle_task.py": "40dec8694c7b7a3d76e8a11a0ecce6174d7241610a2fa50a13f07cea014dcc7c",
+    "src/neurotopo/phase_reveal_formal.py": "f676531b3ae82e0cc7cbd368e1499191c0d9f4c2f05b09d0c34e8fc4f654316c",
+    "src/neurotopo/phase_reveal_formal_analysis.py": "4f2c08677e5c6717f2301d7b7cb8203a537f9d24803e0888d1185bdec8136432",
+    "src/neurotopo/phase_reveal_models.py": "14e77f402c44761a67fdc1d9ef3f580ddb7df0be238750c2419f16c8ae07f035",
+    "src/neurotopo/phase_reveal_qualification.py": "75be76ad04d9dcb0cb0ad9f101922f0ac75ac44ce604312e2a3c4a58956b307b",
+    "src/neurotopo/phase_reveal_qualification_analysis.py": "0d337f0bd7ba48c96212c598f3bc048f5c8ec5dce45aa8a4802ad0e81ad82544",
+    "src/neurotopo/phase_reveal_resources.py": "dd86756b63cc2b52d4d3906683deeb2e9dc993732ace934528ed3480c287bfc9",
+    "src/neurotopo/phase_reveal_task.py": "53fa06c6307b97702d81075b97525ee54f5cd27d85cc621703272ea76199f062",
+    "src/neurotopo/probe.py": "cb1e5b64cb627615cec8b0dcbda4d42de73de514c6df510cbd82bc042d2cc648",
+    "src/neurotopo/probe_analysis.py": "f02e21f3bc838259729294085c1daa43fe847a7a7f5dc70359f987fb999a68c5",
+    "src/neurotopo/reflection.py": "feb607c324a8f847b37261c824491940d7ebf93498517965c19f5337787ca272",
+    "src/neurotopo/replay.py": "63ca7c7d8dddb157d437ccdfe02939921d1f38b17d93715a559e900993422151",
+    "src/neurotopo/replay_analysis.py": "b451d6f796e9a2e696fefef54816b10f6d096656fa0adcede99407a115bc7e39",
+    "src/neurotopo/resources.py": "3bf42c84ba26c284c28a5c8af638b6646492dfe6ecc4cb33d0c233cb3b05e4ad",
+    "src/neurotopo/run.py": "fbd9bf20a2f4933b19862c905032299f8682cd5eb7002fb2ce9ef8f8550899ad",
+    "src/neurotopo/source_belief_analysis.py": "ab8e33ca96564d9e16956acf226cf31159af37bb7ac7917c890131befc8e059b",
+    "src/neurotopo/source_belief_study.py": "d19e3e0fcd12559fbdbf371256fcf88e27c358b39bbefaa135e0773ff8685c8c",
+    "src/neurotopo/source_belief_task.py": "a425d14e6fd670b0cc890a299305a9331dbd397287ea918b2e6e6ae4dcce1a73",
+    "src/neurotopo/study.py": "d74853f161c60bdef00cb8cf4b6c78dd7615ddd4db4ab2204a31fae0ae38dbf5",
+    "src/neurotopo/study_analysis.py": "5819d577392de63cbece65937f3adafd1ebe4794d4f8689f4a557ab99113ed55",
+    "src/neurotopo/task.py": "4b5b7f4a09139137286124276f9c57dfffbec86c2f29130c0f62be63b8da7d65",
+    "src/neurotopo/transfer_probe.py": "13611e2a42a6a3a630be24927fd319bf467360476cb158965d383eb53cbfab68",
+    "src/neurotopo/transfer_probe_analysis.py": "144e6d057d58f0a6858bbe0b5778c44a6646a2e6ab66b7b57a6724eabb9175bc"
+  },
+  "validation_sha256": "530940cfea277d398fe5221e8e90f72358106884330918c05e27680f9d81af4c",
+  "frozen_hashes": {
+    "configs/exp0016_v1.json": "c8d98eafebfd34c29eb55b414e3c2f8bfbcaf07092427303cf1a941299826fa6",
+    "experiments/EXP-0016/v1.md": "07e62a2b359cebd349fc7a969bcefd2fe82655c932673990ce017ef355f2d9ba",
+    "research/entries/EXP-0016.json": "47c54d7d70aaf03236ae9c8862e7577e7d7325563b5625378248796f7e124128",
+    "uv.lock": "a4228ebafd79e9e2cafbacff4cae0cfd8ea1c5a768a8a95c6d5a03dea61b509b"
+  },
+  "python": "3.13.15 (main, Aug  5 2026, 12:25:43) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "numpy": "2.3.3",
+  "torch": "2.8.0",
+  "platform": "macOS-26.7-arm64-arm-64bit-Mach-O",
+  "executable_sha256": "1988a0dd685f91bbaf20b5267046e13cb78859dbb3b5f030e89b448c1fbfe8d4",
+  "preflight_sha256": "641e5fbddd037e22dccf7506eb9a6152167d407c9d2bcce153e70cbedb2ec32f",
+  "status": "COMPLETED",
+  "records": [
+    {
+      "arm": "H",
+      "seed": 16001,
+      "status": "COMPLETED",
+      "updates": 3000,
+      "initial_sha256": "c97c611a33b9ea3bba6077fecac9a3498e1f6b1089be15c7116b3fd324b48cf9",
+      "final_state_sha256": "3a1cd16023658bbdca85acf638dae81147f23b677b3a90682103d1acc57a56d1",
+      "checkpoint_sha256": "ccf2c1c2d354d390beba7ece6ce3617b5032ea27fe55bb60eb405ef98d40fa1c",
+      "predictions_sha256": "8cc4c7a7f57190ffd8c1046b77280fb2974783352a299cc4aafd0a377975c23a",
+      "train_data_sha256": "05888577cd5d91c7c8f83e661b45653db546d84d2adaa9cd5cde2a9281987bbc",
+      "metrics": {
+        "32": {
+          "kl_mean": 0.2777581423798878,
+          "eval_root": 1701600132,
+          "data_sha256": "e66368445d767158782a01d4a1ed9a8f7b9ea583708d27cad39574fa81ec48bf",
+          "target_sha256": "b2898075fc0a516dbf940d2df4a04e65fcdfcce95d5e26eb5e292c59a7cb8942",
+          "prediction_seconds": 0.010744082999735838,
+          "ci": [
+            0.2660874653131291,
+            0.2898346344283426
+          ]
+        },
+        "64": {
+          "kl_mean": 0.27488375912894175,
+          "eval_root": 1701600164,
+          "data_sha256": "3fed203000dcc02184bdd23d783a60e61d9bcf8478c28140fe8c05386bd97342",
+          "target_sha256": "6fe6664e10191d8472487cfc7a20d18fd188e3e622a2c485b5d25753fa2d2014",
+          "prediction_seconds": 0.02048474999901373,
+          "ci": [
+            0.2631523699305026,
+            0.2866596109577772
+          ]
+        }
+      },
+      "training_seconds": 4.197731375003059,
+      "training_cpu_seconds": 4.144028,
+      "arm_wall_seconds": 4.819019250000565,
+      "resources": {
+        "trainable_parameters": 256,
+        "parameter_bytes": 1024,
+        "dynamic_state_values": 16,
+        "examples": 192000,
+        "input_tokens": 6144000,
+        "updates": 3000,
+        "internal_steps_per_example": 32,
+        "executed_compute": "NOT_PROFILED: no matched-effect claim",
+        "peak_memory": "NOT_MEASURED",
+        "effective_degrees_of_freedom": "NOT_MEASURED: tensor counts are not statistical degrees of freedom"
+      }
+    },
+    {
+      "arm": "H",
+      "seed": 16002,
+      "status": "COMPLETED",
+      "updates": 3000,
+      "initial_sha256": "c97c611a33b9ea3bba6077fecac9a3498e1f6b1089be15c7116b3fd324b48cf9",
+      "final_state_sha256": "aff7a9a48fc29e234b193d2ed6db071bed6f5a4307701f66b0c4ef865c60304b",
+      "checkpoint_sha256": "d732089a86c47aef8deebe2534f7a6021126e99f74f5b7879bbbc4b8d9a84a26",
+      "predictions_sha256": "12103332d693d3f6c120c0c1397bd64490f78c06d8af8b006a4b178ec3d61844",
+      "train_data_sha256": "49b521ff9c423fba2067da2697d530d9822bdf57336f56d5d79d6b86579faec8",
+      "metrics": {
+        "32": {
+          "kl_mean": 0.27449110050657965,
+          "eval_root": 1701600232,
+          "data_sha256": "375a016d67870aff89a953d514a7ce9ef117d870d593038f2fe421c4964093e4",
+          "target_sha256": "6797f2f6cd09b35736615cabc133bcd4c95eb3f054836986e5913139469995fc",
+          "prediction_seconds": 0.010681541996746091,
+          "ci": [
+            0.2630934508673048,
+            0.2864511085530263
+          ]
+        },
+        "64": {
+          "kl_mean": 0.2709880608737675,
+          "eval_root": 1701600264,
+          "data_sha256": "75eb5d133dbe43734c3cff24e94279adee413c401cf48591a79a22760d49a087",
+          "target_sha256": "cd11aad3c3e9be753e1b09e7e5d6beb11977daded92cb6e00f44528c3bd88b9a",
+          "prediction_seconds": 0.020300249998399522,
+          "ci": [
+            0.25975181612146214,
+            0.28215300872852306
+          ]
+        }
+      },
+      "training_seconds": 4.187950125000498,
+      "training_cpu_seconds": 4.141775,
+      "arm_wall_seconds": 4.80820012500044,
+      "resources": {
+        "trainable_parameters": 256,
+        "parameter_bytes": 1024,
+        "dynamic_state_values": 16,
+        "examples": 192000,
+        "input_tokens": 6144000,
+        "updates": 3000,
+        "internal_steps_per_example": 32,
+        "executed_compute": "NOT_PROFILED: no matched-effect claim",
+        "peak_memory": "NOT_MEASURED",
+        "effective_degrees_of_freedom": "NOT_MEASURED: tensor counts are not statistical degrees of freedom"
+      }
+    },
+    {
+      "arm": "H",
+      "seed": 16003,
+      "status": "COMPLETED",
+      "updates": 3000,
+      "initial_sha256": "c97c611a33b9ea3bba6077fecac9a3498e1f6b1089be15c7116b3fd324b48cf9",
+      "final_state_sha256": "dd005896829ef22aedbc0145d66a4a00f09cd49ae6de62235a7972cb783062f3",
+      "checkpoint_sha256": "4333ef12113f36cfface12c96ba484c68bcadfd182a61af9a3216c94cf3045af",
+      "predictions_sha256": "638d684dffcd07a8634df172d4c5d67f63520c014fd6434db25e3bd248a0793b",
+      "train_data_sha256": "116d0b50bedb167b503690c5fefdc3ccd4e8c1aced456a28895d8d07ce0cd834",
+      "metrics": {
+        "32": {
+          "kl_mean": 0.28384769898436535,
+          "eval_root": 1701600332,
+          "data_sha256": "dbda21372cb1fd59df404b7f540264523d243920f2228dcc88084902233cc412",
+          "target_sha256": "6be18a03c5aad6210c97bd654e60e3c0b4b805eff859be20579505bdcd8e5e89",
+          "prediction_seconds": 0.011266375000559492,
+          "ci": [
+            0.27202996788681166,
+            0.2965279570743197
+          ]
+        },
+        "64": {
+          "kl_mean": 0.27100606560368945,
+          "eval_root": 1701600364,
+          "data_sha256": "950745f53af117358f92f5fc6b704ac0a2d7aea988d6927fe4da5bf83a517a7b",
+          "target_sha256": "c06db4289284dfdf39cf516e201363af57fb7d9ac5e276a5b3782ad6d4f5f7fe",
+          "prediction_seconds": 0.020375457999762148,
+          "ci": [
+            0.25943988497087506,
+            0.28300882031071906
+          ]
+        }
+      },
+      "training_seconds": 4.187290458001371,
+      "training_cpu_seconds": 4.13983,
+      "arm_wall_seconds": 4.807564124999772,
+      "resources": {
+        "trainable_parameters": 256,
+        "parameter_bytes": 1024,
+        "dynamic_state_values": 16,
+        "examples": 192000,
+        "input_tokens": 6144000,
+        "updates": 3000,
+        "internal_steps_per_example": 32,
+        "executed_compute": "NOT_PROFILED: no matched-effect claim",
+        "peak_memory": "NOT_MEASURED",
+        "effective_degrees_of_freedom": "NOT_MEASURED: tensor counts are not statistical degrees of freedom"
+      }
+    },
+    {
+      "arm": "B",
+      "seed": 16001,
+      "status": "COMPLETED",
+      "updates": 3000,
+      "initial_sha256": "fb47885ba74d68ccaafdd56aeebee447ed08aa3895474ffb15e0c5e7706eeff0",
+      "final_state_sha256": "eb766c2ae884676c05d4feb2624e278a747cac003462d00275b7365d2e219ab8",
+      "checkpoint_sha256": "9f503cb6d18d3f6bbbf7af201ed7277c46f52cc6cc2adb9d671cc0b70679ac6e",
+      "predictions_sha256": "4208788e1870dc34a6228ddfa260d8d53ebe36d55209870eca53a79eb4ee32b7",
+      "train_data_sha256": "05888577cd5d91c7c8f83e661b45653db546d84d2adaa9cd5cde2a9281987bbc",
+      "metrics": {
+        "32": {
+          "kl_mean": 0.0799751903469873,
+          "eval_root": 1701600132,
+          "data_sha256": "e66368445d767158782a01d4a1ed9a8f7b9ea583708d27cad39574fa81ec48bf",
+          "target_sha256": "b2898075fc0a516dbf940d2df4a04e65fcdfcce95d5e26eb5e292c59a7cb8942",
+          "prediction_seconds": 0.01952874999915366,
+          "ci": [
+            0.07583022263916811,
+            0.08429956474581952
+          ]
+        },
+        "64": {
+          "kl_mean": 0.0794520784032074,
+          "eval_root": 1701600164,
+          "data_sha256": "3fed203000dcc02184bdd23d783a60e61d9bcf8478c28140fe8c05386bd97342",
+          "target_sha256": "6fe6664e10191d8472487cfc7a20d18fd188e3e622a2c485b5d25753fa2d2014",
+          "prediction_seconds": 0.037346125001931796,
+          "ci": [
+            0.07560113727882489,
+            0.083717661078082
+          ]
+        }
+      },
+      "training_seconds": 7.36682729200038,
+      "training_cpu_seconds": 7.2976600000000005,
+      "arm_wall_seconds": 8.012044458002492,
+      "resources": {
+        "trainable_parameters": 1904,
+        "parameter_bytes": 7616,
+        "dynamic_state_values": 16,
+        "examples": 192000,
+        "input_tokens": 6144000,
+        "updates": 3000,
+        "internal_steps_per_example": 32,
+        "executed_compute": "NOT_PROFILED: no matched-effect claim",
+        "peak_memory": "NOT_MEASURED",
+        "effective_degrees_of_freedom": "NOT_MEASURED: tensor counts are not statistical degrees of freedom"
+      }
+    },
+    {
+      "arm": "U",
+      "seed": 16001,
+      "status": "COMPLETED",
+      "updates": 3000,
+      "initial_sha256": "fb47885ba74d68ccaafdd56aeebee447ed08aa3895474ffb15e0c5e7706eeff0",
+      "final_state_sha256": "d8eaf1711c7d923e79445a1088b1b71a66ee3094f6b90836daf0957f68794230",
+      "checkpoint_sha256": "f5c47d9e1fc8a4f2300e4de8306b4ae09cb38a010e7d8262d65ea712679aa4f6",
+      "predictions_sha256": "9bdf1ccc3b0ce414076af37dd5a01f1a471b90f417d851fb20fef987822b6e92",
+      "train_data_sha256": "05888577cd5d91c7c8f83e661b45653db546d84d2adaa9cd5cde2a9281987bbc",
+      "metrics": {
+        "32": {
+          "kl_mean": 0.06220213190625105,
+          "eval_root": 1701600132,
+          "data_sha256": "e66368445d767158782a01d4a1ed9a8f7b9ea583708d27cad39574fa81ec48bf",
+          "target_sha256": "b2898075fc0a516dbf940d2df4a04e65fcdfcce95d5e26eb5e292c59a7cb8942",
+          "prediction_seconds": 0.01936833400031901,
+          "ci": [
+            0.05885050792614686,
+            0.065754185521223
+          ]
+        },
+        "64": {
+          "kl_mean": 0.06329604208643222,
+          "eval_root": 1701600164,
+          "data_sha256": "3fed203000dcc02184bdd23d783a60e61d9bcf8478c28140fe8c05386bd97342",
+          "target_sha256": "6fe6664e10191d8472487cfc7a20d18fd188e3e622a2c485b5d25753fa2d2014",
+          "prediction_seconds": 0.03871808299663826,
+          "ci": [
+            0.059495876979012034,
+            0.06758523433068048
+          ]
+        }
+      },
+      "training_seconds": 6.444386625000334,
+      "training_cpu_seconds": 6.383738000000001,
+      "arm_wall_seconds": 7.10283220799829,
+      "resources": {
+        "trainable_parameters": 1904,
+        "parameter_bytes": 7616,
+        "dynamic_state_values": 16,
+        "examples": 192000,
+        "input_tokens": 6144000,
+        "updates": 3000,
+        "internal_steps_per_example": 32,
+        "executed_compute": "NOT_PROFILED: no matched-effect claim",
+        "peak_memory": "NOT_MEASURED",
+        "effective_degrees_of_freedom": "NOT_MEASURED: tensor counts are not statistical degrees of freedom"
+      }
+    },
+    {
+      "arm": "D",
+      "seed": 16001,
+      "status": "COMPLETED",
+      "updates": 3000,
+      "initial_sha256": "c597eaaeeca3bf7d82b267cb8febdc4ce3bb23f41e2a02e0b783aa32f8894478",
+      "final_state_sha256": "f65c3de7cf0493fcd1afde5475002b93af3d58668eb091b00ed62eb25baab7eb",
+      "checkpoint_sha256": "c815d563b34ee22f34b06a45892ea5182638d58266ba01ed8919792c3d90be9d",
+      "predictions_sha256": "7299b086795d0d1616519ddb59c9ae7c1ffb479de9402f446888a509844d67e8",
+      "train_data_sha256": "05888577cd5d91c7c8f83e661b45653db546d84d2adaa9cd5cde2a9281987bbc",
+      "metrics": {
+        "32": {
+          "kl_mean": 0.016027161445761544,
+          "eval_root": 1701600132,
+          "data_sha256": "e66368445d767158782a01d4a1ed9a8f7b9ea583708d27cad39574fa81ec48bf",
+          "target_sha256": "b2898075fc0a516dbf940d2df4a04e65fcdfcce95d5e26eb5e292c59a7cb8942",
+          "prediction_seconds": 0.050832624998292886,
+          "ci": [
+            0.01502734805582564,
+            0.01716098202651285
+          ]
+        },
+        "64": {
+          "kl_mean": 0.016387943182249513,
+          "eval_root": 1701600164,
+          "data_sha256": "3fed203000dcc02184bdd23d783a60e61d9bcf8478c28140fe8c05386bd97342",
+          "target_sha256": "6fe6664e10191d8472487cfc7a20d18fd188e3e622a2c485b5d25753fa2d2014",
+          "prediction_seconds": 0.1007902080018539,
+          "ci": [
+            0.015342295245093056,
+            0.017539622548235594
+          ]
+        }
+      },
+      "training_seconds": 9.413151124997967,
+      "training_cpu_seconds": 9.331944000000004,
+      "arm_wall_seconds": 10.152890708999621,
+      "resources": {
+        "trainable_parameters": 16784,
+        "parameter_bytes": 67136,
+        "dynamic_state_values": 64,
+        "examples": 192000,
+        "input_tokens": 6144000,
+        "updates": 3000,
+        "internal_steps_per_example": 32,
+        "executed_compute": "NOT_PROFILED: no matched-effect claim",
+        "peak_memory": "NOT_MEASURED",
+        "effective_degrees_of_freedom": "NOT_MEASURED: tensor counts are not statistical degrees of freedom"
+      }
+    },
+    {
+      "arm": "B",
+      "seed": 16002,
+      "status": "COMPLETED",
+      "updates": 3000,
+      "initial_sha256": "e095e937c7b5a3a53c25ea49d01914fd2860bc9dfc551281f190c87cacc7cf27",
+      "final_state_sha256": "430028b345826dc3f0e6c11f55fe7a42429f4dc4511e81002671f96c82ead34b",
+      "checkpoint_sha256": "10f6f233a81950140b412377f1c1df13789cf399c172a67876b6e1ebb96d858e",
+      "predictions_sha256": "2dc80b0cc696037b53fc872d4b1f7921734a4bb7971e045cf117f563a93017f3",
+      "train_data_sha256": "49b521ff9c423fba2067da2697d530d9822bdf57336f56d5d79d6b86579faec8",
+      "metrics": {
+        "32": {
+          "kl_mean": 0.0812599147793527,
+          "eval_root": 1701600232,
+          "data_sha256": "375a016d67870aff89a953d514a7ce9ef117d870d593038f2fe421c4964093e4",
+          "target_sha256": "6797f2f6cd09b35736615cabc133bcd4c95eb3f054836986e5913139469995fc",
+          "prediction_seconds": 0.019411375000345288,
+          "ci": [
+            0.07697172160418206,
+            0.08598913097851013
+          ]
+        },
+        "64": {
+          "kl_mean": 0.07663478336176932,
+          "eval_root": 1701600264,
+          "data_sha256": "75eb5d133dbe43734c3cff24e94279adee413c401cf48591a79a22760d49a087",
+          "target_sha256": "cd11aad3c3e9be753e1b09e7e5d6beb11977daded92cb6e00f44528c3bd88b9a",
+          "prediction_seconds": 0.037373916999058565,
+          "ci": [
+            0.0733469430591376,
+            0.08020916076832398
+          ]
+        }
+      },
+      "training_seconds": 7.296724083000299,
+      "training_cpu_seconds": 7.236101000000005,
+      "arm_wall_seconds": 7.935728333002771,
+      "resources": {
+        "trainable_parameters": 1904,
+        "parameter_bytes": 7616,
+        "dynamic_state_values": 16,
+        "examples": 192000,
+        "input_tokens": 6144000,
+        "updates": 3000,
+        "internal_steps_per_example": 32,
+        "executed_compute": "NOT_PROFILED: no matched-effect claim",
+        "peak_memory": "NOT_MEASURED",
+        "effective_degrees_of_freedom": "NOT_MEASURED: tensor counts are not statistical degrees of freedom"
+      }
+    },
+    {
+      "arm": "U",
+      "seed": 16002,
+      "status": "COMPLETED",
+      "updates": 3000,
+      "initial_sha256": "e095e937c7b5a3a53c25ea49d01914fd2860bc9dfc551281f190c87cacc7cf27",
+      "final_state_sha256": "5891e377af7870270467cdd484d89cf80db17187364e5c56e117d19c092320a5",
+      "checkpoint_sha256": "c386803377eab2d64cfee559cf897bdfe8856f88f5bf4415be51726cd216c967",
+      "predictions_sha256": "1f1e6efd3a47710d7ee144de9e7631e4933e7ca3e5b57175015c1facf0d88afa",
+      "train_data_sha256": "49b521ff9c423fba2067da2697d530d9822bdf57336f56d5d79d6b86579faec8",
+      "metrics": {
+        "32": {
+          "kl_mean": 0.0650478798429874,
+          "eval_root": 1701600232,
+          "data_sha256": "375a016d67870aff89a953d514a7ce9ef117d870d593038f2fe421c4964093e4",
+          "target_sha256": "6797f2f6cd09b35736615cabc133bcd4c95eb3f054836986e5913139469995fc",
+          "prediction_seconds": 0.019168500002706423,
+          "ci": [
+            0.06074434089696222,
+            0.06967554829562128
+          ]
+        },
+        "64": {
+          "kl_mean": 0.05970525559943286,
+          "eval_root": 1701600264,
+          "data_sha256": "75eb5d133dbe43734c3cff24e94279adee413c401cf48591a79a22760d49a087",
+          "target_sha256": "cd11aad3c3e9be753e1b09e7e5d6beb11977daded92cb6e00f44528c3bd88b9a",
+          "prediction_seconds": 0.03806162500040955,
+          "ci": [
+            0.056697425724509275,
+            0.06294625442529946
+          ]
+        }
+      },
+      "training_seconds": 6.430545291997987,
+      "training_cpu_seconds": 6.373048000000004,
+      "arm_wall_seconds": 7.086944416998449,
+      "resources": {
+        "trainable_parameters": 1904,
+        "parameter_bytes": 7616,
+        "dynamic_state_values": 16,
+        "examples": 192000,
+        "input_tokens": 6144000,
+        "updates": 3000,
+        "internal_steps_per_example": 32,
+        "executed_compute": "NOT_PROFILED: no matched-effect claim",
+        "peak_memory": "NOT_MEASURED",
+        "effective_degrees_of_freedom": "NOT_MEASURED: tensor counts are not statistical degrees of freedom"
+      }
+    },
+    {
+      "arm": "D",
+      "seed": 16002,
+      "status": "COMPLETED",
+      "updates": 3000,
+      "initial_sha256": "31f7e1de5e69bf5abdc697d0fc9310e9002a680ac2d35332397aad06ef977f29",
+      "final_state_sha256": "368a18d9d7d185b9573da8cf566cbcef6e167c3ec6343e592a0edc043eb0d6c0",
+      "checkpoint_sha256": "faee6328a94f1f174c12aafe096336f04a9e1f0ed2314f280a278b95ce0f8523",
+      "predictions_sha256": "2533a7bfaaac434a925ac5998a4a673e5b888264744858ec2817e903fa3eb652",
+      "train_data_sha256": "49b521ff9c423fba2067da2697d530d9822bdf57336f56d5d79d6b86579faec8",
+      "metrics": {
+        "32": {
+          "kl_mean": 0.019941429293517297,
+          "eval_root": 1701600232,
+          "data_sha256": "375a016d67870aff89a953d514a7ce9ef117d870d593038f2fe421c4964093e4",
+          "target_sha256": "6797f2f6cd09b35736615cabc133bcd4c95eb3f054836986e5913139469995fc",
+          "prediction_seconds": 0.05038504200274474,
+          "ci": [
+            0.018574173171184673,
+            0.021413009438243886
+          ]
+        },
+        "64": {
+          "kl_mean": 0.018752586180369363,
+          "eval_root": 1701600264,
+          "data_sha256": "75eb5d133dbe43734c3cff24e94279adee413c401cf48591a79a22760d49a087",
+          "target_sha256": "cd11aad3c3e9be753e1b09e7e5d6beb11977daded92cb6e00f44528c3bd88b9a",
+          "prediction_seconds": 0.10057620800216682,
+          "ci": [
+            0.017536373224400614,
+            0.020040389985681563
+          ]
+        }
+      },
+      "training_seconds": 9.581674582997948,
+      "training_cpu_seconds": 9.490067999999994,
+      "arm_wall_seconds": 10.333355208000285,
+      "resources": {
+        "trainable_parameters": 16784,
+        "parameter_bytes": 67136,
+        "dynamic_state_values": 64,
+        "examples": 192000,
+        "input_tokens": 6144000,
+        "updates": 3000,
+        "internal_steps_per_example": 32,
+        "executed_compute": "NOT_PROFILED: no matched-effect claim",
+        "peak_memory": "NOT_MEASURED",
+        "effective_degrees_of_freedom": "NOT_MEASURED: tensor counts are not statistical degrees of freedom"
+      }
+    },
+    {
+      "arm": "B",
+      "seed": 16003,
+      "status": "COMPLETED",
+      "updates": 3000,
+      "initial_sha256": "98c8fa19d99f028dbc677c5b440f4cffa6bf6071ffc16db3ea78df236e3907c2",
+      "final_state_sha256": "b0a59be205aa192a2bfa2a6af48c4f43e13f7af09b615d10433a38252d8079d2",
+      "checkpoint_sha256": "c54f6c192160dd384d2034757cb25443c5d14dc5a609c307cb32d0d7f620bac2",
+      "predictions_sha256": "a58b53c61cac06f843af5d45135c031b28af7f715e6e93383844074efbd49f55",
+      "train_data_sha256": "116d0b50bedb167b503690c5fefdc3ccd4e8c1aced456a28895d8d07ce0cd834",
+      "metrics": {
+        "32": {
+          "kl_mean": 0.08327985970802418,
+          "eval_root": 1701600332,
+          "data_sha256": "dbda21372cb1fd59df404b7f540264523d243920f2228dcc88084902233cc412",
+          "target_sha256": "6be18a03c5aad6210c97bd654e60e3c0b4b805eff859be20579505bdcd8e5e89",
+          "prediction_seconds": 0.01959175000229152,
+          "ci": [
+            0.07951262905447173,
+            0.08728023933409615
+          ]
+        },
+        "64": {
+          "kl_mean": 0.07946242711101817,
+          "eval_root": 1701600364,
+          "data_sha256": "950745f53af117358f92f5fc6b704ac0a2d7aea988d6927fe4da5bf83a517a7b",
+          "target_sha256": "c06db4289284dfdf39cf516e201363af57fb7d9ac5e276a5b3782ad6d4f5f7fe",
+          "prediction_seconds": 0.03720433299895376,
+          "ci": [
+            0.07574662426748893,
+            0.08354457166676613
+          ]
+        }
+      },
+      "training_seconds": 7.335426875000849,
+      "training_cpu_seconds": 7.268470000000008,
+      "arm_wall_seconds": 7.9820135420013685,
+      "resources": {
+        "trainable_parameters": 1904,
+        "parameter_bytes": 7616,
+        "dynamic_state_values": 16,
+        "examples": 192000,
+        "input_tokens": 6144000,
+        "updates": 3000,
+        "internal_steps_per_example": 32,
+        "executed_compute": "NOT_PROFILED: no matched-effect claim",
+        "peak_memory": "NOT_MEASURED",
+        "effective_degrees_of_freedom": "NOT_MEASURED: tensor counts are not statistical degrees of freedom"
+      }
+    },
+    {
+      "arm": "U",
+      "seed": 16003,
+      "status": "COMPLETED",
+      "updates": 3000,
+      "initial_sha256": "98c8fa19d99f028dbc677c5b440f4cffa6bf6071ffc16db3ea78df236e3907c2",
+      "final_state_sha256": "2bbf5da1ebaa3d4590fd6721e548dfde46d8714385aa3c4595404ead25a93bfd",
+      "checkpoint_sha256": "1107e2d9f819e001b3ab496737bf1e5d28c407aab46c90fae08ff58a4e1ba01a",
+      "predictions_sha256": "319f6ee69840b79d41b3679d32aa37b981049b7b9ff239a3331e08ff6436dd6e",
+      "train_data_sha256": "116d0b50bedb167b503690c5fefdc3ccd4e8c1aced456a28895d8d07ce0cd834",
+      "metrics": {
+        "32": {
+          "kl_mean": 0.06897215894535387,
+          "eval_root": 1701600332,
+          "data_sha256": "dbda21372cb1fd59df404b7f540264523d243920f2228dcc88084902233cc412",
+          "target_sha256": "6be18a03c5aad6210c97bd654e60e3c0b4b805eff859be20579505bdcd8e5e89",
+          "prediction_seconds": 0.01952641599928029,
+          "ci": [
+            0.06545063282525163,
+            0.07266356916740535
+          ]
+        },
+        "64": {
+          "kl_mean": 0.06562407509236545,
+          "eval_root": 1701600364,
+          "data_sha256": "950745f53af117358f92f5fc6b704ac0a2d7aea988d6927fe4da5bf83a517a7b",
+          "target_sha256": "c06db4289284dfdf39cf516e201363af57fb7d9ac5e276a5b3782ad6d4f5f7fe",
+          "prediction_seconds": 0.03851487499923678,
+          "ci": [
+            0.061649791458598786,
+            0.07008040942137564
+          ]
+        }
+      },
+      "training_seconds": 6.458983624997927,
+      "training_cpu_seconds": 6.396514999999994,
+      "arm_wall_seconds": 7.104477916996984,
+      "resources": {
+        "trainable_parameters": 1904,
+        "parameter_bytes": 7616,
+        "dynamic_state_values": 16,
+        "examples": 192000,
+        "input_tokens": 6144000,
+        "updates": 3000,
+        "internal_steps_per_example": 32,
+        "executed_compute": "NOT_PROFILED: no matched-effect claim",
+        "peak_memory": "NOT_MEASURED",
+        "effective_degrees_of_freedom": "NOT_MEASURED: tensor counts are not statistical degrees of freedom"
+      }
+    },
+    {
+      "arm": "D",
+      "seed": 16003,
+      "status": "COMPLETED",
+      "updates": 3000,
+      "initial_sha256": "ff399fc8fef11cb6baab4894f38c22ffbee14b26f717d240caf5bcd1f7d740d1",
+      "final_state_sha256": "12849269657a124e4d331dcb6e3ff5d699e2dc8aa8f08b40687c34f3019ceb08",
+      "checkpoint_sha256": "0e418f6b1ac9c324ca9b8a10710b8136a49f0388ddc5d0200105ac0244db9b6b",
+      "predictions_sha256": "6c9d112b2ab202e7c6676e7c687f7b85a928ab7950d6da20de7e3d3f4e757040",
+      "train_data_sha256": "116d0b50bedb167b503690c5fefdc3ccd4e8c1aced456a28895d8d07ce0cd834",
+      "metrics": {
+        "32": {
+          "kl_mean": 0.01612323314025206,
+          "eval_root": 1701600332,
+          "data_sha256": "dbda21372cb1fd59df404b7f540264523d243920f2228dcc88084902233cc412",
+          "target_sha256": "6be18a03c5aad6210c97bd654e60e3c0b4b805eff859be20579505bdcd8e5e89",
+          "prediction_seconds": 0.050257416998647386,
+          "ci": [
+            0.015165582601418258,
+            0.017168325579093337
+          ]
+        },
+        "64": {
+          "kl_mean": 0.015804361651902087,
+          "eval_root": 1701600364,
+          "data_sha256": "950745f53af117358f92f5fc6b704ac0a2d7aea988d6927fe4da5bf83a517a7b",
+          "target_sha256": "c06db4289284dfdf39cf516e201363af57fb7d9ac5e276a5b3782ad6d4f5f7fe",
+          "prediction_seconds": 0.10071695899750921,
+          "ci": [
+            0.014777198808535853,
+            0.01694010936958354
+          ]
+        }
+      },
+      "training_seconds": 9.39982879099989,
+      "training_cpu_seconds": 9.312157999999997,
+      "arm_wall_seconds": 10.14444233299946,
+      "resources": {
+        "trainable_parameters": 16784,
+        "parameter_bytes": 67136,
+        "dynamic_state_values": 64,
+        "examples": 192000,
+        "input_tokens": 6144000,
+        "updates": 3000,
+        "internal_steps_per_example": 32,
+        "executed_compute": "NOT_PROFILED: no matched-effect claim",
+        "peak_memory": "NOT_MEASURED",
+        "effective_degrees_of_freedom": "NOT_MEASURED: tensor counts are not statistical degrees of freedom"
+      }
+    }
+  ],
+  "research_updates": 36000,
+  "candidate_A_updates": 0,
+  "gate1_claim": false,
+  "h_ceiling_stop": false,
+  "seconds": 90.90559462500096
+}

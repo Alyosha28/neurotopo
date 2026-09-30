@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "bc416d91374f64563a44db6a01f3c4336e3b84c76065a43b21532a8ee6e2edb9",
+  "review_sha256": "63b01229a04b8b5bed742a84c58b30ae0fc6a8097c90d4e30ba4aeaa6d347a01",
+  "responses": [
+    {
+      "id": "CAL6-R1",
+      "disposition": "accept",
+      "reason": "The preregistered 0.08 headroom floor is arithmetic delta plus epsilon, not a statistical power guarantee; one near-threshold selected seed cannot prove a universal ceiling.",
+      "action": "Ran a separately recorded post-hoc, fixed-checkpoint per-example KL bootstrap without changing the CEILING label; documented its conditional and selection limits.",
+      "evidence_paths": [
+        "research/reflections/CAL-0006/diagnostic_protocol.md",
+        "research/reflections/CAL-0006/diagnostic.json",
+        "artifacts/calibration/CAL-0006_seed603_dense_posthoc.npz",
+        "research/reflections/CAL-0006/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "CAL6-R2",
+      "disposition": "accept",
+      "reason": "The overall OOD12 gate does not establish that natural belief-revision examples have reached the same KL level.",
+      "action": "Recorded the natural-revision slice mean and conditional bootstrap interval as secondary diagnostics, with no slice threshold or reclassification.",
+      "evidence_paths": [
+        "research/reflections/CAL-0006/diagnostic.json",
+        "research/reflections/CAL-0006/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "CAL6-R3",
+      "disposition": "accept",
+      "reason": "The packet summary cannot itself recompute per-example KL and the independent reproduction did not retrain optimizer updates.",
+      "action": "Archived the per-example KL digest and exact six-checkpoint replay differences, and explicitly limited the reproduction claim to frozen weights/data/metrics.",
+      "evidence_paths": [
+        "research/reflections/CAL-0006/diagnostic.json",
+        "artifacts/calibration/CAL-0006_v3_reproduction.json",
+        "docs/CAL-0006_reproduction.md",
+        "research/reflections/CAL-0006/reaction_evidence.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep CAL-0006 v3 CEILING and Gate 1 NOT_PASSED; close only this frozen benchmark configuration, retaining all six outcomes and the post-hoc uncertainty boundary."
+}

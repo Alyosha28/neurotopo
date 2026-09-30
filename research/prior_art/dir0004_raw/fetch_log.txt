@@ -1,0 +1,22 @@
+arxiv	aus1	000	all:"assimilation in the unstable subspace"
+arxiv	aus2	429	all:"unstable subspace" AND all:"data assimilation"
+arxiv	aus3	429	all:"Lyapunov vectors" AND all:"data assimilation"
+openalex	aus1	200	assimilation in the unstable subspace
+openalex	aus2	200	unstable subspace observer chaotic system
+crossref	aus1	200	assimilation of observations in the unstable subspace
+arxiv	prec1	429	all:"finite precision" AND all:"chaotic" AND all:"prediction horizon"
+crossref	pred_review	200	Predictability: a way to characterize complexity Boffetta Vulpiani
+openalex	aus_review	200	review data assimilation unstable subspace Carrassi
+openalex	aus_ml	200	neural network data assimilation unstable subspace
+openalex	prec_bits	200	number of bits required to predict chaotic system horizon
+arxiv	prec2	000	all:"predictability" AND all:"Lyapunov exponent" AND all:"error growth"
+openalex	prec1	200	finite precision chaotic prediction horizon bits
+crossref	prec1	200	predictability time Lyapunov exponent error doubling
+arxiv	rc1	000	all:"reservoir computing" AND all:"chaotic" AND all:"prediction"
+arxiv	rc2	429	all:"echo state network" AND all:"Lyapunov" AND all:"prediction"
+openalex	rc1	200	reservoir computing chaotic attractor prediction horizon
+crossref	rc1	200	reservoir computing prediction chaotic systems Lyapunov time
+arxiv	lat1	429	all:"latent dynamics" AND all:"unstable" AND all:"state space model"
+arxiv	lat2	000	all:"Koopman" AND all:"unstable subspace" AND all:"control"
+openalex	lat1	200	structured state space model unstable dynamics long horizon tracking
+crossref	lat1	200	model predictive control unstable subspace tracking horizon

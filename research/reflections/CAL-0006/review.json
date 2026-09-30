@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "bc416d91374f64563a44db6a01f3c4336e3b84c76065a43b21532a8ee6e2edb9",
+  "reviewer": {"model": "gpt-6-sol", "effort": "high", "context": "fresh_only_packet"},
+  "issues": [
+    {
+      "id": "CAL6-R1", "source": "both", "severity": "medium",
+      "evidence": [
+        "两臂每一种子最终 KL∈[0.08,0.50] nat，其中 `δ=0.05` 与 `ε=0.03` 给出最低可判别余量0.08；低于0.08为 `CEILING`",
+        "603 | 0.00754 / **0.06497** | 0.01895 / 0.10751",
+        "这是一个边界附近的失败"
+      ],
+      "problem": "按冻结规则给出 CEILING 判词是正确的，但 packet 未说明 δ、ε 与未来比较的统计可判别性如何对应，也未量化固定评估集上 0.06497 距阈值 0.08 的抽样不确定性。一次近阈种子足以触发预写的配置否决，却不足以证明普遍的模型天花板。",
+      "why_it_matters": "需要将确定性的协议判词与关于任务难度的科学证据强度分开。行动文本已经限制了普遍化解释，应在后续引用时保留这一限制。",
+      "falsifiable_check": "保持 CAL-0006 v3 判词不变；用冻结预测的逐例 KL 对 seed603 dense 的均值及其与 0.08 的差做配对重采样，并在新的事前协议中说明 δ、ε 对拟开展比较所需的判别余量。"
+    },
+    {
+      "id": "CAL6-R2", "source": "both", "severity": "medium",
+      "evidence": [
+        "主指标为最终 posterior KL-to-oracle",
+        "修订切片是次级描述，不改变主判据",
+        "603 | 0.00754 / **0.06497** | 0.01895 / 0.10751 | 0.09819 / 0.15628"
+      ],
+      "problem": "研究问题强调延迟证据修订，但使配置失败的 dense seed603 在自然修订切片上的 KL 为 0.09819，仍高于总体端点的 0.08 阈值。总体 KL 的 CEILING 不能单独说明修订案例也已达到同样的拟合程度。",
+      "why_it_matters": "这不改变 v3 的正式失败结论；它限定了失败结论对核心修订机制的解释范围。",
+      "falsifiable_check": "若将来独立提出新任务协议，事前固定修订切片的样本定义、主端点和阈值，并检验该端点是否比总体 KL 更稳定地衡量延迟证据修订。不得据此重判 v3。"
+    },
+    {
+      "id": "CAL6-R3", "source": "action", "severity": "low",
+      "evidence": [
+        "\"kind\": \"CAL-0006_v3_ACTION_SUMMARY_NOT_RAW_REPORT\"",
+        "\"raw_report_bytes\": 287888",
+        "\"reproduction_scope\": \"frozen checkpoints and data stream; no optimizer retraining\""
+      ],
+      "problem": "packet 给出了关键数值、产物路径和哈希，但没有提供逐例指标或独立复核的数值比较；其复现范围也明确不含重新训练。因此，单凭这个 packet 可以核对判词与所报汇总数值的一致性，无法独立核验 KL 汇总的计算过程或训练重现性。",
+      "why_it_matters": "“独立复核”应具体指向冻结 checkpoint 和数据流的重放范围，避免被理解为对整个训练过程的独立再现。",
+      "falsifiable_check": "在不改动原始产物的前提下，提供紧凑的逐例 KL 汇总校验、重放与原报告的逐项差异，以及训练重现性是否另行测试的明确记录。"
+    }
+  ],
+  "overall_assessment": "冻结规则下的 CEILING 判词与报告数值一致；行动文本也将结论限定为这一配置的一次近阈资格失败，没有把单个种子扩大为所有单流模型的结论，并披露了 dense 与 random 的有效参数差异及计算代理的边界。关闭当前固定规格符合预写停止分支；该分支本身不构成否定整个动态反事实任务方向的证据。主要保留问题是阈值附近的证据强度、总体 KL 与修订问题之间的对应关系，以及 packet 单独可复核的范围。"
+}

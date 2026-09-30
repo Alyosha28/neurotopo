@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-28",
+  "status": "READ_ONLY_NOT_REPRODUCED",
+  "files": [
+    {
+      "repo": "automl/DeltaProduct",
+      "commit": "d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/automl/DeltaProduct/d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8/LICENSE",
+      "sha256": "65931a15bf9180ea6e4877ee9a2cd64875fd31217007ab7869729ea2f96667d8",
+      "bytes": 1081
+    },
+    {
+      "repo": "automl/DeltaProduct",
+      "commit": "d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8",
+      "path": "state_tracking/LICENSE",
+      "url": "https://raw.githubusercontent.com/automl/DeltaProduct/d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8/state_tracking/LICENSE",
+      "sha256": "b58b208da923a000f94cc6607bb19ab712966a67dfd730c118895b06fa27847c",
+      "bytes": 1070
+    },
+    {
+      "repo": "automl/DeltaProduct",
+      "commit": "d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8",
+      "path": "state_tracking/src/generate_data.py",
+      "url": "https://raw.githubusercontent.com/automl/DeltaProduct/d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8/state_tracking/src/generate_data.py",
+      "sha256": "e6cc6d24811c4f7c857434fb272a98edb8f9a399053a3e43af6249b49a1c03e8",
+      "bytes": 8239
+    },
+    {
+      "repo": "automl/DeltaProduct",
+      "commit": "d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8",
+      "path": "flash-linear-attention/fla/layers/gated_deltaproduct.py",
+      "url": "https://raw.githubusercontent.com/automl/DeltaProduct/d62241a81d07aa32b1b65e7d17377f6a7cd0a5d8/flash-linear-attention/fla/layers/gated_deltaproduct.py",
+      "sha256": "b88f9ad25957082fd7aa3714651ac457ce60b57292b41746489a6a091b5758f7",
+      "bytes": 12490
+    },
+    {
+      "repo": "automl/unlocking_state_tracking",
+      "commit": "68f8e5fc6d25043d4e6a1fc169b58281c9e01d12",
+      "path": "flash-linear-attention_mod/LICENSE",
+      "url": "https://raw.githubusercontent.com/automl/unlocking_state_tracking/68f8e5fc6d25043d4e6a1fc169b58281c9e01d12/flash-linear-attention_mod/LICENSE",
+      "sha256": "994c15008165d01e55181a9090f89f22f612e90e2f8f8a3e3a155590a9e682d2",
+      "bytes": 1069
+    },
+    {
+      "repo": "automl/unlocking_state_tracking",
+      "commit": "68f8e5fc6d25043d4e6a1fc169b58281c9e01d12",
+      "path": "flash-linear-attention_mod/fla/layers/delta_net_no_triton.py",
+      "url": "https://raw.githubusercontent.com/automl/unlocking_state_tracking/68f8e5fc6d25043d4e6a1fc169b58281c9e01d12/flash-linear-attention_mod/fla/layers/delta_net_no_triton.py",
+      "sha256": "8fefd170feab990b58edde75ba8f792af806d7c2e474810517ab206c2134b091",
+      "bytes": 10863
+    },
+    {
+      "repo": "NVlabs/GatedDeltaNet",
+      "commit": "b53d6d3a161267432a79c1c04af69fa52bddc921",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/NVlabs/GatedDeltaNet/b53d6d3a161267432a79c1c04af69fa52bddc921/LICENSE",
+      "sha256": "c5d7a204c10f9daa0991eb55cee7e434a34a59de379ffe6ceb29a2b10e413053",
+      "bytes": 4126
+    },
+    {
+      "repo": "NVlabs/GatedDeltaNet",
+      "commit": "b53d6d3a161267432a79c1c04af69fa52bddc921",
+      "path": "lit_gpt/gated_delta_net.py",
+      "url": "https://raw.githubusercontent.com/NVlabs/GatedDeltaNet/b53d6d3a161267432a79c1c04af69fa52bddc921/lit_gpt/gated_delta_net.py",
+      "sha256": "8aaee1dcff184742148bb694730e5c1da0d246bbba92d2a0a462e77963f35fbc",
+      "bytes": 9514
+    }
+  ]
+}

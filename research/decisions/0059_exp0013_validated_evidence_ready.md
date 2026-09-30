@@ -1,0 +1,3 @@
+# 决定0059：EXP-0013可记录工程VALIDATED
+
+接受`docs/EXP-0013_engineering_preflight_review.md`的窄判词。ResearchLoop可用已提交的`artifacts/validation/exp0013_engineering_preflight.json`作VALIDATED证据；worker仍须从更新后的干净checkout重验三件Git树、真祖先与全部config/source/lock SHA，再按v3顺序先读唯一任务信息root。若任务信息失败，程序必须零研究更新正常封存；若任务信息通过，才训练预写的SC64/D64_full两LR控制。任何结果不得提前写成RS4或Gate1效应；独立REVIEWED/DECIDED/反思仍必需。用户要求本流程收尾后hold，Gate1目前`NOT_PASSED`。

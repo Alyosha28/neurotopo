@@ -1,0 +1,287 @@
+{
+  "config": {
+    "T": 200,
+    "eps": 1e-06,
+    "lam_s": 0.5,
+    "lam_u": 2.0,
+    "observe_expanding": false,
+    "output": "research/design/dir0004_precision_check.json",
+    "sigma": 0.001,
+    "total_bits": 64
+  },
+  "declared": {
+    "bits_per_coord_symmetric": 32,
+    "eps": 1e-06,
+    "lam_s": 0.5,
+    "lam_u": 2.0,
+    "sigma": 0.001,
+    "total_bits": 64
+  },
+  "rows": [
+    {
+      "bits_contracting": 32,
+      "bits_expanding": 32,
+      "contracting_bounded": true,
+      "crossing_T": 14.0,
+      "delta": 0,
+      "final_var_expanding": 1.5553782931790289e+100
+    },
+    {
+      "bits_contracting": 31,
+      "bits_expanding": 33,
+      "contracting_bounded": true,
+      "crossing_T": 15.0,
+      "delta": 1,
+      "final_var_expanding": 3.888445732947572e+99
+    },
+    {
+      "bits_contracting": 30,
+      "bits_expanding": 34,
+      "contracting_bounded": true,
+      "crossing_T": 16.0,
+      "delta": 2,
+      "final_var_expanding": 9.72111433236893e+98
+    },
+    {
+      "bits_contracting": 29,
+      "bits_expanding": 35,
+      "contracting_bounded": true,
+      "crossing_T": 17.0,
+      "delta": 3,
+      "final_var_expanding": 2.4302785830922326e+98
+    },
+    {
+      "bits_contracting": 28,
+      "bits_expanding": 36,
+      "contracting_bounded": true,
+      "crossing_T": 18.0,
+      "delta": 4,
+      "final_var_expanding": 6.0756964577305815e+97
+    },
+    {
+      "bits_contracting": 27,
+      "bits_expanding": 37,
+      "contracting_bounded": true,
+      "crossing_T": 19.0,
+      "delta": 5,
+      "final_var_expanding": 1.5189241144326454e+97
+    },
+    {
+      "bits_contracting": 26,
+      "bits_expanding": 38,
+      "contracting_bounded": true,
+      "crossing_T": 20.0,
+      "delta": 6,
+      "final_var_expanding": 3.7973102860816134e+96
+    },
+    {
+      "bits_contracting": 25,
+      "bits_expanding": 39,
+      "contracting_bounded": true,
+      "crossing_T": 21.0,
+      "delta": 7,
+      "final_var_expanding": 9.493275715204034e+95
+    },
+    {
+      "bits_contracting": 24,
+      "bits_expanding": 40,
+      "contracting_bounded": true,
+      "crossing_T": 22.0,
+      "delta": 8,
+      "final_var_expanding": 2.3733189288010084e+95
+    },
+    {
+      "bits_contracting": 23,
+      "bits_expanding": 41,
+      "contracting_bounded": true,
+      "crossing_T": 23.0,
+      "delta": 9,
+      "final_var_expanding": 5.933297322002521e+94
+    },
+    {
+      "bits_contracting": 22,
+      "bits_expanding": 42,
+      "contracting_bounded": true,
+      "crossing_T": 24.0,
+      "delta": 10,
+      "final_var_expanding": 1.4833243305006303e+94
+    },
+    {
+      "bits_contracting": 21,
+      "bits_expanding": 43,
+      "contracting_bounded": true,
+      "crossing_T": 25.0,
+      "delta": 11,
+      "final_var_expanding": 3.7083108262515756e+93
+    },
+    {
+      "bits_contracting": 20,
+      "bits_expanding": 44,
+      "contracting_bounded": true,
+      "crossing_T": 26.0,
+      "delta": 12,
+      "final_var_expanding": 9.270777065628939e+92
+    },
+    {
+      "bits_contracting": 19,
+      "bits_expanding": 45,
+      "contracting_bounded": true,
+      "crossing_T": 27.0,
+      "delta": 13,
+      "final_var_expanding": 2.3176942664072348e+92
+    },
+    {
+      "bits_contracting": 18,
+      "bits_expanding": 46,
+      "contracting_bounded": false,
+      "crossing_T": 28.0,
+      "delta": 14,
+      "final_var_expanding": 5.794235666018087e+91
+    },
+    {
+      "bits_contracting": 17,
+      "bits_expanding": 47,
+      "contracting_bounded": false,
+      "crossing_T": 29.0,
+      "delta": 15,
+      "final_var_expanding": 1.4485589165045217e+91
+    },
+    {
+      "bits_contracting": 16,
+      "bits_expanding": 48,
+      "contracting_bounded": false,
+      "crossing_T": 30.0,
+      "delta": 16,
+      "final_var_expanding": 3.6213972912613043e+90
+    },
+    {
+      "bits_contracting": 15,
+      "bits_expanding": 49,
+      "contracting_bounded": false,
+      "crossing_T": 31.0,
+      "delta": 17,
+      "final_var_expanding": 9.053493228153261e+89
+    },
+    {
+      "bits_contracting": 14,
+      "bits_expanding": 50,
+      "contracting_bounded": false,
+      "crossing_T": 32.0,
+      "delta": 18,
+      "final_var_expanding": 2.2633733070383152e+89
+    },
+    {
+      "bits_contracting": 13,
+      "bits_expanding": 51,
+      "contracting_bounded": false,
+      "crossing_T": 33.0,
+      "delta": 19,
+      "final_var_expanding": 5.658433267595788e+88
+    },
+    {
+      "bits_contracting": 12,
+      "bits_expanding": 52,
+      "contracting_bounded": false,
+      "crossing_T": 34.0,
+      "delta": 20,
+      "final_var_expanding": 1.414608316898947e+88
+    },
+    {
+      "bits_contracting": 11,
+      "bits_expanding": 53,
+      "contracting_bounded": false,
+      "crossing_T": 35.0,
+      "delta": 21,
+      "final_var_expanding": 3.5365207922473675e+87
+    },
+    {
+      "bits_contracting": 10,
+      "bits_expanding": 54,
+      "contracting_bounded": false,
+      "crossing_T": 36.0,
+      "delta": 22,
+      "final_var_expanding": 8.841301980618419e+86
+    },
+    {
+      "bits_contracting": 9,
+      "bits_expanding": 55,
+      "contracting_bounded": false,
+      "crossing_T": 37.0,
+      "delta": 23,
+      "final_var_expanding": 2.2103254951546047e+86
+    },
+    {
+      "bits_contracting": 8,
+      "bits_expanding": 56,
+      "contracting_bounded": false,
+      "crossing_T": 38.0,
+      "delta": 24,
+      "final_var_expanding": 5.525813737886512e+85
+    },
+    {
+      "bits_contracting": 7,
+      "bits_expanding": 57,
+      "contracting_bounded": false,
+      "crossing_T": 39.0,
+      "delta": 25,
+      "final_var_expanding": 1.381453434471628e+85
+    },
+    {
+      "bits_contracting": 6,
+      "bits_expanding": 58,
+      "contracting_bounded": false,
+      "crossing_T": 40.0,
+      "delta": 26,
+      "final_var_expanding": 3.45363358617907e+84
+    },
+    {
+      "bits_contracting": 5,
+      "bits_expanding": 59,
+      "contracting_bounded": false,
+      "crossing_T": 41.0,
+      "delta": 27,
+      "final_var_expanding": 8.634083965447675e+83
+    },
+    {
+      "bits_contracting": 4,
+      "bits_expanding": 60,
+      "contracting_bounded": false,
+      "crossing_T": 42.0,
+      "delta": 28,
+      "final_var_expanding": 2.1585209913619186e+83
+    },
+    {
+      "bits_contracting": 3,
+      "bits_expanding": 61,
+      "contracting_bounded": false,
+      "crossing_T": 43.0,
+      "delta": 29,
+      "final_var_expanding": 5.3963024784047966e+82
+    },
+    {
+      "bits_contracting": 2,
+      "bits_expanding": 62,
+      "contracting_bounded": false,
+      "crossing_T": 44.0,
+      "delta": 30,
+      "final_var_expanding": 1.3490756196011992e+82
+    },
+    {
+      "bits_contracting": 1,
+      "bits_expanding": 63,
+      "contracting_bounded": false,
+      "crossing_T": 45.0,
+      "delta": 31,
+      "final_var_expanding": 3.372689049002998e+81
+    }
+  ],
+  "schema": "dir0004_precision_check_v1",
+  "self_checks": {
+    "horizon_gain_steps": 31.0,
+    "predicted_gain_steps": 31.000000000000004,
+    "structured_crossing_T": 45.0,
+    "symmetric_crossing_T": 14.0
+  },
+  "theoretical_bits_per_step_amplitude": 1.0,
+  "theoretical_bits_per_step_variance": 2.0
+}

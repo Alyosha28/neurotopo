@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "072cc4fad58f1cd322900167c046d8e2dc8dc368dd3e63b56217fa150865d4ca",
+  "reviewer": {
+    "model": "dsh-subagent (deepseek-v4.1-flash, fresh context)",
+    "effort": "default",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "GPI-0001-CLOSURE-R1",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "送审 packet 只含：本审查说明、关闭记录全文、机器输出（两项测量的曲线与重算字段）。",
+        "AUC 取真实检查点 `200/400/800/1600`。",
+        "spurious point at x=0"
+      ],
+      "problem": "审查说明承诺机器输出含两项测量的曲线，关闭记录也声称 D 与 I 由真实检查点 `200/400/800/1600` 重算——但机器输出里**根本没有逐臂、逐检查点的 AUC 值**。`two_arm` 对象只有已差分的逐 seed D、其均值、`I_per_seed/I_mean/I_sd/I_ci95_t` 与检查点列表；`control_sweep` 只有末端 KL 与 `1600→3200` 落差。",
+      "why_it_matters": "关闭所依赖的首要量无法由 packet 独立重算——而这恰恰是自认 `curve[0]` 处理有缺陷的那次运行。审查者能审计差分序列，却审计不了它的输入。",
+      "falsifiable_check": "枚举机器输出的键：不存在任何按 seed/检查点排列的 block 臂与 random 臂 AUC 数组，也没有 1600/3200 的控制 KL 原始值。"
+    },
+    {
+      "id": "GPI-0001-CLOSURE-R2",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "整体给 `CLOSURE_SOUND` / `CLOSURE_NEEDS_NARROWING` / `CLOSURE_UNSOUND` 之一",
+        "按设计自身的规则（`gap`/难度门不过则不注册；pilot 显示效应不存在则停止）",
+        "比冻结的 `δ_min = 0.05`"
+      ],
+      "problem": "关闭被归因于“设计自身的规则”，但 packet 的设计槽只有四个问题、四个最强拒绝、三个判词标签与禁止推论。检索显示 `δ_min`、`ε_abs`、MDE、power、难度门、停止、不注册在设计槽中**出现零次**；`δ_min = 0.05` 只出现在被审的产物里。",
+      "why_it_matters": "只有当事前冻结了最小有用效应与停止规则时，注册前关闭才正当。该 packet 无法区分“事前冻结的门”与“看数后选的阈值”。",
+      "falsifiable_check": "统计设计槽中 `δ_min`／停止／不注册／`ε_abs` 的出现次数：全为零。"
+    },
+    {
+      "id": "GPI-0001-CLOSURE-R3",
+      "source": "action",
+      "severity": "medium",
+      "evidence": [
+        "**容量式解释的天花板只有 `0.063` nat**（强制两组分解的解析代价）",
+        "稠密 `H64` 控制在 2 倍预算、2 个学习率、3 seeds 下停在 `0.065–0.089` nat（> `0.05`）。",
+        "The headroom/plateau question is therefore answered affirmatively and robustly, unlike in v1."
+      ],
+      "problem": "重算确认 12/12 控制单元在 3200 步处于 `0.0655–0.0889`、落差 `0.0005–0.0118`；但记录自身的解析形状代价 `0.063` nat **已经高于 `ε_abs = 0.05`**，且距最小观测末端 KL 仅 `0.0025`。因此“保持在阈值之上”几乎是由该数字蕴含的，而报告中没有把任务级余量与形状代价或共享优化下界区分开。",
+      "why_it_matters": "余量主张被作为项目首个**任务级**性质保留，并用来为 F/X 设计背书；把它说成任务属性，是把一个“控制未饱和”的观察说大了。",
+      "falsifiable_check": "在机器输出中检索与“控制平台”分开报告的残差，或容量不同且超过 `0.063` 的控制：`min_terminal_kl` 是唯一被报告的残差，最小 `0.0655`。"
+    },
+    {
+      "id": "GPI-0001-CLOSURE-R4",
+      "source": "action",
+      "severity": "medium",
+      "evidence": [
+        "**块组织在该任务上一致地劣于密度匹配的随机掩码**，无论任务图是否为块结构。",
+        "Block organisation is WORSE than the density-matched random mask in every one of the six condition-by-seed pairs (D<0 throughout)."
+      ],
+      "problem": "记录把六个很小的负 D 值提升为一个关于组织的结论。密度匹配只固定非零个数：随机掩码保留了 K=2 块对角掩码所抑制的**跨组混合**，故掩码位置与混合/谱结构相混淆。而且 `D<0` 在 F（块掩码与任务分组结构相匹配）同样成立——这正是“一般混合或优化效应”所预测的，与组织预测相反。",
+      "why_it_matters": "这是与关闭并列的唯一看似正面的发现，而记录自身的免责声明与该提升相冲突，机器输出则直接断言它。",
+      "falsifiable_check": "寻找任何臂级混合、谱或逐臂 AUC 量以吸收 `D<0` 结果：机器输出中不存在。"
+    },
+    {
+      "id": "GPI-0001-CLOSURE-R5",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "**是否过度解读了 3 seeds 的 pilot**",
+        "95% t 区间 **`[−0.0466, +0.0584]`**",
+        "The pilot demanded before freezing returns a decisive negative"
+      ],
+      "problem": "重算得 I = `+0.005930`、sd `0.021131`、半宽 `4.3027×0.0211/√3 = 0.05249`、区间 `[−0.0466, +0.0584]`：**`δ_min = 0.05` 落在区间之内**，且 sd 只有 `df=2`。机器输出却把结果称为“决定性否定”。",
+      "why_it_matters": "三个 seed 支持的是“在冻结最小有用效应处无信号”，不是“效应不存在”；而设计本身禁止把关闭转写成科学否定。",
+      "falsifiable_check": "`0.0059 + 4.3027×0.0211/√3 = 0.0584 > 0.05`，故 `δ_min` 在 95% 水平上未被排除。"
+    },
+    {
+      "id": "GPI-0001-CLOSURE-R6",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "`gap(16)` 与 `0.063` 解析形状代价的表述是否准确（**不得**把形状代价说成容量上界）？",
+        "冻结网格上 `gap(16)` 为 F `0.410 [0.380,0.447]`、X `0.385 [0.354,0.418]`。"
+      ],
+      "problem": "审查说明要求核对 `gap(16)` 与 `0.063` 的表述，记录还断言有效状态规模 F 512 对 X 2048，但机器输出**不含**非局部性、gap、形状代价或状态规模字段。",
+      "why_it_matters": "保留结论 2–4 在 packet 内无法审计，而“有效状态规模匹配”这一主张正是未来复用该 F/X 对时所依赖的。",
+      "falsifiable_check": "枚举机器输出的键：不存在 gap、形状代价或状态规模条目。"
+    }
+  ],
+  "overall_assessment": "关闭决定是对的，关闭记录的措辞还不对。对一个交互点估计比冻结最小有用效应低 8 倍、符号随 seed 翻转、六个单元全为负的固定配置，不注册正是预冻结门的正确用法；机器输出中的算术无一复算失败（D_F −0.0142、D_X −0.0201、I +0.0059、区间 [−0.0466, +0.0584]、12/12 控制单元 0.0655–0.0889、落差 0.0005–0.0118）。需要收窄的是三处主张：“决定性/不存在”（尽管 δ_min 落在区间内）；任务级余量（它建立在一个距记录自身 0.063 形状代价仅 0.0025 的控制平台上）；以及“组织有害”（跨组混合未被控制）。packet 内我无法核对：逐臂 AUC 曲线（缺失）、gap(16) 与 0.063 的推导、有效状态规模 512/2048、控制端点修正后的来源，以及任何 pilot 之前的停止规则或 δ_min 记录。"
+}

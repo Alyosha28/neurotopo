@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "9d3f8e80cb2326128fec0356d6e18f19a9af1b48ee88efbfcba90532d9e2cfc3",
+  "review_sha256": "04f631376bee25f1dbebc16a4888d030ef096e8bf6e63d0faa67f5fd7f855a33",
+  "responses": [
+    {
+      "id": "R1",
+      "disposition": "accept",
+      "reason": "首版 packet 的 action 摘要确实没有纳入已经写在草案中的 AUC_B 公式与结构交互，故独立审查无法核对主 estimand。",
+      "action": "更新草案与下一版 packet，纳入 D_{k,c}、β_c、I 的完整定义，并明确 B、epsilon 与数值效应门槛尚未冻结。",
+      "evidence_paths": [
+        "research/design/g1_k_structure_learning_efficiency_v0.md",
+        "research/evidence/g1_ksi_v0_action_summary.md"
+      ]
+    },
+    {
+      "id": "R2",
+      "disposition": "accept",
+      "reason": "首版 packet 未展示逐 K 对照关系和 oracle 难度是待验证约束，不能据摘要判断稀疏度、有效参数或任务难度已被处理。",
+      "action": "在完整草案中说明每个 K 的块模型与同度数、有效参数匹配的随机稀疏对照、强稠密资格保护及只改变耦合矩阵的任务约束；明确 generator/oracle 校验仍是未完成门槛。",
+      "evidence_paths": [
+        "research/design/g1_k_structure_learning_efficiency_v0.md",
+        "research/evidence/g1_ksi_v0_action_summary.md"
+      ]
+    },
+    {
+      "id": "R3",
+      "disposition": "accept",
+      "reason": "首版 packet 对 M3 方法试点只给范围摘要，没有给出块选择、扰动位置与校准/测试流规则。",
+      "action": "将方法草案改为固定评估全部四块、同一扰动向量随机移位作 sham、使用分离校准与测试流，并以 10 个冻结模型种子作推断单位；保留扰动比例和具体签名统计的待审缺口。",
+      "evidence_paths": [
+        "research/design/g1_m3_sham_intervention_method_pilot_v0.md",
+        "research/evidence/g1_ksi_v0_action_summary.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "以扩展后的完整设计和原文规则摘录生成新 packet 并进行 fresh-only 复核；不注册、运行或修改 Gate。"
+}

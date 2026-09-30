@@ -1,0 +1,305 @@
+{
+  "experiment_id": "EXP-0023",
+  "version": "v2",
+  "review_type": "independent_result_review",
+  "reviewed_at_utc": "2026-09-28T11:45:37.456831+00:00",
+  "verdict": "ACCEPT_RESULT_WITH_REGISTERED_LIMITS",
+  "scientific_decision": "INCONCLUSIVE",
+  "scientific_substatus": "LEARNING_GUARD_FAILURE",
+  "reproduction_pass": true,
+  "protocol": "experiments/EXP-0023/v2.md",
+  "scope": "Six prospective paired training seeds and four arms; 15 exposed parent checkpoints are descriptive only; one fixed coefficient and all eight fixed evaluation cells.",
+  "primary_findings": [
+    "Paired IID learning guard passed in only 3/6 seeds (23001, 23003, 23005), below the registered 5/6 requirement. REL_EXTRA fails IID_U and flip learning at 23002; REL_CYCLE fails them at 23004 and 23006.",
+    "P is P_INCONCLUSIVE_LEARNING: REL_BASE seed 23004 fails the IID and diagnostic-prefix threshold. The numerical six-seed rho is descriptive and cannot be promoted to a prediction claim.",
+    "M is M_NOT_SUPPORTED: all six REL_EXTRA controls exceed the D and D_rel floor, but only seeds 23001 and 23002 meet both registered half-reduction inequalities; mean D_rel for REL_CYCLE is greater than REL_EXTRA.",
+    "R is false: d_EXTRA mean is positive but its paired six-seed t interval crosses zero, d_BASE mean is negative, and the paired IID learning guard fails.",
+    "All six INV_BASE seeds pass IID and achieve 1.0 average final accuracy across the six long cells, so REL_CYCLE does not establish superiority over the strong reference."
+  ],
+  "independent_statistics": {
+    "P_status": "P_INCONCLUSIVE_LEARNING",
+    "P_rho_descriptive": 0.2571428571428571,
+    "P_base_eligible_seeds": 5,
+    "P_long_failure_seeds": 2,
+    "M_status": "M_NOT_SUPPORTED",
+    "M_floor_eligible_seeds": 6,
+    "M_both_halved_seeds": 2,
+    "M_mean_D_cycle": 0.24102838798188317,
+    "M_mean_D_extra": 0.27217541656155,
+    "M_mean_D_rel_cycle": 0.08617140641309377,
+    "M_mean_D_rel_extra": 0.0687662425448323,
+    "R_supported": false,
+    "paired_learning_guard_seeds": 3,
+    "paired_learning_guard_required": 5,
+    "d_EXTRA_mean": 0.11550796052188159,
+    "d_EXTRA_sample_sd": 0.29340908841279684,
+    "d_EXTRA_t95": [
+      -0.19240599397146294,
+      0.4234219150152261
+    ],
+    "d_BASE_mean": -0.056766669757449845,
+    "BASE_minus_EXTRA_mean": -0.17227463027933143,
+    "mean_long_bce_by_arm": {
+      "REL_BASE": 0.22214989518047398,
+      "REL_CYCLE": 0.2789165649379238,
+      "REL_EXTRA": 0.39442452545980544,
+      "INV_BASE": 0.0629499469775663
+    },
+    "mean_long_final_accuracy_by_arm": {
+      "REL_BASE": 0.9158528645833334,
+      "REL_CYCLE": 0.85888671875,
+      "REL_EXTRA": 0.8170030381944444,
+      "INV_BASE": 1.0
+    }
+  },
+  "seed_review": [
+    {
+      "seed": 23001,
+      "paired_learning_pass": true,
+      "base_prediction_eligible": true,
+      "iid_pass_by_arm": {
+        "REL_BASE": true,
+        "REL_CYCLE": true,
+        "REL_EXTRA": true,
+        "INV_BASE": true
+      },
+      "iid_u_accuracy_by_arm": {
+        "REL_BASE": 1.0,
+        "REL_CYCLE": 1.0,
+        "REL_EXTRA": 1.0,
+        "INV_BASE": 1.0
+      },
+      "iid_u_flip_accuracy_by_arm": {
+        "REL_BASE": 1.0,
+        "REL_CYCLE": 1.0,
+        "REL_EXTRA": 1.0,
+        "INV_BASE": 1.0
+      },
+      "long_bce_by_arm": {
+        "REL_BASE": 0.08176892428909355,
+        "REL_CYCLE": 0.07556495084730491,
+        "REL_EXTRA": 0.07836933453875762,
+        "INV_BASE": 0.06271234827728463
+      },
+      "long_final_accuracy_by_arm": {
+        "REL_BASE": 1.0,
+        "REL_CYCLE": 1.0,
+        "REL_EXTRA": 1.0,
+        "INV_BASE": 1.0
+      },
+      "d_EXTRA": 0.002804383691452708,
+      "d_BASE": 0.006203973441788635,
+      "M_floor_eligible": true,
+      "M_both_halved": true
+    },
+    {
+      "seed": 23002,
+      "paired_learning_pass": false,
+      "base_prediction_eligible": true,
+      "iid_pass_by_arm": {
+        "REL_BASE": true,
+        "REL_CYCLE": true,
+        "REL_EXTRA": false,
+        "INV_BASE": true
+      },
+      "iid_u_accuracy_by_arm": {
+        "REL_BASE": 1.0,
+        "REL_CYCLE": 1.0,
+        "REL_EXTRA": 0.5755208333333334,
+        "INV_BASE": 1.0
+      },
+      "iid_u_flip_accuracy_by_arm": {
+        "REL_BASE": 1.0,
+        "REL_CYCLE": 1.0,
+        "REL_EXTRA": 0.6111587982832618,
+        "INV_BASE": 1.0
+      },
+      "long_bce_by_arm": {
+        "REL_BASE": 0.06652388311377665,
+        "REL_CYCLE": 0.10615707979732446,
+        "REL_EXTRA": 0.3920906870806729,
+        "INV_BASE": 0.06684055607383113
+      },
+      "long_final_accuracy_by_arm": {
+        "REL_BASE": 1.0,
+        "REL_CYCLE": 1.0,
+        "REL_EXTRA": 0.7509765625,
+        "INV_BASE": 1.0
+      },
+      "d_EXTRA": 0.28593360728334843,
+      "d_BASE": -0.03963319668354781,
+      "M_floor_eligible": true,
+      "M_both_halved": true
+    },
+    {
+      "seed": 23003,
+      "paired_learning_pass": true,
+      "base_prediction_eligible": true,
+      "iid_pass_by_arm": {
+        "REL_BASE": true,
+        "REL_CYCLE": true,
+        "REL_EXTRA": true,
+        "INV_BASE": true
+      },
+      "iid_u_accuracy_by_arm": {
+        "REL_BASE": 1.0,
+        "REL_CYCLE": 1.0,
+        "REL_EXTRA": 1.0,
+        "INV_BASE": 1.0
+      },
+      "iid_u_flip_accuracy_by_arm": {
+        "REL_BASE": 1.0,
+        "REL_CYCLE": 1.0,
+        "REL_EXTRA": 1.0,
+        "INV_BASE": 1.0
+      },
+      "long_bce_by_arm": {
+        "REL_BASE": 0.0570620524428692,
+        "REL_CYCLE": 0.060719668756042455,
+        "REL_EXTRA": 0.48134755092152776,
+        "INV_BASE": 0.05975292270527146
+      },
+      "long_final_accuracy_by_arm": {
+        "REL_BASE": 1.0,
+        "REL_CYCLE": 1.0,
+        "REL_EXTRA": 0.75,
+        "INV_BASE": 1.0
+      },
+      "d_EXTRA": 0.4206278821654853,
+      "d_BASE": -0.0036576163131732536,
+      "M_floor_eligible": true,
+      "M_both_halved": false
+    },
+    {
+      "seed": 23004,
+      "paired_learning_pass": false,
+      "base_prediction_eligible": false,
+      "iid_pass_by_arm": {
+        "REL_BASE": false,
+        "REL_CYCLE": false,
+        "REL_EXTRA": true,
+        "INV_BASE": true
+      },
+      "iid_u_accuracy_by_arm": {
+        "REL_BASE": 0.6360677083333334,
+        "REL_CYCLE": 0.7497829861111112,
+        "REL_EXTRA": 1.0,
+        "INV_BASE": 1.0
+      },
+      "iid_u_flip_accuracy_by_arm": {
+        "REL_BASE": 0.5854853072128228,
+        "REL_CYCLE": 0.7377560106856634,
+        "REL_EXTRA": 1.0,
+        "INV_BASE": 1.0
+      },
+      "long_bce_by_arm": {
+        "REL_BASE": 0.45249109135953736,
+        "REL_CYCLE": 0.43810367037928516,
+        "REL_EXTRA": 0.10005287557595752,
+        "INV_BASE": 0.06410627425599091
+      },
+      "long_final_accuracy_by_arm": {
+        "REL_BASE": 0.7451171875,
+        "REL_CYCLE": 0.7565104166666666,
+        "REL_EXTRA": 0.9713541666666666,
+        "INV_BASE": 1.0
+      },
+      "d_EXTRA": -0.33805079480332767,
+      "d_BASE": 0.014387420980252197,
+      "M_floor_eligible": true,
+      "M_both_halved": false
+    },
+    {
+      "seed": 23005,
+      "paired_learning_pass": true,
+      "base_prediction_eligible": true,
+      "iid_pass_by_arm": {
+        "REL_BASE": true,
+        "REL_CYCLE": true,
+        "REL_EXTRA": true,
+        "INV_BASE": true
+      },
+      "iid_u_accuracy_by_arm": {
+        "REL_BASE": 1.0,
+        "REL_CYCLE": 1.0,
+        "REL_EXTRA": 1.0,
+        "INV_BASE": 1.0
+      },
+      "iid_u_flip_accuracy_by_arm": {
+        "REL_BASE": 1.0,
+        "REL_CYCLE": 1.0,
+        "REL_EXTRA": 1.0,
+        "INV_BASE": 1.0
+      },
+      "long_bce_by_arm": {
+        "REL_BASE": 0.5809598523374504,
+        "REL_CYCLE": 0.2287028046647485,
+        "REL_EXTRA": 0.5966548681812915,
+        "INV_BASE": 0.061607813593541214
+      },
+      "long_final_accuracy_by_arm": {
+        "REL_BASE": 0.75,
+        "REL_CYCLE": 0.8935546875,
+        "REL_EXTRA": 0.7434895833333334,
+        "INV_BASE": 1.0
+      },
+      "d_EXTRA": 0.3679520635165431,
+      "d_BASE": 0.35225704767270194,
+      "M_floor_eligible": true,
+      "M_both_halved": false
+    },
+    {
+      "seed": 23006,
+      "paired_learning_pass": false,
+      "base_prediction_eligible": true,
+      "iid_pass_by_arm": {
+        "REL_BASE": true,
+        "REL_CYCLE": false,
+        "REL_EXTRA": true,
+        "INV_BASE": true
+      },
+      "iid_u_accuracy_by_arm": {
+        "REL_BASE": 1.0,
+        "REL_CYCLE": 0.6419270833333334,
+        "REL_EXTRA": 1.0,
+        "INV_BASE": 1.0
+      },
+      "iid_u_flip_accuracy_by_arm": {
+        "REL_BASE": 1.0,
+        "REL_CYCLE": 0.5287610619469026,
+        "REL_EXTRA": 1.0,
+        "INV_BASE": 1.0
+      },
+      "long_bce_by_arm": {
+        "REL_BASE": 0.09409356754011673,
+        "REL_CYCLE": 0.7642512151828376,
+        "REL_EXTRA": 0.7180318364606252,
+        "INV_BASE": 0.06267976695947841
+      },
+      "long_final_accuracy_by_arm": {
+        "REL_BASE": 1.0,
+        "REL_CYCLE": 0.5032552083333334,
+        "REL_EXTRA": 0.6861979166666666,
+        "INV_BASE": 1.0
+      },
+      "d_EXTRA": -0.04621937872221238,
+      "d_BASE": -0.6701576476427208,
+      "M_floor_eligible": true,
+      "M_both_halved": false
+    }
+  ],
+  "paired_control_and_budget_check": "PASS: same generated batch history, shared REL initial weights, shared four-arm encoder/readout starts, 1000 updates and 64000 main examples/model. REL_CYCLE and REL_EXTRA each use 192000 auxiliary transition tokens and 128000 auxiliary terminal readout heads. 24000 research updates total.",
+  "scientific_interpretation": "The mean comparison with REL_EXTRA is insufficient for a registered repair effect. Extra labelled supervision, logit/confidence scale and different loss-gradient strength remain alternative explanations; direct optimization of D does not establish D as a causal mediator. No Gate 1, biological, general architecture, or out-of-task transfer claim.",
+  "evidence_limits": [
+    "The replay reuses frozen forward/core model code and saved checkpoints; no independent training implementation was run.",
+    "The 95% t interval is descriptive across six paired training seeds, not an example-level confidence interval.",
+    "Old parent outcomes were exposed before this protocol and are descriptive; they do not enter prospective P.",
+    "Allocated parameters, state, operations and wall time are disclosed; executed FLOPs and peak memory are NOT_MEASURED, and equal branch operation counts do not equalize optimization strength."
+  ],
+  "source_files": {
+    "reproduction_json_sha256": "6f0f90aa121b19284cf84513ccb81734db5f2aef3ed34d908c792ea3ee414e6c",
+    "reproduction_seed_metrics_json_sha256": "fbd0f76923e98279c988c76c53f91a7cc4ab603f8826c6d56cd2a5c2badde10e",
+    "analysis_json_sha256": "164d7ced025ded624491bb7fb3c6757faf952103e777b86786c3c5ab78732a7a"
+  },
+  "blocking_issues": []
+}

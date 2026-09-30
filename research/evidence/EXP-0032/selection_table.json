@@ -1,0 +1,38 @@
+{
+  "candidate_inference_ops": 1161,
+  "source": "A0 contract v3/v4 inference path: op_estimate('CAND')['inference'] = 1161 dense MACs/step",
+  "table": {
+    "w32b3": {
+      "ops": 1059,
+      "params": 1186,
+      "abs_log_ratio": 0.092
+    },
+    "w48b2": {
+      "ops": 1059,
+      "params": 1180,
+      "abs_log_ratio": 0.092
+    },
+    "w48b3": {
+      "ops": 1587,
+      "params": 1762,
+      "abs_log_ratio": 0.3126
+    },
+    "w64b2": {
+      "ops": 1411,
+      "params": 1564,
+      "abs_log_ratio": 0.195
+    },
+    "w96b2": {
+      "ops": 2115,
+      "params": 2332,
+      "abs_log_ratio": 0.5998
+    },
+    "w96b3": {
+      "ops": 3171,
+      "params": 3490,
+      "abs_log_ratio": 1.0048
+    }
+  },
+  "selected": "w48b2",
+  "note": "selection reproduced: |ln(control/candidate)| minimal (tie w32b3/w48b2 at 0.0922), tie-break fewer parameters -> w48b2"
+}

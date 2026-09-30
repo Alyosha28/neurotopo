@@ -1,0 +1,60 @@
+{
+  "grid_points": [
+    0,
+    100,
+    200,
+    400,
+    800,
+    1600
+  ],
+  "model": "dense GRU H=64, input 6, head 32; Adam 3e-3; batch 128",
+  "reading": "A dense 64-unit GRU control removes 80-90% of the uniform-baseline error on the theta-posterior target (KL 0.070-0.157 at 1600 updates against baselines 0.757-0.837), so the target is largely learnable in a 64-dimensional state. The residual is above the 0.05 nat headroom scale but the curves are still descending, so this pilot cannot distinguish genuine headroom from undertraining: the registered budget-doubling gate must decide. Note also that the analytic ceiling on the F-X capacity asymmetry is only 0.063 nat, i.e. the same order as the residual, leaving little room for an interaction.",
+  "results": {
+    "F": {
+      "curves": [
+        {
+          "100": 0.3943,
+          "1600": 0.0695,
+          "200": 0.1871,
+          "400": 0.1076,
+          "800": 0.0803
+        },
+        {
+          "100": 0.806,
+          "1600": 0.157,
+          "200": 0.7104,
+          "400": 0.376,
+          "800": 0.1847
+        }
+      ],
+      "target_entropy_nats": 2.6289,
+      "uniform_baseline_kl_nats": 0.8368
+    },
+    "X": {
+      "curves": [
+        {
+          "100": 0.2833,
+          "1600": 0.0808,
+          "200": 0.1615,
+          "400": 0.1297,
+          "800": 0.0876
+        },
+        {
+          "100": 0.3098,
+          "1600": 0.0761,
+          "200": 0.1778,
+          "400": 0.128,
+          "800": 0.1016
+        }
+      ],
+      "target_entropy_nats": 2.7092,
+      "uniform_baseline_kl_nats": 0.7565
+    }
+  },
+  "schema": "gpi0001_v1_control_pilot_v1",
+  "seeds": [
+    0,
+    1
+  ],
+  "status": "engineering pilot; not a verdict; superseded for the gate question by the budget-doubling run"
+}

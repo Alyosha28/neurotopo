@@ -1,0 +1,61 @@
+{
+  "id": "EXP-0005",
+  "version": "v2",
+  "title": "Frozen-model distractor-payload sensitivity",
+  "status": "COMPLETED",
+  "research_question": "Does removing distractor payload alleviate independent-block long-delay deficit relative to matched random recurrence?",
+  "prior_art_checked": [
+    "RIMs",
+    "TRNN",
+    "conn2res",
+    "interference_diagnostics"
+  ],
+  "strongest_rejection_reason": "Untrained payload variants alter input amplitude/distribution and cannot uniquely identify interference versus recurrent decay.",
+  "hypothesis": "Seed-paired delay32 gap interaction for blank vs full is >=+0.03 with 95% CI lower >0 and block absolute gain>=+0.03. Original new-stream gap <=-1pp, C0 blank degradation <=3pp; ordered mutually exclusive decisions.",
+  "baselines": [
+    "random_gru",
+    "gru_wide contextual"
+  ],
+  "intervention": "Frozen-weight distractor candidate/value payload transformations",
+  "controls": [
+    "same checkpoints",
+    "same base instances and labels",
+    "same time and event tags",
+    "paired model seed",
+    "matched M3/C0 resources",
+    "original-stream exact replay"
+  ],
+  "dataset": "New generator RNG 740000+delay, 1024 paired counterfactual instances per delay32/64",
+  "metrics": [
+    "joint_pair_accuracy primary",
+    "seed-paired gap interaction",
+    "pre/confirm/revise accuracy",
+    "NLL",
+    "repeat/id_only/value_only exploratory"
+  ],
+  "resource_matching": "No training; M3/C0 state/parameters/steps/linear operations identical within delay, exact source checkpoint hashes",
+  "seeds": [
+    9101,
+    9102,
+    9103,
+    9104,
+    9105,
+    9106,
+    9107,
+    9108,
+    9109,
+    9110
+  ],
+  "commit": "43e51aa",
+  "config": "configs/exp0005_v2.json",
+  "result": "artifacts/EXP-0005/v2/results/analysis.json",
+  "interpretation": "Primary interaction +8.46pp with paired95%CI [-0.30,+17.48]pp; blank lowers M3 by17.75pp and C0 by26.21pp, violating the C0 degradation guard.",
+  "limitations": [
+    "OOD payload interventions",
+    "fixed test stream",
+    "reused selected training-seed set",
+    "does not identify pure memory decay or semantic trajectories"
+  ],
+  "decision": "INCONCLUSIVE",
+  "next_action": "STOP_MECHANISM_ESCALATION. Gate1 remains closed; preserve the invalidity finding and all frozen-model records."
+}

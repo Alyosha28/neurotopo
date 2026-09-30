@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "f113f17d1f6312eede4743bbcb25c5c676a7734167aad786bb7a5b52fa356c66",
+  "review_sha256": "63ec892018393abd7ab4378a2f283d3918017a5ff9fed4f94640540490f2dd91",
+  "responses": [
+    {
+      "id": "PF-REF-01",
+      "disposition": "accept",
+      "reason": "A software smoke test can diagnose implementation errors even if it cannot change a scientific gate.",
+      "action": "Enumerated defining no-training assertions and confirmed no current PF code path or fault exists for those assertions to diagnose.",
+      "evidence_paths": [
+        "research/reflections/PF-PREFLIGHT-STOP-20260924/reaction_evidence.md",
+        "research/reflections/PF-PREFLIGHT-STOP-20260924/engineering_value_audit.md"
+      ]
+    },
+    {
+      "id": "PF-REF-02",
+      "disposition": "accept",
+      "reason": "Independent software debugging need not alter the Gate 1 scientific dependency order.",
+      "action": "Issued a scope correction distinguishing isolated PF engineering from early scientific preflight.",
+      "evidence_paths": [
+        "research/reflections/PF-PREFLIGHT-STOP-20260924/reaction_evidence.md",
+        "research/decisions/0011_pf_engineering_scope_correction.md"
+      ]
+    },
+    {
+      "id": "PF-REF-03",
+      "disposition": "accept",
+      "reason": "The STOP branch needed observable design-review reentry conditions rather than an indefinite wait.",
+      "action": "Recorded the five candidate-contract conditions and separate primary-control qualification as explicit re-review triggers.",
+      "evidence_paths": [
+        "research/reflections/PF-PREFLIGHT-STOP-20260924/reaction_evidence.md",
+        "research/decisions/0011_pf_engineering_scope_correction.md"
+      ]
+    },
+    {
+      "id": "PF-REF-04",
+      "disposition": "accept",
+      "reason": "The decision criteria were reconstructed after the independent criticism and cannot establish preregistration.",
+      "action": "Preserved the retrospective-design limitation and added a design-first requirement before future delegated direction audits.",
+      "evidence_paths": [
+        "research/reflections/PF-PREFLIGHT-STOP-20260924/reaction_evidence.md",
+        "AGENTS.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep only the current early PF-GRU rescue branch stopped; re-review H3 design when a complete distinguishable candidate contract or new primary overlap evidence is recorded."
+}

@@ -1,0 +1,94 @@
+# Open questions
+
+- EXP0027已给出EQUAL保持logit却损害后续FLIP的真实状态反例，FULL原型方向相同但尺度不同可正确执行；尚未建立对未见模型的短程失败预测规则。初始化暖启动OOD与原UPDATE中的算子损害分开，INV无本批可分辨损害见证。k3的次要正结果表明成功间隔非单调，研究重心转为送达状态的功能条件。见`research/evidence/EXP-0027/report.md`。
+
+- EXP0026：25002的k2–16可持续保护HOLD与UPDATE，k32/64失效，R/I一致；25003在k2/4恢复HOLD却未保住UPDATE，自适应Q90还劣于同调用数事后对照。需要区分对逻辑0/1的不对称收敛、命令相关状态与刷新时间组织；本轮未做子空间保护干预或新seed确认。精确50%为单类预测，不可称随机猜测或hidden已精确合并。见决定0099。
+
+- DIR-0010：共同R在leak0的精确Gram动力学中为gauge；13,644,800个已有float32 R矩阵有≤1.430043e−7正交误差，尚未测数值误差对模型长期错误的贡献。周期修复与模型自身漂移、任务写入的关系也未辨。DYN0002 v0先要求R/I配对、固定k*/τ与PSD可行子空间规则；它是设计草案，无效果运行。见`research/evidence/DIR-0010_temporal_subspace_identifiability.md`。
+
+- DYN-0001：在t8等logit单次重整后，25002 HOLD轨迹虽在t36出现短时输出差，256/512/1024步仍回到50%；EXP0025每8步刷新在原256步为100%。尚未区分规律重复刷新与某个较晚单次刷新，也未测定25002的吸引盆边界；t8 Gram近退化令其局部切向0/512可计算。已暴露轨迹只能做探索，不能据此选择新时间点追认机制。见`research/evidence/DYN-0001_equal_logit_future_observability.md`。
+
+- EXP0025v2：固定logit形状重整在新25002能恢复未来转移，但25003同样可行却无修复，25004/25008/25009有负缩放比不可行事件。哪些重整前状态量能够区分可修复、无效和有害投影？现有整体终点未支持，需另立前瞻设计才能把此分层用于门控或新训练；保留INV强控制。
+
+- EXP0020v2单seed中，INV/REL都学会保持与更新并保住大旋转迁移，RAW只在较小旋转下可靠。当前开放的是：这种差异跨seed/训练条件是否重复，转移约束与优化差异各占多少，以及两种成功模型不同Gram特征组合的扰动边界。现有均值读出分解不是因果证明；保留强INV，不先规定REL必须胜出。
+
+- DIR0009v2：可学习关系表示能否同时支持扰动下保持和输入驱动更新？结构收益来自不变量输入、等变转移还是恢复强度？以三模型学习pilot探索，不以手写子模块已有先例事前否决整个论文方向。论文主张依据后续证据选择方法、机制实证或评测路径。
+
+- 2026-09-28 INV-0001：已建立所测有限pair的反演放大下界及假定误差球重叠曲线，实际观测/计算误差预算尚未测量，未实现逆求解器。任务相关区分的稳健间隔是必要约束，但如何由具体动态实现、初始b是否可用仍未解决；不由事后敏感性界自动推进架构/Gate1。见`research/evidence/INV-0001/report.md`。
+
+- 2026-09-28 EXP0019：D64成对历史差异强烈收缩却未按位合并，既有输出/probe未恢复可靠b输出。仍需区分残留的无关历史差异与任务相关条件/非线性编码；不能据未合并断言b保留。D16实际合并是局部有限精度事实，同b对照相近，不建立专门b遗忘或拓扑机制。当前固定诊断结案，不自动启动干预，决定0089。
+
+- 2026-09-28 EXP0018：固定CO末hidden的全局线性b读出未恢复（D64 IID50.03%/OOD49.42%，对照相近、全部收敛）。尚未区分表示未形成、条件或非线性编码与其它训练/读出限制；不得用本轮阴性probe关闭所有信息解释。决定0088，原EXP0017判词不变。
+
+- 2026-09-28 EXP0017-CO-DECOMP：已有CO输出的二值s奇偶误差集中已获得描述性支持（D64约99.6%联合误差来自b|j，j准确率100%）；未解决的是信息未被形成、形成但未读出或训练尚未找到解三者的区分。只读诊断不启动这些干预、不重开固定效果计划；见`research/evidence/EXP0017-CO-DECOMP/report.md`。
+
+- 2026-09-28 DIR-0008→EXP0017：操作代数×观测可见性的固定六状态/750更新控制资格已完成，CO/CU/NO学习失败、NU学习通过但均值余量失败；该固定2×2效果计划按决定0087关闭。DeltaProduct相对GRU的效果仍未测，不得把控制资格失败写成机制否证。具体结果见`research/evidence/EXP-0017_order_observation_results.md`，原草案保留，不重开旧ORBIT配置。
+
+- Can the delayed-evidence task distinguish belief revision from storing all candidates and late selection? Current endpoint outputs alone cannot; supervision on the earlier answer only establishes overt revision.
+- Does a benchmark with explicit competing latent hypotheses and an independently calibrated, non-ceiling primary endpoint reveal any matched multi-trajectory benefit? The current lookup-style task does not require hypothesis maintenance. The EXP-0004 primary random-mask control did have headroom at delay32, so a ceiling does not explain its scoped negative result. See `evidence/gate1_benchmark_baseline_audit.md`.
+- CAL-0001 ruled out one replacement task configuration before any architecture comparison: a known-reliability four-hypothesis evidence stream has an exact non-ceiling Bayes label accuracy, but a conventional H64 GRU matched its posterior within 0.0003–0.0005 nat KL. See `negative_results/CAL-0001_belief_benchmark_ceiling.md`.
+- CAL-0002 tested that hidden-source construct and also saturated: three H64 dense GRUs reached final joint-posterior KL 0.0018–0.0023 nat. The unresolved question is no longer which reliability pair to choose; it is which computation or transfer claim cannot be reduced to a few stationary sufficient statistics while remaining learnable and resource matched. See `negative_results/CAL-0002_hidden_source_ceiling.md` and `decisions/0002_gate1_benchmark_strategy.md`.
+- TH-0001 proves a narrow benchmark-design point: CAL-0001/0002/EXP-0009 have constructive full-posterior filters with only4/8 log weights; increasing K cannot by **state dimension alone** make an equal-total-H multitrajectory model necessarily win. The `K−1` Jacobian lower bound needs a full-posterior open set not present in these finite discrete tasks. A **separately registered** K×model interaction on learning efficiency or transfer remains logically testable if it has a justified task, matched resources and actual-control headroom; TH-0001 only stops unmotivated K inflation as a capacity story. See `decisions/0017_gate1_capacity_argument.md`.
+- CAL-0003 exposed a d=1→4 OOD floor under fixed one-distractor cadence. CAL-0004 repaired that floor with d=0/1/2 mixed training under matched examples, tokens and forward-linear proxy, qualifying the training distribution used in EXP-0009. The d=2 exposure versus variability mechanism is unresolved; CAL-0004 alone makes no multi-trajectory claim. See `evidence/CAL-0004_cadence_qualification.md`.
+- CAL-0005's preregistered feasibility audit stopped a proposed fixed-d=2 versus mixed-d=0/1/2 follow-up: with equal batch, updates and examples, the fixed arm needs 44.44% more input tokens and 44.26% more dense forward-linear proxy FLOPs. Under a common maximum d=2, any nondegenerate variable schedule has mean d<2, so that exact matched contrast is impossible. This is a narrow design NO-GO; CAL-0004's exposure-versus-variability mechanism remains unidentified. The packet-only reviewer found and the main agent corrected a proxy-percent typo, an input-scope deviation and an overbroad project-priority claim; see `decisions/0018_cal0005_fixed_d2_contrast.md`.
+- STR-0001 found a qualification ambiguity, not a demonstrated self-blocking cycle: decisions0006/0012 exclude pure prior-art replication from project Gate 1 but do not classify a new K-factor intervention within a prior-art backbone. Independent criticism rejected the initial stronger inference; the final design judgment is `INCONCLUSIVE`, with current Gate 1 unchanged. Its packet-only reflection also established that a field benchmark qualification is **not registered** until its independent purpose, resource cap, branch rules, generator, real control, oracle and numeric thresholds are frozen; see decisions0019/0020 and `reflections/STR-0001/`.
+- CAL-0006 supplied and executed one such **field-level screen only**: a static hidden mode drives four possible deterministic 2-D dynamical trajectories with an exact posterior oracle. Both dense and random H64 GRUs learned IID8; the frozen OOD12 all-seed qualification failed because dense seed603 KL0.06497<0.08 despite five in-window records. It is a near-threshold benchmark configuration failure, not a multi-trajectory result or a replacement for an actual future matched control. Post-task reflection showed the selected seed's conditional evaluation-sample bootstrap interval [0.05915,0.07125], but the natural revision slice KL0.09819 is not judged by the overall0.08 threshold; neither diagnostic changes the formal label or measures training-seed uncertainty. The design closes without tuning more lengths/noise/angles; see `evidence/CAL-0006_dynamic_filter_qualification.md`, `reflections/CAL-0006/` and decision0021.
+- STR-0002 identifies a process-induced obstacle specific to Gate 1: candidate-free headroom screening can qualify or reject a benchmark, but cannot identify a missing candidate update rule, K-factor estimand or its actual matched control. Future **project Gate 1-motivated** calibration therefore starts with the candidate/factor and falsifying comparison, then tests the control's headroom. Independent bounded benchmark research remains possible on its own decision path. This is decision0022, not a new Gate 1 effect or a general ban on synthetic tasks.
+- STR-0002's packet-only reflection led to a structural entry policy rather than a novelty or effect claim: `gate1_candidate_first_v1` is active after event-000067; a project Gate 1 QUESTION without candidate is rejected, a bounded independent benchmark can enter, and reference K project eligibility remains explicitly unresolved. Even a structurally admitted contract still needs scientific critique, fixed task search budget, actual matched resources and independent held-out evidence. See decision0023, `reflections/STR-0002/` and the dry-run/live activation reports.
+- EXP-0009 answered that fresh-seed block-versus-random question as **INCONCLUSIVE** because both models were near the exact oracle at the sole d=4 endpoint; the matched C0 had only0.012463 nat mean KL versus the0.07 headroom guard. The more useful unresolved problem is how to define and test genuinely candidate-specific latent trajectories against RIMs and PF-RNN rather than keep moving a difficulty knob on the current all-input block proxy. The actual matched control must be calibrated independently before another claimed minimum effect; see `evidence/exp0009_posterior_transfer.md` and `prior_art/particle_filter_rnns.md`.
+- What would make a candidate trajectory causally distinct from a hardcoded Bayesian-filter slot or a PF-RNN particle under matched state/compute? The pre-implementation falsification and lesion requirements are in `design/h3_candidate_trajectory_contract.md`; no candidate-specific architecture has yet met them.
+- Gate 1 baseline dependency: prior-art source inspection exists, but executable PF-GRU/RIM-style defining-behavior checks do not. Which *specific* candidate update rule would justify validating the relevant controls and running a new matched experiment? `design/gate1_baseline_dependency_audit.md` separates zero-training mechanism definition, baseline qualification, the current generic-effect gate and any separate relative-prior-art contribution. None currently changes the H3 NO-GO or Gate 1.
+- SCR-0001 screened the simplest identity-conditioned weighted-slot candidate and found **NO_SPEC**, not a performance failure. A narrower untested direction is whether fixed low-weight slots retain rare hypotheses after long misleading evidence better than a matched resampling PF-GRU; exact discrete filtering and no-resampling particle controls could explain the same behavior. No task, numeric threshold, resource match or failure ablation is registered, so this direction does not authorize implementation. See `decisions/0007_h3_slot_no_spec.md`.
+- SCR-0002 audited that narrower direction before adding a task. With no pruning/resampling, additive log weights permit any retained low-weight hypothesis/particle to overtake a specified rival after sufficient contrary evidence; this also holds for explicit filtering and a separately defined no-resampling weighted-particle reference. The original PF-GRU author code still resamples and its paper's `NoResample` result is PF-LSTM, so an exact implementation-equivalence claim is not available. Current H3-SLOT lacks a distinct numeric prediction and stays `NO_DISTINCT_SPEC`, not empirically falsified; see decision0024.
+- SCR-0002 的任务后反思还分清了**索引存活**与**同一假设语义存活**：一个逐槽独立的转移即可在索引不变时翻转其解释。今后若声称固定身份机制，须事先跟踪可观测解释身份并对照置换/去身份，而不是只看槽权重。PF-GRU 作者原版、未来仅去重采样的 R0 与另加身份/上下文/零噪声的 ID0 模板也须分开；见决定0025和 `reflections/SCR-0002/`。
+- GOV-0002 found no **currently registered-ready project Gate 1** candidate/task/control combination under the active policy, while preserving independent benchmark, field-reference and separately named memory/retrieval questions. This is a current portfolio state rather than H3 general falsification. Exact missing fields and objective re-entry conditions are in `loop/current_frontier.md` and decision0026; the live ledger remains ITER-0007 DECIDED with reflection complete.
+- GOV-0002 任务后反思将流程分成三层：具结构完整的新 H3 合同可先进入 QUESTION；独立先例/科学批评后才有资格冻结有限任务菜单并校准实际主控制；只有主控制在隔离流过门且资源/消融/正式协议完成时才运行效果 EXP。复制 live 账本的合成四例验证了这项结构分流，不是对新候选科学内容的批准；见决定0027和 `reflections/GOV-0002/`。
+- PA-0001 found direct **behavioral** prior art for alternatives revised by later evidence, while the same low-weight fixed-identity recurrent slot surviving and recovering remains only partially overlapped in this targeted search. Reid prunes branches; PF-LSTM's recovery example does not track particle identity; Belief Net's HMM states can transition. Any future PF-GRU no-resampling control must be separately implemented/verified. See `prior_art/fixed_slot_hypothesis_retention.md` and `decisions/0008_fixed_slot_prior_art_boundary.md`.
+- PA-0001 的任务后反思把宽行为 `DIRECT_OVERLAP` 与窄机制 `PARTIAL_OVERLAP` 分开存成 `reflections/PA-0001/claim_scope.json`，并指出第③/④类检索初始覆盖不足。补查发现 Unified PF-LSTM 2026 预印本及 Belief Net 作者仓库，见 `reflections/PA-0001/search_coverage_audit.md`；`one_open_question.md` 仅保留一个未注册的固定身份反证恢复问题，缺生成器、数值 `δ/ε` 和主对照余量，不能启动实验。
+- MON-0001 只读审计了 EXP-0009 既有 d1 监控点：300步仍有 C0 余量但 M3 不稳定（6/10 seed，CI 跨零）；900步 C0 已低于0.01 KL且 M3 方向为负。它关闭“当前 M3 已在这些监控中展示一致早期样本效率优势”的追认路径，不排除不同候选/任务上新注册的样本效率问题。见 `decisions/0009_exp0009_monitor_strategy.md`。
+- 现阶段没有可辨的 H3 候选或经资格的实际主对照。`decisions/0010_pf_preflight_branch_stop.md` 关闭了“先做 PF-GRU 工程 smoke test 来救当前 H3-SLOT/M3”的低信息分支；它不禁止将来有独立工程目标的 PF 测试，也不证明 H3 一般失败。新问题必须独立、完整、可数值否定，而不是继续选模型填补空白。
+- `decisions/0011_pf_engineering_scope_correction.md` 明确修正了0010的工程例外：独立 PF 软件故障排查不必改科研依赖，但当前尚无 PF 代码路径或故障；若要提前把它用于 Gate 1 科学资格，才需新版本。H3 设计重审触发条件是仓库中出现符合五项机制/任务/数值/资源要求的新候选合同，并经独立审查，而非自动运行更多先例代码。
+- GOV-0001 区分了“严格本地先例复现可为领域通用多轨迹问题提供证据”和“纯先例效果按现行决定0006**不能**使 NeuroTopo 候选通过项目 Gate 1”。用户原章程未明确模型归属，但也未直接授权用先例复制解锁后续门。若未来改变项目计分规则，必须在结果前版本化；当前无 PF 注册或实验。见 `decisions/0012_reference_effect_vs_gate1.md`。
+- GOV-0001 的任务后反思又识别出因果估计对象问题：PF-GRU 整套模型胜 GRU 不能把收益归因于“多轨迹数量 K”，因为随机转移、评分、重采样及参数/计算也可能变化。`decisions/0013_gate1_causal_estimand_scope.md` 要求未来先决定是检验整套架构包还是隔离 K，后者须预写定向消融/资源控制；目前没有可执行任务或候选，Gate 1 不变。
+- Which H1 graph factor can be varied independently of the others under strict degree/self-loop/resource controls? In existing H64/K4 graphs, fixed-partition Q is exactly `0.75−crossEdges/1024`, so bridge count and that Q are not separate factors. Reciprocal edges can change by one local valid swap for all ten C0 seeds, but spectrum also shifts and no mature null ensemble or task effect exists. H2 has no crossed dynamics factor. See `decisions/0004_h1_h2_evidence_scope.md` and `evidence/h1_reciprocity_feasibility.md`.
+- DIR-0001 审查后暂不扩大互反图空间搜索：当前没有可被有限范围结果改变的任务或 null 采用决定，且谱/motif/路径仍会混杂。`decisions/0014_h1_range_no_go_now.md` 只停止当下方法搜索，不否定互反因素可达；未来须先有独立、数值化且会改变决定的 H1 问题。
+- DIR-0001 的任务后反思把“允许写方法规格”和“允许实施图搜索”分开（`decisions/0015_h1_method_scope_correction.md`）。事前提交的 BND-0001 只算十图必要组合上界，+0.10 互反目标在0/10图被排除，标签 `BOUND_NONDECISIVE`，并未证明可达；当前候选仍是 `LOCAL_WITNESS_ONLY`，不追加随机搜索。见 `decisions/0016_h1_count_bound_nondecisive.md`。
+- Does block recurrence offer value relative to equally resourced random sparse recurrence and a wider dense GRU? EXP-0001 remains INCONCLUSIVE. EXP-0003 recovers dense-baseline learning via a fixed curriculum; EXP-0004 finds block recurrence worse at primary delay32 than matched random recurrence. The prespecified useful-gain prediction is falsified.
+- Are fixed training budgets sufficient for all models? Fixed settings isolate a bounded training regime, not best attainable architecture performance. EXP-0002 direct training solves delay0 but fails delay8. EXP-0003 demonstrates that training order can recover original-noise delay8 learning at the same6000 updates. Its optimization mechanism remains unidentified.
+- Which altered graph property accounts for the block-vs-random transfer gap? Connectivity, mixing and degree-local organization change together; no unique dynamical cause has been identified. Gate1 does not authorize adding mechanisms as a rescue.
+- How should meaningful trajectory specialization be defined before causal intervention? No semantic assignment is currently justified.
+- Prior-art coverage and unresolved BPU identity: `prior_art/open_prior_art_questions.md`.
+
+- EXP-0005 tested whether frozen-weight payload removal alleviates the block deficit. It was INCONCLUSIVE because blank inputs caused large absolute losses in both models and the primary seed interval crossed zero; repeat/id-only/value-only results remain exploratory. The cause of EXP-0004's structural gap is still unresolved. See `research/evidence/exp0005_payload_diagnostic.md`.
+
+- EXP-0006 excluded a >=5pp block deficit in the registered linear decoding of uncued candidate labels, despite the original task gap. It remains unknown whether a readout learned at delay8 transfers to delay32 states, whether the trained task head is mismatched to later state geometry, or which stage causes the behavioral gap. None of these are semantic specialization claims.
+
+- EXP-0007 supports a positive direction for M3 excess fixed-ridge H8→32 transfer loss (+8.91pp, CI lower+1.57), but does not confirm a minimum+5pp excess or isolate why the pretrained task readout fails. Final selected-answer accessibility after late evidence remains untested by this prior-answer probe.
+
+- EXP-0008 found high absolute final revise-label linear accuracy in both frozen models, but the registered M3-C0 >=3pp deficit remained INCONCLUSIVE. The original shared readout still differs. EXP-0006/0007/0008 do not uniquely identify why; no mechanism escalation follows while Gate1 is closed.
+
+- DIR-0002 留下两个须**前瞻裁定**的规则问题：(1) 结构条件化设计中的"交叉耦合"条件是同一生成器族的第二个条件，还是决定0049 所指的"另一任务族"；(2) Gate 1 是否允许把学习效率（updates-to-ε／学习曲线面积）作为主终点。该形式（K 剂量 × 任务结构，主终点为斜率交互，失配条件作对照）是本仓库已承认可测却从未注册的方向；TH-0001 已封死"换更难任务制造容量分离"的退路。定向先例检索因通道故障未执行，D3/D4 在补核前不得进入设计批评。见 `decisions/0054_dir0002_direction_portfolio.md` 与 `evidence/DIR-0002_direction_options_survey.md`。
+
+- DIR-0002 两项规则问题已获裁定（决定0062），结果均为 `NARROW`：G1-KSI 只能作为非项目轨 `independent_benchmark` 推进（条件 A1–A5），**项目 Gate 1 是否允许学习效率主终点仍未解决**（B 类终点仅在有条件时允许，且不据此授权项目轨）。项目轨因此仍无可注册候选。未解决的新问题：是否存在一个**保留末端余量**（匹配稠密控制不饱和）的可接受任务，从而不必更换终点类别？评审要求任何后续裁定 packet 必须含所依赖的设计小节全文与被引用方向线的既有记录。见 `decisions/0062_g1_ksi_rulings_narrowed.md`。
+
+- CAL-0008 已回答决定0062 的开放问题（**配置级**）：该族 4 个固定配置在 `B=4000` 下**无末端余量**，稠密 H64 控制不受容量限制。**由此产生的新未解决问题**：是否存在一个"精确解本身不可用低维平滑近似"的可接受任务——例如强多峰后验、需要精确离散计数、或近确定性混沌动力学？若有，它属**新的独立研究问题**，须另立事前设计与独立审查，**不得**由 CAL-0008 追认或据此注册 EXP。另如实记录：本轮 `ρ` 与跨 LR 一致门未获独立检验（判词由绝对残余门单独决定），且运行后审查指出送审 packet 未含注册设计全文。见 `decisions/0063_cal0008_close_configs.md` 与 `evidence/CAL-0008_terminal_headroom_screen.md`。
+
+- GPI-0001 已在注册前关闭（决定0066）：**掩码式**组织操纵在该任务上未检测到优势，且与跨组混合相混淆；同时该任务的控制侧在 LR 扫描与预算加倍下未饱和（控制层面观察，非任务族属性）。**由此产生的新未解决问题**：是否存在**不限于掩码**的组织操纵（显式的状态分配、通信结构、或参数绑定结构），能在该任务族上产生可检测的交互？若要推进，须新的独立研究问题 + 新的操纵 + 事前设计与独立前瞻审查；**不得**改 `M/T/λ/网格/K` 重试同一配置，也不得据本关闭追认任何架构结论。见 `decisions/0066_gpi0001_closed_before_registration.md`。
+
+## EXP0021后的未解问题（仅记录，未授权新一轮运行）
+
+- REL长程稳定性为何随seed变化，而INV在本组种子稳定？
+- 干预后即时读出仍正确、后续更新却失效，依赖的是状态离开训练轨迹、动力学稳定性还是特征组合？
+- 这些均未由本轮主交叉终点证明；新实验需自己的前瞻设计，当前结果不调参重判。
+
+## EXP0022之后的范围边界
+
+本轮候选保持logit和总范数，未覆盖允许总范数变化的等logit方向。INV对当前子族的稳定与EXP0021归一化后的延迟效应能否由该自由度解释，尚未检验。REL20004为何更敏感也未建立因果解释；不借次要结果改主判词或自动追加实验。
+
+## EXP0023后的限定问题
+
+当前输出组合正则与同操作额外监督均可能扰动训练轨迹，未建立稳定修复。哪些状态级动态约束能够保留逻辑信息并稳定组合尚未回答；本轮不以原D或事后Gram分析宣称答案。当前goal的固定候选验证完成，新的机制/系数/任务需要独立前瞻设计。
+
+## EXP0024边界
+
+已确认预设checkpoint可由监督原型重整恢复保持性能；何种Gram自由度起作用、如何避免误判后固化、能否通过训练形成同类稳定状态，以及新seed/新任务效果仍未回答。不能把固定二状态codebook包装成通用新原理；本轮没有据结果再选原型或周期。

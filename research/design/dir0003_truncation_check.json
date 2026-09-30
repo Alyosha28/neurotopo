@@ -1,0 +1,37 @@
+{
+  "generated_by": "inline against scripts/dir0003_ar1_transfer_check.py",
+  "matched_centre_from_short_horizon": 0.6694107111174739,
+  "per_distribution": {
+    "phi=0.0": {
+      "band_total_h200": 1.5263112966770205,
+      "band_total_h4000": 1.5263112966770205,
+      "band_truncation_residual": 0.0,
+      "matched_centre_h4000": 0.9999,
+      "matched_ratio_h4000_target": 0.0035502812555368657,
+      "ratio_h200": 1.0000000000000058,
+      "ratio_h4000": 0.4126091167654287,
+      "wide_residual_beyond_200_k_ge_25": 2.172858776544467,
+      "wide_residual_fraction": 0.5873908832345737,
+      "wide_total_h200": 1.5263112966770116,
+      "wide_total_h4000": 3.6991700732214783,
+      "wide_truncation_residual": 2.1728587765444667
+    },
+    "phi=0.5": {
+      "band_total_h200": 4.168809174690846,
+      "band_total_h4000": NaN,
+      "band_truncation_residual": NaN,
+      "matched_centre_h4000": 0.30000000000000004,
+      "matched_ratio_h4000_target": NaN,
+      "ratio_h200": 0.9115045305827013,
+      "ratio_h4000": NaN,
+      "wide_residual_beyond_200_k_ge_25": NaN,
+      "wide_residual_fraction": NaN,
+      "wide_total_h200": 4.5735473986353465,
+      "wide_total_h4000": NaN,
+      "wide_truncation_residual": NaN
+    }
+  },
+  "schema": "dir0003_truncation_check_v1",
+  "spread": 1.15,
+  "units": 64
+}

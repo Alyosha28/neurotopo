@@ -1,0 +1,12 @@
+{
+  "execution_commit": "52425d300f9cbe0e97e6e800005d4f9dd092f8ed",
+  "checkout": "/private/tmp/neurotopo-exp0022-review",
+  "interpreter": "/private/tmp/neurotopo-venv/bin/python",
+  "module": "neurotopo.equal_output_stress_reproduce",
+  "invocation_count": 1,
+  "elapsed_wall_seconds": 8.10772654199991,
+  "timeout_seconds": 300,
+  "status": "COMPLETED",
+  "returncode": 0,
+  "output_excerpt": "{\"pass\": true, \"decision\": \"INCONCLUSIVE\", \"qualified\": true, \"primary_effects\": [5.250315848748244e-09, 7.141468655325056e-08, -7.751326414062731e-09, 2.7910007235898426e-08], \"primary_final_drops\": [0.0, 0.0, 0.0, 0.0], \"models\": 15, \"cells\": 45, \"max_error\": 0.0, \"research_updates\": 0, \"replay_updates\": 0, \"seconds\": 7.201184749999811, \"scope\": \"Shared frozen geometry/forward replay plus independent XOR/loss/selection and verdict reductions; no retraining or broader search.\"}\n"
+}

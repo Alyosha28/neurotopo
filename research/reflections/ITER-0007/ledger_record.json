@@ -1,0 +1,29 @@
+{
+  "event_id": "event-000066",
+  "kind": "reflection",
+  "time": "2026-09-23T18:08:06+00:00",
+  "iteration": "ITER-0007",
+  "phase": "DECIDED",
+  "decision": "INCONCLUSIVE",
+  "reflection": {
+    "decision_impact": "UNCHANGED",
+    "issue_count": 3,
+    "records": {
+      "packet": {
+        "path": "research/reflections/ITER-0007/packet.json",
+        "sha256": "01a68efb8c19f703d2d79cdeadd374795b13e4b9ecaeae456ab25331ad8e6bcc",
+        "size": 76873
+      },
+      "reaction": {
+        "path": "research/reflections/ITER-0007/reaction.json",
+        "sha256": "bb42e814be86891593599b12de314801136f00d47bb0e10001d96de2e921511f",
+        "size": 2261
+      },
+      "review": {
+        "path": "research/reflections/ITER-0007/review.json",
+        "sha256": "2ba724a98cdae9abf972ae801da472d9ac336c59046af631918e8525d347d2b0",
+        "size": 4503
+      }
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "arms": [
+    "SC64",
+    "D64_full"
+  ],
+  "entry_contract": "research/entries/EXP-0013.json",
+  "experiment_id": "EXP-0013",
+  "matrix_file": "configs/exp0013_matrices.json",
+  "matrix_receipt_sha256": "97c985fd6e10304ef68501e26ad2919352fb77fe9d434e872c6dc61e7bcf4aec",
+  "matrix_sha256": "8b5ed7d51b6178fa5469e9d0b54e25f502eb267017f6ba41db404f37d59f1b6c",
+  "model": {
+    "dense_control": "D64_full",
+    "graph_seed_base": 14000000,
+    "groups": 4,
+    "hidden_size": 64,
+    "primary_control": "SC64"
+  },
+  "output": "artifacts/EXP-0013/v3",
+  "pair_manifest_file": "research/registrations/G1-RS-0001_protocol_pair_v2.json",
+  "pair_manifest_sha256": "895f2e5ab2736d75d20faaa66d96e474513c87aedbc00f902f00cbc32e230a72",
+  "protocol": "experiments/EXP-0013/v3.md",
+  "qualification": {
+    "eval_examples": 4096,
+    "iid_kl_mean_max_exclusive": 0.12,
+    "iid_kl_per_seed_max_exclusive": 0.15,
+    "lr_menu": [
+      0.001,
+      0.003
+    ],
+    "lr_selection": "per-arm min three-seed mean OOD48 KL among LRs passing IID32; tie smaller",
+    "model_seeds": [
+      14101,
+      14102,
+      14103
+    ],
+    "ood_mean_windows": {
+      "D64_full": [
+        0.08,
+        0.8
+      ],
+      "SC64": [
+        0.1,
+        0.8
+      ]
+    },
+    "ood_per_seed_windows": {
+      "D64_full": [
+        0.06,
+        1.0
+      ],
+      "SC64": [
+        0.07,
+        1.0
+      ]
+    },
+    "qual_iid_root_base": 9330000,
+    "qual_ood_root_base": 9331000,
+    "tune_iid_root_base": 9320000,
+    "tune_ood_root_base": 9321000
+  },
+  "registration_lock_file": "research/registrations/G1-RS-0001_config_lock.json",
+  "resource": {
+    "engineering_seed": 9900013,
+    "engineering_update_cap": 200,
+    "preflight_wall_seconds_cap": 300,
+    "research_update_cap": 28800,
+    "tiny_overfit_final_initial_ratio_max": 0.8,
+    "tiny_overfit_updates_per_arm": 100,
+    "worker_wall_seconds_cap": 2400
+  },
+  "task": {
+    "cue_reliability": 0.75,
+    "dimension": 6,
+    "early_query": 8,
+    "gamma": 0.13610245059775603,
+    "noise_std": 0.8,
+    "ood_length": 48,
+    "retained_cue_reliability": 0.6,
+    "retained_switch_step": 20,
+    "streams": 4,
+    "switch_step": 16,
+    "train_length": 32
+  },
+  "task_information": {
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 9910013,
+    "cue_hit_window": [
+      0.73,
+      0.77
+    ],
+    "examples": 16384,
+    "h_fraction_window": [
+      0.23,
+      0.27
+    ],
+    "oracle_uniform_kl_min": 0.3,
+    "retained_correction_count_min": 512,
+    "retained_cue_kl_min": 0.1,
+    "retained_examples": 8192,
+    "retained_root": 9310002,
+    "root": 9310001,
+    "shortcut_kl_ci_lower_min": {
+      "cue": 0.15,
+      "last": 0.15,
+      "truncated_prehistory": 0.05
+    },
+    "wrong_cue_correction_count_min": 1024,
+    "wrong_cue_correction_wilson_lower_min": 0.25
+  },
+  "training": {
+    "adam_eps": 1e-08,
+    "batch_size": 128,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "deterministic": true,
+    "final_loss_weight": 0.5,
+    "grad_clip": 1.0,
+    "monitor_root_base": 9340000,
+    "monitor_steps": [
+      400,
+      1200,
+      2400
+    ],
+    "pre_loss_weight": 0.5,
+    "threads": 1,
+    "train_root_base": 10000000,
+    "updates_per_arm_seed": 2400,
+    "weight_decay": 0.0
+  },
+  "version": "v3",
+  "workflow": "phase_reveal_qualification"
+}

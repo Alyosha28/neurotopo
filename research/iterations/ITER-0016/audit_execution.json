@@ -1,0 +1,42 @@
+{
+  "experiment_id": "EXP-0021",
+  "review_type": "independent_frozen_checkout_replay",
+  "frozen_commit": "153c0764354f67c0879f6e7657f132b97705be6a",
+  "checkout": "/private/tmp/neurotopo-exp0021-review",
+  "checkout_status_before_replay": "clean",
+  "command": [
+    "/private/tmp/neurotopo-venv/bin/python",
+    "-m",
+    "neurotopo.protected_replication_reproduce",
+    "--run",
+    "artifacts/EXP-0021/v1",
+    "--output",
+    "research/iterations/ITER-0016/reproduction.json"
+  ],
+  "cwd": "/private/tmp/neurotopo-exp0021-review",
+  "env_overrides": {"PYTHONPATH": "src"},
+  "registered_replay_cap_seconds": 180,
+  "invocations": 1,
+  "returncode": 0,
+  "outer_wall_seconds_usr_bin_time": 10.14,
+  "inner_monotonic_seconds": 9.449494208000033,
+  "stdout_result": {
+    "pass": true,
+    "decision": "INCONCLUSIVE",
+    "replication": false,
+    "mechanism": false,
+    "models": 15,
+    "evaluation_cells": 120,
+    "intervention_conditions": 75,
+    "monitor_checkpoints": 156,
+    "max_error": 0.0,
+    "replay_updates": 0
+  },
+  "supplemental_read_only_checks": {
+    "stored_datasets_independent_xor_checked": 50,
+    "xor_failures": 0,
+    "descriptive_statistic_entries_recomputed": 22,
+    "descriptive_statistic_failures": 0,
+    "note": "An initial auxiliary glob included macOS ._ sidecars and could not load one as NPZ. The scan was corrected to exclude sidecars; the formal replay was run once and had no numerical failure."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "57b73093b01e1929cbea20f4221fe946c8a7aad0c8181fbd3c03db5140f9db48",
+  "review_sha256": "30c77648e48b73c498252627d02720f0f04f26a1782529e9a04a4bbce6f4728c",
+  "responses": [
+    {
+      "id": "STR-0004-R1",
+      "disposition": "accept",
+      "reason": "The frozen action did not explicitly require independent review that the single-stream controls have not been weakened.",
+      "action": "Added a mandatory independent strong-control capability and learnability verdict before formal project effect training.",
+      "evidence_paths": [
+        "research/decisions/0044_gate1_strong_control_guard.md",
+        "docs/gate1_k_factor_qualification_template.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep Gate 1 closed; apply the prospectively clarified architecture estimand and strong-control audit only to a new independently reviewed candidate and frozen numeric protocol."
+}

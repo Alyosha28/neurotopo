@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "108d77a8983b2e8320b4e29b9ef40b449939590b823bf75fe25c0ab8328236d9",
+  "reviewer": {
+    "model": "gpt-6-luna",
+    "effort": "max",
+    "context": "fresh_only_packet"
+  },
+  "issues": [],
+  "overall_assessment": "REL 的 IID_H 全时点、IID_U 全时点及 IID_U 翻转准确率均为 1.0，达到预注册的 >=0.95 单 seed 可学习性判据。强 INV 在这些条件及强旋转/通道失配条件下的结果均予保留；结论边界明确为固定探索 seed 的局部可学习性，不构成确认性方法排序、纯等变因果归因、Gate 1 或通用泛化证据。检查点数、评估条件数、零数值重放误差、3000 次原训练更新及两项预算数值与 decision 记录一致；未发现需登记 issue。"
+}

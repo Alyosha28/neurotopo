@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "bb8d5f7fdeb94cc9e86cf44dfbc220f6266ea5f3fb3abe48b0e62ade5689b6a0",
+  "review_sha256": "35acc881a666cf46e988d3a6c9cfa5e48c248a74a4281bea831c622e41450d93",
+  "responses": [
+    {
+      "id": "GOV-0002-R1",
+      "disposition": "accept",
+      "reason": "The original audit conflated current formal EXP readiness with earlier QUESTION and control-qualification stages.",
+      "action": "Separated the three stages prospectively and verified a synthetic project contract enters QUESTION without headroom while remaining ineligible for calibration/training.",
+      "evidence_paths": [
+        "research/decisions/0027_gov0002_stage_boundary_correction.md",
+        "research/loop/current_frontier.md",
+        "artifacts/validation/gov0002_followthrough_dryrun.json",
+        "research/reflections/GOV-0002/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "GOV-0002-R2",
+      "disposition": "accept",
+      "reason": "An absent entry JSON is only formal evidence; non-JSON named candidates and tasks must also be audited.",
+      "action": "Enumerated existing M3, H3-SLOT, PF/RIM, later mechanism and H1 materials and checked all five required ingredient categories by source.",
+      "evidence_paths": [
+        "research/reflections/GOV-0002/candidate_inventory.md",
+        "research/reflections/GOV-0002/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "GOV-0002-R3",
+      "disposition": "accept",
+      "reason": "The old EXP-0004 task may support a newly named memory/retrieval claim even though it does not support latent competing-hypothesis semantics.",
+      "action": "Demonstrated a synthetic independent memory track enters QUESTION with bounded branches while the old FALSIFIED record remains untouched.",
+      "evidence_paths": [
+        "artifacts/validation/gov0002_followthrough_dryrun.json",
+        "research/reflections/GOV-0002/examples/independent_memory.json",
+        "research/decisions/0027_gov0002_stage_boundary_correction.md",
+        "research/reflections/GOV-0002/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "GOV-0002-R4",
+      "disposition": "accept",
+      "reason": "Stated openness of field and independent tracks needed an executable entry example without allowing project Gate 1 score leakage.",
+      "action": "Ran copied-ledger field_reference and project_reference_pending cases with resource caps and three branches; only field QUESTION was admitted.",
+      "evidence_paths": [
+        "artifacts/validation/gov0002_followthrough_dryrun.json",
+        "research/reflections/GOV-0002/examples/field_reference.json",
+        "research/reflections/GOV-0002/examples/project_reference_pending.json",
+        "research/reflections/GOV-0002/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "GOV-0002-R5",
+      "disposition": "accept",
+      "reason": "Paths and hashes alone could not show old gate semantics were preserved or frontier conditions were interpretable.",
+      "action": "Compared action commit against preregistration for stage gates and frozen results, then obtained an independent frontier-only interpretation of the synthetic candidate stage.",
+      "evidence_paths": [
+        "research/reflections/GOV-0002/stage_diff_audit.md",
+        "docs/GOV-0002_frontier_independent_review.md",
+        "research/loop/current_frontier.md",
+        "research/reflections/GOV-0002/reaction_evidence.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep current portfolio label NO_REGISTERABLE_PROJECT_GATE1_EXP_NOW and Gate 1 NOT_PASSED, while allowing new QUESTION/design review and separate bounded field or memory tracks under the existing entry policy."
+}

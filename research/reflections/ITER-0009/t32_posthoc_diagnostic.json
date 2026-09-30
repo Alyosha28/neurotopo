@@ -1,0 +1,177 @@
+{
+  "analysis_sha256": "b7be3f448a6c0e883fe04374c1b57e26e7261b73d93db43936a55c33e6cd8916",
+  "id": "ITER-0009_POSTHOC_T32_T48_DIAGNOSTIC",
+  "learning_curves": {
+    "D64_full": [
+      {
+        "distance_above_per_seed_gate_015": 0.12651960795524345,
+        "late_drop_1200_to_2400": 0.11209773337965862,
+        "monitor_400_1200_2400": [
+          0.4086064233364249,
+          0.4198826562721506,
+          0.307784922892492
+        ],
+        "seed": 14101,
+        "tune_iid_final_kl": 0.27651960795524344
+      },
+      {
+        "distance_above_per_seed_gate_015": 0.15198093573193386,
+        "late_drop_1200_to_2400": 0.05864050717361058,
+        "monitor_400_1200_2400": [
+          0.421924462680338,
+          0.3873740283598138,
+          0.32873352118620325
+        ],
+        "seed": 14102,
+        "tune_iid_final_kl": 0.30198093573193385
+      },
+      {
+        "distance_above_per_seed_gate_015": 0.09961476129879235,
+        "late_drop_1200_to_2400": 0.16944066365291727,
+        "monitor_400_1200_2400": [
+          0.42522154388807887,
+          0.42776387184884823,
+          0.25832320819593096
+        ],
+        "seed": 14103,
+        "tune_iid_final_kl": 0.24961476129879234
+      }
+    ],
+    "SC64": [
+      {
+        "distance_above_per_seed_gate_015": 0.16351331642210257,
+        "late_drop_1200_to_2400": 0.07865657279606303,
+        "monitor_400_1200_2400": [
+          0.4056157442914652,
+          0.4242207473584747,
+          0.3455641745624117
+        ],
+        "seed": 14101,
+        "tune_iid_final_kl": 0.31351331642210256
+      },
+      {
+        "distance_above_per_seed_gate_015": 0.17637323212239012,
+        "late_drop_1200_to_2400": 0.01517195980173125,
+        "monitor_400_1200_2400": [
+          0.4220147094126572,
+          0.3892616782617565,
+          0.37408971846002526
+        ],
+        "seed": 14102,
+        "tune_iid_final_kl": 0.3263732321223901
+      },
+      {
+        "distance_above_per_seed_gate_015": 0.12916138591798879,
+        "late_drop_1200_to_2400": 0.1476124927411238,
+        "monitor_400_1200_2400": [
+          0.42672987326776335,
+          0.426731363186763,
+          0.2791188704456392
+        ],
+        "seed": 14103,
+        "tune_iid_final_kl": 0.2791613859179888
+      }
+    ]
+  },
+  "matrix_sha256": "8b5ed7d51b6178fa5469e9d0b54e25f502eb267017f6ba41db404f37d59f1b6c",
+  "method": "For each archived tune root, regenerate the same 4096 examples; verify oracle_final equals saved NPZ, compute exact cue/last/truncated posteriors and model KL; report original frozen monitor differences.",
+  "rows": {
+    "32": {
+      "means": {
+        "D64_full_lr003_kl": 0.2760384349953232,
+        "SC64_lr003_kl": 0.30634931148749384,
+        "corrected_fraction_given_wrong": 0.4889275460015738,
+        "oracle_vs_cue_kl": 0.39635983414320436,
+        "oracle_vs_last_kl": 0.3963436127875966,
+        "oracle_vs_truncated_kl": 0.22458355065362948
+      },
+      "seeds": [
+        {
+          "D64_full_lr003_kl": 0.27651960795524344,
+          "SC64_lr003_kl": 0.31351331642210256,
+          "corrected_fraction_given_wrong": 0.464354527938343,
+          "corrected_n": 482,
+          "oracle_vs_cue_kl": 0.39504804274773286,
+          "oracle_vs_last_kl": 0.3949993857359258,
+          "oracle_vs_truncated_kl": 0.2245946738514111,
+          "root": 9334101,
+          "seed": 14101,
+          "wrong_cue_n": 1038
+        },
+        {
+          "D64_full_lr003_kl": 0.30198093573193385,
+          "SC64_lr003_kl": 0.3263732321223901,
+          "corrected_fraction_given_wrong": 0.5054401582591493,
+          "corrected_n": 511,
+          "oracle_vs_cue_kl": 0.40502039037517457,
+          "oracle_vs_last_kl": 0.40503940616710205,
+          "oracle_vs_truncated_kl": 0.22975175787535973,
+          "root": 9334102,
+          "seed": 14102,
+          "wrong_cue_n": 1011
+        },
+        {
+          "D64_full_lr003_kl": 0.24961476129879234,
+          "SC64_lr003_kl": 0.2791613859179888,
+          "corrected_fraction_given_wrong": 0.49698795180722893,
+          "corrected_n": 495,
+          "oracle_vs_cue_kl": 0.3890110693067055,
+          "oracle_vs_last_kl": 0.38899204645976204,
+          "oracle_vs_truncated_kl": 0.21940422023411763,
+          "root": 9334103,
+          "seed": 14103,
+          "wrong_cue_n": 996
+        }
+      ]
+    },
+    "48": {
+      "means": {
+        "D64_full_lr003_kl": 0.49735686374072013,
+        "SC64_lr003_kl": 0.5461496155469919,
+        "corrected_fraction_given_wrong": 0.8011878762691901,
+        "oracle_vs_cue_kl": 0.6462938581903145,
+        "oracle_vs_last_kl": 0.6462687259591524,
+        "oracle_vs_truncated_kl": 0.15588045155726032
+      },
+      "seeds": [
+        {
+          "D64_full_lr003_kl": 0.5134679780111071,
+          "SC64_lr003_kl": 0.5603506080330178,
+          "corrected_fraction_given_wrong": 0.7980295566502463,
+          "corrected_n": 810,
+          "oracle_vs_cue_kl": 0.6546807107108846,
+          "oracle_vs_last_kl": 0.6546369914467677,
+          "oracle_vs_truncated_kl": 0.15603673707209487,
+          "root": 9335101,
+          "seed": 14101,
+          "wrong_cue_n": 1015
+        },
+        {
+          "D64_full_lr003_kl": 0.5055313888043431,
+          "SC64_lr003_kl": 0.568301414893241,
+          "corrected_fraction_given_wrong": 0.789980732177264,
+          "corrected_n": 820,
+          "oracle_vs_cue_kl": 0.643332891831232,
+          "oracle_vs_last_kl": 0.6433023617059002,
+          "oracle_vs_truncated_kl": 0.16132997151931316,
+          "root": 9335102,
+          "seed": 14102,
+          "wrong_cue_n": 1038
+        },
+        {
+          "D64_full_lr003_kl": 0.4730712244067101,
+          "SC64_lr003_kl": 0.5097968237147171,
+          "corrected_fraction_given_wrong": 0.8155533399800599,
+          "corrected_n": 818,
+          "oracle_vs_cue_kl": 0.6408679720288268,
+          "oracle_vs_last_kl": 0.6408668247247892,
+          "oracle_vs_truncated_kl": 0.15027464608037294,
+          "root": 9335103,
+          "seed": 14103,
+          "wrong_cue_n": 1003
+        }
+      ]
+    }
+  },
+  "scope": "Retrospective descriptive replay of already-registered tune roots only; no new roots, training or threshold changes"
+}

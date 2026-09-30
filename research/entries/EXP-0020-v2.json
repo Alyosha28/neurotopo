@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "track": "independent_benchmark",
+  "experiment_id": "EXP-0020",
+  "direction": "learned_protected_transition_pilot",
+  "question": "Can learned relational transitions jointly retain and update a bit, relative to raw-coordinate and invariant controls in one fixed exploratory run?",
+  "purpose": "Single-seed exploratory learnability and transfer curves, not method superiority or Gate1.",
+  "gate1_claim": false,
+  "factor": null,
+  "resource_cap": {
+    "max_updates": 3000,
+    "max_wall_seconds": 780
+  },
+  "task_search": {
+    "max_configurations": 1,
+    "retain_all_attempts": true,
+    "heldout_rule": "Fixed curriculum and all8 evaluation cells; monitor is not selection; independent confirmation deferred, all pilot roots exposed."
+  },
+  "branches": {
+    "success": "Report single-instance learnability and full baseline outcomes; no superiority claim.",
+    "failure": "Preserve learning failure for future reasoned new-version exploration, not a general no-go.",
+    "borderline": "No retuning or seed selection in this run; complete and report curves."
+  }
+}

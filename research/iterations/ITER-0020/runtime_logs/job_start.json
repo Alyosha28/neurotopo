@@ -1,0 +1,67 @@
+{
+  "command": [
+    "/private/tmp/neurotopo-venv/bin/python",
+    "-m",
+    "neurotopo.refresh_replication",
+    "--config",
+    "configs/exp0025_v2.json",
+    "--output",
+    "~/.local/share/neurotopo/experiment-runs/EXP-0025/v2"
+  ],
+  "timeout_seconds": 1800.0,
+  "experiment": "EXP-0025",
+  "config": {
+    "experiment_id": "EXP-0025",
+    "version": "v2",
+    "workflow": "refresh_replication",
+    "protocol": "experiments/EXP-0025/v2.md",
+    "entry_contract": "research/entries/EXP-0025.json",
+    "output": "artifacts/EXP-0025/v2",
+    "seeds": [
+      25001,
+      25002,
+      25003,
+      25004,
+      25005,
+      25006,
+      25007,
+      25008,
+      25009,
+      25010,
+      25011,
+      25012
+    ],
+    "arms": [
+      "REL",
+      "INV"
+    ],
+    "conditions": [
+      "NONE",
+      "GAUGE8",
+      "FULL8",
+      "EQUAL8",
+      "SCALE8"
+    ],
+    "updates": 1000,
+    "batch_size": 64,
+    "examples": 512,
+    "monitor_steps": [
+      0,
+      125,
+      250,
+      500,
+      1000
+    ],
+    "gate1_claim": false,
+    "matching_criterion_version": "G1-MATCH-v3",
+    "resource": {
+      "worker_wall_seconds_cap": 1800,
+      "reproduction_wall_seconds_cap": 600,
+      "research_update_cap": 24000,
+      "general_validation_overfit_cap": 900
+    },
+    "reference_seed": 23005,
+    "parent": "artifacts/EXP-0023/v2"
+  },
+  "actual_output": "~/.local/share/neurotopo/experiment-runs/EXP-0025/v2"
+}

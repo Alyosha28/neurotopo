@@ -1,0 +1,13 @@
+{
+  "final_commit_completed": false,
+  "head_preserved": "52425d300f9cbe0e97e6e800005d4f9dd092f8ed",
+  "existing_object_directory_io_error": ".git/objects/b0",
+  "invalid_compressed_object": "1b99116a63671a1f623d19358c5d6d67b02dbd1a",
+  "unreadable_head_tree_object": "702a96d61bcefc41a46c9f34aef3a0de318ddb7d",
+  "strict_validation_retained": true,
+  "refs_updated": false,
+  "index_restored_from_backup": true,
+  "original_objects_modified": false,
+  "local_attempt": "/private/tmp/neurotopo-exp0022-recovery/git_archive",
+  "fallback": "Verified standalone delivery snapshot including raw outputs, frozen source and evidence; not a replacement Git history."
+}

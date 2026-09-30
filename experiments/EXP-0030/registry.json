@@ -1,0 +1,81 @@
+{
+  "experiment": "EXP-0030",
+  "active_version": "v1",
+  "versions": {
+    "v1": "COMPLETED"
+  },
+  "gate": "A2_TASK_QUALIFICATION",
+  "title": "DELAY-d command-memory task family and control-side qualification",
+  "protocol": "experiments/EXP-0030/v1.md",
+  "config": "configs/exp0030_v1.json",
+  "implementation": "src/neurotopo/arch0001_memory_task.py",
+  "frozen_module": "src/neurotopo/arch0001_core.py",
+  "tests": "tests/test_arch0001_memory_task.py",
+  "output": "artifacts/EXP-0030/v1",
+  "task": "DELAY-d: readout r>=1 equals command u_{r-1-d}; i.i.d. Bernoulli(0.5) commands",
+  "seeds": {
+    "scan": [
+      29101,
+      29102
+    ],
+    "confirm": [
+      29111,
+      29112,
+      29113
+    ]
+  },
+  "menu": [
+    "D1_PLAIN",
+    "D1_BRANCH",
+    "D2_PLAIN",
+    "D2_BRANCH",
+    "D3_PLAIN",
+    "D3_BRANCH"
+  ],
+  "runs": 15,
+  "training_updates": 30000,
+  "decision": "SUPPORTED",
+  "substatus": "A2_TASK_QUALIFIED",
+  "qualified": {
+    "item": "D2_PLAIN",
+    "d": 2,
+    "sup": "PLAIN",
+    "scan_accuracy": [
+      0.6967,
+      0.6864
+    ],
+    "scan_mean": 0.6916,
+    "confirm_accuracy": [
+      0.6922,
+      0.6979,
+      0.7009
+    ],
+    "confirm_mean": 0.697,
+    "memoryless_max": 0.5379,
+    "oracle_min": 1.0
+  },
+  "not_qualified": [
+    {
+      "d": 1,
+      "reason": "ceiling 1.0000 on both supervision variants"
+    }
+  ],
+  "report": "research/evidence/EXP-0030/report.md",
+  "verification": "research/evidence/EXP-0030/verification.json",
+  "decision_record": "research/decisions/0105_exp0030_task_qualification.md",
+  "guard": "Task qualification only: no candidate training, no A2 effect, A1 still not passed, old Gate 1 unchanged",
+  "provenance_note": "git commit f5a6e2c, git_dirty=true (active git metadata outside the writable sandbox)",
+  "superseded_by": {
+    "experiment": "EXP-0031",
+    "decision": "research/decisions/0106_exp0031_requalification.md",
+    "reason": "corrected-endpoint re-qualification: no qualified condition under meaningful_accuracy and the expanded memoryless reference set"
+  },
+  "reflection": {
+    "packet": "research/reflections/EXP-0030/packet.json",
+    "review": "research/reflections/EXP-0030/review.json",
+    "reaction": "research/reflections/EXP-0030/reaction.json",
+    "execution": "research/reflections/EXP-0030/execution.md",
+    "issues": 11,
+    "decision_impact": "REASSESSMENT_REQUIRED"
+  }
+}

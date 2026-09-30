@@ -1,0 +1,60 @@
+{
+  "controls": {
+    "all_12_iid_seed_values_above_0_15": true,
+    "iid32_three_seed_mean_kl": {
+      "D64_full": {
+        "0.001": 0.386901247,
+        "0.003": 0.276038435
+      },
+      "SC64": {
+        "0.001": 0.390130127,
+        "0.003": 0.306349311
+      }
+    },
+    "iid_mean_gate_strictly_below": 0.12,
+    "research_updates": 28800,
+    "rs4_updates": 0,
+    "selected_lr": null,
+    "worker_wall_seconds": 224.88988437500666
+  },
+  "evidence": {
+    "analysis_sha256": "b7be3f448a6c0e883fe04374c1b57e26e7261b73d93db43936a55c33e6cd8916",
+    "manifest_sha256": "6a23ed53eb63886a13dc7aa6b02ddd5253169713bec0d4e0ce892336cc84ad06",
+    "max_raw_kl_recompute_abs_error": 1.11e-16,
+    "raw_prediction_checkpoint_files_verified": 96,
+    "source_commit": "691450d7834e37d7c88a352e21db1a3627e7b248",
+    "task_information_npz_sha256": "472ef990ba19702eb51e34718b47df924b989685c39c9acc62b20f8312102584",
+    "zero_update_replay": "first paired seed 14101, both controls lr0.003, initial/final weights and IID/OOD logits matched"
+  },
+  "experiment_id": "EXP-0013",
+  "gate1_state": "NOT_PASSED",
+  "iteration_id": "ITER-0009",
+  "limitations": [
+    "No RS4 task model or EXP-0014 formal stream was run.",
+    "Post-result monitor trends are descriptive and cannot justify retuning this frozen task.",
+    "Reproduction checked one paired seed zero-update, not independent retraining of all 12 controls."
+  ],
+  "next_action": "DECIDED INCONCLUSIVE/LEARNING_FAILURE; close EXP-0014 entry and G1-RS task search under decision0049; complete packet reflection then hold at user request.",
+  "reviewer": {
+    "context": "independent_read_only",
+    "effort": "high",
+    "model": "gpt-6-sol"
+  },
+  "schema_version": 1,
+  "scientific_decision": "INCONCLUSIVE",
+  "scope": "Frozen task/control qualification, no RS4 or EXP-0014 effect training",
+  "strongest_alternative_explanation": "The fixed 2400-update optimization budget did not let either strong single-stream control learn IID32 sufficiently; late monitors still improved. This is a control learning-floor result, not a multi-trajectory effect.",
+  "task_information": {
+    "correction_wilson_lower": 0.7831098324205685,
+    "cue_kl_bootstrap_lower": 0.6280526358493778,
+    "full_uniform_kl_mean": 1.1945346034559245,
+    "last_frame_kl_bootstrap_lower": 0.627897762700404,
+    "pass": true,
+    "retained_corrections": 2655,
+    "retained_full_cue_kl_mean": 0.8335452988422719,
+    "truncated_prehistory_kl_bootstrap_lower": 0.14330927698350315,
+    "wrong_cue_corrections": 3223,
+    "wrong_cue_total": 4050
+  },
+  "verdict": "ACCEPT_LEARNING_FAILURE"
+}

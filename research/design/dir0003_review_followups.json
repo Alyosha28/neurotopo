@@ -1,0 +1,427 @@
+{
+  "generated_by": "scripts/dir0003_review_followups.py",
+  "i11_variance_split": {
+    "adjacent_phi0.5": {
+      "long_lag": {
+        "ridge_means": [
+          0.009924256175594554,
+          0.011260007601181562,
+          0.009967621572588561
+        ],
+        "ridges": [
+          0.003,
+          0.01,
+          0.03
+        ],
+        "seed_means": [
+          0.00843579005821062,
+          0.00928027655070753,
+          0.007604519148784489,
+          0.013988213376349779,
+          0.01113724601166019,
+          0.01097747381690597,
+          0.01205291065964619,
+          0.009595264642707704
+        ],
+        "share_remainder": 0.49246043932580424,
+        "share_ridge": 0.047068602032154586,
+        "share_seed": 0.4604709586420412,
+        "ss_total": 0.0001958205074460104
+      },
+      "max_on_grid": {
+        "ridge_means": [
+          0.07021370922364709,
+          0.07947073709925681,
+          0.06042465744169348
+        ],
+        "ridges": [
+          0.003,
+          0.01,
+          0.03
+        ],
+        "seed_means": [
+          0.03611563097164261,
+          0.05299762744899147,
+          0.13986998365813172,
+          0.05260350828865116,
+          0.05848538721921096,
+          0.04641361109622714,
+          0.10025549362472119,
+          0.07354970106468343
+        ],
+        "share_remainder": 0.23708351091469457,
+        "share_ridge": 0.04231607845817376,
+        "share_seed": 0.7206004106271316,
+        "ss_total": 0.03429878319118839
+      },
+      "note": "two-way decomposition without interaction; remainder absorbs seed x ridge"
+    },
+    "separated_phi0.5": {
+      "long_lag": {
+        "ridge_means": [
+          0.14569758195483096,
+          0.19017811636285403,
+          0.14965377180175013
+        ],
+        "ridges": [
+          0.003,
+          0.01,
+          0.03
+        ],
+        "seed_means": [
+          0.11352268182864243,
+          0.1981617394716663,
+          0.1470247652938881,
+          0.12290153036718944,
+          0.18187435331546328,
+          0.16832672263037174,
+          0.12393637331918039,
+          0.23899708742542533
+        ],
+        "share_remainder": 0.7763515757859241,
+        "share_ridge": 0.043931906259410444,
+        "share_seed": 0.1797165179546655,
+        "ss_total": 0.22072898362072652
+      },
+      "max_on_grid": {
+        "ridge_means": [
+          0.187844817606373,
+          0.22850589849173794,
+          0.23222265441703627
+        ],
+        "ridges": [
+          0.003,
+          0.01,
+          0.03
+        ],
+        "seed_means": [
+          0.13344125594822445,
+          0.322357907566009,
+          0.165046268862555,
+          0.213421339851255,
+          0.24057415397705487,
+          0.1954942903189499,
+          0.1845172599713896,
+          0.2746765115449547
+        ],
+        "share_remainder": 0.7742964800626778,
+        "share_ridge": 0.024797490688767507,
+        "share_seed": 0.20090602924855466,
+        "ss_total": 0.3910643184570848
+      },
+      "note": "two-way decomposition without interaction; remainder absorbs seed x ridge"
+    }
+  },
+  "i9_tanh_same_rule": [
+    {
+      "artifact_band_ridge_band": 0.06009587380069681,
+      "candidates": [
+        {
+          "contrast_long_lag_ge_20": 0.13070463504941987,
+          "contrast_max_on_grid": 0.1629372715322186,
+          "counts": [
+            37,
+            27,
+            0
+          ],
+          "moment2": 0.40137820220551973,
+          "moment2_deviation": 0.6474427048788878,
+          "tanh_total_ratio": 0.4958266744472794
+        },
+        {
+          "contrast_long_lag_ge_20": 0.01763146044686026,
+          "contrast_max_on_grid": 0.023959353769222425,
+          "counts": [
+            37,
+            19,
+            8
+          ],
+          "moment2": 0.8200191925339146,
+          "moment2_deviation": 0.2288017145504928,
+          "tanh_total_ratio": 0.9113816365163976
+        },
+        {
+          "contrast_long_lag_ge_20": 0.008262723809231098,
+          "contrast_max_on_grid": 0.01567845074974583,
+          "counts": [
+            20,
+            28,
+            16
+          ],
+          "moment2": 0.9461111565714256,
+          "moment2_deviation": 0.10270975051298181,
+          "tanh_total_ratio": 0.9826222415341669
+        },
+        {
+          "contrast_long_lag_ge_20": 0.0008490744678856244,
+          "contrast_max_on_grid": 0.005791062297838767,
+          "counts": [
+            21,
+            19,
+            24
+          ],
+          "moment2": 1.0738642163750007,
+          "moment2_deviation": 0.025043309290593285,
+          "tanh_total_ratio": 1.0019026743948796
+        },
+        {
+          "contrast_long_lag_ge_20": 0.011185655309519982,
+          "contrast_max_on_grid": 0.029040646753282107,
+          "counts": [
+            11,
+            21,
+            32
+          ],
+          "moment2": 1.0314817444032478,
+          "moment2_deviation": 0.017339162681159648,
+          "tanh_total_ratio": 1.0744600141804175
+        },
+        {
+          "contrast_long_lag_ge_20": 0.016134380259408054,
+          "contrast_max_on_grid": 0.022150216973439107,
+          "counts": [
+            10,
+            14,
+            40
+          ],
+          "moment2": 1.027425077352732,
+          "moment2_deviation": 0.02139582973167542,
+          "tanh_total_ratio": 1.0679295314321147
+        },
+        {
+          "contrast_long_lag_ge_20": 0.010828549410851762,
+          "contrast_max_on_grid": 0.02691774245650369,
+          "counts": [
+            10,
+            6,
+            48
+          ],
+          "moment2": 0.994039010461157,
+          "moment2_deviation": 0.0547818966232505,
+          "tanh_total_ratio": 1.0910461473542772
+        }
+      ],
+      "chosen_by_moment2_rule": {
+        "contrast_long_lag_ge_20": 0.008262723809231098,
+        "contrast_max_on_grid": 0.01567845074974583,
+        "counts": [
+          20,
+          28,
+          16
+        ],
+        "moment2": 0.9461111565714256,
+        "moment2_deviation": 0.10270975051298181,
+        "tanh_total_ratio": 0.9826222415341669
+      },
+      "n_qualified": 2,
+      "seed_index": 0
+    },
+    {
+      "artifact_band_ridge_band": 0.050594821689861735,
+      "candidates": [
+        {
+          "contrast_long_lag_ge_20": 0.11310416514369781,
+          "contrast_max_on_grid": 0.16609324725399766,
+          "counts": [
+            47,
+            17,
+            0
+          ],
+          "moment2": 0.36028921365525324,
+          "moment2_deviation": 0.6885316934291542,
+          "tanh_total_ratio": 0.4887019978817263
+        },
+        {
+          "contrast_long_lag_ge_20": 0.015953401374304343,
+          "contrast_max_on_grid": 0.0345850015280853,
+          "counts": [
+            19,
+            37,
+            8
+          ],
+          "moment2": 0.7496514921260988,
+          "moment2_deviation": 0.2991694149583086,
+          "tanh_total_ratio": 0.9626527755631222
+        },
+        {
+          "contrast_long_lag_ge_20": 0.008089757558329636,
+          "contrast_max_on_grid": 0.023219346326859402,
+          "counts": [
+            42,
+            6,
+            16
+          ],
+          "moment2": 1.0590161960623838,
+          "moment2_deviation": 0.010195288977976391,
+          "tanh_total_ratio": 0.948985146137426
+        },
+        {
+          "contrast_long_lag_ge_20": 0.0008000782412358465,
+          "contrast_max_on_grid": 0.0021400462435170464,
+          "counts": [
+            20,
+            20,
+            24
+          ],
+          "moment2": 1.0652361383093099,
+          "moment2_deviation": 0.016415231224902405,
+          "tanh_total_ratio": 1.0029437541065844
+        },
+        {
+          "contrast_long_lag_ge_20": 0.006791629724106296,
+          "contrast_max_on_grid": 0.0157210577649326,
+          "counts": [
+            17,
+            15,
+            32
+          ],
+          "moment2": 1.1029910977798434,
+          "moment2_deviation": 0.05417019069543594,
+          "tanh_total_ratio": 1.0288430618881388
+        },
+        {
+          "contrast_long_lag_ge_20": 0.015323092364208812,
+          "contrast_max_on_grid": 0.041007457327424945,
+          "counts": [
+            6,
+            18,
+            40
+          ],
+          "moment2": 0.9625232643983715,
+          "moment2_deviation": 0.0862976426860359,
+          "tanh_total_ratio": 1.0738226965742783
+        },
+        {
+          "contrast_long_lag_ge_20": 0.021704378175523287,
+          "contrast_max_on_grid": 0.08865427093681444,
+          "counts": [
+            5,
+            11,
+            48
+          ],
+          "moment2": 0.8948047765305125,
+          "moment2_deviation": 0.15401613055389496,
+          "tanh_total_ratio": 1.0906896681291025
+        }
+      ],
+      "chosen_by_moment2_rule": {
+        "contrast_long_lag_ge_20": 0.015953401374304343,
+        "contrast_max_on_grid": 0.0345850015280853,
+        "counts": [
+          19,
+          37,
+          8
+        ],
+        "moment2": 0.7496514921260988,
+        "moment2_deviation": 0.2991694149583086,
+        "tanh_total_ratio": 0.9626527755631222
+      },
+      "n_qualified": 3,
+      "seed_index": 1
+    },
+    {
+      "artifact_band_ridge_band": 0.05718027389318925,
+      "candidates": [
+        {
+          "contrast_long_lag_ge_20": 0.12077991792452325,
+          "contrast_max_on_grid": 0.1586213846605592,
+          "counts": [
+            34,
+            30,
+            0
+          ],
+          "moment2": 0.4058278922261413,
+          "moment2_deviation": 0.6429930148582661,
+          "tanh_total_ratio": 0.5180526240691462
+        },
+        {
+          "contrast_long_lag_ge_20": 0.016730991653929994,
+          "contrast_max_on_grid": 0.022833833016975835,
+          "counts": [
+            5,
+            51,
+            8
+          ],
+          "moment2": 0.6398144286334397,
+          "moment2_deviation": 0.4090064784509677,
+          "tanh_total_ratio": 0.9051119474741114
+        },
+        {
+          "contrast_long_lag_ge_20": 0.004782839032114294,
+          "contrast_max_on_grid": 0.023297625119261367,
+          "counts": [
+            5,
+            43,
+            16
+          ],
+          "moment2": 0.8112826092696666,
+          "moment2_deviation": 0.2375382978147409,
+          "tanh_total_ratio": 0.9882200766052051
+        },
+        {
+          "contrast_long_lag_ge_20": 0.007453880969591542,
+          "contrast_max_on_grid": 0.01905734837147577,
+          "counts": [
+            5,
+            35,
+            24
+          ],
+          "moment2": 0.9066808728775486,
+          "moment2_deviation": 0.14214003420685883,
+          "tanh_total_ratio": 1.0297155063355687
+        },
+        {
+          "contrast_long_lag_ge_20": 0.006591499981272397,
+          "contrast_max_on_grid": 0.011207265821553292,
+          "counts": [
+            5,
+            27,
+            32
+          ],
+          "moment2": 0.9489500915590062,
+          "moment2_deviation": 0.09987081552540122,
+          "tanh_total_ratio": 1.0452066574863923
+        },
+        {
+          "contrast_long_lag_ge_20": 0.009588422664183027,
+          "contrast_max_on_grid": 0.009588422664183027,
+          "counts": [
+            5,
+            19,
+            40
+          ],
+          "moment2": 0.94519254894215,
+          "moment2_deviation": 0.10362835814225746,
+          "tanh_total_ratio": 1.0719335366624143
+        },
+        {
+          "contrast_long_lag_ge_20": 0.01383050999952129,
+          "contrast_max_on_grid": 0.01383050999952129,
+          "counts": [
+            5,
+            11,
+            48
+          ],
+          "moment2": 0.8948047765305125,
+          "moment2_deviation": 0.15401613055389496,
+          "tanh_total_ratio": 1.093653802151298
+        }
+      ],
+      "chosen_by_moment2_rule": {
+        "contrast_long_lag_ge_20": 0.004782839032114294,
+        "contrast_max_on_grid": 0.023297625119261367,
+        "counts": [
+          5,
+          43,
+          16
+        ],
+        "moment2": 0.8112826092696666,
+        "moment2_deviation": 0.2375382978147409,
+        "tanh_total_ratio": 0.9882200766052051
+      },
+      "n_qualified": 3,
+      "seed_index": 2
+    }
+  ],
+  "schema": "dir0003_review_followups_v1"
+}

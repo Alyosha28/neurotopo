@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "design_commit": "873feb7",
+  "analysis_and_independent_recompute_seconds": 0.6106490419997499,
+  "tool_measured_command_wall_seconds": 0.771747958,
+  "shared_budget_seconds": 60,
+  "budget_pass": true,
+  "groups": 12,
+  "primary_groups": 6,
+  "new_training_updates": 0,
+  "new_research_samples": 0,
+  "source_sha256": "bae376869a8bd318aa7630eff3fef9bb9f00fd680fb0647ff539bc2c940e7df5",
+  "analysis_sha256": "f5fda33e6122862abe881176e60902f9c7dd5949d9b60ed29747ff72b76219ef",
+  "inputs_unchanged": true,
+  "live_loop_unchanged": "ITER-0012 DECIDED, no new experiment iteration"
+}

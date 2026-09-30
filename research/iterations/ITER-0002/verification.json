@@ -1,0 +1,19 @@
+{
+  "scientific_decision": "FALSIFIED",
+  "scope": "registered >=3pp block vs random gain at delay32 only",
+  "replication_scope": "seed9101, all5 models, original source commit",
+  "evidence": [
+    {
+      "path": "research/iterations/ITER-0002/review.md",
+      "sha256": "19dc2f3d8c234f63ce409e9828133e9c133c6082be3f3bb3dce610ac539d7b02"
+    },
+    {
+      "path": "docs/EXP-0004_reproduction.md",
+      "sha256": "3624795bc8f6465e73d678860f7dfb7087abd027e10038ce24b0d7b5fd010efe"
+    },
+    {
+      "path": "artifacts/EXP-0004/v1/analysis.json",
+      "sha256": "492e589816ed158313bd4c44dfeadd69c87838b0868af09af8cb6e3adc0a551a"
+    }
+  ]
+}

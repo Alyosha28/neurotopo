@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "6190f0939caa3f78f2e740857be118d08a93be0176e8a5c7593bd8a7dbcd9dec",
+  "review_sha256": "4b2dd13fbe5b660e8118dba6e171fd5d11422d62070ee707b2c4ba4dca93945a",
+  "responses": [
+    {
+      "id": "I1",
+      "disposition": "accept",
+      "reason": "The standalone audit lacked a frozen pre-action design; the reconstruction cannot establish preregistration.",
+      "action": "Disclosed the deviation and required design-first records for subsequent substantial audits; SCR-0001 was specified before screening.",
+      "evidence_paths": [
+        "research/reflections/GATE1-DEPENDENCY-20260924/reaction_evidence.md",
+        "docs/post_task_reflection.md",
+        "research/design/h3_slot_candidate_screen_protocol.md"
+      ]
+    },
+    {
+      "id": "I2",
+      "disposition": "accept",
+      "reason": "Workflow sequencing did not itself produce a falsifiable H3 mechanism prediction.",
+      "action": "Executed one named zero-training candidate screen and recorded its NO_SPEC outcome without claiming a model effect.",
+      "evidence_paths": [
+        "research/reflections/GATE1-DEPENDENCY-20260924/reaction_evidence.md",
+        "research/evidence/h3_slot_candidate_screen.md",
+        "research/decisions/0007_h3_slot_no_spec.md"
+      ]
+    },
+    {
+      "id": "I3",
+      "disposition": "accept",
+      "reason": "Primary and prior-art control selection must be fixed before qualification or confirmatory results are seen.",
+      "action": "Added a pre-calibration control inclusion and exclusion rule to the protocol; no new experiment or control config exists yet.",
+      "evidence_paths": [
+        "research/reflections/GATE1-DEPENDENCY-20260924/reaction_evidence.md",
+        "docs/experiment_protocol.md"
+      ]
+    },
+    {
+      "id": "I4",
+      "disposition": "accept",
+      "reason": "The prior next action lacked a named candidate and a binary paper-screening standard.",
+      "action": "Registered SCR-0001 for H3-SLOT with required equations, oracle, counterfactuals, cost and failure conditions; applied it once.",
+      "evidence_paths": [
+        "research/reflections/GATE1-DEPENDENCY-20260924/reaction_evidence.md",
+        "research/design/h3_slot_candidate_screen_protocol.md",
+        "research/evidence/h3_slot_candidate_screen.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep H3-SLOT NO_SPEC and Gate 1 closed; require a new prespecified, distinguishable mechanism question before any further implementation or benchmark search."
+}

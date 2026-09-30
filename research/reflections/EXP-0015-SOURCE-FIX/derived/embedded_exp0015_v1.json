@@ -1,0 +1,37 @@
+{
+  "experiment_id": "EXP-0015",
+  "version": "v1",
+  "workflow": "orbit_information",
+  "protocol": "experiments/EXP-0015/v1.md",
+  "entry_contract": "research/entries/EXP-0015.json",
+  "output": "artifacts/EXP-0015/v1",
+  "task": {
+    "states": 16,
+    "length": 64,
+    "examples": 16384,
+    "root": 77000007,
+    "stay": 0.7,
+    "forward": 0.2,
+    "backward": 0.1,
+    "emission_correct": 0.6
+  },
+  "information": {
+    "uniform_kl_mean_min": 0.2,
+    "suffix1_kl_ci_lower_min": 0.05,
+    "suffix8_kl_ci_lower_min": 0.02,
+    "bootstrap_resamples": 10000,
+    "bootstrap_root": 77100007,
+    "ci_quantiles": [
+      0.025,
+      0.975
+    ],
+    "bootstrap_block": 32
+  },
+  "resource": {
+    "worker_wall_seconds_cap": 300,
+    "reproduction_wall_seconds_cap": 300,
+    "research_update_cap": 0
+  },
+  "matching_criterion_version": "G1-MATCH-v3",
+  "gate1_claim": false
+}

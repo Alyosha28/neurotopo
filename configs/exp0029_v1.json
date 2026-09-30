@@ -1,0 +1,53 @@
+{
+  "experiment_id": "EXP-0029",
+  "version": "v1",
+  "gate": "A1_LEARNING_QUALIFICATION",
+  "protocol": "experiments/EXP-0029/v1.md",
+  "candidate_contract": "research/design/arch0001_successor_compatible_core_v3.md",
+  "frozen_module": "src/neurotopo/arch0001_core.py",
+  "output": "artifacts/EXP-0029/v1",
+  "arms": [
+    {"kind": "CAND", "width": 32, "blocks": 1},
+    {"kind": "EXTRA_SUP", "width": 32, "blocks": 1},
+    {"kind": "INV_COMP", "width": 32, "blocks": 1}
+  ],
+  "seeds": [28201, 28202, 28203, 28204, 28205, 28206, 28207, 28208, 28209, 28210, 28211, 28212],
+  "training": {
+    "updates": 1000,
+    "batch_size": 64,
+    "lr": 0.003,
+    "betas": [0.9, 0.999],
+    "eps": 1e-08,
+    "clip": 1.0,
+    "common_amplitude": 0.4,
+    "branch_weight": 0.1,
+    "curriculum": [[125, 1], [250, 2], [500, 4], [1000, 8]]
+  },
+  "streams": {
+    "train_namespace": 282001,
+    "eval_namespace": 285001,
+    "eval_examples": 1024
+  },
+  "cells": {
+    "IID_H": [8, "HOLD", 0.4, 0.0],
+    "IID_U": [8, "UPDATE", 0.4, 0.0],
+    "LONG_H": [64, "HOLD", 0.4, 0.0],
+    "LONG_U": [64, "UPDATE", 0.4, 0.0],
+    "ROT_H": [64, "HOLD", 3.141592653589793, 0.0],
+    "ROT_U": [64, "UPDATE", 3.141592653589793, 0.0],
+    "LEAK01_U": [64, "UPDATE", 3.141592653589793, 0.1],
+    "LEAK04_U": [64, "UPDATE", 3.141592653589793, 0.4]
+  },
+  "thresholds": {
+    "learning_flag": {"IID_H": 0.95, "IID_U": 0.95, "IID_U_flip": 0.95},
+    "hold_collapse": {"IID_H_min": 0.95, "flip_max": 0.65},
+    "partial_fit": {"flip_min": 0.65, "flip_max": 0.95, "IID_H_min": 0.9},
+    "broken": {"IID_H_max": 0.9},
+    "pass_min_seeds": 11
+  },
+  "resource": {
+    "max_updates": 36000,
+    "wall_seconds_cap": 1800,
+    "replay_wall_seconds_cap": 600
+  }
+}

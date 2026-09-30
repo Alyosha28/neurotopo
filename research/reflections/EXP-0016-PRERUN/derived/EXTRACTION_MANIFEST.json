@@ -1,0 +1,80 @@
+{
+  "packet": "research/reflections/EXP-0016-PRERUN/packet.json",
+  "packet_sha256": "c5597a6382930b52b70d8ee66128c2f7aa3306a1ea3d4a567513ff16081a2571",
+  "parts": [
+    {
+      "bytes": 7188,
+      "matches_packet_digest": true,
+      "part": "design.md",
+      "sha256": "07e62a2b359cebd349fc7a969bcefd2fe82655c932673990ce017ef355f2d9ba"
+    },
+    {
+      "bytes": 1150,
+      "matches_packet_digest": true,
+      "part": "action.md",
+      "sha256": "c8d98eafebfd34c29eb55b414e3c2f8bfbcaf07092427303cf1a941299826fa6"
+    },
+    {
+      "bytes": 30391,
+      "matches_packet_digest": true,
+      "part": "action_output_0_verification.json",
+      "sha256": "e75efdcf60cbb58afabe01923fbd69470b69921c373d22493639134c14e75960"
+    },
+    {
+      "bytes": 2386,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_EXP-0016.json",
+      "sha256": "fba5ae5a88974898b4701ba51720b4a3797dc3d909800fdf5197cc6157121a2a",
+      "source_path": "research/entries/EXP-0016.json"
+    },
+    {
+      "bytes": 2371,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0027_gov0002_stage_boundary_correction.md",
+      "sha256": "04be8ca7d641d5dcb0321fb027b4d7c97226503ae943fb241fbe4391c8584fd6",
+      "source_path": "research/decisions/0027_gov0002_stage_boundary_correction.md"
+    },
+    {
+      "bytes": 1457,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0029_exp0010_close_before_run.md",
+      "sha256": "9025e32d200f9eebb0f291645781816f3771ae404dd505843ad69ab96ac11308",
+      "source_path": "research/decisions/0029_exp0010_close_before_run.md"
+    },
+    {
+      "bytes": 1438,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0044_gate1_strong_control_guard.md",
+      "sha256": "b519ec767215bd3cfbba1a710380485c27ddce3eb3c2934cd05ca5d1285ef03f",
+      "source_path": "research/decisions/0044_gate1_strong_control_guard.md"
+    },
+    {
+      "bytes": 2269,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0084_dir0007_design_hold.md",
+      "sha256": "7008bc6c394082367e7d923d3fb387bad6dde281925648399a4dcb80ad79fb4e",
+      "source_path": "research/decisions/0084_dir0007_design_hold.md"
+    },
+    {
+      "bytes": 1874,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0085_exp0015_task_information_supported.md",
+      "sha256": "74463570131e41116f4570f019c4fbef5d2c8b635506dd54fef203469a48d279",
+      "source_path": "research/decisions/0085_exp0015_task_information_supported.md"
+    },
+    {
+      "bytes": 13996,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0007_orbit_regularization_v1.md",
+      "sha256": "a37375a6671cfa8cc3d40f0a7afa3f1f847e80430edc52628d82ce7d49d02d95",
+      "source_path": "research/design/dir0007_orbit_regularization_v1.md"
+    },
+    {
+      "bytes": 2799,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0007_soft_equivariance.md",
+      "sha256": "5ed573889737b9b225e4fe0c290ce7398043fe41a8b4195325895c222dccae0f",
+      "source_path": "research/prior_art/dir0007_soft_equivariance.md"
+    }
+  ]
+}

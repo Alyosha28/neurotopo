@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "ca32b53516db3e7c1a0454919b83bc1bae891ee1de6a72f498f49082dc4babfb",
+  "review_sha256": "338d8ed89af2391ce3e4acda444611de80585916589954cdedbac727c162cc5d",
+  "responses": [
+    {
+      "id": "R1",
+      "disposition": "accept",
+      "reason": "v2 已定义交互，但尚未明确固定任务潜变量数，也没有把跨条件的 oracle 难度、共同阈值和动态范围资格写成进入门槛。",
+      "action": "将任务潜变量数固定为四个、与模型 K 解耦；明确用共同状态支持归一化，并要求独立资格流冻结 F/X oracle 正确性、oracle-relative 可比性、共同 ε 与非瞬达容差。若不通过，只报告两具体生成条件的总交互或停止，不窄称耦合因果。",
+      "evidence_paths": [
+        "research/design/g1_k_structure_learning_efficiency_v0.md",
+        "research/evidence/g1_ksi_v0_action_summary.md"
+      ]
+    },
+    {
+      "id": "R2",
+      "disposition": "accept",
+      "reason": "v2 摘要没有明确“目标块”是每次遍历全部四块还是单块选择，无法排除按结果选块。",
+      "action": "固定每个检查点、每条校准/测试流按 b=0..3 顺序执行四个目标干预；用同一16维向量映射到随机16坐标作为sham，并冻结新流、签名向量、cosine处理和种子级统计。",
+      "evidence_paths": [
+        "research/design/g1_m3_sham_intervention_method_pilot_v0.md",
+        "research/evidence/g1_ksi_v0_action_summary.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "用更新后的 oracle 资格条件、固定四块干预清单与完整规则引文生成新 packet，复核后保留为规则／设计草案；不注册或运行。"
+}

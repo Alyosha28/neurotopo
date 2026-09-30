@@ -1,0 +1,24 @@
+{
+  "decision": "SUPPORTED",
+  "substatus": "SINGLE_SEED_LEARNABILITY_ONLY",
+  "learning_flags": {
+    "RAW": true,
+    "INV": true,
+    "REL": true
+  },
+  "models": 3,
+  "monitor_checkpoints": 15,
+  "evaluation_conditions": 24,
+  "max_logit_error": 0.0,
+  "max_gram_error": 0.0,
+  "original_training_updates": 3000,
+  "replay_training_updates": 0,
+  "numerical_replay_pass": true,
+  "numerical_processes": 1,
+  "outer_elapsed_seconds": 2.2629999169998882,
+  "budget_seconds": 180,
+  "budget_pass": true,
+  "run_analysis_seconds": 9.671052166999743,
+  "review_sha256": "2d7257738af7b20c7cfca2f2585e1edc0a73021f575e949eb2873e1017ce1af8",
+  "deviations": []
+}

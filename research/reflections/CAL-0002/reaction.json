@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "df08973578a2155427f0fb98f22bfa62ef044a6a0384152c9a53bd723f8276e2",
+  "review_sha256": "2bf8442e090585da0f95f4f68f487a5884e86294abdc1638654a9341a9bf661e",
+  "responses": [
+    {
+      "id": "CAL2-01",
+      "disposition": "accept",
+      "reason": "The stationary H-by-source model has eight small sufficient statistics; both calibration runs show that task noise did not create dense-GRU headroom.",
+      "action": "Stopped hidden-variable difficulty escalation and added a sufficient-state check before benchmark implementation.",
+      "evidence_paths": [
+        "research/reflections/CAL-0002/reaction_evidence.md",
+        "research/decisions/0002_gate1_benchmark_strategy.md",
+        ".codex/skills/benchmark-design/SKILL.md"
+      ]
+    },
+    {
+      "id": "CAL2-02",
+      "disposition": "accept",
+      "reason": "All three fixed seeds are below the predeclared KL saturation limit on a separate calibration stream. This rules out this configuration for architecture testing, without making a universal claim.",
+      "action": "Preserved the failed calibration and did not run M3 or advance Gate 1.",
+      "evidence_paths": [
+        "research/reflections/CAL-0002/reaction_evidence.md",
+        "research/negative_results/CAL-0002_hidden_source_ceiling.md"
+      ]
+    },
+    {
+      "id": "CAL2-03",
+      "disposition": "accept",
+      "reason": "Terminal fit at a fixed budget does not identify an online update mechanism; an earlier checkpoint cannot now be selected as a replacement endpoint.",
+      "action": "Added oracle-relative and counterfactual/time-resolved qualification requirements; deferred further runs on this rejected configuration.",
+      "evidence_paths": [
+        "research/reflections/CAL-0002/reaction_evidence.md",
+        "docs/experiment_protocol.md",
+        ".codex/skills/benchmark-design/SKILL.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep Gate 1 closed; formulate a separate question with a justified computational bottleneck and strong matched baseline before any architecture comparison."
+}

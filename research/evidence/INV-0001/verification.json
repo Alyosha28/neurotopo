@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "derived_cells": 216,
+  "source_snapshot_and_result_files_unchanged": 24,
+  "source_data_hashes": {
+    "artifacts/EXP-0019/v2/data-17001.npz": "8d9b34df15ecafd538388b93f61f6014d5666364f43aacd145280d8f7721a341",
+    "artifacts/EXP-0019/v2/data-17002.npz": "40d51a9cdf50a91a972a974cf3875744095472b3f6eb026a6c074cf0fc874ae2",
+    "artifacts/EXP-0019/v2/data-17003.npz": "1004c81b8735d74c7adb97b80e45a81339e1be51c4b636681287a9cba2cd267f"
+  },
+  "physical_pair_and_suffix_roles_verified": true,
+  "analysis_verification_seconds": 1.0930656250002357,
+  "additional_integrity_check_seconds": 0.04434591599965643,
+  "new_model_execution": 0,
+  "new_samples": 0,
+  "training_updates": 0,
+  "source_design_commit": "10ee7bf",
+  "scope": "Mathematical bounds on saved pairs; eta remains hypothetical, no inverse solver or noise measurement"
+}

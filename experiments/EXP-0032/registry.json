@@ -1,0 +1,72 @@
+{
+  "experiment": "EXP-0032",
+  "active_version": "v2",
+  "versions": {
+    "v1": "INVALIDATED_IMPLEMENTATION_DEFECT",
+    "v2": "COMPLETED"
+  },
+  "gate": "A2_TASK_CARRIER",
+  "title": "Control-menu and budget sweep on the corrected DELAY-d endpoint",
+  "protocol": "experiments/EXP-0032/v1.md",
+  "configs": {
+    "v1": "configs/exp0032_v1.json",
+    "v2": "configs/exp0032_v2.json"
+  },
+  "implementation": "src/neurotopo/arch0001_control_sweep.py",
+  "tests": "tests/test_arch0001_control_sweep.py",
+  "outputs": {
+    "v1": "artifacts/EXP-0032/v1",
+    "v2": "artifacts/EXP-0032/v2"
+  },
+  "stage_a_configs": 12,
+  "stage_a_seeds": [
+    29101
+  ],
+  "d_values": [
+    2,
+    3
+  ],
+  "training_updates": 48000,
+  "decision": "INCONCLUSIVE",
+  "substatus": "QUALIFICATION_NOT_REPRODUCED",
+  "selected": {
+    "config": "w48b2",
+    "budget": 2000,
+    "accuracy": [
+      0.7064,
+      0.5659,
+      0.6941,
+      0.6112,
+      0.6496
+    ],
+    "mean": 0.6455,
+    "threshold": 0.65
+  },
+  "notable": {
+    "w32b2_d2_seed29101": 1.0,
+    "d3_best": 0.6359,
+    "in_band_configs": [
+      "w32b3",
+      "w64b2",
+      "w48b2",
+      "w96b3",
+      "w96b2",
+      "w48b3"
+    ]
+  },
+  "v1_defect": "run_one did not inject width/blocks into fit_memory's config; all 12 items trained the same w32b1 model",
+  "report": "research/evidence/EXP-0032/report.md",
+  "decision_record": "research/decisions/0107_exp0032_control_sweep.md",
+  "provenance_note": "git_dirty=true (active git metadata outside the writable sandbox)",
+  "candidate_inference_ops": 1161,
+  "selection_table": "research/evidence/EXP-0032/selection_table.json",
+  "correction": "independent confirm seeds 29111-29113 alone mean 0.6517 / min 0.6112 (pass); the pooled five-seed mean 0.6455 misses the 0.65 gate because it includes the exposed selection seed 29101 and scan seed 29102",
+  "reflection": {
+    "packet": "research/reflections/EXP-0032/packet.json",
+    "review": "research/reflections/EXP-0032/review.json",
+    "reaction": "research/reflections/EXP-0032/reaction.json",
+    "execution": "research/reflections/EXP-0032/execution.md",
+    "issues": 3,
+    "decision_impact": "UNCHANGED"
+  }
+}

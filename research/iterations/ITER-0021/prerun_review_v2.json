@@ -1,0 +1,45 @@
+{
+  "experiment_id": "EXP-0026",
+  "version": "v2",
+  "review_type": "independent_static_prerun_delta",
+  "prior_review": "research/iterations/ITER-0021/prerun_review.json",
+  "scope": "Compared v2 protocol and config with v1 and checked all five v1 static-review blockers. Read prior EXP-0025/DYN-0001 source and evidence; no research model execution, training, prototype fitting or new tau generation.",
+  "verdict": "APPROVED_FOR_IMPLEMENTATION_SUBJECT_TO_REGISTERED_ENGINEERING_CHECKS",
+  "blocking": [],
+  "resolved_blockers": [
+    {
+      "id": "B1_ENDPOINT_AND_DENOMINATOR",
+      "resolution": "T256/512/1024 are explicitly terminal pre-refresh accuracies from the same complete trajectory. The nine independently qualified new REL seeds are frozen by ID; each R path first reports all nine NONE patterns, then its all-three-HOLD-<.95 conditional failure subset. The text identifies this as selection on exposed main data. ORIGINAL GAUGE failures remain listed and take the CONTROL_INCONCLUSIVE overall branch if no gated window remains."
+    },
+    {
+      "id": "B2_WINDOW_PARTITION",
+      "resolution": "The ordered six-k success vectors now include a proper contiguous suffix ending at K64 as SUFFIX_WINDOW_RIGHT_CENSORED, counted in the primary one-or-more-window branch. Empty, full, proper prefix, bounded middle, proper suffix and noncontiguous patterns have distinct labels. The overall verdict uses the exact full category strings."
+    },
+    {
+      "id": "B3_PHASE_METHOD",
+      "resolution": "PHASE16 and PHASE32 now explicitly use the frozen EQUAL8 operator; only the timing phase differs from K16 and K32."
+    },
+    {
+      "id": "B4_ADAPT_COUNT_EVENT_CONTRACT",
+      "resolution": "COUNT90's n_i is the full-T1024 ADAPT90 attempt count for the identical seed, arm, cell, example and ORIGINAL path, including failed attempts and t1024. COUNT uses EQUAL8 on its precomputed integer schedule even after its own trajectory diverges. ADAPT tests pre-refresh distance, charges invalid attempts to cooldown, and preserves n_i=0 as no operation. Both event-time lists, validity and reasons are retained. The future-count control remains explicitly retrospective."
+    },
+    {
+      "id": "B5_RAW_RECOMPUTABILITY",
+      "resolution": "The supplemental raw schema retains each rollout's per-example/per-time pre logits and prototype distances, input hashes and threshold, indexed event validity/reason and pre/post geometry, full NONE Gram trajectories, tau distance curves and censor flags, ADAPT/COUNT event lists, and exact terminal correct counts over 512. The protocol says aggregate curves cannot replace full raw. Command-response snapshots and weighted Frobenius coordinates with an explicit readout-kernel projection and unavailable conditions are frozen."
+    }
+  ],
+  "consistency_checks": [
+    "v1 is retained as unimplemented/unrun; v2 changes version, protocol path and output path in config, not seeds, arms, input count, model count, numerical thresholds, matching version or resource caps. Entry max_wall_seconds=4200 still equals run+analysis 3600 plus read-only reproduction 600.",
+    "The registered count remains 1196 main rollouts plus 104 tau rollouts, 681574400 base transitions and 851968 command counterfactual transitions. The tau censor marker 1017, lower order statistic 256/512 and null-if-censored rule are unchanged and mathematically consistent.",
+    "The saved EXP-0025v2 qualification list matches prior analysis: 25001,25002,25003,25004,25008,25009,25010,25011,25012. Old 23005 is excluded from new-seed group denominators.",
+    "The extra supervised codebook, refresh count/phase and float32 amplification remain live explanations. v2 permits only conditional exposed schedule-window statements, no new-seed confirmation, unique mechanism, slow-mode, biological or Gate 1 conclusion."
+  ],
+  "implementation_checks": [
+    "Make every scoring index explicit in source: pre-refresh logit and target at t=256,512,1024; compare each candidate with same-R-path NONE on identical examples. Preserve all failed, baseline-nonfailure, control-failed, invalid-event and harmed seed records.",
+    "Unit-check all six-k category patterns, especially a single K64 success and a proper suffix, and the zero-window CONTROL_INCONCLUSIVE precedence. Aggregate the K valid-rate over all full-T1024 attempts separately in HOLD and UPDATE and require all valid-event float32 logit errors <=1e-5.",
+    "Check GAUGE's maximum absolute Gram component and logit error at every scheduled event in both tasks, and all six task-by-horizon terminal accuracy differences <=.005. Invalid EQUAL events must restore original H, retain reasons and count against validity; near-zero or nonfinite projection quantities must be unavailable.",
+    "Verify frozen calibration q90 from 512x8 predicted-class pre-refresh Gram distances with weighted off-diagonal sqrt(2), no test target access; test ADAPT cooldown after invalid attempts, COUNT same-example count pairing and retrospective schedule, tau right censor at 256 versus 257 censored examples, and source/hash binding.",
+    "Replay NONE/ORIGINAL and ONCE8/ORIGINAL exactly against DYN-0001v3 before formal execution; establish source-matched passing engineering validation on a clean frozen commit. A static review does not certify runtime, observed feasibility or any scientific outcome."
+  ],
+  "interpretation_limits": "Approval is for implementing the registered v2 matrix and its engineering validation. Any result remains conditional on previously exposed models and on a main-data NONE-selected failure subset; GAUGE-gated schedule windows do not isolate organisation or a slow mode."
+}

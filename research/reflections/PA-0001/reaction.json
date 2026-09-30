@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "65b438764b18e8e879146cdd111dbb17fe904f7d79bb102d6f8a3f56c53c7d0d",
+  "review_sha256": "1a1b0f97b167bbf526116d913ff2b22fe89767ad54cbc9d5dcddc340e9d4f240",
+  "responses": [
+    {
+      "id": "PA-0001-R1",
+      "disposition": "accept",
+      "reason": "One extracted DIRECT_OVERLAP label could overstate evidence for the narrower fixed-identity mechanism.",
+      "action": "Archived a machine-readable two-claim verdict with separate evidence limits.",
+      "evidence_paths": [
+        "research/reflections/PA-0001/reaction_evidence.md",
+        "research/reflections/PA-0001/claim_scope.json"
+      ]
+    },
+    {
+      "id": "PA-0001-R2",
+      "disposition": "accept",
+      "reason": "The original packet did not demonstrate full coverage of its planned no-resampling-method and author-code categories.",
+      "action": "Logged actual searches and deviations, then added a targeted primary-source and author-repository check as post-task evidence without rewriting the frozen packet.",
+      "evidence_paths": [
+        "research/reflections/PA-0001/reaction_evidence.md",
+        "research/reflections/PA-0001/search_coverage_audit.md",
+        "research/prior_art/evidence_matrix.md"
+      ]
+    },
+    {
+      "id": "PA-0001-R3",
+      "disposition": "defer",
+      "reason": "A numerically preregisterable effect requires a justified generator, useful threshold, actual-control headroom and resource contract; this prior-art audit does not establish them.",
+      "action": "Recorded one bounded falsifiable question direction and the missing fields; retained NO_SPEC and did not start model or task search.",
+      "evidence_paths": [
+        "research/reflections/PA-0001/reaction_evidence.md",
+        "research/reflections/PA-0001/one_open_question.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep H3-SLOT NO_SPEC and Gate 1 closed; do not implement the fixed-slot route without a new prespecified generator, matched controls, justified effect threshold and headroom qualification."
+}

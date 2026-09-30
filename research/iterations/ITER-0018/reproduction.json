@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "decision": "INCONCLUSIVE",
+  "P_status": "P_INCONCLUSIVE_LEARNING",
+  "M_status": "M_NOT_SUPPORTED",
+  "R_supported": false,
+  "independent_rho": 0.2571428571428571,
+  "d_EXTRA_mean": 0.11550796052188159,
+  "d_EXTRA_t95": [
+    -0.19240599397146294,
+    0.4234219150152261
+  ],
+  "parent_models": 15,
+  "new_models": 24,
+  "monitor_checkpoints": 120,
+  "evaluation_cells": 192,
+  "new_diagnostics": 24,
+  "max_error": 0.0,
+  "replay_training_updates": 0,
+  "seconds": 14.050898999999845,
+  "scope": "Frozen shared model/core replay plus independently reduced targets/losses/ranks/paired statistics/P-M-R; no retraining."
+}

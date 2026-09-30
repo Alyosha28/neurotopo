@@ -1,0 +1,122 @@
+{
+  "experiment_id": "EXP-0031",
+  "version": "v1",
+  "gate": "A2_TASK_QUALIFICATION_CORRECTED",
+  "protocol": "experiments/EXP-0031/v1.md",
+  "parent_artifacts": "artifacts/EXP-0030/v1",
+  "parent_config": "configs/exp0030_v1.json",
+  "training_module": "src/neurotopo/arch0001_memory_task.py",
+  "output": "artifacts/EXP-0031/v1",
+  "control": {
+    "kind": "INV_COMP",
+    "width": 32,
+    "blocks": 1
+  },
+  "menu": [
+    {
+      "id": "D1_PLAIN",
+      "d": 1,
+      "sup": "PLAIN"
+    },
+    {
+      "id": "D1_BRANCH",
+      "d": 1,
+      "sup": "BRANCH"
+    },
+    {
+      "id": "D2_PLAIN",
+      "d": 2,
+      "sup": "PLAIN"
+    },
+    {
+      "id": "D2_BRANCH",
+      "d": 2,
+      "sup": "BRANCH"
+    },
+    {
+      "id": "D3_PLAIN",
+      "d": 3,
+      "sup": "PLAIN"
+    },
+    {
+      "id": "D3_BRANCH",
+      "d": 3,
+      "sup": "BRANCH"
+    }
+  ],
+  "seeds": {
+    "scan": [
+      29101,
+      29102
+    ],
+    "confirm": [
+      29111,
+      29112,
+      29113
+    ]
+  },
+  "training": {
+    "updates": 2000,
+    "batch_size": 64,
+    "lr": 0.003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip": 1.0,
+    "branch_weight": 0.1,
+    "curriculum": [
+      [
+        500,
+        2
+      ],
+      [
+        1000,
+        4
+      ],
+      [
+        1500,
+        8
+      ],
+      [
+        2000,
+        12
+      ]
+    ],
+    "common_amplitude": 3.141592653589793,
+    "leak": 0.0,
+    "sigma": 0.0
+  },
+  "streams": {
+    "train_namespace": 292001,
+    "eval_namespace": 293001,
+    "eval_examples": 1024
+  },
+  "evaluation": {
+    "primary_length": 12,
+    "secondary_lengths": [
+      64,
+      256
+    ]
+  },
+  "calibration": {
+    "namespace": 294001,
+    "examples": 4096
+  },
+  "band": {
+    "learn_mean_min": 0.65,
+    "learn_seed_min": 0.58,
+    "memoryless_margin_mean": 0.05,
+    "memoryless_margin_seed": 0.02,
+    "nonceiling_mean_max": 0.95,
+    "nonceiling_seed_max": 0.97,
+    "oracle_min": 0.99
+  },
+  "tie_break": "PLAIN wins when the two supervision variants differ by less than 1e-9 in mean meaningful accuracy",
+  "resource": {
+    "max_updates": 30000,
+    "wall_seconds_cap": 1800,
+    "replay_wall_seconds_cap": 600
+  }
+}

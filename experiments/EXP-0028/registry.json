@@ -1,0 +1,169 @@
+{
+  "experiment": "EXP-0028",
+  "title": "ARCH-0001 A1 implementation, engineering checks and learnable/non-ceiling task qualification",
+  "active_version": "v1",
+  "versions": {
+    "v1": "COMPLETED"
+  },
+  "gate": "A1",
+  "candidate": "SC-REL-v3",
+  "candidate_contract": "research/design/arch0001_successor_compatible_core_v3.md",
+  "protocol": "experiments/EXP-0028/v1.md",
+  "config": "configs/exp0028_v1.json",
+  "implementation": "src/neurotopo/arch0001_core.py",
+  "tests": "tests/test_arch0001_core.py",
+  "output": "artifacts/EXP-0028/v1",
+  "control_menu": [
+    [
+      32,
+      1
+    ],
+    [
+      32,
+      2
+    ],
+    [
+      32,
+      3
+    ],
+    [
+      48,
+      1
+    ],
+    [
+      48,
+      2
+    ],
+    [
+      48,
+      3
+    ],
+    [
+      64,
+      1
+    ],
+    [
+      64,
+      2
+    ],
+    [
+      64,
+      3
+    ],
+    [
+      96,
+      1
+    ],
+    [
+      96,
+      2
+    ],
+    [
+      96,
+      3
+    ]
+  ],
+  "task_menu": [
+    {
+      "id": "N1_T64_leak0_s0",
+      "length": 64,
+      "leak": 0.0,
+      "sigma": 0.0
+    },
+    {
+      "id": "N2_T256_leak4_s0",
+      "length": 256,
+      "leak": 0.4,
+      "sigma": 0.0
+    },
+    {
+      "id": "N3_T64_leak0_s05",
+      "length": 64,
+      "leak": 0.0,
+      "sigma": 0.05
+    },
+    {
+      "id": "N4_T64_leak0_s15",
+      "length": 64,
+      "leak": 0.0,
+      "sigma": 0.15
+    },
+    {
+      "id": "N5_T64_leak0_s40",
+      "length": 64,
+      "leak": 0.0,
+      "sigma": 0.4
+    },
+    {
+      "id": "N6_T256_leak4_s05",
+      "length": 256,
+      "leak": 0.4,
+      "sigma": 0.05
+    },
+    {
+      "id": "N7_T256_leak4_s15",
+      "length": 256,
+      "leak": 0.4,
+      "sigma": 0.15
+    },
+    {
+      "id": "N8_T256_leak4_s40",
+      "length": 256,
+      "leak": 0.4,
+      "sigma": 0.4
+    }
+  ],
+  "seeds": {
+    "pretest": [
+      28101,
+      28102,
+      28103
+    ],
+    "scan": [
+      28101,
+      28102
+    ],
+    "learn": [
+      28111,
+      28112,
+      28113
+    ],
+    "replay": [
+      28111
+    ]
+  },
+  "resource_caps": {
+    "max_updates": 60000,
+    "wall_seconds_cap": 1800,
+    "replay_wall_seconds_cap": 600
+  },
+  "training_updates": 22000,
+  "decision": "INCONCLUSIVE",
+  "substatus": "NO_QUALIFIED_CONDITION",
+  "report": "research/evidence/EXP-0028/report.md",
+  "verification": "research/evidence/EXP-0028/verification.json",
+  "notes": "A1 gate only: runnable computation, learning qualification and non-ceiling control headroom; no A2 effect and no retrospective old Gate1 credit.",
+  "explicit_reference": "research/evidence/EXP-0028/explicit_reference.json",
+  "decision_record": "research/decisions/0103_exp0028_a1_qualification.md",
+  "phases_executed": [
+    "eng",
+    "pretest",
+    "scan"
+  ],
+  "phases_skipped_no_qualified_condition": [
+    "match",
+    "learn",
+    "replay"
+  ],
+  "provenance_note": "git commit f5a6e2c; git_dirty=true because active git metadata lives outside the writable sandbox; provenance carried by manifest source/config hashes and artifacts/validation/suite.json",
+  "posthoc_sensitivity": "research/evidence/EXP-0028/posthoc_sensitivity.json",
+  "provenance_check": "research/evidence/EXP-0028/provenance_check.json",
+  "reflection": {
+    "packet": "research/reflections/EXP-0028/packet.json",
+    "review": "research/reflections/EXP-0028/review.json",
+    "reaction": "research/reflections/EXP-0028/reaction.json",
+    "execution": "research/reflections/EXP-0028/execution.md",
+    "issues": 8,
+    "decision_impact": "UNCHANGED"
+  }
+}

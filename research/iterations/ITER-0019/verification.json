@@ -1,0 +1,162 @@
+{
+  "pass": true,
+  "decision": "SUPPORTED",
+  "substatus": "FROZEN_CASE_STATE_REFRESH_RESCUE",
+  "tests": 303,
+  "model_count": 12,
+  "supervised_prototype_fits": 12,
+  "neural_optimizer_updates": 0,
+  "general_validation_updates": 300,
+  "general_cap": 900,
+  "special_training_updates": 0,
+  "worker_seconds": 26.420278749999852,
+  "reproduction": {
+    "status": "PASS",
+    "decision": "SUPPORTED",
+    "substatus": "FROZEN_CASE_STATE_REFRESH_RESCUE",
+    "case_qualification": {
+      "calibration_accuracy": true,
+      "prototype_labels": true,
+      "none_iid_h_all": true,
+      "none_iid_u_all": true,
+      "none_iid_u_flip": true,
+      "gauge_local": true,
+      "gauge_long_equivalence": true
+    },
+    "case_long_final_accuracy": {
+      "NONE": 0.75,
+      "GAUGE8": 0.75,
+      "RESET8": 1.0,
+      "RESET1": 1.0
+    },
+    "case_reset8_minus_gauge8": 0.25,
+    "exposed_rel_effects": {
+      "NONE": {
+        "values_by_seed": {
+          "23001": 0.0,
+          "23002": 0.0,
+          "23003": 0.0,
+          "23004": 0.0,
+          "23005": 0.25,
+          "23006": 0.0
+        },
+        "mean": 0.041666666666666664,
+        "sample_sd": 0.10206207261596575,
+        "min": 0.0,
+        "max": 0.25,
+        "descriptive_t95": [
+          -0.06544090983333337,
+          0.14877424316666668
+        ]
+      },
+      "GAUGE8": {
+        "values_by_seed": {
+          "23001": 0.0,
+          "23002": 0.0,
+          "23003": 0.0,
+          "23004": 0.0,
+          "23005": 0.25,
+          "23006": 0.0
+        },
+        "mean": 0.041666666666666664,
+        "sample_sd": 0.10206207261596575,
+        "min": 0.0,
+        "max": 0.25,
+        "descriptive_t95": [
+          -0.06544090983333337,
+          0.14877424316666668
+        ]
+      }
+    },
+    "harms": [
+      {
+        "seed": 23004,
+        "arm": "REL_BASE",
+        "condition": "RESET1",
+        "cell": "IID_U",
+        "final_accuracy_delta": -0.01953125
+      }
+    ],
+    "model_count": 12,
+    "prototype_fits": 12,
+    "evaluation_count": 192,
+    "research_updates": 0,
+    "evaluation_transition_tokens": 12976128,
+    "calibration_transition_tokens": 49152,
+    "replay_seconds": 10.748669124997832,
+    "source_checkout": "/private/tmp/neurotopo-exp0024-review",
+    "frozen_commit": "94f31a9d05593a8f75a6b25dad0de6650e6df98f",
+    "original_run": "~/.local/share/neurotopo/experiment-runs/EXP-0024/v1",
+    "shared_code_boundary": "Registered generator and frozen model transition/forward only; independent calibration algebra, intervention rollout, metrics and decision."
+  },
+  "other_seed_harms": [
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_U",
+      "metric": "hold_accuracy",
+      "delta_vs_NONE": -0.00042896099518952013
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "metric": "accuracy_all",
+      "delta_vs_NONE": -0.09288194444444442
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "metric": "final_accuracy",
+      "delta_vs_NONE": -0.01953125
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "metric": "hold_accuracy",
+      "delta_vs_NONE": -0.12625139043381528
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "metric": "flip_accuracy",
+      "delta_vs_NONE": -0.08746736292428198
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "metric": "accuracy_all",
+      "delta_vs_NONE": -0.002165916828793746
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "metric": "hold_accuracy",
+      "delta_vs_NONE": -0.0014554033765358243
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "metric": "flip_accuracy",
+      "delta_vs_NONE": -0.0028876257637010516
+    }
+  ],
+  "replay_scope": "Independent intervention/calibration/metric implementation; shared frozen model and generator; trajectories tolerance2e-6, metric1e-12.",
+  "raw_files": 292,
+  "raw_bytes": 136832415,
+  "source_archive_identical": true
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "df9cc8feb8ebf3c4462831f859ceaa95b876a3779ba96724c9726165fda2c4c5",
+  "reviewer": {
+    "model": "agent-default (independent subagent; provider model id not exposed to orchestrator)",
+    "effort": "agent-default",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "merge-prior-seeds",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "与 EXP0028 已暴露的 3 个 seed 分开报告，不与新 seed 合并做主终点",
+        "合并 EXP0028 的 3 个 seed，`CAND` 15 个独立 seed 中 14 个通过，唯一失败（28103）为已归类的 `HOLD_COLLAPSE`；`INV_COMP` 15/15",
+        "点估计 6.7%，n=15 的 95% 置信上界约 32%",
+        "本轮已暴露的 8 个 cell、15 个 seed 与描述性 cell 比较不得用于反向挑选 A2 配置或追认任何效果"
+      ],
+      "problem": "Pre-registered diagnostic #5 requires the 3 exposed EXP-0028 seeds to be reported separately and not merged with the 12 new seeds for the primary endpoint. The decision text nevertheless pools them ('合并 ... 15 个独立 seed 中 14 个通过'), puts the pooled result in the '判词依据' section, and derives a pooled failure-rate estimate and 95% upper bound (6.7%, ~32%) from n=15; the same decision later calls the 15 seeds '已暴露', and action.content already stores combined_cand=14/15 and combined_control=15/15.",
+      "why_it_matters": "The verdict's supporting reliability/confidence language ('被修正为低频事件', 6.7%, upper bound 32%) is a post-hoc analysis pooling an exposed earlier-protocol sample with the pre-registered 12-seed sample, which the frozen protocol did not authorize. The 12 new seeds alone are 12/12 with zero failures, so the pooled estimate's precision and exchangeability assumptions are not licensed and the recorded A1 reliability statement is stronger than the pre-registration supports.",
+      "falsifiable_check": "Re-derive the verdict and reliability wording under the literal pre-registration: primary endpoint = 12 new seeds only (CAND 12/12), prior 3 seeds reported separately (2/3, 28103 HOLD_COLLAPSE); recompute any failure-rate/upper-bound statement without the prior seeds and look for any pre-registered authorization of a 15-seed pooled estimate (none appears in the packet)."
+    },
+    {
+      "id": "frozen-hash-chain",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "并断言验收套件源码哈希与运行时一致",
+        "3de25da0",
+        "7fb6bf812760127423a444464386c4a3d7d42cdb4b724980e713bf10ce81bf99",
+        "ca33834786bac93063c1591d274cd8e46c09b91b5118c0cfcca11b86612d848b"
+      ],
+      "problem": "The packet records three different hashes for the same experiment module (arch0001_learning_qualification.py): the manifest/recorded hash ca338347…, the decision's stated post-fix hash 3de25da0…, and the analyzed output's provenance.current_hashes.module 7fb6bf81…. The decision's two-step chain does not match the analyzed-output provenance, and 3de25da0… appears nowhere else in the packet. The design required the acceptance-suite/source hash to equal the runtime hash, but no pass/fail record of that assertion is present, while the module was changed mid-run, git_dirty=true and the runner is untracked.",
+      "why_it_matters": "It cannot be established from the packet which module version produced the 36 run records, the frozen analysis.json metrics, or the replayed runs. The binding of the verdict to a frozen code version is broken; if the module changed again between analysis and the decision, the quoted statistics may not correspond to the analyzed artifact at all.",
+      "falsifiable_check": "Locate or recompute the sha256 of src/neurotopo/arch0001_learning_qualification.py at run, analyze/summarize and freeze times (and in the per-run provenance); determine which of ca338347…, 3de25da0…, 7fb6bf81… matches each stage, and whether the required runtime-hash assertion actually passed."
+    },
+    {
+      "id": "run-phase-deviation",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "并断言验收套件源码哈希与运行时一致",
+        "运行期对分析/汇总路径做了三处修正（HOLD cell 空值保护、过滤 macOS `._*`、断点续跑），训练/评估/判词路径与冻结的 `arch0001_core.py` 未变",
+        "arch0001_learning_qualification.run (run phase)",
+        "load already-written per-run records instead of refitting"
+      ],
+      "problem": "The decision text classifies all three mid-run fixes as '运行期对分析/汇总路径做了三处修正' and asserts '训练/评估/判词路径...未变', but the packet's own deviation ledger lists the third fix under 'arch0001_learning_qualification.run (run phase)' with what='a crashed run could not resume because records use exclusive create' and fix='load already-written per-run records instead of refitting'. The packet shows no ENGINEERING failure and no resumed-path replay, even though a run-phase exception falls under the design's ENGINEERING class ('非有限值/异常/缺记录') and decision-table row 1 (INCONCLUSIVE / ENGINEERING_FAILURE).",
+      "why_it_matters": "Depending on how the crash is classified in the pre-registered failure ledger, the first decision-table row could apply and change the verdict; at minimum, 'affects_training_or_metrics: false' is an unverified assertion for a run-phase change, and the nominal 36 fits/36000 updates are not reconciled with resume/refit behavior.",
+      "falsifiable_check": "Inspect the run-phase/failure ledger for the crashed run: was it recorded as ENGINEERING, was its per-run record complete before the crash, and does replaying the resumed/loaded path reproduce the same data/parameter/metric hashes as a fresh fit?"
+    },
+    {
+      "id": "replay-plan-deviation",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "独立复核用 `scripts/verify_exp0029_replay.py` 在干净源码副本中重放 2 个已归档运行（一个通过、一个失败，若存在）",
+        "独立干净副本重放 3 个归档运行（含最难 seed 28209）参数/数据/预测哈希与全部指标差为 0",
+        "Fresh-process retrain replay; no retuning or reselection."
+      ],
+      "problem": "The pre-registered replay design was 2 archived runs (one passing, one failing if one exists); the executed verification replays 3 runs and all three labels are passing runs (CAND:28212, INV_COMP:28201, EXTRA_SUP:28209), chosen with a post-hoc '最难 seed' description. No failing run (notably 28103, the only failure discussed) was replayed, and the verification record does not identify the code/module hash used in the 'clean copy'.",
+      "why_it_matters": "The independent check meant to cover the failure mode and validate the archived code was changed in target and count without a pre-registered selection rule; failure classification and near-threshold behavior remain unverified by replay, and the replay's equality booleans cannot be tied to a frozen code version given the separate hash inconsistency.",
+      "falsifiable_check": "Compare replay targets/count and selection rule with the protocol; replay a failing archived run (e.g. 28103) and record the code and archived hashes in verification.json; check whether the 3 targets were chosen only after seeing all results."
+    },
+    {
+      "id": "all-pass-row-gap",
+      "source": "design",
+      "severity": "low",
+      "evidence": [
+        "12 seed 完全可能全部通过，从而说明 3-seed 规则本身过于苛刻，而不是候选不稳",
+        "`CAND` ∈{11,12}/12 且全部失败均为 `HOLD_COLLAPSE`",
+        "其余（失败存在但不可归类）"
+      ],
+      "problem": "The protocol explicitly anticipated the observed 12/12 all-pass case, but the decision table has no explicit zero-failure row: the only potentially applicable row requires '全部失败均为 HOLD_COLLAPSE', which holds vacuously when the failure set is empty, while the '其余' row is explicitly conditioned on '失败存在'.",
+      "why_it_matters": "The recorded PARTIALLY_SUPPORTED / LEARNING_QUALIFICATION_AT_BUDGET verdict follows only under a vacuous-truth reading, not from a row written for the anticipated all-pass outcome; the derivation is convention-dependent and could be read as under- or un-defined for the observed case.",
+      "falsifiable_check": "Encode the pre-registered table as a decision function and evaluate (CAND 12/12, failures=[]) without special-casing; check which branch fires and whether the protocol defines the zero-failure case anywhere else."
+    },
+    {
+      "id": "per-seed-diagnostics-gap",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "全部 8 个 cell 的逐 seed 准确率与失败 seed 的逐 cell 明细；不做任何事后筛选",
+        "Loss-free view of artifacts/EXP-0029/v1/analysis.json for the packet size limit; all seed-level metrics, hashes, failure classes, thresholds and provenance fields are unchanged."
+      ],
+      "problem": "Pre-registered diagnostic #4 requires per-seed accuracy for all 8 cells and per-cell detail; in the packet's action rows per-seed values exist only for IID_H/IID_U/IID_U_flip/response_joint, while LONG_H/LONG_U/ROT_H/ROT_U/LEAK01_U/LEAK04_U appear only as arm-level cells_mean and per-seed current_ok_next_response_bad (diagnostic #2) is likewise absent. The compact-view note nevertheless calls the view 'Loss-free' and says all seed-level metrics are unchanged.",
+      "why_it_matters": "The packet does not contain the pre-registered per-seed all-cell diagnostics, so seed-level consistency of secondary cells (used for explanation and v4 design) cannot be checked from the frozen packet; if the compact view dropped fields that exist in analysis.json, the 'Loss-free' claim is inaccurate.",
+      "falsifiable_check": "Count per-seed entries carrying LONG_H/LONG_U/ROT_H/ROT_U/LEAK01_U/LEAK04_U values in the packet's action content and compare with the frozen analysis.json to see whether such per-seed fields exist and were omitted."
+    }
+  ],
+  "overall_assessment": "主终点（12 新 seed 全过）与判词表第 4 行的适用基本成立，工程与资源记录完整；但两处记录问题需要更正：决定把前 3 个已暴露 seed 合并进主终点依据与置信语言（违反预注册诊断第 5 条），以及模块哈希链引用中间态、未把汇总期异常按协议失败类显式裁决；另有重放目标事后调整与 packet 摘要字段不全两处披露缺口。"
+}

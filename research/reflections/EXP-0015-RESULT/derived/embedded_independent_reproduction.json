@@ -1,0 +1,45 @@
+{
+  "pass_": true,
+  "scope": "RAW_ARRAY_SECOND_IMPLEMENTATION_NOT_INDEPENDENT_SAMPLE_REPLICATION",
+  "errors": {
+    "full": 3.3306690738754696e-16,
+    "suffix1": 6.938893903907228e-18,
+    "suffix8": 3.3306690738754696e-16,
+    "uniform_kl": 1.3322676295501878e-15,
+    "suffix1_kl": 2.220446049250313e-15,
+    "suffix8_kl": 1.7763568394002505e-15,
+    "bootstrap_means": 1.5765166949677223e-14,
+    "uniform_mean": 0.0,
+    "suffix1_mean": 0.0,
+    "suffix8_mean": 0.0,
+    "suffix1_lower": 5.995204332975845e-15,
+    "suffix1_upper": 3.774758283725532e-15,
+    "suffix8_lower": 3.469446951953614e-17,
+    "suffix8_upper": 2.220446049250313e-16
+  },
+  "maximum_error": 1.5765166949677223e-14,
+  "recomputed_metrics": {
+    "uniform_mean": 2.0991721194867274,
+    "suffix1_mean": 1.0875542070145063,
+    "suffix8_mean": 0.060125340733633036,
+    "suffix1_lower": 1.0727697612381353,
+    "suffix1_upper": 1.101884336170521,
+    "suffix8_lower": 0.05590587285257647,
+    "suffix8_upper": 0.06450654768616843
+  },
+  "recomputed_substatus": "TASK_INFORMATION_ONLY",
+  "recomputed_decision": "SUPPORTED",
+  "provenance": {
+    "source_commit": "e8b4d3c258efcd544f67ea4a0288f54a693b31a0",
+    "validation_sha256": "b642045352fd30b9e91655184aa9977f6a38b6820e48ddd04cb1217361770a93",
+    "source_directory": "/private/tmp/neurotopo-exp0015-frozen-4d2mbunm/source"
+  },
+  "raw_sha256": "26184c8c0d2ba0d1b3d020d0ec470551729191c3b1cb6314b83641924f22315f",
+  "oracle_sha256": "d5f33b2b5938cb843ba17f6681bea44ffc92e988e999cf565dcf9e8502377904",
+  "manifest_sha256": "e13cb1fe5e2a7cbe5800cca44728614950cc95804e7f226b727388065f07ac03",
+  "analysis_sha256": "030a437c75300a9587074d4ec25967ce9ac746a5502453ce8bd5ac7d47d488d5",
+  "seconds": 0.7555292500001087,
+  "task_samples_generated": 0,
+  "optimization_updates": 0,
+  "auditor_sha256": "daeef3f3842cfe093b3ed727b6a02bc993d961c8bbfe20041272f574e870581b"
+}

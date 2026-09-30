@@ -1,0 +1,120 @@
+{
+  "pass_": true,
+  "replays": [
+    {
+      "experiment": "EXP-0034",
+      "seed": 29321,
+      "all_hashes_equal": true,
+      "metric_gaps": {
+        "SEL_INV.meaningful": 0.0,
+        "SEL_INV.branch": 0.0,
+        "CAND_V4.meaningful": 0.0,
+        "CAND_V4.branch": 0.0,
+        "EXTRA_V4.meaningful": 0.0,
+        "EXTRA_V4.branch": 0.0
+      },
+      "max_metric_gap": 0.0,
+      "pass_": true
+    },
+    {
+      "experiment": "EXP-0034",
+      "seed": 29322,
+      "all_hashes_equal": true,
+      "metric_gaps": {
+        "SEL_INV.meaningful": 0.0,
+        "SEL_INV.branch": 0.0,
+        "CAND_V4.meaningful": 0.0,
+        "CAND_V4.branch": 0.0,
+        "EXTRA_V4.meaningful": 0.0,
+        "EXTRA_V4.branch": 0.0
+      },
+      "max_metric_gap": 0.0,
+      "pass_": true
+    },
+    {
+      "experiment": "EXP-0034",
+      "seed": 29323,
+      "all_hashes_equal": true,
+      "metric_gaps": {
+        "SEL_INV.meaningful": 0.0,
+        "SEL_INV.branch": 0.0,
+        "CAND_V4.meaningful": 0.0,
+        "CAND_V4.branch": 0.0,
+        "EXTRA_V4.meaningful": 0.0,
+        "EXTRA_V4.branch": 0.0
+      },
+      "max_metric_gap": 0.0,
+      "pass_": true
+    },
+    {
+      "experiment": "EXP-0034",
+      "seed": 29324,
+      "all_hashes_equal": true,
+      "metric_gaps": {
+        "SEL_INV.meaningful": 0.0,
+        "SEL_INV.branch": 0.0,
+        "CAND_V4.meaningful": 0.0,
+        "CAND_V4.branch": 0.0,
+        "EXTRA_V4.meaningful": 0.0,
+        "EXTRA_V4.branch": 0.0
+      },
+      "max_metric_gap": 0.0,
+      "pass_": true
+    },
+    {
+      "experiment": "EXP-0034",
+      "seed": 29325,
+      "all_hashes_equal": true,
+      "metric_gaps": {
+        "SEL_INV.meaningful": 0.0,
+        "SEL_INV.branch": 0.0,
+        "CAND_V4.meaningful": 0.0,
+        "CAND_V4.branch": 0.0,
+        "EXTRA_V4.meaningful": 0.0,
+        "EXTRA_V4.branch": 0.0
+      },
+      "max_metric_gap": 0.0,
+      "pass_": true
+    },
+    {
+      "experiment": "EXP-0033",
+      "seed": 29313,
+      "all_hashes_equal": true,
+      "metric_gaps": {
+        "SEL_INV.meaningful": 0.0,
+        "SEL_INV.branch": 0.0,
+        "CAND_V4.meaningful": 0.0,
+        "CAND_V4.branch": 0.0,
+        "EXTRA_V4.meaningful": 0.0,
+        "EXTRA_V4.branch": 0.0
+      },
+      "max_metric_gap": 0.0,
+      "pass_": true
+    }
+  ],
+  "carrier_check": {
+    "experiment": "EXP-0034",
+    "width": 48,
+    "blocks": 2,
+    "recorded_parameters": 1180,
+    "expected_parameters": 1180,
+    "recorded_inference_ops": 1059,
+    "expected_inference_ops": 1059,
+    "pass_": true
+  },
+  "recomputed": {
+    "note": "Recomputed from the replayed seeds by replacing each recorded per-seed effect with the replayed one; the per-seed accuracy gaps are zero (see metric_gaps), so the aggregate is unchanged by construction.",
+    "recorded_effect_pp": -6.238281250000002,
+    "recorded_ci95_pp": [
+      -15.037109374999998,
+      4.095800781250001
+    ],
+    "all_seed_gaps_zero": true,
+    "exclusion_of_seed_29321": {
+      "effect_pp": -2.65,
+      "source": "recorded per-seed accuracies; candidate seed 29321 is at chance (0.5022, below the 0.58 control-side floor)"
+    }
+  },
+  "seconds": 281.0871674579994,
+  "scope": "Fresh-process retrain replay of all five EXP-0034 comparison seeds and one EXP-0033 seed; no retuning or reselection."
+}

@@ -1,0 +1,373 @@
+{
+  "artifacts": [
+    {
+      "bytes": 3846,
+      "path": "paper/README.md",
+      "role": "reproduction package instructions and reading order",
+      "sha256": "a8f89a1ed4a2d3f17df3835712323756a970a0f43805f1d1cb0e75aa786e986c"
+    },
+    {
+      "bytes": 26077,
+      "path": "paper/dir0003_matched_capacity.md",
+      "role": "paper draft v1 (headline reframed after out-of-sample confirmation)",
+      "sha256": "b75c454f99863e8837a18a8e49a490fdbc02f57c2ddb2889fc0ab5f8756aa420"
+    },
+    {
+      "bytes": 2279,
+      "path": "paper/dir0003_review_delivery_final.md",
+      "role": "delivery note for the final-paper review packet",
+      "sha256": "220d8669947d439976754fecf2e5974af3fb0f6e448a0cb812b3875c83ce540d"
+    },
+    {
+      "bytes": 2222,
+      "path": "paper/dir0003_review_delivery_v2.md",
+      "role": "compact review delivery note (v2 packet)",
+      "sha256": "b2d41cd5d2589c7f515e787018d99fa4a089b18ad802647bc70efa702b4b1a10"
+    },
+    {
+      "bytes": 2720,
+      "path": "paper/figures/fig1_contrast_vs_artifact.svg",
+      "role": "figure 1: contrast intervals versus artifact bands",
+      "sha256": "8fea40d478a48094ca6bda49b9f2ba58d091ef042893b25c389f3477343eeb18"
+    },
+    {
+      "bytes": 2401,
+      "path": "paper/figures/fig2_tanh_matched.svg",
+      "role": "figure 2: nested tanh-matched control per seed",
+      "sha256": "fc677cae82ecd417c736e28a58d31ae21e6405ec08523251b657f688cd6e0c60"
+    },
+    {
+      "bytes": 9806,
+      "path": "research/decisions/0074_dir0003_new_question_predesign_rejected.md",
+      "role": "decision: v0 criteria architecture voided",
+      "sha256": "c2153dc368dd2038b833d171a255be0b36257cdea52da752be5efc656788a379"
+    },
+    {
+      "bytes": 5548,
+      "path": "research/decisions/0075_dir0003_redesign_judgment_rejected.md",
+      "role": "decision: retractions and six compute-first re-entry conditions",
+      "sha256": "ebadd40fb8943ad1dbb2457e5a46ad547e1df05b7ca0d3985a7c05d482012b36"
+    },
+    {
+      "bytes": 3947,
+      "path": "research/decisions/0076_publication_scope_authorized.md",
+      "role": "decision: user-authorized scope relaxation, evidence standards unchanged",
+      "sha256": "deaf70784755f6a14d9ffe58b58db501f473a1b16c7eac6212e2ada8aa68b0d8"
+    },
+    {
+      "bytes": 4812,
+      "path": "research/decisions/0077_endpoint_and_thresholds_fixed.md",
+      "role": "decision: endpoint, artifact band, thresholds, matching disclosure",
+      "sha256": "3e7e6557e8c33233b55c49421ec4a6eb1f5bd9acbd25e46bb0eb8e47238a06e0"
+    },
+    {
+      "bytes": 3418,
+      "path": "research/decisions/0078_out_of_sample_band_geometry.md",
+      "role": "decision: band geometry sets identifiability, correlation time does not",
+      "sha256": "5ae34a9cc28cae826d617d64f315c29132b115179b0f9ece63ef8d5437739fa2"
+    },
+    {
+      "bytes": 3511,
+      "path": "research/decisions/0080_entry_rule_architecture_organization.md",
+      "role": "user-authorized entry rule relaxation and its cost record",
+      "sha256": "9a9838660ebb9e6efcb475fc6169daed7f02abab97a848547149a6b513ea19c6"
+    },
+    {
+      "bytes": 22787,
+      "path": "research/design/dir0003_capacity_precheck.json",
+      "role": "machine output: v0 truncated capacity curves and crossover prediction",
+      "sha256": "1d83285a5e213fe1ee511b51fc58a8caabb737c201981d1b6b46700a50ea13a0"
+    },
+    {
+      "bytes": 1338,
+      "path": "research/design/dir0003_capacity_precheck_ar1.json",
+      "role": "machine output: total ratio 0.9115 under AR(1); task-law matching infeasible at equal spread",
+      "sha256": "a16f8132806ceaab5a22c6344e52d6f40d7faa5b307653caae6ee24962c2c991"
+    },
+    {
+      "bytes": 2904,
+      "path": "research/design/dir0003_handover.md",
+      "role": "handover note: state, must-fix list, reproduction entry",
+      "sha256": "39c6288cf880935bbffa872afe0c93804be4fa375ea735a184c80e19dde3e89e"
+    },
+    {
+      "bytes": 3881,
+      "path": "research/design/dir0003_heldout_summary.json",
+      "role": "2x2 out-of-sample summary table with the pre-fixed verdict rule applied",
+      "sha256": "cdd5143ca3437c46de4f3dc57c6adb2a33cf9654add9327cafd2970a90bffe65"
+    },
+    {
+      "bytes": 16516,
+      "path": "research/design/dir0003_moment_diagnostic.json",
+      "role": "machine output: family and R1-pool sizes, within-family moment regression",
+      "sha256": "a67b28b951e1099ff60eb881cbd3c8537938c92f77fbf331e34c455754341052"
+    },
+    {
+      "bytes": 5894,
+      "path": "research/design/dir0003_null_contrast.json",
+      "role": "machine output: realisation null and matching-freedom counts",
+      "sha256": "c8ae46c83ad9ae51ce1da62f5fd8d62b735d975f4d54f2286cda641fb4d139e5"
+    },
+    {
+      "bytes": 8203,
+      "path": "research/design/dir0003_paper_claims.json",
+      "role": "claims ledger v1 (superseded: mislabelled the 8-seed primary run)",
+      "sha256": "675f7f96d963b021730ed34d23f071f57224d3de0b22803b2dc2b989c2737c7c"
+    },
+    {
+      "bytes": 10575,
+      "path": "research/design/dir0003_paper_claims_v2.json",
+      "role": "claims ledger v2: both primary runs, R1 pool range and C2 extremes; all 82 quoted numbers traceable",
+      "sha256": "d1f330c2e344add0f0fae144adf368d2fbcc4ed237ec194bdd003147ab1b240d"
+    },
+    {
+      "bytes": 14881,
+      "path": "research/design/dir0003_paper_claims_v3.json",
+      "role": "claims ledger v3: adds the realisation null and the first tanh run",
+      "sha256": "462003fe4514f900d7a8b586c6d8cc561ac29548b64e1bf7022e16cef2b1c0cb"
+    },
+    {
+      "bytes": 19775,
+      "path": "research/design/dir0003_paper_claims_v4.json",
+      "role": "claims ledger v4: adds variance split and same-rule nonlinear control",
+      "sha256": "2d6ab60aeb03d2cedc4441451e44e0f231f7a8b61a92aaa3bf86367dd6ab71e1"
+    },
+    {
+      "bytes": 1831,
+      "path": "research/design/dir0003_r1_all_cells.json",
+      "role": "R1 control numbers for every cell",
+      "sha256": "a776285d50c0ef8c7c6ede3ca56f7599e7080cf2bfcbf21b74a76eb3f12d256a"
+    },
+    {
+      "bytes": 12208,
+      "path": "research/design/dir0003_review_followups.json",
+      "role": "machine output: variance shares and same-rule tanh selection",
+      "sha256": "029c51158dac58c5352aa2fc525113285f28961599c91da79e3f516bc467f1c1"
+    },
+    {
+      "bytes": 5034,
+      "path": "research/design/dir0003_selection_null.json",
+      "role": "machine output: rank fractions and Fisher statistics per geometry",
+      "sha256": "3680f88b171aa88e1950808c51265ef9218df64f0a0f5296c6bbc6b0c6fbc19c"
+    },
+    {
+      "bytes": 38146,
+      "path": "research/design/dir0003_spec_curve.json",
+      "role": "machine output: 36-cell specification curve, all matched allocations, R1 control",
+      "sha256": "f1f1d1cd2099bd28186280360093274478cc1865a106cf4c3c56eefa24235571"
+    },
+    {
+      "bytes": 26096,
+      "path": "research/design/dir0003_spec_curve_heldout_bands.json",
+      "role": "out-of-sample cell: separated bands, phi=0.5",
+      "sha256": "70a832666fe03553a5939d9e391c065f83100bdd93ce0c16b77ef6871e0fd9e5"
+    },
+    {
+      "bytes": 26047,
+      "path": "research/design/dir0003_spec_curve_heldout_both.json",
+      "role": "out-of-sample cell: separated bands, phi=0.3",
+      "sha256": "7f3b11016387def9808391ccd367326cd11925a20d18b10f8b378f62474de4fc"
+    },
+    {
+      "bytes": 26246,
+      "path": "research/design/dir0003_spec_curve_heldout_phi.json",
+      "role": "out-of-sample cell: adjacent bands, phi=0.7",
+      "sha256": "03a244f94653379afb265daf7573c43eaea64a491cbc2c430deee6dc4575fc40"
+    },
+    {
+      "bytes": 26269,
+      "path": "research/design/dir0003_spec_curve_primary8.json",
+      "role": "balanced 8-seed primary cell (seed-count robustness)",
+      "sha256": "adda0197f7ac387cf55c92b890f39950875eecb3af3cddb5ff9c5968ad0b76bf"
+    },
+    {
+      "bytes": 2022,
+      "path": "research/design/dir0003_tanh_control.json",
+      "role": "machine output: tanh control, matching is not portable across core classes",
+      "sha256": "b0a77b60c1b5427793a80586e86a946d6b79b5a82b07f9c6e33fb2c5fb5a9126"
+    },
+    {
+      "bytes": 7220,
+      "path": "research/design/dir0003_tanh_matched.json",
+      "role": "machine output: nested tanh-matched contrasts 10-70x below the artifact band",
+      "sha256": "749d00e08247ebc2ef3a4a887cfbe935405a87856ef65f37eb6512757f997914"
+    },
+    {
+      "bytes": 1323,
+      "path": "research/design/dir0003_truncation_check.json",
+      "role": "machine output: truncation residual 58.74%, true ratio 0.4126 at horizon 4000",
+      "sha256": "d732316b05485c804fc27239676f72e018bf1bade97dda0290cf0ad9142759db"
+    },
+    {
+      "bytes": 1154,
+      "path": "research/design/dir0003_v1_degeneracy_check.json",
+      "role": "machine output: contrast vs ridge band (superseded by the specification curve)",
+      "sha256": "ac63dc26a27a9b0cb76d5b359f5fe5d3a4d00f68fc76062ec01eacd2f74dfbf1"
+    },
+    {
+      "bytes": 9151,
+      "path": "research/design/dir0003_v1_exact_check.json",
+      "role": "machine output: exact totals, 33 matched rungs, self-checks 1e-12",
+      "sha256": "d5cce6999c3f488fcf710d0121b262eb57a31e38ca4c9ac7745a6f5a2c188290"
+    },
+    {
+      "bytes": 48687,
+      "path": "research/reflections/DIR-0003-PAPER-FINAL/packet.json",
+      "role": "frozen final-paper review packet",
+      "sha256": "8da1de0fdb5e7735dd1acaeafbff0c7ff79243123b404531afaa6217df0e2d42"
+    },
+    {
+      "bytes": 5788,
+      "path": "research/reflections/DIR-0003-PAPER-FINAL/reaction.json",
+      "role": "main-agent reaction: all 10 accepted, next-step list",
+      "sha256": "fed6c5e1197968e5fb964c00771b7fe2875afc19c96512523a231892305e110e"
+    },
+    {
+      "bytes": 14799,
+      "path": "research/reflections/DIR-0003-PAPER-FINAL/review.json",
+      "role": "final paper review: PAPER_NEEDS_MAJOR_REVISION, 10 issues",
+      "sha256": "e92d4fd226e6f172732f1378ad24bcf90b125ee0a4bec395e33570dc9c432831"
+    },
+    {
+      "bytes": 32344,
+      "path": "research/reflections/DIR-0003-PAPER/packet_v2.json",
+      "role": "SUPERSEDED review packet (pre-major-revision draft; replaced by DIR-0003-PAPER-FINAL)",
+      "sha256": "586f365441a9c9e44d445aae47e8603de9afb6ac16bbd9c47ace507bee776842"
+    },
+    {
+      "bytes": 7054,
+      "path": "research/reflections/DIR-0003-PAPER/reaction.json",
+      "role": "main-agent reaction: all 14 accepted",
+      "sha256": "178a4371278be4ff14294ede2b4affc9478c1d96f3bedb77c61cf84d527a0322"
+    },
+    {
+      "bytes": 22468,
+      "path": "research/reflections/DIR-0003-PAPER/review.json",
+      "role": "independent paper review: PAPER_NEEDS_MAJOR_REVISION, 14 issues",
+      "sha256": "9cbd46265abc86563c4d0335fb21736173aa61d5614b01ffef96faea5b8d66ac"
+    },
+    {
+      "bytes": 46317,
+      "path": "research/reflections/DIR-0003-PREDESIGN/packet.json",
+      "role": "frozen review packet, pre-design v0",
+      "sha256": "0d4b29e6180d02d1d46756824914141946715bf3b69e5bbc318bac5dc7e5c2fe"
+    },
+    {
+      "bytes": 10851,
+      "path": "research/reflections/DIR-0003-PREDESIGN/reaction.json",
+      "role": "main-agent reaction: all 17 accepted, decision 0074",
+      "sha256": "5d247018f2aa05dfe6f58bb4ff2e0a0bb94a00f7bcaf556a4546d7e9b262d6fd"
+    },
+    {
+      "bytes": 27116,
+      "path": "research/reflections/DIR-0003-PREDESIGN/review.json",
+      "role": "independent packet-only review: V0_REJECTED, 17 issues",
+      "sha256": "d4b390e94353f0c84b4e2253ba20976f4d508e5ee25d016d25d0881d6eebbc3c"
+    },
+    {
+      "bytes": 23484,
+      "path": "research/reflections/DIR-0003-REDESIGN/packet.json",
+      "role": "frozen review packet, redesign judgment",
+      "sha256": "fa53fd7bff5dae534c8961fbcc251b291fe70f7e5a5e2e65c387e33d094a1f43"
+    },
+    {
+      "bytes": 8356,
+      "path": "research/reflections/DIR-0003-REDESIGN/reaction.json",
+      "role": "main-agent reaction: retractions and decision 0075",
+      "sha256": "bc4f349216b8b91975201e4618120f9fc7a6548e2887b6f7d9f66e9c39e5930c"
+    },
+    {
+      "bytes": 26657,
+      "path": "research/reflections/DIR-0003-REDESIGN/review.json",
+      "role": "independent packet-only review: V1_JUDGMENT_REJECTED, 17 issues",
+      "sha256": "b13c84528c0d2d4d8f9ef797604f791e7fa46654d6ae6bd65930d529ddac2cae"
+    },
+    {
+      "bytes": 7051,
+      "path": "scripts/dir0003_ar1_transfer_check.py",
+      "role": "AR(1) transfer check that exposed the probe-vs-task distribution mismatch",
+      "sha256": "57b3b5eebad89b08f67bb35a72f297ae0dab6ccee8d59a15d15b491f02663320"
+    },
+    {
+      "bytes": 14331,
+      "path": "scripts/dir0003_capacity_precheck.py",
+      "role": "v0 analytic precheck (truncated-horizon capacity; superseded by v1 but retained)",
+      "sha256": "27fd468c6069214e377ebf613dfae5c4eed195a0bbbbd4a6690b24a0faeae957"
+    },
+    {
+      "bytes": 6312,
+      "path": "scripts/dir0003_figures.py",
+      "role": "dependency-free SVG figure generation from the frozen machine outputs",
+      "sha256": "a39a1ce212efad6dfa2a1e6f8fe9c0675234b3c2e8bd778c11919c03acf72cdc"
+    },
+    {
+      "bytes": 5868,
+      "path": "scripts/dir0003_moment_diagnostic.py",
+      "role": "how many organisations survive one versus two matched moments",
+      "sha256": "28821d2a4b36aeb13cde5d778f5627c2f898db9c20bfd400520933316f2e0198"
+    },
+    {
+      "bytes": 6131,
+      "path": "scripts/dir0003_null_contrast.py",
+      "role": "between-arm realisation null for all four 2x2 cells, ridge band over all ridge pairs, typical vs selected contrast",
+      "sha256": "173f548bf3a6915f7a7b8eed8fa5b812fa788deeab607d191cc941cd928f82b3"
+    },
+    {
+      "bytes": 7546,
+      "path": "scripts/dir0003_review_followups.py",
+      "role": "I9 same-rule nonlinear re-selection; I11 seed-vs-ridge variance split",
+      "sha256": "db0c2b5811d24e8b297ab4e6f6847185dc692b74a28cf6132ba7f8baa36d5755"
+    },
+    {
+      "bytes": 3763,
+      "path": "scripts/dir0003_selection_null.py",
+      "role": "selection-matched rank test: is the |dm2| criterion informative within the family",
+      "sha256": "f2ce8272a28e7ff7d8d93909351d929bff84b273ff9baf2a2ef291c633567afa"
+    },
+    {
+      "bytes": 8654,
+      "path": "scripts/dir0003_spec_curve.py",
+      "role": "specification curve (parameterised bands/phi) with the R1 first-moment control",
+      "sha256": "e0c8775306b05cf7712a50c7ea6b39eeb82ee5e3163b89d8a5f382e51d8b5033"
+    },
+    {
+      "bytes": 5472,
+      "path": "scripts/dir0003_tanh_control.py",
+      "role": "R2 static-nonlinearity control (held-out ridge capacity estimates)",
+      "sha256": "250e7c0826c07726b9a7ab8d4d015dfec5ed2283762024e82e9a8ec84c63b2a5"
+    },
+    {
+      "bytes": 6287,
+      "path": "scripts/dir0003_tanh_matched.py",
+      "role": "nested re-matching of a matched pair inside the nonlinear core (R2 proper)",
+      "sha256": "d80f0066e59c623282a74c9fce99665188e0417a652a2e78bf27197ef62ef583"
+    },
+    {
+      "bytes": 11226,
+      "path": "scripts/dir0003_v1_exact_check.py",
+      "role": "exact infinite-horizon capacity functional + full matched-allocation enumeration",
+      "sha256": "33d8db6846d9ca2d6dabe6794c0244c123a59aaabfcd84ddc8a198137ffa3b58"
+    },
+    {
+      "bytes": 6249,
+      "path": "src/neurotopo/entry_policy.py",
+      "role": "entry policy v2: project Gate 1 admits architecture_organization factors (decision 0080)",
+      "sha256": "770f2c71f5327d950bc1b09265152b16a24120790ef7ffaaef33f16a3a13102a"
+    },
+    {
+      "bytes": 11970,
+      "path": "tests/test_entry_policy.py",
+      "role": "entry policy tests incl. the new architecture_organization admission test",
+      "sha256": "7a0c8051de12d9a4edffb4b5705707bd2761755ab28ee1bd17243d1ccc0da7d3"
+    }
+  ],
+  "generated_at": "2026-09-24",
+  "interpreter": "uv run --frozen python (UV_PROJECT_ENVIRONMENT=/private/tmp/neurotopo-venv)",
+  "notes": [
+    "web_search and web_fetch are unavailable in this environment; all literature retrieval used bash curl",
+    "every reported number comes from the listed machine outputs; thresholds' provenance is decision 0077",
+    "no training of any core; Gate 1 is not claimed or advanced by any artifact here",
+    "draft v1 headline reframed by decision 0078 after the 2x2 out-of-sample run"
+  ],
+  "schema": "dir0003_repro_manifest_v1"
+}

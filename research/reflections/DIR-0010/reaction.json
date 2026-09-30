@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "0164f59c0d680c6dde688922f1a29b6da49ed6de0199891ed8a1165f2536f0cf",
+  "review_sha256": "f39968f68ec23950d9eda5be3c72945e7c4107a4b068cdd23910f7303bea4fef",
+  "responses": [
+    {
+      "id": "DIR0010-REVIEW-001",
+      "disposition": "accept",
+      "reason": "k窗口和τ在原v0确无唯一计算规则，可能受已见曲线影响。",
+      "action": "补入离散成功集合、删失分支及独立校准τ首越界定义；反比律需更多扰动水平。",
+      "evidence_paths": [
+        "research/design/dyn0002_temporal_subspace_draft.md",
+        "research/evidence/DIR-0010_temporal_subspace_identifiability.md"
+      ]
+    },
+    {
+      "id": "DIR0010-REVIEW-002",
+      "disposition": "accept",
+      "reason": "代数核平面不能自动成为经验干扰子空间，原草案未定义地板/秩/PSD可行方向。",
+      "action": "补入配对Gram响应、工程数值地板、协方差维数准则和固定随机可行核方向；不能识别时保留NO_IDENTIFIABLE。",
+      "evidence_paths": [
+        "research/design/dyn0002_temporal_subspace_draft.md",
+        "research/evidence/DIR-0010_temporal_subspace_identifiability.md"
+      ]
+    },
+    {
+      "id": "DIR0010-REVIEW-003",
+      "disposition": "accept",
+      "reason": "26模型与26输入流数值相同但来源不同，原稿没有逐项列明。",
+      "action": "写明24新REL/INV模型＋2旧参考、26共享输入流和832个主网格单元。",
+      "evidence_paths": [
+        "research/design/dyn0002_temporal_subspace_draft.md",
+        "research/evidence/DIR-0010_temporal_subspace_identifiability.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "保持DIR-0010的精确gauge与数值误差限定结论；v0只是修订后的设计草案，不作为已注册实验或快慢变量证据。"
+}

@@ -1,0 +1,28 @@
+{
+  "experiment_id": "EXP-0023",
+  "version": "v1",
+  "review_type": "independent_static_prerun",
+  "scope": "Reviewed the saved review scope, protocol, config, entry, prior-art note, stage gate, EXP-0021 report and parent model/runner source. No research data or model was executed.",
+  "verdict": "REVISION_REQUIRED_BEFORE_IMPLEMENTATION",
+  "checks": [
+    "For REL and INV at leak=0, the controller and readout depend on Gram(H), and a common left rotation preserves Gram. HOLD and two FLIP transitions return the logical XOR target to b_T. The auxiliary branches therefore test a valid output-composition relation; they do not prove full state return or a novel general algorithm.",
+    "REL_CYCLE and REL_EXTRA use the same detached terminal state, three additional transitions, two terminal readouts, coefficient 0.1, main batch and 1000 updates. Detaching both h and z0 limits auxiliary gradients to branch transition/readout parameters while the main BCE still trains encoder and full sequence. REL_EXTRA receives b_T on both logically target-preserving branches. Different loss and gradient scales remain a disclosed alternative explanation; equal operation count is not equal optimization strength.",
+    "Six new training seeds 23001..23006 are separate from exposed parent seeds 20001..20005. Old-checkpoint correlations are descriptive only. P uses only six new REL_BASE seeds, D_rel against long-horizon BCE, with frozen IID, prefix-accuracy and outcome-range guards; no old seed or post hoc seed exclusion enters P.",
+    "R is a paired six-training-seed effect on the six fixed LONG cells, with an IID learning guard, 0.05-nat mean improvement over REL_EXTRA, a positive single-comparison t lower bound and positive mean improvement over REL_BASE. The strong INV reference and all eight cells remain reported. This is local training-method evidence, not Gate 1 or an architecture superiority claim.",
+    "Budget arithmetic agrees with the curriculum: 64000 main examples and 344000 main transition tokens per model; each auxiliary arm adds 192000 transition tokens and 128000 terminal readouts. Twenty-four models require exactly 24000 research optimizer updates. The config's 1200-second run/analysis plus 300-second replay equals the entry's 1500-second wall cap. The parent archive contains all 15 final checkpoints, including the EXP-0020 pilot copied into EXP-0021. Runtime feasibility is not established by static review."
+  ],
+  "blocking": [
+    {
+      "issue": "M can count zero-versus-zero diagnostic cells as improvements.",
+      "evidence": "Protocol line 25 uses D_CYCLE <= 0.5*D_EXTRA and D_rel_CYCLE <= 0.5*D_rel_EXTRA, while the floor guard applies only when all control D values are near zero. A seed with both control and candidate at zero passes both non-strict inequalities. Four such seeds plus two nonzero seeds can satisfy the 4/6 count and cross-seed mean tests although no improvement was observed in those four seeds.",
+      "required_resolution": "Before implementation or new-seed inspection, freeze a per-seed floor eligibility rule for both control D and D_rel (for example, require each >1e-12 before that seed may count toward 4/6), and specify M_INCONCLUSIVE_FLOOR when fewer than four seeds are eligible. Retain per-seed values and do not treat floor cases as M=true. Make this prospective amendment versioned if v1 has already been frozen."
+    }
+  ],
+  "implementation_checks": [
+    "Verify branch outputs against an explicit environment replay on REL/INV under common rotations, and independently recompute b_T by XOR; do not feed evaluation targets or future commands into training branches.",
+    "Test that auxiliary gradients do not pass through h or z0, that REL_CYCLE/REL_EXTRA start from identical weights and consume identical batches, and that their measured transition/readout counts agree with registration.",
+    "Exercise P ties/constants and learning/range guards; M floor and 4/6 boundary; R paired sign, t interval, learning guard and precedence of engineering/learning failures. Retain all seeds and cells.",
+    "Hash-check all 15 parent checkpoints, including seed 20001's imported pilot provenance. Replay all 24 final models and 120 monitor checkpoints on the fixed streams without retraining; report source-matched validation, dirty state, operation profiles and actual wall/CPU cost."
+  ],
+  "interpretation_limits": "The comparison can establish only a fixed-coefficient benefit over this same-operation supervised control on this XOR task and a six-seed association between short-prefix drift and long-horizon BCE. M directly measures an optimized quantity; even P, M and R together do not establish unique causal mediation, biological specialization, broad recurrence superiority or Gate 1 passage."
+}

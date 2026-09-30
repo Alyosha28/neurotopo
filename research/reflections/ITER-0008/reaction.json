@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "d2f19212ed7a500a29558521323752aa8341d82f0adf1939b062cfff9a05f68a",
+  "review_sha256": "5da741d8ddd8ac53665fa7be62b16223054990f5b6416eeda20de3344dc8d546",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Preserve ITER-0008 as resource-inconclusive and Gate 1 NOT_PASSED; prioritize a project-eligible K-factor and true matched primary control. Any score-path v7 optimization requires a separately registered, task-blind engineering check."
+}

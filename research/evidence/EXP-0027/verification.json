@@ -1,0 +1,28 @@
+{
+  "pass": true,
+  "experiment": "EXP-0027",
+  "version": "v2",
+  "frozen_source_commit": "68200dc92b9fc5b7f490d47e0953c54215a847fd",
+  "tests": 328,
+  "models": 8,
+  "main_raw_files": 192,
+  "block_trace_supplements": 40,
+  "paired_contexts_verified": 96,
+  "phase_records_verified": 200,
+  "recorded_counterexample_replays": 104,
+  "counterexample_replay_max_error": 0.0,
+  "minimal_reproducer_cases": [
+    "controlled",
+    "natural"
+  ],
+  "archive_files": 235,
+  "archive_bytes": 97294385,
+  "apfs_project_hashes_equal": true,
+  "run_seconds": 73.67609020900045,
+  "verification_seconds": 2.3479812499999753,
+  "decision": "SUPPORTED",
+  "substatus": "EXPOSED_STATE_COMPUTATION_INCOMPATIBILITY",
+  "scope": "Frozen exposed-model computation witnesses; not predictive validation on unseen models; formal block induction limited to FULL with qualifying initialization/identity inputs/fixed period.",
+  "state_trace_supplement": "The original compact runner saved event states; same block/warmup tests rerun to supply required per-step H, exact outputs matched, original raw untouched.",
+  "registry_note": "Direct manual EXP0027 execution under current user instructions; legacy automated ResearchLoop still ends at EXP0026, consult current_frontier and EXP0027 registry for latest result."
+}

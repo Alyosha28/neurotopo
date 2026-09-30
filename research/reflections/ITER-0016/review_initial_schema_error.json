@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "7a13bdbdbed7dbda0c0b4f8fd5f923cf52df3a93031efafad09b8a7d683753a2",
+  "reviewer": {
+    "model": "gpt-6-luna",
+    "effort": "max",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "A1",
+      "source": "action",
+      "severity": "medium",
+      "evidence": [
+        "机制M：四新seed中每seed两个差中差C_N和C_A均>=.10，且对应NONE t32 accuracy INV/REL>=.95，才记M=true。",
+        "预注册即时交叉预测未重复：四新seed C_N全部0，C_A分别11.3281、6.25、0、1.6602pp；阈值两项均>=10pp且NONE合格。",
+        "\"none_immediate_accuracy\": {\n        \"RAW\": 0.49609375,\n        \"INV\": 1.0,\n        \"REL\": 0.5068359375\n      },"
+      ],
+      "problem": "结果摘要在报告 C_N 四seed均为0、且 C_A 只有20002达到10pp（20003、20004、20005均低于10pp）后，却称两项阈值均达到且NONE合格。20005的REL NONE即时准确率0.5068359375也低于预注册0.95条件。表格支持M=false，但这句文字反向陈述了机制门槛结果。",
+      "why_it_matters": "读者可能据摘要误以为交叉效应达到预注册门槛且基线合格，直接混淆本轮机制预测未重复的主要结论。",
+      "falsifiable_check": "从四个确认seed表逐项重算C_N、C_A及NONE t32 INV/REL准确率，并按设计的每seed双阈值和0.95基线门槛核验摘要。核验应显示C_N均未达标、C_A仅20002达标、20005的REL NONE未达标；据此修正该句后再引用结果摘要。"
+    },
+    {
+      "id": "A2",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "独立复演<=180秒；工程tiny-fit最多150更新。",
+        "\"registered_text\": \"工程tiny-fit最多150更新\",",
+        "\"experiment_specific_fit_updates\": 0,",
+        "\"general_legacy_overfit_updates_per_suite\": 300,",
+        "\"suite_invocations\": 2,",
+        "\"known_general_legacy_overfit_updates\": 600,",
+        "Registration failed to explicitly separate this general suite from the150-update engineering cap. Conservatively record literal engineering-budget exceedance, not retroactively exempt the suite."
+      ],
+      "problem": "登记写明工程tiny-fit最多150更新；行动清单记录实验专用fit为0，但必需的通用legacy overfit每次suite运行300更新、共运行两次，合计600更新，并将其保守计为超出该工程上限。登记没有预先界定通用验证是否排除在上限外，因此实际执行与预算边界不一致。",
+      "why_it_matters": "这是已披露的工程预算偏离，不能据实验专用fit为0而声称完全遵循登记预算；它不改变研究seed、模型结果或科学判词，但应保留在执行合规说明中。",
+      "falsifiable_check": "对照本包manifest中的suite次数、每次legacy overfit更新数和登记预算，复算300×2=600并与150比较；只有存在包内可核验的不同登记边界时，才可撤销超额判定。"
+    }
+  ],
+  "overall_assessment": "发现两项行动记录问题：机制结果摘要的阈值陈述与逐seed数据冲突；验证suite累计600次legacy overfit更新超过登记的150次工程试跑上限，虽然该偏离已在manifest中披露且实验专用fit为0。复算四个确认seed后，R=false、M=false及总体INCONCLUSIVE判词与登记条件一致；其余已检查的种子表、监测曲线、描述统计和判词无额外不一致。"
+}

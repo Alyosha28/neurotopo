@@ -1,0 +1,79 @@
+{
+  "pass_": true,
+  "replays": [
+    {
+      "label": "scan:N5_T64_leak0_s40:INV_COMP-w32-b1",
+      "seed": 28101,
+      "final_hash_equal": true,
+      "data_hash_equal": true,
+      "logits_hash_equal": true,
+      "metric_gaps": {
+        "primary.flip_accuracy": 0.0,
+        "primary.hold_accuracy": 0.0,
+        "primary.accuracy_all": 0.0,
+        "primary.bce": 0.0,
+        "primary.response_error": 0.0,
+        "secondary.flip_accuracy": 0.0,
+        "secondary.hold_accuracy": 0.0,
+        "secondary.accuracy_all": 0.0,
+        "secondary.bce": 0.0,
+        "secondary.response_error": 0.0
+      },
+      "max_metric_gap": 0.0,
+      "pass_": true
+    },
+    {
+      "label": "scan:N8_T256_leak4_s40:INV_COMP-w32-b1",
+      "seed": 28102,
+      "final_hash_equal": true,
+      "data_hash_equal": true,
+      "logits_hash_equal": true,
+      "metric_gaps": {
+        "primary.flip_accuracy": 0.0,
+        "primary.hold_accuracy": 0.0,
+        "primary.accuracy_all": 0.0,
+        "primary.bce": 0.0,
+        "primary.response_error": 0.0,
+        "secondary.flip_accuracy": 0.0,
+        "secondary.hold_accuracy": 0.0,
+        "secondary.accuracy_all": 0.0,
+        "secondary.bce": 0.0,
+        "secondary.response_error": 0.0
+      },
+      "max_metric_gap": 0.0,
+      "pass_": true
+    },
+    {
+      "label": "pretest:CAND",
+      "seed": 28103,
+      "final_hash_equal": true,
+      "data_hash_equal": true,
+      "logits_hash_equal": true,
+      "accuracy_gaps": {
+        "IID_H": 0.0,
+        "IID_U": 0.0,
+        "LONG_H": 0.0,
+        "LONG_U": 0.0,
+        "ROT_H": 0.0,
+        "ROT_U": 0.0,
+        "LEAK01_U": 0.0,
+        "LEAK04_U": 0.0
+      },
+      "max_accuracy_gap": 0.0,
+      "bce_gaps": {
+        "IID_H": 0.0,
+        "IID_U": 0.0,
+        "LONG_H": 0.0,
+        "LONG_U": 0.0,
+        "ROT_H": 0.0,
+        "ROT_U": 0.0,
+        "LEAK01_U": 0.0,
+        "LEAK04_U": 0.0
+      },
+      "max_bce_gap": 0.0,
+      "pass_": true
+    }
+  ],
+  "seconds": 20.06553562499903,
+  "scope": "Fresh-process retrain replay; no retuning or reselection."
+}

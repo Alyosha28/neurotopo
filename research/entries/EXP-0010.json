@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "track": "independent_benchmark",
+  "experiment_id": "EXP-0010",
+  "direction": "soft-update-temperature-old-retrieval-task",
+  "question": "Does a sharper complementary two-module soft update gate improve delayed-evidence pair revision on the frozen lookup task under equal state, parameters and executed operators?",
+  "purpose": "Bounded RIM-adjacent field factor check on an already studied memory/retrieval task; characterize a temperature-driven gating package, not NeuroTopo Gate 1 or semantic competing hypotheses.",
+  "gate1_claim": false,
+  "resource_cap": {
+    "max_updates": 156000,
+    "max_wall_seconds": 3600
+  },
+  "task_search": {
+    "max_configurations": 1,
+    "retain_all_attempts": true,
+    "heldout_rule": "Qualification seeds 9601-9603 and their OOD streams only decide whether the fixed specification may run; formal paired seeds 9801-9810 use a disjoint final stream and are never used to alter temperature, task, threshold or endpoint."
+  },
+  "branches": {
+    "success": "Report only a scoped temperature soft-gating package effect on the frozen lookup task if every preregistered qualification, manipulation, resource and formal statistical guard passes; do not advance project Gate 1.",
+    "failure": "If the actual high-temperature control or gate manipulation fails qualification, close this fixed specification without formal training; if a qualified formal contrast excludes a +3 percentage-point gain, record the bounded negative result.",
+    "borderline": "Preserve all model and seed outcomes, classify a marginal or underidentified effect INCONCLUSIVE, and do not tune the task or gate using the held-out stream."
+  },
+  "factor": {
+    "kind": "independent",
+    "name": "FR-0001 complementary soft-update temperature",
+    "manipulation": "Identical H64/K2 block GRU and input-only tanh router; complementary per-block update gates use fixed tau 0.2 versus 2.0, with all proposed GRU updates executed in both arms.",
+    "ablation": "The high-temperature arm is the actual primary control; both arms learn the same router and compute the same candidate updates. No gate-path parameter is disabled.",
+    "prediction": "After independent control and gate qualification, the low-temperature arm gains at least 3 percentage points in OOD delay32 joint-pair accuracy under fresh paired seeds.",
+    "actual_primary_control": "Tau 2.0 H64/K2 soft-gated block GRU, trained and qualified on disjoint seeds; old EXP-0004 random C0 cannot substitute for its headroom.",
+    "state_matching": "Each arm has H64 recurrent floats plus a separately retained four-float pre-query readout cache; same number of internal steps and no trajectory communication.",
+    "parameter_matching": "Same initialized tensors and masks per paired seed; predicted 15442 allocated and 9298 effective parameters per arm, verified after implementation.",
+    "executed_compute_matching": "Both arms evaluate both full GRU proposals, router, sigmoid and gate mixtures at every token; record operator path, analytical counts, training walltime and inference latency.",
+    "prior_art_boundary": "RIMs has state-dependent top-k active-module selection and optional communication; this continuous input-only gate is not a RIMs replication. The old task permits four-value caching and no competing-hypothesis inference."
+  }
+}

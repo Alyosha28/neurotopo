@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "041a9cf492d3c562437d811e024af4eb144cd40445842f56e8b5667646c2d20c",
+  "review_sha256": "6597d087fe266c21c68436e139a737243c4f4197356f4dfc4c68d9b806007e92",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Close ITER-0008 as resource-inconclusive; preserve the failed timing evidence and Gate 1 NOT_PASSED. Before another effect experiment, register a project-eligible K-factor question and primary matched control; any v7 score-path optimization must be a separately bounded engineering check with no task data."
+}

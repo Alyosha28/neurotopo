@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "f350fdb1d5fa2d4f59ebb25b0664ec831b625696c47b9efcfb5ff754b9545fd6",
+  "review_sha256": "2badf18e94426082adf0aa4de42986486110fa457cae0fff09a48a7c00174bc4",
+  "decision_impact": "UNCHANGED",
+  "next_action": "G1-ALIGN-0001 已按独立设计审查的 10 项问题出 v1：9 项 accept、1 项（I2）reject 并附机器判定。实质变更为四项：命名收窄为「输入—分块路由与任务因子分解的对齐」并声明不检验递归组织；主终点改为 K=4（解析分解显示 K=2 的表示代价成分 0.0644 nat 超过 delta_min，K=4 仅 0.0097 nat）；承认 beta_F>0 是构造推论、经验内容移到 beta_X（预注册点预测 +0.0008、上界 +0.02）并新增 I_beyond_capacity；估计量全部填实（n=8、alpha=0.05、delta_min=0.05、df 与协变量模型明确）。另更正两处自身错误：K=4 的「对齐」划分原写成跨组的连续切分（已改为组内切分并加断言）；难度量原误引 KSI 任务的 0.5620/0.5360（已改为 GPI-0001 F/X 对的实测值并指出该机器输出的两个难度字段代数恒等）。v1 仍未注册、未过审；按审查意见，R2/R3/R4 已写出具体条款故不按 REJECTED 处理，但需再送审确认。Gate 1 仍 NOT_PASSED；不注册实验、不授权训练。",
+  "responses": [
+    {
+      "id": "I1",
+      "disposition": "accept",
+      "reason": "递归组织在两臂间逐字节相同（同一循环矩阵 SHA、跨块边两臂均为 0），被操纵的只有输入路由；「组织对齐」的措辞超出可测内容。",
+      "action": "已在 v1 §0/§1/§11 收窄命名：「输入—分块路由与任务因子分解的对齐」，并显式声明本设计不检验递归组织（拓扑）本身，禁止表述为「组织对齐」或「模块化有效」。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v1.md"
+      ]
+    },
+    {
+      "id": "I2",
+      "disposition": "reject",
+      "reason": "该断言经精确判定为假。两臂等价当且仅当存在任务边集的自同构把 S 划分映到 U 划分。枚举全部 6!=720 个置换：|Aut(F)|=72（S3xS3⋊Z2）、|Aut(X)|=12（D6），四个「K x 条件」单元中没有任何自同构把 S 映到 U。故两臂面对真正不同的问题，「全轴=1.000 即等价到置换」的前提不成立。",
+      "action": "以机器输出留档（align0001_symmetry_check.json）而非仅反驳；v1 §5 记录该判定表，并按 R6 要求实现阶段再做一次逐元素前向/反向计数作为二次确认。",
+      "evidence_paths": [
+        "scripts/align0001_symmetry_check.py",
+        "research/design/structural_task_probe/align0001_symmetry_check.json",
+        "research/design/g1_align0001_predesign_v1.md"
+      ]
+    },
+    {
+      "id": "I3",
+      "disposition": "accept",
+      "reason": "成立。S 臂在 F 中的划分与 F 的组结构同构，β_F>0 由表示容量保证；v0 用一句断言否认，未给出独立可证伪陈述。",
+      "action": "v1 §3 重写：明确承认 β_F>0 是构造的解析推论、不得计入经验证据；主终点的经验内容移到 β_X；并新增 I_beyond_capacity = I − 0.0097 nat（扣除实测容量成分），SUPPORTED 要求该量 CI 下界 > 0，仅 I>0 不构成支持。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v1.md",
+        "research/design/structural_task_probe/align0001_analytic_decomposition.json"
+      ]
+    },
+    {
+      "id": "I4",
+      "disposition": "accept",
+      "reason": "成立。v0 的「X 中差异消失」是纯断言，且未给出 β_X 预测，也未排除自陈的优化难度混淆。",
+      "action": "v1 §3 预注册 β_X 点预测 +0.0008 nat、95% 上界 +0.02 nat（依据 §4 实测：X 中对齐划分投影代价 0.0821 对跨组 0.0829）；§9 判定分支改绑 β_X 区间；§6 增加难度分层单调性可证伪检查（呈单调趋势即 INCONCLUSIVE）；§10 明确次级拒绝未被消除。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v1.md",
+        "research/design/structural_task_probe/align0001_analytic_decomposition.json"
+      ]
+    },
+    {
+      "id": "I5",
+      "disposition": "accept",
+      "reason": "成立。n、alpha、δ_min、统计量、协变量模型与自由度在 v0 中全部缺失，判定分支无法事前评判。",
+      "action": "v1 §7 全部填实：n=8 seeds/单元、alpha=0.05 双侧、δ_min=0.05 nat（锚定项目既有 eps_abs，非本轮数据）、δ_min 处功效 0.8（锚定 GPI-0001 pilot 的 sd 0.0211 作保守下界）、逐 seed 配对统计量、双侧 t 区间 df=n−1、theta 后验熵作单一固定效应协变量 df=n−2、分辨力门 MDD<=delta_min 且允许一次预注册升到 n=16，禁止事后下调 delta_min。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v1.md"
+      ]
+    },
+    {
+      "id": "I6",
+      "disposition": "accept",
+      "reason": "成立。verification 只含结构轴与时延，examples/updates/internal_steps 是构造恒等式而非实测，v0/送审说明把它写成「实测全轴比值 1.000」属措辞超出覆盖。",
+      "action": "v1 §5 如实标注这三轴为「构造性未实测」，规定实现阶段须加入前向/反向实际计数并在 VALIDATED 前报告；同时保留 pilot 的真实覆盖范围（结构与计时）。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v1.md",
+        "research/design/structural_task_probe/align0001_axis_pilot.json"
+      ]
+    },
+    {
+      "id": "I7",
+      "disposition": "accept",
+      "reason": "成立。F/X 的 4x 状态失配与判定条件未做任何绑定，同一结果可被两种解释吸收。",
+      "action": "v1 §5 给出分离论证：该失配是任务侧且不随臂操纵变化，故在同条件内的臂对比 S−U 中消掉；唯一威胁是「状态规模 x 对齐」交互，而 §4 的表示代价分解正是分离该成分的分析（K=4 成分 0.0097 nat）。另新增 §8 表示代价门（K=4 成分须 <= 0.02 nat，超出即停止）。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v1.md",
+        "research/design/structural_task_probe/align0001_analytic_decomposition.json"
+      ]
+    },
+    {
+      "id": "I8",
+      "disposition": "accept",
+      "reason": "成立。门文本未指定条件与统计量，且 packet 内共存三个 gap(16) 数值（0.350 / 0.410 / 0.385）使该门可事后择一通行。",
+      "action": "v1 §8 门改为「F 的 gap(16) 的 95% 区间下界 >= 0.20」，并逐一声明归属：0.350 属 KSI 任务、0.4097 属 F、0.3846 属 X；已冻结实测 F 区间下界 0.3578，门通过。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v1.md",
+        "research/design/structural_task_probe/align0001_analytic_decomposition.json"
+      ]
+    },
+    {
+      "id": "I9",
+      "disposition": "accept",
+      "reason": "成立。把跨块混合量固定为常数虽消除了混淆，也取消了被测变量；命名仍称「组织对齐」会被读作对 GPI-0001 的追认或重开。 记录规范化：审查原文 evidence 写作「原因是…」，实际逐字锚点为「理由是…」，已按仓库先例（决定0054 把 source 标签规范到实际锚点）改为逐字原文，问题实质未变。",
+      "action": "与 I1 合并处置：v1 §1 明确写出「本设计不检验递归组织本身」及其代价，§11 禁止把本设计当作 GPI-0001 的追认或重开。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v1.md"
+      ]
+    },
+    {
+      "id": "I10",
+      "disposition": "accept",
+      "reason": "成立。v0 把窄问题第 1 条推迟到正式协议，且未给出该先例中与「仅路由对齐变化」最接近的对照设置。",
+      "action": "v1 §12 在送审版本内逐条对齐三条窄问题（第 1 条成立；第 2 条只部分满足并如实标注为收窄；第 3 条成立），并写明该 Nature Comms 论文以 covariance 为任务侧条件、以模块规模/连接/输入路径为结构侧操纵，其中没有「同一递归结构下仅输入路由对齐变化」的对照设置。",
+      "evidence_paths": [
+        "research/design/g1_align0001_predesign_v1.md"
+      ]
+    }
+  ]
+}

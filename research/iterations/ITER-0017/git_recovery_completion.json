@@ -1,0 +1,16 @@
+{
+  "active_git_dir": "~/.local/share/neurotopo/Neurotopo.git",
+  "old_git_directory_preserved": ".git.ntfs-corrupt-20260928",
+  "metadata_backup": "~/.local/share/neurotopo/git-recovery/20260928/original-git-readable",
+  "head_preserved": "52425d300f9cbe0e97e6e800005d4f9dd092f8ed",
+  "main_history_commits": 274,
+  "worktree_status_unchanged": true,
+  "previously_failing_blob_now_roundtrip_verified": "b0bb21fcbe01b7faeb92bf09f9c20868df21f1f0",
+  "config_and_hooks_preserved": true,
+  "temporary_snapshot_refs_preserved": true,
+  "no_alternates_dependency": true,
+  "worktree_path": ".",
+  "archive_commit": "552e2dc30f55ee6376f6667561befc20931d053e",
+  "regular_add_commit_pass": true,
+  "underlying_ntfs_filesystem_repaired": false
+}

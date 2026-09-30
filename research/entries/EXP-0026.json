@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "track": "independent_benchmark",
+  "experiment_id": "EXP-0026",
+  "direction": "refresh_schedule_drift",
+  "question": "Do exposed frozen models show a sustained refresh-period window under paired rotations, and how does it relate to drift and command response?",
+  "purpose": "Execute DYN0002 stage A with fixed period/gauge/phase/trigger controls; exploratory mechanism diagnosis, not Gate1.",
+  "gate1_claim": false,
+  "factor": null,
+  "resource_cap": {
+    "max_updates": 0,
+    "max_wall_seconds": 4200
+  },
+  "task_search": {
+    "max_configurations": 1,
+    "retain_all_attempts": true,
+    "heldout_rule": "All fixed exposed seeds and R/I paths; new tau data disjoint, no task or threshold selection."
+  },
+  "branches": {
+    "success": "Report only exposed schedule windows with control and denominator limits.",
+    "failure": "Retain all negative/invalid/time-budget outcomes.",
+    "borderline": "No window or control ambiguity remains inconclusive."
+  }
+}

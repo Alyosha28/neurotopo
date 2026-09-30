@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/private/tmp/neurotopo-venv/bin/python",
+    "-m",
+    "neurotopo.co_paired_dynamics_reproduce",
+    "--run",
+    "artifacts/EXP-0019/v2",
+    "--output",
+    "research/iterations/ITER-0014/reproduction.json"
+  ],
+  "cwd": "/private/tmp/neurotopo-exp0019-review-65209d9",
+  "elapsed_seconds": 2.218119000000115,
+  "end_monotonic": 6971.141686291,
+  "ended_utc": "2026-09-28T02:15:20.343914+00:00",
+  "exception": null,
+  "pythonpath": "/private/tmp/neurotopo-exp0019-review-65209d9/src",
+  "returncode": 0,
+  "start_monotonic": 6968.923567291,
+  "started_utc": "2026-09-28T02:15:18.125754+00:00",
+  "stderr": "",
+  "stdout": "{\"pass_\": true, \"decision\": \"INCONCLUSIVE\", \"substatus\": \"NO_NEW_EXACT_MERGER_OBSERVED\", \"conditions_replayed\": 12, \"max_float32_error\": 0.0, \"max_float64_error\": 0.0, \"exact_flags_match\": true, \"physics_verified\": true, \"gru_updates\": 0, \"probe_updates\": 0, \"seconds\": 1.7377303749999555, \"primary_counts\": [{\"initial_distinct_count\": 384, \"new_merger_count\": 0, \"terminal_merge_fraction_among_initial_distinct\": 0.0}, {\"initial_distinct_count\": 384, \"new_merger_count\": 0, \"terminal_merge_fraction_among_initial_distinct\": 0.0}, {\"initial_distinct_count\": 384, \"new_merger_count\": 0, \"terminal_merge_fraction_among_initial_distinct\": 0.0}], \"scope\": \"Frozen numerical trajectory replay plus independent physical/count/statistic reductions; no training\"}\n",
+  "timeout_seconds": 180
+}

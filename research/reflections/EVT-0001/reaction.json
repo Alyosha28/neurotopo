@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "bbe3cbfe3f4c33d9e9f590a9a1fa033ad230f2ade7ea5bab9e78e0aabacdf7fc",
+  "review_sha256": "f64ca6e5dc025ab42c44a42907da2a68466d43e708e2613c19212967ad3d105a",
+  "responses": [
+    {
+      "id": "EVT-0001-R1",
+      "disposition": "accept",
+      "reason": "First latent exit has no proved pathwise or distributional mapping to posterior t_DD.",
+      "action": "Kept the proxy-only decision and specified a separate prospective posterior-oracle qualification if this task is ever reused.",
+      "evidence_paths": [
+        "research/reflections/EVT-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "EVT-0001-R2",
+      "disposition": "accept",
+      "reason": "The packet cannot independently authenticate quoted source parameters or code.",
+      "action": "Recorded exact primary-paper sections and distinguished packet-only reflection from the separate source/code-aware independent review.",
+      "evidence_paths": [
+        "research/reflections/EVT-0001/reaction_evidence.md",
+        "docs/EVT-0001_independent_result_review.md"
+      ]
+    },
+    {
+      "id": "EVT-0001-R3",
+      "disposition": "accept",
+      "reason": "The 99% proxy threshold was a preregistered triage rule, not a quantitative posterior-qualification threshold.",
+      "action": "Explicitly barred use of the proxy label to infer t_DD frequency or task eligibility; a future use requires independent posterior rate and sampling-budget rules.",
+      "evidence_paths": [
+        "research/reflections/EVT-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "EVT-0001-R4",
+      "disposition": "accept",
+      "reason": "Minimal packet cannot prove execution provenance or independent resimulation.",
+      "action": "Separated packet limitations from the existing source/code-aware review, which checked hashes and independently reproduced fixed counts.",
+      "evidence_paths": [
+        "research/reflections/EVT-0001/reaction_evidence.md",
+        "docs/EVT-0001_independent_result_review.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep EARLY_EXIT_PROXY only; do not infer posterior t_DD or launch the rejected G1-DD candidate from this task check."
+}

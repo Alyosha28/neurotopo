@@ -1,0 +1,75 @@
+{
+  "experiment": "EXP-0033",
+  "active_version": "v1",
+  "versions": {
+    "v1": "COMPLETED"
+  },
+  "gate": "A2_EXPLORATORY_PROBE",
+  "title": "DELAY-2 carrier confirmation and exploratory SC-REL-v4 vs strongest control probe",
+  "protocol": "experiments/EXP-0033/v1.md",
+  "config": "configs/exp0033_v1.json",
+  "candidate_contract": "research/design/arch0001_successor_compatible_core_v4.md",
+  "implementation": "src/neurotopo/arch0001_a2_probe.py",
+  "tests": "tests/test_arch0001_a2_probe.py",
+  "output": "artifacts/EXP-0033/v1",
+  "carrier_seeds": [
+    29301,
+    29302,
+    29303
+  ],
+  "comparison_seeds": [
+    29311,
+    29312,
+    29313,
+    29314,
+    29315
+  ],
+  "carrier_selected": {
+    "config": "w96b2",
+    "mean": 0.6978,
+    "inference_ops": 2115
+  },
+  "comparison": {
+    "CAND_V4": [
+      0.6396,
+      0.819,
+      0.7554,
+      0.9776,
+      0.7326
+    ],
+    "SEL_INV": [
+      0.703,
+      0.6828,
+      0.6796,
+      0.6343,
+      0.6616
+    ],
+    "EXTRA_V4": [
+      0.4977,
+      0.5088,
+      0.87,
+      0.8229,
+      0.8286
+    ],
+    "effect_pp": 11.26,
+    "ci95_pp": [
+      0.35,
+      23.69
+    ]
+  },
+  "decision": "SUPPORTED",
+  "substatus": "EXPLORATORY_ARCHITECTURE_ADVANTAGE",
+  "limitation": "control compute 1.82x candidate (not ARCH-MATCH-v1 conform); exploratory only",
+  "report": "research/evidence/EXP-0033/report.md",
+  "decision_record": "research/decisions/0108_exp0033_exploratory_probe.md",
+  "posthoc_contrasts": "research/evidence/EXP-0033/posthoc_contrasts.json",
+  "correction": "matched-compute follow-up (EXP-0034) is negative; interval does not establish a 3pp advantage; EXTRA contrast +7.92pp with sign reversals",
+  "reflection": {
+    "packet": "research/reflections/EXP-0033/packet.json",
+    "review": "research/reflections/EXP-0033/review.json",
+    "reaction": "research/reflections/EXP-0033/reaction.json",
+    "execution": "research/reflections/EXP-0033/execution.md",
+    "issues": 4,
+    "decision_impact": "REASSESSMENT_REQUIRED"
+  }
+}

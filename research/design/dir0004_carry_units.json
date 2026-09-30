@@ -1,0 +1,22 @@
+{
+  "config": {
+    "eps": 0.001,
+    "map": "z -> 2z mod 1",
+    "t_max": 200,
+    "z0": 0.3141592653589793
+  },
+  "schema": "dir0004_carry_units_v1",
+  "self_checks": {
+    "claim_supported": true,
+    "exact24_matches_f32_single": true,
+    "recombined_matches_single_not_double": true,
+    "two_units_help_nothing_under_float32_recombination": true,
+    "two_units_help_under_exact_shift": true
+  },
+  "steps_to_eps": {
+    "exact24": 16.0,
+    "exact48": 39.0,
+    "f32_recombined": 16.0,
+    "f32_single": 16.0
+  }
+}

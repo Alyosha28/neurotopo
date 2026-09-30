@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "8d86331b94b593741fca55340115eb43c9ebc41ccb5700bda179a519d004dae2",
+  "reviewer": {
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "A0-V2-01",
+      "source": "action",
+      "severity": "medium",
+      "evidence": "状态：`A0_CONTRACT_FROZEN / DESIGN_ONLY`。本版取代 v1 的候选合同；v1 与其冻结反思包保留",
+      "problem": "合同已将 v2 冻结，却规定“A1 不合格，修订候选必须命名 v2，并保留 v2 失败”。修订版与失败版会使用同一版本名。",
+      "why_it_matters": "无法仅凭版本名区分失败的冻结合同与后续修订合同，削弱事前注册和失败记录的可追溯性。",
+      "falsifiable_check": "将该句中的修订版明确命名为新版本，例如 v3，并检查 A1 失败记录仍唯一指向本次冻结的 v2。"
+    }
+  ],
+  "overall_assessment": "packet-only审查仅发现一项版本编号矛盾；未要求A1/A2结果作为A0前提。"
+}

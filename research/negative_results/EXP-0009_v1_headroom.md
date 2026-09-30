@@ -1,0 +1,5 @@
+# EXP-0009 v1 — registered useful-gain contrast not discriminating
+
+The formal task/architecture run completed without implementation mismatch, but its sole d=4 primary endpoint failed the **registered control-headroom guard**. C0's mean exact-posterior KL was0.012463, below the0.07 required to test a `>0.05 nat` improvement. The matched block-minus-control result was near zero in the opposite direction; nevertheless the protocol classifies the useful-effect question as **INCONCLUSIVE**, not FALSIFIED, because the control's error left too little room to observe the target magnitude. Independent review and one complete paired-seed clean reproduction passed; full figures and limits are in `research/evidence/exp0009_posterior_transfer.md` and `artifacts/EXP-0009/v1/`.
+
+This failure is not a reason to select the more difficult d=8 condition after looking at its M3/C0 result. The pre-run strategy checked the dense baseline and graph/compute pairing but did not qualify the actual matched primary control against the planned useful-effect size. Preserve all ten seeds and the frozen rules. Gate 1 remains NOT_PASSED.

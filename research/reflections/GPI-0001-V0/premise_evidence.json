@@ -1,0 +1,38 @@
+{
+  "candidates": [
+    {
+      "evidence": "window-based probe residual 0.335 nats at k=32 vs 0.372 for the Markov generator: the semi-Markov posterior is EASIER to predict from a fixed window, because run-length information is local",
+      "file": "semimarkov_premise_probe.json",
+      "name": "semi-Markov dwell-time latent",
+      "verdict": "REJECTED (local)"
+    },
+    {
+      "evidence_file": "identifiability_sweep.json",
+      "name": "unknown global parameter, marginal latent target",
+      "reading": "max gap 0.0367 nats at k=8 (T=64, wide theta range) < 0.05 headroom scale; narrowing theta makes the gap COLLAPSE to 0.0003 because different thetas imply nearly the same marginal latent posterior",
+      "verdict": "REJECTED (gap below headroom scale)"
+    },
+    {
+      "evidence_file": "theta_target_probe.json",
+      "name": "unknown global parameter, GLOBAL PARAMETER target",
+      "reading": "gap 0.350 nats at k=16 and 0.192 at k=32 for J in [0,0.6], 32-point grid, T=64 -- about 13x the marginal-target gap and 7x the 0.05 headroom scale",
+      "verdict": "PASSES"
+    }
+  ],
+  "constants": {
+    "M": 6,
+    "T": 64,
+    "beta": 0.8,
+    "episodes": 120,
+    "lambda": 0.7,
+    "seed": 20260924
+  },
+  "limits": [
+    "These are oracle-side information measurements. They do NOT show that a 64-unit recurrent control cannot compress the target, and they are not task qualification, control margin, power or architecture evidence.",
+    "Non-locality is necessary but not sufficient for headroom; the decisive test remains a registered CAL-style screen."
+  ],
+  "metric": "gap(k) = KL( p(target | y_1:T) || p(target | y_{T-k+1:T}) ) -- the best any model with k-step effective memory can do",
+  "question": "Can any candidate generator be shown to carry information from the distant past about its target, before any protocol is written?",
+  "schema": "gpi0001_premise_evidence_v1",
+  "status": "engineering premise checks only; not a registered run, not a verdict"
+}

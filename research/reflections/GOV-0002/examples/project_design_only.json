@@ -1,0 +1,35 @@
+{
+  "branches": {
+    "borderline": "Do not train or promote a selected endpoint.",
+    "failure": "Keep this synthetic proposal unqualified.",
+    "success": "Question-only structural entry; scientific qualification still missing."
+  },
+  "direction": "gov0002_project_stage",
+  "experiment_id": "EXP-9901",
+  "factor": {
+    "ablation": "Ablate identity conditioning and compare a matched recurrent control.",
+    "actual_primary_control": "A named single-stream GRU control would require independent oracle-relative qualification.",
+    "executed_compute_matching": "Measure recurrent, scoring and readout operations at train and inference time.",
+    "kind": "h3_candidate",
+    "manipulation": "In a hypothetical future study vary K=1 vs K=4 under a fixed total recurrent state.",
+    "name": "SYNTHETIC_DRY_RUN_DO_NOT_TRAIN identity-conditioned slots",
+    "parameter_matching": "Count allocated and effective recurrent, scoring and readout parameters.",
+    "prediction": "A hypothetical directional prediction requires later independent scientific review.",
+    "prior_art_boundary": "Compare exact filtering, PF-RNN and RIMs before a scientific claim.",
+    "state_matching": "Count slot states, weights, context and retained readout cache."
+  },
+  "gate1_claim": true,
+  "purpose": "SYNTHETIC_DRY_RUN_DO_NOT_TRAIN: test QUESTION before control qualification",
+  "question": "Synthetic project design-stage contract",
+  "resource_cap": {
+    "max_updates": 0,
+    "max_wall_seconds": 60
+  },
+  "schema_version": 1,
+  "task_search": {
+    "heldout_rule": "A final stream would be disjoint from task selection, if a real study were ever proposed.",
+    "max_configurations": 1,
+    "retain_all_attempts": true
+  },
+  "track": "project_gate1"
+}

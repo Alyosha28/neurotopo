@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/private/tmp/neurotopo-venv/bin/python",
+    "-m",
+    "neurotopo.frozen_binary_probe_reproduce",
+    "--run",
+    "artifacts/EXP-0018/v1",
+    "--output",
+    "research/iterations/ITER-0013/reproduction.json"
+  ],
+  "cwd": "/private/tmp/neurotopo-exp0018-review-248bacb",
+  "environment_overrides": {
+    "PYTHONPATH": "/private/tmp/neurotopo-exp0018-review-248bacb/src",
+    "PYTHONNOUSERSITE": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "timeout_seconds": 120,
+  "started_at_utc": "2026-09-28T01:32:17.104207+00:00",
+  "started_monotonic": 4449.725790666,
+  "returncode": 0,
+  "stdout": "{\"pass_\": true, \"decision\": \"INCONCLUSIVE\", \"substatus\": \"NO_USEFUL_LINEAR_READOUT\", \"max_hidden_or_parent_logit_error\": 0.0, \"max_probe_logit_error\": 3.3306690738754696e-16, \"max_gradient_inf\": 1.7001549409367226e-08, \"probe_updates\": 24, \"original_gru_updates\": 0, \"seconds\": 3.223952041999837, \"scope\": \"Single-pass data/hidden replay, convex stationarity, predictions and branch; no refitting or GRU training\"}\n",
+  "stderr": "",
+  "outer_exception": null,
+  "finished_monotonic": 4453.896962875,
+  "finished_at_utc": "2026-09-28T01:32:21.275454+00:00",
+  "elapsed_monotonic_seconds": 4.1711722090003605
+}

@@ -1,0 +1,75 @@
+{
+  "commit": "acbe2e9ad0fe6a2593e61f7ab8e197c07fedeb56",
+  "files": [
+    {
+      "bytes": 2720,
+      "path": "research/design/gov0002_gate1_portfolio_entry_audit.md",
+      "sha256": "b49ca70a3f7af50cd9c5087049b7ac3df549203ee54fb6ea9ea7ff02166bb78d"
+    },
+    {
+      "bytes": 8511,
+      "path": "research/evidence/GOV-0002_gate1_portfolio_entry.md",
+      "sha256": "06b6e8209a23c5ea3ffee001d0c5b381320ca2fc8de00650b0d502b6a377f9d4"
+    },
+    {
+      "bytes": 2030,
+      "path": "research/decisions/0026_gate1_portfolio_no_entry_now.md",
+      "sha256": "e31fd4e1ac5568a439cf79208165f006b26ad8f98c4ac54c8fc16374472aebb7"
+    },
+    {
+      "bytes": 2912,
+      "path": "research/loop/current_frontier.md",
+      "sha256": "90af8cc29ab6b90eeab3133eb77ba7f88cdf805e1f86780415478f6621f3d857"
+    },
+    {
+      "bytes": 17787,
+      "path": "research/stage_gates.md",
+      "sha256": "dba2de035fb2450e288c8fd54ea30599707028c2282313666c5d77d2a4932501"
+    },
+    {
+      "bytes": 2085,
+      "path": "research/decisions/0003_exp0009_headroom_and_h3.md",
+      "sha256": "a766a2ba54088c4a6c3c1331d4eba3d0b93a60368d17f49d874469ffc6d07524"
+    },
+    {
+      "bytes": 1515,
+      "path": "research/decisions/0007_h3_slot_no_spec.md",
+      "sha256": "b085e09ec0967dcf9d8559fc683e81fecdad31c4d77df298f542033eb6685650"
+    },
+    {
+      "bytes": 1460,
+      "path": "research/decisions/0021_cal0006_dynamic_screen_ceiling.md",
+      "sha256": "ea04f2ffadcf29b7b031d44eebb3216d39a4b71955627964ab35bf5fdc36a1c1"
+    },
+    {
+      "bytes": 1721,
+      "path": "research/decisions/0024_scr0002_slot_no_distinct_spec.md",
+      "sha256": "257ee8ac482eb37a12dbb3176cedafb6066d635827417e70ba02573d070cebc4"
+    },
+    {
+      "bytes": 152311,
+      "path": "artifacts/EXP-0004/v1/analysis.json",
+      "sha256": "492e589816ed158313bd4c44dfeadd69c87838b0868af09af8cb6e3adc0a551a"
+    },
+    {
+      "bytes": 61045,
+      "path": "artifacts/EXP-0009/v1/analysis.json",
+      "sha256": "210a43d0493cc1949127174e669e561eed353d7dab77a36358a221ed3fab3f54"
+    },
+    {
+      "bytes": 287888,
+      "path": "artifacts/calibration/CAL-0006_v3.json",
+      "sha256": "33b561b9b2e9eb22362f73f33f339d110fc7ab061a2280c1bf0fd19e9a05fda2"
+    }
+  ],
+  "fixtures_are_not_project_entries": true,
+  "kind": "GOV-0002_CURRENT_PORTFOLIO_VERIFICATION",
+  "live_loop": {
+    "current_reflection_present": true,
+    "entry_policy": "gate1_candidate_first_v1",
+    "iteration": 7,
+    "phase": "DECIDED"
+  },
+  "real_project_entry_contract_count": 0,
+  "scope": "source paths and current state only; semantic adequacy requires independent review"
+}

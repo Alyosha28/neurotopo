@@ -1,0 +1,126 @@
+{
+  "posthoc": true,
+  "scope": "Existing stored prefix/candidate geometry only; no new model call or endpoint change.",
+  "rows": [
+    {
+      "seed": 20002,
+      "arm": "RAW",
+      "sigma2_over_sigma1_median": 0.16793737597652186,
+      "sigma2_over_sigma1_max": 0.9617634528430761,
+      "candidate_gram_spread_mean": 0.1540046396421677,
+      "candidate_gram_spread_max": 0.5165095020447305
+    },
+    {
+      "seed": 20002,
+      "arm": "INV",
+      "sigma2_over_sigma1_median": 0.0008130940764294033,
+      "sigma2_over_sigma1_max": 0.0010937210380147415,
+      "candidate_gram_spread_mean": 0.000267947360522609,
+      "candidate_gram_spread_max": 0.000627136425105465
+    },
+    {
+      "seed": 20002,
+      "arm": "REL",
+      "sigma2_over_sigma1_median": 1.9168799806147646e-08,
+      "sigma2_over_sigma1_max": 6.219531043226166e-08,
+      "candidate_gram_spread_mean": 1.1065050610962843e-07,
+      "candidate_gram_spread_max": 2.2984413129266524e-07
+    },
+    {
+      "seed": 20003,
+      "arm": "RAW",
+      "sigma2_over_sigma1_median": 0.3426692201327818,
+      "sigma2_over_sigma1_max": 0.9849001350956832,
+      "candidate_gram_spread_mean": 0.22534809376980852,
+      "candidate_gram_spread_max": 0.5514426251248831
+    },
+    {
+      "seed": 20003,
+      "arm": "INV",
+      "sigma2_over_sigma1_median": 0.001195692736431183,
+      "sigma2_over_sigma1_max": 0.0014872411145484593,
+      "candidate_gram_spread_mean": 0.0004724764729981223,
+      "candidate_gram_spread_max": 0.0008249385278546778
+    },
+    {
+      "seed": 20003,
+      "arm": "REL",
+      "sigma2_over_sigma1_median": 1.6582291153498516e-08,
+      "sigma2_over_sigma1_max": 7.885541103875477e-08,
+      "candidate_gram_spread_mean": 1.1502405679877767e-07,
+      "candidate_gram_spread_max": 2.1030385101448833e-07
+    },
+    {
+      "seed": 20004,
+      "arm": "RAW",
+      "sigma2_over_sigma1_median": 0.1884752171976507,
+      "sigma2_over_sigma1_max": 0.7883580834324421,
+      "candidate_gram_spread_mean": 0.13596447871363676,
+      "candidate_gram_spread_max": 0.40594249658194803
+    },
+    {
+      "seed": 20004,
+      "arm": "INV",
+      "sigma2_over_sigma1_median": 0.000811587382470407,
+      "sigma2_over_sigma1_max": 0.0023888694772413346,
+      "candidate_gram_spread_mean": 0.0004636164633494168,
+      "candidate_gram_spread_max": 0.0011975604521051355
+    },
+    {
+      "seed": 20004,
+      "arm": "REL",
+      "sigma2_over_sigma1_median": 6.433392512581744e-08,
+      "sigma2_over_sigma1_max": 0.0001845783922353607,
+      "candidate_gram_spread_mean": 2.286540302406158e-06,
+      "candidate_gram_spread_max": 5.706478673452959e-05
+    },
+    {
+      "seed": 20005,
+      "arm": "RAW",
+      "sigma2_over_sigma1_median": 0.2312157481165958,
+      "sigma2_over_sigma1_max": 0.8476210033623035,
+      "candidate_gram_spread_mean": 0.15067446536824985,
+      "candidate_gram_spread_max": 0.3352357671970989
+    },
+    {
+      "seed": 20005,
+      "arm": "INV",
+      "sigma2_over_sigma1_median": 0.001390755705386897,
+      "sigma2_over_sigma1_max": 0.002348768383119268,
+      "candidate_gram_spread_mean": 0.0004662710846130632,
+      "candidate_gram_spread_max": 0.0010767025620994797
+    },
+    {
+      "seed": 20005,
+      "arm": "REL",
+      "sigma2_over_sigma1_median": 0.9632775701674754,
+      "sigma2_over_sigma1_max": 0.9840129050214734,
+      "candidate_gram_spread_mean": 0.4697321993183534,
+      "candidate_gram_spread_max": 0.5808357672935293
+    },
+    {
+      "seed": 20001,
+      "arm": "RAW",
+      "sigma2_over_sigma1_median": 0.19807966487292533,
+      "sigma2_over_sigma1_max": 0.7637897145937171,
+      "candidate_gram_spread_mean": 0.12683042400640288,
+      "candidate_gram_spread_max": 0.42024732366666956
+    },
+    {
+      "seed": 20001,
+      "arm": "INV",
+      "sigma2_over_sigma1_median": 0.0012669715949080122,
+      "sigma2_over_sigma1_max": 0.0021611702265430157,
+      "candidate_gram_spread_mean": 0.0004230663461969421,
+      "candidate_gram_spread_max": 0.000970057070126382
+    },
+    {
+      "seed": 20001,
+      "arm": "REL",
+      "sigma2_over_sigma1_median": 2.146783800668102e-08,
+      "sigma2_over_sigma1_max": 9.216340130086702e-08,
+      "candidate_gram_spread_mean": 1.3296093619303296e-07,
+      "candidate_gram_spread_max": 2.1436923542312545e-07
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "25120331d66b421a3c973ae5b3de6adcdc52aaddf32a022182e738940552c994",
+  "review_sha256": "e2ac1df613b335d1a72d0bad311ec2c90b8e19e4e33adf5bb03c67c1e854a00a",
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "**第二份**独立审查（同一冻结 packet、完整七问）返回 **V0_REJECTED**，10 项全部 accept，结论与第一份一致并**发现第一份未覆盖的更致命问题**：I4 无结构对照——两臂唯一差异是一次路由置换、只有一对划分、且 Δ 被构造成 ≈0，故 β>0 与「这次置换恰好使跨组臂更难优化」不可区分，而 §9 又禁止读作组织结论，**终点没有任何可采纳判词**。另经复算确认两处**我方错误**：I1 的 Δ(c) **并非单调**（c=3→4 由 −0.0014 升到 +0.0020），且被引作停止原因的 0.0388 是 F/X **跨条件交互量**，与新终点所用的**同条件内**投影差**不是同一估计量**；I2 的扫描产物**未声明划分族与 K**，同一 F 图在两份产物中不可调和（0.0381/0.0642 对 0.0438/0.0734），故 C_ub 来源不可认证。I3 确认 S4 不满足（限定检查只检验单向不等式）；I5 确认 S5 不成立（两条件联合空间无分支）；I6 确认 S3 是回避；I7 确认 §3/§6 与 §5.6 是两种互斥规格；I8 确认 τ_term/操作 guard/独立复核 seed/ε_abs 等在 packet 内无定义；I9 确认 C_ub 是 10 个候选中最小者、选择偏差向下；I10 确认 c=5 节点 2 孤立、非对称复现。**无新增停止动作**：决定0073 已停止**整个方向**，本审查与之一致并强化之；其重启条件（新独立问题 + 有效界构造 + 结构对照与联合分支预注册 + 就地写全定义）已记入决定0073 §5。Gate 1 仍 NOT_PASSED；无 EXP 注册、无训练授权；负面结果全部保留。",
+  "responses": [
+    {
+      "id": "I1",
+      "disposition": "accept",
+      "reason": "成立且经复算确认：Δ(c) 在 c=3→4 处由 −0.0014 升到 +0.0020，**并非单调**；0.0388 是 F/X **交互量**而新终点用**同条件内**投影差，**不是同一估计量**。我方两处表述错误。",
+      "action": "更正并入决定0073 与前沿；「单调衰减」表述撤回。",
+      "evidence_paths": [
+        "research/decisions/0073_routing_alignment_direction_stopped.md"
+      ]
+    },
+    {
+      "id": "I2",
+      "disposition": "accept",
+      "reason": "成立：扫描产物**未声明划分族与 K**，且同一 F 图在两份产物中不可调和（0.0381/0.0642 对 0.0438/0.0734）。",
+      "action": "接受 C_ub 来源不可认证；该缺陷随方向停止而不再修补，记入决定0073。",
+      "evidence_paths": [
+        "research/decisions/0073_routing_alignment_direction_stopped.md"
+      ]
+    },
+    {
+      "id": "I3",
+      "disposition": "accept",
+      "reason": "成立：限定检查只检验单向不等式，在「族 ⊆ 类」时几乎自动成立，无法确立「类 ⊆ 族」或「投影代价 = 类最优」。",
+      "action": "接受 S4 不满足、判词无执照；停止整个方向（决定0073），唯一救法属新构造。",
+      "evidence_paths": [
+        "research/decisions/0073_routing_alignment_direction_stopped.md"
+      ]
+    },
+    {
+      "id": "I4",
+      "disposition": "accept",
+      "reason": "成立，且是设计未列的**更致命**一条：无结构对照，β>0 与「这次置换恰好更难优化」不可区分，而 §9 又禁止读作组织结论 → **终点无任何可采纳判词**。",
+      "action": "接受。新构造的最低条件之一即「≥2 种跨组划分 + 结构保持置换」的对照与置换检验（决定0073 §5）。",
+      "evidence_paths": [
+        "research/decisions/0073_routing_alignment_direction_stopped.md"
+      ]
+    },
+    {
+      "id": "I5",
+      "disposition": "accept",
+      "reason": "成立：9 组合自检只覆盖单条件边际；两条件联合空间无映射；跨零且点估计≤0 但 CI 越出 ±MDD 无分支。",
+      "action": "接受 S5 不成立；分支穷尽性的完整枚举要求记入决定0073 §5 的重启条件。",
+      "evidence_paths": [
+        "research/decisions/0073_routing_alignment_direction_stopped.md"
+      ]
+    },
+    {
+      "id": "I6",
+      "disposition": "accept",
+      "reason": "成立：S3 是把条款换成更弱的一个——c=5「同向」在零真值下通过率≈0.5，既不能证伪也不能复核。",
+      "action": "接受 S3 名义通过、实质回避。",
+      "evidence_paths": [
+        "research/decisions/0073_routing_alignment_direction_stopped.md"
+      ]
+    },
+    {
+      "id": "I7",
+      "disposition": "accept",
+      "reason": "成立：§3/§6 的字面 0.0064 与 §5.6 的棘轮是同一规则的两种互斥规格。",
+      "action": "接受；唯一判词要求记入重启条件。",
+      "evidence_paths": [
+        "research/decisions/0073_routing_alignment_direction_stopped.md"
+      ]
+    },
+    {
+      "id": "I8",
+      "disposition": "accept",
+      "reason": "成立：τ_term、操作 guard、独立复核 seed、ε_abs、ρ、κ 等在 packet 内无定义。",
+      "action": "接受为 packet 不足；要求新设计在注册中就地写全定义与数值。",
+      "evidence_paths": [
+        "research/decisions/0073_routing_alignment_direction_stopped.md"
+      ]
+    },
+    {
+      "id": "I9",
+      "disposition": "accept",
+      "reason": "成立：C_ub 是 10 个候选中最小者，选择偏差向下；且未写明资格流与扫描 seed 独立。",
+      "action": "接受；流独立性与偏差处理记入重启条件。",
+      "evidence_paths": [
+        "research/decisions/0073_routing_alignment_direction_stopped.md"
+      ]
+    },
+    {
+      "id": "I10",
+      "disposition": "accept",
+      "reason": "成立且经复算确认：c=5 节点 2 度 0，对齐划分下为精确单例块、跨组划分下与节点 3 同块。",
+      "action": "接受 c=5 不是 c=4 的对称复现；披露要求记入决定0073 §4。",
+      "evidence_paths": [
+        "research/decisions/0073_routing_alignment_direction_stopped.md"
+      ]
+    }
+  ]
+}

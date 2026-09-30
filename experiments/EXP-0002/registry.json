@@ -1,0 +1,43 @@
+{
+  "id": "EXP-0002",
+  "title": "Baseline learnability diagnostic",
+  "version": "v1",
+  "status": "COMPLETED",
+  "research_question": "Can the H64 dense GRU learn delayed-evidence-v1 at 6000 updates, with delay controlled?",
+  "prior_art_checked": [
+    "EXP-0001 prior-art audit"
+  ],
+  "strongest_rejection_reason": "Finite-set overfit does not establish generator learning.",
+  "hypothesis": "Dense baseline achieves pre >=0.90 and joint >=0.50 in every diagnostic seed at delay8.",
+  "baselines": [
+    "gru_wide only"
+  ],
+  "intervention": "Training budget and delay diagnostics; no architectural comparison",
+  "controls": [
+    "same model, optimizer, task generator",
+    "new calibration data streams",
+    "fixed 6000 updates"
+  ],
+  "dataset": "delayed-evidence-v1, diagnostic RNG streams",
+  "metrics": [
+    "pre_accuracy",
+    "joint_pair_accuracy",
+    "all checkpoint secondary metrics"
+  ],
+  "resource_matching": "Same model within each delay; token counts explicitly differ across delays",
+  "seeds": [
+    71001,
+    71002,
+    71003
+  ],
+  "commit": "8921ef7cc3a698b554e3342d44455d0357af7c9c",
+  "config": "configs/exp0002_v1.json",
+  "result": "artifacts/EXP-0002/v1/analysis.json",
+  "interpretation": "Short-delay baseline feasible; delay8 remains near chance at 6000 updates.",
+  "limitations": [
+    "exploratory diagnostic informed by EXP-0001 failure",
+    "does not identify semantic mechanisms"
+  ],
+  "decision": "PARTIALLY_SUPPORTED",
+  "next_action": "Gate 1 stays closed; new task/optimization protocol required before any architecture efficacy comparison."
+}

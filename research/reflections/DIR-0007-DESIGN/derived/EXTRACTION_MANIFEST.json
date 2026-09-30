@@ -1,0 +1,108 @@
+{
+  "packet": "research/reflections/DIR-0007-DESIGN/packet.json",
+  "packet_sha256": "10538bde80cb1feb641f9337f589152e16319a87ae4053c985a89bde02c76769",
+  "parts": [
+    {
+      "bytes": 2552,
+      "matches_packet_digest": true,
+      "part": "design.md",
+      "sha256": "9cd02939846e61519036ddb3c60f005c6cf14b062606a93e3a87560e4d1e85c3"
+    },
+    {
+      "bytes": 11207,
+      "matches_packet_digest": true,
+      "part": "action.md",
+      "sha256": "adff39eae10408278ebb1fbd364f5e2e1a73f9de85871d45344c808dac7c07fb"
+    },
+    {
+      "bytes": 47520,
+      "matches_packet_digest": true,
+      "part": "action_output_0_verification.json",
+      "sha256": "1be73030a5e567914cc56754eed56f45d6bf58550d367263651521bd8c8a57af"
+    },
+    {
+      "bytes": 2799,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0007_soft_equivariance.md",
+      "sha256": "5ed573889737b9b225e4fe0c290ce7398043fe41a8b4195325895c222dccae0f",
+      "source_path": "research/prior_art/dir0007_soft_equivariance.md"
+    },
+    {
+      "bytes": 1332,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0007_algebra_check.json",
+      "sha256": "412b2571acbd9c813cac2d736da981a91fd423befc9fce26faac1459b32036a3",
+      "source_path": "research/design/dir0007_algebra_check.json"
+    },
+    {
+      "bytes": 3623,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0007_algebra_check.py",
+      "sha256": "974dd6bc8330f855ac6daf52142385b2ea9a4fdd4587b759febbd4300afefaa6",
+      "source_path": "scripts/dir0007_algebra_check.py"
+    },
+    {
+      "bytes": 6353,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0082_gate1_candidate_portfolio_audit.md",
+      "sha256": "5d0ca92cf188fa52752cf5c0bb01ab7b1aab8ef9e944997405dd0eb33a40f7d3",
+      "source_path": "research/decisions/0082_gate1_candidate_portfolio_audit.md"
+    },
+    {
+      "bytes": 6907,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_experiment_protocol.md",
+      "sha256": "08a967777401f866a5ddbdcc0e5c7fb4807d71493e362034b8509dbac91bc8a9",
+      "source_path": "docs/experiment_protocol.md"
+    },
+    {
+      "bytes": 2182,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0043_gate1_architecture_estimand.md",
+      "sha256": "ee90c79ed48ec2eca5bddbc4a020756c2aa286566d6fff5bcf07c7a53b334e3f",
+      "source_path": "research/decisions/0043_gate1_architecture_estimand.md"
+    },
+    {
+      "bytes": 1438,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0044_gate1_strong_control_guard.md",
+      "sha256": "b519ec767215bd3cfbba1a710380485c27ddce3eb3c2934cd05ca5d1285ef03f",
+      "source_path": "research/decisions/0044_gate1_strong_control_guard.md"
+    },
+    {
+      "bytes": 1083,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0049_g1rs_task_search_cap.md",
+      "sha256": "9e9e559d72b6d3ac54c1830919b22eacfe3de1060313277fedc35264d1d69a25",
+      "source_path": "research/decisions/0049_g1rs_task_search_cap.md"
+    },
+    {
+      "bytes": 2757,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0054_dir0002_direction_portfolio.md",
+      "sha256": "4f1a9aa072675fde36c6e7bb25eb9610ecc551d5517042a7788043f2fb4c0b99",
+      "source_path": "research/decisions/0054_dir0002_direction_portfolio.md"
+    },
+    {
+      "bytes": 4035,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0062_g1_ksi_rulings_narrowed.md",
+      "sha256": "1a65da9a8dfec73ab4d8c8e77bd97120f5f9ca24b6f6e1b6c6b990b3a290b941",
+      "source_path": "research/decisions/0062_g1_ksi_rulings_narrowed.md"
+    },
+    {
+      "bytes": 8604,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0069_gate1_matching_relaxation_v3.md",
+      "sha256": "e84cd0cce301d183e33de6a43b8d0177ec65c032c4931c099e474d20d8513c23",
+      "source_path": "research/decisions/0069_gate1_matching_relaxation_v3.md"
+    },
+    {
+      "bytes": 3511,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0080_entry_rule_architecture_organization.md",
+      "sha256": "9a9838660ebb9e6efcb475fc6169daed7f02abab97a848547149a6b513ea19c6",
+      "source_path": "research/decisions/0080_entry_rule_architecture_organization.md"
+    }
+  ]
+}

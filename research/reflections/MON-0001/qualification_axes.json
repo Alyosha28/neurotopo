@@ -1,0 +1,39 @@
+{
+  "direction_fact": "Neither prespecified early step passes all direction guards",
+  "headroom_fact": "At 900 updates the matched control is below the prespecified 0.01-nat operational threshold",
+  "kind": "MON0001_POST_REFLECTION_TWO_AXIS_QUALIFICATION",
+  "original_strategy_label": "UNINFORMATIVE_CEILING",
+  "rows": [
+    {
+      "all_direction_guards_pass": false,
+      "at_least_eight_positive_seeds": false,
+      "bootstrap_lower_positive": false,
+      "c0_above_0_01_operational_headroom": true,
+      "c0_mean_kl_nat": 0.07764174002357196,
+      "mean_delta_positive": true,
+      "role": "early_direction",
+      "step": 300
+    },
+    {
+      "all_direction_guards_pass": false,
+      "at_least_eight_positive_seeds": false,
+      "bootstrap_lower_positive": false,
+      "c0_above_0_01_operational_headroom": false,
+      "c0_mean_kl_nat": 0.006858061785382158,
+      "mean_delta_positive": false,
+      "role": "early_direction",
+      "step": 900
+    },
+    {
+      "all_direction_guards_pass": true,
+      "at_least_eight_positive_seeds": true,
+      "bootstrap_lower_positive": true,
+      "c0_above_0_01_operational_headroom": false,
+      "c0_mean_kl_nat": 0.003390319213724025,
+      "mean_delta_positive": true,
+      "role": "descriptive_only",
+      "step": 1500
+    }
+  ],
+  "scope": "Fixed d=1 monitor stream and 10 paired seeds; no d=4 or resource-axis inference"
+}

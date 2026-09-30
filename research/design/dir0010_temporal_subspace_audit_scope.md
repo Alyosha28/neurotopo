@@ -1,0 +1,11 @@
+# DIR-0010 research-design audit scope (2026-09-28)
+
+User proposes a temporal refresh-frequency × state-drift-timescale × task/interference-subspace study, with exposed 25002/25003 and 3–5 new seeds. This is an audit and executable design specification, not a registered model-effect run. Source files and the previous DYN/EXP reports were inspected before this scope was saved; therefore the scope is **retrospective with respect to source inspection**, but is saved before the new numerical rotation audit. It does not certify novelty or any unrun result.
+
+Question: Which parts of the proposal follow from existing EXP0025/DYN0001 evidence, and are its proposed axes identifiable in the current Gram-closed REL/INV architecture and leak0 rotation generator?
+
+Inputs: Frozen `artifacts/DYN-0001/v3/data/*/{LONG_H,LONG_U}.npz` (13 seeds, two cells, 512×1024 rotations), frozen source `learned_protected_pilot.py` and `protected_interventions.py`, and existing reports. Numeric work is limited to read-only orthogonality and Gram perturbation magnitudes from the saved matrices; no model forward, training, or new data. Code and outputs must be independently recomputable and source/input hashed.
+
+Strongest rejection: the common rotation may be a pure gauge of the exact Gram dynamics; a fast interference subspace may therefore not exist as a task-relevant Gram direction. Any measured float32 Gram change may reflect numerical non-orthogonality/roundoff, not learned nuisance dynamics. Equal current logit only identifies a Gram readout-kernel chord, not a slow variable or attractor. A successful scheduled codebook may merely exploit supervised prototypes.
+
+Decision rule: If the symbolic architecture calculation proves Gram invariance under ideal orthogonal rotation, label rotations an exact gauge symmetry for leak0. Numeric residuals quantify implementation departure but cannot alone show that those departures cause the observed long-horizon failure. If the architecture is not Gram closed, retract the symmetry claim. The design response must keep period effects, actual drift, trigger counts and command write preservation separate; a 3–5 new-seed batch is a pilot, not stable population proof. No claim of fast/slow subspace, basin, critical period or transferable mechanism from this audit alone.

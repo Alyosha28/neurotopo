@@ -1,0 +1,64 @@
+{
+  "decision_impact": "UNCHANGED",
+  "next_action": "两项裁定均为 NARROW：KSI 只能作为 independent_benchmark 推进（条件 A1–A5），项目 Gate 1 的终点类型问题未解决。项目轨仍无可注册候选；Gate 1 与全部既有判词不变。若继续 KSI，下一步是按 A1–A5 重写为非项目轨方案；若走项目轨，需要新的独立架构机制/研究问题。",
+  "packet_sha256": "a907918c696354c430a7b31600439b215d876b3b24363cd57c5d9794bd7f402d",
+  "responses": [
+    {
+      "action": "已在决定0062 逐条更正（正确容差 ≤1.1e-15；难度差数字此后必须进请求正文；A-R2 反驳补记），并把'实际平稳律而非 p_J 作为 X 生成对象'列入生效条件 A4。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0062_g1_ksi_rulings_narrowed.md",
+        "research/design/g1_k_structure_learning_efficiency_v3.md"
+      ],
+      "id": "G1-KSI-0001-RULINGS-V1-R1",
+      "reason": "真实缺陷且是我的事实错误：难度差 0.0261±0.0049（5.3 SE）从未写入请求正文，协议却称已写入；A-R2 反驳缺失；边缘容差量级写错。"
+    },
+    {
+      "action": "裁定 A 收窄为非项目轨 independent_benchmark，并把'一句话新问题、其否定不被旧问题蕴含、去掉第(ii)轴重评'写为生效条件 A1/A2。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0062_g1_ksi_rulings_narrowed.md"
+      ],
+      "id": "G1-KSI-0001-RULINGS-V1-R2",
+      "reason": "真实缺陷：新意被断言而非展示；四轴中第 (ii) 条正是只有 B 能授权的终点变更，第 (iv) 条只是卫生要求，缺独立性判别器。"
+    },
+    {
+      "action": "裁定 B 收窄并把 B1–B7 列为生效条件（含功效 0.8、统计量与自由度、资格后不得修改、不可行停止可机器核验）。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0062_g1_ksi_rulings_narrowed.md"
+      ],
+      "id": "G1-KSI-0001-RULINGS-V1-R3",
+      "reason": "真实缺陷：δ_min、τ_term、ε、每单元 n、alpha、功效目标、统计量与自由度全是未冻结承诺，八单元交互检验功效取决于未说明的 n。"
+    },
+    {
+      "action": "该质疑记入决定0062 的裁定依据；项目 Gate 1 的终点类型问题明确记为**未解决**，不得据本裁定采用学习效率终点。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0062_g1_ksi_rulings_narrowed.md"
+      ],
+      "id": "G1-KSI-0001-RULINGS-V1-R4",
+      "reason": "真实缺陷：四次校准失败说明任务缺末端余量，不等于终点类别不可用；请求未考虑控制不饱和的任务，且'不降低任何标准'是断言争议结论。"
+    },
+    {
+      "action": "B4 生效条件要求预注册伪影探针（LR 缩放／batch 顺序置换）及判废规则：符号或显著性翻转即判伪影。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0062_g1_ksi_rulings_narrowed.md"
+      ],
+      "id": "G1-KSI-0001-RULINGS-V1-R5",
+      "reason": "真实缺陷：配对种子与预注册 LR 不排除条件依赖伪影（损失地形×初始化、batch 顺序）。"
+    },
+    {
+      "action": "问题 3 记为 no；决定0062 写入流程改进：今后裁定 packet 必须含所依赖的设计小节全文与被引用方向线的既有记录，不得承诺 packet 未含内容。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0062_g1_ksi_rulings_narrowed.md"
+      ],
+      "id": "G1-KSI-0001-RULINGS-V1-R6",
+      "reason": "真实缺陷：packet 缺 v3 的 §2/§4.7/§5 与已关闭方向线记录，核对为 oracle 侧、T=4、且自我声明不涉及资格与功效，故不足以支撑裁定。"
+    }
+  ],
+  "review_sha256": "e7353201bee1fb928b3d0ffaec6ae680112e06fc71d1e0da13e4881b4662dc57",
+  "schema_version": 1
+}

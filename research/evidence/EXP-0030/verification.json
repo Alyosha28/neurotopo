@@ -1,0 +1,64 @@
+{
+  "pass_": true,
+  "replays": [
+    {
+      "label": "D2_PLAIN:seed29101",
+      "seed": 29101,
+      "final_hash_equal": true,
+      "data_hash_equal": true,
+      "logits_hash_equal": true,
+      "max_metric_gap": 0.0,
+      "metric_gaps": {
+        "primary.accuracy_all": 0.0,
+        "primary.final_accuracy": 0.0,
+        "primary.initial_accuracy": 0.0,
+        "primary.tail_accuracy": 0.0,
+        "primary.branch_joint_accuracy": 0.0,
+        "secondary_64.accuracy_all": 0.0,
+        "secondary_64.final_accuracy": 0.0,
+        "secondary_64.initial_accuracy": 0.0,
+        "secondary_64.tail_accuracy": 0.0,
+        "secondary_64.branch_joint_accuracy": 0.0,
+        "secondary_256.accuracy_all": 0.0,
+        "secondary_256.final_accuracy": 0.0,
+        "secondary_256.initial_accuracy": 0.0,
+        "secondary_256.tail_accuracy": 0.0,
+        "secondary_256.branch_joint_accuracy": 0.0
+      },
+      "pass_": true
+    },
+    {
+      "label": "D2_PLAIN:seed29113",
+      "seed": 29113,
+      "final_hash_equal": true,
+      "data_hash_equal": true,
+      "logits_hash_equal": true,
+      "max_metric_gap": 0.0,
+      "metric_gaps": {
+        "primary.accuracy_all": 0.0,
+        "primary.final_accuracy": 0.0,
+        "primary.initial_accuracy": 0.0,
+        "primary.tail_accuracy": 0.0,
+        "primary.branch_joint_accuracy": 0.0,
+        "secondary_64.accuracy_all": 0.0,
+        "secondary_64.final_accuracy": 0.0,
+        "secondary_64.initial_accuracy": 0.0,
+        "secondary_64.tail_accuracy": 0.0,
+        "secondary_64.branch_joint_accuracy": 0.0,
+        "secondary_256.accuracy_all": 0.0,
+        "secondary_256.final_accuracy": 0.0,
+        "secondary_256.initial_accuracy": 0.0,
+        "secondary_256.tail_accuracy": 0.0,
+        "secondary_256.branch_joint_accuracy": 0.0
+      },
+      "pass_": true
+    }
+  ],
+  "qualified": {
+    "d": 2,
+    "sup": "PLAIN"
+  },
+  "confirm_reproduced": true,
+  "seconds": 14.30500383299659,
+  "scope": "Fresh-process retrain replay; no retuning or reselection."
+}

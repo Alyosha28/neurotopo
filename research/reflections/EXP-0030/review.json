@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "b346f7601546d918fadc492618e62b1132328280dd482234b9a3b58a60b56c75",
+  "reviewer": {
+    "model": "agent-default (independent subagent; provider model id not exposed to orchestrator)",
+    "effort": "agent-default",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "band-confounded-by-zero-prefix",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "对 `r≥1`，`y_r = u_{r−1−d}`（命令下标越界取 0）",
+        "可学＝两 seed 均值 ≥0.65 且每 seed ≥0.58",
+        "0.6922325721153846",
+        "0.5221819196428571"
+      ],
+      "problem": "The pre-registered learn band is applied to overall primary accuracy, which includes readout positions whose target is forced to 0 by the out-of-range rule. In the confirmation data the aggregate is 0.6922325721153846 while final_accuracy is 0.5341796875 and tail_accuracy is 0.5221819196428571 (seed 29111; seeds 29112/29113 show the same pattern). The aggregate clears the 0.65 threshold while the late readouts are at chance.",
+      "why_it_matters": "The recorded SUPPORTED / A2_TASK_QUALIFIED decision therefore rests on a metric confounded by deterministic padding positions. The packet's own secondary T=64/256 values degrade to about 0.51-0.55, whereas the d=1 control remains 1.0 even at those lengths; this weakens the claim that the d=2 condition demonstrates a learned, delayed-command memory mechanism rather than a partial/early-position effect.",
+      "falsifiable_check": "Recompute accuracy restricted to readouts with non-forced targets (for example r>d+1) or to the last k readouts using the archived predictions; require it to be significantly above 0.5 and to survive the same band. A sharp drop to chance would show the qualification is an aggregate-padding artifact."
+    },
+    {
+      "id": "memoryless-reference-inadequate",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "避免“恒输出 0”取得 50% 的退化行为",
+        "命令下标越界取 0",
+        "`ŷ_r = u_{r−1}`（输出刚施加的当前命令）",
+        "该条件对强控制可学、非封顶（约 30 个百分点 oracle 余量）、无记忆解法无效、可达上限已知。"
+      ],
+      "problem": "The only non-trained memoryless reference is the fixed pass-through ŷ_r = u_{r−1}; no constant-zero or time-index-conditioned memoryless policy is evaluated. Because the target is 0 whenever r−1−d<0, a constant-zero policy is correct on the deterministic prefix and at chance on the remaining readouts. For d=3/T=12 that expected score is just above the 0.65 learn threshold before any memory is used, and it is above the 0.55 memoryless threshold for the tested d values. The design's stated intent to avoid the '恒输出 0' degeneracy is therefore not enforced.",
+      "why_it_matters": "The decision's broad claim that '无记忆解法无效' is not supported by a single pass-through baseline. A constant-zero memoryless policy can reach the learn threshold before using any memory; if such a policy were tested as the memoryless reference, the condition would fail the intended no-memory exclusion rather than satisfy it.",
+      "falsifiable_check": "Evaluate a constant-zero predictor and a position-conditioned memoryless predictor on the frozen streams; compare each with the memoryless_max=0.55 and learn_mean_min=0.65 thresholds. If either reaches the learn band, the no-memory exclusion fails."
+    },
+    {
+      "id": "task-formula-off-by-one",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "对 `r≥1`，`y_r = u_{r−1−d}`（命令下标越界取 0）",
+        "readout index t>=1 must equal command u_{t-d}; independent Bernoulli(0.5) commands",
+        "0.5373347355769231",
+        "读出头 `r≥1` 输出 `u_{r−1−d}`"
+      ],
+      "problem": "The protocol defines y_r = u_{r−1−d}, but the action config/manifest defines the task as readout index t>=1 equals u_{t-d}, which is one step less delayed. For d=1 the config formula makes the memoryless pass-through u_{r−1} exactly correct, so the reference would be an oracle; the action nevertheless reports the d=1 memoryless value 0.5373347355769231 and the decision repeats the design formula. The packet therefore records two different task definitions.",
+      "why_it_matters": "If the config string is authoritative, the reference thresholds and reported qualification were computed for a different task; if it is not, the run provenance is wrong. Either way, the d=1 logic and the no-memory check are ambiguous, and downstream work could implement the wrong delay.",
+      "falsifiable_check": "Reconstruct the target tensor from the archived evaluator/analysis and compare it with u_{r−1−d} versus u_{t-d}; also compare d=1 memoryless pass-through, which should be ~1.0 under the config formula and ~0.5 under the design formula."
+    },
+    {
+      "id": "variant-tiebreak-not-preregistered",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "对每个 `d`，取两个监督变体中主长度均值较高者为该 `d` 的控制读数（对控制有利）。",
+        "`d=2`：PLAIN/BRANCH 并列 0.6916（0.6967/0.6864）",
+        "按预注册顺序取首个合格条件 **`D2_PLAIN`**"
+      ],
+      "problem": "The design's selection rule only chooses the supervision variant with the higher mean. At d=2 the means are exactly tied; the scan rows also report identical primary/final/tail/branch-joint metrics for PLAIN and BRANCH despite different final_hash values, so no variant is 'higher'. The action nevertheless selects D2_PLAIN by menu order and confirms only D2_PLAIN; this tie-break is not written in the pre-registered protocol. The first qualifying d (2) is correct in d-order, but the qualified variant is not uniquely determined.",
+      "why_it_matters": "The frozen rules do not uniquely specify the qualified condition, and the BRANCH arm—the one relevant to the planned v4 branch-supervision contract—has no independent confirmation. The packet's claim that the pre-registered selection was applied exactly is therefore incomplete.",
+      "falsifiable_check": "Find an explicit PLAIN/BRANCH tie-break in experiments/EXP-0030/v1.md, or run D2_BRANCH on the same three confirmation seeds and apply the identical band. Also compare archived per-example predictions of D2_PLAIN and D2_BRANCH to see whether the tied metrics are genuine or a reporting duplication."
+    },
+    {
+      "id": "candidate-contract-v3-vs-v4",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "候选侧比较需要先按 A0 合同把反事实分支监督推广到本任务族并命名 `v4`",
+        "arch0001_successor_compatible_core_v3.md",
+        "其 A0 合同的分支监督写死为 `q_t xor v`（一比特任务专用），本任务族需要推广为任务自身的反事实下一目标；按决定0103 第 1 条，该改动必须命名 `v4` 并保留 v3、EXP0028、EXP0029 记录。",
+        "candidate_contract"
+      ],
+      "problem": "The design says candidate-side comparison requires a v4 contract for this task family, and the decision repeats that requirement, but the action config and manifest still record candidate_contract as the v3 path arch0001_successor_compatible_core_v3.md. No candidate was trained in this round, so the immediate effect is metadata, but the packet is internally inconsistent about which contract applies.",
+      "why_it_matters": "A later A2 run could treat the v3 pointer as the authorized candidate contract even though the pre-registered note requires v4, risking candidate training under the wrong branch-supervision contract.",
+      "falsifiable_check": "Verify whether a v4 contract exists and whether the run config/manifest candidate_contract field was intended to reference it; inspect the v4 audit/reflection record before any candidate training."
+    },
+    {
+      "id": "replay-branch-hash-unverified",
+      "source": "action",
+      "severity": "low",
+      "evidence": [
+        "独立干净副本重放扫描 seed29101 与确认 seed29113：参数/数据/logits/分支哈希全等，指标差 0.0。",
+        "Fresh-process retrain replay; no retuning or reselection.",
+        "logits_hash_equal",
+        "final_hash_equal"
+      ],
+      "problem": "The decision claims that parameter, data, logits and branch hashes were all equal in the independent replay. The recorded verification object exposes final_hash_equal, data_hash_equal, logits_hash_equal and metric gaps, but no branch-hash equality field. The run rows contain branch_sha256 values, yet the packet does not show they were compared.",
+      "why_it_matters": "The replay is the main execution safeguard; an unsupported branch-hash equality claim weakens the evidence that the counterfactual branch outputs were exactly reproduced, which matters for the v4 branch contract.",
+      "falsifiable_check": "Inspect the archived verification.json or scripts/verify_exp0030_replay.py for an explicit branch_sha256 comparison; if absent, add the comparison or remove the unsupported claim."
+    },
+    {
+      "id": "pre-run-validation-not-recorded",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "运行前通过 `uv run --frozen pytest -q` 与 `uv run --frozen python scripts/verify.py`，并断言套件源码哈希与运行时一致。",
+        "git_dirty",
+        "Fresh-process retrain replay; no retuning or reselection."
+      ],
+      "problem": "The pre-registered execution section requires pytest, scripts/verify.py and a runtime suite-source-hash assertion before the run. The packet's only verification record has the scope 'Fresh-process retrain replay; no retuning or reselection.', and the manifest records git_dirty with modified suite/README artifacts and many untracked files. No pass/exit status for the pre-run pytest/verify checks or the runtime suite-hash comparison is present.",
+      "why_it_matters": "Without evidence that the frozen suite and source hashes were checked at runtime, the run provenance is incomplete, especially because the commit is dirty and the replay script itself is not in the manifest's frozen_hashes.",
+      "falsifiable_check": "Provide archived stdout/exit codes for the pre-run pytest and verify.py commands plus the runtime suite hash comparison, or rerun those checks against the frozen hashes in a clean checkout."
+    },
+    {
+      "id": "terminal-branch-label-offset",
+      "source": "design",
+      "severity": "low",
+      "evidence": [
+        "`branch_targets[:,r,v] = y_{r+1}`",
+        "末位索引复制 `y_T`，训练时全部使用过去命令，无未来泄漏"
+      ],
+      "problem": "The branch-label rule says the target for readout index r is y_{r+1}, but then says the last index copies y_T. Under the same task formula, the next target after the terminal state r=T would be y_{T+1}=u_{T−d}, not y_T=u_{T−1−d}; the packet does not say the terminal entry is masked. This is an internal off-by-one/under-specification in the branch-label definition; both values index past commands for d>=1, so it is not future-command leakage, but the copied terminal label does not match the stated counterfactual-next-readout semantics.",
+      "why_it_matters": "If the terminal entry is used unmasked, the BRANCH arm trains the terminal state against a target that does not match the stated branch semantics, potentially biasing the supervision comparison and the v4 contract design.",
+      "falsifiable_check": "Inspect the archived branch-target construction: determine the r range, whether the last entry is masked in the loss, and compare its value with the formula for r=T."
+    },
+    {
+      "id": "memoryless-expected-accuracy-mismatch",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "对 d≥1 与 i.i.d. 命令，其期望准确率≈0.5",
+        "且 r=0 输出 0",
+        "0.5373347355769231",
+        "0.5408653846153846"
+      ],
+      "problem": "The design states that the memoryless pass-through reference has expected accuracy ~0.5, but the reference outputs 0 at r=0 while the target y_0 is also 0, so it is guaranteed correct at readout 0. Including that position the expected accuracy is above 0.5; the action's measured maxima 0.5373347355769231 to 0.5408653846153846 match that, not 0.5. The 0.55 gate is therefore only slightly above the reference's true expected accuracy.",
+      "why_it_matters": "The no-memory margin is thinner than the design's stated ~0.5 baseline suggests; with sampling noise a pass-through reference can approach or exceed 0.55, so the claim that it is randomly around 0.5 is inaccurate and the gate is less robust than presented.",
+      "falsifiable_check": "Compute the exact expectation of the frozen pass-through reference including r=0 and the forced-zero targets, and compare it with the measured values and the 0.55 threshold."
+    },
+    {
+      "id": "branch-consistency-not-banded",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "反事实分支标签：按 A0 合同的语义，读出索引 `r` 的状态在做假设下一步命令 `v` 后，下一个读出（索引 r+1）的目标是 `y_{r+1}`",
+        "0.6592548076923077",
+        "0.34314903846153844"
+      ],
+      "problem": "The design makes counterfactual branch labels part of the task family and says candidate use requires v4, but the frozen bands score only actual-sequence accuracy. The action reports branch_joint_accuracy values for the tied D2_PLAIN scan seeds of 0.6592548076923077 and 0.34314903846153844 (mean near chance), and confirmation covers only PLAIN, so no branch-consistency threshold is ever required for qualification.",
+      "why_it_matters": "The v4 candidate will rely on task-specific branch supervision; a control-side qualification that never requires branch consistency may not predict whether the v4 candidate can learn the task under that supervision.",
+      "falsifiable_check": "Add a pre-registered branch-consistency metric/threshold and run the v4-style BRANCH arm on the confirmation seeds; report whether it passes the same band."
+    },
+    {
+      "id": "oracle-bounds-task-not-control",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "噪声/leak 为 0 时不存在噪声下限，oracle 给出可达上限。",
+        "该条件对强控制可学、非封顶（约 30 个百分点 oracle 余量）、无记忆解法无效、可达上限已知。"
+      ],
+      "problem": "The only oracle is an explicit shift register that is neither trained nor constrained to the INV_COMP architecture or the frozen budget. It proves that the task has a 1.0 analytic solution, i.e. a task ceiling, but not that 1.0 is reachable by the control; the reported 30-point gap is a task-oracle margin, not demonstrated headroom for the control architecture. The decision's '可达上限已知' can be read as the latter.",
+      "why_it_matters": "Nonceiling is a statement about the control's distance from the task oracle, not about the control's own attainable optimum. Without a same-architecture reference the packet cannot distinguish 'far from the task ceiling' from 'at the control architecture's own ceiling'.",
+      "falsifiable_check": "Compare the explicit oracle with an oracle/hard-coded solution using the same architecture and resource class, or report the control architecture's empirically attainable ceiling separately from the task's Bayes ceiling."
+    }
+  ],
+  "overall_assessment": "三项 high 问题成立且相互关联：主端点把强制零前缀计入、无记忆参照集不完整（常数零在旧度量下期望≈0.615）、配置里的任务描述字符串与协议相差一步；另有平局规则、v4 合同指针、重放分支哈希暴露、运行前验收记录与 oracle 归因等中低问题。原判词不足以支撑任务合格，须以修正端点重新注册复核。"
+}

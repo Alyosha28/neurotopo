@@ -1,0 +1,54 @@
+{
+  "pass": true,
+  "decision": "INCONCLUSIVE",
+  "substatus": "NEITHER_ENDPOINT_SUPPORTED",
+  "R": "R_NOT_SUPPORTED",
+  "M": "M_NOT_SUPPORTED",
+  "tests": 315,
+  "general_validation_updates": 300,
+  "special_training_updates": 0,
+  "reproduction": {
+    "status": "PASS",
+    "frozen_commit": "1305b1516eaa38dd97f037b4d2e10a14d3ba2553",
+    "script_sha256": "d6a68f333377a5bcfe12bfe8aa02aa3e16aefc6df4756f95a4b94ef5493405fc",
+    "formal_output": "~/.local/share/neurotopo/experiment-runs/EXP-0025/v2",
+    "wall_seconds": 58.32416283400016,
+    "cap_seconds": 600,
+    "inventory": {
+      "monitor_checkpoints": 120,
+      "prototype_fits": 26,
+      "qualification_cells": 104,
+      "test_cells": 520,
+      "input_files": 129,
+      "raw_files": 624,
+      "model_states": 26
+    },
+    "discrepancies": [],
+    "shared_components": [
+      "LearnedMemory",
+      "generate",
+      "gram",
+      "radial",
+      "state_hash"
+    ],
+    "independent_components": [
+      "transition orchestration",
+      "intervention",
+      "calibration",
+      "metrics",
+      "geometry audit",
+      "R/M decisions"
+    ],
+    "no_optimizer_updates": true
+  },
+  "artifact_files": 1080,
+  "artifact_bytes": 642272564,
+  "archive_hashes_equal": true,
+  "review_sha256": "356dee82e6593954cec16fd281c07ee70f0648c23d5d3af461b8d9f35c11c18d",
+  "audit_sha256": "a888ffd3e8c4414fc42f8aa3e2d32df4686cf0d0a5f4df4c617b554a8aafaf8f",
+  "inventory_sha256": "d973eb138dd46a1f81e27c628614fb5e5008d24c2e36caa47a8f06430889f535",
+  "execution_model": "gpt-6-sol",
+  "execution_effort": "high",
+  "execution_context": "fresh independent result reviewer",
+  "resource_disclosure": "All624 per-cell timings/counts supplied as packet manifest; complete model/raw records retained."
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "9d3f8e80cb2326128fec0356d6e18f19a9af1b48ee88efbfcba90532d9e2cfc3",
+  "reviewer": {
+    "model": "GPT-6",
+    "effort": "medium",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "R1",
+      "source": "action",
+      "severity": "medium",
+      "evidence": "提出学习效率为有限预算 estimand、K={2,4} 与 factorized/cross-coupled 条件、保度随机稀疏 primary control、强稠密 guard、AUC_B 主终点、updates-to-ε 次终点、种子级推断及不改写旧结果。",
+      "problem": "摘要给出了终点名称，但没有说明待估效应的具体对比或公式，例如 K×耦合交互、各结构内相对主控制的差异，或两者如何组成主 estimand。预算 B 与 epsilon 未冻结被清楚列为缺口；这里的问题是仅凭摘要无法确认效应定义本身已独立可估。",
+      "why_it_matters": "若主 estimand 不明确，有限预算效率结果可能无法区分新提出的交互问题与把旧任务资格结果换成另一种汇总窗口，也无法明确哪些结果会否决主张。",
+      "falsifiable_check": "在设计中写出 AUC_B 的计算定义、估计单位和目标对比，列明 B 与 epsilon 尚待冻结，并为每个拟议对比预先写出支持与否决结果。"
+    },
+    {
+      "id": "R2",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "K 剂量同时改变有效参数与连接稀疏度",
+        "K={2,4} 与 factorized/cross-coupled 条件、保度随机稀疏 primary control、强稠密 guard"
+      ],
+      "problem": "摘要列出保度随机稀疏主控制和稠密 guard，但未说明各 K 与耦合条件下有效参数量、计算预算及任务或 oracle 难度如何匹配，也未给出 K×耦合交互的估计对比。因此无法从本 packet 确认交互识别的是拟议耦合因素，而非参数量、稀疏度、计算量或结构条件难度差异。",
+      "why_it_matters": "如果这些因素随 K 或耦合条件共同变化，交互结果就不能清楚归因于声称的因素；稠密 guard 的存在本身也不能消除这种混淆。",
+      "falsifiable_check": "按每个实验单元报告有效参数、稀疏度或度数、执行计算量和任务/oracle 资格；明确各匹配控制的对应关系及 K×耦合交互公式，并预写哪些对比结果会否决该解释。"
+    },
+    {
+      "id": "R3",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "旧 M3 试点须把权重冻结、评价流隔离、sham 匹配和模型种子作为推断单位写清",
+        "把旧 M3 检查点作为零训练只读方法试点，明确块没有候选身份，排除 H3-semantic 和 Gate 1 解释。"
+      ],
+      "problem": "摘要支持只读、无候选身份且排除语义与 Gate 1 主张，但没有说明块如何选择、选择是否独立于试点结果，也没有呈现评价流隔离、sham 匹配及以模型种子为推断单位的具体规则。因此，packet 尚不足以排除设计说明所列的块选择与结果选择偏差。",
+      "why_it_matters": "事后选择的块或评价结果可能让干预看起来有功能分工；只排除候选语义和 Gate 1 解释，不能单独解决该方法试点自身的选择偏差。",
+      "falsifiable_check": "在试点方法中预写并核验与结果无关的块选择规则、sham 匹配方案、独立评价流及种子级推断单位，并报告全部预定试点单元。"
+    }
+  ],
+  "overall_assessment": "摘要显示草案被标为规则与设计审查稿，并明确不改写旧结果或改变 Gate 状态；没有看到将决定0049/0054拟议解释说成已获正式裁定的证据。数值门槛、B、epsilon、模拟器与 oracle 资格被标为未冻结，符合将其作为缺口的要求。现有 packet 尚不足以确认主 estimand 与 K×耦合效应已可独立识别，也不足以确认旧 M3 试点已处理块选择与结果选择问题；因此不能据此确认草案满足完整接受条件。"
+}

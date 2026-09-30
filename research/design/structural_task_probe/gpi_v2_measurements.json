@@ -1,0 +1,308 @@
+{
+  "bug_note": "In the raw run, curve[0] was computed AFTER training (it equals the final checkpoint), so the JSON's own paired_D / I_per_seed / I_mean fields include a spurious point at x=0. The values below are recomputed from the real checkpoints 200/400/800/1600 only.",
+  "conclusion": "The pilot returns no evidence for the interaction the design exists to detect (point estimate ~1/8 of the frozen minimum useful effect, sign flipping across seeds). Per the design's stop rule the configuration is closed BEFORE registration. This is a resource-allocation decision on a frozen minimum useful effect, not a proof of absence; the control non-saturation observation is preserved as a control-level fact, not as a property of the task family.",
+  "config": {
+    "H": 64,
+    "M": 6,
+    "T": 64,
+    "batch": 128,
+    "blocks": 2,
+    "ckpt_control": [
+      0,
+      400,
+      800,
+      1600,
+      3200
+    ],
+    "ckpt_two_arm": [
+      0,
+      200,
+      400,
+      800,
+      1600
+    ],
+    "grid": 32,
+    "mask_density_per_row": 32,
+    "seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "control_reading": "Control-level observation, NOT a task property: with a learning-rate sweep (2 LRs) and 3 seeds, the dense H=64 control's terminal KL at 3200 updates is 0.0655-0.0889 in all 12 cells -- above eps_abs = 0.05 -- with 1600->3200 gaps of 0.0005-0.0118. This shows the control does not saturate within 2x budget at two learning rates. It does NOT establish that the task family has genuine terminal headroom: two LRs and one budget doubling cannot exclude a shared optimiser floor, and the analytic shape cost (0.063 nat) already exceeds eps_abs and sits only 0.0025 below the smallest observed terminal KL.",
+  "control_sweep": {
+    "F_lr0.001": {
+      "gap_1600_to_3200": [
+        0.0064,
+        0.0118,
+        0.0066
+      ],
+      "min_terminal_kl": 0.0656,
+      "terminal_kl_at_3200": [
+        0.0674,
+        0.0656,
+        0.0741
+      ]
+    },
+    "F_lr0.003": {
+      "gap_1600_to_3200": [
+        0.0072,
+        0.0102,
+        0.0031
+      ],
+      "min_terminal_kl": 0.0798,
+      "terminal_kl_at_3200": [
+        0.0798,
+        0.0854,
+        0.0825
+      ]
+    },
+    "X_lr0.001": {
+      "gap_1600_to_3200": [
+        0.0076,
+        0.0005,
+        0.0034
+      ],
+      "min_terminal_kl": 0.0655,
+      "terminal_kl_at_3200": [
+        0.0655,
+        0.0772,
+        0.0734
+      ]
+    },
+    "X_lr0.003": {
+      "gap_1600_to_3200": [
+        0.0033,
+        0.0041,
+        0.0011
+      ],
+      "min_terminal_kl": 0.0764,
+      "terminal_kl_at_3200": [
+        0.0804,
+        0.0889,
+        0.0764
+      ]
+    },
+    "per_cell": {
+      "F_lr0.001": {
+        "0": {
+          "kl_1600": 0.07382474839687347,
+          "kl_3200": 0.067399762570858
+        },
+        "1": {
+          "kl_1600": 0.07740078121423721,
+          "kl_3200": 0.0656028538942337
+        },
+        "2": {
+          "kl_1600": 0.08063644170761108,
+          "kl_3200": 0.07408521324396133
+        }
+      },
+      "F_lr0.003": {
+        "0": {
+          "kl_1600": 0.07262054085731506,
+          "kl_3200": 0.07977734506130219
+        },
+        "1": {
+          "kl_1600": 0.07515483349561691,
+          "kl_3200": 0.08537288010120392
+        },
+        "2": {
+          "kl_1600": 0.08558045327663422,
+          "kl_3200": 0.0824713408946991
+        }
+      },
+      "X_lr0.001": {
+        "0": {
+          "kl_1600": 0.07308748364448547,
+          "kl_3200": 0.065463125705719
+        },
+        "1": {
+          "kl_1600": 0.07772111892700195,
+          "kl_3200": 0.0772051215171814
+        },
+        "2": {
+          "kl_1600": 0.07675883919000626,
+          "kl_3200": 0.0734032392501831
+        }
+      },
+      "X_lr0.003": {
+        "0": {
+          "kl_1600": 0.07713935524225235,
+          "kl_3200": 0.08041064441204071
+        },
+        "1": {
+          "kl_1600": 0.0847628116607666,
+          "kl_3200": 0.0889076441526413
+        },
+        "2": {
+          "kl_1600": 0.07756858319044113,
+          "kl_3200": 0.07644306123256683
+        }
+      }
+    }
+  },
+  "provenance_note": "The frozen stop rule and delta_min = 0.05 come from GPI-0001 v1 (decision 0065, revision 1) and are NOT contained in this packet's design slot, so this packet cannot by itself distinguish a pre-frozen gate from a threshold chosen after seeing the numbers. Decision 0065 predates this pilot and is the dated record of that freeze.",
+  "schema": "gpi0001_v2_measurements_v2",
+  "status": "engineering pilot; NOT a verdict; used to close the design before registration",
+  "two_arm": {
+    "D_mean": {
+      "F": -0.0142,
+      "X": -0.0201
+    },
+    "D_random_minus_block": {
+      "F": [
+        -0.008610163948365612,
+        -0.006202002721173425,
+        -0.027808013771261478
+      ],
+      "X": [
+        -0.014445445367268162,
+        -0.03331056982278824,
+        -0.01265475260359901
+      ]
+    },
+    "I_ci95_t": [
+      -0.0466,
+      0.0584
+    ],
+    "I_mean": 0.0059,
+    "I_per_seed": [
+      0.0058,
+      0.0271,
+      -0.0152
+    ],
+    "I_sd": 0.0211,
+    "auc_definition": "trapezoid over checkpoints 200/400/800/1600 divided by the span; curve[0] excluded because the raw run computed it after training",
+    "checkpoints": [
+      200,
+      400,
+      800,
+      1600
+    ],
+    "per_arm_kl_and_auc": {
+      "F": {
+        "block": {
+          "0": {
+            "auc": 0.094758,
+            "kl": {
+              "1600": 0.07724849879741669,
+              "200": 0.20435291528701782,
+              "400": 0.10686084628105164,
+              "800": 0.0821138471364975
+            }
+          },
+          "1": {
+            "auc": 0.092686,
+            "kl": {
+              "1600": 0.06800779700279236,
+              "200": 0.2155773937702179,
+              "400": 0.11156065762042999,
+              "800": 0.07921793311834335
+            }
+          },
+          "2": {
+            "auc": 0.118311,
+            "kl": {
+              "1600": 0.10173526406288147,
+              "200": 0.2066287398338318,
+              "400": 0.13872644305229187,
+              "800": 0.10443340241909027
+            }
+          }
+        },
+        "random": {
+          "0": {
+            "auc": 0.086148,
+            "kl": {
+              "1600": 0.0640823170542717,
+              "200": 0.18310096859931946,
+              "400": 0.1033177450299263,
+              "800": 0.0761144608259201
+            }
+          },
+          "1": {
+            "auc": 0.086484,
+            "kl": {
+              "1600": 0.06894399225711823,
+              "200": 0.1581234633922577,
+              "400": 0.10246799886226654,
+              "800": 0.07824444770812988
+            }
+          },
+          "2": {
+            "auc": 0.090503,
+            "kl": {
+              "1600": 0.06962832808494568,
+              "200": 0.17222890257835388,
+              "400": 0.10991834104061127,
+              "800": 0.08109001815319061
+            }
+          }
+        }
+      },
+      "X": {
+        "block": {
+          "0": {
+            "auc": 0.107975,
+            "kl": {
+              "1600": 0.09970526397228241,
+              "200": 0.18354453146457672,
+              "400": 0.12972380220890045,
+              "800": 0.09001779556274414
+            }
+          },
+          "1": {
+            "auc": 0.126143,
+            "kl": {
+              "1600": 0.08001063764095306,
+              "200": 0.2047959864139557,
+              "400": 0.1740274429321289,
+              "800": 0.11984571069478989
+            }
+          },
+          "2": {
+            "auc": 0.114635,
+            "kl": {
+              "1600": 0.08132487535476685,
+              "200": 0.19442050158977509,
+              "400": 0.16125676035881042,
+              "800": 0.10023240745067596
+            }
+          }
+        },
+        "random": {
+          "0": {
+            "auc": 0.093529,
+            "kl": {
+              "1600": 0.070294089615345,
+              "200": 0.17897598445415497,
+              "400": 0.12722867727279663,
+              "800": 0.07792819291353226
+            }
+          },
+          "1": {
+            "auc": 0.092832,
+            "kl": {
+              "1600": 0.0718146488070488,
+              "200": 0.1794775426387787,
+              "400": 0.12152746319770813,
+              "800": 0.0780547708272934
+            }
+          },
+          "2": {
+            "auc": 0.10198,
+            "kl": {
+              "1600": 0.07753249257802963,
+              "200": 0.18425485491752625,
+              "400": 0.14620709419250488,
+              "800": 0.08245201408863068
+            }
+          }
+        }
+      }
+    },
+    "reading": "No advantage was detected for the block mask under this manipulation: D<0 in all six condition-by-seed pairs, interaction point estimate +0.0059 with sd 0.0211 and a 95% t-interval [-0.0466, +0.0584]. This is NOT a demonstration that organisation is harmful: density matching fixes only the nonzero count, so mask placement is confounded with cross-group mixing, and D<0 also holds in F where the block mask matches the task's group structure -- the pattern a generic mixing or optimisation effect predicts. With three seeds the interval still contains delta_min = 0.05, so the honest label is 'no signal at the frozen minimum useful effect', not 'the effect is absent'."
+  },
+  "wall_seconds": 519.7
+}

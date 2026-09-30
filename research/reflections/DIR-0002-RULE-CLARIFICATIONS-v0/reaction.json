@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "8f36a39e2c80c76497bd35494e9cce5a095b0d879a9ea9280f5a71996cd051d4",
+  "review_sha256": "efd7fc9706cc9c0f8976db260dcf0a746d43a1a1090c31d7c37b04fa9efcd6c1",
+  "responses": [
+    {
+      "id": "R1",
+      "disposition": "accept",
+      "reason": "v0的同生成器判断没有给出矩阵值，且不能仅以任务条件重组满足0049的独立研究问题要求。",
+      "action": "固定一个四环Ising矩阵对(J_F=0, J_X=0.25)，补出p_J(z)、观测方程、oracle公式、主交互I及决策价值；明确该对比与EXP-0013 phase-reveal资格问题不同，但仍需先通过独立前瞻批评才可做数值资格。",
+      "evidence_paths": [
+        "research/design/g1_k_structure_learning_efficiency_v0.md",
+        "research/evidence/dir0002_rule_clarifications_action_v0.md"
+      ]
+    },
+    {
+      "id": "R2",
+      "disposition": "accept",
+      "reason": "终点类别可以纳入Gate1行为效应，但v0未选唯一主终点，亦未说清逐K×F/X资格和未达阈值处理。",
+      "action": "将G1-KSI主终点固定为AUC_B，updates-to-epsilon降为次要且未达记>B；要求F/X×K四个单元分别校准actual control与dense guard，冻结共同epsilon、动态范围和难度/资源容差，失败不切换终点。",
+      "evidence_paths": [
+        "research/design/g1_k_structure_learning_efficiency_v0.md",
+        "research/evidence/g1_ksi_v0_action_summary.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "以具体矩阵对、固定AUC_B和逐条件资格规则生成新的独立裁定packet；没有独立批评结论前不形成正式决定、不进数值资格或运行实验。"
+}

@@ -1,0 +1,143 @@
+{
+  "packet": "research/reflections/DIR-0007-DESIGN-V1/packet.json",
+  "packet_sha256": "9c27a3a03aa0dfad2c59bc93e8368ff37197b8bb8427d09b7f621cc476999155",
+  "parts": [
+    {
+      "bytes": 1673,
+      "matches_packet_digest": true,
+      "part": "design.md",
+      "sha256": "b20d4e9ddfd24a67a43986e78375a2ddf91161e2f6bfe409c2ec4843f7e7111d"
+    },
+    {
+      "bytes": 13996,
+      "matches_packet_digest": true,
+      "part": "action.md",
+      "sha256": "a37375a6671cfa8cc3d40f0a7afa3f1f847e80430edc52628d82ce7d49d02d95"
+    },
+    {
+      "bytes": 93109,
+      "matches_packet_digest": true,
+      "part": "action_output_0_verification.json",
+      "sha256": "3cf5c2cbeec5040adc24a09945ae8c0d22c6096f895ca03aba69c12ac3f746be"
+    },
+    {
+      "bytes": 2552,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0007_c9_predesign_v0.md",
+      "sha256": "9cd02939846e61519036ddb3c60f005c6cf14b062606a93e3a87560e4d1e85c3",
+      "source_path": "research/design/dir0007_c9_predesign_v0.md"
+    },
+    {
+      "bytes": 2799,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0007_soft_equivariance.md",
+      "sha256": "5ed573889737b9b225e4fe0c290ce7398043fe41a8b4195325895c222dccae0f",
+      "source_path": "research/prior_art/dir0007_soft_equivariance.md"
+    },
+    {
+      "bytes": 1332,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0007_algebra_check.json",
+      "sha256": "412b2571acbd9c813cac2d736da981a91fd423befc9fce26faac1459b32036a3",
+      "source_path": "research/design/dir0007_algebra_check.json"
+    },
+    {
+      "bytes": 3623,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0007_algebra_check.py",
+      "sha256": "974dd6bc8330f855ac6daf52142385b2ea9a4fdd4587b759febbd4300afefaa6",
+      "source_path": "scripts/dir0007_algebra_check.py"
+    },
+    {
+      "bytes": 3129,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0007_power_plan.json",
+      "sha256": "3795a63c6e6ee9afb941c53194ad6df98e52a9b589d8bb87175532d60fcc18ef",
+      "source_path": "research/design/dir0007_power_plan.json"
+    },
+    {
+      "bytes": 3862,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0007_power_plan.py",
+      "sha256": "4e3a40a6b23fa586df693addf662705614fa761e89b7ecc6c2efb8d24b42fd77",
+      "source_path": "scripts/dir0007_power_plan.py"
+    },
+    {
+      "bytes": 6353,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0082_gate1_candidate_portfolio_audit.md",
+      "sha256": "5d0ca92cf188fa52752cf5c0bb01ab7b1aab8ef9e944997405dd0eb33a40f7d3",
+      "source_path": "research/decisions/0082_gate1_candidate_portfolio_audit.md"
+    },
+    {
+      "bytes": 25502,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_stage_gates.md",
+      "sha256": "bcdba7322f38733f9edc9669f05315596216b47ee2b75f9a63ed2f6f0d31bb54",
+      "source_path": "research/stage_gates.md"
+    },
+    {
+      "bytes": 6744,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_program.md",
+      "sha256": "0f9a33d13dda4b1771eecdfaf3b22ed9e6429cf22ce3e6fdabed6da3a3671bd9",
+      "source_path": "research/program.md"
+    },
+    {
+      "bytes": 9196,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_v3.md",
+      "sha256": "7ad84f9b2ad509616e4b0d499d59d701eb6e177043175d168ac11c8f5af6fe7b",
+      "source_path": "experiments/EXP-0013/v3.md"
+    },
+    {
+      "bytes": 2182,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0043_gate1_architecture_estimand.md",
+      "sha256": "ee90c79ed48ec2eca5bddbc4a020756c2aa286566d6fff5bcf07c7a53b334e3f",
+      "source_path": "research/decisions/0043_gate1_architecture_estimand.md"
+    },
+    {
+      "bytes": 1438,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0044_gate1_strong_control_guard.md",
+      "sha256": "b519ec767215bd3cfbba1a710380485c27ddce3eb3c2934cd05ca5d1285ef03f",
+      "source_path": "research/decisions/0044_gate1_strong_control_guard.md"
+    },
+    {
+      "bytes": 1083,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0049_g1rs_task_search_cap.md",
+      "sha256": "9e9e559d72b6d3ac54c1830919b22eacfe3de1060313277fedc35264d1d69a25",
+      "source_path": "research/decisions/0049_g1rs_task_search_cap.md"
+    },
+    {
+      "bytes": 2757,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0054_dir0002_direction_portfolio.md",
+      "sha256": "4f1a9aa072675fde36c6e7bb25eb9610ecc551d5517042a7788043f2fb4c0b99",
+      "source_path": "research/decisions/0054_dir0002_direction_portfolio.md"
+    },
+    {
+      "bytes": 4035,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0062_g1_ksi_rulings_narrowed.md",
+      "sha256": "1a65da9a8dfec73ab4d8c8e77bd97120f5f9ca24b6f6e1b6c6b990b3a290b941",
+      "source_path": "research/decisions/0062_g1_ksi_rulings_narrowed.md"
+    },
+    {
+      "bytes": 8604,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0069_gate1_matching_relaxation_v3.md",
+      "sha256": "e84cd0cce301d183e33de6a43b8d0177ec65c032c4931c099e474d20d8513c23",
+      "source_path": "research/decisions/0069_gate1_matching_relaxation_v3.md"
+    },
+    {
+      "bytes": 3511,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_0080_entry_rule_architecture_organization.md",
+      "sha256": "9a9838660ebb9e6efcb475fc6169daed7f02abab97a848547149a6b513ea19c6",
+      "source_path": "research/decisions/0080_entry_rule_architecture_organization.md"
+    }
+  ]
+}

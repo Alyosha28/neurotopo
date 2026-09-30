@@ -1,0 +1,13 @@
+{
+  "experiment_id": "EXP-0001", "version": "v1", "dataset_version": "delayed-evidence-v1",
+  "output": "artifacts/EXP-0001/v1",
+  "models": ["gru_small", "gru_wide", "sparse_rnn", "multi_gru", "random_gru"],
+  "seeds": [0,1,2,3,4,5,6,7,8,9],
+  "hidden_size": 64, "small_hidden_size": 16, "trajectories": 4,
+  "updates": 400, "batch_size": 64, "learning_rate": 0.003, "grad_clip": 1.0,
+  "train_delays": [4,8], "eval_delays": [8,16], "eval_pairs": 1024,
+  "train_seed_offset": 100000, "graph_seed_offset": 200000, "eval_seed": 91001,
+  "bootstrap_samples": 20000, "bootstrap_seed": 81001,
+  "device": "cpu", "threads": 1, "minimum_effect": 0.03,
+  "max_confirm_degradation": 0.01, "minimum_pre_accuracy": 0.90
+}

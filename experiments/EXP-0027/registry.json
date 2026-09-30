@@ -1,0 +1,67 @@
+{
+  "experiment": "EXP-0027",
+  "active_version": "v2",
+  "versions": {
+    "v1": "SUPERSEDED_BEFORE_RESEARCH_RUN",
+    "v2": "COMPLETED"
+  },
+  "models": [
+    [
+      25002,
+      "REL"
+    ],
+    [
+      25002,
+      "INV"
+    ],
+    [
+      25003,
+      "REL"
+    ],
+    [
+      25003,
+      "INV"
+    ],
+    [
+      25008,
+      "REL"
+    ],
+    [
+      25008,
+      "INV"
+    ],
+    [
+      25010,
+      "REL"
+    ],
+    [
+      25010,
+      "INV"
+    ]
+  ],
+  "anchors": [
+    8,
+    16,
+    24,
+    32
+  ],
+  "branches": [
+    "NONE",
+    "EQUAL_before",
+    "EQUAL_after1",
+    "EQUAL_after2",
+    "FULL_before",
+    "FULL_after1",
+    "FULL_after2",
+    "GAUGE_before",
+    "GAUGE_after1",
+    "GAUGE_after2"
+  ],
+  "protocol": "experiments/EXP-0027/v2.md",
+  "output": "artifacts/EXP-0027/v2",
+  "training_updates": 0,
+  "decision": "SUPPORTED",
+  "substatus": "EXPOSED_STATE_COMPUTATION_INCOMPATIBILITY",
+  "report": "research/evidence/EXP-0027/report.md",
+  "verification": "research/evidence/EXP-0027/verification.json"
+}

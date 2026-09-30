@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "58151ba7c65c0fddc3b9d5959e552a7d4d26b97b272cbc86f0b919e67e2008dd",
+  "review_sha256": "9079170a9f306ec86d3d5c53fadd0b5913f4fc6066c0e1b1bea70e09200b6855",
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "审查判 `AUDIT_NEEDS_NARROWING`（8 项全部 accept，5 high/3 medium），按事前承诺出 v1 并**重新冻结送审**，不追认本次审查。v1 的核心收窄：标签改为**双标**（已评估候选集 `NO_REGISTERABLE_CANDIDATE_NOW` ＋ 类别层 `RULE_ITEMS_UNRESOLVED`，后者点名 U1 效率终点与 U2 `Generic` 两条未决规则项）；T1/T2 由结构律降为可证伪预期（T1 补限制型例外分支，T2 给出匹配后实测的检验）；撤回 C7 的存在断言，改为正面规格＋显式非主张；C4 的排除改标为规则级待裁定、其 K3 改回 UNKNOWN；新增 C8（图拓扑本身为被操纵量）与 C9（限制型结构约束）两类候选并列为下一步取证优先方向；重开条件重写为可机械判定的七条（含界类型/样本量/阈值、功效与 MDD、多重性、选择零、有效自由度）。另更正 v0 一处实证错误：仓库已有**实测余量**（EXP-0004 预注册主对照 OOD32 `67.04%` 对 IID8 `100.00%`，记录明写 substantial headroom），故缺的不是余量任务而是具名机制与 K2/K3/K9 装置。Gate 1 仍 `NOT_PASSED`；无 EXP 注册、无训练授权；非回归清单无一重开。",
+  "responses": [
+    {
+      "id": "I1",
+      "disposition": "accept",
+      "reason": "成立。v0 §0 的『缺的是证据项，不是规则项』被其自身台账推翻：K4 是决定0062 B7 的未决规则项（DIR-0002 的 RULE_CHANGE_FIRST 两问之一，0071 §5 记其未解决），K6 是决定0080 §3 明写留待前瞻裁定的 `Generic` 缺口。",
+      "action": "v1 §0 改为**双标**：对已评估候选集给证据侧标签，对类别层给 `RULE_ITEMS_UNRESOLVED` 并列出 U1/U2 两条未决规则项与前瞻裁定路径；明确不得把 `NO_REGISTERABLE_CANDIDATE_NOW` 读作类别层已判。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v1.md",
+        "research/loop/current_frontier.md"
+      ]
+    },
+    {
+      "id": "I2",
+      "disposition": "accept",
+      "reason": "成立。v3 只含『声明轴＝实际消耗轴、经 argmax 验证、该轴须匹配、其余披露、SUPPORTED 须 matched-or-profiled compute』，不含『匹配后优势必消失』；该步是经验预期，且依赖三个未言明前提。",
+      "action": "v1 §1 把 T2 由『判据逻辑』降为**可证伪预期**并给出检验方式（在按 v3 匹配声明轴的控制臂上实测优势是否消失）；若优势仍在，该类效应可入，v0 的排除失效。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v1.md"
+      ]
+    },
+    {
+      "id": "I3",
+      "disposition": "accept",
+      "reason": "成立。T1 带 Δ>0 的方向性前提，遗漏**限制型操纵**（对称/等变、权重共享、剪枝：表征内容大而消耗不增，通道是收益）；且把 0073 自判为『非架构可达界』的族内投影代价一般化为通道律。",
+      "action": "v1 §1 把 T1 降为条件性命题并显式加入限制型例外分支；注明 `Δ` 只能作族内比较量、不得作通道上界；§3 新增 C9（限制型结构约束）与 C8（图拓扑本身为被操纵量）两类候选。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v1.md"
+      ]
+    },
+    {
+      "id": "I4",
+      "disposition": "accept",
+      "reason": "成立。C7 的四个合取项正是 K2/K3/K4/K5 的通过条件（失败清单的补集），K1/K7 仍 UNKNOWN 却写成『存在可过门的效应类别』，违反事前规则『UNKNOWN 不得读作 PASS』；唯一先例 EXP-0004 的主预测为 FALSIFIED ⇒ 存在断言不可证伪。",
+      "action": "v1 §2 撤回存在断言，改为**正面规格 (i)–(v) ＋ 显式非主张**（本类未被证明非空，只是候选自检清单）。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v1.md"
+      ]
+    },
+    {
+      "id": "I5",
+      "disposition": "accept",
+      "reason": "成立。C4 的决定性 FAIL 落在 K5（规则项）并由 T2 支撑，K3=FAIL 在 packet 内无来源；因此『结构上不可入』是规则级裁定，却与『证据不足』的标签自相矛盾。",
+      "action": "v1 §3 把 C4 的 K3 改为 UNKNOWN、把其排除改标为**规则级待裁定**（走 U1/U2 同类路径），并明确不得记为『结构上不可入』或『还没试够』。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v1.md",
+        "research/loop/current_frontier.md"
+      ]
+    },
+    {
+      "id": "I6",
+      "disposition": "accept",
+      "reason": "成立。§5 第 3、5 条无界的类型/阈值与功效数值，第 6 条依赖未裁定的 `Generic`；缺多重性、选择零、有效自由度、留出族构造与规则受阻路径。",
+      "action": "v1 §5 重写为七条**可机械判定**条件：界的类型/样本量/置信水平/阈值；功效算法与 MDD；新增多重性/族错误率、选择零、有效自由度与配对结构披露；并注明 U2 未决使第三方不可核验通用性成分。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v1.md"
+      ]
+    },
+    {
+      "id": "I7",
+      "disposition": "accept",
+      "reason": "成立。七个候选无一行以**图拓扑本身**为被操纵量，也无一行考察**限制型结构约束**；枚举无纳入规则，故『现行规则下组合为空』只能读作『已评估的七类为空』。",
+      "action": "v1 §3 新增 C8（图拓扑本身为被操纵量）与 C9（限制型结构约束）并明确定位为**下一步取证优先方向**（K1 余量实测、K7 正文级先例、K3 通道方向），且结论不外推到这两类。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v1.md",
+        "research/prior_art/dir0005_trainability_organization.md"
+      ]
+    },
+    {
+      "id": "I8",
+      "disposition": "accept",
+      "reason": "成立（偏差三处，其余核对相符）。(a) C1 的 K1 用解析量 `gap(16)` 冒充实测，与 K1 定义（实测非饱和）刻度不一致；(b) C3/C5 的 K1 依赖决定0081 §5 自称『不得追认为已审内容』的 post-packet 发现；(c) 规则侧条件被写成自缚/可满足。",
+      "action": "v1 §3 标注 C1 的 K1 为『PASS(解析量, 非控制侧实测)』、C3/C5 的 K1 标注『主代理 post-packet 发现，未经审查』；§0/§5 把规则侧条件改标为未决规则项。",
+      "evidence_paths": [
+        "research/evidence/DIR-0005_candidate_spec_audit_v1.md",
+        "research/evidence/gate1_benchmark_baseline_audit.md"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "angles_ordered": [
+    0.08,
+    0.12,
+    0.16,
+    0.2
+  ],
+  "bit_generator": "NumPy PCG64",
+  "candidates": [
+    {
+      "D16": 0.5579424406746433,
+      "D32": 5.325198521300182,
+      "D8": 0.04459748601929424,
+      "angle": 0.08,
+      "pass": false
+    },
+    {
+      "D16": 1.2326873961380602,
+      "D32": 10.432761791498274,
+      "D8": 0.09698127295727424,
+      "angle": 0.12,
+      "pass": false
+    },
+    {
+      "D16": 2.1341768835747725,
+      "D32": 15.489852125974474,
+      "D8": 0.16565486905987187,
+      "angle": 0.16,
+      "pass": false
+    },
+    {
+      "D16": 3.243491424920867,
+      "D32": 19.742137686383213,
+      "D8": 0.24803881475167233,
+      "angle": 0.2,
+      "pass": false
+    }
+  ],
+  "cue_reliability_planned": 0.75,
+  "decay": 0.98,
+  "dimension": 6,
+  "generator_assumptions": "z0=0, no process noise, independent N(0,1) u and observation epsilon across time/streams, H uniform, cue true=.75 else each wrong=.25/3",
+  "generator_source_sha256": "b0e85b8c3dc92e14fad4d89e6f2a9e42634b6c074cedb0da95853088f7180dce",
+  "lock_sha256": "a4228ebafd79e9e2cafbacff4cae0cfd8ea1c5a768a8a95c6d5a03dea61b509b",
+  "matrices": null,
+  "matrix_le_float64_sha256": null,
+  "noise_std": 0.8,
+  "numpy_build_config_at_screen": "Build Dependencies:\n  blas:\n    detection method: system\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: accelerate\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: unknown\n  lapack:\n    detection method: system\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: accelerate\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: unknown\nCompilers:\n  c:\n    commands: cc\n    linker: ld64\n    name: clang\n    version: 15.0.0\n  c++:\n    commands: c++\n    linker: ld64\n    name: clang\n    version: 15.0.0\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.1.3\nMachine Information:\n  build:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\n  host:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\nPython Information:\n  path: /private/var/folders/y6/nj790rtn62lfktb1sh__79hc0000gn/T/build-env-e43io0i0/bin/python\n  version: '3.13'\nSIMD Extensions:\n  baseline:\n  - NEON\n  - NEON_FP16\n  - NEON_VFPV4\n  - ASIMD\n  found:\n  - ASIMDHP\n  not found:\n  - ASIMDFHM\n\n",
+  "numpy_core_binary_sha256": "a30c5d4a5b9fffef4886967542169a9bb31c401802336af0dd6632d193960a30",
+  "numpy_record_sha256": "f365245db11fb3d48375348aa67eacfd4f9992028b7f2976229c5f60a525b28f",
+  "numpy_version_at_screen": "2.3.3",
+  "protocol": "research/design/exp0012_matrix_screen_protocol_v3.md",
+  "protocol_sha256": "fb777e378a8a16380f55fca036693c46cf23bb101b1ae79ae8b4b278242b9176",
+  "python_executable_at_screen": "/private/tmp/neurotopo-venv/bin/python",
+  "python_executable_sha256": "1988a0dd685f91bbaf20b5267046e13cb78859dbb3b5f030e89b448c1fbfe8d4",
+  "python_version_at_screen": "3.13.15 (main, Aug  5 2026, 12:25:43) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "qr_sign_rule": "first make intermediate R diagonal positive; then flip final Q column if det(Q)<0",
+  "rotation_rule": "column-vector 2D blocks [[cos,-sin],[sin,cos]] at (0,1)=+angle,(2,3)=-angle,(4,5)=+angle, left multiply Q",
+  "runtime_thread_env_at_screen": {
+    "MKL_NUM_THREADS": null,
+    "NUMEXPR_NUM_THREADS": null,
+    "OMP_NUM_THREADS": null,
+    "OPENBLAS_NUM_THREADS": null,
+    "VECLIB_MAXIMUM_THREADS": null
+  },
+  "schema_version": 1,
+  "scope": "zero-sample analytic matrix screen; no task examples or models",
+  "seed": 35017,
+  "selected_angle": null,
+  "selection_rule": "first angle with 0.05<=D8<=1.0 and 1.5<=D32<=4.5",
+  "source_commit": "9130a21b6df5b56c1a5596545592e1900931a015",
+  "status": "NO_MATRIX"
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "6170d0f8daf8643095deeaf00fa7231bb9d99d5358af3214319850adcd5f5f63",
+  "reviewer": {
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "TH-0001-R1",
+      "source": "action",
+      "severity": "low",
+      "evidence": [
+        "停止仅增加隐变量/假设数来寻找单流地板",
+        "实际 GRU 训练难易、参数化、随机性、拓扑归纳偏置、有限精度与 OOD 转移仍可能不同"
+      ],
+      "problem": "策略句若被执行为停止研究 K 的影响，范围会超过本审计的维数结论。增加 K 仍可能改变有限预算下的学习难度；本审计只否定单凭状态维数推出多轨迹必胜。",
+      "why_it_matters": "可能过早排除有清楚资源控制和可证伪预测的 K 扫描。文中的“仅”以及后续限定已降低这一风险，但策略执行时仍需保留该边界。",
+      "falsifiable_check": "预注册固定总状态、参数、训练预算和执行计算的 K 扫描，并设置解析或受界 oracle 与主对照余量；检验模型类型与 K 的交互效应是否稳定出现。"
+    },
+    {
+      "id": "TH-0001-R2",
+      "source": "action",
+      "severity": "medium",
+      "evidence": [
+        "当前 `resource_account` 现在新增 `pre_readout_cache_floats_per_example` / bytes 字段",
+        "两主模型都以相同方式缓存，故旧匹配结论不变",
+        "峰值激活/反向内存仍未测量"
+      ],
+      "problem": "packet 说明了 pre 输出缓存不反馈递推状态，但没有给出资源字段的代码差异、调用结果或测试，因而无法从 packet 验证字段确实覆盖两臂、所有相关查询配置及其实际 dtype，也无法核实旧资源匹配陈述所依赖的缓存相等性。",
+      "why_it_matters": "“递推 hidden”与整个 forward 生命周期的存储边界在文字上是清楚的；新增账目是否正确落地仍是独立的实现验证问题。",
+      "falsifiable_check": "检查 `resource_account` 的实现和两臂同配置输出，断言 pre 缓存元素数等于每例早期读出维度、bytes 与基准 dtype 一致，并确认该字段未被混入递推 hidden 或误称为峰值内存。"
+    },
+    {
+      "id": "TH-0001-R3",
+      "source": "action",
+      "severity": "low",
+      "evidence": [
+        "这正对应 `belief_task.py::_posterior` 的 `log_weights += log(wrong)` 与被 cue 命中列的 log 比值增量",
+        "这与 `source_belief_task.py::_joint_posterior` 的两层循环和最终归一化一致",
+        "标记的 distractor 不进入更新"
+      ],
+      "problem": "packet 给出源码对应关系的结论，但没有包含相关分支或可复核的测试输出。仅凭 packet 不能排除先验、distractor、pre/final 前缀边界或来源平衡实现与推导存在细小偏差。",
+      "why_it_matters": "构造性上界对所述生成器成立；将它用于冻结任务的判断还依赖源码语义对应无误。",
+      "falsifiable_check": "逐分支核对两个生成器的先验、证据更新、distractor 和查询切片，并用枚举的小序列比较源码 posterior 与 packet 中的递推公式。"
+    }
+  ],
+  "overall_assessment": "packet 没有把 K 个 log 权重误作最小连续状态维数：design 和 action 均明确将其限定为构造性上界。雅可比下界也明确依赖后验开集、可微编码解码和完整后验精确恢复，并明确排除当前有限离散任务。pre 输出缓存与递推状态的概念边界清楚。主要未闭合处是资源代码修改及源码对应关系缺少可由本 packet 独立核验的实现证据；策略上应继续把“停止仅增加 K”的范围限定为停止无机制、无控制的容量叙事。"
+}

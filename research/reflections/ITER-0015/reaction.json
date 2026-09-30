@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "108d77a8983b2e8320b4e29b9ef40b449939590b823bf75fe25c0ab8328236d9",
+  "review_sha256": "4b4c78136436bcff3dd77124c5e1517b3e61f7fffa07173df2ff82febf1bff46",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "首轮三模型探索pilot完成归档；保留正面可学习性与强INV控制，不自动追加seed/任务。"
+}

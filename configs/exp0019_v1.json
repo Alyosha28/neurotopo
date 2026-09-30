@@ -1,0 +1,90 @@
+{
+  "experiment_id": "EXP-0019",
+  "version": "v1",
+  "workflow": "co_paired_dynamics",
+  "protocol": "experiments/EXP-0019/v1.md",
+  "entry_contract": "research/entries/EXP-0019.json",
+  "output": "artifacts/EXP-0019/v1",
+  "gate1_claim": false,
+  "matching_criterion_version": "G1-MATCH-v3",
+  "sources": [
+    {
+      "seed": 17001,
+      "arm": "D64",
+      "path": "artifacts/EXP-0017/v2/seed-17001/CO/D64/final.pt",
+      "sha256": "917f37392328c9b0709d11a26adff6aeb71c7dd7559ab5ab284548c98c5277a5",
+      "probe_path": "artifacts/EXP-0018/v1/seed-17001/D64/features.npz",
+      "probe_sha256": "6eb48ef8211662806a8f534852d544cde51800f8e0645db7bb01661fa1cff4cd"
+    },
+    {
+      "seed": 17001,
+      "arm": "D16",
+      "path": "artifacts/EXP-0017/v2/seed-17001/CO/D16/final.pt",
+      "sha256": "df18554053842d27f83d046f73064b92a7acaf0df86279604dd322eef4f05b64",
+      "probe_path": "artifacts/EXP-0018/v1/seed-17001/D16/features.npz",
+      "probe_sha256": "1877e3073f95370358dd278109c77d4404bbd637f334ee006286f0d8e7992c76"
+    },
+    {
+      "seed": 17002,
+      "arm": "D64",
+      "path": "artifacts/EXP-0017/v2/seed-17002/CO/D64/final.pt",
+      "sha256": "31e2dc3ac2ac6421397611faac8cfb169dc7fbbd505034f7ad619ed54a1e7607",
+      "probe_path": "artifacts/EXP-0018/v1/seed-17002/D64/features.npz",
+      "probe_sha256": "fc9834491f58db125554713ff033299d683ca534082c66b1580934666f43444a"
+    },
+    {
+      "seed": 17002,
+      "arm": "D16",
+      "path": "artifacts/EXP-0017/v2/seed-17002/CO/D16/final.pt",
+      "sha256": "49b5f192404f5746f00cd86b44152b47aeacfbbcf6aa636f8103587c20c2bec9",
+      "probe_path": "artifacts/EXP-0018/v1/seed-17002/D16/features.npz",
+      "probe_sha256": "632bd463bc0cab11c73653e72bf3420d4a4fddc6503d221087c39c9c7eb9ab65"
+    },
+    {
+      "seed": 17003,
+      "arm": "D64",
+      "path": "artifacts/EXP-0017/v2/seed-17003/CO/D64/final.pt",
+      "sha256": "5df014ba3f3759ef19c02bc2ab3a5bafc1c97491c4ad7fe52c7950a4f5573a9b",
+      "probe_path": "artifacts/EXP-0018/v1/seed-17003/D64/features.npz",
+      "probe_sha256": "bd0e122bd2aaba0d4b583e2f07d2aa59df46a59449df40ac3b2bd36260c6c3f3"
+    },
+    {
+      "seed": 17003,
+      "arm": "D16",
+      "path": "artifacts/EXP-0017/v2/seed-17003/CO/D16/final.pt",
+      "sha256": "644700e7695cdcecfdd86466ba2d00173a3ac9038281d2fb20f80d6712fc5c80",
+      "probe_path": "artifacts/EXP-0018/v1/seed-17003/D16/features.npz",
+      "probe_sha256": "c0e9391e3f489f6cd596be5406699c35b2285b0956706254d2cc0f5fefd98182"
+    }
+  ],
+  "task": {
+    "prefix_operations": 12,
+    "suffix_operations": 128,
+    "triples": 384,
+    "namespace": 191001,
+    "sample_suffix_operations": [
+      0,
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128
+    ]
+  },
+  "precisions": [
+    "float32",
+    "float64"
+  ],
+  "thresholds": {
+    "initial_distinct_min": 0.95,
+    "terminal_merge_min": 0.9
+  },
+  "resource": {
+    "worker_wall_seconds_cap": 180,
+    "reproduction_wall_seconds_cap": 180,
+    "research_update_cap": 0
+  }
+}

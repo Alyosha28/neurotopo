@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "b349a5c1989fe542b55a654f6a4d3026b3dde42cceac03b5b8a17eaab548c2c6",
+  "reviewer": {
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "context": "fresh_only_packet"
+  },
+  "issues": [],
+  "overall_assessment": "仅据冻结packet，四项候选的D(32)均高于预写上界4.5，且0.08的D(8)也低于0.05；因此NO_MATRIX符合预写PASS规则，关闭此生成器方向符合预写无PASS分支。独立重推在packet中报告12个D值与选择结果通过核验，未见可定位的执行偏差。阻碍来自预列角度菜单与预写解析窗口的失配；这是一次有效的负筛查结果，不能由此推断其他参数或任务类型不可行，更不能推断G1-RS架构效果。决定记录保留了这些边界，未发现需要另列的可证伪问题。"
+}

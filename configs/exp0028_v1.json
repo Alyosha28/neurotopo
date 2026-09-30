@@ -1,0 +1,66 @@
+{
+  "experiment_id": "EXP-0028",
+  "version": "v1",
+  "gate": "A1",
+  "protocol": "experiments/EXP-0028/v1.md",
+  "candidate_contract": "research/design/arch0001_successor_compatible_core_v3.md",
+  "output": "artifacts/EXP-0028/v1",
+  "candidate": "SC-REL-v3",
+  "control_menu": [[32, 1], [32, 2], [32, 3], [48, 1], [48, 2], [48, 3], [64, 1], [64, 2], [64, 3], [96, 1], [96, 2], [96, 3]],
+  "training": {
+    "updates": 1000,
+    "batch_size": 64,
+    "lr": 0.003,
+    "betas": [0.9, 0.999],
+    "eps": 1e-08,
+    "clip": 1.0,
+    "common_amplitude": 0.4,
+    "branch_weight": 0.1,
+    "curriculum": [[125, 1], [250, 2], [500, 4], [1000, 8]]
+  },
+  "seeds": {
+    "pretest": [28101, 28102, 28103],
+    "scan": [28101, 28102],
+    "learn": [28111, 28112, 28113]
+  },
+  "streams": {
+    "train_namespace": 282001,
+    "eval_namespace": 283001,
+    "pretest_namespace": 285001,
+    "eval_examples": 1024,
+    "monitor_examples": 128
+  },
+  "menu": [
+    {"id": "N1_T64_leak0_s0", "length": 64, "leak": 0.0, "sigma": 0.0},
+    {"id": "N2_T256_leak4_s0", "length": 256, "leak": 0.4, "sigma": 0.0},
+    {"id": "N3_T64_leak0_s05", "length": 64, "leak": 0.0, "sigma": 0.05},
+    {"id": "N4_T64_leak0_s15", "length": 64, "leak": 0.0, "sigma": 0.15},
+    {"id": "N5_T64_leak0_s40", "length": 64, "leak": 0.0, "sigma": 0.4},
+    {"id": "N6_T256_leak4_s05", "length": 256, "leak": 0.4, "sigma": 0.05},
+    {"id": "N7_T256_leak4_s15", "length": 256, "leak": 0.4, "sigma": 0.15},
+    {"id": "N8_T256_leak4_s40", "length": 256, "leak": 0.4, "sigma": 0.4}
+  ],
+  "band": {
+    "flip_mean": [0.6, 0.95],
+    "flip_seed": [0.55, 0.97],
+    "hold_mean_min": 0.6,
+    "learn_flip_mean_min": 0.6,
+    "learn_flip_seed_min": 0.55,
+    "learn_hold_mean_min": 0.6
+  },
+  "pretest_cells": {
+    "IID_H": [8, "HOLD", 0.4, 0.0],
+    "IID_U": [8, "UPDATE", 0.4, 0.0],
+    "LONG_H": [64, "HOLD", 0.4, 0.0],
+    "LONG_U": [64, "UPDATE", 0.4, 0.0],
+    "ROT_H": [64, "HOLD", 3.141592653589793, 0.0],
+    "ROT_U": [64, "UPDATE", 3.141592653589793, 0.0],
+    "LEAK01_U": [64, "UPDATE", 3.141592653589793, 0.1],
+    "LEAK04_U": [64, "UPDATE", 3.141592653589793, 0.4]
+  },
+  "resource": {
+    "max_updates": 60000,
+    "wall_seconds_cap": 1800,
+    "replay_wall_seconds_cap": 600
+  }
+}

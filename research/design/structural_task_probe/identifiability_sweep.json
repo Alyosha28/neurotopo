@@ -1,0 +1,103 @@
+{
+  "generator": "unknown global coupling theta, 32/64-point grid, M=6 latents, T=32/64",
+  "reading": "Narrowing the theta range makes the non-locality gap COLLAPSE (0.037 -> 0.0003 at k=8): when candidate thetas imply nearly the same marginal latent posterior, dropping old data barely changes the target. Max gap 0.0367 nats < 0.05 headroom scale => this target FAILS the pre-screen.",
+  "rows": [
+    {
+      "T": 32,
+      "entropy": 1.939,
+      "gaps": {
+        "16": 0.0162,
+        "32": 0.0,
+        "4": 0.0496,
+        "8": 0.0228
+      },
+      "grid": 32,
+      "j_range": [
+        0.0,
+        0.6
+      ]
+    },
+    {
+      "T": 64,
+      "entropy": 1.808,
+      "gaps": {
+        "16": 0.0237,
+        "32": 0.0109,
+        "4": 0.0626,
+        "64": 0.0,
+        "8": 0.0367
+      },
+      "grid": 32,
+      "j_range": [
+        0.0,
+        0.6
+      ]
+    },
+    {
+      "T": 32,
+      "entropy": 2.191,
+      "gaps": {
+        "16": 0.0009,
+        "32": 0.0,
+        "4": 0.0114,
+        "8": 0.0017
+      },
+      "grid": 32,
+      "j_range": [
+        0.15,
+        0.35
+      ]
+    },
+    {
+      "T": 64,
+      "entropy": 2.167,
+      "gaps": {
+        "16": 0.0025,
+        "32": 0.002,
+        "4": 0.0108,
+        "64": 0.0,
+        "8": 0.0033
+      },
+      "grid": 32,
+      "j_range": [
+        0.15,
+        0.35
+      ]
+    },
+    {
+      "T": 64,
+      "entropy": 2.196,
+      "gaps": {
+        "16": 0.0002,
+        "32": 0.0001,
+        "4": 0.0066,
+        "64": 0.0,
+        "8": 0.0003
+      },
+      "grid": 32,
+      "j_range": [
+        0.2,
+        0.3
+      ]
+    },
+    {
+      "T": 64,
+      "entropy": 2.206,
+      "gaps": {
+        "16": 0.0002,
+        "32": 0.0001,
+        "4": 0.0068,
+        "64": 0.0,
+        "8": 0.0003
+      },
+      "grid": 64,
+      "j_range": [
+        0.2,
+        0.3
+      ]
+    }
+  ],
+  "schema": "identifiability_sweep_v1",
+  "status": "engineering premise check; not a verdict",
+  "target": "marginal latent posterior p(z_T|y_1:T)"
+}

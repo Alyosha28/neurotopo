@@ -1,0 +1,97 @@
+{
+  "decision_impact": "UNCHANGED",
+  "next_action": "本次反思修正的是调查自身草案的判词（QUESTION_READY → RULE_CHANGE_FIRST），该草案在成为决定前已修正，故无既有决定需要重估；Gate 1 与全部先前决定不变。下一步不是训练或注册实验，而是解决决定0054 记录的两项前瞻裁定（0049 适用性；Gate 1 是否允许学习效率主终点），并在检索恢复后补做 D1–D4 的定向先例核查。",
+  "packet_sha256": "3e83f186d4982a43e3355c240682e9d31e47f8835d7558c6abcbd76a5dc61dff",
+  "responses": [
+    {
+      "action": "组合判词改为 RULE_CHANGE_FIRST；D1/D2 记为须先裁定；取消三个自造标签；D5 移出方向组合列为非方向观察；两项待裁定问题写入决定0054与前沿。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/evidence/DIR-0002_direction_options_survey.md",
+        "research/decisions/0054_dir0002_direction_portfolio.md"
+      ],
+      "id": "DIR-0002-R1",
+      "reason": "真实缺陷：D2 被判 QUESTION_READY 却把终点类型推给独立裁定，且我引入了设计三标签菜单之外的三个自造标签（QUESTION_READY_AFTER_RULING／BLOCKED_ON_PRIOR_ART／ENGINEERING），使判词无法由预注册规则推出。已按设计判据重推。"
+    },
+    {
+      "action": "撤回该表述；改为 verification 机器计算的字节比与文件数比，并声明字节比不作为主要证据；主要证据改为产物类型。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/evidence/DIR-0002_direction_options_survey.md",
+        "research/reflections/DIR-0002/verification.json"
+      ],
+      "id": "DIR-0002-R2",
+      "reason": "真实缺陷：'量级约 10³'与本文件自身数字矛盾；该比值来自把治理全库除以单个 366 B 占位产物，分母不是科学信息量。"
+    },
+    {
+      "action": "verification 升为 v2：逐字面量检查（区间两端、全精度），新增 scope 字段声明其只证明字面量出现、不证明解释；生成器一并留档。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/reflections/DIR-0002/verification.json",
+        "research/reflections/DIR-0002/verification_builder.py"
+      ],
+      "id": "DIR-0002-R3",
+      "reason": "真实缺陷：每图只核一个字面量子串却断言 all_found，区间端点与全精度值实际未被核。"
+    },
+    {
+      "action": "补 TH-0001/open_questions/MON-0001/0049/0053 等字面量核对（合计 31 条）；'唯一剩余可辨轴'改为本调查的解释并明写解释边界。source 标签按所引证据锚点规范为 action。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/evidence/DIR-0002_direction_options_survey.md",
+        "research/reflections/DIR-0002/verification.json"
+      ],
+      "id": "DIR-0002-R4",
+      "reason": "真实缺陷：两条承重论断（核心发现、'定理逼出的唯一剩余可辨轴'）在交叉核对中无条目；且 TH-0001 是状态维命题，不能支撑'唯一轴'这种强表述。"
+    },
+    {
+      "action": "删去以该窗口作证据的写法，改用产物类型；明写四条联合不可满足未被证明，R-A 仅获弱支持。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/evidence/DIR-0002_direction_options_survey.md"
+      ],
+      "id": "DIR-0002-R5",
+      "reason": "真实缺陷：'14 小时零新任务信息'的窗口由被排除的那个产物自身定义，属定义性事实；'每条都已被触发过至少一次'只证明单条件失败，不证明联合不可满足。"
+    },
+    {
+      "action": "正文表格改用 verification 同一次机器计算的计数与比值，并标注生成时快照。source 标签按锚点规范为 action。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/evidence/DIR-0002_direction_options_survey.md",
+        "research/reflections/DIR-0002/verification.json"
+      ],
+      "id": "DIR-0002-R6",
+      "reason": "真实缺陷：同一 packet 内计数自相矛盾（131/133、288/290、36/37、1.22/1.25 MB），因为正文表格用了首轮脚本的旧计数。"
+    },
+    {
+      "action": "D4 改为分层成本/资格（旧检查点仅方法学试点，作证据须具指派模型并回到资源匹配）；D2 的方法学重叠改为未知，不以回忆定稿。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/evidence/DIR-0002_direction_options_survey.md",
+        "research/prior_art/dir0002_direction_prior_art.md"
+      ],
+      "id": "DIR-0002-R7",
+      "reason": "真实缺陷：D4 的'不需要资源匹配'与其自身 RS4 证据要求冲突；§5 承诺不使用未验证回忆，却用它限定 D2 的表述。"
+    },
+    {
+      "action": "恢复事前四条件原样，0049/EXP-0012 另列为'附加观测约束'，并声明结论范围。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/evidence/DIR-0002_direction_options_survey.md"
+      ],
+      "id": "DIR-0002-R8",
+      "reason": "真实缺陷：pincer 条件集合中途由四条变为'非纯先例＋任务族合法'，'四条'不再对应预注册清单。"
+    },
+    {
+      "action": "D5 移出方向组合，单列 §3.5 非方向观察（不满足 (a)，不属三标签菜单）。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/evidence/DIR-0002_direction_options_survey.md",
+        "research/decisions/0054_dir0002_direction_portfolio.md"
+      ],
+      "id": "DIR-0002-R9",
+      "reason": "真实缺陷：D5 使用菜单外标签并违反设计'不得以建议形式保留'的关闭条款。"
+    }
+  ],
+  "review_sha256": "b1040e3b578c58cd02fae08c3e35bb647504a691a08da5268e992e9195c118aa",
+  "schema_version": 1
+}

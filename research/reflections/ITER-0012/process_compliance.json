@@ -1,0 +1,11 @@
+{
+  "formal_run_data_integrity": "VERIFIED",
+  "formal_run_wall_budget": "PASS_75.1919_SECONDS_OF_900",
+  "supplemental_numerical_replay": "PASS_UNCHANGED_TOLERANCES",
+  "frozen_replay_module": "FAILED_READOUT_SHAPE",
+  "supplemental_serialization_failure_original_bytes": "IRRECOVERABLE_EVIDENCE_GAP",
+  "cumulative_replay_300_second_budget": "UNVERIFIABLE",
+  "scientific_decision": "INCONCLUSIVE",
+  "scientific_substatus": "LEARNING_FAILURE",
+  "gate1_claim": false
+}

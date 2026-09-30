@@ -1,0 +1,437 @@
+{
+  "cells_2x2": [
+    {
+      "artifact_p10_med_p90": [
+        0.057,
+        0.0619,
+        0.0744
+      ],
+      "cells": 24,
+      "long_p10_med_p90": [
+        0.0067,
+        0.0097,
+        0.0143
+      ],
+      "seeds": 8,
+      "short_p10_med_p90": [
+        0.0363,
+        0.0569,
+        0.132
+      ],
+      "source_file": "research/design/dir0003_spec_curve*.json",
+      "spec": "adjacent bands, phi=0.5 (primary, balanced 8 seeds)",
+      "verdict": "FALSIFIED"
+    },
+    {
+      "artifact_p10_med_p90": [
+        0.057,
+        0.0611,
+        0.0742
+      ],
+      "cells": 36,
+      "long_p10_med_p90": [
+        0.0065,
+        0.0106,
+        0.0143
+      ],
+      "seeds": 12,
+      "short_p10_med_p90": [
+        0.0412,
+        0.0625,
+        0.1569
+      ],
+      "source_file": "research/design/dir0003_spec_curve*.json",
+      "spec": "adjacent bands, phi=0.5 (12 seeds, fuller curve)",
+      "verdict": "FALSIFIED"
+    },
+    {
+      "artifact_p10_med_p90": [
+        0.0429,
+        0.0481,
+        0.0594
+      ],
+      "cells": 24,
+      "long_p10_med_p90": [
+        0.0114,
+        0.0159,
+        0.0205
+      ],
+      "seeds": 8,
+      "short_p10_med_p90": [
+        0.0253,
+        0.0483,
+        0.1018
+      ],
+      "source_file": "research/design/dir0003_spec_curve*.json",
+      "spec": "adjacent bands, phi=0.7 (held out)",
+      "verdict": "FALSIFIED"
+    },
+    {
+      "artifact_p10_med_p90": [
+        0.0563,
+        0.0607,
+        0.0707
+      ],
+      "cells": 24,
+      "long_p10_med_p90": [
+        0.0397,
+        0.1937,
+        0.2753
+      ],
+      "seeds": 8,
+      "short_p10_med_p90": [
+        0.0659,
+        0.2065,
+        0.3374
+      ],
+      "source_file": "research/design/dir0003_spec_curve*.json",
+      "spec": "separated bands, phi=0.5 (held out)",
+      "verdict": "OVERLAP"
+    },
+    {
+      "artifact_p10_med_p90": [
+        0.0773,
+        0.0817,
+        0.096
+      ],
+      "cells": 24,
+      "long_p10_med_p90": [
+        0.0185,
+        0.1788,
+        0.2342
+      ],
+      "seeds": 8,
+      "short_p10_med_p90": [
+        0.0817,
+        0.1788,
+        0.3069
+      ],
+      "source_file": "research/design/dir0003_spec_curve*.json",
+      "spec": "separated bands, phi=0.3 (held out)",
+      "verdict": "OVERLAP"
+    }
+  ],
+  "correction_note": "v2 of the ledger: the earlier field named primary_12_seed_table was populated from the 8-seed file; both primary runs are now listed separately with their seed counts, and the R1 pool range and C2 extremes are included so that 62, 128 and 0.199 are traceable.",
+  "exact_self_checks": {
+    "matched_rung_count": null,
+    "self_checks": {
+      "gram_closed_form_vs_direct_sum_max_abs_error": 6.252776074688882e-13,
+      "phi_zero_total_wide_band_should_match_v0_h4000_3_699": 3.7020118516594707
+    },
+    "source_file": "research/design/dir0003_v1_exact_check.json"
+  },
+  "family_size_range_note": "family sizes 510-1410 are the per-cell matched_rung_count range of the 12-seed primary run; the 8-seed cells are reported in cells_2x2",
+  "matching_freedom": {
+    "source_file": "research/design/dir0003_moment_diagnostic.json",
+    "summary": {
+      "adjacent_phi0.5": {
+        "matched_family_median": 816.5,
+        "max_contrast_family_median": 0.1440932672329503,
+        "max_contrast_r1pool_median": 0.04747135455828494,
+        "n_cells": 12,
+        "ols_dm1_coef_median": 0.07209000595264377,
+        "ols_dm2_coef_median": 0.08895135175777659,
+        "ols_r2_median": 0.6491593948430914,
+        "r1_pool_median": 81.5
+      },
+      "separated_phi0.5": {
+        "matched_family_median": 33.0,
+        "max_contrast_family_median": 0.25411100229480493,
+        "max_contrast_r1pool_median": 0.02353491416148512,
+        "n_cells": 12,
+        "ols_dm1_coef_median": 0.10966042159945313,
+        "ols_dm2_coef_median": 0.18144636275524667,
+        "ols_r2_median": 0.5927497145289732,
+        "r1_pool_median": 5.0
+      }
+    }
+  },
+  "primary_runs": [
+    {
+      "artifact_band": {
+        "max": 0.07818719391006357,
+        "median": 0.061121819879751516,
+        "min": 0.05691749942063473,
+        "p10": 0.057041866879063874,
+        "p90": 0.07416529788284099
+      },
+      "c2_grid_contrast": {
+        "max": 0.19845532322583725,
+        "median": 0.05719991713401751,
+        "min": 0.014418674538947851,
+        "p10": 0.02639176504357671,
+        "p90": 0.10825574102899488
+      },
+      "c2_long_lag_contrast": {
+        "max": 0.023070416611796485,
+        "median": 0.007845647151725005,
+        "min": 0.0035094486005253778,
+        "p10": 0.0044881342416106945,
+        "p90": 0.012758577576358537
+      },
+      "cells": 36,
+      "flip_lags": [
+        2,
+        3,
+        4,
+        5,
+        8,
+        10,
+        20,
+        24,
+        48
+      ],
+      "grid_contrast": {
+        "max": 0.18906637712333196,
+        "median": 0.06248461499421043,
+        "min": 0.01953584320963997,
+        "p10": 0.04117498019534038,
+        "p90": 0.15692205125086817
+      },
+      "label": "primary 12 seeds",
+      "long_lag_contrast": {
+        "max": 0.02044162927325785,
+        "median": 0.0105685991626134,
+        "min": 0.00477101371201738,
+        "p10": 0.006473933657902248,
+        "p90": 0.01426041314764586
+      },
+      "matched_family_range": [
+        510,
+        1410
+      ],
+      "r1_pool_range": [
+        62,
+        128
+      ],
+      "seeds": 12,
+      "source_file": "research/design/dir0003_spec_curve.json"
+    },
+    {
+      "artifact_band": {
+        "max": 0.07818719391006357,
+        "median": 0.06193044234739642,
+        "min": 0.05691749942063473,
+        "p10": 0.05695480965816348,
+        "p90": 0.07442451297717359
+      },
+      "c2_grid_contrast": {
+        "max": 0.12543414149960475,
+        "median": 0.053325516626655634,
+        "min": 0.014418674538947851,
+        "p10": 0.017995861737634167,
+        "p90": 0.0957768462433263
+      },
+      "c2_long_lag_contrast": {
+        "max": 0.023070416611796485,
+        "median": 0.007990102280920966,
+        "min": 0.0035094486005253778,
+        "p10": 0.0039269158289619716,
+        "p90": 0.01340393202076836
+      },
+      "cells": 24,
+      "flip_lags": [
+        2,
+        3,
+        4,
+        5,
+        8,
+        10,
+        20,
+        24,
+        48
+      ],
+      "grid_contrast": {
+        "max": 0.16058482773524418,
+        "median": 0.05687787786646903,
+        "min": 0.01953584320963997,
+        "p10": 0.03630821034933286,
+        "p90": 0.13195006327878406
+      },
+      "label": "primary 8 seeds (balanced)",
+      "long_lag_contrast": {
+        "max": 0.016570534427096453,
+        "median": 0.009744738452511864,
+        "min": 0.005895032399008043,
+        "p10": 0.006685580760377297,
+        "p90": 0.014267575671873848
+      },
+      "matched_family_range": [
+        510,
+        1078
+      ],
+      "r1_pool_range": [
+        62,
+        119
+      ],
+      "seeds": 8,
+      "source_file": "research/design/dir0003_spec_curve_primary8.json"
+    }
+  ],
+  "purpose": "every number quoted in the manuscript, with the machine-output key it comes from",
+  "r1_by_cell": {
+    "rows": [
+      {
+        "C1_grid": [
+          0.0363,
+          0.0569,
+          0.132
+        ],
+        "C1_long": [
+          0.0067,
+          0.0097,
+          0.0143
+        ],
+        "C2_grid": [
+          0.018,
+          0.0533,
+          0.0958
+        ],
+        "C2_long": [
+          0.0039,
+          0.008,
+          0.0134
+        ],
+        "artifact": [
+          0.057,
+          0.0619,
+          0.0744
+        ],
+        "spec": "primary 8 seeds"
+      },
+      {
+        "C1_grid": [
+          0.0253,
+          0.0483,
+          0.1018
+        ],
+        "C1_long": [
+          0.0114,
+          0.0159,
+          0.0205
+        ],
+        "C2_grid": [
+          0.0149,
+          0.0413,
+          0.0891
+        ],
+        "C2_long": [
+          0.006,
+          0.01,
+          0.0179
+        ],
+        "artifact": [
+          0.0429,
+          0.0481,
+          0.0594
+        ],
+        "spec": "adjacent phi=0.7"
+      },
+      {
+        "C1_grid": [
+          0.0659,
+          0.2065,
+          0.3374
+        ],
+        "C1_long": [
+          0.0397,
+          0.1937,
+          0.2753
+        ],
+        "C2_grid": [
+          0.0062,
+          0.0253,
+          0.0729
+        ],
+        "C2_long": [
+          0.0017,
+          0.0077,
+          0.0191
+        ],
+        "artifact": [
+          0.0563,
+          0.0607,
+          0.0707
+        ],
+        "spec": "separated phi=0.5"
+      },
+      {
+        "C1_grid": [
+          0.0817,
+          0.1788,
+          0.3069
+        ],
+        "C1_long": [
+          0.0185,
+          0.1788,
+          0.2342
+        ],
+        "C2_grid": [
+          0.0011,
+          0.01,
+          0.1412
+        ],
+        "C2_long": [
+          0.0002,
+          0.0021,
+          0.0167
+        ],
+        "artifact": [
+          0.0773,
+          0.0817,
+          0.096
+        ],
+        "spec": "separated phi=0.3"
+      }
+    ],
+    "source_file": "research/design/dir0003_r1_all_cells.json"
+  },
+  "schema": "dir0003_paper_claims_ledger_v1",
+  "tanh_nested_matched": {
+    "per_seed": [
+      {
+        "artifact_band": 0.06009587380069681,
+        "contrast_long_lag_ge_20": 0.0008490744678856244,
+        "contrast_max_on_grid": 0.005791062297838767,
+        "counts": [
+          21,
+          19,
+          24
+        ],
+        "linear_pair_tanh_ratio": 0.8496626904306799,
+        "linear_total_ratio": 1.0000341495403964,
+        "seed": 0,
+        "tanh_total_ratio": 1.0019026743948796
+      },
+      {
+        "artifact_band": 0.050594821689861735,
+        "contrast_long_lag_ge_20": 0.0008000782412358465,
+        "contrast_max_on_grid": 0.0021400462435170464,
+        "counts": [
+          20,
+          20,
+          24
+        ],
+        "linear_pair_tanh_ratio": 0.8877918112526483,
+        "linear_total_ratio": 0.9944199548314139,
+        "seed": 1,
+        "tanh_total_ratio": 1.0029437541065844
+      },
+      {
+        "artifact_band": 0.05718027389318925,
+        "contrast_long_lag_ge_20": 0.004782839032114294,
+        "contrast_max_on_grid": 0.023297625119261367,
+        "counts": [
+          5,
+          43,
+          16
+        ],
+        "linear_pair_tanh_ratio": 0.71955301668811,
+        "linear_total_ratio": 0.9954814282114975,
+        "seed": 2,
+        "tanh_total_ratio": 0.9882200766052051
+      }
+    ],
+    "source_file": "research/design/dir0003_tanh_matched.json"
+  }
+}

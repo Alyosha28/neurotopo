@@ -1,0 +1,146 @@
+{
+  "arms": [
+    "RS4",
+    "SC64",
+    "D64_full"
+  ],
+  "effects": {
+    "bootstrap_resamples": 20000,
+    "bootstrap_seed": 9920014,
+    "correction_ci_lower_strictly_greater": 0.03,
+    "dense_ci_lower_strictly_greater": 0.0,
+    "primary_ci_lower_strictly_greater": 0.05,
+    "primary_delta_nat": 0.05,
+    "primary_falsify_ci_upper_strictly_less": 0.05,
+    "replication_positive_min_per_comparison": 4,
+    "retained_mean_positive_required": true
+  },
+  "entry_contract": "research/entries/EXP-0014.json",
+  "experiment_id": "EXP-0014",
+  "formal": {
+    "correction_slice_min_per_seed": 128,
+    "eval_examples": 4096,
+    "iid_root_base": 9500000,
+    "model_seeds": [
+      14201,
+      14202,
+      14203,
+      14204,
+      14205,
+      14206,
+      14207,
+      14208,
+      14209,
+      14210
+    ],
+    "ood_root_base": 9600000,
+    "rep_iid_root_base": 9800000,
+    "rep_ood_root_base": 9900000,
+    "rep_retained_root_base": 10100000,
+    "replication_seeds": [
+      14301,
+      14302,
+      14303,
+      14304,
+      14305
+    ],
+    "retained_root_base": 9700000
+  },
+  "matrix_file": "configs/exp0013_matrices.json",
+  "matrix_receipt_sha256": "97c985fd6e10304ef68501e26ad2919352fb77fe9d434e872c6dc61e7bcf4aec",
+  "matrix_sha256": "8b5ed7d51b6178fa5469e9d0b54e25f502eb267017f6ba41db404f37d59f1b6c",
+  "model": {
+    "dense_control": "D64_full",
+    "graph_seed_base": 14000000,
+    "groups": 4,
+    "hidden_size": 64,
+    "primary_control": "SC64"
+  },
+  "operation": {
+    "bootstrap_resamples": 20000,
+    "bootstrap_seed": 9940014,
+    "centered_logit_change_l2_per_sqrt_classes_min": 0.02,
+    "cka_denominator_min": 1e-12,
+    "formal_seed_pass_min": 8,
+    "non_target_max_abs_change_max": 1e-06,
+    "pairwise_linear_cka_max_exclusive": 0.98,
+    "prefix_permutation_seed_base": 9930014,
+    "readout_lesion_kl_increase_min": 0.005,
+    "replication_seed_pass_min": 4,
+    "state_change_l2_per_sqrt_width_min": 0.02,
+    "state_transplant_kl_increase_min": 0.005,
+    "state_variance_mean_min": 0.0001
+  },
+  "output": "artifacts/EXP-0014/v3",
+  "pair_manifest_file": "research/registrations/G1-RS-0001_protocol_pair_v2.json",
+  "pair_manifest_sha256": "895f2e5ab2736d75d20faaa66d96e474513c87aedbc00f902f00cbc32e230a72",
+  "protocol": "experiments/EXP-0014/v3.md",
+  "qualification_source": {
+    "analysis_path": "artifacts/EXP-0013/v3/analysis.json",
+    "chosen_lr_rule": {
+      "D64_full": "D64_full",
+      "RS4": "SC64",
+      "SC64": "SC64"
+    },
+    "experiment_id": "EXP-0013",
+    "manifest_path": "artifacts/EXP-0013/v3/manifest.json",
+    "required_decision": "SUPPORTED",
+    "required_substatus": "CONTROL_STRONG_ENOUGH"
+  },
+  "registration_lock_file": "research/registrations/G1-RS-0001_config_lock.json",
+  "resource": {
+    "absolute_estimate_eval_reserve_seconds": 300,
+    "absolute_estimate_max_seconds": 3120,
+    "absolute_estimate_multiplier": 1.2,
+    "candidate_control_p50_fail_above": 1.12,
+    "candidate_control_p50_pass_max": 1.08,
+    "engineering_seed": 9900014,
+    "engineering_update_cap": 800,
+    "preflight_wall_seconds_cap": 300,
+    "replay_wall_seconds_cap": 300,
+    "research_update_cap": 108000,
+    "timing_blocks": 3,
+    "timing_repetitions": 30,
+    "tiny_overfit_final_initial_ratio_max": 0.8,
+    "tiny_overfit_updates_per_arm": 100,
+    "warmup_repetitions": 5,
+    "worker_wall_seconds_cap": 3900
+  },
+  "task": {
+    "cue_reliability": 0.75,
+    "dimension": 6,
+    "early_query": 8,
+    "gamma": 0.13610245059775603,
+    "noise_std": 0.8,
+    "ood_length": 48,
+    "retained_cue_reliability": 0.6,
+    "retained_switch_step": 20,
+    "streams": 4,
+    "switch_step": 16,
+    "train_length": 32
+  },
+  "training": {
+    "adam_eps": 1e-08,
+    "batch_size": 128,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "deterministic": true,
+    "final_loss_weight": 0.5,
+    "grad_clip": 1.0,
+    "monitor_root_base": 9340000,
+    "monitor_steps": [
+      400,
+      1200,
+      2400
+    ],
+    "pre_loss_weight": 0.5,
+    "threads": 1,
+    "train_root_base": 10000000,
+    "updates_per_arm_seed": 2400,
+    "weight_decay": 0.0
+  },
+  "version": "v3",
+  "workflow": "phase_reveal_formal"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "EXP-0008",
+  "version": "v1",
+  "title": "Final revise-answer frozen-state linear accessibility",
+  "status": "COMPLETED",
+  "research_question": "After late evidence, is the selected revise answer at least3pp less linearly accessible in block-model final states than matched random states?",
+  "prior_art_checked": [
+    "Piwek2023 retrocue RNN states",
+    "Kozachkov2022 working-memory decoders",
+    "EXP-0006/0007 prior-state probes",
+    "RIMs",
+    "TRNN"
+  ],
+  "strongest_rejection_reason": "New supervised linear head has different objective and additional labels; low access can reflect nonlinear binding rather than lost information.",
+  "hypothesis": "M3-C0 delay32 revise-only final-label probe accuracy has paired CI upper<-3pp, subject to source/refit/positive-control/behavior guards.",
+  "baselines": [
+    "random_gru matched",
+    "gru_wide contextual",
+    "independent B ridge refit"
+  ],
+  "intervention": "Train fixed-capacity linear answer readouts on frozen final hidden states; compare matched architectures with same examples and labels",
+  "controls": [
+    "paired full-noise task instances",
+    "pair-level splitting",
+    "all ten frozen checkpoints",
+    "same H64/260-coefficient probe",
+    "train-only scaling",
+    "B refit stability",
+    "original revise behavior guard"
+  ],
+  "dataset": "New full-noise generator splits 1010000/1015000/1020000/1030000+delay; 4096/4096/1024/2048 counterfactual pairs",
+  "metrics": [
+    "primary revise-only final-label accuracy",
+    "paired M3-C0 difference and CI",
+    "A/B revise refit",
+    "confirm/64 secondary",
+    "original pre/final/joint task scores"
+  ],
+  "resource_matching": "M3/C0 frozen source resources matched; probe H64->4 260 coefficients with identical pair/sibling counts, fitting and inference settings",
+  "seeds": [
+    9101,
+    9102,
+    9103,
+    9104,
+    9105,
+    9106,
+    9107,
+    9108,
+    9109,
+    9110
+  ],
+  "commit": "7242520",
+  "config": "configs/exp0008_v1.json",
+  "result": "artifacts/EXP-0008/v1/analysis.json",
+  "interpretation": "Final revised answer is highly linearly accessible in both frozen states, but the registered >=3pp between-model gap is uncertain; paired CI covers zero and -3pp.",
+  "limitations": [
+    "post-hoc direction after EXP-0007",
+    "linear decoder and extra labelled long-delay data",
+    "fixed new test stream",
+    "reused trained model seeds",
+    "no causal intervention on original head"
+  ],
+  "decision": "INCONCLUSIVE",
+  "next_action": "STOP_MECHANISM_ESCALATION. Gate1 remains closed; do not promote a secondary endpoint or add a neural mechanism."
+}

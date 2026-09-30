@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "invocations": 1,
+  "command": "PYTHONPATH=/private/tmp/neurotopo-exp0024-review/src /private/tmp/neurotopo-venv/bin/python research/iterations/ITER-0019/reproduce.py --run ~/.local/share/neurotopo/experiment-runs/EXP-0024/v1 --output research/iterations/ITER-0019/reproduction.json",
+  "source_checkout": "/private/tmp/neurotopo-exp0024-review",
+  "commit": "94f31a9d05593a8f75a6b25dad0de6650e6df98f",
+  "clone_worktree_clean": true,
+  "script_sha256": "5a1fd8bd629ea754bbc7992c9efd62daa620bdd19ee328067b2c4bca28607267",
+  "reproduction_sha256": "ecd0767c10784fcb5714fdf0dbb4b0f8b355e5f8eb421daba22fe754428792b7",
+  "review_sha256": "f8ea4741647c5945c9c53b1ccc4e7191b12a0434dbd906ec7bfd352c255ffe2a",
+  "manifest_sha256": "651d22fe9f5207b2bfff5ee43359f34ca2311072a4e7a061d9d6928c14b3f82a",
+  "completion_sha256": "c219cb8da49129805b36b1acbf56471fe1684a7ffd6511d232afb4b9f3b5f218",
+  "analysis_sha256": "26386e869dac84a5c6b44d6e7e5f5c539a552513d25789d9622587869f29820e",
+  "calibration_complete_sha256": "d9cba1dba43e70483591a4b9593efa15277be465b2f030aaac2c3b5de7934944",
+  "elapsed_seconds_inside_script": 10.748669124997832,
+  "time_cap_seconds": 300,
+  "calibration_models": 12,
+  "evaluation_cells": 192,
+  "static_tables": 12,
+  "optimizer_updates": 0,
+  "timestamp_utc": "2026-09-28T13:00:35.958730+00:00",
+  "post_replay_read_only_checks": [
+    "parent source hash",
+    "calibration completion links",
+    "clean checkout",
+    "other-seed accuracy harms"
+  ]
+}

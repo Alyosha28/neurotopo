@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "14d10fc0f35731f44b2680157015dbb0482463f230f6bde0cfa5ead5a6033dfa",
+  "reviewer": {
+    "model": "gpt-6-luna",
+    "effort": "max",
+    "context": "fresh_only_packet"
+  },
+  "issues": [],
+  "overall_assessment": "仅依据本 packet，未发现可定位的设计、计算、解释或范围缺陷。设计和行动均把256/512/1024步结果定义为同一分支轨迹的不同视界，并限定为暴露模型上的描述性诊断；行动明确说明只在t8刷新一次，且不把结果外推为规律刷新与较晚单次刷新的区分。局部切向可用分母也如实报告：REL25002/LONG_H为0/512、REL25002/LONG_U为65/512、REL25003/LONG_H为256/512、REL25003/LONG_U为0/512，并把不可用事件保留为不可用。52行汇总中有12个新seed、REL/INV两拓扑、H/U两任务和五个条件；由这些行重算的REL/INV群体均值与报告相符。全部行的切向可用事件合计10349，按每个可用事件四次评估得到41396，与行动资源记录相符。负向和伤害结果在条件表与紧凑行中可见；报告保留DESCRIPTIVE_ONLY、INCONCLUSIVE及未通过Gate1的边界。"
+}

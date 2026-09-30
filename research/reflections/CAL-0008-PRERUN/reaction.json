@@ -1,0 +1,59 @@
+{
+  "decision_impact": "UNCHANGED",
+  "next_action": "预运行审查判 READY_TO_RUN，筛查已按受审脚本运行并得配置级 CLOSE_CONFIGS（决定0063）。五项低严重度问题按比例原则接受：文档类已在运行后更正，脚本级（原因码单一拼写）延后到运行后版本。Gate 1 与全部既有判词不变。",
+  "packet_sha256": "3397c19b5c21c31689c2eb19ab7cbdf8997bef2820830e5abf2d20cf8e21b164",
+  "responses": [
+    {
+      "action": "已把审查说明问题 1 的上界改写为 v7 值；设计文档保持权威。该更正不改变任何配置的训练前门结果（实测未训练 KL 1.29–2.60，对应上界 3.27/6.05）。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/cal0008_terminal_headroom_predesign.md",
+        "research/decisions/0063_cal0008_close_configs.md"
+      ],
+      "id": "CAL-0008-PRERUN6-R1",
+      "reason": "真实不一致：审查说明门槛清单仍写未训练上界 0.25 nat，而设计 v7 已改为逐 seed 的 ln 2^M + 0.5。"
+    },
+    {
+      "action": "已删除该措辞并在 R-h 复述 §4 的跨 LR 一致门析取；§4 始终是冻结门。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/cal0008_terminal_headroom_predesign.md",
+        "research/decisions/0063_cal0008_close_configs.md"
+      ],
+      "id": "CAL-0008-PRERUN6-R2",
+      "reason": "真实遗留：§7 反驳条目 R-h 仍保留过时的“LR 不敏感门”现时措辞，且未写出 LR_TOL/κ 析取。"
+    },
+    {
+      "action": "已更正审查计数为五轮 REVISE + 第六轮 READY、重标工程产物任务名、并在 §9 台账逐条对应版本。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/cal0008_terminal_headroom_predesign.md",
+        "research/decisions/0063_cal0008_close_configs.md"
+      ],
+      "id": "CAL-0008-PRERUN6-R3",
+      "reason": "真实账目问题：两份文档都写四轮审查，而本次为第六轮；工程产物任务标签仍写 v5；台账未逐项列出第五轮各项。"
+    },
+    {
+      "action": "已把该句更正为“按公布端点计 ≤0.072”，并在诊断项注明 C1 0.0715、C4 0.0712；该项只作诊断、不设门。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/evidence/CAL-0008_terminal_headroom_screen.md",
+        "research/decisions/0063_cal0008_close_configs.md"
+      ],
+      "id": "CAL-0008-PRERUN6-R4",
+      "reason": "真实数字主张不实：公布的是每配置一个 ln2^M−H 与未训练 KL 的 min–max，按端点计残差达 0.0715/0.0712，而非“≤0.07”。"
+    },
+    {
+      "action": "已在设计内统一为单一拼写并把 OTHER_GATE_FAILED 主要归因于 n=3 下 ε_abs t 区间跨零的精度限制；脚本级措辞修正延后到运行后版本，以免运行对象与受审对象不一致（本轮运行使用受审脚本 c0809e11…）。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/cal0008_terminal_headroom_predesign.md",
+        "research/decisions/0063_cal0008_close_configs.md"
+      ],
+      "id": "CAL-0008-PRERUN6-R5",
+      "reason": "真实缺陷：INCONCLUSIVE 原因分类非单值（锚点降级两种拼写），且 OTHER_GATE_FAILED 被误释为门槛标定问题。"
+    }
+  ],
+  "review_sha256": "b577618e7fb972cd4491365b1be5fc26ae5acc96540b02b43b3baba552dfdeec",
+  "schema_version": 1
+}

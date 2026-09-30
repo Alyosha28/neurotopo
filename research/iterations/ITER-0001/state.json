@@ -1,0 +1,1229 @@
+{
+  "directions_tried": {
+    "payload-x-fixed-curriculum": [
+      "ITER-0001"
+    ]
+  },
+  "exported_at": "2026-09-23T13:39:36+00:00",
+  "findings": [
+    {
+      "event_id": "event-000010",
+      "evidence": {
+        "path": "research/iterations/ITER-0001/decision.md",
+        "sha256": "efc5286556a4f6fa828a766feff0c0966e1a470458e8d077aa811ad2b87083b5",
+        "size": 893
+      },
+      "finding": "Fixed length curriculum restores original delayed-noise task learning in three fresh seeds; removal of payload alone is not consistently sufficient.",
+      "iteration": 1,
+      "phase": "DECIDED",
+      "time": "2026-09-23T13:39:36+00:00"
+    }
+  ],
+  "iteration_log": [
+    {
+      "directions_tried": {},
+      "id": "event-000001",
+      "kind": "init",
+      "progress": {
+        "current": null,
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 0,
+        "last_seen": "2026-09-23T13:32:39+00:00",
+        "phase": null,
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:32:39+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "experiment": "EXP-0003",
+      "id": "event-000002",
+      "kind": "begin",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {},
+          "experiment": "EXP-0003",
+          "findings": {},
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:32:39+00:00",
+        "phase": "QUESTION",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:32:39+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "research/prior_art/learning_conditions.md",
+        "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+        "size": 1013
+      },
+      "finding": null,
+      "id": "event-000003",
+      "kind": "advance",
+      "phase": "PRIOR_ART",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            }
+          },
+          "experiment": "EXP-0003",
+          "findings": {
+            "PRIOR_ART": null
+          },
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:32:39+00:00",
+        "phase": "PRIOR_ART",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:32:39+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "docs/EXP-0003_pre_run_review.md",
+        "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+        "size": 3912
+      },
+      "finding": null,
+      "id": "event-000004",
+      "kind": "advance",
+      "phase": "CRITIQUE",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0003_pre_run_review.md",
+              "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+              "size": 3912
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            }
+          },
+          "experiment": "EXP-0003",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null
+          },
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:32:39+00:00",
+        "phase": "CRITIQUE",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:32:39+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "experiments/EXP-0003/v2.md",
+        "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+        "size": 4983
+      },
+      "finding": null,
+      "id": "event-000005",
+      "kind": "advance",
+      "phase": "REGISTERED",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0003_pre_run_review.md",
+              "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+              "size": 3912
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0003/v2.md",
+              "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+              "size": 4983
+            }
+          },
+          "experiment": "EXP-0003",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null
+          },
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:32:39+00:00",
+        "phase": "REGISTERED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:32:39+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "artifacts/validation/suite.json",
+        "sha256": "20aec5f459ab9f929a786a15ca1466a55774d746f77099f4e754c3b801d80465",
+        "size": 5192
+      },
+      "finding": null,
+      "id": "event-000006",
+      "kind": "advance",
+      "phase": "VALIDATED",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0003_pre_run_review.md",
+              "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+              "size": 3912
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0003/v2.md",
+              "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+              "size": 4983
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "20aec5f459ab9f929a786a15ca1466a55774d746f77099f4e754c3b801d80465",
+              "size": 5192
+            }
+          },
+          "experiment": "EXP-0003",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:32:39+00:00",
+        "phase": "VALIDATED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:32:39+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "artifacts/auto_research/live/jobs/ITER-0001/job_start.json",
+        "sha256": "9a3114263f0db94882773f8b3732c1f8ddb855640a44b00bc5bc6647cf2e7d3d",
+        "size": 2034
+      },
+      "finding": null,
+      "id": "event-000007",
+      "kind": "advance",
+      "phase": "RUNNING",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "CRITIQUE": {
+              "path": "docs/EXP-0003_pre_run_review.md",
+              "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+              "size": 3912
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0003/v2.md",
+              "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+              "size": 4983
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0001/job_start.json",
+              "sha256": "9a3114263f0db94882773f8b3732c1f8ddb855640a44b00bc5bc6647cf2e7d3d",
+              "size": 2034
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "20aec5f459ab9f929a786a15ca1466a55774d746f77099f4e754c3b801d80465",
+              "size": 5192
+            }
+          },
+          "experiment": "EXP-0003",
+          "findings": {
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:32:46+00:00",
+        "phase": "RUNNING",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:32:46+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "artifacts/EXP-0003/v2/analysis.json",
+        "sha256": "125bb62310c880f9e1eb0a4bbe7b2921e8dd921bfe6545cede43a1f78dc1fbf2",
+        "size": 45900
+      },
+      "finding": null,
+      "id": "event-000008",
+      "kind": "advance",
+      "phase": "ANALYZED",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "ANALYZED": {
+              "path": "artifacts/EXP-0003/v2/analysis.json",
+              "sha256": "125bb62310c880f9e1eb0a4bbe7b2921e8dd921bfe6545cede43a1f78dc1fbf2",
+              "size": 45900
+            },
+            "CRITIQUE": {
+              "path": "docs/EXP-0003_pre_run_review.md",
+              "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+              "size": 3912
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0003/v2.md",
+              "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+              "size": 4983
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0001/job_start.json",
+              "sha256": "9a3114263f0db94882773f8b3732c1f8ddb855640a44b00bc5bc6647cf2e7d3d",
+              "size": 2034
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "20aec5f459ab9f929a786a15ca1466a55774d746f77099f4e754c3b801d80465",
+              "size": 5192
+            }
+          },
+          "experiment": "EXP-0003",
+          "findings": {
+            "ANALYZED": null,
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:34:51+00:00",
+        "phase": "ANALYZED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:34:51+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "research/iterations/ITER-0001/review.md",
+        "sha256": "a08727bb6786d0613eb52303a77ae3aefb1e2606352d959892497de1c3c2b438",
+        "size": 4345
+      },
+      "finding": null,
+      "id": "event-000009",
+      "kind": "advance",
+      "phase": "REVIEWED",
+      "progress": {
+        "current": {
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "ANALYZED": {
+              "path": "artifacts/EXP-0003/v2/analysis.json",
+              "sha256": "125bb62310c880f9e1eb0a4bbe7b2921e8dd921bfe6545cede43a1f78dc1fbf2",
+              "size": 45900
+            },
+            "CRITIQUE": {
+              "path": "docs/EXP-0003_pre_run_review.md",
+              "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+              "size": 3912
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0003/v2.md",
+              "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+              "size": 4983
+            },
+            "REVIEWED": {
+              "path": "research/iterations/ITER-0001/review.md",
+              "sha256": "a08727bb6786d0613eb52303a77ae3aefb1e2606352d959892497de1c3c2b438",
+              "size": 4345
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0001/job_start.json",
+              "sha256": "9a3114263f0db94882773f8b3732c1f8ddb855640a44b00bc5bc6647cf2e7d3d",
+              "size": 2034
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "20aec5f459ab9f929a786a15ca1466a55774d746f77099f4e754c3b801d80465",
+              "size": 5192
+            }
+          },
+          "experiment": "EXP-0003",
+          "findings": {
+            "ANALYZED": null,
+            "CRITIQUE": null,
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "REVIEWED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0001",
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 0,
+        "findings_count": 0,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:39:36+00:00",
+        "phase": "REVIEWED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:39:36+00:00"
+    },
+    {
+      "directions_tried": {
+        "payload-x-fixed-curriculum": [
+          "ITER-0001"
+        ]
+      },
+      "evidence": {
+        "path": "research/iterations/ITER-0001/decision.md",
+        "sha256": "efc5286556a4f6fa828a766feff0c0966e1a470458e8d077aa811ad2b87083b5",
+        "size": 893
+      },
+      "finding": "Fixed length curriculum restores original delayed-noise task learning in three fresh seeds; removal of payload alone is not consistently sufficient.",
+      "id": "event-000010",
+      "kind": "advance",
+      "phase": "DECIDED",
+      "progress": {
+        "current": {
+          "decision": "SUPPORTED",
+          "direction": "payload-x-fixed-curriculum",
+          "evidence": {
+            "ANALYZED": {
+              "path": "artifacts/EXP-0003/v2/analysis.json",
+              "sha256": "125bb62310c880f9e1eb0a4bbe7b2921e8dd921bfe6545cede43a1f78dc1fbf2",
+              "size": 45900
+            },
+            "CRITIQUE": {
+              "path": "docs/EXP-0003_pre_run_review.md",
+              "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+              "size": 3912
+            },
+            "DECIDED": {
+              "path": "research/iterations/ITER-0001/decision.md",
+              "sha256": "efc5286556a4f6fa828a766feff0c0966e1a470458e8d077aa811ad2b87083b5",
+              "size": 893
+            },
+            "PRIOR_ART": {
+              "path": "research/prior_art/learning_conditions.md",
+              "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+              "size": 1013
+            },
+            "REGISTERED": {
+              "path": "experiments/EXP-0003/v2.md",
+              "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+              "size": 4983
+            },
+            "REVIEWED": {
+              "path": "research/iterations/ITER-0001/review.md",
+              "sha256": "a08727bb6786d0613eb52303a77ae3aefb1e2606352d959892497de1c3c2b438",
+              "size": 4345
+            },
+            "RUNNING": {
+              "path": "artifacts/auto_research/live/jobs/ITER-0001/job_start.json",
+              "sha256": "9a3114263f0db94882773f8b3732c1f8ddb855640a44b00bc5bc6647cf2e7d3d",
+              "size": 2034
+            },
+            "VALIDATED": {
+              "path": "artifacts/validation/suite.json",
+              "sha256": "20aec5f459ab9f929a786a15ca1466a55774d746f77099f4e754c3b801d80465",
+              "size": 5192
+            }
+          },
+          "experiment": "EXP-0003",
+          "finding": "Fixed length curriculum restores original delayed-noise task learning in three fresh seeds; removal of payload alone is not consistently sufficient.",
+          "findings": {
+            "ANALYZED": null,
+            "CRITIQUE": null,
+            "DECIDED": "Fixed length curriculum restores original delayed-noise task learning in three fresh seeds; removal of payload alone is not consistently sufficient.",
+            "PRIOR_ART": null,
+            "REGISTERED": null,
+            "REVIEWED": null,
+            "RUNNING": null,
+            "VALIDATED": null
+          },
+          "id": "ITER-0001",
+          "next_action": "Run EXP-0004 matched recurrence transfer comparison with unchanged curriculum and fresh seeds.",
+          "no_new_finding": false,
+          "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+          "replication_of": null
+        },
+        "decisions_count": 1,
+        "findings_count": 1,
+        "iteration": 1,
+        "last_seen": "2026-09-23T13:39:36+00:00",
+        "phase": "DECIDED",
+        "pivot_required": false,
+        "review_required": false,
+        "stale_count": 0,
+        "task_spec": {
+          "path": "research/loop/task_spec.md",
+          "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+          "size": 2224
+        },
+        "version": 1
+      },
+      "time": "2026-09-23T13:39:36+00:00"
+    }
+  ],
+  "logs": {
+    "heartbeat": [
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=0.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:32:46+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=5.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:32:51+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=10.3s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:32:56+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=15.4s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:01+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=20.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:06+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=25.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:12+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=30.7s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:17+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=35.9s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:22+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=41.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:27+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=46.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:32+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=51.2s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:37+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=56.4s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:42+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=61.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:47+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=66.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:53+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=71.7s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:33:58+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=76.8s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:03+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=82.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:08+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=87.1s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:13+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=92.2s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:18+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=97.3s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:23+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=102.4s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:28+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=107.5s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:33+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=112.6s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:39+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=117.8s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:44+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44350; module=neurotopo.study; elapsed=122.9s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:49+00:00"
+      },
+      {
+        "iteration": 1,
+        "note": "pid=44448; module=neurotopo.study_analysis; elapsed=0.0s",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:34:50+00:00"
+      }
+    ],
+    "orchestrator": [
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:32:46+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:32:46+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:32:51+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:32:51+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:32:56+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:32:56+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:01+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:01+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:06+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:06+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:12+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:12+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:17+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:17+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:22+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:22+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:27+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:27+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:32+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:32+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:37+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:37+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:42+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:42+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:47+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:47+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:53+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:53+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:33:58+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:33:58+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:03+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:03+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:08+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:08+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:13+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:13+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:18+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:18+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:23+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:23+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:28+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:28+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:33+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:33+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:39+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:39+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:44+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:44+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:49+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:49+00:00"
+      },
+      {
+        "age_seconds": 0,
+        "iteration": 1,
+        "kind": "watchdog",
+        "last_seen": "2026-09-23T13:34:50+00:00",
+        "phase": "RUNNING",
+        "stale": false,
+        "stale_seconds": 60,
+        "time": "2026-09-23T13:34:50+00:00"
+      }
+    ],
+    "work": [
+      {
+        "event_id": "event-000001",
+        "iteration": 0,
+        "kind": "init",
+        "phase": null,
+        "time": "2026-09-23T13:32:39+00:00"
+      },
+      {
+        "event_id": "event-000002",
+        "iteration": 1,
+        "kind": "begin",
+        "phase": "QUESTION",
+        "time": "2026-09-23T13:32:39+00:00"
+      },
+      {
+        "event_id": "event-000003",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "PRIOR_ART",
+        "time": "2026-09-23T13:32:39+00:00"
+      },
+      {
+        "event_id": "event-000004",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "CRITIQUE",
+        "time": "2026-09-23T13:32:39+00:00"
+      },
+      {
+        "event_id": "event-000005",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "REGISTERED",
+        "time": "2026-09-23T13:32:39+00:00"
+      },
+      {
+        "event_id": "event-000006",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "VALIDATED",
+        "time": "2026-09-23T13:32:39+00:00"
+      },
+      {
+        "event_id": "event-000007",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "RUNNING",
+        "time": "2026-09-23T13:32:46+00:00"
+      },
+      {
+        "event_id": "event-000008",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "ANALYZED",
+        "time": "2026-09-23T13:34:51+00:00"
+      },
+      {
+        "event_id": "event-000009",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "REVIEWED",
+        "time": "2026-09-23T13:39:36+00:00"
+      },
+      {
+        "event_id": "event-000010",
+        "iteration": 1,
+        "kind": "advance",
+        "phase": "DECIDED",
+        "time": "2026-09-23T13:39:36+00:00"
+      }
+    ]
+  },
+  "progress": {
+    "current": {
+      "decision": "SUPPORTED",
+      "direction": "payload-x-fixed-curriculum",
+      "evidence": {
+        "ANALYZED": {
+          "path": "artifacts/EXP-0003/v2/analysis.json",
+          "sha256": "125bb62310c880f9e1eb0a4bbe7b2921e8dd921bfe6545cede43a1f78dc1fbf2",
+          "size": 45900
+        },
+        "CRITIQUE": {
+          "path": "docs/EXP-0003_pre_run_review.md",
+          "sha256": "021bd540115d53eda63a4f2e93f440f44ef1c33e0e508d18238e99a58f7d0e7f",
+          "size": 3912
+        },
+        "DECIDED": {
+          "path": "research/iterations/ITER-0001/decision.md",
+          "sha256": "efc5286556a4f6fa828a766feff0c0966e1a470458e8d077aa811ad2b87083b5",
+          "size": 893
+        },
+        "PRIOR_ART": {
+          "path": "research/prior_art/learning_conditions.md",
+          "sha256": "76d52f60912fd266767b39d5b909396d90a685f0ea95d1789f2fac3b10838f40",
+          "size": 1013
+        },
+        "REGISTERED": {
+          "path": "experiments/EXP-0003/v2.md",
+          "sha256": "badf3df473fd61a11a2d2d2100ebdf0e53a0d2916704bc91d4f69696da1341ad",
+          "size": 4983
+        },
+        "REVIEWED": {
+          "path": "research/iterations/ITER-0001/review.md",
+          "sha256": "a08727bb6786d0613eb52303a77ae3aefb1e2606352d959892497de1c3c2b438",
+          "size": 4345
+        },
+        "RUNNING": {
+          "path": "artifacts/auto_research/live/jobs/ITER-0001/job_start.json",
+          "sha256": "9a3114263f0db94882773f8b3732c1f8ddb855640a44b00bc5bc6647cf2e7d3d",
+          "size": 2034
+        },
+        "VALIDATED": {
+          "path": "artifacts/validation/suite.json",
+          "sha256": "20aec5f459ab9f929a786a15ca1466a55774d746f77099f4e754c3b801d80465",
+          "size": 5192
+        }
+      },
+      "experiment": "EXP-0003",
+      "finding": "Fixed length curriculum restores original delayed-noise task learning in three fresh seeds; removal of payload alone is not consistently sufficient.",
+      "findings": {
+        "ANALYZED": null,
+        "CRITIQUE": null,
+        "DECIDED": "Fixed length curriculum restores original delayed-noise task learning in three fresh seeds; removal of payload alone is not consistently sufficient.",
+        "PRIOR_ART": null,
+        "REGISTERED": null,
+        "REVIEWED": null,
+        "RUNNING": null,
+        "VALIDATED": null
+      },
+      "id": "ITER-0001",
+      "next_action": "Run EXP-0004 matched recurrence transfer comparison with unchanged curriculum and fresh seeds.",
+      "no_new_finding": false,
+      "question": "Can nuisance payload and a fixed curriculum explain or resolve delayed-task learning?",
+      "replication_of": null
+    },
+    "decisions_count": 1,
+    "findings_count": 1,
+    "iteration": 1,
+    "last_seen": "2026-09-23T13:39:36+00:00",
+    "phase": "DECIDED",
+    "pivot_required": false,
+    "review_required": false,
+    "stale_count": 0,
+    "task_spec": {
+      "path": "research/loop/task_spec.md",
+      "sha256": "86e4f882fb0cf83999d54a359ff218b1e13de7148035b8e2a6479a078d7d201e",
+      "size": 2224
+    },
+    "version": 1
+  },
+  "version": 1
+}

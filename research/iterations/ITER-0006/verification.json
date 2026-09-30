@@ -1,0 +1,19 @@
+{
+  "scientific_decision": "INCONCLUSIVE",
+  "scope": "frozen final-state revise-answer linear-access >=3pp model deficit",
+  "reproduction_scope": "seed9101 three frozen models, delay32/64",
+  "evidence": [
+    {
+      "path": "research/iterations/ITER-0006/review.md",
+      "sha256": "ab42c1099a7338d0c8f09de3acab8a0bdcfa31d46776a41374ed91213aa947ce"
+    },
+    {
+      "path": "docs/EXP-0008_reproduction.md",
+      "sha256": "1bae0bea415e0c8d71882f9ce41a18044766b4e7af81af29e9200e8d6ccc7caa"
+    },
+    {
+      "path": "artifacts/EXP-0008/v1/analysis.json",
+      "sha256": "151b9e7c121bb940b4fa331812f6867ba4b829b7f86a0cc1ab1145110bdce3b7"
+    }
+  ]
+}

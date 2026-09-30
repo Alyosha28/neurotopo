@@ -1,0 +1,64 @@
+{
+  "command": [
+    "/private/tmp/neurotopo-venv/bin/python",
+    "-m",
+    "neurotopo.replay",
+    "--config",
+    "configs/exp0005_v2.json"
+  ],
+  "timeout_seconds": 1800,
+  "experiment": "EXP-0005",
+  "config": {
+    "experiment_id": "EXP-0005",
+    "version": "v2",
+    "workflow": "replay",
+    "output": "artifacts/EXP-0005/v2/results",
+    "source_experiment": "EXP-0004/v1",
+    "source_commit": "eec9ca4",
+    "source_config": "configs/exp0004_v1.json",
+    "checkpoint_manifest": "configs/exp0005_checkpoint_inputs.json",
+    "models": [
+      "multi_gru",
+      "random_gru",
+      "gru_wide"
+    ],
+    "seeds": [
+      9101,
+      9102,
+      9103,
+      9104,
+      9105,
+      9106,
+      9107,
+      9108,
+      9109,
+      9110
+    ],
+    "delays": [
+      32,
+      64
+    ],
+    "primary_delay": 32,
+    "payloads": [
+      "full",
+      "blank",
+      "repeat",
+      "id_only",
+      "value_only"
+    ],
+    "test_seed": 740000,
+    "test_pairs": 1024,
+    "replay_delays": [
+      32,
+      64
+    ],
+    "bootstrap_samples": 20000,
+    "bootstrap_seed": 750001,
+    "meaningful_interaction": 0.03,
+    "minimum_block_gain": 0.03,
+    "minimum_dynamic_joint": 0.1,
+    "maximum_dynamic_joint": 0.97,
+    "minimum_original_gap": -0.01,
+    "max_control_blank_degradation": 0.03
+  }
+}

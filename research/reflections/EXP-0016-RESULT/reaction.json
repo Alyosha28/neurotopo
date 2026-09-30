@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "6306f177d62738d218b54c35eba92bb3fcda8223d3587bc102b84d2e7fab087d",
+  "review_sha256": "e741e4492cfb2e35c2bec7009e3a14a6f1afa31b1b7bc431406ba32cafd04825",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "接受限定CONTROL_CEILING，关闭固定ORBIT配置并归档；不训练A、不改Gate1。"
+}

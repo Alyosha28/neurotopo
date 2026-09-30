@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "545c41a34c5e2f282c4088545f03bd4da3d8218970f0ba84319fdcfe99b3d197",
+  "reviewer": {
+    "model": "gpt-6-luna",
+    "effort": "max",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "pairing_audit_detail",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "训练实例、有效证据目标与预期输入步数均须在执行前做确定性核对；任一不匹配则停止解释。",
+        "\"training_pairing_and_block_compute_verified\": true,"
+      ],
+      "problem": "action 以一个通过标志报告配对和分块计算核验，但 packet 未给出各 300-update 块的实际 d 计数或配对有效目标/输入流的核验摘要。因此记录支持执行方已核验，却不能仅凭 packet 独立复核这项关键符合性；这不是已观察到的偏离。",
+      "why_it_matters": "主要因果对照依赖每块恰含 d=0/1/2 各 100 次，并要求两臂逐步共享有效证据和目标。若这些条件有偏差，d=4 差异就不能只归于登记的训练分布干预。",
+      "falsifiable_check": "在可复核的执行记录中列出五个块各自的 d 计数、总输入步数，以及逐步配对的 H/R、cue/source 和早末目标摘要；按冻结规则重算后应全部一致。"
+    },
+    {
+      "id": "distribution_bundle_interpretation",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "最强反驳：可变节律若改善 d=4，也可能只是见过更接近 d=4 的 d=2，而非证明固定模型使用了位置捷径；两种训练分布不同是因果干预，不能把差异归为唯一神经机制。",
+        "\"varied_d_counts\": {\n      \"0\": 500,\n      \"1\": 500,\n      \"2\": 500\n    }"
+      ],
+      "problem": "观察到的 d=4 校准差异属于固定 d=1 与含 d=0/1/2 且位置可变训练分布之间的整体对照。它无法单独识别节律或位置规律的作用；d=2 暴露改善较长干扰外推是更简单的解释。",
+      "why_it_matters": "合适的解释限于这个任务和预算下，混合干扰计数训练改善了预先指定 d=4 的校准；结果本身不证明固定臂学到了位置捷径或某个特定机制。",
+      "falsifiable_check": "在预先登记且使用新配对种子的后续设计中，加入与可变臂具有相同 d=0/1/2 次数和总输入步数、但按块集中排序的控制；保留 d=4 为主诊断。若该控制也达到相近 d=4 结果，改进更符合计数暴露解释，而非块内节律解释。"
+    },
+    {
+      "id": "resource_matching_boundary",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "故两臂在每个完整块、全程都有相同 1,500×128 个训练样本、总输入步数和 dense 线性运算代理。",
+        "\"compute_method\": \"Analytical dense linear MAC count, 2 FLOPs/MAC; includes both readouts; excludes gates/nonlinearities, bias, masking, loss, optimizer and backward.\"",
+        "\"full_training_flops_measured\": null,"
+      ],
+      "problem": "资源匹配覆盖训练样本、总输入步数和解析估算的 dense 线性前向运算代理；action 明确未测完整训练 FLOPs。因而它支持代理预算匹配，不构成端到端实际算力或峰值内存完全相等的测量证明。",
+      "why_it_matters": "若把结果进一步解读成严格的总执行算力或内存等价下的效率比较，会超出 packet 的测量范围；训练耗时虽被记录，但不是受控重复测量。",
+      "falsifiable_check": "如后续结论需要严格资源等价，按配对种子重复训练并记录完整 forward/backward/optimizer 的实测时间与峰值分配内存，报告配对差及不确定性。"
+    }
+  ],
+  "overall_assessment": "action 报告的执行与冻结设计总体相符：三组配对种子的初始参数哈希一致；每臂均为 1,500 updates，训练样本、token 数和 dense 线性前向代理相同，且报告 pairing/block-compute 核验通过。按预设门槛核对，所有 d=1 KL 均低于 0.01；可变臂三种子的 d=4 KL 均在 0.01–0.20 且 MAP 一致率高于 0.70；固定臂 d=4 KL 均高于 0.20，配对差均不高于 -0.50 nat。因此这次工程校准满足进入后续基准设计的登记条件。结论限于该任务、训练预算和整组训练分布对照；不应读作多轨迹效果或特定机制证据。资源相等的依据止于所报告的代理与预算字段，配对执行细节也仍只有通过标志供本 packet 审查。"
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "6cc4ad8c111f493f03d7c0ad700aaa250d680bddca163d8cd6a9e6ea2b7075b3",
+  "reviewer": {
+    "model": "agent-default (independent subagent; provider model id not exposed to orchestrator)",
+    "effort": "agent-default",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "candidate-op-count-missing",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "按 A0 合同的匹配规则取 `|ln(控制推理算子量/候选推理算子量)|` 最小者（并列取参数少者）为选定配置",
+        "带内取与候选算子量最接近者",
+        "1059",
+        "1411"
+      ],
+      "problem": "The frozen selector needs the A2 candidate's inference-op count, but the packet supplies only control op counts (selected w48b2=1059, w64b2=1411, w48b3=1587), so the claimed selection of w48b2 cannot be independently reproduced. The rule is highly sensitive to that missing value: candidate ops near 1300 would select w64b2, near 1500 w48b3, and near 2000 w96b2, not w48b2.",
+      "why_it_matters": "If the wrong condition was carried into Stage C, the QUALIFICATION_NOT_REPRODUCED verdict is about the wrong carrier and the A2 matched control would be mismatched, so the packet does not establish that the frozen selection rule was applied as written.",
+      "falsifiable_check": "Extract the candidate inference-op count from the A0 contract/parent config, recompute |ln(control_ops/candidate_ops)| over the six in-band d=2 configs, and check whether w48b2 is still the minimum."
+    },
+    {
+      "id": "single-config-task-qualification",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "若 `S_2` 与 `S_3` 均为空：进入 Stage B。",
+        "在该 `d` 的 `S_d` 中，按 A0 合同的匹配规则取 `|ln(控制推理算子量/候选推理算子量)|` 最小者（并列取参数少者）为选定配置，进入 Stage C。",
+        "0.9139",
+        "任务族未关闭（v2 显示 d=2 可学并有多个带内配置）"
+      ],
+      "problem": "Only the first d's compute-closest in-band config is carried to Stage C; because S_2 was non-empty, Stage B was skipped and the other in-band d=2 configs (w32b3 0.9139, w64b2 0.7455, w48b3 0.6784, w96b2 0.6827, w96b3 0.6992) remain unconfirmed single-seed points. The decision nonetheless cites these unconfirmed Stage-A points as evidence that the task family is still open, although the protocol's learnability criterion is a multi-seed mean/per-seed test.",
+      "why_it_matters": "For a task-carrier qualification, one failed compute-matched config does not rule out the other in-band menu conditions, and single-seed in-band values do not establish learnability, so the family's open/closed status and the deferral to EXP0033/0034 are not settled by the frozen evidence.",
+      "falsifiable_check": "Run the pre-registered Stage C battery on the remaining S_2 configs and/or Stage B's budget-6000 d=3 top-3; if any meets the 5-seed mean >=0.65 and per-seed >=0.58 (plus nonceiling/memoryless/oracle), the task family qualifies for that condition and the single-config qualification is insufficient."
+    },
+    {
+      "id": "independent-seed-claim",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "在选定 `(d, 配置)` 上跑 seed `29102`（第二扫描 seed）与 `29111,29112,29113`（独立确认 seed）。",
+        "资格判据：5 个 seed 的 `meaningful` 均值 ≥0.65、每 seed ≥0.58",
+        "在独立 seed 上未达门槛",
+        "0.649609375"
+      ],
+      "problem": "The decision claims failure on independent seeds, but the seeds the design labels independent (29111-29113) score 0.694140625, 0.61123046875 and 0.649609375, a mean of 0.65166015625 with minimum 0.61123046875, so they pass both learn criteria. The pre-registered 5-seed mean only fails at 0.6455 because it also pools the Stage-A selection seed 29101 and the second scan seed 29102.",
+      "why_it_matters": "The reported substatus is arithmetically supported by the pre-registered 5-seed mean, but the decision's independent-seed rationale is contradicted by the packet's own numbers and masks that independent confirmation alone is a marginal pass, which matters for whether the carrier is treated as near-qualified.",
+      "falsifiable_check": "Recompute the mean and minimum over the three accuracy entries aligned to seeds 29111, 29112, 29113; they are 0.65166015625 and 0.61123046875, both above the 0.65/0.58 learn thresholds."
+    }
+  ],
+  "overall_assessment": "分阶段菜单与判词表按原文执行、v1 缺陷披露充分；三项问题成立：选择规则所需的候选算子量未在 packet 中给出、只确认单一配置而其余带内点被当作证据、以及‘独立种子失败’的表述与自身数字矛盾。"
+}

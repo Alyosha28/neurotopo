@@ -1,0 +1,15 @@
+# CAL-0004: matched-budget cadence variation repairs the d=4 floor
+
+2026-09-24. **Engineering qualification, not a Gate 1 architecture result.** Frozen design: `research/design/gate1_cadence_calibration.md`; all paired records: `artifacts/calibration/gate1_cadence_v1.json`. The comparison used only conventional dense H64 GRUs. The fixed arm trained with one random distractor after each evidence; the varied arm used d=0/1/2, exactly 500 updates each in balanced 300-update blocks. Each paired seed began with identical weights and saw the same latent H/R, cue/source and early/final posterior targets at every update. Both arms processed **3,456,000** training tokens and the same **97,271,808,000** forward-linear-FLOP proxy, with 1,500 updates and 128 examples per update. Measured per-arm training-step times were approximately3.4 seconds per seed; the proxy excludes nonlinear, optimizer and other work.
+
+| Seed | d=1 final KL fixed / varied | d=4 final KL fixed / varied | d=4 oracle-MAP agreement fixed / varied | d=8 final KL fixed / varied |
+|---:|---:|---:|---:|---:|
+| 401 | 0.0020 / 0.0042 | 3.2930 / 0.0205 | 36.68% / 88.93% | 5.3047 / 0.0960 |
+| 402 | 0.0020 / 0.0041 | 4.0491 / 0.0181 | 29.38% / 89.43% | 6.0213 / 0.0744 |
+| 403 | 0.0019 / 0.0044 | 1.6520 / 0.0234 | 54.48% / 90.56% | 4.4704 / 0.0915 |
+
+All prespecified engineering guards passed: both arms' d=1 final KL<0.01; varied d=4 final KL lies in[0.01,0.20] with oracle-MAP agreement≥70%; fixed d=4 KL>0.20; and the varied-minus-fixed d=4 KL improvement exceeds0.5 nat in every seed. The shared d=4 exact oracle's H true-label accuracy was92.41%; varied model H accuracies were92.05%/92.02%/92.11%, while fixed was52.12%/39.78%/67.68%. Thus CAL-0003's d=4 floor depended strongly on the **training condition** and was not an inevitable limit of a dense H64 state or the task oracle.
+
+After the packet-only reviewer noted that a single pairing-pass flag was insufficient for audit, `scripts/audit_cadence_pairing.py` independently regenerated every 1,500-step training pair for all three seeds. `artifacts/calibration/gate1_cadence_pair_audit.json` records five blocks per seed, each with d=0/1/2 counts100/100/100, **691,200 tokens per arm per block**, equal forward-linear proxies and an identical effective-input/target SHA-256 for both arms. Its totals match the frozen run report. This verifies deterministic data/budget pairing under the current generator, not the causal reason for the performance difference.
+
+The changed training distribution includes exposure to d=2 as well as varied event cadence, so this calibration cannot isolate whether distributional range, explicit tag use, gradient path lengths or another optimization effect caused the improvement. The d=8/16 outcomes are secondary and cannot replace the predeclared d=4 diagnostic. Three engineering seeds, one fixed evaluation stream and no architecture intervention do not establish a general training method or Gate 1 benefit. This qualified d=4 task configuration can be considered for a separately registered, new-seed matched architecture test; it does not advance Gate 1 by itself.

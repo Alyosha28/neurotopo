@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "f1a1c8bbee73f6f239277d8673dd1fc3df5dc909f36dbb7ed2436c8e9947c2a9",
+  "reviewer": {
+    "model": "inherited-model-not-exposed",
+    "effort": "inherited",
+    "context": "fresh_only_packet"
+  },
+  "issues": [],
+  "overall_assessment": "READY_FOR_IMPLEMENTATION。此判词仅接受实现及非研究样本的工程验证，不批准正式运行、控制训练或Gate1资格。包中已在样本前具名ORBIT-SOFT、实际主控制B和有限预算后验KL预测，并给出可改变的决定：原信息门任一失败即关闭这个固定任务配置，取消其尚未获准执行的后续资格/效果计划；成功则继续HOLD。取消的是未来计划而非已经在执行的144000更新，不应把这一数量写成实际节省算力。相较0029所拒绝的无论正负都不回答项目主问题的温度旁支，这个至多600秒、零更新的必要条件筛查具有有限但明确的否决价值；它仍完全不能建立组织机制效果或模型headroom。0049针对现行G1-RS的任务寻找上限未被重开，任务只允许一个原已给定的配置且失败禁止换参数；本次事前批评认可这一独立问题的有限决策用途，未裁定ORBIT-SOFT属于合格Gate1因子，也未解除DIR0007/0084的正式资格停止点。后续样本运行必须由新的本次筛查注册与源码验证授权，不能援引本审查改写原设计HOLD。生成器保持原16状态、64步、T和发射律，三项阈值与原信息门相同；把suffix8视为仅见后缀的Bayes后验有平稳uniform先验依据。独立序列作为bootstrap单位正确，b/c共享重采样索引保持配对，CI明确限于固定生成器；mean(a)点值门、临界下界、不追加样本和样本暴露规则均已冻结。三门为全部成立的合取要求，这里未发现必须用额外多重校正才能保留原合取筛查解释的问题。局部shift与显式矩阵两实现及短序列路径枚举是合理算法验证组合；原数组复核与新样本复制的区别表述准确。300秒主运行及300秒复核是执行硬限，不是已证运行时；实现必须实际验证硬限、部分输出保留、有限值/负KL守卫、索引块顺序稳定性与判词优先级，否则按已冻结工程分支中止。并未在本审查执行研究代码或验证这些尚未实现的能力。完整旧设计中的模型工程、实测控制学习/余量、功效、资源以及共轭修正继续适用于未来模型研究；本筛查不承担也不满足它们。未发现本轮协议层面的阻断性缺陷。FILES_READ: derived/design.md; derived/action.md; derived/embedded_0084_dir0007_design_hold.md; derived/embedded_0049_g1rs_task_search_cap.md; derived/embedded_0029_exp0010_close_before_run.md; derived/embedded_exp0015_v1.json; derived/embedded_EXP-0015.json; derived/action_output_0_verification.json（含原DIR0007协议、review_resolution及prior-art的完整嵌入文本）; derived/EXTRACTION_MANIFEST.json。仅使用以上packet派生文件，未读取包外项目材料、未上网、未运行研究代码。packet SHA采用委托值并与派生manifest声明核对，未读取包外packet.json自行重算。"
+}

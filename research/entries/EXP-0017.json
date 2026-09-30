@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "track": "independent_benchmark",
+  "experiment_id": "EXP-0017",
+  "direction": "order_observation_control_qualification",
+  "question": "Do D64 controls learn all four fixed ORDER-OBS cells with at least 0.02 nat OOD headroom?",
+  "purpose": "Bounded control qualification of a fixed operation-algebra by observability matrix, not candidate effects or Gate1.",
+  "gate1_claim": false,
+  "resource_cap": {
+    "max_updates": 18000,
+    "max_wall_seconds": 1200
+  },
+  "task_search": {
+    "max_configurations": 4,
+    "retain_all_attempts": true,
+    "heldout_rule": "All four fixed cells retained; pilot roots exposed; namespace173001 reserved and never called."
+  },
+  "branches": {
+    "success": "CONTROL_PILOT_WINDOW only; no automatic candidate training.",
+    "failure": "Close this fixed 2x2 effect plan after learning or headroom failure; retain every cell.",
+    "borderline": "Apply frozen inequalities; no extra seeds, budget or threshold tuning."
+  },
+  "factor": null
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "40f4e0a6c13859a3d0a7a58514695e7f6891cbd4fb160d5ae7a757def7c58dba",
+  "review_sha256": "725dc28c69e0edcdbe7ac050ebf2e916b7662a93b0d7f541406dd4fae0d64098",
+  "responses": [
+    {
+      "id": "R1",
+      "disposition": "accept",
+      "reason": "首补充JSON序列化失败原件未保留，浮点断言失败记录不能替代它。",
+      "action": "明确标记IRRECOVERABLE_EVIDENCE_GAP；不伪造原件，将数值验证与流程留档质量分别报告。",
+      "evidence_paths": [
+        "research/reflections/ITER-0012/corrections.md",
+        "research/reflections/ITER-0012/process_compliance.json"
+      ]
+    },
+    {
+      "id": "R2",
+      "disposition": "accept",
+      "reason": "没有所有失败/定位调用的完整进程计时，成功30.2133秒仅是单次运行。",
+      "action": "累计300秒合规性维持UNVERIFIABLE，不重跑填补原始计时，不发预算通过声明。",
+      "evidence_paths": [
+        "research/reflections/ITER-0012/corrections.md",
+        "research/reflections/ITER-0012/process_compliance.json"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "本轮完成并归档；固定ORDER-OBS计划关闭，无自动新实验或候选训练。"
+}

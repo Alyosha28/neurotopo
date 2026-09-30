@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "c2fd10b2332bc2b21d29f0764881e7051c8c730e023933d71d32e20ea01ac8ef",
+  "review_sha256": "63db161063db6f6ac6c41e3335fa449a9c96a63d16e41b6f3391e8e370d681f0",
+  "responses": [
+    {
+      "id": "SCR-0001-R1",
+      "disposition": "accept",
+      "reason": "The screen is limited to H3-SLOT; a broader reading would exceed its specified candidate family.",
+      "action": "Explicitly separated the earlier conditional NO-GO for the original underspecified draft from this slot-only NO_SPEC decision.",
+      "evidence_paths": [
+        "research/reflections/SCR-0001/reaction_evidence.md",
+        "research/decisions/0007_h3_slot_no_spec.md"
+      ]
+    },
+    {
+      "id": "SCR-0001-R2",
+      "disposition": "accept",
+      "reason": "Rare-hypothesis persistence is not unique without exact-filter and no-resampling particle controls.",
+      "action": "Retained it as an uncovered qualitative counterfactual with required controls, not a reason to implement or pass the design screen.",
+      "evidence_paths": [
+        "research/reflections/SCR-0001/reaction_evidence.md",
+        "research/open_questions.md"
+      ]
+    },
+    {
+      "id": "SCR-0001-R3",
+      "disposition": "accept",
+      "reason": "The packet quoted prior saturation without including its seed-level quantitative evidence.",
+      "action": "Extracted all six relevant model seed KL values, fixed budgets, calibration streams and source hashes from frozen CAL-0001/0002 records.",
+      "evidence_paths": [
+        "research/reflections/SCR-0001/reaction_evidence.md",
+        "research/reflections/SCR-0001/calibration_scope_audit.json"
+      ]
+    },
+    {
+      "id": "SCR-0001-R4",
+      "disposition": "accept",
+      "reason": "Identity encoding, initial states and supervision were unspecified and could be selected after results.",
+      "action": "Added those required pre-implementation fields to the H3 candidate contract while preserving this screen's NO_SPEC result.",
+      "evidence_paths": [
+        "research/reflections/SCR-0001/reaction_evidence.md",
+        "research/design/h3_candidate_trajectory_contract.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep H3-SLOT NO_SPEC and Gate 1 closed; require a new, fully specified and independently distinguishable candidate contract before code or benchmark calibration."
+}

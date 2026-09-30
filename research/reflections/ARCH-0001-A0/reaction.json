@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "f1769114873d117245161777371b61c24edbb1b84629e48758e7e1cbbdec0a31",
+  "review_sha256": "253055d54e9d11043cc46e00b60a80212be7adf50102f9fbb48ec21e43bd1b4c",
+  "responses": [
+    {
+      "id": "ARCH-0001-A0-01",
+      "disposition": "accept",
+      "reason": "v1确实只描述直接生成下一H，无法锁定强主控制函数类。",
+      "action": "v2给出INV-COMP逐块方程、宽度和内部块数的有限菜单及只依控制侧资格和计算量的选择规则。",
+      "evidence_paths": [
+        "research/design/arch0001_successor_compatible_core_v2.md"
+      ]
+    },
+    {
+      "id": "ARCH-0001-A0-02",
+      "disposition": "accept",
+      "reason": "v1的替换改变修正器输入和经假设分支的训练梯度；同调用数不等于同梯度。",
+      "action": "v2把训练消融限为整条计算路径的有限预算检验，增加同一权重推理时的配对替换；独立信号因果主张须另做梯度处理相同的注册对照。",
+      "evidence_paths": [
+        "research/design/arch0001_successor_compatible_core_v2.md"
+      ]
+    },
+    {
+      "id": "ARCH-0001-A0-03",
+      "disposition": "accept",
+      "reason": "修正后分支被监督不证明修正前的s0/s1准确。",
+      "action": "v2要求在训练和留出集分别报告修正前/后两种合法命令的逐类误差与配对差。",
+      "evidence_paths": [
+        "research/design/arch0001_successor_compatible_core_v2.md"
+      ]
+    }
+  ],
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "v1合同不再作为当前候选；以v2重新核对A0完整性，保留本包与三项问题。额外自查确认假设logit是Gram的确定函数，v2已撤回新增信息与单凭训练消融归因的说法。"
+}

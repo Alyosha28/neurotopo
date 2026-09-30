@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "69f369551d243aa31ec6d2a9fd2ee1708bbe6e9c023b3cd102fe9bf3528b454a",
+  "review_sha256": "0123826f0fd2868a94f652e565944851df69c94f8efb455352170bea3a022d4c",
+  "responses": [
+    {
+      "id": "R1",
+      "disposition": "accept",
+      "reason": "The packet exposed an ambiguous boundary between a local architectural effect and a functional K claim. A separate preregistered mathematical/source audit resolved that boundary prospectively without reopening v0.",
+      "action": "Kept v0 NO_GO and added a prospective bounded architecture estimand with explicit limits and matched-control guards.",
+      "evidence_paths": [
+        "research/decisions/0043_gate1_architecture_estimand.md",
+        "docs/gate1_k_factor_qualification_template.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep Gate 1 closed; apply the prospectively clarified architecture estimand and strong-control audit only to a new independently reviewed candidate and frozen numeric protocol."
+}

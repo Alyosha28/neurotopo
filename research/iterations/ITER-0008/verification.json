@@ -1,0 +1,32 @@
+{
+  "scope": "EXP-0011 v6 registered resource-stop verification, no task-data access",
+  "report_sha256": "4afee53532ddc1e4b9f75c9446652cc3516b3430284ecdd29a391089c59551c7",
+  "receipt_sha256": "dfd863dbfecbea57124e408bfee24cf007ca42307e10b23fd75978d36eeb804f",
+  "manifest_sha256": "f7dbe54f0615df3fd1415f339edd50e232f98644ecdb683a60f2159db69cab4c",
+  "analysis_sha256": "0d0f9d90040e7ec1be4b0c9bf45d3a53db8f77f69b0d0cd49c0d71641a6a7764",
+  "resource_status": "RESOURCE_MISMATCH",
+  "candidate_control_p50_ratios": [
+    1.7495371280267995,
+    1.4960742094996435,
+    1.5017905738180273,
+    1.745696956438775,
+    1.493883043519498,
+    1.497609660338792,
+    1.7629289055582165,
+    1.5644017998018003,
+    1.4811477546262837
+  ],
+  "registered_failure_line": 1.12,
+  "engineering_updates": 530,
+  "research_updates": 0,
+  "run_status": "RESOURCE_STOP",
+  "missing_stage_paths": [
+    "task_information.json",
+    "qualification",
+    "formal",
+    "replication"
+  ],
+  "decision": "INCONCLUSIVE",
+  "substatus": "RESOURCE_MISMATCH",
+  "independent_review": "gpt-6-sol, read-only, inspected frozen report/receipt and result files; see review.md"
+}

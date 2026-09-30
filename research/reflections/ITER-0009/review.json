@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "c4868d99956cc904f200f162429474a834f60bd180e92194578d63a956634971",
+  "reviewer": {
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "ITER-0009-REF-01",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "每arm/seed/LR固定2,400更新",
+        "LR菜单`{0.001,0.003}`",
+        "\"all_12_iid_seed_values_above_0_15\": true",
+        "late monitors still improved."
+      ],
+      "problem": "固定的2,400更新与两档学习率只检验这组训练条件下的控制资格，无法辨别控制架构或任务确实难学，还是优化预算不足。0.003档两臂的六条IID监控曲线在1,200至2,400更新间均下降，因此预算不足是可定位的替代解释；现有曲线也不能证明增加更新就会达标。",
+      "why_it_matters": "本轮的LEARNING_FAILURE应严格解释为已冻结预算和门槛下的资格失败，不能外推为单流控制对该任务的固有学习上限。",
+      "falsifiable_check": "先用已封存的400/1,200/2,400监控值逐臂逐种子报告下降幅度和距0.15门槛的差距，仅作事后诊断。若未来另立新版本，事前注册扩展更新预算和学习率、保持同一任务与资格门，再比较是否过门；持续不过门会削弱预算不足解释。本轮不追加训练。"
+    },
+    {
+      "id": "ITER-0009-REF-02",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "训练T32/早查询8，唯一主资格OOD48",
+        "`mean KL(p_full48‖uniform)≥0.30`",
+        "对`mean KL(p_full48‖p_cue)`、`‖p_last`、`‖p_trunc`分别",
+        "任务信息过门"
+      ],
+      "problem": "任务信息门主要在T48终点证明完整历史相对捷径有信息，而实际优化及首要IID学习门在T32。packet未给出T32终点相对于cue等捷径的信息量或错cue修订率；T48的信息PASS不能直接说明T32资格点的目标结构。",
+      "why_it_matters": "如果T32主要由cue先验决定，控制失败更应定位到训练或输入读出流程；如果T32已有明显历史修订需求，才更能评价有限预算下的动态推断学习失败。两种解释对应不同的后续机制问题。",
+      "falsifiable_check": "只用本轮已冻结的T32样本和oracle，重算T32的KL(full‖cue/last/trunc)、错cue修订比例及对应的控制KL，并与T48同口径描述性比较；不得将事后T32统计补作本轮事前信息门。"
+    }
+  ],
+  "overall_assessment": "独立审查和决定将本轮限定为任务及两强单流的资格检查，未给RS4或EXP-0014任何效果结论，边界恰当。12个IID32结果均未达注册门槛且未选出LR，因此按事前分支停止条件性的EXP-0014、关闭现行G1-RS任务寻找并在归档后暂停是合理的。主要保留意见是学习失败的成因尚未被辨别：训练预算与学习率范围，以及T48信息门和T32资格点的错位，都应保持为可检验解释。当前判词INCONCLUSIVE / LEARNING_FAILURE、Gate1 NOT_PASSED与现有证据相称；不应解释成任务不可学、控制固有无能或多轨迹假设被证伪。"
+}

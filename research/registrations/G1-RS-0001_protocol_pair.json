@@ -1,0 +1,79 @@
+{
+  "claim_boundary": "Decision0043 bounded independent recurrent organization/connectivity effect on an adaptively designed synthetic task family; no novelty or Gate3 semantics",
+  "cross_round": {
+    "engineering_update_cap": 1000,
+    "formal_must_validate_qualification_review": true,
+    "no_task_family_change_after_qualification_failure": true,
+    "research_update_cap": 136800,
+    "wall_seconds_cap_sum": 7200
+  },
+  "directions": {
+    "EXP-0013": "phase_reveal_control_qualification",
+    "EXP-0014": "phase_reveal_architecture_effect"
+  },
+  "entry_order": [
+    "EXP-0013",
+    "EXP-0014"
+  ],
+  "formal": {
+    "experiment_id": "EXP-0014",
+    "minimum_useful_delta_nat": 0.05,
+    "primary": "OOD48 paired KL(SC64)-KL(RS4)",
+    "replication_seeds": [
+      14301,
+      14302,
+      14303,
+      14304,
+      14305
+    ],
+    "research_update_cap": 108000,
+    "seeds": [
+      14201,
+      14202,
+      14203,
+      14204,
+      14205,
+      14206,
+      14207,
+      14208,
+      14209,
+      14210
+    ],
+    "support_ci_lower_strictly_above_delta": true
+  },
+  "id": "G1-RS-0001_PROTOCOL_PAIR_V1",
+  "qualification": {
+    "control_selection": "per-arm lowest mean OOD48 KL among LRs passing IID32 learning on disjoint tuning streams",
+    "experiment_id": "EXP-0013",
+    "lr_menu": [
+      0.001,
+      0.003
+    ],
+    "model_seeds": [
+      14101,
+      14102,
+      14103
+    ],
+    "research_update_cap": 28800
+  },
+  "references": {
+    "formal": {
+      "path": "experiments/EXP-0014/v2.md",
+      "sha256": "47bf4193298162989552c4e405b7d6e3517df405bbe907a03cd2d4dc31d9006e"
+    },
+    "matrix": {
+      "path": "configs/exp0013_matrices.json",
+      "sha256": "8b5ed7d51b6178fa5469e9d0b54e25f502eb267017f6ba41db404f37d59f1b6c"
+    },
+    "matrix_receipt": {
+      "path": "configs/exp0013_matrices_receipt.json",
+      "sha256": "97c985fd6e10304ef68501e26ad2919352fb77fe9d434e872c6dc61e7bcf4aec"
+    },
+    "qualification": {
+      "path": "experiments/EXP-0013/v2.md",
+      "sha256": "4fdfbbd6f5d2e63fc8ba261b298b948cb34fca12e2fe4fe8dce0c41825105d74"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Pre-sample immutable qualification-to-formal link, not task/model evidence"
+}

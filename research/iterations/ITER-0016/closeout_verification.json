@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "raw_files_hash_verified": 480,
+  "raw_bytes": 190356387,
+  "source_matches_execution": true,
+  "tests": 291,
+  "research_updates": 12000,
+  "pilot_retraining_updates": 0,
+  "replay_training_updates": 0,
+  "known_legacy_general_validation_updates": 600,
+  "engineering_budget_deviation_retained": true,
+  "phase": "DECIDED",
+  "decision": "INCONCLUSIVE",
+  "reflection_issues": 2,
+  "reaction": "A1 factual contradiction rejected with clearer report wording; A2 engineering budget deviation accepted and disclosed.",
+  "new_task_or_tuning": false
+}

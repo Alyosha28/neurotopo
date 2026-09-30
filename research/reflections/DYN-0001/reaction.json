@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "14d10fc0f35731f44b2680157015dbb0482463f230f6bde0cfa5ead5a6033dfa",
+  "review_sha256": "4c037cbf0aebce2a4035b6308ae0adfcf551099be79eaeb35b8f2715ba7e3513",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "保留描述性t8单次干预结论、v2工程失败、全模型长期轨迹及局部切向不可用分母；完成归档交付，不按已见结果调整新实验。"
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "c4868d99956cc904f200f162429474a834f60bd180e92194578d63a956634971",
+  "review_sha256": "bbebc2750b69f4705142bf76a9674dad753877cb745959c46933321951c8f9ea",
+  "responses": [
+    {
+      "id": "ITER-0009-REF-01",
+      "disposition": "accept",
+      "reason": "The frozen 2400-update/two-LR comparison establishes a qualification failure but not whether longer optimization would succeed; all six lr=.003 control monitors improved late.",
+      "action": "Recorded all seed-level late-curve decreases and the remaining distance to the frozen IID gate, without further training or changing the decision.",
+      "evidence_paths": [
+        "research/reflections/ITER-0009/reaction_evidence.md",
+        "research/reflections/ITER-0009/t32_posthoc_diagnostic.json"
+      ]
+    },
+    {
+      "id": "ITER-0009-REF-02",
+      "disposition": "accept",
+      "reason": "T48 task-information guards alone did not establish the structure at the T32 training endpoint.",
+      "action": "Replayed only the already-registered T32 and T48 tuning roots, verified archived oracle targets byte-for-byte, and reported cue/last/truncated gaps plus correction rates as explicitly retrospective diagnostics.",
+      "evidence_paths": [
+        "research/reflections/ITER-0009/reaction_evidence.md",
+        "research/reflections/ITER-0009/t32_posthoc_diagnostic.json"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Archive ITER-0009 reflection and snapshot, keep Gate 1 NOT_PASSED and EXP-0014 NOT_RUN, then pause at the user request without starting another task or Gate 2."
+}

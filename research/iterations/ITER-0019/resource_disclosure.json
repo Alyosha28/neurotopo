@@ -1,0 +1,1935 @@
+{
+  "source_completion_sha256": "c219cb8da49129805b36b1acbf56471fe1684a7ffd6511d232afb4b9f3b5f218",
+  "rows": [
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "IID_H",
+      "wall_seconds": 0.009608833999664057,
+      "cpu_seconds": 0.009594000000000102,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "IID_U",
+      "wall_seconds": 0.009851457998593105,
+      "cpu_seconds": 0.009770999999999974,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "LONG_H",
+      "wall_seconds": 0.216468624999834,
+      "cpu_seconds": 0.21493000000000007,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "LONG_U",
+      "wall_seconds": 0.2250311249990773,
+      "cpu_seconds": 0.2235290000000001,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_H",
+      "wall_seconds": 0.009656250000261934,
+      "cpu_seconds": 0.009496999999999867,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_U",
+      "wall_seconds": 0.011206499999389052,
+      "cpu_seconds": 0.01097999999999999,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.22519970899884356,
+      "cpu_seconds": 0.22406700000000002,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.2215714999983902,
+      "cpu_seconds": 0.2208469999999998,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "IID_H",
+      "wall_seconds": 0.007705207997787511,
+      "cpu_seconds": 0.007683000000000106,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "IID_U",
+      "wall_seconds": 0.007840374997613253,
+      "cpu_seconds": 0.007839999999999847,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.19722779100266052,
+      "cpu_seconds": 0.19665,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.33432008400268387,
+      "cpu_seconds": 0.3030090000000003,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_H",
+      "wall_seconds": 0.010844542000995716,
+      "cpu_seconds": 0.00926199999999966,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "wall_seconds": 0.011603708000620827,
+      "cpu_seconds": 0.011500000000000288,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_H",
+      "wall_seconds": 0.25859570800093934,
+      "cpu_seconds": 0.2521270000000002,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "wall_seconds": 0.2503107500015176,
+      "cpu_seconds": 0.24844500000000025,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "IID_H",
+      "wall_seconds": 0.006473582998296479,
+      "cpu_seconds": 0.006355999999999806,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "IID_U",
+      "wall_seconds": 0.006736708000971703,
+      "cpu_seconds": 0.006580999999999726,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "LONG_H",
+      "wall_seconds": 0.14986895800029743,
+      "cpu_seconds": 0.148806,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "LONG_U",
+      "wall_seconds": 0.15765583399843308,
+      "cpu_seconds": 0.1560039999999998,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_H",
+      "wall_seconds": 0.00607516599848168,
+      "cpu_seconds": 0.006076000000000192,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_U",
+      "wall_seconds": 0.006024374997650739,
+      "cpu_seconds": 0.006024999999999725,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.16706479099957505,
+      "cpu_seconds": 0.16558399999999995,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.1670012909999059,
+      "cpu_seconds": 0.16562300000000008,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "IID_H",
+      "wall_seconds": 0.00571216599928448,
+      "cpu_seconds": 0.005660999999999916,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "IID_U",
+      "wall_seconds": 0.005718707998312311,
+      "cpu_seconds": 0.00571799999999989,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.15847883300011745,
+      "cpu_seconds": 0.15664000000000033,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.16519841700210236,
+      "cpu_seconds": 0.16343700000000005,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "IID_H",
+      "wall_seconds": 0.006889374999445863,
+      "cpu_seconds": 0.00680499999999995,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "wall_seconds": 0.007593374997668434,
+      "cpu_seconds": 0.007508999999999766,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_H",
+      "wall_seconds": 0.1551336660013476,
+      "cpu_seconds": 0.1539950000000001,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "wall_seconds": 0.20194916699983878,
+      "cpu_seconds": 0.2002410000000001,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "IID_H",
+      "wall_seconds": 0.007663042000785936,
+      "cpu_seconds": 0.007591999999999821,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "IID_U",
+      "wall_seconds": 0.007627958999364637,
+      "cpu_seconds": 0.007629000000000552,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "LONG_H",
+      "wall_seconds": 0.21852504100024817,
+      "cpu_seconds": 0.21644600000000036,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "LONG_U",
+      "wall_seconds": 0.24431687499964028,
+      "cpu_seconds": 0.2410350000000001,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_H",
+      "wall_seconds": 0.008819042002869537,
+      "cpu_seconds": 0.008733999999999575,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_U",
+      "wall_seconds": 0.008237124999141088,
+      "cpu_seconds": 0.008238000000000412,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.23070662499958416,
+      "cpu_seconds": 0.2287549999999996,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.25709070800076006,
+      "cpu_seconds": 0.25435799999999986,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "IID_H",
+      "wall_seconds": 0.007453165999322664,
+      "cpu_seconds": 0.007452999999999932,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "IID_U",
+      "wall_seconds": 0.00800537500253995,
+      "cpu_seconds": 0.007921999999999763,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.19765600000027916,
+      "cpu_seconds": 0.19665199999999938,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.23964537500069127,
+      "cpu_seconds": 0.23671500000000023,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_H",
+      "wall_seconds": 0.007896916002209764,
+      "cpu_seconds": 0.007801999999999865,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "wall_seconds": 0.008805708999716444,
+      "cpu_seconds": 0.008686999999999223,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_H",
+      "wall_seconds": 0.1912685839997721,
+      "cpu_seconds": 0.19040800000000058,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "wall_seconds": 0.28266329200050677,
+      "cpu_seconds": 0.27573699999999945,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "IID_H",
+      "wall_seconds": 0.007700124999246327,
+      "cpu_seconds": 0.0075299999999991485,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "IID_U",
+      "wall_seconds": 0.009700208000140265,
+      "cpu_seconds": 0.009336000000000233,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "LONG_H",
+      "wall_seconds": 0.19560275000185356,
+      "cpu_seconds": 0.19402700000000017,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "LONG_U",
+      "wall_seconds": 0.18860587499875692,
+      "cpu_seconds": 0.18847299999999922,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_H",
+      "wall_seconds": 0.006782208998629358,
+      "cpu_seconds": 0.006781000000000148,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_U",
+      "wall_seconds": 0.007010207998973783,
+      "cpu_seconds": 0.007011999999999574,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.1951723749989469,
+      "cpu_seconds": 0.19494800000000012,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.19573637500070618,
+      "cpu_seconds": 0.1955140000000002,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "IID_H",
+      "wall_seconds": 0.006206665999343386,
+      "cpu_seconds": 0.00620700000000074,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "IID_U",
+      "wall_seconds": 0.006693250001262641,
+      "cpu_seconds": 0.006693000000000282,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.17723237500104005,
+      "cpu_seconds": 0.17698899999999984,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.1916071669984376,
+      "cpu_seconds": 0.19104200000000038,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "IID_H",
+      "wall_seconds": 0.006529583999508759,
+      "cpu_seconds": 0.006529999999999703,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "wall_seconds": 0.007125083000573795,
+      "cpu_seconds": 0.00712500000000027,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_H",
+      "wall_seconds": 0.17777529199884157,
+      "cpu_seconds": 0.1756600000000006,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "wall_seconds": 0.20852599999852828,
+      "cpu_seconds": 0.20832599999999957,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "IID_H",
+      "wall_seconds": 0.007966000001033535,
+      "cpu_seconds": 0.007955999999998298,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "IID_U",
+      "wall_seconds": 0.008480415999656543,
+      "cpu_seconds": 0.00847699999999918,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "LONG_H",
+      "wall_seconds": 0.19456941599855782,
+      "cpu_seconds": 0.19443900000000092,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "LONG_U",
+      "wall_seconds": 0.23291545900065103,
+      "cpu_seconds": 0.23260199999999998,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_H",
+      "wall_seconds": 0.008226374997320818,
+      "cpu_seconds": 0.00821900000000042,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_U",
+      "wall_seconds": 0.008151082998665515,
+      "cpu_seconds": 0.008150999999999797,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.20183812499817577,
+      "cpu_seconds": 0.20175300000000007,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.244335792001948,
+      "cpu_seconds": 0.24393300000000018,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "IID_H",
+      "wall_seconds": 0.007407082997815451,
+      "cpu_seconds": 0.0074070000000006075,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "IID_U",
+      "wall_seconds": 0.007770457999868086,
+      "cpu_seconds": 0.007764999999999134,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.20763370799977565,
+      "cpu_seconds": 0.20731900000000003,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.24298204200022155,
+      "cpu_seconds": 0.2425120000000014,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_H",
+      "wall_seconds": 0.007758957999612903,
+      "cpu_seconds": 0.007759999999999323,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "wall_seconds": 0.008830874998238869,
+      "cpu_seconds": 0.008823000000001358,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_H",
+      "wall_seconds": 0.1987085830005526,
+      "cpu_seconds": 0.19839900000000021,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "wall_seconds": 0.23520499999722233,
+      "cpu_seconds": 0.23489500000000163,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "IID_H",
+      "wall_seconds": 0.006374917000357527,
+      "cpu_seconds": 0.006375000000000242,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "IID_U",
+      "wall_seconds": 0.007009166998614091,
+      "cpu_seconds": 0.007009999999999295,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "LONG_H",
+      "wall_seconds": 0.1776138749992242,
+      "cpu_seconds": 0.1773410000000002,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "LONG_U",
+      "wall_seconds": 0.18319879200134892,
+      "cpu_seconds": 0.18310199999999988,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_H",
+      "wall_seconds": 0.006774957997549791,
+      "cpu_seconds": 0.006774999999999309,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_U",
+      "wall_seconds": 0.007273874998645624,
+      "cpu_seconds": 0.00726799999999983,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.19184170899825403,
+      "cpu_seconds": 0.19162999999999997,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.1966527499971562,
+      "cpu_seconds": 0.1965179999999993,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "IID_H",
+      "wall_seconds": 0.006453500001953216,
+      "cpu_seconds": 0.006453999999999738,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "IID_U",
+      "wall_seconds": 0.007064583001920255,
+      "cpu_seconds": 0.0070579999999988985,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.177336209002533,
+      "cpu_seconds": 0.17723300000000108,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.19345783299650066,
+      "cpu_seconds": 0.1933240000000005,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "IID_H",
+      "wall_seconds": 0.0065792499990493525,
+      "cpu_seconds": 0.006570999999999216,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "wall_seconds": 0.006956666002224665,
+      "cpu_seconds": 0.00695699999999988,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_H",
+      "wall_seconds": 0.17099695800061454,
+      "cpu_seconds": 0.17080199999999834,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "wall_seconds": 0.205783875000634,
+      "cpu_seconds": 0.2056559999999994,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "IID_H",
+      "wall_seconds": 0.0065028749995690305,
+      "cpu_seconds": 0.00650300000000037,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "IID_U",
+      "wall_seconds": 0.006625709000218194,
+      "cpu_seconds": 0.006626000000000687,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "LONG_H",
+      "wall_seconds": 0.18772770800205762,
+      "cpu_seconds": 0.18756600000000034,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "LONG_U",
+      "wall_seconds": 0.20588212499933434,
+      "cpu_seconds": 0.2055429999999987,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_H",
+      "wall_seconds": 0.00713704200097709,
+      "cpu_seconds": 0.007137000000000171,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_U",
+      "wall_seconds": 0.007352542001171969,
+      "cpu_seconds": 0.007353000000000165,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.20303366699954495,
+      "cpu_seconds": 0.2027940000000008,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.21886862500105053,
+      "cpu_seconds": 0.21872499999999917,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "IID_H",
+      "wall_seconds": 0.006842709000920877,
+      "cpu_seconds": 0.006821999999999662,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "IID_U",
+      "wall_seconds": 0.007379583999863826,
+      "cpu_seconds": 0.007379999999999498,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.18857929200021317,
+      "cpu_seconds": 0.18849299999999936,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.21024262500213808,
+      "cpu_seconds": 0.210071000000001,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_H",
+      "wall_seconds": 0.007087124999088701,
+      "cpu_seconds": 0.007081000000001225,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "wall_seconds": 0.007843041999876732,
+      "cpu_seconds": 0.00783699999999854,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_H",
+      "wall_seconds": 0.19334579199858126,
+      "cpu_seconds": 0.19295399999999852,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "wall_seconds": 0.23476933400161215,
+      "cpu_seconds": 0.2344469999999994,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "IID_H",
+      "wall_seconds": 0.005335333000402898,
+      "cpu_seconds": 0.005335999999999785,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "IID_U",
+      "wall_seconds": 0.005301749999489402,
+      "cpu_seconds": 0.005297000000000551,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "LONG_H",
+      "wall_seconds": 0.13728720799917937,
+      "cpu_seconds": 0.13715900000000047,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "LONG_U",
+      "wall_seconds": 0.14164795800024876,
+      "cpu_seconds": 0.14152099999999912,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_H",
+      "wall_seconds": 0.005674041996826418,
+      "cpu_seconds": 0.005674000000000845,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_U",
+      "wall_seconds": 0.0058367499987070914,
+      "cpu_seconds": 0.005831000000000586,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.15026766599839902,
+      "cpu_seconds": 0.15005000000000024,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.1581947080012469,
+      "cpu_seconds": 0.15592900000000043,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "IID_H",
+      "wall_seconds": 0.005807292000099551,
+      "cpu_seconds": 0.005800999999999945,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "IID_U",
+      "wall_seconds": 0.006015541999659035,
+      "cpu_seconds": 0.0060160000000006875,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.1475912909991166,
+      "cpu_seconds": 0.1473559999999985,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.1504689169996709,
+      "cpu_seconds": 0.15025400000000033,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "IID_H",
+      "wall_seconds": 0.00623999999879743,
+      "cpu_seconds": 0.00623100000000143,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "wall_seconds": 0.007442082998750266,
+      "cpu_seconds": 0.00742200000000004,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_H",
+      "wall_seconds": 0.15346862500155112,
+      "cpu_seconds": 0.1534040000000001,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "wall_seconds": 0.19173783400037792,
+      "cpu_seconds": 0.19148999999999994,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "IID_H",
+      "wall_seconds": 0.006874916998640401,
+      "cpu_seconds": 0.006869000000000014,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "IID_U",
+      "wall_seconds": 0.0072162079995905515,
+      "cpu_seconds": 0.007213999999999388,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "LONG_H",
+      "wall_seconds": 0.19762616700245417,
+      "cpu_seconds": 0.19732400000000005,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "LONG_U",
+      "wall_seconds": 0.2226309580000816,
+      "cpu_seconds": 0.22241799999999934,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_H",
+      "wall_seconds": 0.00722041600238299,
+      "cpu_seconds": 0.007220999999999478,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_U",
+      "wall_seconds": 0.007385458000499057,
+      "cpu_seconds": 0.007386000000000337,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.2091881669985014,
+      "cpu_seconds": 0.20904999999999951,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.24122808300307952,
+      "cpu_seconds": 0.2409320000000008,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "IID_H",
+      "wall_seconds": 0.007420416000968544,
+      "cpu_seconds": 0.00741999999999976,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "IID_U",
+      "wall_seconds": 0.007814458000211744,
+      "cpu_seconds": 0.007808000000000703,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.18928925000000163,
+      "cpu_seconds": 0.18908899999999917,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.20904950000112876,
+      "cpu_seconds": 0.20886400000000194,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_H",
+      "wall_seconds": 0.006799708000471583,
+      "cpu_seconds": 0.006793999999999301,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "wall_seconds": 0.007810165996488649,
+      "cpu_seconds": 0.007801000000000613,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_H",
+      "wall_seconds": 0.18506204199729837,
+      "cpu_seconds": 0.1829029999999996,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "wall_seconds": 0.22698608299833722,
+      "cpu_seconds": 0.22683199999999815,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "IID_H",
+      "wall_seconds": 0.006496250000054715,
+      "cpu_seconds": 0.006496999999999531,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "IID_U",
+      "wall_seconds": 0.007782832999509992,
+      "cpu_seconds": 0.007775000000002308,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "LONG_H",
+      "wall_seconds": 0.1857672090009146,
+      "cpu_seconds": 0.1856030000000004,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "LONG_U",
+      "wall_seconds": 0.19787670799996704,
+      "cpu_seconds": 0.19779899999999984,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_H",
+      "wall_seconds": 0.0063240829986170866,
+      "cpu_seconds": 0.006324999999996805,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_U",
+      "wall_seconds": 0.007200084000942297,
+      "cpu_seconds": 0.007175999999997629,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.19029279199821758,
+      "cpu_seconds": 0.19012500000000188,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.21810387499863282,
+      "cpu_seconds": 0.21794299999999822,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "IID_H",
+      "wall_seconds": 0.005946583998593269,
+      "cpu_seconds": 0.005946999999999036,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "IID_U",
+      "wall_seconds": 0.006909457999427104,
+      "cpu_seconds": 0.006904999999999717,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.16866899999877205,
+      "cpu_seconds": 0.16843899999999934,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.19948616700276034,
+      "cpu_seconds": 0.19932700000000025,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "IID_H",
+      "wall_seconds": 0.0062472090030496474,
+      "cpu_seconds": 0.006247999999999365,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "wall_seconds": 0.007461083001544466,
+      "cpu_seconds": 0.007451999999997128,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_H",
+      "wall_seconds": 0.16837912499977392,
+      "cpu_seconds": 0.1682130000000015,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "wall_seconds": 0.22006366699861246,
+      "cpu_seconds": 0.21858100000000036,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "IID_H",
+      "wall_seconds": 0.006852124999568332,
+      "cpu_seconds": 0.006851999999998526,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "IID_U",
+      "wall_seconds": 0.007156291998398956,
+      "cpu_seconds": 0.007156999999999414,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "LONG_H",
+      "wall_seconds": 0.16138633300215588,
+      "cpu_seconds": 0.16130899999999926,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "NONE",
+      "cell": "LONG_U",
+      "wall_seconds": 0.19955112499883398,
+      "cpu_seconds": 0.1993229999999997,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_H",
+      "wall_seconds": 0.007356124999205349,
+      "cpu_seconds": 0.007352000000000913,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_U",
+      "wall_seconds": 0.007413583000015933,
+      "cpu_seconds": 0.007413999999997145,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.16003499999715132,
+      "cpu_seconds": 0.15991499999999803,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.20870233300229302,
+      "cpu_seconds": 0.20723899999999773,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "IID_H",
+      "wall_seconds": 0.006976084001507843,
+      "cpu_seconds": 0.0069699999999990325,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "IID_U",
+      "wall_seconds": 0.007454959002643591,
+      "cpu_seconds": 0.0073310000000006426,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.18062500000087311,
+      "cpu_seconds": 0.18044300000000035,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.19936308300020755,
+      "cpu_seconds": 0.19913099999999773,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_H",
+      "wall_seconds": 0.007025040998996701,
+      "cpu_seconds": 0.007024999999998727,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "wall_seconds": 0.007534000000305241,
+      "cpu_seconds": 0.007533999999999708,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_H",
+      "wall_seconds": 0.18294133400195278,
+      "cpu_seconds": 0.18283800000000028,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "wall_seconds": 0.2294776670023566,
+      "cpu_seconds": 0.22932699999999784,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "IID_H",
+      "wall_seconds": 0.005170333999558352,
+      "cpu_seconds": 0.005169999999999675,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "IID_U",
+      "wall_seconds": 0.005160750002687564,
+      "cpu_seconds": 0.005153999999997438,
+      "transition_tokens": 4096,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "LONG_H",
+      "wall_seconds": 0.14248783299990464,
+      "cpu_seconds": 0.14233000000000118,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "NONE",
+      "cell": "LONG_U",
+      "wall_seconds": 0.14114791700194473,
+      "cpu_seconds": 0.14110000000000156,
+      "transition_tokens": 131072,
+      "refresh_calls": 0
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_H",
+      "wall_seconds": 0.005897458002436906,
+      "cpu_seconds": 0.005898000000001957,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "IID_U",
+      "wall_seconds": 0.005846500000188826,
+      "cpu_seconds": 0.005841000000000207,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.14746779199776938,
+      "cpu_seconds": 0.14738000000000184,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "GAUGE8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.15340862499942887,
+      "cpu_seconds": 0.15333799999999798,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "IID_H",
+      "wall_seconds": 0.005531458002224099,
+      "cpu_seconds": 0.005524000000001195,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "IID_U",
+      "wall_seconds": 0.005426332998467842,
+      "cpu_seconds": 0.005304999999999893,
+      "transition_tokens": 4096,
+      "refresh_calls": 512
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_H",
+      "wall_seconds": 0.14155962500080932,
+      "cpu_seconds": 0.14131599999999978,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_U",
+      "wall_seconds": 0.14788991600289592,
+      "cpu_seconds": 0.147706000000003,
+      "transition_tokens": 131072,
+      "refresh_calls": 16384
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "IID_H",
+      "wall_seconds": 0.0056251249989145435,
+      "cpu_seconds": 0.0056250000000019895,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "wall_seconds": 0.006922374999703607,
+      "cpu_seconds": 0.006920000000000925,
+      "transition_tokens": 4096,
+      "refresh_calls": 4096
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_H",
+      "wall_seconds": 0.14021245800176985,
+      "cpu_seconds": 0.1401369999999993,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "wall_seconds": 0.2051794590006466,
+      "cpu_seconds": 0.20492499999999936,
+      "transition_tokens": 131072,
+      "refresh_calls": 131072
+    }
+  ],
+  "per_cell_wall_sum": 19.434080206992803,
+  "per_cell_cpu_sum": 19.32684399999998,
+  "run_wall_seconds": 23.939507375001995,
+  "run_cpu_seconds": 21.387587999999997,
+  "outside_cell_wall_seconds": 4.5054271680091915,
+  "outside_cell_cpu_seconds": 2.0607440000000175,
+  "scope": "Original recorded telemetry exported after reflection; outside-cell time includes provenance/calibration/data IO and orchestration, not an efficiency claim.",
+  "threads": "Frozen runner sets torch.set_num_threads(1); no independent live thread-count sample saved.",
+  "model_dtype": "Frozen CPU float32 model contract, checkpoint/rollout verified by independent replay.",
+  "new_model_execution": false
+}

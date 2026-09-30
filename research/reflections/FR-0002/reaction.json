@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "15edb761ecbbbefb52b25114bff328634e8a569122b42ed059f3ecec7e847296",
+  "review_sha256": "a912a81970852a96caa2fb87c99192ab50100dfddef2ca1b5f5f644d56114510",
+  "responses": [
+    {
+      "id": "FR2-01",
+      "disposition": "accept",
+      "reason": "The independent field result needs a concrete decision value relative to the capped cost.",
+      "action": "Added qualification-first resource staging and explicit success, failure and borderline consequences; field evidence only prioritizes a separately registered project candidate.",
+      "evidence_paths": [
+        "research/reflections/FR-0002/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "FR2-02",
+      "disposition": "accept",
+      "reason": "The four arms are not a matched orthogonal factorial and their rank order cannot isolate K and score main effects.",
+      "action": "Restricted the primary estimand to a package effect and the other arms to specific sufficiency/dependence diagnostics; barred pure-K or interaction conclusions.",
+      "evidence_paths": [
+        "research/reflections/FR-0002/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "FR2-03",
+      "disposition": "accept",
+      "reason": "Essential equations and thresholds were not frozen, and a matrix helper was coded before the full protocol.",
+      "action": "Recorded the unexecuted helper as process deviation and stopped all task-data/model execution until full numeric protocol and independent pre-run review.",
+      "evidence_paths": [
+        "research/reflections/FR-0002/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "FR2-04",
+      "disposition": "accept",
+      "reason": "Post-positive project eligibility would invite retrospective Gate1 relabeling.",
+      "action": "Fixed all FR-0002 outcomes as field-only; any later project claim requires a new prospectively qualified experiment and independent data.",
+      "evidence_paths": [
+        "research/reflections/FR-0002/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "FR2-05",
+      "disposition": "accept",
+      "reason": "A scored candidate is specially aligned with the generator and controls need not share that inductive bias.",
+      "action": "Made the prior-information difference explicit, retained single-with-scores sensitivity, and limited any positive finding to this fixed task/package unless independently transferred.",
+      "evidence_paths": [
+        "research/reflections/FR-0002/reaction_evidence.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep ACCEPT_FOR_PROTOCOL_DESIGN only. Freeze and independently review the full numeric EXP-0011 protocol before running the already-written but unexecuted matrix helper or any task/model code."
+}

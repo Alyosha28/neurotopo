@@ -1,0 +1,20 @@
+{
+  "experiment_id": "EXP-0022",
+  "version": "v2",
+  "review_type": "independent_static_prerun_amendment",
+  "scope": "Compared v2 protocol/config with preserved v1 and its preregistration review. Checked only the pre-implementation SHAM-axis correction; no research data, checkpoints or models were executed.",
+  "verdict": "PASS_STATIC_PRERUN",
+  "blocking": [],
+  "checks": [
+    "v2 changes the SHAM construction and version/output paths only. The candidate family, data roots, search/test separation, radii, endpoints, seed decision rules and budgets remain as reviewed in prerun_review.json.",
+    "For H=[x,y], the SHAM axis a is perpendicular to a largest-norm original column, say x. Hence ||(I-aa^T)H||_F^2=||x||^2+||(I-aa^T)y||^2 >= ||x||^2 >= ||H||_F^2/2. A common rotation can reach any displacement through 2||(I-aa^T)H||_F, which exceeds every registered r||H||_F for r<=0.15. The registered asin angle therefore exists for every nonzero finite state.",
+    "The Gaussian projection and deterministic least-parallel coordinate fallback fix the prior random-axis failure without outcome-dependent redraws. Recording fallback count and applying the common invalid-state rule to zero states keep the control auditable.",
+    "A left 3D rotation preserves H^T H and thus all three Gram components. Exact SHAM displacement, Gram preservation and INV/REL future consistency remain engineering checks; this static approval is not empirical validation."
+  ],
+  "implementation_checks": [
+    "Verify the sampled SHAM axis is perpendicular to the actual larger original H column, including equal-column tie handling, and report projection-fallback counts.",
+    "Verify float32 realized SHAM displacement equals each r||H||_F and all Gram components remain within numerical tolerance; retain any failed cell under the frozen rule.",
+    "Retain v1 rejection and v2 amendment in manifests. Apply the remaining implementation checks in prerun_review.json, particularly independent Bernoulli suffixes, correct continuation from step-32 H, and search-only selection."
+  ],
+  "interpretation_limits": "Approval is for protocol implementability before outcomes. The finite, norm-preserving equal-output candidate family, old training seeds, separate E/S rules and non-Gate-1 scope remain unchanged."
+}

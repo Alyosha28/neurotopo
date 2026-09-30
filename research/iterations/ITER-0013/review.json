@@ -1,0 +1,33 @@
+{
+  "experiment_id": "EXP-0018",
+  "protocol_version": "v1",
+  "review_type": "independent_result",
+  "reviewer_model": "gpt-6-sol/high",
+  "reviewed_commit": "248bacb904f04ebe8f1d21593a28bbfeb72b6490",
+  "actual_scope": "One supervised numerical process from a separate clean local clone: six frozen CO checkpoints, regenerated fit32/test32/test128 streams, hidden and original-logit replay, fit-only scaling, 12 saved probe stationarity checks, test score/BCE/accuracy replay, and registered decision/seed-summary checks. No probe refitting or GRU training.",
+  "evidence": [
+    "research/iterations/ITER-0013/audit_execution.json",
+    "research/iterations/ITER-0013/reproduction.json",
+    "artifacts/EXP-0018/v1/analysis.json"
+  ],
+  "execution": {
+    "numerical_processes": 1,
+    "returncode": 0,
+    "outer_elapsed_seconds": 4.1711722090003605,
+    "outer_exception": null,
+    "stderr": ""
+  },
+  "result": {
+    "pass": true,
+    "decision": "INCONCLUSIVE",
+    "substatus": "NO_USEFUL_LINEAR_READOUT",
+    "max_hidden_or_parent_logit_error": 0.0,
+    "max_probe_logit_error": 3.3306690738754696e-16,
+    "max_gradient_inf": 1.7001549409367226e-08,
+    "probe_updates": 24,
+    "original_gru_updates": 0
+  },
+  "deviations": [],
+  "accept_scientific_branch": true,
+  "boundary": "Accept only the registered INCONCLUSIVE / NO_USEFUL_LINEAR_READOUT branch for this fixed linear probe and these streams. Failure to recover a useful linear readout does not establish absence of b information, exclude nonlinear encoding, or support a Gate 1 mechanism claim. This audit reused the frozen repository reproduction module; it was not a separately implemented numerical analysis."
+}

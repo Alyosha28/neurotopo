@@ -1,0 +1,712 @@
+{
+  "decision": "INCONCLUSIVE",
+  "substatus": "NEITHER_ENDPOINT_SUPPORTED",
+  "R": "R_NOT_SUPPORTED",
+  "M": "M_NOT_SUPPORTED",
+  "independent_decision": {
+    "decision": "INCONCLUSIVE",
+    "substatus": "NEITHER_ENDPOINT_SUPPORTED",
+    "R": "R_NOT_SUPPORTED",
+    "M": "M_NOT_SUPPORTED",
+    "qualified_failure_seeds": [
+      25002,
+      25003,
+      25004,
+      25008,
+      25009
+    ],
+    "qualified_success_seeds": [
+      25001,
+      25010,
+      25011,
+      25012
+    ],
+    "M_eligible_seeds": [
+      25002,
+      25003
+    ],
+    "M_conditional_repair": {
+      "count": 1,
+      "denominator": 2,
+      "rate": 0.5,
+      "wilson95": [
+        0.09453120570165269,
+        0.9054687942983473
+      ]
+    },
+    "all_qualified_gauge_pass": true,
+    "seed_decisions": [
+      {
+        "seed": 25001,
+        "qualified": true,
+        "stratum": "SUCCESS",
+        "qualification_A": 0.9853515625,
+        "final_A": {
+          "NONE": 0.98828125,
+          "GAUGE8": 0.98828125,
+          "FULL8": 0.9697265625,
+          "EQUAL8": 0.9921875,
+          "SCALE8": 0.90625
+        },
+        "gauge_pass": true,
+        "M_exclusion": "NOT_QUALIFICATION_FAILURE",
+        "baseline_failure_reproduced": false,
+        "repair": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "harm": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": true
+        },
+        "delta": {
+          "GAUGE8": 0.0,
+          "FULL8": -0.0185546875,
+          "EQUAL8": 0.00390625,
+          "SCALE8": -0.08203125
+        }
+      },
+      {
+        "seed": 25002,
+        "qualified": true,
+        "stratum": "FAILURE",
+        "qualification_A": 0.75,
+        "final_A": {
+          "NONE": 0.75,
+          "GAUGE8": 0.75,
+          "FULL8": 1.0,
+          "EQUAL8": 1.0,
+          "SCALE8": 0.75
+        },
+        "gauge_pass": true,
+        "M_exclusion": null,
+        "baseline_failure_reproduced": true,
+        "repair": {
+          "FULL8": true,
+          "EQUAL8": true,
+          "SCALE8": false
+        },
+        "harm": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "delta": {
+          "GAUGE8": 0.0,
+          "FULL8": 0.25,
+          "EQUAL8": 0.25,
+          "SCALE8": 0.0
+        }
+      },
+      {
+        "seed": 25003,
+        "qualified": true,
+        "stratum": "FAILURE",
+        "qualification_A": 0.734375,
+        "final_A": {
+          "NONE": 0.73046875,
+          "GAUGE8": 0.73046875,
+          "FULL8": 0.8603515625,
+          "EQUAL8": 0.7294921875,
+          "SCALE8": 0.5205078125
+        },
+        "gauge_pass": true,
+        "M_exclusion": null,
+        "baseline_failure_reproduced": true,
+        "repair": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "harm": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": true
+        },
+        "delta": {
+          "GAUGE8": 0.0,
+          "FULL8": 0.1298828125,
+          "EQUAL8": -0.0009765625,
+          "SCALE8": -0.2099609375
+        }
+      },
+      {
+        "seed": 25004,
+        "qualified": true,
+        "stratum": "FAILURE",
+        "qualification_A": 0.8779296875,
+        "final_A": {
+          "NONE": 0.8701171875,
+          "GAUGE8": 0.8701171875,
+          "FULL8": 0.78515625,
+          "EQUAL8": 0.8701171875,
+          "SCALE8": 0.76953125
+        },
+        "gauge_pass": true,
+        "M_exclusion": "EQUAL_FEASIBILITY",
+        "baseline_failure_reproduced": true,
+        "repair": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "harm": {
+          "FULL8": true,
+          "EQUAL8": false,
+          "SCALE8": true
+        },
+        "delta": {
+          "GAUGE8": 0.0,
+          "FULL8": -0.0849609375,
+          "EQUAL8": 0.0,
+          "SCALE8": -0.1005859375
+        }
+      },
+      {
+        "seed": 25005,
+        "qualified": false,
+        "stratum": "UNQUALIFIED",
+        "qualification_A": 0.76171875,
+        "final_A": {
+          "NONE": 0.73828125,
+          "GAUGE8": 0.73828125,
+          "FULL8": 0.4853515625,
+          "EQUAL8": 0.732421875,
+          "SCALE8": 0.4912109375
+        },
+        "gauge_pass": true,
+        "M_exclusion": "NOT_QUALIFICATION_FAILURE",
+        "baseline_failure_reproduced": true,
+        "repair": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "harm": {
+          "FULL8": true,
+          "EQUAL8": false,
+          "SCALE8": true
+        },
+        "delta": {
+          "GAUGE8": 0.0,
+          "FULL8": -0.2529296875,
+          "EQUAL8": -0.005859375,
+          "SCALE8": -0.2470703125
+        }
+      },
+      {
+        "seed": 25006,
+        "qualified": false,
+        "stratum": "UNQUALIFIED",
+        "qualification_A": 0.7626953125,
+        "final_A": {
+          "NONE": 0.7451171875,
+          "GAUGE8": 0.7451171875,
+          "FULL8": 0.4951171875,
+          "EQUAL8": 0.748046875,
+          "SCALE8": 0.4951171875
+        },
+        "gauge_pass": true,
+        "M_exclusion": "NOT_QUALIFICATION_FAILURE",
+        "baseline_failure_reproduced": true,
+        "repair": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "harm": {
+          "FULL8": true,
+          "EQUAL8": false,
+          "SCALE8": true
+        },
+        "delta": {
+          "GAUGE8": 0.0,
+          "FULL8": -0.25,
+          "EQUAL8": 0.0029296875,
+          "SCALE8": -0.25
+        }
+      },
+      {
+        "seed": 25007,
+        "qualified": false,
+        "stratum": "UNQUALIFIED",
+        "qualification_A": 0.7451171875,
+        "final_A": {
+          "NONE": 0.759765625,
+          "GAUGE8": 0.759765625,
+          "FULL8": 0.509765625,
+          "EQUAL8": 0.759765625,
+          "SCALE8": 0.759765625
+        },
+        "gauge_pass": true,
+        "M_exclusion": "NOT_QUALIFICATION_FAILURE",
+        "baseline_failure_reproduced": true,
+        "repair": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "harm": {
+          "FULL8": true,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "delta": {
+          "GAUGE8": 0.0,
+          "FULL8": -0.25,
+          "EQUAL8": 0.0,
+          "SCALE8": 0.0
+        }
+      },
+      {
+        "seed": 25008,
+        "qualified": true,
+        "stratum": "FAILURE",
+        "qualification_A": 0.6962890625,
+        "final_A": {
+          "NONE": 0.7099609375,
+          "GAUGE8": 0.7099609375,
+          "FULL8": 0.849609375,
+          "EQUAL8": 0.9609375,
+          "SCALE8": 0.8583984375
+        },
+        "gauge_pass": true,
+        "M_exclusion": "EQUAL_FEASIBILITY",
+        "baseline_failure_reproduced": true,
+        "repair": {
+          "FULL8": false,
+          "EQUAL8": true,
+          "SCALE8": false
+        },
+        "harm": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "delta": {
+          "GAUGE8": 0.0,
+          "FULL8": 0.1396484375,
+          "EQUAL8": 0.2509765625,
+          "SCALE8": 0.1484375
+        }
+      },
+      {
+        "seed": 25009,
+        "qualified": true,
+        "stratum": "FAILURE",
+        "qualification_A": 0.875,
+        "final_A": {
+          "NONE": 0.8818359375,
+          "GAUGE8": 0.8818359375,
+          "FULL8": 0.7861328125,
+          "EQUAL8": 0.8837890625,
+          "SCALE8": 0.76953125
+        },
+        "gauge_pass": true,
+        "M_exclusion": "EQUAL_FEASIBILITY",
+        "baseline_failure_reproduced": true,
+        "repair": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "harm": {
+          "FULL8": true,
+          "EQUAL8": false,
+          "SCALE8": true
+        },
+        "delta": {
+          "GAUGE8": 0.0,
+          "FULL8": -0.095703125,
+          "EQUAL8": 0.001953125,
+          "SCALE8": -0.1123046875
+        }
+      },
+      {
+        "seed": 25010,
+        "qualified": true,
+        "stratum": "SUCCESS",
+        "qualification_A": 1.0,
+        "final_A": {
+          "NONE": 1.0,
+          "GAUGE8": 1.0,
+          "FULL8": 1.0,
+          "EQUAL8": 1.0,
+          "SCALE8": 1.0
+        },
+        "gauge_pass": true,
+        "M_exclusion": "NOT_QUALIFICATION_FAILURE",
+        "baseline_failure_reproduced": false,
+        "repair": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "harm": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "delta": {
+          "GAUGE8": 0.0,
+          "FULL8": 0.0,
+          "EQUAL8": 0.0,
+          "SCALE8": 0.0
+        }
+      },
+      {
+        "seed": 25011,
+        "qualified": true,
+        "stratum": "SUCCESS",
+        "qualification_A": 1.0,
+        "final_A": {
+          "NONE": 1.0,
+          "GAUGE8": 1.0,
+          "FULL8": 1.0,
+          "EQUAL8": 1.0,
+          "SCALE8": 1.0
+        },
+        "gauge_pass": true,
+        "M_exclusion": "NOT_QUALIFICATION_FAILURE",
+        "baseline_failure_reproduced": false,
+        "repair": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "harm": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "delta": {
+          "GAUGE8": 0.0,
+          "FULL8": 0.0,
+          "EQUAL8": 0.0,
+          "SCALE8": 0.0
+        }
+      },
+      {
+        "seed": 25012,
+        "qualified": true,
+        "stratum": "SUCCESS",
+        "qualification_A": 1.0,
+        "final_A": {
+          "NONE": 1.0,
+          "GAUGE8": 1.0,
+          "FULL8": 1.0,
+          "EQUAL8": 1.0,
+          "SCALE8": 1.0
+        },
+        "gauge_pass": true,
+        "M_exclusion": "NOT_QUALIFICATION_FAILURE",
+        "baseline_failure_reproduced": false,
+        "repair": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "harm": {
+          "FULL8": false,
+          "EQUAL8": false,
+          "SCALE8": false
+        },
+        "delta": {
+          "GAUGE8": 0.0,
+          "FULL8": 0.0,
+          "EQUAL8": 0.0,
+          "SCALE8": 0.0
+        }
+      }
+    ],
+    "methods": {
+      "FULL8": {
+        "repair_original_failures": {
+          "count": 1,
+          "denominator": 5,
+          "rate": 0.2,
+          "wilson95": [
+            0.036224108620327655,
+            0.6244653703187697
+          ]
+        },
+        "harm_qualified_successes": {
+          "count": 0,
+          "denominator": 4,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.48989083657188465
+          ]
+        },
+        "all_negative_deltas": {
+          "25001": -0.0185546875,
+          "25004": -0.0849609375,
+          "25005": -0.2529296875,
+          "25006": -0.25,
+          "25007": -0.25,
+          "25009": -0.095703125
+        }
+      },
+      "EQUAL8": {
+        "repair_original_failures": {
+          "count": 2,
+          "denominator": 5,
+          "rate": 0.4,
+          "wilson95": [
+            0.11762077420017036,
+            0.7692757187795287
+          ]
+        },
+        "harm_qualified_successes": {
+          "count": 0,
+          "denominator": 4,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.48989083657188465
+          ]
+        },
+        "all_negative_deltas": {
+          "25003": -0.0009765625,
+          "25005": -0.005859375
+        }
+      },
+      "SCALE8": {
+        "repair_original_failures": {
+          "count": 0,
+          "denominator": 5,
+          "rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.4344824648984954
+          ]
+        },
+        "harm_qualified_successes": {
+          "count": 1,
+          "denominator": 4,
+          "rate": 0.25,
+          "wilson95": [
+            0.04558726079439873,
+            0.6993581574915435
+          ]
+        },
+        "all_negative_deltas": {
+          "25001": -0.08203125,
+          "25003": -0.2099609375,
+          "25004": -0.1005859375,
+          "25005": -0.2470703125,
+          "25006": -0.25,
+          "25009": -0.1123046875
+        }
+      }
+    },
+    "new_seed_effects": {
+      "REL": {
+        "GAUGE8": {
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "descriptive_t95": [
+            0.0,
+            0.0
+          ]
+        },
+        "FULL8": {
+          "values": [
+            -0.0185546875,
+            0.25,
+            0.1298828125,
+            -0.0849609375,
+            -0.2529296875,
+            -0.25,
+            -0.25,
+            0.1396484375,
+            -0.095703125,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": -0.036051432291666664,
+          "sample_sd": 0.16208020296318196,
+          "min": -0.2529296875,
+          "max": 0.25,
+          "descriptive_t95": [
+            -0.13903228016658256,
+            0.06692941558324925
+          ]
+        },
+        "EQUAL8": {
+          "values": [
+            0.00390625,
+            0.25,
+            -0.0009765625,
+            0.0,
+            -0.005859375,
+            0.0029296875,
+            0.0,
+            0.2509765625,
+            0.001953125,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.041910807291666664,
+          "sample_sd": 0.09745581199848688,
+          "min": -0.005859375,
+          "max": 0.2509765625,
+          "descriptive_t95": [
+            -0.02000966150378746,
+            0.10383127608712078
+          ]
+        },
+        "SCALE8": {
+          "values": [
+            -0.08203125,
+            0.0,
+            -0.2099609375,
+            -0.1005859375,
+            -0.2470703125,
+            -0.25,
+            0.0,
+            0.1484375,
+            -0.1123046875,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": -0.07112630208333333,
+          "sample_sd": 0.12000477848749894,
+          "min": -0.25,
+          "max": 0.1484375,
+          "descriptive_t95": [
+            -0.14737370066594363,
+            0.005121096499276959
+          ]
+        }
+      },
+      "INV": {
+        "GAUGE8": {
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "descriptive_t95": [
+            0.0,
+            0.0
+          ]
+        },
+        "FULL8": {
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "descriptive_t95": [
+            0.0,
+            0.0
+          ]
+        },
+        "EQUAL8": {
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "descriptive_t95": [
+            0.0,
+            0.0
+          ]
+        },
+        "SCALE8": {
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "sample_sd": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "descriptive_t95": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    }
+  },
+  "reproduction_passed": true,
+  "gate1_claim": false,
+  "strongest_alternative": "Supervised finite-state codebook; calibration labels and prototype state can explain rescue without a unique topology mechanism.",
+  "interpretation_limit": "Conditional failure and M-eligible denominators are selected by fixed qualification/control criteria; no biological or Gate 1 conclusion.",
+  "failure_seed_count": 5,
+  "M_eligible_count": 2,
+  "reference_excluded": 23005
+}

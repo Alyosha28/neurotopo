@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "01a68efb8c19f703d2d79cdeadd374795b13e4b9ecaeae456ab25331ad8e6bcc",
+  "reviewer": {
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "R1",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "CAL-0004 qualified the varied d=0/1/2 training distribution using **dense GRUs only**",
+        "The decisive guard failure is **C0 d=4 headroom**: mean KL0.012463 against minimum0.07;0/10 seeds had KL≥0.05 against required8/10."
+      ],
+      "problem": "主终点难度由稠密 GRU 的校准结果选定，却未用实际主对照 C0 的预先独立样本验证 oracle-relative 误差余量。正式 C0 在 d=4 的平均 KL 仅约 0.01246 nat；由于 M3 的 KL 非负，同一测试流上的平均 Δ 不可能达到预设的 0.05 nat。",
+      "why_it_matters": "这是实验设计与基线校准策略造成的可判别性失败，而非仅因十个种子统计功效不足；即使 M3 达到零 KL，主效应门槛也不可达。不能据此推断四块结构的一般优劣。",
+      "falsifiable_check": "对未来的新协议，先以与确认实验完全隔离的 C0-only 校准种子和测试流，固定训练预算后测量各候选 d 的 C0 KL 分布及达到 0.05 nat 的比例；锁定合格终点后再独立运行 M3/C0 配对确认实验，并保留所有未合格候选。"
+    },
+    {
+      "id": "R2",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "Otherwise the structural transfer decision is **INCONCLUSIVE**, while practical learning failures or ceilings are still reported.",
+        "The predeclared rule therefore blocks both `SUPPORTED` and `FALSIFIED` for the useful-effect claim.",
+        "Independent scientific review reconstructed 90 condition metrics from prediction arrays and confirmed `C0−M3` mean−0.001356 nat,95%CI[−0.002990,+0.000120]."
+      ],
+      "problem": "判定顺序在 headroom 失败时强制输出 INCONCLUSIVE，即使配对区间上界 0.000120 nat 远低于 0.05 nat。该规则预先冻结，执行时应遵守；但单一标签把“此固定基准上大于 0.05 的改善不可能”和“结构效应在合格基准上尚未检验”压在一起。",
+      "why_it_matters": "若只读取 INCONCLUSIVE，可能误以为观测对比仍容许预设幅度；若只读取区间，又可能误称机制被普遍证伪。两种推断都超出各自条件。",
+      "falsifiable_check": "对冻结规则做与结果无关的判定表审计：枚举 headroom 通过/失败、CI 上下界相对 0 和 0.05 的组合，检验标签是否明确区分基准可行性、固定测试流上的效应界限、以及跨基准的结构主张；当前结果仍保持 INCONCLUSIVE。"
+    },
+    {
+      "id": "R3",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "one shared synthetic final stream is held fixed.",
+        "\"reproduction_scope\": \"seed9401 paired three-model subset\"",
+        "independent clean-checkout seed9401 reproduced all three models and predictions exactly."
+      ],
+      "problem": "独立 clean-checkout 复现只覆盖十个配对种子中的 seed9401；其余种子的执行一致性由已报告的重建检查和哈希记录支持，但 packet 未提供足以独立重跑或核对全部预测的原始工件。区间也仅条件于一个固定测试流。",
+      "why_it_matters": "这不是已有执行失败的证据，但独立复现覆盖率与跨测试流不确定性都小于“十种子、全生成器稳健”的表述范围；当前结论应限定在冻结运行和该测试流。",
+      "falsifiable_check": "在不改动冻结决策的独立审计中，按注册配置复跑剩余九个配对种子并逐一比较预测哈希；另对预先指定的新测试流重复固定模型评估，分别报告种子和测试流层面的不确定性。"
+    }
+  ],
+  "overall_assessment": "EXP-0009 的预注册 INCONCLUSIVE 决策与 headroom 门槛一致，应保持不变。主问题是用稠密基线选出的 d=4 在实际匹配主对照 C0 上接近 oracle，使 >0.05 nat 的收益在固定测试流上没有数学余量；配对数据还显示 M3 相对 C0 未出现正向趋势。该结果暴露基准资格校准失配，而不能作为拓扑机制的普遍否证。复现与不确定性证据支持冻结运行的有限结论，不支持扩大到其他种子执行路径、测试流或任务。"
+}

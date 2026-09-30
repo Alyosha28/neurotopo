@@ -1,0 +1,90 @@
+{
+  "decision_impact": "UNCHANGED",
+  "next_action": "v2 已产出，但按评审判词仍未达数值协议门槛（not_ready），两项规则请求仍为需收窄。下一步是把 B/ε/δ_min/τ_term/τ_lo/τ_hi/种子数/bootstrap/难度容差/坍缩阈值/MDD 以数字冻结并写成分离的数值协议，再送独立审查；规则裁定须另行前瞻评审。Gate 1 与全部既有判词不变，未注册实验、未授权训练。",
+  "packet_sha256": "5d6b7440d2e44322255e9f0755b52f7fc29c5ae74c09dd786aad0a7f2b597480",
+  "responses": [
+    {
+      "action": "v2 §4.8 新增配对 MDD ≤ δ_min 与分辨力检查（终点须分辨先验已知不同的臂）；§4 末段明确资格门不能排除结构零交互，区分依赖预注册方向与 I/I_flat 双对照。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/g1_k_structure_learning_efficiency_v2.md",
+        "research/decisions/0060_g1_ksi_v1_review_and_v2.md"
+      ],
+      "id": "G1-KSI-0001-V1-R1",
+      "reason": "真实缺陷：七项资格门只保证可学与动态范围，没有余量或分辨力判据，结构零交互任务可以全过。"
+    },
+    {
+      "action": "v2 §2.1 冻结全部设计常数；§3 新增终端损失非劣容差 τ_term，AUC 更低但终端超容差判 INCONCLUSIVE；§5 要求效果轮前完成配对功效计算。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/g1_k_structure_learning_efficiency_v2.md",
+        "research/decisions/0060_g1_ksi_v1_review_and_v2.md"
+      ],
+      "id": "G1-KSI-0001-V1-R2",
+      "reason": "真实缺陷：设计未承诺常数而核对静默采用 β=0.8/λ=0.7/J_X=0.25/T=16；δ_min 未定；AUC 无终端非劣，快而差可获胜。"
+    },
+    {
+      "action": "v2 §4.9 改为每块独立输入投影（总参数与对照稠密输入映射相同）＋每块独立初始化；坍缩诊断升为停止项，FAIL 即停、不重调。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/g1_k_structure_learning_efficiency_v2.md",
+        "research/decisions/0060_g1_ksi_v1_review_and_v2.md"
+      ],
+      "id": "G1-KSI-0001-V1-R3",
+      "reason": "真实缺陷：共享输入投影＋块对角递归会对称坍缩，而诊断既非停止项也无补救。"
+    },
+    {
+      "action": "v2 §4.7 难度匹配升为硬门（超容差即停止），删除并存的难度不同表述；§6 明确 λ_X 变体不得进入 primary 判词。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/g1_k_structure_learning_efficiency_v2.md",
+        "research/decisions/0060_g1_ksi_v1_review_and_v2.md"
+      ],
+      "id": "G1-KSI-0001-V1-R4",
+      "reason": "真实缺陷：§7(a) 与 §4.7 并存矛盾，且唯一能真正匹配难度的 λ_X 分析被隔离为次要，主判词仍与难度混淆。"
+    },
+    {
+      "action": "检查 C 增加自身流阳性对照（自身 0.545 对他链 2e-16）并写明字段为 [P(z_0=+1), P(z_0=-1)]。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/reflections/G1-KSI-0001-V1/verification.json",
+        "research/reflections/G1-KSI-0001-V1/math_verification.py"
+      ],
+      "id": "G1-KSI-0001-V1-R5",
+      "reason": "真实缺陷：检查 C 只有不敏感性、无阳性对照，字段语义未文档化。"
+    },
+    {
+      "action": "检查 E 新增轨迹枚举（T=4，65,536 条）第二实现；并修正前向递推在末步多做一次转移的缺陷（E 由 0.38 变为 1.9e-15），v1 评审数值同步更新。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/reflections/G1-KSI-0001-V1/verification.json",
+        "research/reflections/G1-KSI-0001-V1/math_verification.py",
+        "research/decisions/0060_g1_ksi_v1_review_and_v2.md"
+      ],
+      "id": "G1-KSI-0001-V1-R6",
+      "reason": "真实缺陷：所谓 oracle 独立重推实为单实现自洽检查。该意见直接产生价值：新增第二实现后立刻抓到一处 off-by-one 实现缺陷。"
+    },
+    {
+      "action": "v2 §2.3 删除标度律暗示，新增 K 不变对照 I_flat = D̄_F − D̄_X 并纳入决策规则，两个对照都必须报告。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/g1_k_structure_learning_efficiency_v2.md",
+        "research/decisions/0060_g1_ksi_v1_review_and_v2.md"
+      ],
+      "id": "G1-KSI-0001-V1-R7",
+      "reason": "真实缺陷：两点 K 被当作 ln K 标度律，且缺 K 不变对照会漏掉真实但 K 恒定的优势。"
+    },
+    {
+      "action": "v2 §2.3 改写为预测：oracle 事实只说明两条件最优计算的可分解性不同，是否表现为有限预算学习效率差异是假设；不作必然性表述。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/g1_k_structure_learning_efficiency_v2.md",
+        "research/decisions/0060_g1_ksi_v1_review_and_v2.md"
+      ],
+      "id": "G1-KSI-0001-V1-R8",
+      "reason": "真实缺陷：§2.2 把 oracle 可分解性事实写成'因此有机制依据'，与 packet 自身限制条款矛盾。"
+    }
+  ],
+  "review_sha256": "0db99d59edc28392323d9ef9933832cb1a046ec0535cbc23eaa69d7cf463bdb9",
+  "schema_version": 1
+}

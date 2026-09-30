@@ -1,0 +1,19 @@
+{
+  "scientific_decision": "PARTIALLY_SUPPORTED",
+  "scope": "fixed ridge prior-answer H8-to32 excess transfer loss direction",
+  "reproduction_scope": "seed9101, three frozen models, six heads each",
+  "evidence": [
+    {
+      "path": "research/iterations/ITER-0005/review.md",
+      "sha256": "05dd9777e2d8103db4402c5521d3aef6e528f6cb2dd16986a53ad80d42a2a9e8"
+    },
+    {
+      "path": "docs/EXP-0007_reproduction.md",
+      "sha256": "8ba7a692f6a14b8beeba3c4799e90f7415143eccd63b1b6fe2f5b244d43aa651"
+    },
+    {
+      "path": "artifacts/EXP-0007/v2/analysis.json",
+      "sha256": "92d7754d219872d4525512b4de50bf86deef835106aa70603727dc773d73779e"
+    }
+  ]
+}

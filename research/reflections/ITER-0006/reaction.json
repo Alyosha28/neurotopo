@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "4f599e906c1c16664147f69d8d8ea8588a5fc7d675982d81477d5b016edfcf75",
+  "review_sha256": "23f6cfa4a92e24b6c73c9fbfdf36287aa8c3db152782bff026ce33a435d31e11",
+  "responses": [
+    {
+      "id": "I1",
+      "disposition": "accept",
+      "reason": "The summary packet cannot itself expose the per-model hashes, split counts and resource details, although the frozen records contain them.",
+      "action": "Verified the existing records and added optional manifest/verification/decision outputs to future action packets.",
+      "evidence_paths": [
+        "research/reflections/ITER-0006/reaction_evidence.md",
+        "src/neurotopo/reflection.py",
+        "tests/test_reflection.py"
+      ]
+    },
+    {
+      "id": "I2",
+      "disposition": "accept",
+      "reason": "ANALYZED precedes independent review and reproduction; its complete flag is narrower than completion of the research iteration. The later ledger and verification record prove the prerequisites occurred before DECIDED.",
+      "action": "Distinguished analysis completion from iteration completion and enabled verification/decision outputs in packet bundles.",
+      "evidence_paths": [
+        "research/reflections/ITER-0006/reaction_evidence.md",
+        "docs/post_task_reflection.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep Gate 1 closed; use the action-output bundle for subsequent completed tasks and register a separate discriminating benchmark question."
+}

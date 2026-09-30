@@ -1,0 +1,8 @@
+{
+  "pass": true,
+  "raw_files": 2685,
+  "raw_bytes": 4625876082,
+  "inventory_sha256": "f7687cdc4dad983388db9a9e7fe40f212774ac6409c111537987e06aaca63409",
+  "index_blob_map_sha256": "4564323db1b4b1ac3c88e0b2ab032ff09aa88d64243d6eeee158d718cddc8af1",
+  "all_index_blobs_match_raw_sha256_inventory": true
+}

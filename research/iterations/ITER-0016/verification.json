@@ -1,0 +1,27 @@
+{
+  "pass": true,
+  "decision": "INCONCLUSIVE",
+  "substatus": "LEARNING_OR_ENGINEERING_UNRESOLVED",
+  "review": "research/iterations/ITER-0016/review.json",
+  "reproduction": {
+    "pass": true,
+    "decision": "INCONCLUSIVE",
+    "replication": false,
+    "mechanism": false,
+    "models": 15,
+    "evaluation_cells": 120,
+    "intervention_conditions": 75,
+    "monitor_checkpoints": 156,
+    "max_error": 0.0,
+    "replay_updates": 0,
+    "seconds": 9.449494208000033,
+    "scope": "All checkpoints/cells replayed; independent XOR, loss, contrast and verdict reductions. Shared forward/intervention implementation plus independent invariants; no retraining."
+  },
+  "statistical_review": "research/iterations/ITER-0016/statistical_review.json",
+  "tests": 291,
+  "research_updates": 12000,
+  "pilot_updates": 0,
+  "worker_run_analysis_seconds": 47.36690137499954,
+  "independent_replay_outer_seconds": 10.14,
+  "scope": "Complete authorized4new seed replication and5seed frozen interventions, no new task or retraining."
+}

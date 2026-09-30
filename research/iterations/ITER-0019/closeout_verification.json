@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "raw_files_verified_in_both_copies": 292,
+  "raw_bytes": 136832415,
+  "source_matches_execution": true,
+  "tests": 303,
+  "neural_optimizer_updates": 0,
+  "supervised_prototype_fits": 12,
+  "replay_invocations": 1,
+  "replay_models": 12,
+  "replay_evaluation_cells": 192,
+  "replay_seconds": 10.748669124997832,
+  "phase": "DECIDED",
+  "decision": "SUPPORTED/FROZEN_CASE_STATE_REFRESH_RESCUE",
+  "scope": "Prespecified exposed checkpoint case only, not population or novelty claim.",
+  "reflection_issue_count": 1,
+  "accepted_action": "Original per-cell resource telemetry exported and reconciled; no rerun.",
+  "unregistered_retuning": false
+}

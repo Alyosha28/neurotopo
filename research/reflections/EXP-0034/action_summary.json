@@ -1,0 +1,75 @@
+{
+  "experiment_id": "EXP-0034",
+  "version": "v1",
+  "gate": "A2_MATCHED_REPLICATION",
+  "decision": "FALSIFIED",
+  "substatus": "CONTROL_BETTER",
+  "carrier": {
+    "selected": {
+      "width": 48,
+      "blocks": 2,
+      "inference_ops": 1059,
+      "parameters": 1180,
+      "ops_ratio_vs_candidate": 0.9121447028423773,
+      "source": "EXP0033 carrier confirmation seeds 29301-29303; mean 0.6683, min 0.5898"
+    },
+    "by_config": {}
+  },
+  "comparison": {
+    "mean": {
+      "CAND_V4": 0.66373046875,
+      "SEL_INV": 0.7261132812500001,
+      "EXTRA_V4": 0.6716796875
+    },
+    "accuracy": {
+      "CAND_V4": [
+        0.50224609375,
+        0.737109375,
+        0.6431640625,
+        0.64013671875,
+        0.79599609375
+      ],
+      "SEL_INV": [
+        0.7083984375,
+        0.82470703125,
+        0.72314453125,
+        0.6974609375,
+        0.67685546875
+      ],
+      "EXTRA_V4": [
+        0.84638671875,
+        0.68701171875,
+        0.503125,
+        0.50107421875,
+        0.82080078125
+      ]
+    },
+    "effect_pp": -6.24,
+    "ci": [
+      -15.04,
+      4.1
+    ],
+    "control_in_band": true,
+    "resources": {
+      "candidate_parameters": 664,
+      "candidate_inference_ops": 1161,
+      "control_parameters": 1180,
+      "control_inference_ops": 1059,
+      "extra_inference_ops": 873
+    },
+    "decision": "FALSIFIED",
+    "substatus": "CONTROL_BETTER",
+    "seeds": [
+      29321,
+      29322,
+      29323,
+      29324,
+      29325
+    ],
+    "budget": 2000,
+    "task": "DELAY-2"
+  },
+  "seconds": 229.0403297920002,
+  "scope": "Exploratory probe only: even SUPPORTED here is not an A2 gate pass and needs independent replication; no A1 or old Gate 1 credit.",
+  "note": "Lean view of artifacts/EXP-0034/v1/analysis.json; per-run details omitted, all aggregate numbers and flags unchanged. Includes the frozen carrier override (w48b2, ops ratio 0.912) and the per-arm accuracies for seeds 29321-29325."
+}

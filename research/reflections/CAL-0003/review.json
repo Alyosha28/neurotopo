@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "e48e2c566b9f42b068e7f6acd57ee1e3a4702bfe347009de7a367fc73f104bd8",
+  "reviewer": {
+    "model": "gpt-6-luna",
+    "effort": "max",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "CAL3-R1",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "给定同一 RNG seed，所有 d 的 `H,R`、有效 cue/source、早末解析联合后验完全相同，只有干扰数与序列长度改变。",
+        "最强反驳：若性能下降，仅凭这一比较不能区分额外 recurrent 步数、随机干扰负载和训练分布外长度，也不能证明竞争假设轨迹。",
+        "\"eligible_ood_delays\": [],"
+      ],
+      "problem": "可观察事实：操纵同时增加随机干扰和 recurrent 序列长度，且没有候选延迟合格。猜测：两种负担都可能导致退化；本包无法判断主要来源。",
+      "why_it_matters": "结果只能说明这组联合负担下的迁移失败，不能把失败归因于延迟本身或干扰本身，因此无法校准出可解释的单一难度轴。",
+      "falsifiable_check": "在新版本协议中预先注册等长对照：固定有效证据、目标和总输入步数，分别改变无信息填充与随机干扰，并用新种子比较 KL 与 MAP；不根据本轮结果事后挑选条件。"
+    },
+    {
+      "id": "CAL3-R2",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "- 使用 `source_belief_task.py` 的原生成过程。每个有效证据后插入 `d∈{1,4,8,16}` 个带标记的随机干扰；`d=1` 是训练分布。",
+        "候选 d∈{4,8,16} 的每个种子最终 KL 都在[0.01,0.20] nat、早期 KL≤0.20、最终 joint oracle MAP 一致率≥0.70。",
+        "\"eligible_ood_delays\": [],",
+        "\"selected_smallest_eligible_delay\": null"
+      ],
+      "problem": "可观察事实：训练只覆盖 d=1；评估网格直接跳到 d=4，且该网格没有满足预设 KL/MAP 窗口的候选。猜测：d=1 到 d=4 的分布跳跃可能过大，当前稀疏网格没有覆盖温和退化区间；这不表示应放宽门槛。",
+      "why_it_matters": "本轮没有产出后续比较所需的合格校准点。当前记录不能区分任务确实在 d=4 已崩溃，还是预设网格跨过了较温和的迁移区间。",
+      "falsifiable_check": "若继续校准，应在新的协议版本中事先固定更密的 d 网格、相同训练规则、种子数、全部端点和资格阈值，再完整报告所有条件；只用独立验证流确定是否合格，并保留最终评估流作确认。"
+    },
+    {
+      "id": "CAL3-R3",
+      "source": "action",
+      "severity": "low",
+      "evidence": [
+        "?? scripts/calibrate_distractor_transfer.py",
+        "\"script_sha256\": \"3191e66d484c58bbec8caa4178a6203d1318e26ebe01b46ccbc16cef57921aea\""
+      ],
+      "problem": "可观察事实：运行状态记录校准脚本为未跟踪文件，同时记录了脚本摘要。猜测：若该摘要对应的脚本没有被保留或与执行版本不一致，数据生成、指标计算或种子处理错误无法由本包排除；这里没有直接证据表明执行有错。",
+      "why_it_matters": "若可执行代码未被摘要锚定并复现，强烈的 OOD 退化也可能部分来自实现或记录链路，而非任务或训练条件。",
+      "falsifiable_check": "保留与记录 SHA-256 完全一致的脚本和输入定义，在干净环境用固定种子重放一个完整评估；核对数据集、检查点及端点输出摘要。"
+    }
+  ],
+  "overall_assessment": "动作记录显示 d=1 基线学得较好，但 d=4、8、16 均未达到预先冻结的资格窗口，因此 CAL-0003 未校准出合格 OOD 延迟。最清楚的局限是干扰数量与序列长度同时变化，外加 d=1 到 d=4 的评估跳跃；它们限制了失败原因的归属。当前包没有证明代码执行出错，也不构成任何架构或生物机制证据。"
+}

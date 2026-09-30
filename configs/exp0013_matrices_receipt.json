@@ -1,0 +1,8 @@
+{
+  "gamma_le_float64_sha256": "36b66da32c4c19f3bb92b3c5c5a0fc1749fd85dc3395ff5d9eef6ec77570db15",
+  "generator_source_sha256": "f0b079a4eb672115306eb59398de86e8c9d940728d0a2ce0d1d084cf152700b4",
+  "id": "EXP-0013_MATRIX_GAMMA_RECEIPT",
+  "matrix_le_float64_sha256": "52218cad0f2b5aa35b7a516be864ba28c62121bd8f1ada68d859b6e5afdb60ed",
+  "report_sha256": "8b5ed7d51b6178fa5469e9d0b54e25f502eb267017f6ba41db404f37d59f1b6c",
+  "source_commit": "ddce115a1f931009358af1c433c70bcf2fcba961"
+}

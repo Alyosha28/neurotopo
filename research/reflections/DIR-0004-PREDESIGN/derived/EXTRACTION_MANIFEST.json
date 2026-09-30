@@ -1,0 +1,66 @@
+{
+  "packet": "research/reflections/DIR-0004-PREDESIGN/packet.json",
+  "packet_sha256": "d7a03c66d022ea2aea8364f09a1341210f77c34245fe104954fbbcab4a52c54e",
+  "parts": [
+    {
+      "bytes": 7655,
+      "matches_packet_digest": true,
+      "part": "design.md",
+      "sha256": "9b9244d1406af3c3f79780c6940aa2bdd74597beb6769378344d1c66f6576f1a"
+    },
+    {
+      "bytes": 15441,
+      "matches_packet_digest": true,
+      "part": "action.md",
+      "sha256": "c0f0c548dc6bbb54c5d400610cb28a0d8eb649272b728fbe5eccdc5550da878c"
+    },
+    {
+      "bytes": 42117,
+      "matches_packet_digest": true,
+      "part": "action_output_0_verification.json",
+      "sha256": "92f2be52b0b6cf743804bfb90f1e8ae651484a6755927428ae50b4c787e16b7d"
+    },
+    {
+      "bytes": 7177,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0004_precision_check.json",
+      "sha256": "10a60177af2c123cb8abe06129d549e233170867f9047b27325974056676bf18",
+      "source_path": "research/design/dir0004_precision_check.json"
+    },
+    {
+      "bytes": 7169,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0004_precision_check_observed.json",
+      "sha256": "cde0af081fc0ff8f32b9bf5f30e7dbe0ba6660cfde9279924a726f17ec38e35d",
+      "source_path": "research/design/dir0004_precision_check_observed.json"
+    },
+    {
+      "bytes": 4823,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0004_affordance_screen.json",
+      "sha256": "4542c1d210a26d3579e12f79975ec50efd33690368e2f6c2b0cb2bbe36f11fce",
+      "source_path": "research/design/dir0004_affordance_screen.json"
+    },
+    {
+      "bytes": 1293,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0004_nonlinear_bitcheck.json",
+      "sha256": "1572a91079669068d3a8051ef4308e1ab588d8fb3b6658bad06c23e3aa4ae201",
+      "source_path": "research/design/dir0004_nonlinear_bitcheck.json"
+    },
+    {
+      "bytes": 7809,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0004_claim_correction_v0.md",
+      "sha256": "5c3e54fcf7c5239640c54a57d5b052557111a39d99104cca3de8a50d3e33551f",
+      "source_path": "research/design/dir0004_claim_correction_v0.md"
+    },
+    {
+      "bytes": 8863,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_dir0004_chaos_tracking.md",
+      "sha256": "d096bf81ad784a6e256123833e296b05949a34b59b0f3d9b1747373131238265",
+      "source_path": "research/prior_art/dir0004_chaos_tracking.md"
+    }
+  ]
+}

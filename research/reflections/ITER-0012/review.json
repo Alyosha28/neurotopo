@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "40f4e0a6c13859a3d0a7a58514695e7f6891cbd4fb160d5ae7a757def7c58dba",
+  "reviewer": {
+    "model": "gpt-6-luna",
+    "effort": "max",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "R1",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "每次失败保留原件，不覆盖output，不改已运行配置。",
+        "First supplemental JSON serialization failed; incomplete output was removed and not preserved. Failure documented in independent review."
+      ],
+      "problem": "补充复核的JSON序列化失败产物被删除，偏离设计中的失败原件留存要求。",
+      "why_it_matters": "这使该失败过程无法从原始产物独立检查，削弱复核审计链；但它发生在补充报告序列化阶段，packet记录的检查点数据仍有成功数值重放，因此未显示会改变实验结果或判词。",
+      "falsifiable_check": "检查独立复核归档是否另存该失败产物的原始字节、哈希或可复现失败记录；若均不存在，则此项留档缺口不可恢复，并继续将其影响限定为复核过程可审计性。"
+    },
+    {
+      "id": "R2",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "独立复核300秒，不重新训练。",
+        "\"cumulative_300_second_budget_compliance\": \"UNVERIFIABLE\"",
+        "此前失败/定位进程耗时未完整计录，累计300秒预算合规性UNVERIFIABLE。"
+      ],
+      "problem": "独立复核的累计耗时没有完整记录，无法判断是否满足预注册的300秒上限。",
+      "why_it_matters": "这限制了对复核资源预算合规性的确认，但报告已明确标为UNVERIFIABLE；正式研究运行仍记录为75.1919秒且低于900秒，数值重放通过也不依赖预算合规声明，因此不能据此否定实验数值或INCONCLUSIVE判词。",
+      "falsifiable_check": "从独立复核的完整进程计时日志汇总所有原重放、定位和补充运行；若完整日志不存在，预算合规性应保持UNVERIFIABLE。"
+    }
+  ],
+  "overall_assessment": "未发现设计门槛与判词之间的可定位矛盾：CO、CU、NO未过学习门，NU过学习门但未过余量门，按预注册优先级得到INCONCLUSIVE / LEARNING_FAILURE。两项问题均限于独立复核流程的留档或预算可核验性；成功重放支持数值结论，不足以改变科学判词。"
+}

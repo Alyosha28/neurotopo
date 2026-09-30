@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "df08973578a2155427f0fb98f22bfa62ef044a6a0384152c9a53bd723f8276e2",
+  "reviewer": {
+    "model": "gpt-6-luna",
+    "effort": "max",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "CAL2-01",
+      "source": "design",
+      "severity": "medium",
+      "evidence": "One episode samples a content hypothesis `H∈{0,1,2,3}` and a hidden source regime `R∈{0,1}`, both uniform and fixed within the episode. Eight evidence cues arrive, four before and four after an intermediate query. Each half contains two cues from each of two visible sources in randomized order.",
+      "problem": "The hidden regime adds inference, but the episode still has a stationary two-source process and only eight informative cues. Its exact posterior can be represented by a small set of per-source cue counts, so the task may reproduce the accumulated-statistic shortcut that the revision was meant to escape; tagged independent distractors do not increase that inferential burden.",
+      "why_it_matters": "A model can solve this finite sufficient-statistic mapping without demonstrating robust belief updating over longer histories or changing source reliability. Saturation would then say little about the intended broader construct.",
+      "falsifiable_check": "Freeze a new protocol before running it with predeclared held-out sequence lengths or source counts, and test oracle-posterior calibration on those transfer episodes. A failure confined to the original eight-cue setting would support this construct concern."
+    },
+    {
+      "id": "CAL2-02",
+      "source": "action",
+      "severity": "high",
+      "evidence": "\"final_joint_kl_to_oracle\": 0.0018214203326242721,",
+      "problem": "All three tested seeds finish far below the design's 0.01-nat saturation cutoff, while the tested model family is a single dense GRU configuration. This establishes that this baseline can fit the oracle on this task; it leaves no useful score headroom for a discriminating architecture benchmark and says nothing about how another architecture would compare.",
+      "why_it_matters": "The measured endpoint is at the oracle-fit floor, so small score differences in a follow-on comparison would be hard to interpret as meaningful capability differences. The action also marks the qualification guard false, which is consistent with stopping promotion of this configuration.",
+      "falsifiable_check": "Repeat the unchanged, frozen task and schedule on a separately generated episode stream with all three seeds. If the same predeclared KL cutoff is still met, the baseline-ceiling finding replicates; if not, the current result may be stream-specific."
+    },
+    {
+      "id": "CAL2-03",
+      "source": "design",
+      "severity": "medium",
+      "evidence": "Monitor only at steps500/1000/1500; no best-checkpoint choice.",
+      "problem": "The recorded seed-201 validation KL crosses the 0.01-nat cutoff somewhere between the coarse 500- and 1,000-update checks. The 1,500-update endpoint therefore conflates task headroom with the chosen training budget, while final posterior-fit scores do not directly test whether predictions respond correctly to source-reliability changes during the sequence.",
+      "why_it_matters": "The run cannot tell whether saturation is chiefly due to a narrow construct, a capable baseline, or additional optimization time, and output agreement alone does not establish the intended online updating behavior. Those distinctions matter before spending effort on a benchmark comparison.",
+      "falsifiable_check": "For a new protocol frozen in advance, record posterior KL at denser fixed compute checkpoints and evaluate paired episodes with predeclared source-label swaps against the exact oracle updates. A reproducible early plateau together with correct counterfactual responses would weaken this concern; late-only convergence or incorrect responses would support it."
+    }
+  ],
+  "overall_assessment": "The calibration appropriately blocks this configuration from promotion: all three seeds reach near-oracle joint-posterior fit, below the design's saturation threshold. The result does not identify whether the ceiling comes mainly from the finite stationary task, the tested dense-GRU baseline, or the 1,000–1,500-update training budget, and it is not architecture or topology-dynamics evidence."
+}

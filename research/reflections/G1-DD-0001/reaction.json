@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "1284e7896ffcffecd3dce32d59dad1bad501292fcc258bf7c71b5bbfec4e35a9",
+  "review_sha256": "c0093a21721f99af192a77668e50dddd4d85b65c27f7810ae1c74b57f811f820",
+  "responses": [
+    {
+      "id": "DD-01",
+      "disposition": "accept",
+      "reason": "The two arms share two score states and a mixture output, so their contrast cannot establish the absence versus presence of candidate hypotheses.",
+      "action": "Kept the NO-GO specific to the project Gate 1 mechanism claim and described the identifiable narrower recurrent-mask effect.",
+      "evidence_paths": [
+        "research/reflections/G1-DD-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "DD-02",
+      "disposition": "defer",
+      "reason": "A real K2-versus-K1 contract with same output family and fully matched state/parameter/compute has not yet been established; presenting one now as executable would be misleading.",
+      "action": "Recorded the exact unresolved factor/control fields and kept new model implementation prohibited until a prospectively reviewed contract exists.",
+      "evidence_paths": [
+        "research/reflections/G1-DD-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "DD-03",
+      "disposition": "accept",
+      "reason": "The project Gate 1 NO-GO must not erase a separate narrow connectivity research question.",
+      "action": "Explicitly preserved independent-benchmark eligibility only under a new purpose, budget, primary contrast and failure branches, with no automatic Gate 1 credit.",
+      "evidence_paths": [
+        "research/reflections/G1-DD-0001/reaction_evidence.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep this G1-DD project candidate closed before training. Resolve the K factor/control construct and the external task posterior qualification before any new effect registration."
+}

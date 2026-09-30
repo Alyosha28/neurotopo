@@ -1,0 +1,13 @@
+{
+  "restored_original_workspace": ".",
+  "raw_files_verified": 178,
+  "raw_bytes": 55914983,
+  "mismatches": [],
+  "source_matches_execution": true,
+  "packet_sha256": "33321237d72186141513c12ae4112a077b721c2cc20707b1f38508353e2a7f12",
+  "packet_rebuilt_from_original_files": true,
+  "science_rerun": false,
+  "prior_reflection_attempt": "Interrupted by unavailable volume before review delivery; fresh packet-only context used after recovery.",
+  "temporary_verified_backup": "/private/tmp/neurotopo-exp0022-recovery/restored_snapshot",
+  "prior_git_staging_not_persisted": true
+}

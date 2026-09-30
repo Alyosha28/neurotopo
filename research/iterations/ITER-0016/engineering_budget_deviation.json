@@ -1,0 +1,20 @@
+{
+  "experiment_id": "EXP-0021",
+  "deviation": "ENGINEERING_BUDGET_DISCLOSURE",
+  "registered_text": "工程tiny-fit最多150更新",
+  "experiment_specific_fit_updates": 0,
+  "general_legacy_overfit_updates_per_suite": 300,
+  "suite_invocations": 2,
+  "known_general_legacy_overfit_updates": 600,
+  "reason": "Required scripts/verify.py includes legacy five-model overfit; second invocation refreshed validation after final analyzer source edit. Registration failed to explicitly separate this general suite from the150-update engineering cap. Conservatively record literal engineering-budget exceedance, not retroactively exempt the suite.",
+  "research_updates": 12000,
+  "research_budget_changed": false,
+  "results_selected_or_retrained": false,
+  "impact": "Engineering accounting deviation; no additional research seed/model/task or scientific threshold change. Full result remains protocol-limited INCONCLUSIVE; disclose rather than claim perfect adherence.",
+  "evidence": [
+    "research/iterations/ITER-0016/validation.json",
+    "artifacts/validation/suite.json",
+    "artifacts/validation/overfit.json"
+  ],
+  "prevention": "Future registration must separately count mandatory general validation and experiment-specific fit updates before implementation."
+}

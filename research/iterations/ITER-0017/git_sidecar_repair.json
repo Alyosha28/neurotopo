@@ -1,0 +1,11 @@
+{
+  "records": [
+    {
+      "source": ".git/objects/pack/._pack-b91f29190b61fe56115d29f8a35f452009e07933.idx",
+      "backup": "/private/tmp/neurotopo-exp0022-git-sidecar-backup/._pack-b91f29190b61fe56115d29f8a35f452009e07933.idx",
+      "sha256": "252a4e296d398c081506fc1703426109555ef222301cf1a2e94e4c29c5239962",
+      "kind": "AppleDouble metadata, not Git pack index"
+    }
+  ],
+  "actual_git_pack_files_modified": false
+}

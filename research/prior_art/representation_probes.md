@@ -1,0 +1,9 @@
+# Frozen-state decoding as an established diagnostic
+
+Scoped review, 2026-09-23. [Kozachkov et al., PLOS Computational Biology 2022](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010776) used classifiers to decode sample identity from neural and RNN activity over a working-memory delay, including distractor conditions. Decoding trajectories helped characterize representations, while task performance and linear activity decoding were distinct quantities. This is direct methodological prior art; a frozen-state linear probe is not a new NeuroTopo mechanism.
+
+The project's existing [conn2res prior-art entry](evidence_matrix.md) covers fixed reservoirs with trained linear readouts. EXP-0006 differs in purpose: it diagnoses candidate-label accessibility in already trained BPTT GRUs rather than treating a probe as the task architecture. No external code is reused or paper result replicated.
+
+The proposed dataset has four candidate values drawn as a permutation of four classes. A probe that knows only the prior candidate's correct label can guess each other candidate's label with conditional probability **1/3**. Thus aggregate four-candidate decoding alone can overstate access to uncued candidate information. The primary outcome isolates the three uncued labels. This is a calculation from `src/neurotopo/task.py`, not a literature claim.
+
+Limits: a linear decoder measures information accessible to its fixed probe family and fitting protocol. Low decoding can reflect nonlinear encoding, insufficient samples, a mismatched decoder or optimization. High decoding does not prove the original recurrent model uses those features, semantic hypothesis trajectories, causal specialization, biological plausibility or general task ability. EXP-0006 uses the same frozen model seeds selected in the preceding research path; new probe datasets do not supply independent trained-model replications.

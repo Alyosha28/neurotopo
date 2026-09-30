@@ -1,0 +1,86 @@
+{
+  "claims_not_made": [
+    "held-out ridge estimates on a frozen nonlinear core",
+    "no training, no capability claim, no Gate 1 claim"
+  ],
+  "config": {
+    "allocations": [
+      [
+        49,
+        11,
+        4
+      ],
+      [
+        21,
+        21,
+        22
+      ]
+    ],
+    "gain": 1.0,
+    "grid": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      16,
+      20,
+      24,
+      32,
+      48
+    ],
+    "k_max": 200,
+    "pairs": 2,
+    "phi": 0.5,
+    "steps": 40000,
+    "units": 64
+  },
+  "generated_by": "scripts/dir0003_tanh_control.py",
+  "rows": [
+    {
+      "contrast_long_lag_ge_20": 0.025322458875223774,
+      "gain": 1.0,
+      "max_abs_contrast_on_grid": 0.045839406257380366,
+      "own_curve_ridge_band": 0.05362109384565039,
+      "ridge_relative": 0.01,
+      "seed_index": 0,
+      "tail_change_200_vs_100": 2.930478641253844e-06,
+      "total_ratio": 0.8545053274941483
+    },
+    {
+      "contrast_long_lag_ge_20": 0.02839435228010223,
+      "gain": 1.0,
+      "max_abs_contrast_on_grid": 0.05737727747022614,
+      "own_curve_ridge_band": 0.05362109384565039,
+      "ridge_relative": 0.03,
+      "seed_index": 0,
+      "tail_change_200_vs_100": -0.00100129969459348,
+      "total_ratio": 0.8209229563134617
+    },
+    {
+      "contrast_long_lag_ge_20": 0.019313138227841753,
+      "gain": 1.0,
+      "max_abs_contrast_on_grid": 0.02271657806680072,
+      "own_curve_ridge_band": 0.05212257459561931,
+      "ridge_relative": 0.01,
+      "seed_index": 1,
+      "tail_change_200_vs_100": -0.0012513739219534147,
+      "total_ratio": 0.883756842483101
+    },
+    {
+      "contrast_long_lag_ge_20": 0.02220208803033963,
+      "gain": 1.0,
+      "max_abs_contrast_on_grid": 0.03712553802937868,
+      "own_curve_ridge_band": 0.05212257459561931,
+      "ridge_relative": 0.03,
+      "seed_index": 1,
+      "tail_change_200_vs_100": -0.0012626026821389092,
+      "total_ratio": 0.8599824392072349
+    }
+  ],
+  "schema": "dir0003_tanh_control_v1"
+}

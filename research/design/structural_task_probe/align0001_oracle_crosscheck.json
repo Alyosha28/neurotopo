@@ -1,0 +1,30 @@
+{
+  "schema": "align0001_oracle_crosscheck_v1",
+  "status": "engineering premise check; not a verdict, no training",
+  "tolerance": 1e-09,
+  "conditions": {
+    "F": {
+      "episodes": 24,
+      "max_abs_delta_posterior": 1.9290125052862095e-15,
+      "mean_abs_delta_posterior": 9.337871910893487e-16,
+      "max_abs_delta_prior": 8.326672684688674e-17,
+      "stationary_power_vs_eig_gap_J0": 4.336808689942018e-17,
+      "pass": true
+    },
+    "X": {
+      "episodes": 24,
+      "max_abs_delta_posterior": 6.300515664747763e-15,
+      "mean_abs_delta_posterior": 1.1730344704844835e-15,
+      "max_abs_delta_prior": 9.141992718397773e-16,
+      "stationary_power_vs_eig_gap_J0": 4.336808689942018e-17,
+      "pass": true
+    }
+  },
+  "verdict": "ORACLE_CROSSCHECK_PASS",
+  "reading": "A second, independent implementation -- different state ordering, explicit pairwise transition table, per-theta explicit propagation with no einsum, expanded emission, and an independently recomputed stationary prior -- reproduces the first below tolerance on every episode.",
+  "environment": {
+    "python": "3.13.15",
+    "numpy": "2.3.3",
+    "platform": "macOS-26.7-arm64-arm-64bit-Mach-O"
+  }
+}

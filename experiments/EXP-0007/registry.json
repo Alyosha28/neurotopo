@@ -1,0 +1,66 @@
+{
+  "id": "EXP-0007",
+  "version": "v2",
+  "title": "Cross-delay frozen-state linear readout transfer",
+  "status": "COMPLETED",
+  "research_question": "Does a delay8-fitted prior-answer linear readout lose more delay32 accuracy in the block model than the matched random model, relative to a delay32-fitted head?",
+  "prior_art_checked": [
+    "Parthasarathy2019",
+    "Piwek2023 cross-temporal decoding",
+    "EXP-0006 linear probe",
+    "RIMs",
+    "TRNN"
+  ],
+  "strongest_rejection_reason": "Probe transfer reflects an input/time distribution shift and its own fitting family; it cannot causally identify why the pretrained task head fails.",
+  "hypothesis": "Difference-in-transfer-loss D=(H32A-H8A)_M3-(H32A-H8A)_C0 at delay32 is at least+5pp, with paired seed CI lower>+5pp and all guards passed.",
+  "baselines": [
+    "random_gru matched",
+    "gru_wide contextual",
+    "H32B independent refit"
+  ],
+  "intervention": "Fit separate linear prior-answer probes at delay8 and32; apply both on identical frozen delay32 hidden states using common short-delay scaler",
+  "controls": [
+    "same model checkpoints",
+    "same full-noise instances",
+    "same state and head capacity",
+    "train-only short-delay normalization",
+    "matched labelled sample count",
+    "independent H32B fit",
+    "behavioral gap and validation adequacy guards",
+    "independent H8B source refit and stability guard"
+  ],
+  "dataset": "Fresh original task streams 930000/935000/940000/950000+delay; unique paired prefixes; 4096/1024/2048 A-train/validation/test and 4096 B-train",
+  "metrics": [
+    "primary paired excess transfer loss",
+    "absolute cross/same-delay prior accuracy",
+    "head refit variation",
+    "original pre/final task scores",
+    "delay64 transfer secondary"
+  ],
+  "resource_matching": "M3/C0 model resources inherited EXP-0004; each probe260 coefficients, same normalization method and sample counts",
+  "seeds": [
+    9101,
+    9102,
+    9103,
+    9104,
+    9105,
+    9106,
+    9107,
+    9108,
+    9109,
+    9110
+  ],
+  "commit": "c86c3bd",
+  "config": "configs/exp0007_v2.json",
+  "result": "artifacts/EXP-0007/v2/analysis.json",
+  "interpretation": "M3 has +8.91pp more fixed-ridge H8-to-32 transfer loss than C0; paired CI [+1.57,+15.78]pp supports direction but not a guaranteed minimum +5pp.",
+  "limitations": [
+    "delay length and noise load change together",
+    "post-hoc direction after earlier results",
+    "frozen probe family not original task head",
+    "fixed new test stream",
+    "reused trained-model seeds"
+  ],
+  "decision": "PARTIALLY_SUPPORTED",
+  "next_action": "STOP_MECHANISM_ESCALATION; retain fixed-probe transfer finding without Gate1 advancement."
+}

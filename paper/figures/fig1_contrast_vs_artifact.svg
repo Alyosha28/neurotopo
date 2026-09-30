@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="442" viewBox="0 0 1000 442" font-family="Helvetica,Arial,sans-serif">
+<rect width="1000" height="100%" fill="white"/>
+<text x="40" y="34" font-size="19" font-weight="bold">Long-lag contrast vs readout-artifact band (p10&#8211;p90)</text>
+<text x="40" y="54" font-size="13" fill="#444">matched total capacity; grey = artifact band, black = between-allocation contrast, tick = median</text>
+<line x1="260.0" y1="56" x2="260.0" y2="396" stroke="#ddd" stroke-width="1"/>
+<text x="260.0" y="414" font-size="12" fill="#555" text-anchor="middle">0.0</text>
+<line x1="430.0" y1="56" x2="430.0" y2="396" stroke="#ddd" stroke-width="1"/>
+<text x="430.0" y="414" font-size="12" fill="#555" text-anchor="middle">0.1</text>
+<line x1="600.0" y1="56" x2="600.0" y2="396" stroke="#ddd" stroke-width="1"/>
+<text x="600.0" y="414" font-size="12" fill="#555" text-anchor="middle">0.2</text>
+<line x1="770.0" y1="56" x2="770.0" y2="396" stroke="#ddd" stroke-width="1"/>
+<text x="770.0" y="414" font-size="12" fill="#555" text-anchor="middle">0.3</text>
+<line x1="940.0" y1="56" x2="940.0" y2="396" stroke="#ddd" stroke-width="1"/>
+<text x="940.0" y="414" font-size="12" fill="#555" text-anchor="middle">0.4</text>
+<text x="40" y="75" font-size="13">adjacent bands, phi=0.5 (primary)</text>
+<text x="40" y="94" font-size="12" fill="#a33">FALSIFIED</text>
+<rect x="357.0" y="58" width="29.1" height="24" fill="#d9d9d9"/>
+<line x1="271.0" y1="70" x2="284.2" y2="70" stroke="#111" stroke-width="4"/>
+<line x1="278.0" y1="61" x2="278.0" y2="79" stroke="#111" stroke-width="2"/>
+<text x="40" y="153" font-size="13">adjacent bands, phi=0.7 (held out)</text>
+<text x="40" y="172" font-size="12" fill="#a33">FALSIFIED</text>
+<rect x="332.9" y="136" width="28.1" height="24" fill="#d9d9d9"/>
+<line x1="279.4" y1="148" x2="294.9" y2="148" stroke="#111" stroke-width="4"/>
+<line x1="287.1" y1="139" x2="287.1" y2="157" stroke="#111" stroke-width="2"/>
+<text x="40" y="231" font-size="13">separated bands, phi=0.5 (held out)</text>
+<text x="40" y="250" font-size="12" fill="#a33">OVERLAP</text>
+<rect x="355.7" y="214" width="24.5" height="24" fill="#d9d9d9"/>
+<line x1="327.5" y1="226" x2="728.1" y2="226" stroke="#111" stroke-width="4"/>
+<line x1="589.2" y1="217" x2="589.2" y2="235" stroke="#111" stroke-width="2"/>
+<text x="40" y="309" font-size="13">separated bands, phi=0.3 (held out)</text>
+<text x="40" y="328" font-size="12" fill="#a33">OVERLAP</text>
+<rect x="391.5" y="292" width="31.7" height="24" fill="#d9d9d9"/>
+<line x1="291.5" y1="304" x2="658.1" y2="304" stroke="#111" stroke-width="4"/>
+<line x1="564.0" y1="295" x2="564.0" y2="313" stroke="#111" stroke-width="2"/>
+</svg>

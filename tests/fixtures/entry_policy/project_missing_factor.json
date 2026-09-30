@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "track": "project_gate1",
+  "experiment_id": "EXP-9001",
+  "direction": "dry_run_missing_factor",
+  "question": "Entry-policy dry run A",
+  "purpose": "Check whether a candidate-free Gate 1 headroom search is rejected.",
+  "gate1_claim": true,
+  "resource_cap": {"max_updates": 100, "max_wall_seconds": 60},
+  "task_search": {"max_configurations": 1, "retain_all_attempts": true, "heldout_rule": "Reserve independent test seed 901."},
+  "branches": {
+    "success": "Keep the task for design review only.",
+    "failure": "Close this task configuration.",
+    "borderline": "Record uncertainty without changing thresholds."
+  },
+  "factor": null
+}

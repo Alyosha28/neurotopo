@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "a9142e5f490b77a586719a9c2e21108e30704bec1a92c60f26244de37db925c2",
+  "reviewer": {
+    "model": "agent-default (independent subagent; provider model id not exposed to orchestrator)",
+    "effort": "agent-default",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "asymmetric-negative-verdict",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "效应 ≥3pp、bootstrap 95% 下界 >0、控制在带内",
+        "效应 ≤−3pp",
+        "-6.24",
+        "[−15.04, +4.10]pp"
+      ],
+      "problem": "The frozen table is applied literally—effect -6.24pp ≤ -3pp gives FALSIFIED/CONTROL_BETTER—so the recorded label is rule-consistent. But the positive branch requires bootstrap lower bound >0 while the negative branch imposes no CI condition, and the reported 95% CI [−15.04,+4.10]pp includes zero and positive advantage.",
+      "why_it_matters": "CONTROL_BETTER and the route closure built on it claim a directional control advantage that is not distinguishable from zero at the same two-sided uncertainty standard used for SUPPORTED.",
+      "falsifiable_check": "Apply a symmetric rule requiring the CI upper bound <0 for CONTROL_BETTER; with upper bound +4.10pp the substatus becomes FALSIFIED/NO_REPLICATED_ADVANTAGE."
+    },
+    {
+      "id": "chance-candidate-seed-no-floor",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "附加判据：控制必须在复现种子上仍处于",
+        "每 seed ≥0.58",
+        "0.50224609375",
+        "-6.24"
+      ],
+      "problem": "Only the control has an in-band validity floor; no candidate-side floor or failure rule exists, and CAND_V4 seed 29321 sits at chance (0.5022), below the control's 0.58 per-seed floor. Excluding that single seed raises the paired effect from -6.24pp to -2.64pp, above the -3pp CONTROL_BETTER threshold.",
+      "why_it_matters": "The CONTROL_BETTER substatus therefore hinges on one plausibly failed candidate run that the frozen protocol provides no way to adjudicate.",
+      "falsifiable_check": "Recompute the paired mean without seed 29321 (effect -2.64pp, above -3pp) and add a symmetric candidate-side in-band/anomaly gate."
+    },
+    {
+      "id": "unfrozen-route-closure",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "样本只有 5 个 seed、单一合成任务、参数轴不匹配",
+        "不授予 A2/A3、旧 Gate 1 或任何跨任务/规模主张",
+        "even SUPPORTED here is not an A2 gate pass and needs independent replication",
+        "按 2026-09-29 约定的停止规则，**ARCH-0001（`SC-REL-v3`/`v4`）在已测范围内判为无匹配计算优势并关闭该候选路线**"
+      ],
+      "problem": "The frozen design contains no stop or route-closure rule and limits even SUPPORTED to the tested single task/budget, yet the decision invokes a 2026-09-29 stop rule and closes ARCH-0001. The verdict label may be table-literal, but route closure is not derivable from the pre-registered protocol.",
+      "why_it_matters": "Closing a candidate route is a hard-to-reverse program decision that a single 5-seed, single-task comparison and an unfrozen rule cannot license.",
+      "falsifiable_check": "Search the design text for any stop/closure clause (none exists; '停止规则' appears only in the decision) and require a pre-registered multi-task/seed stopping criterion before closure binds."
+    },
+    {
+      "id": "carrier-resolution-and-replay-evidence",
+      "source": "action",
+      "severity": "medium",
+      "evidence": [
+        "by_config",
+        "EXP0033 carrier confirmation seeds 29301-29303; mean 0.6683, min 0.5898",
+        "Fresh-process retrain replay of one comparison seed per experiment; no retuning or reselection.",
+        "per-run details omitted"
+      ],
+      "problem": "The action applies the frozen w48b2 override (ops ratio 0.912), but carrier resolution is asserted only through a prior-run summary while carrier.by_config is empty, so the packet does not show the per-config ops/params/band results behind that choice; replay verification covers just one comparison seed per experiment (29324 for EXP-0034), not the five-seed aggregate or pivotal chance seed 29321. The lean view also states per-run details are omitted.",
+      "why_it_matters": "The carrier selection and the aggregate that drives the verdict cannot be independently audited from the packet, and a one-seed replay can be mistaken for full verification.",
+      "falsifiable_check": "Repopulate by_config with all six carrier-menu entries' ops/parameters/band outcomes and replay all five comparison seeds (or clearly label verification as partial)."
+    }
+  ],
+  "overall_assessment": "冻结表按字面执行，但三项 high 成立：负向行的方向性证据不足（区间跨 0）、候选 seed 29321 近随机而无候选侧下限规则、路线关闭援引未冻结的停止规则；另有载体解析与重放范围的中等问题。"
+}

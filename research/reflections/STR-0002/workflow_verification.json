@@ -1,0 +1,40 @@
+{
+  "action_sha256": "ec86292695f74e9df9324bdf07c17dec9997f1a401e2909fbacf5de105ece325",
+  "clauses": [
+    {
+      "clause": "- Before Gate 1-motivated task calibration, specify the candidate or reference K factor, falsifiable prediction, actual matched primary control, and what each qualification outcome would change. A separate benchmark question needs its own purpose, budget and branches.",
+      "path": "AGENTS.md",
+      "sha256": "b37391a2fb74dc1b0b98da23e7e360c48e9372d190469851f19d20ff270f329d"
+    },
+    {
+      "clause": "For a new **project Gate 1-motivated benchmark qualification**, register the candidate update or named reference K factor and its falsifying ablation **before** searching for control headroom. Name the actual proposed matched primary control, resource costs, whether a simple explicit filter/cache explains the task, the falsifiable reason the K factor could improve under matched resources, and a success/failure/borderline decision table. A task-only screen without a candidate may be legitimate independent benchmark research, but must have its own purpose, finite resource budget and outcome-dependent decision; it cannot by itself qualify a later unspecified Gate 1 architecture. This candidate-first order is prospective after STR-0002 (`research/decisions/0022_candidate_first_gate1_calibration.md`); it does not rewrite earlier experiments or forbid separately registered benchmark science.",
+      "path": "docs/experiment_protocol.md",
+      "sha256": "b27f0905ff9ae2937a0a95b7ecc40acc090cc4eb2b2b9969d746e55a980c82c0"
+    },
+    {
+      "clause": "每次在 `问题 → 先行工作` 之间先写**决策价值表**：若结果成功、失败或贴近阈值，各自会改变哪个当前决定？STR-0002 后，项目 Gate 1 动机的任务资格训练先要有具名候选或参考 K 因素、可消融预测与真实主匹配控制，然后才找独立余量；候选缺席时不连续启动 CAL 配置来寻找“刚好不封顶”的任务。独立领域 benchmark 可以另问，只需独立目的、预算与停止分支，不把其资格冒充项目 Gate 1。反思若发现阻碍由任务/对照选择策略造成，应在下一次注册前实际改入口条件，并保留旧结果。",
+      "path": "docs/auto_research_workflow.md",
+      "sha256": "ad1f93fc3b86de51b3bb484cd8bcccf6610b91b1478efeaeb0f5887f43c61fc0"
+    },
+    {
+      "clause": "A: generic mechanism on delayed evidence, distractor resistance, associative bridge, rule switching, analogy and compositional recombination. M0 GRU; M1 wider capacity control; M2 sparse recurrence; M3 multi-trajectory; M4 adaptation; M5 communication; M6 DARC. Only implement mechanisms allowed by current gate. For a new H3 candidate, write its falsifiable difference from simple filtering and relevant PF-GRU/RIMs mechanisms before implementation. Before a Gate 1-motivated task qualification, first specify that candidate or a named reference K factor, its ablation, the actual proposed matched primary control, and the decision changed by each qualification outcome; STR-0002 stops candidate-free headroom hunting without banning independently registered benchmark science. After qualifying the actual primary control, validate only the relevant strong baselines' defining behavior and resource accounts as preflight; see `research/design/gate1_baseline_dependency_audit.md`. Prior-art validation alone cannot pass Gate 1, and relative-prior-art novelty is a separate claim from its current generic-effect rule.",
+      "path": "research/program.md",
+      "sha256": "88b65f2711055385dfd62333bab4096ea33ad7978d8271fbf661af36395aa30b"
+    },
+    {
+      "clause": "STR-0002 reflected on the repeated task-first Gate 1 search after CAL-0006. Its independently corrected decision0022 applies `CANDIDATE_FIRST_FOR_GATE1` only to **future project Gate 1-motivated qualification training**: name an H3 candidate or reference K factor, falsifiable ablation and actual matched primary control before selecting task headroom. This preserves separate, bounded domain benchmark research and does not change any old CAL/EXP or Gate 1 `NOT_PASSED`.",
+      "path": "research/stage_gates.md",
+      "sha256": "f4e155fa69636471ee2d4aae60da6ba8d3d7328c80299b668c48e78624e57179"
+    },
+    {
+      "clause": "- STR-0002 identifies a process-induced obstacle specific to Gate 1: candidate-free headroom screening can qualify or reject a benchmark, but cannot identify a missing candidate update rule, K-factor estimand or its actual matched control. Future **project Gate 1-motivated** calibration therefore starts with the candidate/factor and falsifying comparison, then tests the control's headroom. Independent bounded benchmark research remains possible on its own decision path. This is decision0022, not a new Gate 1 effect or a general ban on synthetic tasks.",
+      "path": "research/open_questions.md",
+      "sha256": "dce12f25cfe96764a62b09094cec16e3d7e5dc117bf932e3736e61f409d09f12"
+    }
+  ],
+  "commit": "0fa666191eb6d2ab21776349e525ea3a86428418",
+  "decision_sha256": "a0acabe014ea34a42b80ccb2049ffafe8f12699b3bf3b8a7812bfdd5b26759f2",
+  "design_sha256": "9a3596f5cfe8d27011417ef23e5dc2f635d2d1c491c97b7e57434ae0f511bb56",
+  "kind": "STR-0002_WORKFLOW_CHANGE_VERIFICATION",
+  "scope": "new Gate 1-motivated qualification only; independent bounded benchmark work remains allowed; no prior result or current loop ledger rewritten"
+}

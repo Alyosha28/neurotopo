@@ -1,0 +1,3 @@
+# EXP0026 independent prereview scope
+
+Review experiments/EXP-0026/v1.md and config/entry for internal consistency before implementation. Evidence: existing EXP0025/DYN0001/DIR0010 reports and relevant source as needed, no new model execution. Strongest rejection: supervised codebook plus event count/phase and finite precision can explain schedule effect; distance-triggered threshold is not a slow-mode proof. Check primary denominator/control gates, finite matrix/caps, adaptive COUNT future-count limitation, τ censoring, no target access, near-singular Gram handling and complete negative outcomes. Acceptance requires implementable unique rules; report blockers with exact location. No outcome-based threshold changes and no new experimental run.

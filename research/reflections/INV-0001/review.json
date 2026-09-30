@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "16932fe3b76202cf337bfdbd22a4b527250fce04e43ee9c3da37dc3b0460f2b7",
+  "reviewer": {
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "context": "fresh_only_packet"
+  },
+  "issues": [],
+  "overall_assessment": "在仅审阅该packet的范围内，未发现需列报的问题。两点逆Lipschitz割线下界、dt≤2eta时的实数误差球重叠、逐样本最坏情况准确率上界的条件与报告一致；D64表格及百分比可由packet汇总值复核。报告明确eta为假定绝对L2预算，未将其说成实测噪声，也未将割线界称为全局条件数或签发新机制判词。原始snapshot不在packet内，独立复算原数组的声明仅能作为packet内自报核验记录。"
+}

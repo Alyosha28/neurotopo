@@ -1,0 +1,24 @@
+{
+  "model_recurrent_state": "H, shape3x2, float32;6 scalars",
+  "runtime_self_state_mutations": [
+    {
+      "method": "transition",
+      "self_attribute_assignments": []
+    },
+    {
+      "method": "forward",
+      "self_attribute_assignments": []
+    }
+  ],
+  "module_types": [
+    "Embedding",
+    "Linear",
+    "Sequential",
+    "Tanh"
+  ],
+  "runtime_random_draws": "none in inspected transition/forward",
+  "external_state": "fixed operator schedule phase and input R/u/leak; not reset, fixed at block boundaries in proof",
+  "FULL": "two literal stored H prototypes",
+  "EQUAL": "prototype class plus continuous scale; invalid fallback retains H",
+  "source_sha256": "384c557bb5a7202cd16dcf5401df43e5b30289cf7088bbebd64189c31559f4b6"
+}

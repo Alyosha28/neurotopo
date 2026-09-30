@@ -1,0 +1,171 @@
+{
+  "experiment_id": "EXP-0032",
+  "version": "v1",
+  "gate": "A2_TASK_CARRIER",
+  "protocol": "experiments/EXP-0032/v1.md",
+  "parent_config": "configs/exp0031_v1.json",
+  "training_module": "src/neurotopo/arch0001_memory_task.py",
+  "eval_module": "src/neurotopo/arch0001_memory_requalification.py",
+  "output": "artifacts/EXP-0032/v1",
+  "control": {
+    "kind": "INV_COMP",
+    "width": 32,
+    "blocks": 1
+  },
+  "menu": [
+    [
+      32,
+      1
+    ],
+    [
+      32,
+      2
+    ],
+    [
+      32,
+      3
+    ],
+    [
+      48,
+      1
+    ],
+    [
+      48,
+      2
+    ],
+    [
+      48,
+      3
+    ],
+    [
+      64,
+      1
+    ],
+    [
+      64,
+      2
+    ],
+    [
+      64,
+      3
+    ],
+    [
+      96,
+      1
+    ],
+    [
+      96,
+      2
+    ],
+    [
+      96,
+      3
+    ]
+  ],
+  "d_values": [
+    2,
+    3
+  ],
+  "supervision": "PLAIN",
+  "stage_a": {
+    "budget": 2000,
+    "curriculum": [
+      [
+        500,
+        2
+      ],
+      [
+        1000,
+        4
+      ],
+      [
+        1500,
+        8
+      ],
+      [
+        2000,
+        12
+      ]
+    ],
+    "seeds": [
+      29101
+    ]
+  },
+  "stage_b": {
+    "budget": 6000,
+    "curriculum": [
+      [
+        1500,
+        2
+      ],
+      [
+        3000,
+        4
+      ],
+      [
+        4500,
+        8
+      ],
+      [
+        6000,
+        12
+      ]
+    ],
+    "top_k": 3,
+    "seeds": [
+      29101
+    ]
+  },
+  "stage_c": {
+    "seeds": [
+      29102,
+      29111,
+      29112,
+      29113
+    ]
+  },
+  "training": {
+    "batch_size": 64,
+    "lr": 0.003,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "clip": 1.0,
+    "branch_weight": 0.1,
+    "common_amplitude": 3.141592653589793,
+    "leak": 0.0,
+    "sigma": 0.0
+  },
+  "streams": {
+    "train_namespace": 292001,
+    "eval_namespace": 293001,
+    "eval_examples": 1024
+  },
+  "evaluation": {
+    "primary_length": 12,
+    "secondary_lengths": [
+      64,
+      256
+    ]
+  },
+  "band": {
+    "learn_mean_min": 0.65,
+    "learn_seed_min": 0.58,
+    "memoryless_margin_mean": 0.05,
+    "memoryless_margin_seed": 0.02,
+    "nonceiling_mean_max": 0.95,
+    "nonceiling_seed_max": 0.97,
+    "oracle_min": 0.99
+  },
+  "resource": {
+    "max_updates": 120000,
+    "wall_seconds_cap": 3600,
+    "replay_wall_seconds_cap": 900
+  },
+  "calibration": {
+    "namespace": 294001,
+    "examples": 4096
+  }
+}

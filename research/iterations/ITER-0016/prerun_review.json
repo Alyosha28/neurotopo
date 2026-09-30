@@ -1,0 +1,22 @@
+{
+  "experiment_id": "EXP-0021",
+  "version": "v1",
+  "review_type": "independent_static_prerun",
+  "scope": "Frozen four-new-seed replication plus separately reported EXP-0020 pilot and one-shot NORM/ANGLE interventions with paired common-rotation shams. Reviewed registration, config, entry, prior pilot source/results, and project protocol without executing research or changing thresholds.",
+  "checks": [
+    "The confirmation unit is the initialization/training seed: 20002-20005 are fixed and the prior 20001 seed is excluded from R and M. All five receive the same newly specified intervention procedure, while only the four fresh seeds determine the verdict. No failed seed replacement or checkpoint selection is allowed.",
+    "The three arms retain the same train streams, initial encoder and readout within seed, 1000 updates, curriculum, optimizer, all eight old evaluation cells, and strong INV control. Parameter counts and residual/nonresidual package differences are disclosed; the study claims neither isolated organisation nor Gate 1 evidence.",
+    "Existing generator targets are b0 XOR cumulative commands. Model transitions receive current state and command only; environment rotations are not learned features. New intervention streams use independent namespaces and the intervention is applied after operation 32, before its readout, so immediate output corresponds to target index 32. Shared inputs/labels across interventions permit paired contrasts without future-label use.",
+    "Common rotations of both columns preserve Gram and therefore the fixed Gram readout at the immediate endpoint. For a fixed axis, common-rotation Frobenius displacement is monotone on [0, pi], so bisection for NORM_SHAM is implementable; unreachable NORM displacements are explicitly saturated at pi with residual and unreachable fraction reported. ANGLE_SHAM uses the same axis and angle as ANGLE, while unequal displacement is disclosed.",
+    "R and M have distinct frozen four-seed all-pass rules. IID learnability, ROT_U final accuracy and RAW gap guard R; paired NORM and ANGLE difference-in-differences with qualified NONE accuracy guard M. Every seed, failed guard, fixed cell, and all intervention conditions remain reportable; the old seed and t intervals are descriptive only.",
+    "The 12000 research-update cap equals four seeds times three arms times 1000; 600-second run/analysis plus 180-second replay equals the entry's 780-second cap. The pilot final checkpoints and original result files are present. Engineering tiny-fit is separately capped at 150 updates and does not contribute scientific evidence."
+  ],
+  "blocking": [],
+  "verdict": "PASS_STATIC_PRERUN",
+  "implementation_checks": [
+    "Verify exact NONE replay against the original forward on the same T64 data, including logits at indices 0-64, then verify intervention starts only after transition 32.",
+    "Verify NORM keeps zero columns zero, ANGLE preserves each column norm, both shams preserve all three Gram components, NORM_SHAM residual/unreachable reporting, and finite outputs after every intervention.",
+    "Verify seed/data separation, shared per-seed training stream and common-component initialization, unchanged strong INV evaluation, retained failed artifacts, and frozen source/config hashes before the formal run."
+  ],
+  "interpretation_limits": "At the primary immediate endpoint, the fixed readout sees only Gram. The sham contrasts therefore measure learned checkpoint output sensitivity to these state changes, including margins and readout weights; they do not alone identify the training cause, a distinct recurrent update mechanism, or autonomous correction. ANGLE is a random norm-preserving perturbation rather than guaranteed information erasure, and ANGLE_SHAM is not displacement matched. Downstream time points are descriptive. R is a replication of this synthetic rotation setting, not architecture superiority; M is a scoped crossover in perturbation sensitivity. This static review establishes no empirical result, successful engineering validation, or reproducibility."
+}

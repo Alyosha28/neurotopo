@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "ee9babe76606bd47c34b136b83bffea94b13d0610340307ef7183558b7be6898",
+  "review_sha256": "4946eddc6556d14eabbe13d558cd165c1e5fb9775c3c8e3d81e41a9c4fc067df",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "只读诊断完成并交付；不启动新训练、不改变EXP0017或Gate状态。"
+}

@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "summaries_recomputed": 22,
+  "replication_unit": "training_seed",
+  "new_seeds": [
+    20002,
+    20003,
+    20004,
+    20005
+  ],
+  "pilot_excluded_from_verdict": true,
+  "method": "Python statistics mean/stdev and registered t critical; no pooled-example inference",
+  "decision": "INCONCLUSIVE",
+  "cause": "REL20005 long-sequence NONE qualification fails, R and M false; no engineering failure",
+  "limitations": [
+    "n4 t intervals descriptive",
+    "RAW IID inadequate in20003/20005",
+    "package parameter/residual differences disclosed",
+    "secondary delayed intervention effect not promoted to primary success"
+  ]
+}

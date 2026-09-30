@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "d6ad393a7fedf95ff613cbe96bd1697d828708121274306f4750636a7e30f92a",
+  "reviewer": {
+    "model": "agent-default (independent subagent; provider model id not exposed to orchestrator)",
+    "effort": "agent-default",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "posthoc_reference_contradiction",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "该解法在无噪条件的翻转时点准确率",
+        "Protocol-required reference measured after the main run because the automated phases omitted it; it does not enter the EXP-0028 decision rule.",
+        "协议要求的信息检查显示",
+        "时降到 0.5150"
+      ],
+      "problem": "The pre-registered task-information check requires the explicit Gram re-encoder to be measured at the pre-registered metric (flip-point accuracy on noise-free conditions), but the action records that the reference was measured after the main run because the automated phases omitted it, and asserts that it does not enter the EXP-0028 decision rule. The decision text nevertheless grounds its conclusion on '协议要求的信息检查显示' and on a post-hoc all-point accuracy figure (σ=.4 '时降到 0.5150'), i.e. an after-the-fact measurement at noise levels and on a metric outside the registered σ=0 flip-accuracy check. The packet thus both excludes and uses the post-hoc reference.",
+      "why_it_matters": "A required in-run check was deferred to an after-the-fact measurement, the record disagrees with itself about whether that measurement affected the judgment, and the decision's noise-axis rationale relies on an unregistered metric/extension. The formal substatus still follows from the scan's flip/hold failures alone, but the stated rationale for the negative task-family conclusion depends on the post-hoc evidence.",
+      "falsifiable_check": "Locate the explicit Gram re-encoder evaluation in the registered automated pipeline; if it is absent, mark the reference as post hoc, identify whether a decision-table row uses it, and re-evaluate the σ>0 noise-axis claim using the registered flip-point metric rather than accuracy_all."
+    },
+    {
+      "id": "pretest_replay_evidence_overstated",
+      "source": "action",
+      "severity": "low",
+      "evidence": [
+        "参数/数据/预测哈希与指标差全为 0",
+        "pretest:CAND",
+        "accuracy_gaps",
+        "logits_hash_equal"
+      ],
+      "problem": "The decision states that the three archived fresh-process replays reproduced parameter/data/prediction hashes and zero metric gaps, but the pretest:CAND replay record contains only final_hash_equal, data_hash_equal and accuracy_gaps. Unlike the two scan replays it has no logits_hash_equal field and no BCE/response_error metric_gaps, so prediction-hash equality and the registered BCE tolerance are not recorded for that replay.",
+      "why_it_matters": "The failed pretest seed is the run most relevant to the candidate's 1/3 learning-failure evidence. The reproducibility claim for that replay is broader than the recorded fields, so a reader cannot confirm prediction-hash equality or the registered BCE comparison from the packet.",
+      "falsifiable_check": "Inspect the verification record for pretest:CAND and check whether a prediction/logits hash and BCE/response_error gaps were computed; if they were, restore the missing fields, otherwise weaken the decision's reproducibility claim."
+    },
+    {
+      "id": "registered_seed_28111_replay_missing",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "独立复核在独立进程中重建模型、重放种子",
+        "scan:N5_T64_leak0_s40:INV_COMP-w32-b1",
+        "pretest:CAND",
+        "因无合格条件跳过"
+      ],
+      "problem": "The design's execution/review section requires the independent process to rebuild the model and replay seed 28111's training and evaluation. The verification record instead replays scan seeds 28101/28102 and pretest seed 28103; seed 28111 never ran because the learn phase was skipped. The skip is disclosed in the decision, but the registered replay target itself is absent.",
+      "why_it_matters": "The protocol's reproducibility check for the A1 learning qualification was not performed as written. This is harmless for the recorded NO_QUALIFIED_CONDITION substatus because no learning claim is made, but the packet cannot support any later statement about seed-28111 reproducibility.",
+      "falsifiable_check": "Confirm from the manifest and artifact list that no seed-28111 run exists and that the learn phase was skipped by the no-qualified-condition branch; if the seed-28111 replay was meant to be conditional on reaching the learn phase, state that condition explicitly."
+    },
+    {
+      "id": "gate_file_provenance_not_pinned",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "本协议在实现与任何研究数据之前冻结。",
+        " M research/stage_gates.md",
+        "?? experiments/EXP-0028/",
+        "下三处既有工作区改动与本轮无关"
+      ],
+      "problem": "The protocol says it was frozen before implementation and any research data, but the manifest records git_dirty=true, the A1 gate source research/stage_gates.md is listed as modified and is absent from frozen_hashes, and the protocol directory experiments/EXP-0028/ is untracked; the decision says no commit was created and only characterizes three ITER-0021 working-tree changes as unrelated. The other modified tracked files, including the gate-definition file, are not accounted for.",
+      "why_it_matters": "The exact ARCH-GATES-v1 text and the pre-registration ordering cannot be independently anchored to an immutable revision, so a reader cannot verify that the recorded gate criteria predate the run. This weakens provenance for the decision that invokes the gate.",
+      "falsifiable_check": "Verify whether research/stage_gates.md has a recorded hash anywhere in the manifest, and whether experiments/EXP-0028/v1.md exists in any git commit reachable from f5a6e2c; if the gate file is unhashed and the protocol exists only as a run-time hash, the run-time content cannot be tied to an immutable revision."
+    },
+    {
+      "id": "n5_qualification_margin_fragile",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "合格当且仅当",
+        "0.5989347999427532",
+        "0.5989<.60"
+      ],
+      "problem": "N5 is the only scanned condition whose control flip mean lies inside the registered band (0.6218), but its hold mean 0.5989347999427532 is below the pre-registered ≥0.60 floor, so the menu returns no qualified condition. The rule uses only two seeds and a binary threshold, with no variance or confidence criterion, leaving the negative verdict on a knife-edge margin.",
+      "why_it_matters": "The central negative conclusion is sensitive to the particular seed pair and evaluation noise; a small shift in N5's hold accuracy could create a qualified condition and open the A1 learning path, so the result is less robust than the bare verdict suggests. The written rule is nevertheless applied correctly.",
+      "falsifiable_check": "Re-run N5 with an additional pre-specified seed set (for example 28101-28105) or bootstrap the 1024-example evaluation stream, and report an interval for the hold-accuracy mean around 0.60."
+    },
+    {
+      "id": "learning_arm_count_ambiguous",
+      "source": "design",
+      "severity": "low",
+      "evidence": [
+        "三臂各 3 seed",
+        "A1 只要求两臂",
+        "任一臂学习资格失败"
+      ],
+      "problem": "The learning-qualification paragraph defines three arms (CAND, selected INV_COMP, EXTRA_SUP) and says each arm must pass, and the decision table fails A1 if any arm fails learning qualification; the same paragraph also says A1 only requires two arms to be able to learn. It is unresolved whether EXTRA_SUP is a mandatory qualification arm or only a diagnostic that may fail without blocking A1.",
+      "why_it_matters": "In a future run that reaches a qualified condition, the mandatory arm set determines the A1 verdict; an analyst could either let the extra-supervision control block A1 or ignore it, making the result non-reproducible across readers.",
+      "falsifiable_check": "Resolve EXTRA_SUP's required status from the A0 contract and ARCH-GATES-v1 and rewrite the qualification rule as an explicit list of required arms, removing the inconsistent '两臂' wording."
+    },
+    {
+      "id": "decision_table_missing_info_failure_row",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "工程、任务、控制、学习四项全部通过",
+        "任务信息检查（两个证据同时满足）",
+        "does not enter the EXP-0028 decision rule"
+      ],
+      "problem": "The SUPPORTED row requires the task-information check to pass, and the design defines that check as two simultaneously required evidences, but the decision table has no failure row for the information check. The action note simultaneously says the explicit-reference measurement does not enter the EXP-0028 decision rule, so the positive path's treatment of a required check is undefined.",
+      "why_it_matters": "If a future run reached a qualified condition and passed engineering, control and learning checks while the information check failed or was unavailable, no frozen substatus would apply, permitting an unsupported SUPPORTED verdict or an ad-hoc branch. The present run is unaffected because the no-qualified-condition row fires first.",
+      "falsifiable_check": "Enumerate all pass/fail combinations of the design's four checks against the decision table and verify each maps to exactly one row; add an explicit information-check-failure substatus if a combination is unmapped."
+    },
+    {
+      "id": "project_gate1_untouched_claim_unverified",
+      "source": "both",
+      "severity": "low",
+      "evidence": [
+        "旧 Gate 1、ResearchLoop 与既有实验判词不变",
+        "未被触碰",
+        " M research/loop/current_frontier.md",
+        " M research/stage_gates.md"
+      ],
+      "problem": "The design and decision assert that old Gate 1 and ResearchLoop judgments are unchanged and that project_gate1 was not touched, but the manifest lists modified files in that area (research/loop/current_frontier.md and research/stage_gates.md) and the packet contains no before/after value or hash for project_gate1. The non-interference claim is therefore an assertion rather than a verified observation.",
+      "why_it_matters": "This claim is what prevents EXP-0028 from being read as old Gate 1 credit; without a recorded baseline or diff, that boundary cannot be independently confirmed from the frozen packet.",
+      "falsifiable_check": "Compare project_gate1 and the loop/gate files at commit f5a6e2c with their working-tree or run-time values and provide hashes or a diff showing that any changes are unrelated to EXP-0028."
+    }
+  ],
+  "overall_assessment": "Packet 内设计与执行基本自洽：预注册合格带与判词表按原文应用于 8 个扫描条件，记录的数值支持 NO_QUALIFIED_CONDITION；主要可定位问题集中在事后补测的信息检查参照、重放记录字段不全、沙箱不可提交导致的来源锚定缺失，以及若干只影响未来版本的规则歧义。"
+}

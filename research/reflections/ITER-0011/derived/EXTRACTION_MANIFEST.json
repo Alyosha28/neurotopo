@@ -1,0 +1,71 @@
+{
+  "packet": "research/reflections/ITER-0011/packet.json",
+  "packet_sha256": "097bb06ecf57ab98518d2e8b0fdbf97f7b631c52832d9834761deb3bd5cee868",
+  "parts": [
+    {
+      "bytes": 7188,
+      "matches_packet_digest": true,
+      "part": "design.md",
+      "sha256": "07e62a2b359cebd349fc7a969bcefd2fe82655c932673990ce017ef355f2d9ba"
+    },
+    {
+      "bytes": 18498,
+      "matches_packet_digest": true,
+      "part": "action.md",
+      "sha256": "61c9c25f70848957d6b33eb627f6b1c4325e0c13d5fde3bf043c9cf6d1a40026"
+    },
+    {
+      "bytes": 32769,
+      "matches_packet_digest": true,
+      "part": "action_output_0_manifest.json",
+      "sha256": "ff0df3d498954b1d8d40a1e83e30d1f71d6a039d62fc35877b5a2f6fd279805c"
+    },
+    {
+      "bytes": 17481,
+      "matches_packet_digest": true,
+      "part": "action_output_1_verification.json",
+      "sha256": "08c0b31c65270ac0fb3b6efc273e49887cd39f9e7c602b0b88bfb0c06759f048"
+    },
+    {
+      "bytes": 3341,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_review.json",
+      "sha256": "e741e4492cfb2e35c2bec7009e3a14a6f1afa31b1b7bc431406ba32cafd04825",
+      "source_path": "research/reflections/EXP-0016-RESULT/review.json"
+    },
+    {
+      "bytes": 5667,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_independent_reproduction.json",
+      "sha256": "ef99f81917b44a04f8c72a1245c1b6566d0c7775cd2b463954c021430a20e895",
+      "source_path": "artifacts/EXP-0016/v1/independent_reproduction.json"
+    },
+    {
+      "bytes": 810,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_pairing_check.json",
+      "sha256": "e5aacdabd5dffe8ec7886d032ef59873b07626430aac18e87edd42ab6144298b",
+      "source_path": "artifacts/EXP-0016/v1/pairing_check.json"
+    },
+    {
+      "bytes": 102,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_job_end.json",
+      "sha256": "1033b16afaf0c78b832bca589c9caa24e34eb0ccfeb1809ddeb4fc6fabc1e008",
+      "source_path": "artifacts/auto_research/live/jobs/ITER-0011/job_end.json"
+    },
+    {
+      "bytes": 5576,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_validation.json",
+      "sha256": "abf28fdd1b44d54661457d7614366a64be5e7f0cd3cd98123360f7e54beb3db3",
+      "source_path": "research/iterations/ITER-0011/validation.json"
+    },
+    {
+      "bytes": 2205,
+      "matches_packet_digest": true,
+      "part": "action_output_2_decision.json",
+      "sha256": "02c6863b3124cea0be38dc721675677e2982096127b53bd74c6eb9edc08cab06"
+    }
+  ]
+}

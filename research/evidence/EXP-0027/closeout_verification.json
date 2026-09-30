@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "archive_commit": "42ce8d77a450cafc471cb4c8741140a805e92564",
+  "execution_source_commit": "68200dc92b9fc5b7f490d47e0953c54215a847fd",
+  "committed_raw_files": 235,
+  "committed_raw_bytes": 97294385,
+  "committed_tree_matches_verified_source_copies": true,
+  "tests": 328,
+  "saved_witness_replays": 104,
+  "witness_replay_error": 0.0,
+  "models": 8,
+  "decision": "SUPPORTED / EXPOSED_STATE_COMPUTATION_INCOMPATIBILITY",
+  "scope": "Specific exposed state pairs; no unseen-model forecast or method-training claim"
+}

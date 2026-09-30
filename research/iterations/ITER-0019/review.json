@@ -1,0 +1,251 @@
+{
+  "experiment": "EXP-0024/v1",
+  "reviewer_scope": "independent result review; frozen exposed case only",
+  "status": "PASS",
+  "decision": "SUPPORTED",
+  "substatus": "FROZEN_CASE_STATE_REFRESH_RESCUE",
+  "primary_case_seed": 23005,
+  "case_qualification": {
+    "calibration_accuracy": true,
+    "prototype_labels": true,
+    "none_iid_h_all": true,
+    "none_iid_u_all": true,
+    "none_iid_u_flip": true,
+    "gauge_local": true,
+    "gauge_long_equivalence": true
+  },
+  "case_long_final_accuracy": {
+    "NONE": 0.75,
+    "GAUGE8": 0.75,
+    "RESET8": 1.0,
+    "RESET1": 1.0
+  },
+  "case_reset8_minus_gauge8": 0.25,
+  "exposed_rel_descriptive_effects": {
+    "NONE": {
+      "values_by_seed": {
+        "23001": 0.0,
+        "23002": 0.0,
+        "23003": 0.0,
+        "23004": 0.0,
+        "23005": 0.25,
+        "23006": 0.0
+      },
+      "mean": 0.041666666666666664,
+      "sample_sd": 0.10206207261596575,
+      "min": 0.0,
+      "max": 0.25,
+      "descriptive_t95": [
+        -0.06544090983333337,
+        0.14877424316666668
+      ]
+    },
+    "GAUGE8": {
+      "values_by_seed": {
+        "23001": 0.0,
+        "23002": 0.0,
+        "23003": 0.0,
+        "23004": 0.0,
+        "23005": 0.25,
+        "23006": 0.0
+      },
+      "mean": 0.041666666666666664,
+      "sample_sd": 0.10206207261596575,
+      "min": 0.0,
+      "max": 0.25,
+      "descriptive_t95": [
+        -0.06544090983333337,
+        0.14877424316666668
+      ]
+    }
+  },
+  "other_seed_harms_vs_NONE": [
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET8",
+      "cell": "LONG_U",
+      "metric": "hold_accuracy",
+      "delta_vs_NONE": -0.00042896099518952013
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "metric": "accuracy_all",
+      "delta_vs_NONE": -0.09288194444444442
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "metric": "final_accuracy",
+      "delta_vs_NONE": -0.01953125
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "metric": "hold_accuracy",
+      "delta_vs_NONE": -0.12625139043381528
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "IID_U",
+      "metric": "flip_accuracy",
+      "delta_vs_NONE": -0.08746736292428198
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "metric": "accuracy_all",
+      "delta_vs_NONE": -0.002165916828793746
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "metric": "hold_accuracy",
+      "delta_vs_NONE": -0.0014554033765358243
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "condition": "RESET1",
+      "cell": "LONG_U",
+      "metric": "flip_accuracy",
+      "delta_vs_NONE": -0.0028876257637010516
+    }
+  ],
+  "other_seed_harms_note": "All accuracy decreases over all other seeds/arms, RESET8 and RESET1, four cells, and all/all-final/hold/flip metrics; BCE is descriptive and not an accuracy harm criterion. Only REL23004 is harmed.",
+  "static_table_scope": "12 models x 2 prototype labels x HOLD/FLIP; replayed logits and predictions from frozen transition; stored tables match.",
+  "checks": {
+    "frozen_commit_and_clean_checkout": true,
+    "source_config_parent_and_all_recorded_artifact_hashes": true,
+    "parent_source_hash_and_calibration_completion_crosslinks": true,
+    "generator_inputs_exact": true,
+    "calibration_supervised_means_psd_roots_and_logits": true,
+    "checkpoint_weights_unchanged": true,
+    "all_192_pre_post_rollouts_and_t0": true,
+    "own_prediction_selection_and_gauge_threshold": true,
+    "xor_bce_accuracy_first_error_time_series": true,
+    "resource_counts_and_descriptive_statistics": true,
+    "preregistered_case_decision": true
+  },
+  "limits": [
+    "Successful case was selected from already exposed training seeds; six-seed interval crosses zero.",
+    "512 newly labelled calibration examples and 12 float32 prototype values (48 bytes) per model; two labels form a supervised codebook.",
+    "Classic finite-state decode/re-encode is a sufficient alternative; no new algorithm, Gate 1, topology advantage, or general seed-level rescue claim.",
+    "Frozen model forward/transition and registered generator are shared; the intervention and scoring were independently implemented.",
+    "Executed FLOPs and peak memory are NOT_MEASURED, as registered."
+  ],
+  "long_final_accuracy_by_model": [
+    {
+      "seed": 23001,
+      "arm": "REL_BASE",
+      "NONE": 1.0,
+      "GAUGE8": 1.0,
+      "RESET8": 1.0,
+      "RESET1": 1.0
+    },
+    {
+      "seed": 23001,
+      "arm": "INV_BASE",
+      "NONE": 1.0,
+      "GAUGE8": 1.0,
+      "RESET8": 1.0,
+      "RESET1": 1.0
+    },
+    {
+      "seed": 23002,
+      "arm": "REL_BASE",
+      "NONE": 1.0,
+      "GAUGE8": 1.0,
+      "RESET8": 1.0,
+      "RESET1": 1.0
+    },
+    {
+      "seed": 23002,
+      "arm": "INV_BASE",
+      "NONE": 1.0,
+      "GAUGE8": 1.0,
+      "RESET8": 1.0,
+      "RESET1": 1.0
+    },
+    {
+      "seed": 23003,
+      "arm": "REL_BASE",
+      "NONE": 1.0,
+      "GAUGE8": 1.0,
+      "RESET8": 1.0,
+      "RESET1": 1.0
+    },
+    {
+      "seed": 23003,
+      "arm": "INV_BASE",
+      "NONE": 1.0,
+      "GAUGE8": 1.0,
+      "RESET8": 1.0,
+      "RESET1": 1.0
+    },
+    {
+      "seed": 23004,
+      "arm": "REL_BASE",
+      "NONE": 0.740234375,
+      "GAUGE8": 0.740234375,
+      "RESET8": 0.740234375,
+      "RESET1": 0.75
+    },
+    {
+      "seed": 23004,
+      "arm": "INV_BASE",
+      "NONE": 1.0,
+      "GAUGE8": 1.0,
+      "RESET8": 1.0,
+      "RESET1": 1.0
+    },
+    {
+      "seed": 23005,
+      "arm": "REL_BASE",
+      "NONE": 0.75,
+      "GAUGE8": 0.75,
+      "RESET8": 1.0,
+      "RESET1": 1.0
+    },
+    {
+      "seed": 23005,
+      "arm": "INV_BASE",
+      "NONE": 1.0,
+      "GAUGE8": 1.0,
+      "RESET8": 1.0,
+      "RESET1": 1.0
+    },
+    {
+      "seed": 23006,
+      "arm": "REL_BASE",
+      "NONE": 1.0,
+      "GAUGE8": 1.0,
+      "RESET8": 1.0,
+      "RESET1": 1.0
+    },
+    {
+      "seed": 23006,
+      "arm": "INV_BASE",
+      "NONE": 1.0,
+      "GAUGE8": 1.0,
+      "RESET8": 1.0,
+      "RESET1": 1.0
+    }
+  ],
+  "static_transition_correct_models": 12,
+  "prototype_label_correct_models": 12,
+  "max_gauge_local_logit_abs_error": 1.1920928955078125e-06
+}

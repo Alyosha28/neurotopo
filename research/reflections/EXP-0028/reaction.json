@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "d6ad393a7fedf95ff613cbe96bd1697d828708121274306f4750636a7e30f92a",
+  "review_sha256": "4fb0efe424b74015bc65a061050afb27fe3235afca070321a27a273287c19d2e",
+  "responses": [
+    {
+      "id": "posthoc_reference_contradiction",
+      "disposition": "accept",
+      "reason": "属实：协议把显式 Gram 重编码参照列为信息检查项，但自动阶段遗漏，运行后补测；决定正文先前未标注其事后性质，并引用了未注册的 accuracy_all 数值。",
+      "action": "在决定0103补记：该参照为事后测量、不进入判词（判词表无对应行），只在解释层使用；报告与 explicit_reference.json 的 note 同步标注。原判词不变。",
+      "evidence_paths": [
+        "research/decisions/0103_exp0028_a1_qualification.md",
+        "research/evidence/EXP-0028/explicit_reference.json"
+      ]
+    },
+    {
+      "id": "pretest_replay_evidence_overstated",
+      "disposition": "accept",
+      "reason": "属实：verification.json 中 pretest:CAND 重放原先只记 accuracy_gaps，缺 logits 哈希与 BCE 差，而决定文本声称三运行哈希与指标差全为 0。",
+      "action": "扩展 scripts/verify_exp0028_replay.py 记录逐格 logits 哈希与 BCE 差，在干净副本重跑同一重放；更新后的 verification.json 显示 logits_hash_equal=true、max_bce_gap=0。",
+      "evidence_paths": [
+        "research/evidence/EXP-0028/verification.json",
+        "scripts/verify_exp0028_replay.py"
+      ]
+    },
+    {
+      "id": "registered_seed_28111_replay_missing",
+      "disposition": "accept",
+      "reason": "属实：协议的 28111 重放依赖 learn 阶段（需先有合格条件），本轮无合格条件、该阶段按协议跳过，实际重放落在扫描/前测的已归档运行上。",
+      "action": "在决定0103与验证记录中明确 28111 未运行及其条件性；本轮不补做 28111 训练（那会超出冻结设计）。",
+      "evidence_paths": [
+        "research/decisions/0103_exp0028_a1_qualification.md",
+        "research/evidence/EXP-0028/verification.json"
+      ]
+    },
+    {
+      "id": "gate_file_provenance_not_pinned",
+      "disposition": "accept",
+      "reason": "部分属实：协议文件本身已在 manifest frozen_hashes 中，但 research/stage_gates.md 未列入；且本轮沙箱不可写 git 元数据，无法用提交锚定。",
+      "action": "新增 provenance_check.json：固定提交 f5a6e2c 中 ARCH-GATES-v1 的 A1 判据行哈希 52ff8b4d…、工作区差异仅为状态单元格、协议未提交的限制，以及运行前后旧循环账本未变。",
+      "evidence_paths": [
+        "research/evidence/EXP-0028/provenance_check.json",
+        "research/decisions/0103_exp0028_a1_qualification.md"
+      ]
+    },
+    {
+      "id": "n5_qualification_margin_fragile",
+      "disposition": "accept",
+      "reason": "属实：唯一接近合格的 N5 保持均值 0.5989 对 0.60 门限，两 seed 的二元规则使阴性结论贴近边界。",
+      "action": "在不改冻结判词的前提下补做事后敏感性：额外 3 个未参与扫描的种子（28103–28105）与 1024 条评估流的样本重采样；5 seed 翻转均值 0.6095、保持均值 0.5987 仍<.60，结论稳健性提高但判词不变。",
+      "evidence_paths": [
+        "research/evidence/EXP-0028/posthoc_sensitivity.json",
+        "research/evidence/EXP-0028/report.md"
+      ]
+    },
+    {
+      "id": "learning_arm_count_ambiguous",
+      "disposition": "accept",
+      "reason": "属实：协议同时出现“三臂各 3 seed/任一臂失败即 LEARNING_QUALIFICATION_FAILED”和“A1 只要求两臂”，必需臂集合不明确。",
+      "action": "在决定0103记录本轮采用的读法（CAND 与选定 INV_COMP 必需、EXTRA_SUP 列入并报告但本轮无资格判词），并要求后续版本在运行前显式列必需臂。本轮未进入该阶段，判词不受影响。",
+      "evidence_paths": [
+        "research/decisions/0103_exp0028_a1_qualification.md"
+      ]
+    },
+    {
+      "id": "decision_table_missing_info_failure_row",
+      "disposition": "accept",
+      "reason": "属实：SUPPORTED 行要求信息检查通过，但判词表没有“信息检查失败”行；本轮由“菜单内无合格条件”行先行覆盖。",
+      "action": "在决定0103记录该缺口与先行行适用关系，并要求后续版本补齐互斥行；本轮判词不变。",
+      "evidence_paths": [
+        "research/decisions/0103_exp0028_a1_qualification.md"
+      ]
+    },
+    {
+      "id": "project_gate1_untouched_claim_unverified",
+      "disposition": "accept",
+      "reason": "部分属实：决定声称旧 Gate 1/ResearchLoop 未变，但 packet 未附前后基线；现可在仓库内直接核验。",
+      "action": "在 provenance_check.json 记录运行前后两次 `loop status` 的关键字段与哈希（ITER-0021/EXP-0026/DECIDED/PARTIALLY_SUPPORTED、entry c9cbee50…、task_spec 86e4f882…），显示未变化；同时说明 stage_gates.md/frontier 的工作区改动为状态与导航文本，不写 project_gate1。",
+      "evidence_paths": [
+        "research/evidence/EXP-0028/provenance_check.json"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "反思校验通过后再开下一轮：下一轮只能按决定0103登记的新版本进行（候选学习资格修复须命名 v4 并保留 v3，或另行注册具备受界 oracle、控制非封顶且排除简单显式解的 A2 任务族）；不得复用本轮已暴露的 σ/长度条件或本轮 CAND 前测成绩来挑配置，也不得据本轮结果追认 A1/A2 或旧 Gate 1。"
+}

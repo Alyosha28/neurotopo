@@ -1,0 +1,82 @@
+{
+  "decision_impact": "UNCHANGED",
+  "next_action": "产出 GPI-0001 v1，逐条落实六项修订：先做解析的分解 vs 联合滤波比较（R8）与 H=64 可压缩性探针（R2），再冻结匹配定义、难度容差与全部数值常数并附功效陈述，最后连同被引权威文本送第二次独立审查。Gate 1 与全部既有判词不变；不注册实验、不授权训练。",
+  "packet_sha256": "c2c20b435d8d6e1ad4430e97512bfa21847b0e4278532c43ba2d654dfdc98694",
+  "responses": [
+    {
+      "action": "修订 2：F 与 X 改用同一网格步长，或预先声明在 oracle 困惑度与均匀基线 KL 上的实测难度容差；并报告每条件的有效（分解后）状态规模。见决定0064。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0064_gpi0001_v0_review.md"
+      ],
+      "id": "GPI-0001-V0-R1",
+      "reason": "真实硬伤：F 与 X 的网格步长相差约 17 倍、目标自由度 30 对 255，故匹配主张按字面为假，I 可能仅由输出不对称产生。"
+    },
+    {
+      "action": "修订 3：新增冻结前 H=64 可压缩性探针（或最小充分统计量维数下界），要求超过余量量级；gap(16)≥0.20 降为必要非充分。已先跑可恢复性探针作第一步证据。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0064_gpi0001_v0_review.md",
+        "research/design/structural_task_probe/theta_recoverability.json"
+      ],
+      "id": "GPI-0001-V0-R2",
+      "reason": "真实硬伤：gap(k) 约束 k 步窗口模型，不是 64 单元递归状态；击败 CAL-0008 的是可压缩性而非非局部性。"
+    },
+    {
+      "action": "修订 1/2：冻结数值难度容差（oracle 平均困惑度与均匀基线 KL 的允许比值），并在解释交互前报告两者。见决定0064。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0064_gpi0001_v0_review.md"
+      ],
+      "id": "GPI-0001-V0-R3",
+      "reason": "真实缺陷：两条件支撑相同、熵域相同，平均后验熵对该混淆可证明是盲的；且难度容差未冻结。"
+    },
+    {
+      "action": "修订 4：在精确冻结的 F/X 网格上带 bootstrap 区间重测 gap(k)，并公布 0.05 量级的推导；任一网格 gap(16)<0.20 即不注册。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0064_gpi0001_v0_review.md"
+      ],
+      "id": "GPI-0001-V0-R4",
+      "reason": "真实缺陷：通过前提检验的测量用的是第三种参数化（单参数、32 点），表头数字不在提交证据中，且无区间、0.05 量级未推导。"
+    },
+    {
+      "action": "修订：增加有效状态行，预先声明 I 不得被读作超出该不对称的容量效应，并报告分解滤波与联合滤波的 KL 差作为解析上界。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0064_gpi0001_v0_review.md"
+      ],
+      "id": "GPI-0001-V0-R5",
+      "reason": "真实缺陷：匹配的增广状态数是名义值——F 有效 256、X 需 16384，相差 64 倍却被呈现为相等。"
+    },
+    {
+      "action": "修订 1：在注册提交中冻结这些常数并附事前功效/MDD 计算，再由它们重新推导三分支判定。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0064_gpi0001_v0_review.md"
+      ],
+      "id": "GPI-0001-V0-R6",
+      "reason": "真实缺陷：主判定规则依赖未冻结的 δ_min、种子数、bootstrap 与难度容差，故三分支规则不可评估、无功效陈述。"
+    },
+    {
+      "action": "修订 6：把被引权威文本纳入 packet，并把项目轨裁定冻结为首次运行之前的带日期预注册决定；在此之前 A1 标为未核实。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0064_gpi0001_v0_review.md"
+      ],
+      "id": "GPI-0001-V0-R7",
+      "reason": "真实缺陷：A1 自我限定是断言；权威文本不在 packet，且裁定时点未固定，存在事后重标为项目轨的空间。"
+    },
+    {
+      "action": "修订：把解析滤波比较作为第一步（在授权任何训练前），要求分辨率匹配下存在非平凡 F–X 可达 KL 差。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0064_gpi0001_v0_review.md"
+      ],
+      "id": "GPI-0001-V0-R8",
+      "reason": "真实且有用：存在更省设计——先做解析的分解 vs 联合信念状态滤波比较（无需训练），并以标量充分统计读出替代 256 路输出。"
+    }
+  ],
+  "review_sha256": "c208812cae49fe084d6e816d998e2627e72b3f737483625d61f52512afefbec5",
+  "schema_version": 1
+}

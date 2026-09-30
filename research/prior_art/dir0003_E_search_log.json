@@ -1,0 +1,345 @@
+{
+  "area": "E_modularity_task_structure",
+  "retrieved_at": "2026-09-24T18:28:06Z",
+  "channel_notes": {
+    "primary": "arxiv API + arxiv PDF via pdftotext (pdftotext was used for every pdf_section source)",
+    "web_search_web_fetch": "unavailable (HTTP 402 / fake-IP DNS)",
+    "openalex": "usable for ONE query only; free per-IP budget exhausted immediately after (Insufficient budget / Rate limit exceeded). Its results are NOT used in the report.",
+    "duckduckgo_mojeek_searxng_dblp": "not used (anti-bot walls)",
+    "semantic_scholar": "not used (429 per task brief)",
+    "no_new_packages_installed": true
+  },
+  "queries": [
+    {
+      "engine": "arxiv",
+      "query": "all:\"task affinity\" AND all:\"transfer learning\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22task%20affinity%22%20AND%20all%3A%22transfer%20learning%22&max_results=12&sortBy=relevance",
+      "n_results": 3
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"task affinity\"",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22task%20affinity%22&max_results=12&sortBy=relevance",
+      "n_results": 9
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"gradient conflict\" AND all:\"multi-task\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22gradient%20conflict%22%20AND%20all%3A%22multi-task%22&max_results=12&sortBy=relevance",
+      "n_results": 12
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"which tasks\" AND all:\"learn together\" AND all:\"multi-task\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22which%20tasks%22%20AND%20all%3A%22learn%20together%22%20AND%20all%3A%22multi-task%22&max_results=12&sortBy=relevance",
+      "n_results": 2
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"modular architecture enough\"",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22modular%20architecture%20enough%22&max_results=12&sortBy=relevance",
+      "n_results": 1
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"are neural nets modular\"",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22are%20neural%20nets%20modular%22&max_results=12&sortBy=relevance",
+      "n_results": 1
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"emergent modularity\"",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22emergent%20modularity%22&max_results=12&sortBy=relevance",
+      "n_results": 7
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"expert specialization\" AND all:\"mixture of experts\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22expert%20specialization%22%20AND%20all%3A%22mixture%20of%20experts%22&max_results=12&sortBy=relevance",
+      "n_results": 12
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"modularity\" AND all:\"specialization\"",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22modularity%22%20AND%20all%3A%22specialization%22&max_results=12&sortBy=relevance",
+      "n_results": 12
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"causal\" AND all:\"expert\" AND all:\"ablation\" AND all:\"mixture-of-experts\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22causal%22%20AND%20all%3A%22expert%22%20AND%20all%3A%22ablation%22%20AND%20all%3A%22mixture-of-experts%22&max_results=12&sortBy=relevance",
+      "n_results": 9
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"routing collapse\" OR ti:\"router collapse\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22routing%20collapse%22%20OR%20ti%3A%22router%20collapse%22&max_results=12&sortBy=relevance",
+      "n_results": 12
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"optimization trajectories\" AND all:\"multi-task\"",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22optimization%20trajectories%22%20AND%20all%3A%22multi-task%22&max_results=12&sortBy=relevance",
+      "n_results": 1
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"taskonomy\"",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22taskonomy%22&max_results=12&sortBy=relevance",
+      "n_results": 4
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"gradient surgery\"",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22gradient%20surgery%22&max_results=12&sortBy=relevance",
+      "n_results": 12
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"criticality\" AND all:\"modules\"",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22criticality%22%20AND%20all%3A%22modules%22&max_results=12&sortBy=relevance",
+      "n_results": 12
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"lesion\" AND all:\"specialization\" AND all:\"neural network\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22lesion%22%20AND%20all%3A%22specialization%22%20AND%20all%3A%22neural%20network%22&max_results=12&sortBy=relevance",
+      "n_results": 12
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"interpretability\" AND all:\"mixture of experts\"",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22interpretability%22%20AND%20all%3A%22mixture%20of%20experts%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"specialization\" AND all:\"mixture of experts\" AND all:\"causal\"",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22specialization%22%20AND%20all%3A%22mixture%20of%20experts%22%20AND%20all%3A%22causal%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "au:\"Mueller\" AND all:\"mixture of experts\" AND all:\"interpretab\"",
+      "url": "https://export.arxiv.org/api/query?search_query=au%3A%22Mueller%22%20AND%20all%3A%22mixture%20of%20experts%22%20AND%20all%3A%22interpretab%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"MoE\" AND all:\"functional\" AND all:\"ablation\"",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22MoE%22%20AND%20all%3A%22functional%22%20AND%20all%3A%22ablation%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"task structure\" AND all:\"architecture\" AND all:\"modular\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22task%20structure%22%20AND%20all%3A%22architecture%22%20AND%20all%3A%22modular%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"modularity\" AND all:\"necessary\" AND all:\"ablation\" AND all:\"network\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22modularity%22%20AND%20all%3A%22necessary%22%20AND%20all%3A%22ablation%22%20AND%20all%3A%22network%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"interaction effect\" AND all:\"multi-task\" AND all:\"architecture\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22interaction%20effect%22%20AND%20all%3A%22multi-task%22%20AND%20all%3A%22architecture%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "ti:\"transferability\" AND all:\"predicting\" AND all:\"multi-task\"",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22transferability%22%20AND%20all%3A%22predicting%22%20AND%20all%3A%22multi-task%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"pre-registration\" AND all:\"machine learning\" AND all:\"hypothesis\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22pre-registration%22%20AND%20all%3A%22machine%20learning%22%20AND%20all%3A%22hypothesis%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"preregistration\" AND all:\"deep learning\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22preregistration%22%20AND%20all%3A%22deep%20learning%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"expert ablation\" AND all:\"language model\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22expert%20ablation%22%20AND%20all%3A%22language%20model%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "arxiv",
+      "query": "all:\"mixture-of-experts\" AND all:\"causal mediation\"",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22mixture-of-experts%22%20AND%20all%3A%22causal%20mediation%22&max_results=12&sortBy=relevance",
+      "n_results": 0
+    },
+    {
+      "engine": "crossref",
+      "query": "task affinity matrix transfer learning taskonomy",
+      "url": "https://api.crossref.org/works?query.bibliographic=task%20affinity%20matrix%20transfer%20learning%20taskonomy&rows=8",
+      "n_results": 6
+    },
+    {
+      "engine": "crossref",
+      "query": "preregistration machine learning hypothesis confirmation",
+      "url": "https://api.crossref.org/works?query.bibliographic=preregistration%20machine%20learning%20hypothesis%20confirmation&rows=8",
+      "n_results": 8
+    },
+    {
+      "engine": "crossref",
+      "query": "module criticality generalization deep networks",
+      "url": "https://api.crossref.org/works?query.bibliographic=module%20criticality%20generalization%20deep%20networks&rows=8",
+      "n_results": 8
+    },
+    {
+      "engine": "openalex",
+      "query": "mixture of experts expert specialization measurement",
+      "url": "https://api.openalex.org/works?filter=title_and_abstract.search:mixture%20of%20experts%20expert%20specialization%20measurement&per-page=5&select=id,doi,title,publication_year,primary_location,cited_by_count",
+      "n_results": 5
+    }
+  ],
+  "sources": [
+    {
+      "title": "How Modular Is a Frontier Mixture-of-Experts? A Pre-registered Causal Test in Which Apparent Expert Modularity Mostly Dissolves",
+      "year": 2026,
+      "id": "arXiv:2606.25092",
+      "url": "https://arxiv.org/abs/2606.25092",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Is a Modular Architecture Enough?",
+      "year": 2022,
+      "id": "arXiv:2206.02713",
+      "url": "https://arxiv.org/abs/2206.02713",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Are Neural Nets Modular? Inspecting Functional Modularity Through Differentiable Weight Masks",
+      "year": 2021,
+      "id": "arXiv:2010.02066",
+      "url": "https://arxiv.org/abs/2010.02066",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "\"It's a Match!\" -- A Benchmark of Task Affinity Scores for Joint Learning",
+      "year": 2023,
+      "id": "arXiv:2301.02873",
+      "url": "https://arxiv.org/abs/2301.02873",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Which Tasks Should Be Learned Together in Multi-task Learning?",
+      "year": 2020,
+      "id": "arXiv:1905.07553",
+      "url": "https://arxiv.org/abs/1905.07553",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Can Optimization Trajectories Explain Multi-Task Transfer?",
+      "year": 2024,
+      "id": "arXiv:2408.14677",
+      "url": "https://arxiv.org/abs/2408.14677",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Scalable Multitask Learning Using Gradient-based Estimation of Task Affinity",
+      "year": 2024,
+      "id": "arXiv:2409.06091",
+      "url": "https://arxiv.org/abs/2409.06091",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "The intriguing role of module criticality in the generalization of deep networks",
+      "year": 2020,
+      "id": "arXiv:1912.00528",
+      "url": "https://arxiv.org/abs/1912.00528",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "The Myth of Expert Specialization in MoEs: Why Routing Reflects Geometry, Not Necessarily Domain Expertise.",
+      "year": 2026,
+      "id": "arXiv:2604.09780",
+      "url": "https://arxiv.org/abs/2604.09780",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Modularity in Transformers: Investigating Neuron Separability & Specialization",
+      "year": 2024,
+      "id": "arXiv:2408.17324",
+      "url": "https://arxiv.org/abs/2408.17324",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Taskonomy: Disentangling Task Transfer Learning",
+      "year": 2018,
+      "id": "arXiv:1804.08328",
+      "url": "https://arxiv.org/abs/1804.08328",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Pattern Selectivity is Not Task-Causal Structure: A Cross-Architecture Mechanistic Study of Composed-Task Circuits in 1B-Class Language Models",
+      "year": 2026,
+      "id": "arXiv:2606.05378",
+      "url": "https://arxiv.org/abs/2606.05378",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "PiKE: Adaptive Data Mixing for Large-Scale Multi-Task Learning Under Low Gradient Conflicts",
+      "year": 2025,
+      "id": "arXiv:2502.06244",
+      "url": "https://arxiv.org/abs/2502.06244",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Improving Expert Specialization in Mixture of Experts",
+      "year": 2023,
+      "id": "arXiv:2302.14703",
+      "url": "https://arxiv.org/abs/2302.14703",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Task Grouping for Automated Multi-Task Machine Learning via Task Affinity Prediction",
+      "year": 2023,
+      "id": "arXiv:2310.16241",
+      "url": "https://arxiv.org/abs/2310.16241",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Multilinear Mixture of Experts: Scalable Expert Specialization through Factorization",
+      "year": 2024,
+      "id": "arXiv:2402.12550",
+      "url": "https://arxiv.org/abs/2402.12550",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Emergent Modularity in Pre-trained Transformers",
+      "year": 2023,
+      "id": "arXiv:2305.18390",
+      "url": "https://arxiv.org/abs/2305.18390",
+      "verified_layer": "pdf_section"
+    },
+    {
+      "title": "Taskonomy: Disentangling Task Transfer Learning [published CVPR 2018 record; same work as arXiv:1804.08328]",
+      "year": 2018,
+      "id": "10.1109/CVPR.2018.00391",
+      "url": "https://doi.org/10.1109/CVPR.2018.00391",
+      "verified_layer": "crossref_metadata"
+    }
+  ],
+  "distinct_works_retrieved": 17,
+  "verification_layers_used": [
+    "pdf_section",
+    "crossref_metadata"
+  ],
+  "code_commit_layer": "none - no repository/commit was fetched; no local reproduction was performed",
+  "unretrieved_but_searched": [
+    "pre-registered index-by-architecture interaction prediction in multi-task/modular learning (no arXiv hits)",
+    "neuroscience equal-damage lesion tradition (arXiv 'lesion'+'specialization' query swamped by medical imaging papers)",
+    "causal mediation analysis applied to MoE (query returned 0)"
+  ]
+}

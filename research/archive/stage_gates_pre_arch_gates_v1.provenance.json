@@ -1,0 +1,11 @@
+{
+  "archive_role": "exact_copy_of_pre_revision_authoritative_stage_gates",
+  "source_commit": "ef4ead023cd0dbf79fd66d4011d5704139789fce",
+  "source_path": "research/stage_gates.md",
+  "archive_path": "research/archive/stage_gates_pre_arch_gates_v1.md",
+  "source_sha256": "b9aff376d1d396f5de544b86c01f181594814357dbb73a51463d3120e87052a8",
+  "source_size_bytes": 32662,
+  "superseding_policy": "ARCH-GATES-v1",
+  "superseding_decision": "research/decisions/0101_architecture_stage_gates_v1.md",
+  "active_path": "research/stage_gates.md"
+}

@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/private/tmp/neurotopo-venv/bin/python",
+    "-m",
+    "neurotopo.learned_protected_pilot_reproduce",
+    "--run",
+    "artifacts/EXP-0020/v2",
+    "--output",
+    "research/iterations/ITER-0015/reproduction.json"
+  ],
+  "cwd": "/private/tmp/neurotopo-exp0020-v2-review-b489ff8",
+  "env_overrides": {
+    "PYTHONPATH": "/private/tmp/neurotopo-exp0020-v2-review-b489ff8/src"
+  },
+  "timeout_seconds": 180,
+  "monotonic_start": 2403.816278291,
+  "returncode": 0,
+  "stdout": "{\"pass_\": true, \"decision\": \"SUPPORTED\", \"substatus\": \"SINGLE_SEED_LEARNABILITY_ONLY\", \"learning_flags\": {\"RAW\": true, \"INV\": true, \"REL\": true}, \"models\": 3, \"monitor_checkpoints\": 15, \"evaluation_conditions\": 24, \"max_logit_error\": 0.0, \"max_gram_error\": 0.0, \"original_training_updates\": 3000, \"replay_training_updates\": 0, \"seconds\": 1.3284219590000248, \"scope\": \"Checkpoint and data replay plus independent XOR/metrics; no independent retraining or model-selection use\"}\n",
+  "stderr": "",
+  "exception": null,
+  "monotonic_end": 2406.079278208,
+  "elapsed_seconds": 2.2629999169998882
+}

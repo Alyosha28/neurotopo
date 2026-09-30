@@ -1,0 +1,19 @@
+{
+  "scientific_decision": "INCONCLUSIVE",
+  "scope": "frozen-weight distractor-payload diagnostic at new delay32 samples",
+  "reproduction_scope": "seed9101, three frozen models",
+  "evidence": [
+    {
+      "path": "research/iterations/ITER-0003/review.md",
+      "sha256": "5e2265a7f152b5f68128e89183a7bf436d7d020a806a5c5d1596294fa166eace"
+    },
+    {
+      "path": "docs/EXP-0005_reproduction.md",
+      "sha256": "513910d38202716e595bc360418b5224e3dd742ae2991e2d6d917aa31239a1f7"
+    },
+    {
+      "path": "artifacts/EXP-0005/v2/results/analysis.json",
+      "sha256": "d5961437afa04629e04ebfa3aa635aff88c78e78ad4c018fe5014ec435dcf82a"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "e379beff2f9e7572fff5f5226049c14b50a8d2f6a49e3949f14ef956b350233f",
+  "review_sha256": "0300692e3cf31ae2809f4ceba25ee18057fda5c3862135f3f7dbea670f1de275",
+  "responses": [
+    {
+      "id": "H1-R01",
+      "disposition": "accept",
+      "reason": "One local swap per graph establishes existence but not an experimentally useful reciprocity range.",
+      "action": "Recorded prespecified range, acceptance-rate and failure-reporting requirements for any future null-family design; retained the current existence-only conclusion.",
+      "evidence_paths": [
+        "research/reflections/H1-RECIPROCITY-20260924/reaction_evidence.md",
+        "research/design/h1_null_family_review_criteria.md"
+      ]
+    },
+    {
+      "id": "H1-R02",
+      "disposition": "accept",
+      "reason": "The observed spectral changes preclude single-factor attribution from these witnesses.",
+      "action": "Recorded numeric spectral and other topology balance as a prerequisite for later causal graph comparisons; made no H1 or gate claim.",
+      "evidence_paths": [
+        "research/reflections/H1-RECIPROCITY-20260924/reaction_evidence.md",
+        "research/design/h1_null_family_review_criteria.md"
+      ]
+    },
+    {
+      "id": "H1-R03",
+      "disposition": "accept",
+      "reason": "The packet did not itself display the expected frozen mask hashes alongside witness hashes.",
+      "action": "Compared all ten frozen result-file and mask hashes to the witness record and archived the per-seed equality audit.",
+      "evidence_paths": [
+        "research/reflections/H1-RECIPROCITY-20260924/reaction_evidence.md",
+        "research/reflections/H1-RECIPROCITY-20260924/input_identity_audit.json"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep H1 graph work at design-only status while Gate 1 is closed; do not use local witnesses as a null family or topology-performance evidence."
+}

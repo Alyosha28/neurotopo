@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "4f599e906c1c16664147f69d8d8ea8588a5fc7d675982d81477d5b016edfcf75",
+  "reviewer": {
+    "model": "gpt-6-luna",
+    "effort": "max",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "I1",
+      "source": "design",
+      "severity": "medium",
+      "evidence": "Store full source/data/checkpoint/coef/scaler hashes, split counts, resource/operation proxy and wall time.",
+      "problem": "设计要求保留可核验的哈希、拆分计数及资源与耗时信息，但 action 只给出 provenance_and_matching_pass 的布尔值；packet 因而无法展示这些冻结核验项的具体证据。",
+      "why_it_matters": "仅凭汇总布尔值，独立复核者无法检查数据拆分、输入完整性和匹配声明，也无法按记录复现这次诊断。",
+      "falsifiable_check": "检查本次 action 的持久化结果是否逐项记录设计列出的哈希、split counts、resource/operation proxy 与 wall time；若都存在且与冻结设计一致，则该疑点可消除。"
+    },
+    {
+      "id": "I2",
+      "source": "design",
+      "severity": "medium",
+      "evidence": "After independent scientific review and clean-checkout seed9101 reproduction, end this bounded diagnostic at `STOP_MECHANISM_ESCALATION`",
+      "problem": "action 标记任务 complete 并进入停止分支，但 packet 没有报告设计要求的独立科学审查和 clean-checkout seed9101 复现是否完成。",
+      "why_it_matters": "这两个条件是结束该诊断并停止机制升级的明确前置步骤；现有 action 摘要不足以证明停止决定满足冻结流程。",
+      "falsifiable_check": "核对 action 记录中是否存在独立审查结果及 clean checkout 下 seed9101 的复现记录，并确认二者均发生在进入 STOP_MECHANISM_ESCALATION 之前。"
+    }
+  ],
+  "overall_assessment": "所给汇总支持将主要结果判为 INCONCLUSIVE，但 action 对设计要求的审计材料及停止前置步骤缺少可见证据；当前问题针对记录完整性与流程可核验性，不改变结果判定。"
+}

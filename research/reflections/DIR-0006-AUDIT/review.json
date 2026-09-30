@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "046cfb67f8801af1b4fbd4241698d360a2241e7f7b300b57ecc905e261723140",
+  "reviewer": {
+    "model": "inherited-model-not-exposed",
+    "effort": "inherited",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "DIR6-R01",
+      "source": "both",
+      "severity": "high",
+      "evidence": [
+        "可用余量任务不存在（EXP-0004 的 67.04% 按原件不能单独检验该假设，须另立注册并满足十项要求）",
+        "图任务族唯一有记载的余量是 EXP-0004 的 OOD32 `67.04%`（对 IID8 `100.00%`），但 `gate1_benchmark_baseline_audit.md` 同时写明该任务存在 cache-and-select 简单解、**不能单独检验**该假设",
+        "故**可用余量尚不存在**"
+      ],
+      "problem": "design 与 action 共同把原件针对语义多假设解释的构念效度限制，扩大成图拓扑问题没有可用余量。内嵌 benchmark 原文明确区分两者：67.04% 属于预先指定且资源匹配的主对照，存在 substantial primary-endpoint headroom；任务可称为 generic block topology 的测试，不能据此决定 semantic multi-hypothesis reasoning。cache-and-select 解本身不取消拓扑处理在学习、保持或查找计算上产生可识别差异的可能性。新互反操纵尚无专属校准及 δ_min，可支持其 N2 尚未满足，却不能用该原件证明所有图拓扑任务的可用余量不存在。",
+      "why_it_matters": "这是 N2 FAIL 与必须先走指定新任务路线的关键依据。将 H3-semantic 的限制搬到 H1/C8，会错误排除原文保留的拓扑计算问题，且把尚未验证与已经不存在混为一谈。",
+      "falsifiable_check": "修订时逐项并列内嵌 benchmark 的 headroom 段、What the task fails to require 段，以及 H1/H3-semantic 定义；分别标记旧 block-vs-random 对照已测余量、新互反对照未测余量、语义多假设构念不足。若仍断言 C8 无任何可用余量，须给出针对该具名拓扑计算假设的排除推理；否则把结论收窄为新互反比较的 N2/δ_min 尚未建立，并保留旧任务在狭义问题上的可评估性。"
+    },
+    {
+      "id": "DIR6-R02",
+      "source": "action",
+      "severity": "high",
+      "evidence": [
+        "因此 0014 的\"没有可改变的可执行决定\"至少部分来自**入口封堵**而非纯证据。",
+        "0080 使\"若证据齐备则可注册候选\"成为**可能**，但**不提供**证据。",
+        "故正确的处置既不是直接搜索，也不是永久关闭"
+      ],
+      "problem": "决定0080 确实改变入口结构，但 packet 中的决定0014 没有把结构性入口拒绝列为决定性原因。0014 明列成功仍缺联合混杂控制及任务余量、失败不能证伪存在性，要求结果能改变一个明确决定；0080 自己说明主要解决 DIR-0004 的结构阻塞。action 把后来入口规则变化回推为0014原因，缺少历史证据，并将 NO_GO_NOW 对置为永久关闭。它也没有提供当前可执行的决定、成功/失败/不确定各分支会改变什么，因而未完成原事前设计要求的 P1 检验。",
+      "why_it_matters": "承认无新图证据是诚实的，但尚不能据入口放宽推出已有充分理由启动这条线。缺少可改变决定的映射正是0014的核心拒绝；若仅以未来条件满足即可注册作回答，旧拒绝仍未解决。",
+      "falsifiable_check": "删除或以同一冻结 packet 内的直接记录支持对0014原因的历史归因；准确保留 NO_GO_NOW 的暂时性。明确指出本次拟议设计评审所服务的具名决定及其分支，并逐条对齐0014重入条件。若只能说规则放宽而无法说清结果改变哪个决定，则保留关闭状态，不把方法或入口变化写成已满足重入条件。"
+    },
+    {
+      "id": "DIR6-R03",
+      "source": "both",
+      "severity": "medium",
+      "evidence": [
+        "下一步**只允许** null 图族设计评审",
+        "**结论：唯一合法的下一步是 null 图族设计评审，且须先通过独立前瞻审查，才谈是否运行任何搜索。**"
+      ],
+      "problem": "将一个拟议执行分支称为唯一合法动作，超出了内嵌0004/0014及null评审条件。那些记录限制新搜索、训练和效应解释，未禁止只读核查成熟工具源码/适配性、正文层先例核查、进一步解析界或既有证据梳理。0016也区分另有构造与有界搜索。action 的 N7 正处 UNKNOWN，正文层先例核查可能直接改变冻结的 NO_GO 标签，不能被排除为非法。设计评审内当然可包含这些工作，但这不等于其他独立只读取证路径已被上位决定禁止。",
+      "why_it_matters": "用户/后续代理可能把本审计当成新增禁令，阻断比设计完整采样器更便宜、且可以改变决定的取证。它也使设计第4问要求检查遗漏合法路径变成结论先定。",
+      "falsifiable_check": "区分本轮选定的下一执行分支与上位记录真正禁止的行为。枚举至少正文层先例核查、成熟null源码/约束适配核查、无新搜索的解析取证，并说明各自如何可能改变标签及是否需另立有限范围设计。若坚持排他性，需在冻结原件中找到逐字授权该排他性的规定；没有则改为本次选择的分支，继续保留搜索器禁令。"
+    },
+    {
+      "id": "DIR6-R04",
+      "source": "action",
+      "severity": "medium",
+      "evidence": [
+        "①（与原图族代数混淆的性质可分离）在本图族内**部分已被证明不可分离**、另一部分只有**存在性**证据",
+        "又因 ④（新颖性）在正文层仍为 `UNKNOWN`、且 0014 的搜索器禁令仍生效，也不把它记作\"已否决\"。",
+        "按事前冻结的标签规则"
+      ],
+      "problem": "原始事前设计把①在现图族内不可分离或④已有正文覆盖列为 NO_GO 的析取条件，把①②必须先设计才能判定列为 NEEDS_NULL_DESIGN_FIRST 条件；action 用新颖性UNKNOWN和搜索禁令阻止NO_GO，并将cross/Q与互反两个不同操纵合并成①的两半，这不是原规则明示的裁决方式。cross/Q的代数不可分离已有证明；互反与cross/Q的局部分离也已有witness，未知的是可用强度及联合混杂控制。两条操纵应分别对应规则，才能判断标签是否成立。",
+      "why_it_matters": "当前证据足以排除可注册候选，却不能单凭这一点唯一推出 NEEDS_NULL_DESIGN_FIRST。混合两个操纵会既掩盖已关闭的cross/Q分支，又使互反分支看似受到一个不适用的不可分离结论影响；同时降低冻结标签的可复核性。",
+      "falsifiable_check": "按原事前设计做逐操纵的四项问题及标签映射：cross/Q独立操纵记为代数不可分离；互反独立操纵分别记录局部分离成立、处理强度与联合控制未知。不得把④UNKNOWN写成否定①触发NO_GO的理由。若原规则无法处理混合分支，明确记录规则适用歧义并在新版本中收窄对象，不能追认本版已严格按冻结规则得出唯一标签。"
+    },
+    {
+      "id": "DIR6-R05",
+      "source": "action",
+      "severity": "medium",
+      "evidence": [
+        "图操纵属 DIR-0005 v2 §1 的**扩张/重构型**（不同边集实现不同函数类，可构造落于 `R_m \\ R_c` 的元素）",
+        "这是一个**已知、未受控的通道**，而非已界定的通道"
+      ],
+      "problem": "谱值共同移动直接支持未匹配的图协变量，足以说明当前缺少单因素归因条件；但 packet 中没有给出与具体模型、输入域和任务输出对应的可达函数集合或反例构造。不同边集不自动证明所声称的函数类差异；图随机游走第二特征值也不直接证明性能通道大小或方向。把这些作为扩张/重构型的已证分类和已知能力通道，超出本包证据。",
+      "why_it_matters": "N3 尚未满足可以保留，但其理由应是没有完成通道定义和界定、且存在未控制谱差异。否则图描述指标会被偷偷升级为计算机制证据，违反此审计自身的证据边界。",
+      "falsifiable_check": "若保留函数类分类，必须写出具名干预/对照的可达集定义及一个满足相同资源/读出约束的函数差异证明，并说明如何对应任务上的界；否则将分类标为待证，将谱移动称为未控制图协变量/潜在通道，不声称已证明行为效应通道。仍应要求注册前建立相应界、阈值与样本量。"
+    }
+  ],
+  "overall_assessment": "C8_AUDIT_NEEDS_NARROWING。本审查只读冻结packet的无损派生文件，未读仓库其他记录、未联网、未运行研究代码。五问结论如下：(1) 现有证据足以拒绝C8_CANDIDATE_SPECIFIABLE，但当前将两种操纵合为①并变换标签逻辑，尚不能接受唯一的C8_NEEDS_NULL_DESIGN_FIRST标签；应分别保留cross/Q分支的不可分离结论与互反分支的局部存在性及未满足条件。(2) 如实承认没有新图证据值得保留，0080规则变化也属实；但0014历史原因的归因和可执行决定映射未被证明，不能把暂时关闭说成永久关闭。(3) N2未满足可由新操纵没有专属余量/δ_min论证支持，不能由语义多假设构念不足推成所有拓扑任务无余量；N3未满足可由未匹配谱协变量和缺少界支持，其函数类与能力通道的强断言尚无证明。(4) 先评审再搜索的限制一致，但唯一合法动作的排他性无原件支持，遗漏正文先例、方法适配与解析取证。(5) 没有看到训练、搜索执行或把witness直接用作效应证据；对H1/H2仍UNTESTED和Gate 1仍NOT_PASSED的边界清楚。Q1不是完全无信息：整理代数不可分离与互反局部分离有价值，但本可产出的逐操纵标签表、成熟工具约束适配表、可改变决定的分支以及最小可判定条件尚不完整。Q2应按操纵分支处理而非把C8整体永久否决；Q3规则变化只改变资格入口，不是新科学证据，也尚未解决0014的核心拒绝。按冻结审查规则可出一次修订版并重新冻结送审；本判词不授权搜索、注册或训练。FILES_READ: derived/EXTRACTION_MANIFEST.json; derived/design.md; derived/action.md; derived/embedded_dir0006_c8_predesign_v0.md; derived/embedded_0014_h1_range_no_go_now.md; derived/embedded_0004_h1_h2_evidence_scope.md; derived/embedded_0080_entry_rule_architecture_organization.md; derived/embedded_h1_null_family_review_criteria.md; derived/embedded_h1_h2_existing_evidence_audit.md; derived/embedded_h1_reciprocity_feasibility.md; derived/embedded_topology_null_feasibility.md; derived/embedded_gate1_benchmark_baseline_audit.md; derived/embedded_0016_h1_count_bound_nondecisive.md; derived/embedded_hypotheses.md."
+}

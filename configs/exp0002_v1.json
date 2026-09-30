@@ -1,0 +1,8 @@
+{
+  "experiment_id": "EXP-0002", "version": "v1", "base_config": "configs/exp0001_v2.json",
+  "output": "artifacts/EXP-0002/v1", "model": "gru_wide",
+  "seeds": [71001,71002,71003], "delays": [0,8], "updates": 6000,
+  "checkpoints": [400,2000,6000], "train_seed_offset": 300000,
+  "evaluation_seed_offset": 400000, "evaluation_pairs": 1024,
+  "minimum_pre_accuracy": 0.90, "minimum_joint_accuracy": 0.50
+}

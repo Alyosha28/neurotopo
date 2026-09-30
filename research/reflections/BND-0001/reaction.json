@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "e9dd8353f9686ae87c0f3bc3ccc7d407cdc85d124a17d6678f365c081659dfd6",
+  "review_sha256": "a42b3855206ae10835d4f734e0abbee73ea9353fdd51a3f32e9b53bd432f9831",
+  "responses": [
+    {
+      "id": "BND-01",
+      "disposition": "defer",
+      "reason": "Reachability under the full joint graph constraints cannot follow from a necessary count upper bound and would require a newly registered construction or bounded search.",
+      "action": "Retain BOUND_NONDECISIVE and LOCAL_WITNESS_ONLY; do not start a search from this result.",
+      "evidence_paths": [
+        "research/reflections/BND-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "BND-02",
+      "disposition": "accept",
+      "reason": "The full 4x4 block matrix is a stronger graph family than the registered total-cross constraint and future citations could conflate them.",
+      "action": "Archived machine-readable, bound-specific graph families and allowed inference limits.",
+      "evidence_paths": [
+        "research/reflections/BND-0001/reaction_evidence.md",
+        "research/reflections/BND-0001/constraint_scope.json"
+      ]
+    },
+    {
+      "id": "BND-03",
+      "disposition": "reject",
+      "reason": "The packet already explicitly defines +0.10 as an exploratory graph contrast and denies any demonstrated task utility; no current overclaim occurred.",
+      "action": "Preserve the frozen scope statement; any task-effect claim would require a separate registered experiment.",
+      "evidence_paths": []
+    },
+    {
+      "id": "BND-04",
+      "disposition": "reject",
+      "reason": "The prespecified stop action and unchanged H1/H2/Gate 1 state are already recorded correctly, so this is a confirmation rather than an unresolved defect.",
+      "action": "Keep the original BOUND_NONDECISIVE decision and no-search branch unchanged.",
+      "evidence_paths": []
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep the current H1 method candidate at LOCAL_WITNESS_ONLY and stop this count-bound audit; no null sampler or model run follows."
+}

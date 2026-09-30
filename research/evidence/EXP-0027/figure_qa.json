@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "inspected_pngs": 3,
+  "export_formats": [
+    "PNG",
+    "SVG"
+  ],
+  "svg_xml_parse": true,
+  "figure_sha256": {
+    "block_and_initialization.png": "8aa11b156c7113fe586ec7355f1d5a08d7fe2f210d63914a2a9de9446b71b178",
+    "block_and_initialization.svg": "15ab58d855112a7b696eae4024aacd2bb95fb45905d96b7cc17ce911802ad7cf",
+    "natural_update_harm.png": "a40fbe86239bb737c172686e80a15ae8a14cb31449b56cbfe6440888ec30b5e0",
+    "natural_update_harm.svg": "548ed8a76b55354b491265c42729bc44b0b7e79e2e593cfb6b04bf5337aeb601",
+    "short_counterexamples.png": "505d44e735d19b17bc9deacaf0f89a4335635ab4b65b40fc92dcb3edde0a7baf",
+    "short_counterexamples.svg": "63aca74b0833bf4e06bbddff02ec46e1251c59137d8f58154dd0b0d855f10fa6"
+  },
+  "display_note": "Figure1 uses symlog axis labeled explicitly; all four control values printed. Heatmaps include every model and conditional denominator."
+}

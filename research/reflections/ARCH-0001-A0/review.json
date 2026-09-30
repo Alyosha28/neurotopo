@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "f1769114873d117245161777371b61c24edbb1b84629e48758e7e1cbbdec0a31",
+  "reviewer": {
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "ARCH-0001-A0-01",
+      "source": "action",
+      "severity": "high",
+      "evidence": "实际 A2 主控制是同六值状态、使用 `g(H),u` 的强不变量转移 `INV-COMP`：它直接生成下一 `H`",
+      "problem": "合同未定义 INV-COMP 的具体转移函数或可选结构，却将它定为实际主控制，并将合同标记为已冻结。",
+      "why_it_matters": "不同的“直接生成下一 H”实现可能具有不同的表达能力和学习难度。若在 A1 实现时才确定控制结构，A2 比较的对象仍可变化，A0 的强主对照尚未完整固定。",
+      "falsifiable_check": "在 A1 实现前写出 INV-COMP 的状态更新公式、参数化方式及允许的宽度和内部步数菜单；核对实现是否严格落在该预定集合内。"
+    },
+    {
+      "id": "ARCH-0001-A0-02",
+      "source": "action",
+      "severity": "high",
+      "evidence": "定义性 A3 消融为 `NO-SUCCESSOR`：保留同形状修正 MLP、同一训练损失、分支监督、参数个数和三次基础转移的实际调用，但将输入中的 `s_0,s_1` 替换为当前 `r(V),r(V)`；这隔离在线假设命令响应信号。",
+      "problem": "替换输入同时移除了修正损失经 `s_0,s_1` 回传到基础转移和读出的梯度路径。即使保留三次转移调用，消融也不只改变推理时的命令响应信号。",
+      "why_it_matters": "若两臂表现不同，差异可能来自训练梯度，而不能单独归因于在线假设命令响应信号。",
+      "falsifiable_check": "分别记录两臂从修正输出经假设命令分支回传的梯度；再注册配对比较，使两臂在该路径上采用相同的梯度处理，并在同一已训练状态上测试替换 `s_0,s_1` 的即时输出效应。"
+    },
+    {
+      "id": "ARCH-0001-A0-03",
+      "source": "action",
+      "severity": "medium",
+      "evidence": "另从最终 `H_t` 分支计算 `r(Tφ(H_t,v))`，对 `v∈{HOLD,FLIP}` 以当期真值 `q_t xor v` 监督",
+      "problem": "分支标签监督的是修正后 `H_t` 的后继读出，而修正器实际使用的是修正前 `V` 的 `s_0,s_1`。合同没有规定检查这两个输入是否正确预测合法下一命令。",
+      "why_it_matters": "即使候选有效、NO-SUCCESSOR 消融变差，`s_0,s_1` 也可能只是有用的内部特征；这不足以支持它们充当准确的假设命令响应。",
+      "falsifiable_check": "在预定留出序列和同一完整 `V` 上，分别测量修正前 `s_0,s_1` 对 `q_t xor v` 的预测误差，并与修正后分支读出的误差成对报告。"
+    }
+  ],
+  "overall_assessment": "独立审查给出三项缺口：主控制函数类未固定；定义性消融混合了推理输入与梯度路径；未单独检验修正前假设命令输出。审查者仅收到冻结 packet。原始严重度 major/moderate 按校验器枚举映射为 high/medium，问题内容未改。"
+}

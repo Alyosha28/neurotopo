@@ -1,0 +1,111 @@
+{
+  "source": "~/.local/share/neurotopo/experiment-runs/DYN-0001/v2",
+  "v2_status": "INCOMPLETE_ENGINEERING_BASELINE_REPLAY",
+  "new_suffix_streams": 26,
+  "files": {
+    "data/23005/LONG_H.npz": {
+      "sha256": "486eaa22e86646e36aeb9802a224ad96f6e82c138929295d5ac37b0ae069d2bf",
+      "bytes": 17582749
+    },
+    "data/23005/LONG_U.npz": {
+      "sha256": "4e06bffae4f0703805a0f4dd10f5004c11bfff0913d493d004b161d70b8c727f",
+      "bytes": 17863990
+    },
+    "data/25001/LONG_H.npz": {
+      "sha256": "cc7a727f5243bc8a6a56e831c002af8ade3298fc0788498ccf5f0375b795b808",
+      "bytes": 17583920
+    },
+    "data/25001/LONG_U.npz": {
+      "sha256": "b4df83bcb9e7556d4b9cf2c740811025577eac67562a8a80afe226b132ae62c7",
+      "bytes": 17864451
+    },
+    "data/25002/LONG_H.npz": {
+      "sha256": "bf97a0a192a29d1e75e13a646ec930334a52eb07d53033dba867c474bfe82d83",
+      "bytes": 17583011
+    },
+    "data/25002/LONG_U.npz": {
+      "sha256": "7fd44254d77a339fd309ff1937eb2e16d6d51660995377d28b944f15ee4e9a8e",
+      "bytes": 17863519
+    },
+    "data/25003/LONG_H.npz": {
+      "sha256": "e87d9bee9761c7677743d445b04e5a65b3a172068787e8caf7113888478ca86d",
+      "bytes": 17583533
+    },
+    "data/25003/LONG_U.npz": {
+      "sha256": "9f8406e507dea33d6f43cca6de6b28c384f17c1dae08e00184139ce9aab3c020",
+      "bytes": 17863634
+    },
+    "data/25004/LONG_H.npz": {
+      "sha256": "9dd49171d30afc8815db40782f570d40e358c9d41de2137308db1ddd7202a02e",
+      "bytes": 17583188
+    },
+    "data/25004/LONG_U.npz": {
+      "sha256": "4ea84ebf73310070e6518efbcf4d199acfedd1e6cf19d14a9a87a5ab9f795882",
+      "bytes": 17863890
+    },
+    "data/25005/LONG_H.npz": {
+      "sha256": "50c23864631ce868e73e693f8cf5c108e6c3425a28271c19358f847e0f474fd8",
+      "bytes": 17583996
+    },
+    "data/25005/LONG_U.npz": {
+      "sha256": "5bb4e427b44628fcec9deb0914f4ae59a689cdcbd26b306cb3bc7d8e61a110b9",
+      "bytes": 17863827
+    },
+    "data/25006/LONG_H.npz": {
+      "sha256": "fa604ac55fe52618135daf5b097bd9e20b5e3fbac56122c5d8b11e9ffb668612",
+      "bytes": 17583018
+    },
+    "data/25006/LONG_U.npz": {
+      "sha256": "e2c658f15affa3511998033d1867b752f2733e2e88b4b5716584e9d6f24ac2d9",
+      "bytes": 17863586
+    },
+    "data/25007/LONG_H.npz": {
+      "sha256": "ca989e0faf07bb9aaa37564f8505e6a2be553c8dd1b310cb9d9277d60e32e223",
+      "bytes": 17584367
+    },
+    "data/25007/LONG_U.npz": {
+      "sha256": "ff47e3af611c33bcdd00b9e713754bb16f817f27e62431b8bcc554b228c65d39",
+      "bytes": 17863003
+    },
+    "data/25008/LONG_H.npz": {
+      "sha256": "f7c9f8089893a7f7230181954c8354d26734ebe677600301cc0e6f650c823ee6",
+      "bytes": 17583460
+    },
+    "data/25008/LONG_U.npz": {
+      "sha256": "28587a1b083b1de1b25e16b137870c5a743c4dc73341f51d085d4f49850f5707",
+      "bytes": 17863787
+    },
+    "data/25009/LONG_H.npz": {
+      "sha256": "ce5b640c8075d5fa3c655afd266c9f2621ff3772143fe44c5560cb768ea070f2",
+      "bytes": 17583058
+    },
+    "data/25009/LONG_U.npz": {
+      "sha256": "9e9dc3735fa9119e68ed655a92a2de1c07250d4a1c0bfaad1a3216c662109296",
+      "bytes": 17863087
+    },
+    "data/25010/LONG_H.npz": {
+      "sha256": "305f5b162f7a8db0b0ddc09cbf61d2f301138903512d16a8c2de74c2ed0249d5",
+      "bytes": 17583342
+    },
+    "data/25010/LONG_U.npz": {
+      "sha256": "e2f94d6192181c0dc3323bc8197564d22756cdd8c199f241f641140ab999fe27",
+      "bytes": 17863263
+    },
+    "data/25011/LONG_H.npz": {
+      "sha256": "c25dc4af318df4f0a9d431e3867e8cf0650ddf27cc43e2343cd93f073d1b9e9b",
+      "bytes": 17583432
+    },
+    "data/25011/LONG_U.npz": {
+      "sha256": "ff06bf010623c3183d9394e953a39257d102238166e3f1b0acb72067cb7aa32c",
+      "bytes": 17862978
+    },
+    "data/25012/LONG_H.npz": {
+      "sha256": "8d15412e3278b325c99b8189c581b22736af630b6585c015165f0acbd5223e75",
+      "bytes": 17583588
+    },
+    "data/25012/LONG_U.npz": {
+      "sha256": "dff54e3a98e03f67adf3eb6a0386beef30feaa26fd0d4e18dbe4e6f5a44c6951",
+      "bytes": 17863486
+    }
+  }
+}

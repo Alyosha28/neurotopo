@@ -1,0 +1,15 @@
+{
+  "pass": true,
+  "archive_commit": "fdba6011b3508a96fb8fcfd2f2e0f4bf05d04a6a",
+  "source_commit": "c42603b20af59ede0b5942702e7157c7db522094",
+  "v3_raw_files": 81,
+  "v3_raw_bytes": 545939864,
+  "git_blobs_equal_project_and_apfs": true,
+  "v2_failure_preserved": true,
+  "v2_suffix_files": 26,
+  "research_optimizer_updates": 0,
+  "general_suite_invocations": 3,
+  "last_suite_tests": 318,
+  "packet_reflection_valid": true,
+  "reported_decision": "INCONCLUSIVE / MECHANISM_NOT_IDENTIFIED; DESCRIPTIVE_ONLY"
+}

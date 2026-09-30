@@ -1,0 +1,17 @@
+{
+  "experiment_id":"EXP-0007", "version":"v1", "workflow":"transfer_probe",
+  "output":"artifacts/EXP-0007/v1", "source_experiment":"EXP-0004/v1",
+  "source_commit":"eec9ca4", "checkpoint_manifest":"configs/exp0005_checkpoint_inputs.json",
+  "models":["multi_gru","random_gru","gru_wide"],
+  "seeds":[9101,9102,9103,9104,9105,9106,9107,9108,9109,9110],
+  "fit_delays":[8,32,64], "test_delays":[32,64], "primary_delay":32,
+  "train_pairs":4096, "validation_pairs":1024, "test_pairs":2048,
+  "train_a_seed":930000, "train_b_seed":935000,
+  "validation_seed":940000, "test_seed":950000,
+  "ridge_lambda":1.0, "std_floor":0.001,
+  "bootstrap_samples":20000, "bootstrap_seed":960001,
+  "minimum_excess_transfer_loss":0.05,
+  "minimum_validation_accuracy":0.90,
+  "maximum_refit_variation":0.02,
+  "minimum_behavior_pre":0.10, "minimum_behavior_gap":-0.01
+}

@@ -1,0 +1,55 @@
+{
+  "own_curve_ridge_variation": [
+    {
+      "max_abs_curve_change": 0.08104270345097464,
+      "ridge_relative": 0.003
+    },
+    {
+      "max_abs_curve_change": 0.08438788631424832,
+      "ridge_relative": 0.03
+    }
+  ],
+  "pair": [
+    [
+      49,
+      11,
+      4
+    ],
+    [
+      21,
+      21,
+      22
+    ]
+  ],
+  "phi": 0.5,
+  "ridge_relative": [
+    0.003,
+    0.01,
+    0.03
+  ],
+  "rows": [
+    {
+      "max_abs_arm_diff_lag_ge_20": 0.004167249644494497,
+      "max_abs_arm_diff_on_grid": 0.08802192689259702,
+      "ridge_relative": 0.003,
+      "sign_flips_on_grid": 1,
+      "total_ratio": 0.9954740534276648
+    },
+    {
+      "max_abs_arm_diff_lag_ge_20": 0.009553108857162401,
+      "max_abs_arm_diff_on_grid": 0.08630901480896869,
+      "ridge_relative": 0.01,
+      "sign_flips_on_grid": 1,
+      "total_ratio": 0.9999709840396591
+    },
+    {
+      "max_abs_arm_diff_lag_ge_20": 0.01150189391247386,
+      "max_abs_arm_diff_on_grid": 0.05986853186800367,
+      "ridge_relative": 0.03,
+      "sign_flips_on_grid": 2,
+      "total_ratio": 1.003367031394598
+    }
+  ],
+  "schema": "dir0003_v1_degeneracy_check_v1",
+  "units": 64
+}

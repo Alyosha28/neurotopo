@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "f1a1c8bbee73f6f239277d8673dd1fc3df5dc909f36dbb7ed2436c8e9947c2a9",
+  "review_sha256": "8ac4ab22da590b3f4c1f00dfcc2bf8c36a87a1ede84a945b521c0c0f52d2822b",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "按冻结协议实现并完成源码独立审查/工程验证；正式执行只由新的EXP0015注册授权，原ORBIT研究资格不变。"
+}

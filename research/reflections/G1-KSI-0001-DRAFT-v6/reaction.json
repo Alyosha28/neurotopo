@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "1e1030abfa368f76a4eb59ef7b5e29a0a6235067902d541c6c7bbd42d2c6b6fd",
+  "review_sha256": "e7f9ca0d5f743771cd9704dea08d15d7e9df071ba10d69649287ad886e41161d",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "保留为待裁定设计稿；先独立裁定两项规则，再完成数值任务/oracle资格和资源协议。不得begin正式EXP、生成任务样本或训练。"
+}

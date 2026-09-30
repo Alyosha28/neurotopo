@@ -1,0 +1,139 @@
+{
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "独立审查判 **PAPER_NEEDS_MAJOR_REVISION**（14 项，全部 accept）。最重的一条（I4）指出伪影带口径不可充当臂间判决阈值——修正方案是计算**真正的臂间零对比**（同组织、仅输入权重实现不同）；其余为口径与可追溯性问题（2×2 非正交、规则表述自相矛盾、匹配族依赖 γ、tanh 选择规则不一致、尾部区间漏负值、方差归因混合 seed 与 ridge、跨运行数字混用），均已按条更正或重算。本轮据此进入论文大修：新增臂间零对比、三档 γ 伪影带、方差分解、tanh 同规则重选，并把参考分配矩值与全部引用数字纳入账本 v2（82 个数字全部可追溯）。v2 packet 的第二次独立审查仍在进行；大修稿完成后需重新冻结送审，不得追认已审。",
+  "packet_sha256": "6d11ceb8afa7191c02011cec93509589e62a38b11945c5bcd1b62ed955c777e5",
+  "responses": [
+    {
+      "action": "已重建账本为 v2（列出两个主运行各自的 seed 数与 R1 池范围、C2 极值），并对论文引用的 82 个数字重跑可追溯审计：全部命中。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/dir0003_paper_claims_v2.json",
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I1",
+      "reason": "成立：62–128 与 0.199 来自 12-seed 主运行，而送审 packet 内没有对应键。"
+    },
+    {
+      "action": "改写为按运行分别标注来源与 seed 数，不再混用同一句。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I2",
+      "reason": "成立：摘要的 0.82–0.88 来自第一次 R2 运行（2 seeds），§4 的 0.72/0.85/0.89 来自嵌套运行的 3 seeds，两者混用未标明。"
+    },
+    {
+      "action": "改为以 8 seeds × 3 ridges 的四格平衡设计为主表，12-seed 主运行降为单独的稳健性注记。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I3",
+      "reason": "成立：表格把 12-seed 主规格与 8-seed 留出格并列，2×2 非正交。"
+    },
+    {
+      "action": "新增一个**真正的臂间零对比**：两臂组织完全相同、仅输入权重实现不同（同分配不同 seed），用同一统计量给出零分布作为阈值；本轮计算并写入论文与账本。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I4",
+      "reason": "成立且是最重的一条：artifact band 是同一臂对读出旋钮的敏感度，与臂间差不同口径。"
+    },
+    {
+      "action": "把伪影带改为三档 γ 上的**最大成对变化**，并在重算脚本中固定该定义。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I5",
+      "reason": "成立：伪影带只用 γ=0.01→0.03 两档，而对比分布覆盖 0.003/0.01/0.03 三档。"
+    },
+    {
+      "action": "统一表述为：规则在**主规格之后、留出格之前**固定，因此留出格是外部确认而非事前注册。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I6",
+      "reason": "成立：同稿既写 'Rule fixed in advance (decision 0077)'，又写 'was fixed after the primary run'，自相矛盾。"
+    },
+    {
+      "action": "把该运行的机器输出纳入账本（其 JSON 已在仓库中），并在正文标明它属于哪一次运行。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/dir0003_paper_claims_v2.json",
+        "research/design/dir0003_tanh_control.json"
+      ],
+      "id": "I7",
+      "reason": "成立：§4 R2 第一段的数字来自第一次 tanh 运行，该输出未随 v1 packet。"
+    },
+    {
+      "action": "改写为'匹配与读出**同泛函一致**，因而匹配族本身依赖 γ；γ 是规格维度'，并给出实测的族大小随 γ 变化。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I8",
+      "reason": "成立：容量泛函用岭化协方差，故匹配族随 γ 变化，而 §2 写成与读出无关。"
+    },
+    {
+      "action": "把 tanh 控制改为与线性情形同一选择规则（在容差内的候选里取最大 |Δm2|），并重算。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "scripts/dir0003_tanh_matched.py",
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I9",
+      "reason": "成立：线性规格按最大 |Δm2| 选成员，而 tanh 嵌套按最接近总量选成员，两者选择规则不同。"
+    },
+    {
+      "action": "改为 '−0.003 to 0.008'，并说明负值来自截断和的估计噪声。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I10",
+      "reason": "成立：§7 写尾部 '0.002–0.008'，而机器输出三值为 0.0017/0.0079/−0.0030，区间未覆盖负值。"
+    },
+    {
+      "action": "对现有行做 seed 与 ridge 的方差分解并据实改写归因。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I11",
+      "reason": "成立：把分离带的 OVERLAP 归因于 'seed variance'，但每格是 8 seeds × 3 ridges = 24 行，方差混合了两个来源。"
+    },
+    {
+      "action": "把参考分配的 moment1/moment2 与逐行偏差范围纳入账本 v2。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/dir0003_paper_claims_v2.json"
+      ],
+      "id": "I12",
+      "reason": "成立：R1 声称匹配一阶矩，但 packet 未给参考分配的 moment1/moment2 目标值。"
+    },
+    {
+      "action": "在正文改为'清单随仓库提供'并在送审 packet 中改用**申报账本**（v2 packet 已如此），使每个数字在包内可定位。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/design/dir0003_paper_claims_v2.json",
+        "paper/dir0003_review_delivery_v2.md"
+      ],
+      "id": "I13",
+      "reason": "成立：正文把数字出处指向 repro manifest，而 v1 packet 内没有该文件。"
+    },
+    {
+      "action": "把结论限定到'该 static nonlinearity、该 gain、该 ladder 下'，并明确不外推到其他非线性或核心类。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "paper/dir0003_matched_capacity.md"
+      ],
+      "id": "I14",
+      "reason": "成立：R2 由单个 tanh（gain=1.0、3 seeds、7 档 ladder、MC 估计）推出较强的普遍措辞。"
+    }
+  ],
+  "review_sha256": "9cbd46265abc86563c4d0335fb21736173aa61d5614b01ffef96faea5b8d66ac",
+  "schema_version": 1
+}

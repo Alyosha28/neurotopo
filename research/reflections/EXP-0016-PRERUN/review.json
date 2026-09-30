@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "c5597a6382930b52b70d8ee66128c2f7aa3306a1ea3d4a567513ff16081a2571",
+  "reviewer": {
+    "model": "inherited-model-not-exposed",
+    "effort": "inherited",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "EXP0016-PRERUN-01",
+      "source": "action",
+      "severity": "low",
+      "evidence": [
+        "Conjugate equal-strength equal-spectrum penalty B; no-penalty U, isotropic R, strong dense D; these are named but not trained here.",
+        "Soft equivariance/RPP and exact HMM filtering are established; screen tests task information only, not mechanism novelty, semantics or Gate1."
+      ],
+      "problem": "附带入口原件的两个字段仍沿用纯信息筛查措辞：B/U/D并非一概不训练，而是在H未满足停止条件时训练；本轮也不仅测试任务信息，还测固定预算下的控制学习与余量。设计正文、purpose/question及配置明确，因此这不是阻断诊断的实质歧义。",
+      "why_it_matters": "后续只消费入口字段的摘要或审计可能错误记录实际训练范围，或把控制训练成本遗漏到零更新信息筛查中。",
+      "falsifiable_check": "归档本轮入口及结果时，明确B/U/D为条件执行、R与A不执行，并将prior_art_boundary中的任务信息限定改为控制诊断限定；核对实际训练臂、研究尝试更新和对应分支一致。无需改变任何数值阈值、流或运行分支。"
+    }
+  ],
+  "overall_assessment": "PILOT_ALLOWED_NOT_GATE1_ELIGIBLE。允许本次作为independent_benchmark的H先行、必要时B/U/D控制诊断；不授权A实例化、A训练、候选效果评分、完整控制资格或Gate1计分。最强拒绝已经被正确限定：H拥有已知发射律与过滤算法先验，故其胜出不是公平架构因果证据，但可直接触发预写的固定任务停止分支，具有节省后续大额研究的明确否决价值。要求在取得实测前先证明真实控制余量会使此诊断无法执行，不据此否决。H失败只启动固定B/U/D计划，不证明组织缺陷；三种控制通过只支持CONTROL_PILOT_WINDOW。原软先验项目因子、Generic、正式功效和资源匹配问题仍未解决；CONTROL_STRONG_ENOUGH保持UNRESOLVED。\n\n设计与配置的主数值一致：三个seed，batch64，每臂3000更新；H阶段9000更新，第二阶段至多27000更新，总研究上限36000；worker1200秒与复核300秒对应总1500秒。预算未完成优先INCONCLUSIVE，不能以部分成功seed关闭或支持科学分支。时间是否足够尚未经实测，这是硬上限下的可接受诊断风险，不是允许超时、重选seed或改变预算的理由。\n\n学习门、OOD上下窗口与H上置信界停止规则清楚且判定有优先顺序。H的三个固定训练实例必须逐个满足IID<.10及OOD95%上界<.02才停止，比仅比较点估计更严格；bootstrap单位为各固定模型的独立评估序列，没有把4096条序列冒充训练seed复制。它不提供跨训练seed总体置信度，也不应在后续被转述为三seed总体充分性证明。B/U/D三seed窗口是描述性资格预诊断，不承担原八seed完整资格或128seed效果功效。\n\n新训练、评估和bootstrap根在给定公式及范围下相互分离，设计明确将本轮流从运行起记为暴露，不能再用作独立效果流。B/U共享初值和同seed同step数据，D保留全输入/全读出；H不读潜在状态或真实转移作为初始化，已知发射律的额外先验公开。B投影、参数数目、初始化及梯度检查，H独立oracle核对，H/U/D工程overfit，以及末checkpoint重放与独立float64 oracle/评分/分支复核已写入验收。只读包未提供runner代码或这些验收的完成结果，所以本判词是设计层面的有限执行许可；必须完成已经预写的工程验收、冻结与VALIDATED流程后运行，不把本审查当实现测试PASS。\n\n发现一项非阻断的入口元数据陈旧措辞，需在归档中更正范围表述，不需修改研究设计或再次循环设计审查。本结论不改变DIR0007的正式研究HOLD，不解禁Gate2或其他机制，也不将算法封顶表述为所有软等变机制被证伪。\n\nFILES_READ: research/reflections/EXP-0016-PRERUN/derived/design.md; research/reflections/EXP-0016-PRERUN/derived/action.md; research/reflections/EXP-0016-PRERUN/derived/action_output_0_verification.json; research/reflections/EXP-0016-PRERUN/derived/embedded_EXP-0016.json; research/reflections/EXP-0016-PRERUN/derived/EXTRACTION_MANIFEST.json. 先例、既往决定及旧草案只读取了action_output_0_verification.json中的逐字嵌入内容；未读取包外文件、未联网、未执行研究或核验代码。"
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "b349a5c1989fe542b55a654f6a4d3026b3dde42cceac03b5b8a17eaab548c2c6",
+  "review_sha256": "e8af5cbc323a11d978d82d3af08c3e44c46f81c9360fe12dab148594ee7e05d1",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Preserve all four NO_MATRIX attempts and stop the angle-menu generator; design a separate late-reveal task mechanism prospectively, with analytic signal calibration and no model-informed task selection, before any samples or effects."
+}

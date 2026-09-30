@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "paired_summaries_checked": 3,
+  "replication_unit": "6 prospective training seeds, not evaluation examples",
+  "learning_guard_pairs": [
+    23001,
+    23003,
+    23005
+  ],
+  "required_pairs": 5,
+  "decision": "INCONCLUSIVE/LEARNING_GUARD_FAILURE",
+  "notes": [
+    "Pair CI crosses zero; CYCLE also worse than BASE on mean BCE.",
+    "P qualification fails and descriptive rho.2571 below.6.",
+    "M positive in2of6, all eligible but jointmean condition fails.",
+    "StrongINV retained."
+  ]
+}

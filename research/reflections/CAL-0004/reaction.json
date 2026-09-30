@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "545c41a34c5e2f282c4088545f03bd4da3d8218970f0ba84319fdcfe99b3d197",
+  "review_sha256": "77d4fcdb1386bc4e82e3f24b72ef898ea032e5112b833aaa5328e45668700289",
+  "responses": [
+    {
+      "id": "pairing_audit_detail",
+      "disposition": "accept",
+      "reason": "A boolean pass flag alone does not expose the five block counts and paired effective evidence.",
+      "action": "Regenerated every paired training episode and block resource total, then reproduced the audit in a clean checkout.",
+      "evidence_paths": [
+        "research/reflections/CAL-0004/reaction_evidence.md",
+        "artifacts/calibration/gate1_cadence_pair_audit.json",
+        "docs/CAL-0004_reproduction.md"
+      ]
+    },
+    {
+      "id": "distribution_bundle_interpretation",
+      "disposition": "accept",
+      "reason": "The intervention bundles d=2 exposure with variable cadence; the result cannot isolate positional shortcut mechanisms.",
+      "action": "Restricted the claim to the full training-distribution contrast and reserved sorted-block control for any future mechanism-specific claim.",
+      "evidence_paths": [
+        "research/reflections/CAL-0004/reaction_evidence.md",
+        "research/evidence/CAL-0004_cadence_qualification.md"
+      ]
+    },
+    {
+      "id": "resource_matching_boundary",
+      "disposition": "accept",
+      "reason": "Equal tokens and analytical linear FLOP proxies are not measured equality of every training operation or peak memory.",
+      "action": "Disclosed the accounting scope and retained measured training-step time only as descriptive.",
+      "evidence_paths": [
+        "research/reflections/CAL-0004/reaction_evidence.md",
+        "research/evidence/CAL-0004_cadence_qualification.md",
+        "docs/CAL-0004_reproduction.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep Gate 1 closed and register a fresh-seed matched recurrent-structure comparison using the same qualified varied training distribution."
+}

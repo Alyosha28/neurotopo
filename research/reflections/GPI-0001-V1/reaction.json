@@ -1,0 +1,82 @@
+{
+  "decision_impact": "UNCHANGED",
+  "next_action": "产出 GPI-0001 v2：更正平台门（唯一且逐 seed 生效，并撤回 v1 的 PASS）；把 δ_min 提到容量可解释交互之上或加容量匹配臂；冻结 θ=0 处理；把权威文本逐字引入 packet；由实测配对方差推导 n 并使功效与支持规则一致；在 LR 扫描/衰减与 ≥3 seeds 下重做预算加倍；冻结辅助臂估计量。完成后送第三次独立审查。Gate 1 与全部既有判词不变；不注册实验、不授权训练。",
+  "packet_sha256": "6cdec47eec3340ddb1aee01688b88a3261fa2933d25553b3c4472c60ffc76f4c",
+  "responses": [
+    {
+      "action": "更正证据注解（撤回 PASS，改为逐 seed 重算后的 F 未过门）；v2 须把平台判据写成唯一且生效的逐 seed 门。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0065_gpi0001_v1_review.md",
+        "research/design/structural_task_probe/gpi_v1_control_pilot_long.json"
+      ],
+      "id": "GPI-0001-V1-R1",
+      "reason": "真实错误且是我的：我按打印的四舍五入值目测出 |Δ|≤0.010，重算后 F 的两个 seed 为 0.0101 与 0.0204，超出冻结容差；且第 10 节未把平台判据写成生效门。"
+    },
+    {
+      "action": "v2 须把 δ_min 提高到容量可解释交互之上，或加入容量匹配臂使支持判词不能由下界加状态不对称解释。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0065_gpi0001_v1_review.md"
+      ],
+      "id": "GPI-0001-V1-R2",
+      "reason": "真实缺陷：δ_min=0.05 低于解析形状代价 0.063，支持判词可能完全落在容量解释内，读法限制不被判定规则强制。"
+    },
+    {
+      "action": "v2 须报告容量匹配分解模型与状态规模匹配控制的最佳可达 KL，并据此重新分类终点。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0065_gpi0001_v1_review.md"
+      ],
+      "id": "GPI-0001-V1-R3",
+      "reason": "真实缺陷：0.063 是形状代价（在无限容量承载该形状的前提下算出），不是容量上界；F 侧数字暗示 0.08–0.14 的容量项。"
+    },
+    {
+      "action": "v2 须预先登记 θ=0 的处理（排除或重新归一化）并报告限制在有信息网格点上的终点。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0065_gpi0001_v1_review.md"
+      ],
+      "id": "GPI-0001-V1-R4",
+      "reason": "真实缺陷：θ=0 使耦合项消失，F 与 X 在 3.1% 的 episode 上生成器完全相同，稀释对比。"
+    },
+    {
+      "action": "v2 的 packet 须逐字包含被引权威文本（或删除引用并自足写出规则）。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0065_gpi0001_v1_review.md"
+      ],
+      "id": "GPI-0001-V1-R5",
+      "reason": "真实缺陷：claim track 与读法限制所依赖的权威文本不在 packet 内，而输入范围又禁止核对，故只是断言。"
+    },
+    {
+      "action": "v2 须由实测的配对差值方差推导 n，并使功效目标与支持规则一致，或改用点估计／MDD 规则。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0065_gpi0001_v1_review.md"
+      ],
+      "id": "GPI-0001-V1-R6",
+      "reason": "真实统计错误：支持规则要求 CI 下界 > δ_min，真效应等于 δ_min 时成功率仅 2.5%，不是推导目标的 80%；n=8 实际需要 I≥0.078。"
+    },
+    {
+      "action": "v2 须在含学习率扫描或衰减、≥3 seeds 的条件下重做预算加倍；任一设置下残差低于 ε_abs 即否定平台主张。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0065_gpi0001_v1_review.md"
+      ],
+      "id": "GPI-0001-V1-R7",
+      "reason": "真实缺陷：平台只在单一固定优化配置（无 LR 扫描/衰减、无宽度扫描、2 seeds、仅控制臂）上测过，可能是优化下界。"
+    },
+    {
+      "action": "v2 须冻结每个辅助臂的估计量、预测次序与通过阈值，并说明 K=1 与 dense guard 的区别。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0065_gpi0001_v1_review.md"
+      ],
+      "id": "GPI-0001-V1-R8",
+      "reason": "真实缺陷：新增的 K=1 与错配 K=2 臂没有冻结的估计量、预测次序与阈值，且 K=1 疑似与 dense guard 重合。"
+    }
+  ],
+  "review_sha256": "b939d5dbb19a2baf3d1ae17c255c084b1bf0fff287892fc732a31ef533cd9fe2",
+  "schema_version": 1
+}

@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "48be9970fa9a613f6d531934ed825d1bf95357e5fe145940ef005e170f895a51",
+  "review_sha256": "a9aa1e4ef71f007e5b42c0b620859eed2e91cb670a8ce85675cbff90fcc4cf84",
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "v2 再送审判 V2_REJECTED（19 项，全部 accept）。审查给出五条只用 packet 内冻结常数即可复算的停止条件，本轮已逐条独立复算（t 分位用自实现正则化不完全 Beta，自检 t(0.975,7)=2.3646、t(0.80,7)=0.8960 与标准值一致）：S1 0.0508<0.025 假、S2 0.0757<=0.05 假、S3 零真值通过率 0.328(n=8)/0.706(n=16) 假、S4 packet 内无 KL_trained−KL_projection 假、S5 (I=0,CI 跨零) 无分支 假 —— 五条全不满足。据此出决定0072：**停止 G1-ALIGN-0001 设计线**，不注册、不跑资格流、不启动训练；v2 判据架构作废；已冻结的控制资格协议不启动但保留为历史件；可复用资产保留。决定性理由是分辨率上限：容量通道 0.0388[0.0285,0.0508] 与 delta_min=0.05 同量级，可支持所需效应约 0.0757=1.51*delta_min，delta_min 处 P(SUPPORTED) 按精确 t 为 0.0224；且容量门槛估计量错位（最优投影差 vs 被训练模型差之差），最强拒绝 A 成立——v2 的「不扣除+抬栏」是改名而非消除。本轮另更正我方三处数值错误：「配对收紧 7.5 倍」为假（正确不配对基线 0.01123，实际收缩 1.011x）；MDD 实为 0.0344 而非 0.05；gap(16) 归属写反（packet 为 F 0.4023、X 0.3853）。负面结果保留：在该任务构造与冻结判据下，对齐效应与容量通道不可分辨——这不是「对齐无效」，也不是 H3 一般证伪。唯一可救路径留作新设计（决定0072 §5）：逐臂训练最优性差的直接测量作容量通道零假设界；2x2 因子（划分 x 难度均衡）以交互项估计难度通道；重新界定效应量使容量通道显著小于 delta_min。Gate 1 仍 NOT_PASSED；无 EXP 注册、无训练授权。",
+  "responses": [
+    {
+      "id": "I1",
+      "disposition": "accept",
+      "reason": "成立。§8.5 第 1 档会杀掉唯一主单元：K=4 成分 0.0388 的 CI [0.0285,0.0508] 整段在 0.02 之上。已复算确认。",
+      "action": "不再修订该规则——本决定停止整条设计线（决定0072）。§8.5 随 v2 判据架构一并作废。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I2",
+      "disposition": "accept",
+      "reason": "成立。(δ_min, 0.02] = (0.05, 0.02] 为空集；K=2 落在 (0.02,0.05] 时第 1、2 档同时成立且指令相反。",
+      "action": "同 I1：规则整体作废，不做局部修补。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I3",
+      "disposition": "accept",
+      "reason": "成立。§9 分支非穷尽：(I=0, CI 跨零) 与 sd∈(0.0434,0.0441]/n=8 两个见证点均无分支。已复算：MDD(0.05,0.80,0.0298,8)=0.0344。",
+      "action": "不补分支——补分支后仍受 S1/S2 阻断，故按停止条件整体停止。该非穷尽性记入决定0072 §3 作为「零结果无判词」的证据。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I4",
+      "disposition": "accept",
+      "reason": "成立。不可归因带被记为 PARTIALLY_SUPPORTED，与「部分支持对齐」在记录中不可区分。",
+      "action": "随设计线停止而不设新标签；该问题记入决定0072 §3，并写入「若日后新设计仍要设正判词，须单列 UNATTRIBUTABLE 类」的要求。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I5",
+      "disposition": "accept",
+      "reason": "成立，且是本轮最致命的一条：0.0388 是最优因子化投影的 KL 差，而 I 由被训练模型构成；逐臂 KL_trained ≥ 投影代价不能给差之差定序，故该区间不是训练表示代价的界。最强拒绝 A 成立。",
+      "action": "接受「不扣除+抬栏」是改名而非消除。S4 因此不满足（packet 内无 KL_trained − KL_projection 测量），停止设计线；并把「以逐臂训练最优性差的直接测量作容量通道零假设界」列为唯一可救路径（决定0072 §5）。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I6",
+      "disposition": "accept",
+      "reason": "成立，且是我方的数值错误。正确不配对基线 = sqrt(0.0419²/60 + 0.0146²/60)·1.96 = 0.01123，与配对半宽 0.0111 基本相同；实际收缩仅 1.011×（约 1%），「7.5 倍」来自「四个边际半宽相加」的错误基线。已独立复算确认。",
+      "action": "撤回该句。决定0072 §4.1 记录更正。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I7",
+      "disposition": "accept",
+      "reason": "成立。β_X 等价条款未定功效：零真值通过率 n=8 为 0.328、n=16 为 0.706、n=20 为 0.812（已复算，与审查的 0.32/0.71/0.82 一致）。 记录规范化：审查原文 evidence 省略了原文的 Markdown 标记（反引号/粗体），已按仓库先例（决定0054 把 source 标签规范到实际锚点）改为逐字原文，问题实质未变。",
+      "action": "S3 不满足 → 停止。该条款随设计线作废。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I8",
+      "disposition": "accept",
+      "reason": "成立。MDD 实为 0.0344（v2 写 0.05）；需 I_hat ≥ 0.0757 = 1.51·δ_min。P(SUPPORTED | I=δ_min) 按精确 t 复算为 0.0224（审查用正态近似给 ≈0.007，同阶）。",
+      "action": "S2 不满足 → 停止。两处数值均记入决定0072 §3。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I9",
+      "disposition": "accept",
+      "reason": "成立。steps-to-threshold 与终点共享臂/条件/任务/优化设置；「CI 含 0」是未拒绝而非等价，且无右删失规则。",
+      "action": "接受该探针不构成有效的中介检验。新设计须改用带等价界的 TOST 与难度均衡因子臂（决定0072 §5）。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I10",
+      "disposition": "accept",
+      "reason": "成立。steps-to-threshold 的臂差无法检验可加性分解；§7/§8 无任何估计该分解的项。",
+      "action": "接受「可加性为未检验假设」。v2 §13.1 的表述随设计线作废。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I11",
+      "disposition": "accept",
+      "reason": "成立，且是我方的归属错误。packet 内为 F 0.4023 [0.3578,0.4421]、X 0.3853 [0.3407,0.4411]；v2 §8.2 把 0.4097 归 F、0.3846 归 X，二者是另一文件（400 episodes）的值。已独立复算确认。",
+      "action": "更正记入决定0072 §4.3。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I12",
+      "disposition": "accept",
+      "reason": "成立。packet 的 gap 键仅 {4,8,16,32}，而 v2 要求覆盖到 k=T=64；该覆盖要求无证据。 记录规范化：审查原文 evidence 省略了原文的 Markdown 标记（反引号/粗体），已按仓库先例（决定0054 把 source 标签规范到实际锚点）改为逐字原文，问题实质未变。",
+      "action": "记入决定0072 §4.4；随设计线停止而不补算。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I13",
+      "disposition": "accept",
+      "reason": "成立。§6 只有点值与文件名，无 sha256、无 CI、无逐 episode 数据；400-episode 版在 packet 之外。",
+      "action": "记入决定0072 §4.6；版本与哈希的登记要求随设计线作废，但该要求本身保留给任何后续设计。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I14",
+      "disposition": "accept",
+      "reason": "成立。§7 统计量行（df=n−1）与协变量行（df=n−2）定义了两种分析，且未说明协变量是否进入估计。 记录规范化：审查原文 evidence 省略了原文的 Markdown 标记（反引号/粗体），已按仓库先例（决定0054 把 source 标签规范到实际锚点）改为逐字原文，问题实质未变。",
+      "action": "随设计线停止；该欠定性记入决定0072 §4。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I15",
+      "disposition": "accept",
+      "reason": "成立。§7 的冻结时点与 §8.6 的单向棘轮冲突，实际门槛在见到资格数据后才确定。",
+      "action": "随设计线停止；记入决定0072 §4。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I16",
+      "disposition": "accept",
+      "reason": "成立。§4 只在固定状态规模下计算投影代价，设计中没有单元格改变状态规模，故「状态规模 × 对齐交互已被分离」超出冻结工件支持的范围。",
+      "action": "接受该句为越界，记入决定0072 §4。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I17",
+      "disposition": "accept",
+      "reason": "成立。K=4 的有序块大小序列 S=(2,1,2,1)、U=(2,2,1,1) 不同，仅多重集 {1,1,2,2} 相同；正确表述是「同构块对角矩阵、至多差一个块置换」。",
+      "action": "接受更正。该表述已由 `research/design/g1_align0001_block_load_note.md` 独立记录（块交换性论证），随设计线一并保留为历史件。",
+      "evidence_paths": [
+        "research/design/g1_align0001_block_load_note.md",
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I18",
+      "disposition": "accept",
+      "reason": "成立。重算工件的 design 字段仍指向 v1（对称性）与 v0（解析分解），审计链不自描述。",
+      "action": "记入决定0072 §4.7；工件保留不改（它们是当时的输出），溯源更正由决定0072 承担。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    },
+    {
+      "id": "I19",
+      "disposition": "accept",
+      "reason": "成立。pilot/oracle 数值不在 packet 内而 v2 当作已满足；时延比值从 1 上方穿到下方，不是字面「单调收敛」；对称性成员的自同构数组被裁剪，same-orbit 决定不可在包内独立重导。",
+      "action": "接受三点更正。v2 §5/§12/§13.5 的相关表述随设计线作废；「证据在包外」与「须给轨道成员清单」两项要求记入决定0072 §4，保留给后续设计。",
+      "evidence_paths": [
+        "research/decisions/0072_align0001_stopped_resolution_limit.md"
+      ]
+    }
+  ]
+}

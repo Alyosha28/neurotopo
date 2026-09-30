@@ -1,0 +1,42 @@
+{
+  "claims_not_made": [
+    "no training",
+    "population quantities of a frozen linear core only"
+  ],
+  "config": {
+    "blocks": 4,
+    "k_max": 200,
+    "phi": 0.5,
+    "rho": 0.99,
+    "ridge_relative": 0.01,
+    "spread": 1.15,
+    "units": 64
+  },
+  "generated_by": "scripts/dir0003_ar1_transfer_check.py",
+  "per_distribution": {
+    "phi=0.0": {
+      "crossover_lag": 12.082850456893485,
+      "max_gap_band_favoured_k_le_10": 0.251765502339318,
+      "max_gap_wide_favoured_k_ge_25": 0.014181562632417776,
+      "probe_matched_band_total": 1.5263112966770205,
+      "total_ratio": 1.0000000000000058,
+      "wide_total": 1.5263112966770116
+    },
+    "phi=0.5": {
+      "crossover_lag": 12.930141425295089,
+      "max_gap_band_favoured_k_le_10": 0.5787430707222694,
+      "max_gap_wide_favoured_k_ge_25": 0.043285002546780096,
+      "probe_matched_band_total": 4.168809174690846,
+      "total_ratio": 0.9115045305827013,
+      "wide_total": 4.5735473986353465
+    }
+  },
+  "probe_matched_centre": 0.6694107111174739,
+  "schema": "dir0003_ar1_transfer_check_v1",
+  "task_distribution_matched_alternative": {
+    "crossover_lag_under_task_distribution": NaN,
+    "matched_centre": 0.9999,
+    "probe_distribution_total_ratio_of_same_band": 0.007606169781583865,
+    "task_distribution_total_ratio": 0.0025383759804345255
+  }
+}

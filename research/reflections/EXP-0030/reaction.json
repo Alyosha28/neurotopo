@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "b346f7601546d918fadc492618e62b1132328280dd482234b9a3b58a60b56c75",
+  "review_sha256": "72f3f7c860d2729a2fbd4ca10b17000df2c81540d9cfc02487366851d146eb86",
+  "responses": [
+    {
+      "id": "band-confounded-by-zero-prefix",
+      "disposition": "accept",
+      "reason": "属实：主端点 accuracy_all 含越界取 0 的强制前缀位置，d=2/T=12 有 3/13 个位置白送，控制 0.6916 被抬高，而末位与后半段≈0.52。",
+      "action": "登记并执行修正端点复核 EXP-0031（主端点改为只在 r∈[d+1,T] 的 meaningful_accuracy）；结果为 NO_QUALIFIED_MEMORY_CONDITION，取代 EXP0030 的任务资格判词（决定0106）。",
+      "evidence_paths": [
+        "experiments/EXP-0031/v1.md",
+        "research/evidence/EXP-0031/report.md",
+        "research/decisions/0106_exp0031_requalification.md"
+      ]
+    },
+    {
+      "id": "memoryless-reference-inadequate",
+      "disposition": "accept",
+      "reason": "属实：无记忆参照只测直通（0.5379），未测常数零、常数一与逐位置多数；旧的含前缀度量下常数零期望≈0.615，超过 0.55 门槛。",
+      "action": "EXP-0031 把参照集扩为四项并在修正端点上评估（全部≈0.50），复核后无合格条件。",
+      "evidence_paths": [
+        "experiments/EXP-0031/v1.md",
+        "research/evidence/EXP-0031/report.md"
+      ]
+    },
+    {
+      "id": "task-formula-off-by-one",
+      "disposition": "accept",
+      "reason": "属实：EXP0030 配置的任务描述字符串为 u_{t-d}，与协议及实现 y_r=u_{r−1−d} 相差一步。",
+      "action": "以协议与实现为准；不追溯改写已冻结的 EXP0030 配置，把缺陷固定在 EXP-0031 的 provenance 记录中。",
+      "evidence_paths": [
+        "research/evidence/EXP-0031/provenance_check.json"
+      ]
+    },
+    {
+      "id": "variant-tiebreak-not-preregistered",
+      "disposition": "accept",
+      "reason": "属实：d=2 两监督变体均值完全并列，协议未写平局规则。",
+      "action": "EXP-0031 预注册平局规则（差值 ≤1e−9 时 PLAIN 优先）并在汇总器中实现；逐 d 同时报告两变体。",
+      "evidence_paths": [
+        "experiments/EXP-0031/v1.md",
+        "research/evidence/EXP-0031/provenance_check.json"
+      ]
+    },
+    {
+      "id": "candidate-contract-v3-vs-v4",
+      "disposition": "accept",
+      "reason": "属实：配置与 manifest 的 candidate_contract 仍指向 v3，而记录同时要求候选侧须先有 v4。",
+      "action": "在决定0106 明确该字段只是元数据指针：任何候选训练都必须先冻结 v4（推广反事实分支监督并修正末位掩码）。",
+      "evidence_paths": [
+        "research/decisions/0106_exp0031_requalification.md"
+      ]
+    },
+    {
+      "id": "replay-branch-hash-unverified",
+      "disposition": "accept",
+      "reason": "属实：EXP0030 的重放记录只暴露合并布尔值，未单列分支哈希。",
+      "action": "EXP-0031 的重放脚本与 verification.json 分别暴露 logits_hash_equal 与 branch_hash_equal，两者均为 true、指标差 0。",
+      "evidence_paths": [
+        "research/evidence/EXP-0031/verification.json",
+        "scripts/verify_exp0031_replay.py"
+      ]
+    },
+    {
+      "id": "pre-run-validation-not-recorded",
+      "disposition": "accept",
+      "reason": "属实：packet 未附运行前验收的通过记录。",
+      "action": "EXP-0031 的 provenance 记录 pytest（358 passed）、suite pass、套件源码哈希与运行时一致、suite 文件与重放脚本哈希。",
+      "evidence_paths": [
+        "research/evidence/EXP-0031/provenance_check.json"
+      ]
+    },
+    {
+      "id": "terminal-branch-label-offset",
+      "disposition": "accept",
+      "reason": "属实：分支标签末位复制 y_T 而非掩码，与下一读出语义不符。",
+      "action": "记录为已知缺陷并延后到 v4 合同：修正为掩码并重跑 BRANCH 臂；本轮合格候选为 PLAIN，不使用分支损失，故不影响本轮判词。",
+      "evidence_paths": [
+        "research/evidence/EXP-0031/provenance_check.json",
+        "research/decisions/0106_exp0031_requalification.md"
+      ]
+    },
+    {
+      "id": "memoryless-expected-accuracy-mismatch",
+      "disposition": "accept",
+      "reason": "属实：协议称直通参照期望≈0.5，但旧度量含 r=0 等强制位置，实测 0.537–0.541。",
+      "action": "EXP-0031 在修正端点（仅真实命令位置）重算，四项无记忆参照全部≈0.50，散差与门槛关系重新固定。",
+      "evidence_paths": [
+        "research/evidence/EXP-0031/report.md"
+      ]
+    },
+    {
+      "id": "branch-consistency-not-banded",
+      "disposition": "accept",
+      "reason": "属实：带宽只看实际序列准确率，分支一致性未设阈值。",
+      "action": "EXP-0031 逐运行报告 branch_joint_accuracy；决定0106 要求 v4 协议为分支一致性预注册指标与阈值。",
+      "evidence_paths": [
+        "research/evidence/EXP-0031/report.md",
+        "research/decisions/0106_exp0031_requalification.md"
+      ]
+    },
+    {
+      "id": "oracle-bounds-task-not-control",
+      "disposition": "accept",
+      "reason": "属实：oracle 是任务侧的解析解（移位寄存器），不等于控制在自身函数类与预算内可达的上限。",
+      "action": "决定0106 改用任务上限（Bayes）的表述，并把控制自身可达上限列为后续需单独报告的量。",
+      "evidence_paths": [
+        "research/decisions/0106_exp0031_requalification.md"
+      ]
+    }
+  ],
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "EXP0030 的任务资格判词已由 EXP0031 修正端点复核取代（INCONCLUSIVE / NO_QUALIFIED_MEMORY_CONDITION）。下一轮只能按决定0106 的重开条件：在修正端点上先冻结并扫完 A0 合同的完整控制菜单（或另立任务族），或先冻结 v4 候选合同；不得复用已暴露的 d、seed、长度与位置曲线反推端点，也不得追认 A1、A2 或旧 Gate 1。"
+}

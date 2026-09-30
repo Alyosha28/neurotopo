@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "67481feec2193de607a899999babe65520ef668f4ccfa6fbdeea22ae4c69b29f",
+  "review_sha256": "3483888a91bc08c449fda9d516d0f62a75d5824082a1d67a0d7b76a28bb2f874",
+  "responses": [
+    {
+      "id": "MON-0001-01",
+      "disposition": "accept",
+      "reason": "The priority label alone conceals that step300 had headroom but no consistent effect while step900 failed both axes.",
+      "action": "Archived a per-step two-axis qualification record without changing the frozen label or effect estimate.",
+      "evidence_paths": [
+        "research/reflections/MON-0001/reaction_evidence.md",
+        "research/reflections/MON-0001/qualification_axes.json"
+      ]
+    },
+    {
+      "id": "MON-0001-02",
+      "disposition": "accept",
+      "reason": "A decision not to spend resources on the old M3 task is not a measured d4 or cross-task sample-efficiency failure.",
+      "action": "Explicitly bounded the stop decision to reuse of these frozen d1 monitors and separated it from empirical claims about new tasks.",
+      "evidence_paths": [
+        "research/reflections/MON-0001/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "MON-0001-03",
+      "disposition": "accept",
+      "reason": "The interval conditions on ten paired training seeds and one fixed validation stream; saved monitor summaries lack per-example predictions.",
+      "action": "Recorded the uncertainty and recomputation limits and checked the deterministic monitor input identity without claiming new-flow generalization.",
+      "evidence_paths": [
+        "research/reflections/MON-0001/reaction_evidence.md",
+        "docs/mon0001_independent_review.md"
+      ]
+    },
+    {
+      "id": "MON-0001-04",
+      "disposition": "accept",
+      "reason": "The stored time and FLOP proxy are full-run values, not costs at the early monitors.",
+      "action": "Required checkpoint-level cost records before any future sample- or compute-efficiency claim and retained this analysis as equal-update direction only.",
+      "evidence_paths": [
+        "research/reflections/MON-0001/reaction_evidence.md",
+        "docs/experiment_protocol.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep EXP-0009 INCONCLUSIVE and Gate 1 closed; do not rebrand its frozen d1 monitors as a formal M3 sample-efficiency result."
+}

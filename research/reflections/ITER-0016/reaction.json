@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "7a13bdbdbed7dbda0c0b4f8fd5f923cf52df3a93031efafad09b8a7d683753a2",
+  "review_sha256": "264fe15d6c06994b6320d78cb0e399b244c88b9b27dbc1c9d0a2cf58f26d7c7f",
+  "responses": [
+    {
+      "id": "A1",
+      "disposition": "reject",
+      "reason": "原句的“阈值”列举判定要求，并未声称实际达到；同句首明确未重复、各数值与M=false一致。反思将阈值误读为实际通过，不构成数值或判词矛盾。仍接受表述应更清楚。",
+      "action": "交付报告已明确分开判定要求与实际不达标项；保留原决定及数据。",
+      "evidence_paths": [
+        "research/iterations/ITER-0016/reflection_followup.md",
+        "research/evidence/EXP-0021_replication_intervention.md"
+      ]
+    },
+    {
+      "id": "A2",
+      "disposition": "accept",
+      "reason": "通用旧模型overfit两轮合计600更新，超过未显式分列的登记150工程上限；不作事后豁免。",
+      "action": "工程预算偏离独立归档并在报告披露，分开研究12000/专项fit0/通用overfit600；未来注册须显式计入通用验证。",
+      "evidence_paths": [
+        "research/iterations/ITER-0016/reflection_followup.md",
+        "research/evidence/EXP-0021_replication_intervention.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "完成本轮归档交付；不重跑研究、修改阈值或追加任务。"
+}

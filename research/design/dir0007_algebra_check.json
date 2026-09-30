@@ -1,0 +1,53 @@
+{
+  "checks": {
+    "aligned_transition_projection_error": 1.1102230246251565e-16,
+    "conjugate_idempotence": 0.0,
+    "conjugate_self_adjoint": 0.0,
+    "conjugate_transition_projection_error": 1.1102230246251565e-16,
+    "independent_projection_error": 8.326672684688674e-17,
+    "penalty_conjugacy_error": 5.551115123125783e-17,
+    "projector_idempotence": 0.0,
+    "projector_self_adjoint": 0.0,
+    "projector_spectrum_difference": 4.440892098500626e-16,
+    "transition_stochastic_error": 1.1102230246251565e-16
+  },
+  "checks_pass": true,
+  "full_projector_rank": 119,
+  "mismatched_transition_projection_frobenius": 0.7558108228915487,
+  "n": 16,
+  "not_established": [
+    "control_headroom",
+    "learning",
+    "effect",
+    "power",
+    "executed_compute_matching",
+    "Gate1_eligibility"
+  ],
+  "numpy": "2.3.3",
+  "optimization_updates": 0,
+  "parameter_count": 1904,
+  "permutation": [
+    0,
+    5,
+    11,
+    2,
+    14,
+    7,
+    3,
+    12,
+    8,
+    1,
+    15,
+    6,
+    10,
+    4,
+    13,
+    9
+  ],
+  "projector_rank_per_matrix": 16,
+  "regularizer_hessian_nonzero_eigenvalue_lambda1": 0.0010504201680672268,
+  "residual_rank": 1785,
+  "scope": "DETERMINISTIC_ALGEBRA_ONLY_NOT_RESEARCH_EFFECT",
+  "source_sha256": "974dd6bc8330f855ac6daf52142385b2ea9a4fdd4587b759febbd4300afefaa6",
+  "task_samples": 0
+}

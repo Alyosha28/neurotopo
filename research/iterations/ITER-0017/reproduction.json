@@ -1,0 +1,24 @@
+{
+  "pass": true,
+  "decision": "INCONCLUSIVE",
+  "qualified": true,
+  "primary_effects": [
+    5.250315848748244e-09,
+    7.141468655325056e-08,
+    -7.751326414062731e-09,
+    2.7910007235898426e-08
+  ],
+  "primary_final_drops": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "models": 15,
+  "cells": 45,
+  "max_error": 0.0,
+  "research_updates": 0,
+  "replay_updates": 0,
+  "seconds": 7.201184749999811,
+  "scope": "Shared frozen geometry/forward replay plus independent XOR/loss/selection and verdict reductions; no retraining or broader search."
+}

@@ -1,0 +1,105 @@
+{
+  "experiment_id": "EXP-0003",
+  "version": "v2",
+  "analysis": "learnability_factorial",
+  "output": "artifacts/EXP-0003/v2",
+  "base_config": "configs/exp0001_v2.json",
+  "seeds": [
+    8101,
+    8102,
+    8103
+  ],
+  "train_seed_offset": 510000,
+  "monitor_seed": 520000,
+  "test_seed": 530000,
+  "monitor_pairs": 256,
+  "test_pairs": 1024,
+  "checkpoints": [
+    400,
+    2000,
+    3000,
+    4000,
+    6000
+  ],
+  "eval_delays": [
+    8,
+    16
+  ],
+  "eval_payloads": [
+    "noise",
+    "blank"
+  ],
+  "minimum_pre_accuracy": 0.9,
+  "minimum_joint_accuracy": 0.5,
+  "minimum_recovery_gain": 0.1,
+  "arms": [
+    {
+      "name": "noise_direct",
+      "model": "gru_wide",
+      "payload": "noise",
+      "schedule": [
+        [
+          8,
+          6000
+        ]
+      ]
+    },
+    {
+      "name": "blank_direct",
+      "model": "gru_wide",
+      "payload": "blank",
+      "schedule": [
+        [
+          8,
+          6000
+        ]
+      ]
+    },
+    {
+      "name": "noise_curriculum",
+      "model": "gru_wide",
+      "payload": "noise",
+      "schedule": [
+        [
+          0,
+          2000
+        ],
+        [
+          2,
+          1000
+        ],
+        [
+          4,
+          1000
+        ],
+        [
+          8,
+          2000
+        ]
+      ]
+    },
+    {
+      "name": "blank_curriculum",
+      "model": "gru_wide",
+      "payload": "blank",
+      "schedule": [
+        [
+          0,
+          2000
+        ],
+        [
+          2,
+          1000
+        ],
+        [
+          4,
+          1000
+        ],
+        [
+          8,
+          2000
+        ]
+      ]
+    }
+  ]
+}

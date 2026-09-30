@@ -1,0 +1,26 @@
+{
+  "audit_id": "PA-0001",
+  "claim_verdicts": [
+    {
+      "claim": "Multiple explanations coexist and later observations can change the dominant interpretation",
+      "verdict": "DIRECT_OVERLAP",
+      "evidence": [
+        "Reid 1979 multiple-scan tracking revises probabilities of surviving hypotheses",
+        "PF-LSTM 2020 reports a whole-belief wrong-pose recovery example",
+        "Belief Net 2026 recursively updates a finite HMM hidden-state posterior"
+      ],
+      "limits": "No source here establishes the same low-weight fixed recurrent slot surviving with stable identity"
+    },
+    {
+      "claim": "The same low-weight fixed-identity recurrent slot survives without pruning/resampling and recovers after late contradictory evidence",
+      "verdict": "PARTIAL_OVERLAP",
+      "evidence": [
+        "Reid can prune or merge branches",
+        "PF-LSTM example does not track identity of the original low-weight particle",
+        "Belief Net hidden states can transition and are not recurrent slots"
+      ],
+      "limits": "This is neither an architecture-equivalence proof nor a novelty or performance finding"
+    }
+  ],
+  "scientific_state": "H3-SLOT remains NO_SPEC; Gate 1 remains NOT_PASSED"
+}

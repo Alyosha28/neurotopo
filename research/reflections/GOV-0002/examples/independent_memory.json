@@ -1,0 +1,35 @@
+{
+  "branches": {
+    "borderline": "Keep the new memory/retrieval claim inconclusive.",
+    "failure": "Record a bounded memory/retrieval negative result.",
+    "success": "Report only a new memory/retrieval effect under its own protocol."
+  },
+  "direction": "gov0002_memory_retrieval",
+  "experiment_id": "EXP-9902",
+  "factor": {
+    "ablation": "Remove a memory cue under an independently justified intervention.",
+    "actual_primary_control": "Degree/self-loop/state-matched random-mask GRU, to be qualified for the new endpoint.",
+    "executed_compute_matching": "Match token and recurrent operation budgets.",
+    "kind": "independent",
+    "manipulation": "Compare block and degree-matched random recurrence on a newly named memory endpoint.",
+    "name": "SYNTHETIC old-task memory transfer contrast",
+    "parameter_matching": "Match allocated and effective parameters.",
+    "prediction": "A bounded recall outcome changes under the registered structural intervention.",
+    "prior_art_boundary": "Do not claim competing hypotheses from the old lookup task.",
+    "state_matching": "Match total recurrent state and retained readout state."
+  },
+  "gate1_claim": false,
+  "purpose": "SYNTHETIC_DRY_RUN_DO_NOT_TRAIN: an EXP-0004-style task may support a distinct memory or retrieval question, not H3 semantics",
+  "question": "Synthetic independent memory-retrieval question",
+  "resource_cap": {
+    "max_updates": 1200,
+    "max_wall_seconds": 600
+  },
+  "schema_version": 1,
+  "task_search": {
+    "heldout_rule": "Hold out an independent seed and retain failed calibrations.",
+    "max_configurations": 1,
+    "retain_all_attempts": true
+  },
+  "track": "independent_benchmark"
+}

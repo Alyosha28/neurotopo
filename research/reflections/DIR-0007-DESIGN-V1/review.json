@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "9c27a3a03aa0dfad2c59bc93e8368ff37197b8bb8427d09b7f621cc476999155",
+  "reviewer": {
+    "model": "inherited-model-not-exposed",
+    "effort": "inherited",
+    "context": "fresh_only_packet"
+  },
+  "issues": [
+    {
+      "id": "R1",
+      "source": "action",
+      "severity": "high",
+      "evidence": [
+        "`p=[0,5,11,2,14,7,3,12,8,1,15,6,10,4,13,9]`，Q=I[p,:]，G'=QGQᵀ。",
+        "A_F映成B_X，B_F映成A_X",
+        "实际实现前须用非任务张量核验完整GRU一步、softmax损失、梯度、clip和Adam状态的共轭关系，最大float64误差≤1e−10；未通过不采样。"
+      ],
+      "problem": "固定同一个 Q 不能将两个已定义的正则臂双向交换。令 C_Q(W)=QWQᵀ，则 C_Q P_G C_Q⁻¹=P_G'，所以 A_F→B_X 正确；但 C_Q P_G' C_Q⁻¹=P_{Q²G(Qᵀ)²}，一般不等于 P_G。本包所给置换也不满足例外条件：p² 的前三项为 0、7、6；若 Q² 规范化长度16的正则循环群，其索引置换应为模16仿射映射，而前两项要求第三项为14，非6。因此 B_F→A_X 的正则目标、梯度和优化器更新共轭关系不能按现稿成立。嵌入代数脚本只验证从 P_G 到 P_G' 的单向 penalty_conjugacy_error，没有验证这条反向交换。",
+      "why_it_matters": "这是具体代数错误，不能归入尚未运行的普通工程核验。它会使写定的双向共轭验收在正确实现下失败，或促使实现者误换臂定义以使检查通过。纯预测和未正则化交叉熵在统一置换下仍可共轭，但这不足以验证带正则训练过程。该问题不否定 F 上四比较的可证伪性，也不否定两惩罚同谱；因此应停在设计不完整，而非据此宣判局部问题不可识别。",
+      "falsifiable_check": "在任何后续单独授权的版本中，针对256个矩阵基元逐项比较 C_Q P_G' C_Q⁻¹ 与 P_G，或直接对照 Q²SQ⁻² 是否为 S 的幂；现稿声称的等式须全部成立才可保留 B_F→A_X。若只要求两个臂各自共轭，应分别写明变换后的实际惩罚，而不能沿用错误的固定 A/B 双向交换。本轮不执行代码、不改协议。"
+    },
+    {
+      "id": "R2",
+      "source": "action",
+      "severity": "medium",
+      "evidence": [
+        "1. 非有限值/实现错/流程偏离/不完整预算 → INCONCLUSIVE，附具体工程子状态。",
+        "边界案例按同一函数检查；H/E只描述，不能改变上述四分类或推出先例胜出。"
+      ],
+      "problem": "embedded_dir0007_power_plan.py 的 classify 没有非有限值检查。静态逐分支检查可见，lower=[.03,.03,.03,.03]、upper=[NaN,NaN,NaN,NaN] 且默认 complete/gates 为 True 时，l>u 与半宽>.01 均为 False，而 all(l>.02) 为 True，函数将返回 SUPPORTED_LOCAL_ONLY。其八个已存边界案例未覆盖 NaN/Inf，故所附唯一分类函数尚未实现决策表第一条。",
+      "why_it_matters": "脚本目前只是条件规划核验，未产生研究判词，因此这不是已经发生的错误科学结论。但它不能作为完整决策边界核验的证据；未来复用此函数会允许无效区间得到支持或部分支持标签。HOLD 已阻止实际运行，仍应明确保留这个具体实现缺口。",
+      "falsifiable_check": "后续若单独授权修订分类器，应对四项上下界逐个注入 NaN、正无穷和负无穷，并验证在任何显著性或精度分支之前进入非有限值工程子状态、科学类 INCONCLUSIVE；同时保留现有八个有限边界案例。本轮仅静态审阅，不执行该脚本。"
+    }
+  ],
+  "overall_assessment": "DESIGN_INCOMPLETE_HOLD。根据 design.md 固定的质量审查范围，两项具体问题阻止把终稿认定为局部完全自洽；其中 R1 是写定共轭交换的代数错误，R2 是规划分类器与非有限值停止规则不一致。两者都不证明 F 上的核心局部问题致命不可识别，因此不选 DESIGN_REJECTED。其余核验结论如下：相同有限参数空间加有限软惩罚确实保留完整 GRU 的函数可达集；1904 参数、投影秩119、残差秩1785和所列正则 Hessian 谱自洽，不能外推成总训练损失同条件数。四项差值明确形成相对 B/U/R/D 的合取命题，H/E描述性地位与强控制停止门均已说明；F/X坐标重标记不能提供第二任务族或额外复制。条件功效推导在 IID 正态 seed 差值、每项 SD≤.04、每项真效应≥.04 下，确实以均值越界和样本SD越界的并集界同时覆盖四项显著性与半宽≤.01，不要求四项之间独立；嵌入数值约.99039488只是这些未验证假设下的下界，不能计入资格门通过概率或称实测功效。更新预算总计2,853,700及墙钟97,800秒加总正确，重放成本没有遗漏；没有证据证明这些硬限内可执行。先例资料如实承认软等变已有直接先例；项目因子资格、0049/Generic、控制余量、方差、v3全等/并列轴与完整模型工程检查均仍在HOLD。此次不裁定项目准入，不将HOLD解释成可注册或科学支持；按design规定到独立审查及主代理反应闭合即结束，不应启动自动文本循环、注册、采样或训练。只读冻结derived文件，未访问包外路径/网络，未执行研究或核验脚本；packet_sha256使用委派给定值，未读取包外packet另行重算。FILES_READ（均位于 research/reflections/DIR-0007-DESIGN-V1/derived/）：design.md；action.md；embedded_dir0007_algebra_check.py；embedded_dir0007_algebra_check.json；embedded_dir0007_power_plan.py；embedded_dir0007_power_plan.json；embedded_dir0007_soft_equivariance.md；embedded_0043_gate1_architecture_estimand.md；embedded_0044_gate1_strong_control_guard.md；embedded_0049_g1rs_task_search_cap.md；embedded_0069_gate1_matching_relaxation_v3.md；embedded_0080_entry_rule_architecture_organization.md；embedded_dir0007_c9_predesign_v0.md；embedded_0082_gate1_candidate_portfolio_audit.md；embedded_0062_g1_ksi_rulings_narrowed.md；embedded_0054_dir0002_direction_portfolio.md；action_output_0_verification.json（输出被截断，仅读取可见片段；核心代数、功效和所引规则均另读了独立embedded原件）。未读macOS sidecar。"
+}

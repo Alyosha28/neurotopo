@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "33321237d72186141513c12ae4112a077b721c2cc20707b1f38508353e2a7f12",
+  "review_sha256": "a458d13499c25d158f19657a204f6c9db8474f6063c2dd370a4f9efba2181f3b",
+  "responses": [],
+  "decision_impact": "UNCHANGED",
+  "next_action": "完成恢复后的归档交付；不重跑科学实验或追加搜索。"
+}

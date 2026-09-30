@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "track": "independent_benchmark",
+  "experiment_id": "EXP-0022",
+  "direction": "equal_output_future_stress",
+  "question": "Can nearby frozen states with equal current logits differ in future computation on unseen suffixes?",
+  "purpose": "Frozen-state empirical witness, no architecture or financial superiority.",
+  "gate1_claim": false,
+  "factor": null,
+  "resource_cap": {
+    "max_updates": 0,
+    "max_wall_seconds": 1200
+  },
+  "task_search": {
+    "max_configurations": 1,
+    "retain_all_attempts": true,
+    "heldout_rule": "Fixed 16 candidate directions,3 radii; search and test suffixes disjoint; old training seeds acknowledged, pilot separate."
+  },
+  "branches": {
+    "success": "Report equal-output future vulnerability within finite intervention family.",
+    "failure": "Report no witness or qualification failure; no extra search.",
+    "borderline": "Report smaller effect and all controls; no retuning."
+  }
+}

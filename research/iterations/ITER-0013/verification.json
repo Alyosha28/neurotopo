@@ -1,0 +1,18 @@
+{
+  "decision": "INCONCLUSIVE",
+  "substatus": "NO_USEFUL_LINEAR_READOUT",
+  "max_hidden_or_parent_logit_error": 0.0,
+  "max_probe_logit_error": 3.3306690738754696e-16,
+  "max_gradient_inf": 1.7001549409367226e-08,
+  "probe_updates": 24,
+  "original_gru_updates": 0,
+  "numerical_replay_pass": true,
+  "numerical_processes": 1,
+  "outer_elapsed_seconds": 4.1711722090003605,
+  "budget_seconds": 120,
+  "budget_pass": true,
+  "run_analysis_seconds": 5.352854583999942,
+  "scientific_review_sha256": "90b5d600b96d2227254359074084d4ff0cac6d5251076882bea79dbc37e30d7a",
+  "reproduction_sha256": "ad66cc947a581d59a574a6b9b1dac729bcb53452ec1d47e0c95a95b24a685bc4",
+  "deviations": []
+}

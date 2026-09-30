@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "a9142e5f490b77a586719a9c2e21108e30704bec1a92c60f26244de37db925c2",
+  "review_sha256": "a6da7c00464e2a5da8c15df00ce42fe32e0591f0e9b73857c8c267e2da126d80",
+  "responses": [
+    {
+      "id": "asymmetric-negative-verdict",
+      "disposition": "accept",
+      "reason": "属实：负向行无区间条件，正向行要求下界>0；[−15.04,+4.10]pp 含 0，CONTROL_BETTER 的方向性主张不成立。",
+      "action": "权威 substatus 更正为 NO_REPLICATED_ADVANTAGE（两读法交集），CONTROL_BETTER 作为字面行结果保留；决定0109 已增更正节；后续协议须对负向行也用对称区间条件。",
+      "evidence_paths": [
+        "research/decisions/0109_exp0034_falsification_and_route_closure.md",
+        "research/evidence/EXP-0034/verification.json"
+      ]
+    },
+    {
+      "id": "chance-candidate-seed-no-floor",
+      "disposition": "accept",
+      "reason": "属实：只对控制设了带内门槛，候选无下限规则；剔除 seed 29321 后效应 −2.65pp（重放脚本按记录值；反射者按未舍入值算得 −2.64pp，同一结论）。",
+      "action": "已在 verification.json 记录剔除敏感性；协议缺口（候选侧带内/异常门槛）写入后续要求；判词采用更保守的 NO_REPLICATED_ADVANTAGE。",
+      "evidence_paths": [
+        "research/evidence/EXP-0034/verification.json",
+        "experiments/EXP-0034/registry.json"
+      ]
+    },
+    {
+      "id": "unfrozen-route-closure",
+      "disposition": "accept",
+      "reason": "属实：冻结协议没有停止/关闭条款，且 EXP0034 自身把结论限在单一任务/预算；关闭是不可逆的程序决定，不能由本轮实验推出。",
+      "action": "决定0109 已改述：关闭为程序决定（本会话约定），范围限已测任务、预算与匹配口径；正式关闭标准应在未来程序内预先注册。",
+      "evidence_paths": [
+        "research/decisions/0109_exp0034_falsification_and_route_closure.md"
+      ]
+    },
+    {
+      "id": "carrier-resolution-and-replay-evidence",
+      "disposition": "accept",
+      "reason": "属实：packet 的 action 未含 by_config 明细，且原重放只覆盖单 seed。",
+      "action": "已核验 SEL_INV 归档为 1180 参数/1059 算子并写入 verification.json.carrier_check；重放扩展为全部 5 个比较 seed（含 29321），哈希与指标差 0；packet 是冻结前的视图，后补证据以 verification.json 为准并已在记录中注明。",
+      "evidence_paths": [
+        "research/evidence/EXP-0034/verification.json",
+        "scripts/verify_exp0033_0034_replay.py"
+      ]
+    }
+  ],
+  "decision_impact": "REASSESSMENT_REQUIRED",
+  "next_action": "判词族 FALSIFIED 保持、substatus 更正为 NO_REPLICATED_ADVANTAGE；ARCH-0001 关闭为程序决定且范围限已测条件。后续继续该方向必须另立 ARCH-0002 并重走 A0，任务侧先做控制侧资格（含候选侧对称门槛、≥5 seed），不得复用已暴露条件反向挑端点。"
+}

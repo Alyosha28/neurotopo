@@ -1,0 +1,66 @@
+{
+  "experiment_id": "EXP-0018",
+  "protocol_version": "v1",
+  "review_type": "independent_prerun",
+  "review_date": "2026-09-28",
+  "scope": {
+    "question": "Does the frozen CO hidden-state binary linear probe preserve split, control, numerical, and interpretation boundaries before research execution?",
+    "evidence": [
+      "research/design/exp0018_review_scope.md",
+      "experiments/EXP-0018/v1.md",
+      "configs/exp0018_v1.json",
+      "research/entries/EXP-0018.json",
+      "research/prior_art/exp0018_linear_probe.md",
+      "research/evidence/EXP0017-CO-DECOMP/report.md",
+      "research/stage_gates.md",
+      "docs/experiment_protocol.md",
+      "research/research_questions.md",
+      "src/neurotopo/order_observation.py",
+      "src/neurotopo/frozen_binary_probe.py",
+      "src/neurotopo/frozen_binary_probe_analysis.py",
+      "src/neurotopo/loop_worker.py",
+      "tests/test_frozen_binary_probe.py"
+    ],
+    "method": "Read-only protocol, source, and test inspection; matched all six configured checkpoint hashes against their original result.json records. No model invocation, research sample generation, or research run.",
+    "reviewed_source_sha256": {
+      "src/neurotopo/frozen_binary_probe.py": "d903107268934439a00627d4eba3e400aa4d9816f603d226bac40e14ea8954da",
+      "src/neurotopo/frozen_binary_probe_analysis.py": "e51510367c588f527f741480c643c686bbb9ed1ea104339a1109635e86fb1c0b",
+      "tests/test_frozen_binary_probe.py": "5ccc7f6de36cc80278edfa21d40d57c7f038f0af0ef2868e803a15eb1d767bf5"
+    }
+  },
+  "checks": [
+    {
+      "item": "Frozen question and branch order",
+      "status": "PASS",
+      "finding": "One independent benchmark question, six locked CO checkpoints, D64 primary and D16 anchor, one fit length and two fixed test lengths. The implemented ordered classifier reproduces the five prespecified scientific branches after optimization and control guards; a D16 failure does not gate the D64 result. No Gate 1 claim is made."
+    },
+    {
+      "item": "Data independence and label leakage",
+      "status": "PASS",
+      "finding": "Generator roots use [181001, seed, split_id, operations] with distinct split IDs; fit32 and test32 visible-token overlap is checked and aborts if nonzero. The shuffle arm permutes fit labels only; both arms score against unchanged true test labels. Neither probe selects hyperparameters from test results. This establishes the registered new-stream boundary, not zero chance overlap with the old GRU training streams."
+    },
+    {
+      "item": "Fit-only preprocessing and convex target",
+      "status": "PASS",
+      "finding": "Mean and population standard deviation come only from fit hidden states; scales below 1e-8 become one and are reused unchanged for both tests. The objective is mean logistic BCE plus 0.001/2 times squared weight norm, with an unpenalized intercept. Gradient and full Hessian match this objective. Zero-initialized Newton uses at most 50 accepted updates, Armijo coefficient 1e-4, at most 25 trial steps, and checks gradient infinity norm before updates and at exit against 1e-7. A nonconverged returned fit is classified as PROBE_OPTIMIZATION_FAILURE; solver or nonfinite errors retain a run failure."
+    },
+    {
+      "item": "Frozen source model and original output",
+      "status": "PASS",
+      "finding": "All six config checkpoint SHA-256 values equal their source result records. Runtime verifies checkpoint bytes, sets eval and requires_grad false, extracts in no_grad, checks every parameter gradient is absent and state hash unchanged. It executes the complete time-axis readout before taking the final output. Original b and j marginals are reported as behavior controls."
+    },
+    {
+      "item": "Controls, replication, and interpretation",
+      "status": "PASS",
+      "finding": "D64 class balance, shuffled-test accuracy, original b accuracy, and original j accuracy are checked per seed and test length before positive branches. Original GRU training seed remains the replication unit; the test examples are not treated as independent model replications. A positive result is limited to fixed-class linear accessibility on the registered lengths and distribution, while probe failure is not interpreted as information absence or proof about nonlinear encoding."
+    },
+    {
+      "item": "Engineering checks and budget path",
+      "status": "PASS_WITH_EXECUTION_PENDING",
+      "finding": "Tests cover finite-difference gradient and Hessian, monotone objective on an engineering matrix, known linear signal and shuffled-label control, fit-only scaling, full-forward output equality, frozen gradients, branch precedence, and worker routing. The registered worker enforces a shared 120-second run-plus-analysis limit; the code reports probe updates and original GRU updates separately. Test execution, full verify, clean freeze, formal run, and result reproduction have not occurred in this read-only review."
+    }
+  ],
+  "blocking": [],
+  "verdict": "PASS_PRE_RUN",
+  "verdict_scope": "No design or inspected-source blocker to proceeding through the registered engineering validation and frozen execution gates. This is a pre-run audit, not evidence that tests have passed, the probe has converged on the six research checkpoints, or any scientific branch has been observed."
+}

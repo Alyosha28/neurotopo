@@ -1,0 +1,77 @@
+{
+  "decision_impact": "UNCHANGED",
+  "next_action": "决定0067 已按 7 条修正生效：单轴匹配 + 有界披露 + 条件化判词，执行计算匹配方可给 SUPPORTED，时延降级须附算子级 profile，包效应轨带资源未匹配标志并禁止聚合引用，筛查阈值须冻结，并加日落条款（前三次放宽运行后复评，中位未匹配比值 >2× 且出现正面判词即回退）。Gate 1 与全部既有判词不变；旧候选不重开；不注册实验、不授权训练。下一步：按新口径选一个候选与单轴，先做声明轴验证与廉价筛查。",
+  "packet_sha256": "82752e3a0d210b7a7163f22fa43251d4675d5d6567ccb4e1864a680726cad16c",
+  "responses": [
+    {
+      "action": "已加 R1a：每条未匹配轴预注册容差上限，超限自动降级为 PACKAGE_EFFECT 或 INCONCLUSIVE。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0067_resource_matching_relaxation.md",
+        "research/program.md"
+      ],
+      "id": "DECISION-0067-R1",
+      "reason": "未匹配轴无幅度上限，条件化句式只是标签修正。"
+    },
+    {
+      "action": "已加 R1b：声明轴须经 pilot 实测的超出消耗 argmax 验证；递归/组织类主张须匹配递归状态本身。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0067_resource_matching_relaxation.md",
+        "research/program.md"
+      ],
+      "id": "DECISION-0067-R2",
+      "reason": "主匹配轴由候选自利声明且从不验证，八轴信息量不等。"
+    },
+    {
+      "action": "已撤回该假定：R2b 要求算子级 profile 区分启动开销与串行深度；profile 产出前时延仍是与主张相关的轴。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0067_resource_matching_relaxation.md",
+        "research/program.md"
+      ],
+      "id": "DECISION-0067-R3",
+      "reason": "无 profile 却假定时延差源于实现/并行度；顺序递归的串行深度可能是机制自身资源。"
+    },
+    {
+      "action": "已加 R2a：改为匹配或判 INCONCLUSIVE；任何 SUPPORTED 都要求执行计算匹配或 profile 在容差内。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0067_resource_matching_relaxation.md",
+        "research/program.md"
+      ],
+      "id": "DECISION-0067-R4",
+      "reason": "计算保障是析取式，仅披露即可满足。"
+    },
+    {
+      "action": "接受为 packet 不足；决定0067 §1 已把依据写成可核条目（先例综述文件路径 + EXP-0011 数字），后续同类 packet 须纳入被引文本。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0067_resource_matching_relaxation.md"
+      ],
+      "id": "DECISION-0067-R5",
+      "reason": "先例综述与被引决定不在 packet 内，承重前提不可核。"
+    },
+    {
+      "action": "已加 §3：每个筛查的数值通过判据须在注册时冻结；失败须记录实测值且只能走标注为探索性的路径，不得给 SUPPORTED、不得静默 NO-GO。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0067_resource_matching_relaxation.md"
+      ],
+      "id": "DECISION-0067-R6",
+      "reason": "廉价筛查保留但无冻结通过判据，可能成为新的纸面门。"
+    },
+    {
+      "action": "已加 R3a：每条记录带资源未匹配标志；禁止跨结果聚合、禁止作为项目级或 Gate 1 证据引用；未匹配轴须出现在任何报告位置。",
+      "disposition": "accept",
+      "evidence_paths": [
+        "research/decisions/0067_resource_matching_relaxation.md",
+        "research/program.md"
+      ],
+      "id": "DECISION-0067-R7",
+      "reason": "包效应轨的单条护栏正确，但跨记录聚合与引用未受约束。"
+    }
+  ],
+  "review_sha256": "05a419f63bf10028576a6e37ca4bfe9ea0b5688ab2811321d72007f598f8e8da",
+  "schema_version": 1
+}

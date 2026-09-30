@@ -1,0 +1,101 @@
+{
+  "packet": "research/reflections/EXP-0015-SOURCE-FIX/packet.json",
+  "packet_sha256": "4be27d88944e2df9ac959217b76ba2708bd5f038fafd966535d23bcddd705aa8",
+  "parts": [
+    {
+      "bytes": 851,
+      "matches_packet_digest": true,
+      "part": "design.md",
+      "sha256": "e45100ed507e104894424f8184af64915010f664f5fc5bf628391ce92fc97112"
+    },
+    {
+      "bytes": 2116,
+      "matches_packet_digest": true,
+      "part": "action.md",
+      "sha256": "e635b041c1a215e6c588049ce7c48593e3267965b5794adfa9dfd00ca2ef657d"
+    },
+    {
+      "bytes": 73278,
+      "matches_packet_digest": true,
+      "part": "action_output_0_verification.json",
+      "sha256": "b1fab9eab33002ca34e33f6cac594b6297fa5edf0815ee14598e29fdff18c93e"
+    },
+    {
+      "bytes": 5992,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_v1.md",
+      "sha256": "f637587339f836715977200932ff0d5411b6a91f08ace89fcfdb14c3a6acb3d9",
+      "source_path": "experiments/EXP-0015/v1.md"
+    },
+    {
+      "bytes": 882,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_exp0015_v1.json",
+      "sha256": "e572a51d5137634e2a3e722d1f015f2b471fe84e5ad2bea25493a6c923f8d639",
+      "source_path": "configs/exp0015_v1.json"
+    },
+    {
+      "bytes": 9053,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_orbit_information.py",
+      "sha256": "597a1f91c87bd47d3dcfda6670ecb9ee5fae2b7f84dc58118d0244c9d6f75a34",
+      "source_path": "src/neurotopo/orbit_information.py"
+    },
+    {
+      "bytes": 3051,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_orbit_information_analysis.py",
+      "sha256": "1e908d0d761e3fd238f8d3d4c4a0c1ae467706760f5f07395506d86aee163dcd",
+      "source_path": "src/neurotopo/orbit_information_analysis.py"
+    },
+    {
+      "bytes": 8556,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_orbit_information_reproduce.py",
+      "sha256": "daeef3f3842cfe093b3ed727b6a02bc993d961c8bbfe20041272f574e870581b",
+      "source_path": "src/neurotopo/orbit_information_reproduce.py"
+    },
+    {
+      "bytes": 8969,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_loop_worker.py",
+      "sha256": "72f054807af051e7e7a911e8adc11aa6db9d8238f1f97318ae02d95fc32a206b",
+      "source_path": "src/neurotopo/loop_worker.py"
+    },
+    {
+      "bytes": 11118,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_run.py",
+      "sha256": "fbd9bf20a2f4933b19862c905032299f8682cd5eb7002fb2ce9ef8f8550899ad",
+      "source_path": "src/neurotopo/run.py"
+    },
+    {
+      "bytes": 176,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_reproduce_exp0015.py",
+      "sha256": "f9443729842a9d3b91ccae29f84719a4825a4086231b37661e77a6103fddf708",
+      "source_path": "scripts/reproduce_exp0015.py"
+    },
+    {
+      "bytes": 4679,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_test_orbit_information_reproduce.py",
+      "sha256": "391a0f0d868ecc541332369962cf3ae15d35fb7f9e1731ccf773b9baf9613052",
+      "source_path": "tests/test_orbit_information_reproduce.py"
+    },
+    {
+      "bytes": 7183,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_test_loop_worker_commands.py",
+      "sha256": "0f1447f1e4bab9e2ee923a98f75fd11ac25794cc3e90623a37c1bbad5cd6c245",
+      "source_path": "tests/test_loop_worker_commands.py"
+    },
+    {
+      "bytes": 8971,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_suite.json",
+      "sha256": "b642045352fd30b9e91655184aa9977f6a38b6820e48ddd04cb1217361770a93",
+      "source_path": "artifacts/validation/suite.json"
+    }
+  ]
+}

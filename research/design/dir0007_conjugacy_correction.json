@@ -1,0 +1,28 @@
+{
+  "scope": "POST_PACKET_DETERMINISTIC_MAPPING_CORRECTION",
+  "permutation": [
+    0,
+    5,
+    11,
+    2,
+    14,
+    7,
+    3,
+    12,
+    8,
+    1,
+    15,
+    6,
+    10,
+    4,
+    13,
+    9
+  ],
+  "Q_squared_is_identity": false,
+  "wrong_BF_to_AX_projector_error": 0.0625,
+  "correct_BF_to_Q2GQ2T_projector_error": 0.0,
+  "correct_mapping": "On X=QF, A_F pushes to P_(QGQt), B_F pushes to P_(Q2G(Q2)t), not P_G. No extra research arm is created.",
+  "task_samples": 0,
+  "optimization_updates": 0,
+  "was_in_independent_review_packet": false
+}

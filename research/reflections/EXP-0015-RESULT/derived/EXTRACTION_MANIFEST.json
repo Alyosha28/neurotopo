@@ -1,0 +1,73 @@
+{
+  "packet": "research/reflections/EXP-0015-RESULT/packet.json",
+  "packet_sha256": "2828cf53a6854f5d8fd9023b3d38ba588a152c9eb5951dbb1891053689dd8c0c",
+  "parts": [
+    {
+      "bytes": 910,
+      "matches_packet_digest": true,
+      "part": "design.md",
+      "sha256": "fe30607ffb99642c1182a7862e237d6b1c3283dde0ae3144c476dc7e6a1decbb"
+    },
+    {
+      "bytes": 731,
+      "matches_packet_digest": true,
+      "part": "action.md",
+      "sha256": "030a437c75300a9587074d4ec25967ce9ac746a5502453ce8bd5ac7d47d488d5"
+    },
+    {
+      "bytes": 28771,
+      "matches_packet_digest": true,
+      "part": "action_output_0_verification.json",
+      "sha256": "fe3fa4a68dbb1c95a9510210db9deae138c31bea28671ee70b090a5cf06dec1c"
+    },
+    {
+      "bytes": 5992,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_v1.md",
+      "sha256": "f637587339f836715977200932ff0d5411b6a91f08ace89fcfdb14c3a6acb3d9",
+      "source_path": "experiments/EXP-0015/v1.md"
+    },
+    {
+      "bytes": 9053,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_manifest.json",
+      "sha256": "e13cb1fe5e2a7cbe5800cca44728614950cc95804e7f226b727388065f07ac03",
+      "source_path": "artifacts/EXP-0015/v1/manifest.json"
+    },
+    {
+      "bytes": 1895,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_independent_reproduction.json",
+      "sha256": "ba46c30528141b3545dbb4701f7ccafdc9c6310efe5b4d916720ada258c44faa",
+      "source_path": "artifacts/EXP-0015/v1/independent_reproduction.json"
+    },
+    {
+      "bytes": 103,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_job_end.json",
+      "sha256": "88076b771bf835e772f4c7b914140871969dd2044d062ac98893fa686727d38d",
+      "source_path": "artifacts/auto_research/live/jobs/ITER-0010/job_end.json"
+    },
+    {
+      "bytes": 5332,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_validation.json",
+      "sha256": "6f90ecaead20e9694f432e6fde6a82e033a9ff2dba31b73dbe830886bb75d6b2",
+      "source_path": "research/iterations/ITER-0010/validation.json"
+    },
+    {
+      "bytes": 3362,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_review.json",
+      "sha256": "b7e6a31763e8a1268319b9c42061e1c8125524a629fa1f897aeed6f646efeaa3",
+      "source_path": "research/reflections/EXP-0015-SOURCE-FIX/review.json"
+    },
+    {
+      "bytes": 396,
+      "matches_bundle_artifact_digest": true,
+      "part": "embedded_EXP-0015_live_migration.json",
+      "sha256": "d0c22ac89e1a205dbc4775eccbdebd3a5aad70b7ebb858f1472284b0a18cd1cd",
+      "source_path": "research/evidence/EXP-0015_live_migration.json"
+    }
+  ]
+}

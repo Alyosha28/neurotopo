@@ -1,0 +1,18 @@
+{
+  "pass_": true,
+  "raw_files_verified": 52,
+  "tests_passed": 286,
+  "source_suite_matches": true,
+  "phase": "DECIDED",
+  "iteration": "ITER-0015",
+  "decision": "SUPPORTED",
+  "substatus": "SINGLE_SEED_LEARNABILITY_ONLY",
+  "reflection_issues": 0,
+  "run_analysis_seconds": 9.671052166999743,
+  "replay_outer_seconds": 2.2629999169998882,
+  "models": 3,
+  "training_updates": 3000,
+  "engineering_updates": 150,
+  "execution_commit": "b489ff8",
+  "gate1_claim": false
+}

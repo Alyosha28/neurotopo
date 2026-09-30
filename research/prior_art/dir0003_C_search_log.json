@@ -1,0 +1,357 @@
+{
+ "area": "C_optimization_vs_capacity",
+ "retrieved_at": "2026-09-24T18:38:29Z",
+ "channel_notes": [
+  "web_search/web_fetch unavailable in this environment; used bash curl only.",
+  "OpenAlex abandoned (all-IP 429). DuckDuckGo HTML blocked by anti-bot. DBLP bot-walled. Semantic Scholar 429.",
+  "EuropePMC returned zero domain-relevant hits (biomedical index). Crossref low relevance for this domain.",
+  "Discovery: huggingface papers search. Verification: arxiv.org/abs (abstract) and arxiv.org/pdf + pdftotext (pdf_section).",
+  "All 17 sources were actually retrieved this session; no identifier is written from memory."
+ ],
+ "queries": [
+  {
+   "engine": "openalex",
+   "query": "approximation estimation optimization error decomposition neural networks",
+   "url": "https://api.openalex.org/works?filter=title_and_abstract.search:approximation+estimation+optimization+error+decomposition+neural+networks&per-page=5",
+   "n_results": 5,
+   "note": "first probe returned meta.count=38; ALL subsequent OpenAlex calls returned HTTP 429 (shared free quota exhausted) - channel abandoned on instruction"
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "lazy training feature learning",
+   "url": "https://huggingface.co/api/papers/search?q=lazy%20training%20feature%20learning&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "deep bootstrap framework online learners offline generalizers",
+   "url": "https://huggingface.co/api/papers/search?q=deep%20bootstrap%20framework%20online%20learners%20offline%20generalizers&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "linear mode connectivity lottery ticket hypothesis",
+   "url": "https://huggingface.co/api/papers/search?q=linear%20mode%20connectivity%20lottery%20ticket%20hypothesis&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "loss surfaces mode connectivity fast ensembling",
+   "url": "https://huggingface.co/api/papers/search?q=loss%20surfaces%20mode%20connectivity%20fast%20ensembling&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "essentially no barriers in neural network energy landscape",
+   "url": "https://huggingface.co/api/papers/search?q=essentially%20no%20barriers%20in%20neural%20network%20energy%20landscape&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "progress measures grokking mechanistic interpretability",
+   "url": "https://huggingface.co/api/papers/search?q=progress%20measures%20grokking%20mechanistic%20interpretability&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "deep bootstrap good online learners good offline generalizers",
+   "url": "https://huggingface.co/api/papers/search?q=deep%20bootstrap%20good%20online%20learners%20good%20offline%20generalizers&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "do deep nets really need to be deep",
+   "url": "https://huggingface.co/api/papers/search?q=do%20deep%20nets%20really%20need%20to%20be%20deep&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "the early phase of neural network training break even point",
+   "url": "https://huggingface.co/api/papers/search?q=the%20early%20phase%20of%20neural%20network%20training%20break%20even%20point&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "saddle to saddle dynamics deep linear networks",
+   "url": "https://huggingface.co/api/papers/search?q=saddle%20to%20saddle%20dynamics%20deep%20linear%20networks&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "deep learning requires rethinking generalization random labels",
+   "url": "https://huggingface.co/api/papers/search?q=deep%20learning%20requires%20rethinking%20generalization%20random%20labels&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "edge of stability gradient descent",
+   "url": "https://huggingface.co/api/papers/search?q=edge%20of%20stability%20gradient%20descent&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "the deep bootstrap framework",
+   "url": "https://huggingface.co/api/papers/search?q=the%20deep%20bootstrap%20framework&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "knowledge distillation capacity gap teacher student",
+   "url": "https://huggingface.co/api/papers/search?q=knowledge%20distillation%20capacity%20gap%20teacher%20student&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "born again neural networks self distillation",
+   "url": "https://huggingface.co/api/papers/search?q=born%20again%20neural%20networks%20self%20distillation&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "sharpness aware minimization critique measures of sharpness",
+   "url": "https://huggingface.co/api/papers/search?q=sharpness%20aware%20minimization%20critique%20measures%20of%20sharpness&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "critical learning periods in deep networks",
+   "url": "https://huggingface.co/api/papers/search?q=critical%20learning%20periods%20in%20deep%20networks&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "gradient starvation neural network capacity bottleneck",
+   "url": "https://huggingface.co/api/papers/search?q=gradient%20starvation%20neural%20network%20capacity%20bottleneck&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "deep bootstrap generalization infinite data oracle",
+   "url": "https://huggingface.co/api/papers/search?q=deep%20bootstrap%20generalization%20infinite%20data%20oracle&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "model stitching representation equivalence",
+   "url": "https://huggingface.co/api/papers/search?q=model%20stitching%20representation%20equivalence&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "similarity of neural network representations kernel alignment",
+   "url": "https://huggingface.co/api/papers/search?q=similarity%20of%20neural%20network%20representations%20kernel%20alignment&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "training time to reach target accuracy threshold scaling",
+   "url": "https://huggingface.co/api/papers/search?q=training%20time%20to%20reach%20target%20accuracy%20threshold%20scaling&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "huggingface_papers",
+   "query": "permutation symmetry linear mode connectivity failure",
+   "url": "https://huggingface.co/api/papers/search?q=permutation%20symmetry%20linear%20mode%20connectivity%20failure&limit=12",
+   "n_results": 12
+  },
+  {
+   "engine": "arxiv_api",
+   "query": "all:%22lazy+training%22+AND+all:%22neural+tangent+kernel%22",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22lazy+training%22+AND+all:%22neural+tangent+kernel%22&max_results=15&sortBy=relevance",
+   "n_results": 15
+  },
+  {
+   "engine": "arxiv_api",
+   "query": "all:%22rich+regime%22+AND+all:%22feature+learning%22",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22rich+regime%22+AND+all:%22feature+learning%22&max_results=15&sortBy=relevance",
+   "n_results": 15
+  },
+  {
+   "engine": "arxiv_api",
+   "query": "ti:%22Deep+Bootstrap%22",
+   "url": "https://export.arxiv.org/api/query?search_query=ti:%22Deep+Bootstrap%22&max_results=5&sortBy=relevance",
+   "n_results": 5
+  },
+  {
+   "engine": "arxiv_api",
+   "query": "all:%22grokking%22+AND+all:%22delayed+generalization%22",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22grokking%22+AND+all:%22delayed+generalization%22&max_results=15&sortBy=relevance",
+   "n_results": 15,
+   "note": "HTTP 429 - arXiv API rate limited; query not completed"
+  },
+  {
+   "engine": "arxiv_api",
+   "query": "all:%22linear+mode+connectivity%22",
+   "url": "https://export.arxiv.org/api/query?search_query=all:%22linear+mode+connectivity%22&max_results=15&sortBy=relevance",
+   "n_results": 15,
+   "note": "HTTP 429 - arXiv API rate limited; query not completed"
+  },
+  {
+   "engine": "europepmc",
+   "query": "TITLE:\"approximation error\" AND TITLE:\"optimization error\"",
+   "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TITLE%3A%22approximation%20error%22%20AND%20TITLE%3A%22optimization%20error%22&format=json&pageSize=12",
+   "n_results": 12
+  },
+  {
+   "engine": "europepmc",
+   "query": "\"optimization error\" AND \"approximation error\" AND \"neural network\"",
+   "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22optimization%20error%22%20AND%20%22approximation%20error%22%20AND%20%22neural%20network%22&format=json&pageSize=12",
+   "n_results": 12,
+   "note": "12 hits returned, all biomedical/unrelated - zero usable for this domain"
+  },
+  {
+   "engine": "europepmc",
+   "query": "\"grokking\" AND \"generalization\"",
+   "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22grokking%22%20AND%20%22generalization%22&format=json&pageSize=12",
+   "n_results": 12,
+   "note": "13 hits, all biomedical/unrelated - zero usable for this domain"
+  },
+  {
+   "engine": "crossref",
+   "query": "Deep Bootstrap Framework Good Online Learners are Good Offline Generalizers",
+   "url": "https://api.crossref.org/works?query.bibliographic=Deep%20Bootstrap%20Framework%20Good%20Online%20Learners%20are%20Good%20Offline%20Generalizers&rows=6",
+   "n_results": 6,
+   "note": "returned applied-linguistics entries - no relevant hit"
+  },
+  {
+   "engine": "arxiv_abs_page",
+   "query": "metadata+abstract verification for 17 candidate ids",
+   "url": "https://arxiv.org/abs/<id>",
+   "n_results": 17
+  },
+  {
+   "engine": "arxiv_pdf_pdftotext",
+   "query": "full-text section verification for 1906.08034, 2310.06110, 1912.05671, 2301.05217",
+   "url": "https://arxiv.org/pdf/<id>",
+   "n_results": 4
+  }
+ ],
+ "sources": [
+  {
+   "title": "Disentangling feature and lazy training in deep neural networks",
+   "year": 2020,
+   "id": "arXiv:1906.08034 / DOI 10.1088/1742-5468/abc4de",
+   "url": "https://arxiv.org/abs/1906.08034",
+   "verified_layer": "pdf_section"
+  },
+  {
+   "title": "Grokking as the Transition from Lazy to Rich Training Dynamics",
+   "year": 2023,
+   "id": "arXiv:2310.06110",
+   "url": "https://arxiv.org/abs/2310.06110",
+   "verified_layer": "pdf_section"
+  },
+  {
+   "title": "Linear Mode Connectivity and the Lottery Ticket Hypothesis",
+   "year": 2020,
+   "id": "arXiv:1912.05671",
+   "url": "https://arxiv.org/abs/1912.05671",
+   "verified_layer": "pdf_section"
+  },
+  {
+   "title": "Progress measures for grokking via mechanistic interpretability",
+   "year": 2023,
+   "id": "arXiv:2301.05217",
+   "url": "https://arxiv.org/abs/2301.05217",
+   "verified_layer": "pdf_section"
+  },
+  {
+   "title": "The Deep Bootstrap Framework: Good Online Learners are Good Offline Generalizers",
+   "year": 2020,
+   "id": "arXiv:2010.08127",
+   "url": "https://arxiv.org/abs/2010.08127",
+   "verified_layer": "abstract"
+  },
+  {
+   "title": "Loss Surfaces, Mode Connectivity, and Fast Ensembling of DNNs",
+   "year": 2018,
+   "id": "arXiv:1802.10026",
+   "url": "https://arxiv.org/abs/1802.10026",
+   "verified_layer": "abstract"
+  },
+  {
+   "title": "Grokking: Generalization Beyond Overfitting on Small Algorithmic Datasets",
+   "year": 2022,
+   "id": "arXiv:2201.02177",
+   "url": "https://arxiv.org/abs/2201.02177",
+   "verified_layer": "abstract"
+  },
+  {
+   "title": "Towards Understanding Grokking: An Effective Theory of Representation Learning",
+   "year": 2022,
+   "id": "arXiv:2205.10343",
+   "url": "https://arxiv.org/abs/2205.10343",
+   "verified_layer": "abstract"
+  },
+  {
+   "title": "Understanding deep learning requires rethinking generalization",
+   "year": 2016,
+   "id": "arXiv:1611.03530",
+   "url": "https://arxiv.org/abs/1611.03530",
+   "verified_layer": "abstract"
+  },
+  {
+   "title": "Does Knowledge Distillation Really Work?",
+   "year": 2021,
+   "id": "arXiv:2106.05945",
+   "url": "https://arxiv.org/abs/2106.05945",
+   "verified_layer": "abstract"
+  },
+  {
+   "title": "On Warm-Starting Neural Network Training",
+   "year": 2020,
+   "id": "arXiv:1910.08475",
+   "url": "https://arxiv.org/abs/1910.08475",
+   "verified_layer": "abstract"
+  },
+  {
+   "title": "Git Re-Basin: Merging Models modulo Permutation Symmetries",
+   "year": 2022,
+   "id": "arXiv:2209.04836",
+   "url": "https://arxiv.org/abs/2209.04836",
+   "verified_layer": "abstract"
+  },
+  {
+   "title": "Landscaping Linear Mode Connectivity",
+   "year": 2024,
+   "id": "arXiv:2406.16300",
+   "url": "https://arxiv.org/abs/2406.16300",
+   "verified_layer": "abstract"
+  },
+  {
+   "title": "Similarity of Neural Network Representations Revisited",
+   "year": 2019,
+   "id": "arXiv:1905.00414",
+   "url": "https://arxiv.org/abs/1905.00414",
+   "verified_layer": "abstract"
+  },
+  {
+   "title": "A Modern Look at the Relationship between Sharpness and Generalization",
+   "year": 2023,
+   "id": "arXiv:2302.07011",
+   "url": "https://arxiv.org/abs/2302.07011",
+   "verified_layer": "abstract"
+  },
+  {
+   "title": "Critical Learning Periods Emerge Even in Deep Linear Networks",
+   "year": 2023,
+   "id": "arXiv:2308.12221",
+   "url": "https://arxiv.org/abs/2308.12221",
+   "verified_layer": "abstract"
+  },
+  {
+   "title": "Gradient Starvation: A Learning Proclivity in Neural Networks",
+   "year": 2020,
+   "id": "arXiv:2011.09468",
+   "url": "https://arxiv.org/abs/2011.09468",
+   "verified_layer": "abstract"
+  }
+ ],
+ "counts": {
+  "distinct_sources": 17,
+  "pdf_section": 4,
+  "abstract": 13,
+  "code_commit": 0,
+  "queries_logged": 35
+ }
+}

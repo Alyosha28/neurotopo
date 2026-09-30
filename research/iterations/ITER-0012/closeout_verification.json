@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "scope": "Final archive integrity and workflow verification",
+  "raw_files_verified": 78,
+  "current_source_suite_matches": true,
+  "tests_passed": 268,
+  "phase": "DECIDED",
+  "iteration": "ITER-0012",
+  "decision": "INCONCLUSIVE",
+  "reflection_issues": 2,
+  "reflection_responses": "2 accepted",
+  "scientific_run_commit": "fe0907ba99b63b7aa76cf218ded5d43ea7454fc3",
+  "replay_process_compliance": "UNVERIFIABLE; see reflection process_compliance.json"
+}

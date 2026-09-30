@@ -1,0 +1,27 @@
+{
+  "experiment_id": "EXP-0022",
+  "version": "v1",
+  "review_type": "independent_static_prerun",
+  "scope": "Reviewed the prospective scope, protocol, config, entry, prior-art note, EXP-0021 context and learned_protected_pilot.py. No research samples, checkpoints or model executions were run.",
+  "verdict": "REVISION_REQUIRED_BEFORE_IMPLEMENTATION",
+  "checks": [
+    "For H in R^(3x2), z=tr(HQH^T)+b with Q=[[w11,w12/2],[w12/2,w22]]. Orthogonal eigendecomposition Q=U Lambda U^T makes z a weighted sum of squared norms of the two columns of HU. Rotating only the larger column in R3 at fixed norm preserves z and total Frobenius norm; the chord formula gives the registered displacement. The larger-column choice makes every listed radius at most 0.15 reachable. This is a restricted equal-output family, not all equal-output states or a minimal failure radius.",
+    "Search chooses among 16 candidates using only four search suffixes per prefix. The 16 test suffixes have a distinct root and are used after the index is fixed; all four conditions share them. Reusing training seeds is disclosed and the four confirmation seeds, rather than prefixes or suffixes, determine the verdict.",
+    "For INV and REL, common left rotation preserves the entire Gram matrix and the mathematical transition is equivariant when leak is zero. A SHAM of exactly the same displacement is therefore a useful numerical and coordinate control. The E and S decision rules are distinct, and negative evidence is limited to the fixed finite candidate family.",
+    "Budget arithmetic is internally consistent: 15 models x 3 radii x 64 prefixes x 16 candidates = 46080 candidate states; four search suffixes yield 184320 candidate suffix evaluations; four conditions x 16 test suffixes yield 184320 test suffix evaluations. Research updates are zero; 900+300 seconds agrees with the 1200-second entry cap. Runtime feasibility remains unverified."
+  ],
+  "blocking": [
+    {
+      "issue": "The registered SHAM rule has no fixed behavior when its independently drawn random rotation axis cannot realize the requested displacement.",
+      "reason": "For unit axis a, its maximum possible common-rotation displacement is 2*||(I-aa^T)H||_F. This can be below r*||H||_F when a nearly aligns with a dominant state direction, even for r=0.15. Solving an angle cannot fix an unreachable draw. Silent redraw, clipping or omission after seeing data would change the control and its inclusion rule.",
+      "required_resolution": "Before implementation or data inspection, freeze a deterministic reachable-axis fallback and count its use, or declare the entire affected model/radius cell invalid while retaining all samples. Preserve exact SHAM radius and Gram checks."
+    }
+  ],
+  "implementation_checks": [
+    "Check float32 model-readout logit, displacement and total-norm tolerances candidate by candidate after casting, including eigenvalue ties and numerical degeneracy; retain all invalid states/cells as registered.",
+    "Check SHAM achieves the same actual displacement and preserves all three Gram components; compare its t0 and future outputs with NONE for INV/REL, including the registered 1e-4 alert.",
+    "Check suffix commands are independent Bernoulli(.5) without the generate(UPDATE) forced first flip, and replay continuation from H after step 32 without reapplying the encoder or a new common[:,0] rotation. Independently recompute target as current b XOR cumulative suffix commands.",
+    "Check selection never reads test inputs or targets, NONE replay matches original transition, all training seed/checkpoint hashes and failed cells are retained, and runtime plus engineering budgets are recorded."
+  ],
+  "interpretation_limits": "The primary outcome is an out-of-distribution frozen-state witness under a finite, norm-preserving eigen-column perturbation family. E does not require SELECTED to exceed RANDOM; S tests that separately. Neither result isolates training cause, biological mechanism, architecture superiority, global robustness radius or Gate 1 evidence."
+}

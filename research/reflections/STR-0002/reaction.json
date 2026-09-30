@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "packet_sha256": "b3085d7b9c07cce598304ec51e92a910bbd3686ce2067419938872f3e4ff3f80",
+  "review_sha256": "83c954aa76434b3a8ac483da2ab614e8fe6f06a7bb1a1c43e63eaf3553a9c6c7",
+  "responses": [
+    {
+      "id": "STR-0002-R1",
+      "disposition": "accept",
+      "reason": "Accepted the distinction between independent benchmark decisions and project Gate 1 architecture eligibility.",
+      "action": "Scoped the claim and recorded a bounded decision-value comparison; retained the independent benchmark track.",
+      "evidence_paths": [
+        "research/reflections/STR-0002/decision_value_costs.md",
+        "research/decisions/0023_str0002_entry_scope_correction.md",
+        "research/reflections/STR-0002/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "STR-0002-R2",
+      "disposition": "accept",
+      "reason": "A named reference K factor has no resolved project Gate 1 scoring rule, and labels alone do not specify causal controls.",
+      "action": "Made project reference factors return PROJECT_ELIGIBILITY_UNRESOLVED while field_reference remains available; required ablation and separate state/parameter/compute declarations.",
+      "evidence_paths": [
+        "src/neurotopo/entry_policy.py",
+        "tests/test_entry_policy.py",
+        "artifacts/validation/str0002_entry_dryrun.json",
+        "research/reflections/STR-0002/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "STR-0002-R3",
+      "disposition": "accept",
+      "reason": "Text and hashes did not prove the QUESTION entry would actually enforce or preserve the separate tracks.",
+      "action": "Implemented an opt-in versioned loop entry policy, verified four dry runs and a copied live-ledger migration, then activated it as live event-000067 without rewriting prior events.",
+      "evidence_paths": [
+        "src/neurotopo/loop.py",
+        "artifacts/validation/str0002_entry_dryrun.json",
+        "artifacts/validation/str0002_live_migration_rehearsal.json",
+        "artifacts/validation/str0002_live_activation.json",
+        "docs/STR-0002_entry_code_review.md",
+        "research/reflections/STR-0002/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "STR-0002-R4",
+      "disposition": "accept",
+      "reason": "The action ordering lacked an explicit bounded comparison of alternatives and their decision consequences.",
+      "action": "Recorded one-candidate zero-training, existing EXP-0004 read-only evidence, and candidate-free screen costs/outcome branches without inventing probabilistic information gain.",
+      "evidence_paths": [
+        "research/reflections/STR-0002/decision_value_costs.md",
+        "research/reflections/STR-0002/reaction_evidence.md"
+      ]
+    },
+    {
+      "id": "STR-0002-R5",
+      "disposition": "accept",
+      "reason": "Candidate-first ordering could still create candidate-favoring task selection.",
+      "action": "Required a finite task menu, maximum attempted configurations, retention of failures, and held-out validation before scientific promotion; structural fields remain subject to CRITIQUE.",
+      "evidence_paths": [
+        "docs/experiment_protocol.md",
+        "src/neurotopo/entry_policy.py",
+        "research/decisions/0023_str0002_entry_scope_correction.md",
+        "research/reflections/STR-0002/reaction_evidence.md"
+      ]
+    }
+  ],
+  "decision_impact": "UNCHANGED",
+  "next_action": "Keep Gate 1 NOT_PASSED and the candidate-first project qualification rule; live structural entry policy is active, with separate independent benchmark and field-reference tracks and no scientific approval implied."
+}

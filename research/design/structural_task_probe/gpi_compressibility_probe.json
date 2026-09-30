@@ -1,0 +1,94 @@
+{
+  "constants": {
+    "M": 6,
+    "T": 64,
+    "beta": 0.8,
+    "episodes": 400,
+    "grid": 256,
+    "lambda": 0.7,
+    "seed": 20260924
+  },
+  "mean_target_entropy_nats": 4.778663172524062,
+  "reading": "Target entropy is 4.779 of a possible 5.545 nats, so the theta posterior is BROAD (theta is far from identified at T=64) -- consistent with the independent recoverability probe. But the ridge KL is 0.740 for every summary from dim 2 to dim 192, i.e. equal to the uniform baseline (0.766 nats): the LINEAR probe learns nothing and therefore CANNOT settle compressibility. A fitted nonlinear state (a short control pilot or the registered screen itself) is required for the R2 gate.",
+  "rows": [
+    {
+      "dim": 2,
+      "kl_nats": 0.7397,
+      "summary": "autocorr_k2"
+    },
+    {
+      "dim": 4,
+      "kl_nats": 0.7394,
+      "summary": "autocorr_k4"
+    },
+    {
+      "dim": 8,
+      "kl_nats": 0.7393,
+      "summary": "autocorr_k8"
+    },
+    {
+      "dim": 16,
+      "kl_nats": 0.7392,
+      "summary": "autocorr_k16"
+    },
+    {
+      "dim": 32,
+      "kl_nats": 0.7393,
+      "summary": "autocorr_k32"
+    },
+    {
+      "dim": 12,
+      "kl_nats": 0.7404,
+      "summary": "window_k2"
+    },
+    {
+      "dim": 24,
+      "kl_nats": 0.7404,
+      "summary": "window_k4"
+    },
+    {
+      "dim": 48,
+      "kl_nats": 0.7403,
+      "summary": "window_k8"
+    },
+    {
+      "dim": 96,
+      "kl_nats": 0.7402,
+      "summary": "window_k16"
+    },
+    {
+      "dim": 192,
+      "kl_nats": 0.7404,
+      "summary": "window_k32"
+    },
+    {
+      "dim": 4,
+      "kl_nats": 0.7402,
+      "summary": "evidence_k4"
+    },
+    {
+      "dim": 8,
+      "kl_nats": 0.7402,
+      "summary": "evidence_k8"
+    },
+    {
+      "dim": 16,
+      "kl_nats": 0.7403,
+      "summary": "evidence_k16"
+    },
+    {
+      "dim": 32,
+      "kl_nats": 0.7403,
+      "summary": "evidence_k32"
+    },
+    {
+      "dim": 64,
+      "kl_nats": 0.7403,
+      "summary": "evidence_k64"
+    }
+  ],
+  "schema": "gpi_compressibility_probe_v2",
+  "self_correction": "v1 reported a point-mass target (entropy 0.000) because theta_posterior normalised over the latent before marginalising it, returning an all-ones vector. v2 marginalises the latent first, then normalises over theta.",
+  "status": "engineering premise check; not a verdict",
+  "uniform_baseline_kl_nats": 0.7665
+}

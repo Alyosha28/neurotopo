@@ -1,0 +1,19 @@
+{
+  "experiment_id": "EXP-0025",
+  "version": "v2",
+  "review_type": "independent_static_prerun_delta",
+  "prior_review": "research/iterations/ITER-0020/prerun_review.json",
+  "scope": "Compared v2 protocol and config against v1 and checked only the v1 review's M/GAUGE blocking issue. No implementation, training, prototype fit, evaluation or research run was performed.",
+  "verdict": "APPROVED_FOR_IMPLEMENTATION_SUBJECT_TO_REGISTERED_ENGINEERING_CHECKS",
+  "blocking": [],
+  "delta_checks": [
+    "M eligibility now first requires each candidate failure seed's GAUGE8 local Gram/logit error <=1e-5 in all four final cells and absolute difference in final two-LONG mean accuracy from NONE <=0.005. This closes the prior review's missing coordinate-control qualification for every seed that can enter M's repair denominator.",
+    "Only after GAUGE qualification does M apply the unchanged EQUAL8 validity, logit/sign and nonzero-Gram-change gates. The protocol requires per-seed exclusion reasons in that order. Fewer than two eligible failures produces M_INCONCLUSIVE_ELIGIBILITY, including GAUGE failures, without treating an inadequate control as negative mechanism evidence. Ineligible seeds remain in the full original-failure denominator's descriptive repair rate.",
+    "The v1-to-v2 protocol diff changes the title and M paragraph and adds an explicit pre-implementation amendment note. The config diff changes only version, protocol path and output path. Seeds, arms, conditions, training, thresholds apart from the new M eligibility gate, budgets and reference exclusion are unchanged. v1 remains preserved and the amendment states it was never run."
+  ],
+  "implementation_checks": [
+    "Apply the GAUGE local check to all four final cells before EQUAL eligibility and compute long equivalence from the two prespecified final LONG cell mean accuracies. Store each seed's GAUGE and EQUAL eligibility booleans and ordered exclusion reasons, including failures that remain descriptively reported.",
+    "Retain the v1 review's numerical, fallback, data-isolation, denominator and interpretation checks; v2 approval is a static registration review and does not certify observed feasibility or runtime."
+  ],
+  "interpretation_limits": "M support remains conditional on independently qualified, GAUGE-equivalent, EQUAL-feasible failure seeds. It does not identify Gram shape as the unique cause, establish safety on successful seeds, or support Gate 1."
+}
